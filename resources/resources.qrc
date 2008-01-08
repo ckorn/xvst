@@ -1,0 +1,53 @@
+<RCC>
+    <qresource prefix="/buttons" >
+        <file>images/application_link.png</file>
+        <file>images/arrow_down.png</file>
+        <file>images/arrow_refresh.png</file>
+        <file>images/arrow_up.png</file>
+        <file>images/book_open.png</file>
+        <file>images/control_play.png</file>
+        <file>images/control_stop.png</file>
+        <file>images/cross.png</file>
+        <file>images/exit.png</file>
+        <file>images/film_add.png</file>
+        <file>images/film_delete.png</file>
+        <file>images/folder_go.png</file>
+        <file>images/information.png</file>
+        <file>images/options.png</file>
+        <file>images/play_video.png</file>
+        <file>images/restore.png</file>
+        <file>images/resultset_next.png</file>
+        <file>images/script.png</file>
+        <file>images/script_go.png</file>
+        <file>images/transmit_blue.png</file>
+    </qresource>
+    <qresource prefix="/header" >
+        <file>images/DragDropWindow.png</file>
+        <file>images/InformationLogo.png</file>
+        <file>images/header.png</file>
+        <file>images/tick.png</file>
+    </qresource>
+    <qresource prefix="/icons" >
+        <file>images/film_go.png</file>
+    </qresource>
+    <qresource prefix="/options" >
+        <file>images/language.png</file>
+        <file>images/proxy.png</file>
+        <file>images/session.png</file>
+        <file>images/tools.png</file>
+        <file>images/updates.png</file>
+        <file>images/ups.png</file>
+    </qresource>
+    <qresource prefix="/services" >
+        <file>images/services/dailymotion.com.png</file>
+        <file>images/services/glumbert.com.png</file>
+        <file>images/services/invalid.png</file>
+        <file>images/services/link_error.png</file>
+        <file>images/services/metacafe.com.png</file>
+        <file>images/services/no_icon.png</file>
+        <file>images/services/sclipo.com.png</file>
+        <file>images/services/video.google.png</file>
+        <file>images/services/youtube.com.png</file>
+        <file>images/services/zappinternet.com.png</file>
+    </qresource>
+</RCC>
