@@ -134,7 +134,11 @@ void ProgramOptions::setDefault()
 	downloadDir = QString(appDir.absolutePath() + DEFAULT_DOWNLOADS);
 	convertVideos = true;
 	deleteVideosOnConvert = true;
+#ifdef Q_OS_WIN32
 	ffmpegLibLocation = QString(appDir.absolutePath() + DEFAULT_FFMPEGLIB + "/ffmpeg.exe");
+#else
+	ffmpegLibLocation = QString(DEFAULT_FFMPEGLIB + "/ffmpeg");
+#endif
 	displayPopup = true;
 
 	conversionConf.outputFormat = ofAVI;

@@ -35,7 +35,11 @@
 #include "videoconvert.h"
 
 static const QString DEFAULT_DOWNLOADS = "/downloads";	//!< Default sub-directory for downloads
-static const QString DEFAULT_FFMPEGLIB = "/bin";		//!< Default sub-directory for the ffmpeg lib
+#ifdef Q_OS_WIN32
+static const QString DEFAULT_FFMPEGLIB = "/bin";		//!< Default sub-directory for the ffmpeg lib (win32)
+#else
+static const QString DEFAULT_FFMPEGLIB = "/usr/bin";	//!< Default directory for the ffmpeg lib (*nix)
+#endif
 
 /*! Program options class: Save and Load the main program options */
 class ProgramOptions : public QObject
