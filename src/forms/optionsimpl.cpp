@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 Xesc & Technology
@@ -40,6 +40,8 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	languageManager = new LanguageManager;
 	//signals
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
+	connect(spbSelectDownloadDir, SIGNAL(pressed()), this, SLOT(spbSelectDownloadDirPressed()));
+	connect(spbSelectFFmpegLib, SIGNAL(pressed()), this, SLOT(spbSelectFFmpegLibPressed()));
 	connect(edtFFmpegLib, SIGNAL(textChanged(const QString &)), this, SLOT(ffmpegTextChanged(const QString &)));
 	connect(btnViewLog, SIGNAL(clicked()), this, SLOT(btnViewLogClicked()));
 	connect(btnClearLog, SIGNAL(clicked()), this, SLOT(btnClearLogClicked()));
@@ -84,7 +86,7 @@ void OptionsImpl::createMenu()
 	QTreeWidgetItem *newItem;
 
 	newItem = new QTreeWidgetItem(trvMenu);
-	
+
 	// basic
 	newItem->setText(0, tr("Basic"));
 	newItem->setIcon(0, QIcon(":/options/images/tools.png"));
@@ -114,7 +116,7 @@ void OptionsImpl::createMenu()
 	newItem = new QTreeWidgetItem(trvMenu);
 	newItem->setText(0, tr("Proxy"));
 	newItem->setIcon(0, QIcon(":/options/images/proxy.png"));
-	
+
 	if (lastPageViewed != -1)
 	{
 		pgOptions->setCurrentIndex(lastPageViewed);
@@ -198,7 +200,7 @@ void OptionsImpl::fillLanguages()
 	tmpLangFile = programOptions->getLanguageFile(false);
 	languageManager->loadLangFiles(programOptions->getApplicationPath() + "/languages");
 	lsvLanguages->header()->hide();
-	
+
 	for (int n = 0; n < languageManager->getLanguagesCount(); n++)
 	{
 		QTreeWidgetItem *newItem = new QTreeWidgetItem(lsvLanguages);
@@ -253,13 +255,13 @@ void OptionsImpl::setInitialOptionsValues()
 	edtPassword->setText(programOptions->getProxyPassword());
 	edtAdress->setText(programOptions->getProxyAdress());
 	spinBoxPort->setValue(programOptions->getProxyPort());
-	
+
 	if (programOptions->getProxyType() != QNetworkProxy::HttpProxy &&
 	    programOptions->getProxyType() != QNetworkProxy::Socks5Proxy)
 		cmbProxyType->setCurrentIndex(0);
 	else
 		cmbProxyType->setCurrentIndex(programOptions->getProxyType());
-		
+
 }
 
 void OptionsImpl::setOptionsValues()
@@ -300,9 +302,9 @@ void OptionsImpl::setOptionsValues()
 	programOptions->setProxyType(cmbProxyType->currentIndex());
 
 	programOptions->setCanSendUpdateSignal(true);
-	
+
 	programOptions->setLanguageFile(tmpLangFile);
-	
+
 	lastPageViewed = chbRememberView->isChecked() ? pgOptions->currentIndex() : -1;
 }
 
@@ -345,13 +347,13 @@ void OptionsImpl::langCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetI
 	if (current != NULL)
 	{
 		Language *language =languageManager->getLanguage(lsvLanguages->indexOfTopLevelItem(current));
-		
+
 		lblLanguage->setText(language->getId());
 		lblVersion->setText(language->getVersion());
 		lblAuthor->setText(language->getAuthor());
 		lblContact->setText(QString("<a href=\"%1\">%2</a>").arg(language->getContact()).arg(language->getContact()));
 		rchDescription->setHtml(language->getDescription());
-		
+
 		btnUseThis->setEnabled(language->getFile() != tmpLangFile);
 	}
 }
@@ -378,8 +380,8 @@ void OptionsImpl::btnUseThisClicked()
 	}
 	// disply update message
 	QMessageBox::information(this, tr("Language Setup"),
-		                           tr("In order to apply the new selected language, the program must be restarted."),
-		                           tr("Ok"), QString(), 0, 1);
+	                         tr("In order to apply the new selected language, the program must be restarted."),
+	                         tr("Ok"), QString(), 0, 1);
 }
 
 void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem *item, int column)
@@ -392,6 +394,29 @@ void OptionsImpl::btnOkClicked()
 {
 	setOptionsValues();
 	done(QDialog::Accepted);
+}
+
+void OptionsImpl::spbSelectDownloadDirPressed()
+{
+	QString s = QFileDialog::getExistingDirectory(this, tr("Select the download directory:"),
+	            edtDownloadsDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
+	// if is emtpy, cancel the proces
+	if (s.isEmpty()) return;
+	edtDownloadsDir->setText(QDir::toNativeSeparators(s));
+}
+
+void OptionsImpl::spbSelectFFmpegLibPressed()
+{
+	QString s = QFileDialog::getOpenFileName(this, tr("Select the ffmpeg lib:"),
+	            edtFFmpegLib->text(),
+#ifdef Q_OS_WIN32
+	            "ffmpeg lib (ffmpeg.exe)");
+#else
+	            "ffmpeg lib (ffmpeg)");
+#endif
+	// if is emtpy, cancel the proces
+	if (s.isEmpty()) return;
+	edtFFmpegLib->setText(QDir::toNativeSeparators(s));
 }
 
 void OptionsImpl::ffmpegTextChanged(const QString &text)

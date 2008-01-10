@@ -65,6 +65,8 @@ Q_OBJECT
 	private slots:
 		void menuCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous);
 		void langCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous);
+		void spbSelectDownloadDirPressed();
+		void spbSelectFFmpegLibPressed();
 		void btnOkClicked();
 		void ffmpegTextChanged(const QString &text);
 		void btnViewLogClicked();

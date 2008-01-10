@@ -267,7 +267,7 @@ void MainFormImpl::dragDropClicked()
 
 void MainFormImpl::updatesClicked()
 {
-	//qDebug() << "TODO updatesClicked";
+	qDebug() << "TODO updatesClicked";
 }
 
 void MainFormImpl::onlineHelpClicked()
