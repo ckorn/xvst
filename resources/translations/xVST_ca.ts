@@ -27,12 +27,12 @@
 <context>
     <name>AddVideoImpl</name>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="31"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="58"/>
         <source> - Adult content is not allowed</source>
         <translation> - El contingut per adults no està permès</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="29"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="56"/>
         <source> - Blocked site</source>
         <translation> - Bloqejat</translation>
     </message>
@@ -126,7 +126,7 @@
 <context>
     <name>CustomAlphaBlendImpl</name>
     <message>
-        <location filename="../../src/forms/customalphablendimpl.cpp" line="41"/>
+        <location filename="../../src/forms/customalphablendimpl.cpp" line="68"/>
         <source>Current: &lt;b&gt;%1%&lt;/b&gt;</source>
         <translation>Actual: &lt;b&gt;%1%&lt;/b&gt;</translation>
     </message>
@@ -152,17 +152,17 @@
 <context>
     <name>DownloadLogImpl</name>
     <message>
-        <location filename="../../src/forms/downloadlogimpl.cpp" line="10"/>
+        <location filename="../../src/forms/downloadlogimpl.cpp" line="37"/>
         <source>Date/Time</source>
         <translation>Data/Hora</translation>
     </message>
     <message>
-        <location filename="../../src/forms/downloadlogimpl.cpp" line="10"/>
+        <location filename="../../src/forms/downloadlogimpl.cpp" line="37"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../../src/forms/downloadlogimpl.cpp" line="10"/>
+        <location filename="../../src/forms/downloadlogimpl.cpp" line="37"/>
         <source>Video Title</source>
         <translation>Títol Vídeo</translation>
     </message>
@@ -258,22 +258,22 @@
 <context>
     <name>DragDropImpl</name>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="150"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="177"/>
         <source> - Adult content is not allowed</source>
         <translation> - El contingut per adults no està permès</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="148"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="175"/>
         <source> - Blocked site</source>
         <translation> - Bloquejat</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="91"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="118"/>
         <source>Alpha Blend Value</source>
         <translation>Nivell de transparència</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="38"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="65"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
@@ -553,62 +553,62 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="20"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
         <source> Progress </source>
         <translation> Progrés </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="20"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
         <source> Size </source>
         <translation> Volum </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="20"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
         <source> Speed </source>
         <translation> Velocitat </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="20"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
         <source> Time </source>
         <translation> Temps </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="20"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
         <source> Video </source>
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="184"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="211"/>
         <source>Closing...</source>
         <translation>Tancant...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="116"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="143"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="186"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="213"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="210"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="237"/>
         <source>Options</source>
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="275"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="302"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="185"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="212"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
         <translation>xVideoServiceThief esta treballant, vols cancel·lar els processos actuals?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="186"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="213"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
@@ -726,7 +726,7 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation>Desactiva el suport als webs per adults</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="115"/>
+        <location filename="../../ui/options.ui" line="108"/>
         <source>Display a popup on video Downloaded (only when the main form is not visible)</source>
         <translation>Mostra un missatge al finalitzar una Descàrrega (només quan el formulari principal no és visible)</translation>
     </message>
@@ -886,200 +886,210 @@ background-color:#124565;
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="142"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="171"/>
         <source>2 Days</source>
         <translation>2 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="142"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="171"/>
         <source>3 Days</source>
         <translation>3 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="107"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
         <source>3GP Format (*.3gp)</source>
         <translation>3GP Format (*.3gp)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="143"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>4 Days</source>
         <translation>4 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="143"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>5 Days</source>
         <translation>5 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="143"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>6 Days</source>
         <translation>6 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="390"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="442"/>
         <source>Are you sure to Clear the Historic File?</source>
         <translation>Estàs segur de netejar l&apos;Històric?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="104"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="133"/>
         <source>AVI Format (*.avi)</source>
         <translation>AVI Format (*.avi)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="62"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="91"/>
         <source>Basic</source>
         <translation>Bàsic</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="389"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="441"/>
         <source>Clear Log</source>
         <translation>Neteja l&apos;Històric</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="142"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="171"/>
         <source>Day</source>
         <translation>Dia</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="165"/>
         <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
         <translation>Qualitat bona (Vídeo bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="148"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
         <source>Http Proxy</source>
         <translation>Http Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="68"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="97"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="133"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
         <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
         <translation>Baixa qualitat (Vídeo bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="132"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="161"/>
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
         <translation>Molt baixa qualitat (Vídeo bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="164"/>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
         <translation>Qualitat mitjana (Vídeo bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="107"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
         <source>MP3 Format (*.mp3)</source>
         <translation>MP3 Format (*.mp3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="391"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="443"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="163"/>
         <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
         <translation>Qualitat normal (Vídeo bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="126"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="155"/>
         <source>Original</source>
         <translation>Original</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="88"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="117"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="73"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="102"/>
         <source>Session</source>
         <translation>Sessió</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="148"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
         <source>Socks5 Proxy</source>
         <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="137"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="166"/>
         <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
         <translation>Qualitat brutal (Vídeo bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="137"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="166"/>
         <source>The Same quality as the original Video</source>
         <translation>Mantenir la qualitat del vídeo original</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="78"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="107"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="83"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="112"/>
         <source>Ups!</source>
         <translation>Ups!</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="143"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>Week</source>
         <translation>Setmana</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="391"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="443"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="353"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="382"/>
         <source>Language Setup</source>
         <translation>Configuració del Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="354"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="383"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Per tal d&apos;aplicar el idioma seleccionat, esnecessari reiniciar el programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="355"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="384"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="105"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
         <source>WMV Format ( *.wmv)</source>
         <translation>WMV Format ( *.wmv)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="105"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
         <source>MPEG1 Format ( *.mpg)</source>
         <translation>MPEG1 Format ( *.mpg)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="106"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
         <source>MPEG2 Format ( *.mpg)</source>
         <translation>MPEG2 Format ( *.mpg)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="106"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
         <source>Apple iPod (*.mp4)</source>
         <translation>Apple iPod (*.mp4)</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="401"/>
+        <source>Select the download directory:</source>
+        <translation>Selecciona el directori de les descàrregues:</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="410"/>
+        <source>Select the ffmpeg lib:</source>
+        <translation>Selecciona on es troba el programa ffmpeg:</translation>
     </message>
 </context>
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="188"/>
+        <location filename="../../src/videoinformation.cpp" line="215"/>
         <source>Invalid URL</source>
         <translation>URL Invàlida</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="185"/>
+        <location filename="../../src/videoinformation.cpp" line="212"/>
         <source>Unsupported video service</source>
         <translation>Servei de vídeos no suportat</translation>
     </message>
@@ -1087,67 +1097,67 @@ background-color:#124565;
 <context>
     <name>VideoItem</name>
     <message>
-        <location filename="../../src/videoitem.cpp" line="97"/>
+        <location filename="../../src/videoitem.cpp" line="124"/>
         <source>-</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="240"/>
+        <location filename="../../src/videoitem.cpp" line="267"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="115"/>
+        <location filename="../../src/videoitem.cpp" line="142"/>
         <source>Blocked</source>
         <translation>Bloquejat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="113"/>
+        <location filename="../../src/videoitem.cpp" line="140"/>
         <source>Canceled</source>
         <translation>Cancelat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="111"/>
+        <location filename="../../src/videoitem.cpp" line="138"/>
         <source>Completed</source>
         <translation>Finalitzat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="109"/>
+        <location filename="../../src/videoitem.cpp" line="136"/>
         <source>Converted</source>
         <translation>Convertit</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="107"/>
+        <location filename="../../src/videoitem.cpp" line="134"/>
         <source>Converting...</source>
         <translation>Convertint...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="119"/>
+        <location filename="../../src/videoitem.cpp" line="146"/>
         <source>Deleted</source>
         <translation>Esborrat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="105"/>
+        <location filename="../../src/videoitem.cpp" line="132"/>
         <source>Downloaded</source>
         <translation>Descarregat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="103"/>
+        <location filename="../../src/videoitem.cpp" line="130"/>
         <source>Downloading...</source>
         <translation>Descarregant...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="117"/>
+        <location filename="../../src/videoitem.cpp" line="144"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="99"/>
+        <location filename="../../src/videoitem.cpp" line="126"/>
         <source>Getting info...</source>
         <translation>Obtenint info...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="101"/>
+        <location filename="../../src/videoitem.cpp" line="128"/>
         <source>Ready</source>
         <translation>Preparat</translation>
     </message>
