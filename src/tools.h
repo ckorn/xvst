@@ -63,6 +63,9 @@
 	/*! Float to String (using locale config) */
 	QString floatToStr(const float value, const int precision = 2);
 	
+	/*! Compare versions */
+	int compareVersions(QString version1, QString version2);
+	
 	/*! Clear the URL */
 	QString cleanURL(QString URL);
 	
