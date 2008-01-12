@@ -162,6 +162,70 @@ QString floatToStr(const float value, const int precision)
 	return locale.toString(value, 'f', precision);
 }
 
+int subVersionToInt(QString subVersion)
+{
+	subVersion = subVersion.toLower();
+	
+	if (subVersion == "alpha")
+		return 1;
+	else if (subVersion == "beta")
+		return 2;
+	else if (subVersion == "final")
+		return 3;
+	else
+		return 4;
+}
+
+int compareVersions(QString version1, QString version2)
+{
+	// are the same version?
+	if (version1 == version2)
+		return 0;
+	else
+	{
+		// replace comas for dots
+		QString s1 = QString(version1).replace(",", ".");
+		QString s2 = QString(version2).replace(",", ".");
+		// get the version with more "fields" (x.x.x.x)
+		int num1 = getTokenCount(s1, ".");
+		int num2 = getTokenCount(s1, ".");
+		// set the max num
+		int max = num1 != num2 ? (num1 > num2 ? num1 : num2) : num1;
+		// get subversions
+		QString subVersion1, subVersion2;
+		// get major version and sub-version (version1)
+		if (getTokenCount(s1, " ") > 1)
+		{
+			subVersion1 = getToken(s1, " ", 1);
+			s1 = getToken(s1, " ", 0);
+		}
+		// get major version and sub-version (version2)
+		if (getTokenCount(s2, " ") > 1)
+		{
+			subVersion2 = getToken(s2, " ", 1);
+			s2 = getToken(s2, " ", 0);
+		}
+		// Check for number versions
+		for (int level = 0; level < max; level++)
+		{
+			num1 = getToken(s1, ".", level).toInt();
+			num2 = getToken(s2, ".", level).toInt();
+			
+			if (num1 > num2)
+				return -1;
+			else if (num1 < num2)
+				return 1;
+		}
+		// Check for subversion (alpha, beta, etc...)
+		if (subVersionToInt(subVersion1) < subVersionToInt(subVersion2))
+			return 1;
+		else if (subVersionToInt(subVersion1) > subVersionToInt(subVersion2))
+			return -1;
+		else
+			return 0;
+	}
+}
+
 QString cleanURL(QString URL)
 {
 	QUrl url = QUrl::fromEncoded(URL.toAscii());
