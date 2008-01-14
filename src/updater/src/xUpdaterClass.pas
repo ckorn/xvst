@@ -191,8 +191,8 @@ begin
         end;
     {exec}
     5:  begin
-{$IFNDEF FPC}
           Pararm01:=GetToken(Pararms, '"', 2);
+{$IFNDEF FPC}
           Result:=WinExec(PChar(Pararm01), SW_NORMAL) >= 31;
 {$ELSE}
           with TProcess.Create(nil) do
