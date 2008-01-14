@@ -35,7 +35,15 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 	lblProgramVersion->setText(QString("<b>%1</b>").arg(PROGRAM_VERSION));
 	// set language info
 	Language *language = LanguageManager::getLanguageInfo(programOptions->getLanguageFile(true));
-	lblLanguage->setText(QString("<b>%1</b>").arg(language->getId()));
-	lblURL->setText(QString("<a href=\"%1\">%2</href>").arg(language->getContact()).arg(language->getContact()));
+	if (language != NULL)
+	{
+		lblLanguage->setText(QString("<b>%1</b>").arg(language->getId()));
+		lblURL->setText(QString("<a href=\"%1\">%2</href>").arg(language->getContact()).arg(language->getContact()));
+	}
+	else
+	{
+		lblLanguage->setText(tr("Unknown"));
+		lblURL->setText(tr("-"));
+	}
 }
 //
