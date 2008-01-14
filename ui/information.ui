@@ -135,7 +135,7 @@ background: white;
                <font/>
               </property>
               <property name="text" >
-               <string/>
+               <string>&lt;b>English (UK)&lt;/b></string>
               </property>
              </widget>
             </item>
@@ -165,7 +165,7 @@ background: white;
                <enum>QFrame::Plain</enum>
               </property>
               <property name="text" >
-               <string/>
+               <string>&lt;a href="http://xviservicethief.sourceforge.net/">http://xviservicethief.sourceforge.net/&lt;/a></string>
               </property>
              </widget>
             </item>
