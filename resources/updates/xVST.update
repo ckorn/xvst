@@ -1,0 +1,43 @@
+#MSWINDOWS{
+	#FILE:0
+		caption="xVideoServiceThief"
+		version="1.3 Alpha"
+		size="424448"
+		installTo="this"
+		url="http://dfn.dl.sourceforge.net/sourceforge/xviservicethief/xVideoServiceThief_1_2_alpha.exe"
+		dependency=""
+	#END:0
+}
+
+#LINUX{
+	#FILE:0
+		caption=""
+		version=""
+		size=""
+		installTo=""
+		url=""
+		dependency=""
+	#END:0
+}
+
+#MACOSX{
+	#FILE:0
+		caption=""
+		version=""
+		size=""
+		installTo=""
+		url=""
+		dependency=""
+	#END:0
+}
+
+#COMMON{
+	#FILE:0
+		caption="Language: Català (CAT)"
+		version="1.1"
+		size="6754"
+		installTo="/languages/catala.language"
+		url="http://dfn.dl.sourceforge.net/sourceforge/xviservicethief/catala_cat.language"
+		dependency=""
+	#END:0
+}

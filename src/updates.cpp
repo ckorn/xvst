@@ -105,14 +105,19 @@ bool Updates::hasUpdates()
 			deleteUpdate = compareVersions(PROGRAM_VERSION, update->getVersion()) != 1;
 		else
 		{
-			QFileInfo fileInf(update->getInstallTo());
-			// language files
-			if (fileInf.completeSuffix() == "language")
+			if (QFile::exists(appPath + update->getInstallTo()))
 			{
-				Language *language = LanguageManager::getLanguageInfo(appPath + update->getInstallTo());
-				// have info?
-				if (language != NULL)
-					deleteUpdate = compareVersions(language->getVersion(), update->getVersion()) != 1;
+				QFileInfo fileInf(update->getInstallTo());
+				// language files
+				if (fileInf.completeSuffix() == "language")
+				{
+					Language *language = LanguageManager::getLanguageInfo(appPath + update->getInstallTo());
+					// have info?
+					if (language != NULL)
+						deleteUpdate = compareVersions(language->getVersion(), update->getVersion()) != 1;
+				}
+				else // "unknonw file"
+					deleteUpdate = true;
 			}
 			else // we don't have this "item" installed...
 				deleteUpdate = true;

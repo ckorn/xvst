@@ -91,7 +91,8 @@ void LanguageManager::loadLangFiles(QString langDir)
 	languageFiles = languageFiles.filter(".language");
 	
 	foreach (QString langFile, languageFiles)
-		loadLangFile(QDir::toNativeSeparators( langDir + "/" + langFile));
+		if (langFile.endsWith(".language"))
+			loadLangFile(QDir::toNativeSeparators(langDir + "/" + langFile));
 }
 
 QString LanguageManager::get_qm_languageFile(QString langFile)

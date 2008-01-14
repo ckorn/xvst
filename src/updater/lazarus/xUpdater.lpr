@@ -13,12 +13,20 @@ uses
 {$ENDIF}
 
 begin
+  // about...
+  WriteLn('Xesc & Technology (R) Updater Utility Version 1.0.0.5');
+  WriteLn('Copyright (C) Xesc & Technology Corporation. All rights reserved.');
+  // start updater
   if FileExists(ParamStr(1)) then
     with TxUpdater.Create(ParamStr(1)) do
       try
+        WriteLn('Executing install script...');
         Start;
       finally
         Free;
-      end;
+        WriteLn('Install Script executed...');
+      end
+  else
+    WriteLn('Install script file do not exists: "' + ParamStr(1) + '"');
 end.
 
