@@ -1,23 +1,14 @@
-CONFIG += console debug_and_release qt warn_on
+CONFIG += release qt warn_on
+QT = core gui network
+TEMPLATE = app
+DESTDIR = bin
+UI_DIR = build/ui
+MOC_DIR = build/moc
 RCC_DIR += build/rcc
 RC_FILE += resources/xVST.rc
 
-TEMPLATE = app
-DESTDIR = bin
-MOC_DIR = build/moc
-QT = core gui network
-UI_DIR = build/ui
-
-FORMS = ui/addvideo.ui \
- ui/completedpopup.ui \
- ui/customalphablend.ui \
- ui/downloadlog.ui \
- ui/dragdrop.ui \
- ui/information.ui \
- ui/mainform.ui \
- ui/options.ui
-
 HEADERS = src/forms/addvideoimpl.h \
+ src/forms/checkupdatesimpl.h \
  src/forms/completedpopupimpl.h \
  src/forms/customalphablendimpl.h \
  src/forms/downloadlogimpl.h \
@@ -25,6 +16,7 @@ HEADERS = src/forms/addvideoimpl.h \
  src/forms/informationimpl.h \
  src/forms/mainformimpl.h \
  src/forms/optionsimpl.h \
+ src/forms/updatecenterimpl.h \
  src/http.h \
  src/languages.h \
  src/options.h \
@@ -39,7 +31,19 @@ HEADERS = src/forms/addvideoimpl.h \
  src/videoitem.h \
  src/videolistcontroller.h
  
+FORMS = ui/addvideo.ui \
+ ui/checkupdates.ui \
+ ui/completedpopup.ui \
+ ui/customalphablend.ui \
+ ui/downloadlog.ui \
+ ui/dragdrop.ui \
+ ui/information.ui \
+ ui/mainform.ui \
+ ui/options.ui \
+ ui/updatecenter.ui
+ 
 SOURCES = src/forms/addvideoimpl.cpp \
+ src/forms/checkupdatesimpl.cpp \
  src/forms/completedpopupimpl.cpp \
  src/forms/customalphablendimpl.cpp \
  src/forms/downloadlogimpl.cpp \
@@ -47,6 +51,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/informationimpl.cpp \
  src/forms/mainformimpl.cpp \
  src/forms/optionsimpl.cpp \
+ src/forms/updatecenterimpl.cpp \
  src/http.cpp \
  src/languages.cpp \
  src/main.cpp \
@@ -61,19 +66,17 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videoitem.cpp \
  src/videolistcontroller.cpp
  
-TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts
-
 RESOURCES += resources/resources.qrc
+
+TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts
 
 macx {
  ICON +=  resources/icons/MacOSX.icns
  OBJECTS_DIR +=  build/o/mac
 }
-
 unix {
  OBJECTS_DIR +=  build/o/unix
 }
-
 win32 {
  OBJECTS_DIR +=  build/o/win32
 }
