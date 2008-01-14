@@ -61,6 +61,8 @@ Q_OBJECT
 		VideoListController(ProgramOptions *programOptions);
 		/*! Class destructor */
 		~VideoListController();
+		/*! Start the main loop */
+		void start();
 		/*! Add a new TDownloadVideoItem */
 		VideoItem* addVideo(const QString URL);
 		/*! Add a Stored TDownloadVideoItem */

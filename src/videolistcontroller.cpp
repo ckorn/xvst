@@ -42,8 +42,6 @@ VideoListController::VideoListController(ProgramOptions *programOptions)
 	                                    programOptions->getConversionConf(),
 	                                    programOptions->getDeleteVideosOnConvert());
 
-	internalTimer = this->startTimer(100);
-
 	// video information
 	connect(videoInformation, SIGNAL(informationStarted(VideoItem *)), this, SLOT(actionStarted(VideoItem *)));
 	connect(videoInformation, SIGNAL(informationFinished(VideoItem *)), this, SLOT(actionFinished(VideoItem *)));
@@ -111,6 +109,11 @@ void VideoListController::timerEvent(QTimerEvent *event)
 	// get the first downloaded item, to start the conversion
 	if (programOptions->getConvertVideos() && videoConverter->canStartConversion())
 		startConversion(getFirstDownloaded());
+}
+
+void VideoListController::start()
+{
+	internalTimer = this->startTimer(100);
 }
 
 VideoItem* VideoListController::addVideo(const QString URL)
