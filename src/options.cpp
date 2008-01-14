@@ -45,6 +45,9 @@ void ProgramOptions::load()
 
 	// set the default values
 	setDefault();
+	
+	if (!QFile::exists(optionsFile)) return;
+	
 	// load config
 	QSettings settings(optionsFile, QSettings::IniFormat);
 	downloadAutomatically = settings.value("configuration/downloadAutomatically", downloadAutomatically).toBool();
@@ -79,6 +82,11 @@ void ProgramOptions::load()
 	proxyType = settings.value("configuration/proxyType", proxyType).toInt();
 
 	languageFile = settings.value("configuration/languageFile", languageFile).toString();
+
+	installAutomaticallyUpdates = settings.value("configuration/installAutomaticallyUpdates", installAutomaticallyUpdates).toBool();
+	lastUpdate = settings.value("configuration/lastUpdate", lastUpdate).toDate();
+	checkForUpdatesOnStartup = settings.value("configuration/checkForUpdatesOnStartup", checkForUpdatesOnStartup).toBool();
+	checkForUpdatesEvery = settings.value("configuration/checkForUpdatesEvery", checkForUpdatesEvery).toInt();
 
 	emit optionsLoadAfter();
 }
@@ -122,6 +130,11 @@ void ProgramOptions::save()
 	settings.setValue("dragDropAlphaBlend", dragDropAlphaBlend);
 
 	settings.setValue("languageFile", languageFile);
+
+	settings.setValue("installAutomaticallyUpdates", installAutomaticallyUpdates);
+	settings.setValue("lastUpdate", lastUpdate);
+	settings.setValue("checkForUpdatesOnStartup", checkForUpdatesOnStartup);
+	settings.setValue("checkForUpdatesEvery", checkForUpdatesEvery);
 
 	settings.endGroup();
 
@@ -167,6 +180,11 @@ void ProgramOptions::setDefault()
 	dragDropAlphaBlend = false;
 	
 	languageFile = "english_uk.language";
+	
+	installAutomaticallyUpdates = true;
+	lastUpdate = QDate::currentDate();
+	checkForUpdatesOnStartup = true;
+	checkForUpdatesEvery = 1;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -427,4 +445,44 @@ QString ProgramOptions::getLanguageFile(bool fullPath)
 void ProgramOptions::setLanguageFile(QString value)
 {
 	languageFile = value;
+}
+
+int ProgramOptions::getCheckForUpdatesEvery()
+{
+	return checkForUpdatesEvery;
+}
+
+void ProgramOptions::setCheckForUpdatesEvery(int value)
+{
+	checkForUpdatesEvery = value;
+}
+
+bool ProgramOptions::getCheckForUpdatesOnStartup()
+{
+	return checkForUpdatesOnStartup;
+}
+
+void ProgramOptions::setCheckForUpdatesOnStartup(bool value)
+{
+	checkForUpdatesOnStartup = value;
+}
+
+QDate ProgramOptions::getLastUpdate()
+{
+	return lastUpdate;
+}
+
+void ProgramOptions::setLastUpdate(QDate value)
+{
+	lastUpdate = value;
+}
+
+bool ProgramOptions::getInstallAutomaticallyUpdates()
+{
+	return installAutomaticallyUpdates;
+}
+
+void ProgramOptions::setInstallAutomaticallyUpdates(bool value)
+{
+	installAutomaticallyUpdates = value;
 }

@@ -32,7 +32,6 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 {
 	setupUi(this);
 	// set caption
-	
 	setWindowTitle(QString(windowTitle()).arg(PROGRAM_VERSION));
 	// init program options
 	lastOptionsPage = 0;
@@ -57,16 +56,16 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	header->resizeSection(2, fm.width(headers.at(2) + "  100.00%  "));
 	header->resizeSection(3, qMax(fm.width(headers.at(3) + "  "), fm.width(" 24h 59m 59s ")));
 	header->resizeSection(4, qMax(fm.width(headers.at(4) + "  "), fm.width("999 KB/s")));
+	// configure resize mode
+	header->setHighlightSections(false);
+	header->setStretchLastSection(false);
+	header->setResizeMode(0, QHeaderView::Stretch);
 	// set header text aligment
 	QTreeWidgetItem * headerItem = lsvDownloadList->headerItem();
 	headerItem->setTextAlignment(1, Qt::AlignRight   | Qt::AlignVCenter);
 	headerItem->setTextAlignment(2, Qt::AlignHCenter | Qt::AlignVCenter);
 	headerItem->setTextAlignment(3, Qt::AlignHCenter | Qt::AlignVCenter);
 	headerItem->setTextAlignment(4, Qt::AlignHCenter | Qt::AlignVCenter);
-	// configure resize mode
-	header->setHighlightSections(false);
-	header->setStretchLastSection(false);
-	header->setResizeMode(0, QHeaderView::Stretch);
 	// configure the TrayIcon
 	createTrayIcon();
 	// init the completed popup
@@ -142,7 +141,9 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// shortcut paste
 	shortCurtPasteURL = new QShortcut(QKeySequence(tr("Ctrl+V")), this);
 	connect(shortCurtPasteURL, SIGNAL(activated()), this, SLOT(pasteURLfromClipboardClicked()));
-
+	// updater timer
+	if (programOptions->getCheckForUpdatesOnStartup())
+		updaterTimer = this->startTimer(250);
 /*
 	// videos examples
 	videoList->addVideo("http://es.youtube.com/watch?v=0z-hdo3-UEU");
@@ -155,7 +156,6 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.glumbert.com/media/bushrailroad");
 	videoList->addVideo("http://sclipo.com/video/massage-videos-lower-back-wrap-around-massage");
 */
-
 }
 
 MainFormImpl::~MainFormImpl()
@@ -224,6 +224,26 @@ void MainFormImpl::closeEvent(QCloseEvent *event)
 		sessionManager->saveSession(videoList);
 }
 
+void MainFormImpl::timerEvent(QTimerEvent *event)
+{
+	if (event->timerId() == updaterTimer)
+	{
+		// check if the xUpdater is installed (can install updates?)
+		if (!Updates::canUpdate())
+		{
+			actUpdates->setEnabled(false);
+			spbUpdates->setEnabled(false);
+			QMessageBox::information(this, tr("Updates"),
+			                               tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
+			                               tr("Ok"));
+		}
+		else
+			checkUpdates();
+		// kill this timer, after one executation
+		this->killTimer(updaterTimer);
+	}
+}
+
 void MainFormImpl::createTrayIcon()
 {
 	// create the Tray Icon context menu
@@ -267,7 +287,14 @@ void MainFormImpl::dragDropClicked()
 
 void MainFormImpl::updatesClicked()
 {
-	qDebug() << "TODO updatesClicked";
+	spbUpdates->setEnabled(false);
+	actUpdates->setEnabled(false);
+	
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
+	checkUpdatesForm.exec();
+	
+	spbUpdates->setEnabled(true);
+	actUpdates->setEnabled(true);
 }
 
 void MainFormImpl::onlineHelpClicked()
@@ -593,6 +620,27 @@ void MainFormImpl::updateVisualOptions()
 	chbConvertVideos->setEnabled(QFile::exists(programOptions->getFfmpegLibLocation()));
 	chbConvertVideos->setChecked(chbConvertVideos->isEnabled() ? programOptions->getConvertVideos() : false);
 	edtDownloadDir->setText(programOptions->getDownloadDir());
+}
+
+void MainFormImpl::checkUpdates()
+{
+	bool noUpdates = true;
+	QDate nextUpdate = programOptions->getLastUpdate().addDays(programOptions->getCheckForUpdatesEvery());
+	
+	if (nextUpdate <= QDate::currentDate())
+	{
+		spbUpdates->setEnabled(false);
+		actUpdates->setEnabled(false);
+		
+		CheckUpdatesImpl checkUpdatesForm(programOptions, false, this);
+		noUpdates = checkUpdatesForm.exec() != QDialog::Accepted;
+		
+		spbUpdates->setEnabled(true);
+		actUpdates->setEnabled(true);
+	}
+	// if no updates are ready then, start the main loop of video List
+	if (noUpdates)
+		videoList->start();
 }
 
 // visual controls

@@ -37,6 +37,7 @@
 #include "addvideoimpl.h"
 #include "informationimpl.h"
 #include "optionsimpl.h"
+#include "checkupdatesimpl.h"
 //
 #include "../tools.h"
 #include "../options.h"
@@ -80,8 +81,12 @@ Q_OBJECT
 		bool infoForm_active;
 		// paste shortcut
 		QShortcut *shortCurtPasteURL;	//!< Paste from clipboard Shortcut
+		// updates
+		int updaterTimer;
+		void checkUpdates();
 	protected:
 		void closeEvent(QCloseEvent *event);
+		void timerEvent(QTimerEvent *event);
 	public:
 		MainFormImpl(QWidget * parent = 0, Qt::WFlags f = 0);
 		~MainFormImpl();

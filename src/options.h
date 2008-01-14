@@ -69,9 +69,14 @@ Q_OBJECT
 		int dragDropAlphaBlendValue;	//!< Drag & Drop enable alpha blend
 		bool dragDropAlphaBlend;		//!< Drag & Drop alpha blend value
 		QString languageFile;			//!< Language file
+		bool installAutomaticallyUpdates;	//!< Download and Install automatically the updates
+		QDate lastUpdate;				//!< Last update date
+		bool checkForUpdatesOnStartup;	//!< Flag for know if must check for updates on program start
+		int checkForUpdatesEvery;		//!< Check for updates every X days
 
-		QDir appDir;			//!< initial program path
-		QString optionsFile;	//!< options file name (path + name)
+		QDir appDir;			//!< Initial program path
+		QString appExecutable;	//!< Executable program path
+		QString optionsFile;	//!< Options file name (path + name)
 		
 		bool canSendUpdateSignal;	//!< flag for know if is the update signal can be sended
 		/*! Send the update signal (only if is possible) */
@@ -138,6 +143,14 @@ Q_OBJECT
 		int getDragDropTop();
 		void setLanguageFile(QString value);
 		QString getLanguageFile(bool fullPath);
+		void setInstallAutomaticallyUpdates(bool value);
+		bool getInstallAutomaticallyUpdates();
+		void setLastUpdate(QDate value);
+		QDate getLastUpdate();
+		void setCheckForUpdatesOnStartup(bool value);
+		bool getCheckForUpdatesOnStartup();
+		void setCheckForUpdatesEvery(int value);
+		int getCheckForUpdatesEvery();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();

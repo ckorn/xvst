@@ -33,6 +33,7 @@
 #include "ui_options.h"
 //
 #include "downloadlogimpl.h"
+#include "checkupdatesimpl.h"
 //
 #include "../options.h"
 #include "../sessionmanager.h"
@@ -79,5 +80,6 @@ Q_OBJECT
 		void servicesItemSelectionChanged();
 		void btnUseThisClicked();
 		void langItemDoubleClicked(QTreeWidgetItem *item, int column);
+		void btnCheckNowClicked();
 };
 #endif

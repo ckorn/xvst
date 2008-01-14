@@ -55,6 +55,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	connect(lsvLanguages, SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)), this, SLOT(langCurrentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)));
 	connect(btnUseThis, SIGNAL(clicked()), this, SLOT(btnUseThisClicked()));
 	connect(lsvLanguages, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), this, SLOT(langItemDoubleClicked(QTreeWidgetItem *, int)));
+	connect(btnCheckNow, SIGNAL(clicked()), this, SLOT(btnCheckNowClicked()));
 	// create menu
 	createMenu();
 	// add info
@@ -261,7 +262,10 @@ void OptionsImpl::setInitialOptionsValues()
 		cmbProxyType->setCurrentIndex(0);
 	else
 		cmbProxyType->setCurrentIndex(programOptions->getProxyType());
-
+		
+	chbCheckOnStartup->setChecked(programOptions->getCheckForUpdatesOnStartup());
+	cmbUpdateEvery->setCurrentIndex(programOptions->getCheckForUpdatesEvery() - 1);
+	chbInstallAutomatically->setChecked(programOptions->getInstallAutomaticallyUpdates());
 }
 
 void OptionsImpl::setOptionsValues()
@@ -304,6 +308,10 @@ void OptionsImpl::setOptionsValues()
 	programOptions->setCanSendUpdateSignal(true);
 
 	programOptions->setLanguageFile(tmpLangFile);
+
+	programOptions->setCheckForUpdatesOnStartup(chbCheckOnStartup->isChecked());
+	programOptions->setCheckForUpdatesEvery(cmbUpdateEvery->currentIndex() + 1);
+	programOptions->setInstallAutomaticallyUpdates(chbInstallAutomatically->isChecked());
 
 	lastPageViewed = chbRememberView->isChecked() ? pgOptions->currentIndex() : -1;
 }
@@ -390,6 +398,16 @@ void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem *item, int column)
 		btnUseThisClicked();
 }
 
+void OptionsImpl::btnCheckNowClicked()
+{
+	btnCheckNow->setEnabled(false);
+	
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
+	checkUpdatesForm.exec();
+	
+	btnCheckNow->setEnabled(true);
+}
+
 void OptionsImpl::btnOkClicked()
 {
 	setOptionsValues();
@@ -399,7 +417,7 @@ void OptionsImpl::btnOkClicked()
 void OptionsImpl::spbSelectDownloadDirPressed()
 {
 	QString s = QFileDialog::getExistingDirectory(this, tr("Select the download directory:"),
-	            edtDownloadsDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
+	            edtDownloadsDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	// if is emtpy, cancel the proces
 	if (s.isEmpty()) return;
 	edtDownloadsDir->setText(QDir::toNativeSeparators(s));
