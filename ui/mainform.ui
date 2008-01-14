@@ -8,7 +8,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>689</width>
+    <width>704</width>
     <height>443</height>
    </rect>
   </property>
@@ -310,7 +310,7 @@
         </property>
         <property name="minimumSize" >
          <size>
-          <width>106</width>
+          <width>115</width>
           <height>25</height>
          </size>
         </property>
@@ -335,7 +335,7 @@
         </property>
         <property name="minimumSize" >
          <size>
-          <width>106</width>
+          <width>115</width>
           <height>25</height>
          </size>
         </property>
@@ -364,7 +364,7 @@
         </property>
         <property name="minimumSize" >
          <size>
-          <width>106</width>
+          <width>115</width>
           <height>25</height>
          </size>
         </property>
@@ -380,7 +380,7 @@
         </property>
         <property name="minimumSize" >
          <size>
-          <width>106</width>
+          <width>115</width>
           <height>25</height>
          </size>
         </property>
@@ -409,7 +409,7 @@
         </property>
         <property name="minimumSize" >
          <size>
-          <width>106</width>
+          <width>115</width>
           <height>25</height>
          </size>
         </property>
@@ -425,7 +425,7 @@
         </property>
         <property name="minimumSize" >
          <size>
-          <width>106</width>
+          <width>115</width>
           <height>25</height>
          </size>
         </property>
@@ -454,7 +454,7 @@
        <widget class="QPushButton" name="btnMoreOptions" >
         <property name="minimumSize" >
          <size>
-          <width>106</width>
+          <width>115</width>
           <height>25</height>
          </size>
         </property>

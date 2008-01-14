@@ -1,0 +1,103 @@
+<ui version="4.0" >
+ <class>CheckUpdates</class>
+ <widget class="QDialog" name="CheckUpdates" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>290</width>
+    <height>99</height>
+   </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>290</width>
+    <height>99</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>290</width>
+    <height>99</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Check updates...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/resources.qrc" >:/buttons/images/transmit_blue.png</iconset>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" >
+    <layout class="QVBoxLayout" >
+     <item>
+      <widget class="QLabel" name="lblUpdating" >
+       <property name="text" >
+        <string>Connecting...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="pbrUpdate" >
+       <property name="minimumSize" >
+        <size>
+         <width>0</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="maximum" >
+        <number>0</number>
+       </property>
+       <property name="value" >
+        <number>0</number>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="textVisible" >
+        <bool>false</bool>
+       </property>
+       <property name="invertedAppearance" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" >
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>161</width>
+           <height>25</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnCancel" >
+         <property name="minimumSize" >
+          <size>
+           <width>100</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources/resources.qrc" />
+ </resources>
+ <connections/>
+</ui>
