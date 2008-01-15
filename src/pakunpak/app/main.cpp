@@ -27,11 +27,24 @@
 
 #include "../pakunpak.h"
 
+void displayHelp()
+{
+	std::cout << "How to use Pakunpaker:" << std::endl
+		  << " -i: Build package [package name] [files to add]" << std::endl
+		  << " -o: Extract files from package [package name] [destination path]" << std::endl
+		  << " -oo: Extract files form package and override the original file name" << std::endl
+		  << std::endl
+		  << "NOTE: Pakunpaker DON'T create new directories!" << std::endl
+		  << std::endl
+		  << " Example: <app> -i demo_in/package.demo demo_in/file01.txt demo_in/file2.txt" << std::endl
+		  << " Example: <app> -o demo_in/package.demo demo_out/" << std::endl;
+}
+
 int main(int argc, char ** argv)
 {
-	std::cout 	<< "-----------------------------------------" << std::endl
-				<< "Pakunpaker v1.0 by Xesc & Technology 2008" << std::endl 
-				<< "-----------------------------------------" << std::endl << std::endl;
+	std::cout << "-----------------------------------------" << std::endl
+		  << "Pakunpaker v1.0 by Xesc & Technology 2008" << std::endl 
+		  << "-----------------------------------------" << std::endl << std::endl;
 	
 	if (argc > 2)
 	{
@@ -63,7 +76,11 @@ int main(int argc, char ** argv)
 			
 			delete unpacker;
 		}
+		else // unknonw parameters
+			displayHelp();
 	}
+	else // invalid parameters
+		displayHelp();
 
 	return 0;
 }
