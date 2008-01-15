@@ -22,7 +22,7 @@ Q_OBJECT
 		void btnCancelClicked();
 		void btnUpdateClicked();
 		// updater
-		void downloadingUpdate(int updateIndex, int pogress, float downloadSpeed);
+		void downloadingUpdate(int updateIndex, int pogress, int totalProgress);
 		void downloadFinished(int updateIndex);
 		void downloadsFinished();
 		void readyToInstallUpdates();

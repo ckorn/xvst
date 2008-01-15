@@ -30,6 +30,7 @@
 //
 #include <QtGui>
 //
+#include "pakunpak/pakunpak.h"
 #include "programversion.h"
 #include "languages.h"
 #include "http.h"
@@ -49,8 +50,8 @@ static const QString XUPDATER_PATH = "/bin/xUpdater.exe";	//<! xUpdater app (win
 #else
 static const QString XUPDATER_PATH = "/bin/xUpdater";		//<! xUpdater app (unix)
 #endif
-static const QString XUPDATER_FILE 		= "/xVST.update";		//!< update script file
-static const QString XUPDATER_DWN_FILE 	= "/xVST.update.%1";	//!< downloaded update file
+static const QString XUPDATER_FILE 			= "/xVST.update";		//!< update script file
+static const QString XUPDATER_DWN_FILE 		= "/xVST.update.%1";	//!< downloaded update file
 
 enum UpdateState
 {
@@ -70,8 +71,8 @@ Q_OBJECT
 		int size;			//!< Update file size
 		QString installTo;	//!< Where to find and install the new update
 		QString url;		//!< Where to download this update
-		QString dependency;	//!< Dependency list (urls)
-		bool checked;		//!< Selecte to update
+		bool packed;		//!< Flag for know if this update is packed
+		bool checked;		//!< Selected to update
 	public:
 		/*! Set the update caption */
 		void setCaption(QString value);
@@ -83,8 +84,8 @@ Q_OBJECT
 		void setInstallTo(QString value);
 		/*! Set the update url */
 		void setUrl(QString value);
-		/*! Set the dependency url list */
-		void setDependency(QString value);
+		/*! Set if is update is packed */
+		void setPacked(bool value);
 		/*! Set as selected */
 		void setChecked(bool value);
 		/* Get the update caption */
@@ -97,8 +98,8 @@ Q_OBJECT
 		QString getInstallTo();
 		/*! Get the update url */
 		QString getUrl();
-		/*! Get the dependency url list */
-		QString getDependency();
+		/*! Get if this update is packed */
+		bool getPacked();
 		/*! Get if is selected */
 		bool getChecked();
 };
@@ -115,6 +116,9 @@ Q_OBJECT
 		UpdateState updateState;		//!< Current download state
 		bool cancelled;					//!< Cancelled
 		int currentItem;				//!< Current download item index
+		int totalToDownload;			//!< Total size to download (bytes)
+		int totalDownloaded;			//!< Total size downloaded (bytes)
+		int currentDownloaded;			//!< Current size downloaded (bytes)
 		/*! Parse a block */
 		void parseBlock(QString block);
 		/*! Parse the downloaded update file */
@@ -125,6 +129,8 @@ Q_OBJECT
 		void clear();
 		/*! Install updates */
 		void buildInstalScript();
+		/*! Get the total size to download */
+		void getTotalSizeToDownload();
 		/*! Thread executation */
 		void run();
 	public:
@@ -144,6 +150,10 @@ Q_OBJECT
 		Update* getUpdateItem(const int index);
 		/*! Get updates count */
 		int getUpdatesCount();
+		/*! Get total downloaded */
+		int getCurrentDownloaded();
+		/*! Get total to download */
+		int getTotalToDownload();
 		/*! Check if the xUpdater is installed */
 		static bool canUpdate();
 	private slots:
@@ -157,7 +167,7 @@ Q_OBJECT
 		/*! On progress update */
 		void progressCheckUpdate(int progress);
 		/*! Downloading update */
-		void downloadingUpdate(int updateIndex, int pogress, float downloadSpeed);
+		void downloadingUpdate(int updateIndex, int pogress, int totalProgress);
 		/*! Update item Download finished */
 		void downloadFinished(int updateIndex);
 		/*! Downloads finished */

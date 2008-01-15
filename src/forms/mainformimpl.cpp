@@ -228,6 +228,9 @@ void MainFormImpl::timerEvent(QTimerEvent *event)
 {
 	if (event->timerId() == updaterTimer)
 	{
+		// kill this timer, after one executation
+		this->killTimer(updaterTimer);
+		
 		// check if the xUpdater is installed (can install updates?)
 		if (!Updates::canUpdate())
 		{
@@ -239,8 +242,6 @@ void MainFormImpl::timerEvent(QTimerEvent *event)
 		}
 		else
 			checkUpdates();
-		// kill this timer, after one executation
-		this->killTimer(updaterTimer);
 	}
 }
 
@@ -287,8 +288,19 @@ void MainFormImpl::dragDropClicked()
 
 void MainFormImpl::updatesClicked()
 {
+	if (videoList->isWorking())
+	{
+		QMessageBox::information(this, tr("Updates"),
+		                               tr("Another process is currently working, please stop it or wait until the end of process."),
+		                               tr("Ok"));
+		                               
+		return;
+	}
+
 	spbUpdates->setEnabled(false);
 	actUpdates->setEnabled(false);
+	
+	if (!isVisible()) restoreAppClicked();
 	
 	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
 	checkUpdatesForm.exec();

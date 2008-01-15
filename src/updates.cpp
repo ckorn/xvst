@@ -34,6 +34,9 @@ Updates::Updates(QString appPath)
 	updateState = usWaiting;
 	cancelled = false;
 	this->appPath = appPath;
+	currentDownloaded = 0;
+	totalDownloaded = 0;
+	totalToDownload = 0;
 	// init update classes
 	updateList = new QList<Update *>;
 	http = new Http;
@@ -72,7 +75,7 @@ void Updates::parseBlock(QString block)
 				update->setSize(copyBetween(fileBlock, "size=\"", "\"").toInt());
 				update->setInstallTo(copyBetween(fileBlock, "installTo=\"", "\""));
 				update->setUrl(copyBetween(fileBlock, "url=\"", "\""));
-				update->setDependency(copyBetween(fileBlock, "dependency=\"", "\""));
+				update->setPacked(copyBetween(fileBlock, "packed=\"", "\"").toLower() == "true");
 				update->setChecked(true);
 			}
 			// next update file
@@ -155,20 +158,58 @@ void Updates::buildInstalScript()
 			Update *update = updateList->at(n);
 			// is checked?
 			if (update->getChecked())
-				// block id
-				updateScript << QString(":install_file_%1").arg(n)
-				// copy the downloaded file
-							 << QString("if copy \"%1\" \"%2\"")
-							 		.arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))	// downloaded file
-							 		.arg(appPath + update->getInstallTo())						// destination file
-				// if the downloaded file has been copied, then delete it and jump to the next file
-							 << QString("del \"%1\"").arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))
-				// if isn't the last file, go to next update file
-							 << (n < getUpdatesCount() - 1 ? QString("goto install_file_%1").arg(n + 1) : "goto finish_update")
-				// else condition (file has not been copied)
-							 << "else"
-							 << QString("goto install_file_%1").arg(n)
-							 << "end";
+				if (!update->getPacked())
+					// block id
+					updateScript << QString(":install_file_%1").arg(n)
+					// copy the downloaded file
+								 << QString("if copy \"%1\" \"%2\"")
+								 		.arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))	// downloaded file
+								 		.arg(appPath + update->getInstallTo())						// destination file
+					// if the downloaded file has been copied, then delete it and jump to the next file
+								 << QString("del \"%1\"").arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))
+					// if isn't the last file, go to next update file
+								 << (n < getUpdatesCount() - 1 ? QString("goto install_file_%1").arg(n + 1) : "goto finish_update")
+					// else condition (file has not been copied)
+								 << "else"
+								 << QString("goto install_file_%1").arg(n)
+								 << "end";
+				else // is a packed update
+				{
+					// added for convenience
+					updateScript << QString(":install_file_%1").arg(n)
+								 << QString("goto install_file_%1_0").arg(n);
+					// extract files from the packed update
+					Unpacker *unpacker = new Unpacker;
+					unpacker->extractPackage(QString(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n)).toStdString(),
+											 QDir::tempPath().toStdString() + "/",
+											 false);
+					// add files into the script
+					int i;
+					for (i = 0; i < unpacker->getExtractedFilesCount(); i++)
+					{
+						// block id
+						updateScript << QString(":install_file_%1_%2").arg(n).arg(i)
+						// copy the downloaded file
+									 << QString("if copy \"%1\" \"%2\"")
+									 		.arg(QString::fromStdString(unpacker->getExtractedFileName(i)))	// unpacked file
+									 		.arg(QFileInfo(appPath + update->getInstallTo()).absolutePath() + 
+									 					   "/" + QString::fromStdString(unpacker->getExtractedFileName(i, true))) // destination file
+						// if the downloaded file has been copied, then delete it and jump to the next file
+									 << QString("del \"%1\"").arg(QString::fromStdString(unpacker->getExtractedFileName(i)))
+						// next update
+									 << QString("goto install_file_%1_%2").arg(n).arg(i + 1)
+						// else condition (file has not been copied)
+									 << "else"
+									 << QString("goto install_file_%1_%2").arg(n).arg(i)
+									 << "end";
+					}
+					// delete the downloaded pack
+					updateScript << QString(":install_file_%1_%2").arg(n).arg(i)
+								 << QString("del \"%1\"").arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))
+								 << (n < getUpdatesCount() - 1 ? QString("goto install_file_%1").arg(n + 1) : "goto finish_update");
+					
+					delete unpacker;
+				}
 			else
 				// empty block id
 				updateScript << QString(":install_file_%1").arg(n)
@@ -187,6 +228,21 @@ void Updates::buildInstalScript()
 		QTextStream updateScriptOut(&updateScriptFile);
 		foreach (QString line, updateScript)
 			updateScriptOut << line << "\n";
+	}
+}
+
+void Updates::getTotalSizeToDownload()
+{
+	currentDownloaded = 0;
+	totalDownloaded = 0;
+	totalToDownload = 0;
+	// calcule
+	for (int n = 0; n < getUpdatesCount(); n++)
+	{
+		Update *update = updateList->at(n);
+		// is checked?
+		if (update->getChecked())
+			totalToDownload += update->getSize();
 	}
 }
 
@@ -216,6 +272,7 @@ void Updates::run()
 		{
 			currentItem = 0;
 			int lastItem = -1;
+			getTotalSizeToDownload();
 			// download updates
 			while (!cancelled && updateState == usDownloading)
 			{
@@ -287,6 +344,16 @@ int Updates::getUpdatesCount()
 	return updateList->count();
 }
 
+int Updates::getCurrentDownloaded()
+{
+	return currentDownloaded;
+}
+
+int Updates::getTotalToDownload()
+{
+	return totalToDownload;
+}
+
 bool Updates::canUpdate()
 {
 	return QFile::exists(QCoreApplication::applicationDirPath() + XUPDATER_PATH);
@@ -297,13 +364,22 @@ void Updates::downloadEvent(int pos, int max)
 	if (updateState == usChecking)
 		emit progressCheckUpdate(static_cast<int>(calculePercent(pos, max)));
 	else
-		emit downloadingUpdate(currentItem, static_cast<int>(calculePercent(pos, max)), http->getDownloadSpeed());
+	{
+		currentDownloaded = totalDownloaded + pos;
+		
+		emit downloadingUpdate(currentItem, 
+							   static_cast<int>(calculePercent(pos, max)), 
+							   static_cast<int>(calculePercent(currentDownloaded, totalToDownload)));
+	}
+
 }
 
 void Updates::downloadFinished(const QFileInfo destFile)
 {
 	if (updateState == usDownloading)
 	{
+		// update total downloaded
+		totalDownloaded += updateList->at(currentItem)->getSize();
 		// emit the signle end singal
 		emit downloadFinished(currentItem);
 		// next
@@ -350,9 +426,9 @@ void Update::setUrl(QString value)
 	url = value;
 }
 
-void Update::setDependency(QString value)
+void Update::setPacked(bool value)
 {
-	dependency = value;
+	packed = value;
 }
 
 void Update::setChecked(bool value)
@@ -385,9 +461,9 @@ QString Update::getUrl()
 	return url;
 }
 
-QString Update::getDependency()
+bool Update::getPacked()
 {
-	return dependency;
+	return packed;
 }
 
 bool Update::getChecked()

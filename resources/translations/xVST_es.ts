@@ -37,6 +37,47 @@
     </message>
 </context>
 <context>
+    <name>CheckUpdates</name>
+    <message>
+        <location filename="../../ui/checkupdates.ui" line="25"/>
+        <source>Check updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/checkupdates.ui" line="34"/>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/checkupdates.ui" line="87"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>CheckUpdatesImpl</name>
+    <message>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="89"/>
+        <source>Checking for updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="80"/>
+        <source>Updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="81"/>
+        <source>You are using the most recent version of this program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="82"/>
+        <source>Ok</source>
+        <translation type="unfinished">Aceptar</translation>
+    </message>
+</context>
+<context>
     <name>CompletedPopup</name>
     <message>
         <location filename="../../ui/completedpopup.ui" line="25"/>
@@ -370,6 +411,16 @@ p, li { white-space: pre-wrap; }
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../ui/information.ui" line="138"/>
+        <source>&lt;b&gt;English (UK)&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/information.ui" line="168"/>
+        <source>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainForm</name>
@@ -550,42 +601,42 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="237"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="258"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="302"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="341"/>
         <source>Select the download directory:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Video </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Size </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Progress </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Time </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="47"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Speed </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="143"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="142"/>
         <source>Ctrl+V</source>
         <translation type="unfinished"></translation>
     </message>
@@ -607,6 +658,26 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="213"/>
         <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="293"/>
+        <source>Updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="240"/>
+        <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="295"/>
+        <source>Ok</source>
+        <translation type="unfinished">Aceptar</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="294"/>
+        <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -883,198 +954,274 @@ background-color:#124565;
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="91"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="92"/>
         <source>Basic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="97"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="98"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="102"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="103"/>
         <source>Session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="107"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="108"/>
         <source>Updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="112"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="113"/>
         <source>Ups!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="117"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="118"/>
         <source>Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="133"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
         <source>AVI Format (*.avi)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="137"/>
         <source>3GP Format (*.3gp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="137"/>
         <source>MP3 Format (*.mp3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="155"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="156"/>
         <source>Original</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="161"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="163"/>
         <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="163"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="164"/>
         <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="164"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="165"/>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="165"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="166"/>
         <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="166"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
         <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="166"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
         <source>The Same quality as the original Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="171"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>Day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="171"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>2 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="171"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>3 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>4 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>5 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>6 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>Week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="178"/>
         <source>Http Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="178"/>
         <source>Socks5 Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="441"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="459"/>
         <source>Clear Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="442"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="460"/>
         <source>Are you sure to Clear the Historic File?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="443"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="461"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="443"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="461"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="382"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="390"/>
         <source>Language Setup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="383"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="391"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="384"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="392"/>
         <source>Ok</source>
         <translation type="unfinished">Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
         <source>WMV Format ( *.wmv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
         <source>MPEG1 Format ( *.mpg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
         <source>MPEG2 Format ( *.mpg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
         <source>Apple iPod (*.mp4)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="401"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="419"/>
         <source>Select the download directory:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="410"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="428"/>
         <source>Select the ffmpeg lib:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UpdateCenter</name>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="13"/>
+        <source>Update Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="25"/>
+        <source>Available updates:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="96"/>
+        <source>&lt;b&gt;Update state:&lt;/b&gt; Stopped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="159"/>
+        <source>Current xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="187"/>
+        <source>Install updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="203"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="119"/>
+        <source>0 bytes (0 bytes)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UpdateCenterImpl</name>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
+        <source> File </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
+        <source> Version </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
+        <source> Size </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
+        <source> Progress </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="107"/>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="99"/>
+        <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="101"/>
+        <source>%1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

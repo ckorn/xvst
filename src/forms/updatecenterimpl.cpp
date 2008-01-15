@@ -35,7 +35,7 @@ UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall
 	connect(btnCancel, SIGNAL(clicked()), this, SLOT(btnCancelClicked()));
 	connect(btnUpdate, SIGNAL(clicked()), this, SLOT(btnUpdateClicked()));
 	// updater
-	connect(updates, SIGNAL(downloadingUpdate(int, int, float)), this, SLOT(downloadingUpdate(int, int, float)));
+	connect(updates, SIGNAL(downloadingUpdate(int, int, int)), this, SLOT(downloadingUpdate(int, int, int)));
 	connect(updates, SIGNAL(downloadFinished(int)), this, SLOT(downloadFinished(int)));
 	connect(updates, SIGNAL(downloadsFinished()), this, SLOT(downloadsFinished()));
 	connect(updates, SIGNAL(readyToInstallUpdates()), this, SLOT(readyToInstallUpdates()));
@@ -91,11 +91,15 @@ void UpdateCenterImpl::btnUpdateClicked()
 	updates->downloadUpdates();
 }
 
-void UpdateCenterImpl::downloadingUpdate(int updateIndex, int pogress, float downloadSpeed)
+void UpdateCenterImpl::downloadingUpdate(int updateIndex, int pogress, int totalProgress)
 {
 	lsvUpdates->topLevelItem(updateIndex)->setText(3, QString("%1%").arg(pogress));
-	pgbUpdate->setValue(pogress);
-	lblUpdateSate->setText(tr("<b>Update state:</b> Downloading..."));
+	pgbUpdate->setValue(totalProgress);
+	lblUpdateSate->setText(tr("<b>Update state:</b> Downloading %1")
+							.arg(lsvUpdates->topLevelItem(updateIndex)->text(0)));
+	lblDownloadedSize->setText(tr("%1 (%2)")
+								.arg(fileSizeToString(updates->getCurrentDownloaded()))
+								.arg(fileSizeToString(updates->getTotalToDownload())));
 }
 
 void UpdateCenterImpl::downloadFinished(int updateIndex)

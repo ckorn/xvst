@@ -5,7 +5,7 @@
 		size="424448"
 		installTo="this"
 		url="http://dfn.dl.sourceforge.net/sourceforge/xviservicethief/xVideoServiceThief_1_2_alpha.exe"
-		dependency=""
+		packed="false"
 	#END:0
 }
 
@@ -16,7 +16,7 @@
 		size=""
 		installTo=""
 		url=""
-		dependency=""
+		packed=""
 	#END:0
 }
 
@@ -27,7 +27,7 @@
 		size=""
 		installTo=""
 		url=""
-		dependency=""
+		packed=""
 	#END:0
 }
 
@@ -35,9 +35,9 @@
 	#FILE:0
 		caption="Language: Català (CAT)"
 		version="1.1"
-		size="6754"
+		size="32522"
 		installTo="/languages/catala.language"
-		url="http://dfn.dl.sourceforge.net/sourceforge/xviservicethief/catala_cat.language"
-		dependency=""
+		url="http://xviservicethief.sourceforge.net/updates/special-files/catala_lang.update"
+		packed="true"
 	#END:0
 }

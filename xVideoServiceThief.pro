@@ -26,6 +26,7 @@ HEADERS = src/forms/addvideoimpl.h \
  src/forms/mainformimpl.h \
  src/forms/optionsimpl.h \
  src/forms/updatecenterimpl.h \
+ src/pakunpak/pakunpak.h \
  src/http.h \
  src/languages.h \
  src/options.h \
@@ -49,6 +50,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/mainformimpl.cpp \
  src/forms/optionsimpl.cpp \
  src/forms/updatecenterimpl.cpp \
+ src/pakunpak/pakunpak.cpp \
  src/http.cpp \
  src/languages.cpp \
  src/main.cpp \
