@@ -57,11 +57,10 @@ void Packer::buildPackage(const std::string packageFile)
 	if (package->is_open())
 	{
 		// write package header
-		char *header_id = new char[4];
-		header_id = "XPK";
+		char *header_id = "XPK";
 		package->write(header_id, sizeof(header_id)); // package header id
-		delete[] header_id;
-		
+		delete header_id;
+				
 		// add files into the package
 		for (int n = 0; n < files->size(); n++)
 		{
@@ -109,8 +108,104 @@ void Packer::addFile(const std::string fileName)
 
 Unpacker::Unpacker()
 {
+	files = new std::vector<std::string>;
 }
 
 Unpacker::~Unpacker()
 {
+	files->clear();
+	delete files;
+}
+
+void Unpacker::extractPackage(std::string packageFile, std::string destination, bool originalNames)
+{
+	std::ifstream *package = new std::ifstream(packageFile.c_str(), std::ios::binary);
+	if (package->is_open())
+	{
+		// get the file size
+		package->seekg(0, std::ios::end);
+		int packageSize = package->tellg();
+		package->seekg(0, std::ios::beg);
+							
+		// get the package header id
+		char *header_id = new char[4];
+		package->read(header_id, 4);
+
+		// check if is a valid package id
+		if (strcmp(header_id, "XPK") == 0)
+		{
+			while (package->tellg() < packageSize)
+			{
+				// get the file name lenght
+				int fileNameLength;
+				package->read(reinterpret_cast<char *>(&fileNameLength), sizeof(fileNameLength));
+	
+				// get the file name
+				char *fileName = new char[fileNameLength];
+				package->read(fileName, fileNameLength);
+				fileName[fileNameLength] = '\0';
+				
+				// override the original file name?
+				if (!originalNames)
+				{	
+					std::string packageFileName = getFileName(packageFile);
+					std::string tmpFileName(fileName);
+					
+					tmpFileName = packageFileName + "." + fileName;
+					fileNameLength = tmpFileName.length();
+							  
+					delete[] fileName;
+					fileName = new char[fileNameLength];
+					
+					strcpy(fileName, tmpFileName.c_str());					
+					fileName[fileNameLength] = '\0';
+				}
+				
+				// get file length
+				int fileSize;
+				package->read(reinterpret_cast<char *>(&fileSize), sizeof(fileSize));
+				
+				// read the packed file
+				char *buffer = new char[fileSize];
+				package->read(buffer , fileSize);
+							
+				// get the destination file name
+				char *fullFileName = new char[destination.length() + fileNameLength];
+				strcpy(fullFileName, destination.c_str());
+				strcat(fullFileName, fileName);
+				fullFileName[destination.length() + fileNameLength] = '\0';
+								
+				// write the packed file to disc
+				std::ofstream *file = new std::ofstream(fullFileName, std::ios::binary);
+				file->write(buffer, fileSize);
+				file->close();
+				
+				// add this to the extracted list
+				files->push_back(std::string(fullFileName));
+				
+				// delete buffers
+				delete[] fullFileName;
+				delete[] fileName;
+				delete[] buffer;
+				delete file;
+			}
+		}
+		package->close();
+
+		delete header_id;
+	}
+	delete package;
+}
+
+std::string Unpacker::getExtractedFileName(const int index)
+{
+	if (index >= 0 && index < getExtractedFilesCount())
+		return files->at(index);
+	else
+		return "";
+}
+
+int Unpacker::getExtractedFilesCount()
+{
+	return files->size();
 }

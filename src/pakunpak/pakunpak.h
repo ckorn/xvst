@@ -51,11 +51,19 @@ class Packer
 
 class Unpacker
 {
+	private:
+		std::vector<std::string> *files; //!< List with all extracted files
 	public:
 		/*! Class constructor */
 		Unpacker();
 		/*! Class destructor */
 		~Unpacker();
+		/*! Extract the package */
+		void extractPackage(std::string packageFile, std::string destination, bool originalNames = true);
+		/*! Get extracted file name (path + name) */
+		std::string getExtractedFileName(const int index);
+		/*! Get extracted files count */
+		int getExtractedFilesCount();
 };
 
 #endif // __PAKUNPAK_H__
