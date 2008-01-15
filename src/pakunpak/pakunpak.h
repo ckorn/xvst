@@ -52,7 +52,8 @@ class Packer
 class Unpacker
 {
 	private:
-		std::vector<std::string> *files; //!< List with all extracted files
+		std::vector<std::string> *filesInDisc; 		//!< List with all extracted files
+		std::vector<std::string> *filesOriginal;	//!< List with all original file names
 	public:
 		/*! Class constructor */
 		Unpacker();
@@ -61,7 +62,7 @@ class Unpacker
 		/*! Extract the package */
 		void extractPackage(std::string packageFile, std::string destination, bool originalNames = true);
 		/*! Get extracted file name (path + name) */
-		std::string getExtractedFileName(const int index);
+		std::string getExtractedFileName(const int index, bool originalName = false);
 		/*! Get extracted files count */
 		int getExtractedFilesCount();
 };
