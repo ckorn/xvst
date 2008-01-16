@@ -677,10 +677,8 @@ VideoInformation_123video::VideoInformation_123video(VideoInformation *videoInfo
 
 VideoDefinition VideoInformation_123video::getVideoInformation(const QString URL)
 {
-	//const QString URL_GET_XML = "http://www.123video.nl/initialize_player_v3.asp?";
-	
 	const QString URL_GET_XML = "http://www.123video.nl/initialize_player_v3.asp";
-	const QString XML_PARAMS  = "<movie><id>%1</id><memberid>0</memberid><cnt>1</cnt><nocache>0.91816791286692</nocache></movie>";
+	const QString XML_PARAMS  = "<movie><id>%1</id></movie>";
 	
 	// init result
 	VideoDefinition result;
@@ -694,10 +692,6 @@ VideoDefinition VideoInformation_123video::getVideoInformation(const QString URL
 	QString videoID = copyBetween(html, "mediaSrc=", "&");
 	// get the video xml
 	QString xml = http.downloadWebpagePost(QUrl(URL_GET_XML), QString(XML_PARAMS).arg(videoID));
-	
-	qDebug() << URL_GET_XML << QString(XML_PARAMS).arg(videoID);
-	qDebug() << xml;
-	
 	// get the host IP
 	QString hostIP = copyBetween(xml, "MediaIP=\"", "\"");
 	// get the FLV url

@@ -158,8 +158,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.lulu.tv/?p=20611");
 	videoList->addVideo("http://www.livevideo.com/video/ShatnerVision/D65C961087944AC5AAA4C0BF2893591F/shatner-plans-for-the-future.aspx");
 	videoList->addVideo("http://www.yikers.com/video_woman_attacked_by_cheetah.html");
-*/
 	videoList->addVideo("http://www.123video.nl/playvideos.asp?MovieID=199615");
+*/
 }
 
 MainFormImpl::~MainFormImpl()
