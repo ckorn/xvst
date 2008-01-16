@@ -85,10 +85,21 @@ void Http::jumpToURL(QUrl url)
 	if (!url.userName().isEmpty())
 		http->setUser(url.userName(), url.password());
 	// get url
-	if (file != NULL)
-		httpGetId = http->get(getPathAndQuery(url), file); //http->get(url.toEncoded(), file);
-	else
-		httpGetId = http->get(getPathAndQuery(url)); //http->get(url.toEncoded());
+	if (postMethodFlag) // post method
+	{
+		QByteArray paramsStr;
+		paramsStr.append(parameters);
+
+		if (file != NULL)
+			httpGetId = http->post(getPathAndQuery(url), paramsStr, file);
+		else
+			httpGetId = http->post(getPathAndQuery(url), paramsStr);
+	}
+	else // get method
+		if (file != NULL)
+			httpGetId = http->get(getPathAndQuery(url), file); //http->get(url.toEncoded(), file);
+		else
+			httpGetId = http->get(getPathAndQuery(url)); //http->get(url.toEncoded());
 }
 
 int Http::download(const QUrl URL, const QDir destination, QString fileName)
@@ -142,7 +153,37 @@ QString Http::downloadWebpage(const QUrl URL, bool isUtf8)
 			initData();
 			// set the sync flag active
 			syncFlag = true;
-			// make the first jump
+			postMethodFlag = false;
+			// do the first jump
+			jumpToURL(URL);
+			// wait while the webpage is being downloaded
+			while (syncFlag)
+				qApp->processEvents();
+			// if is utf8 then convert the downloaded data to utf8
+			if (isUtf8)
+				result = QString::fromUtf8(data.toAscii());
+			else
+				result = data;
+		}
+	// final result (output)
+	return result;
+}
+
+QString Http::downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf8)
+{
+	QString result = "";
+
+	if (!isDownloading())
+		if (URL.isValid())
+		{
+			// init http variables
+			initData();
+			// set the sync flag active
+			syncFlag = true;
+			postMethodFlag = true;
+			// set parameters
+			this->parameters = parameters;
+			// do the first jump
 			jumpToURL(URL);
 			// wait while the webpage is being downloaded
 			while (syncFlag)
@@ -169,6 +210,7 @@ QHttpResponseHeader Http::head(const QUrl URL, bool autoJump)
 			this->autoJump = autoJump;
 			// set the sync flag active
 			syncFlag = true;
+			postMethodFlag = false;
 			// get the head
 			QHttp::ConnectionMode mode = QHttp::ConnectionModeHttp;
 			http->setHost(URL.host(), mode, URL.port() == -1 ? 0 : URL.port());

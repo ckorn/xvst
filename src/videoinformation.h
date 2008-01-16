@@ -148,6 +148,46 @@ class VideoInformation_Sclipo : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Lulu TV Videos */
+class VideoInformation_LuluTV : public VideoInformation_plugin
+{
+	public:
+		/*! Lulu TV plugin class constructor */
+		VideoInformation_LuluTV(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Lulu TV Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for LiveVideo Videos */
+class VideoInformation_LiveVideo : public VideoInformation_plugin
+{
+	public:
+		/*! LiveVideo plugin class constructor */
+		VideoInformation_LiveVideo(VideoInformation *videoInformation);
+		/*! Get the full Video Information of LiveVideo Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Yikers Videos */
+class VideoInformation_Yikers : public VideoInformation_plugin
+{
+	public:
+		/*! Yikers plugin class constructor */
+		VideoInformation_Yikers(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Yikers Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for 123video Videos */
+class VideoInformation_123video : public VideoInformation_plugin
+{
+	public:
+		/*! 123video plugin class constructor */
+		VideoInformation_123video(VideoInformation *videoInformation);
+		/*! Get the full Video Information of 123video Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 /*! Main video information class */
 class VideoInformation : public QThread
 {

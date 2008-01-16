@@ -74,14 +74,16 @@ Q_OBJECT
 		int timeRemaining;	//!< time remaining in seconds
 		int fileSize;		//!< total file size
 		int internalTimer;	//!< internal timer id
-		int totalDownload;	//! virtual total to download
+		int totalDownload;	//!< virtual total to download
 		int currDownload;	//!< current downloaded bytes
 		int prevDownload;	//!< previous downloaded bytes
 		QFileInfo destFile;	//!< destination file information
 		bool canDownload;	//!< response result is 200 (ok)
 		QString data;		//!< internal downloaded data
+		QString parameters;	//!< internal post parameters
 		bool autoJump;		//!< should jump to next url? only for head requests
 		bool syncFlag;		//!< sync. flag
+		bool postMethodFlag;//!< post method flag
 		bool notLength;		//!< Content length found?
 		/*! Get if response is object moved */
 		bool isObjectMoved(int statusCode);
@@ -101,6 +103,8 @@ Q_OBJECT
 		int download(const QUrl URL, const QDir destination, QString fileName = "");
 		/*! Download a Webpage synchronously (return the webpage content) */
 		QString downloadWebpage(const QUrl URL, bool isUtf8 = true);
+		/*! Download a Webpage synchronously: post mode (return the webpage content) */
+		QString downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf8 = true);
 		/*! Get only the response header */
 		QHttpResponseHeader head(const QUrl URL, bool autoJump = false);
 		/*! Cancel current download */

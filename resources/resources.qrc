@@ -49,5 +49,8 @@
         <file>images/services/video.google.png</file>
         <file>images/services/youtube.com.png</file>
         <file>images/services/zappinternet.com.png</file>
+        <file>images/services/lulu.tv.png</file>
+        <file>images/services/livevideo.com.png</file>
+        <file>images/services/yikers.com.png</file>
     </qresource>
 </RCC>

@@ -42,6 +42,10 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Dumpalink(this);
 	new VideoInformation_Glumbert(this);
 	new VideoInformation_Sclipo(this);
+	new VideoInformation_LuluTV(this);
+	new VideoInformation_LiveVideo(this);
+	new VideoInformation_Yikers(this);
+	new VideoInformation_123video(this);
 }
 
 VideoInformation::~VideoInformation()
@@ -547,6 +551,159 @@ VideoDefinition VideoInformation_Sclipo::getVideoInformation(const QString URL)
 	result.URL = copy(result.URL, 0, 20);
 	// clear and get the final url
 	result.URL = cleanURL(QString(URL_GET_FLV).arg(result.URL)); // get only the first 20 chars (coz is the video ID)
+	// return the video information
+	return result;
+}
+
+// Plugin for Lulu TV Videos
+
+VideoInformation_LuluTV::VideoInformation_LuluTV(VideoInformation *videoInformation)
+{
+	setID("lulu.tv");
+	setCaption("Lulu TV");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_LuluTV::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video info
+	result.title = copyBetween(html, "<title>Lulu TV  &raquo; ", "</title>").trimmed();
+	// get the video url
+	result.URL = copyBetween(html, "swf?file=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for LiveVideo Videos
+
+VideoInformation_LiveVideo::VideoInformation_LiveVideo(VideoInformation *videoInformation)
+{
+	setID("livevideo.com");
+	setCaption("LiveVideo");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_LiveVideo::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_XML = "http://www.livevideo.com/media/GetFlashVideo.ashx?cid=%1&path=%2&mid=%3&t=/image/%4&f=flash8&?";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video info
+	result.title = copyBetween(html, "<title>", "</title>").trimmed();
+	// chechk title
+	if (result.title.indexOf(" - LiveVideo.com") != -1) // basic video
+		result.title = copy(result.title, 0, result.title.indexOf("- LiveVideo.com")).trimmed();
+	else // uservideo
+		result.title = copy(result.title, 0, result.title.indexOf("- Channel")).trimmed();
+	// get video ID (from the URL)
+	QString videoID = getToken(URL, "/", getTokenCount(URL, "/") - 2);
+	// ge T parameter
+	QString T = copyBetween(html, "livevideo/image/", "\"");
+	// get path parameter
+	QString path = getToken(T, "/", 0) + "/" + getToken(T, "/", 1);
+	// get mid parameter
+	QString mid = getToken(T, "/", 2);
+	mid = copy(mid, 0, mid.indexOf("_"));
+	// download the xml file
+	QString xml = http.downloadWebpage(QString(URL_GET_XML).arg(videoID).arg(path).arg(mid).arg(T));
+	// get the FLV url
+	result.URL = copyBetween(xml, "video_id=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for Yikers Videos
+
+VideoInformation_Yikers::VideoInformation_Yikers(VideoInformation *videoInformation)
+{
+	setID("yikers.com");
+	setCaption("Yikers");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Yikers::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_XML = "http://www.yikers.com/%1&f=flash8&";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "<title>", "- Yikers.com</title>").trimmed();
+	// get the XML url
+	QString xmlURL = copyBetween(html, "video=", "\"");
+	// clear XML url
+	xmlURL = cleanURL(QString(URL_GET_XML).arg(xmlURL));
+	// download the xml file
+	QString xml = http.downloadWebpage(xmlURL);
+	// get the FLV url
+	result.URL = copyBetween(xml, "video_id=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for 123video Videos
+
+VideoInformation_123video::VideoInformation_123video(VideoInformation *videoInformation)
+{
+	setID("123video.nl");
+	setCaption("123video");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_123video::getVideoInformation(const QString URL)
+{
+	//const QString URL_GET_XML = "http://www.123video.nl/initialize_player_v3.asp?";
+	
+	const QString URL_GET_XML = "http://www.123video.nl/initialize_player_v3.asp";
+	const QString XML_PARAMS  = "<movie><id>%1</id><memberid>0</memberid><cnt>1</cnt><nocache>0.91816791286692</nocache></movie>";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL), false);
+	// get video title
+	result.title = copyBetween(html, "<title>", "- 123video</title>").trimmed();
+	// get the video ID
+	QString videoID = copyBetween(html, "mediaSrc=", "&");
+	// get the video xml
+	QString xml = http.downloadWebpagePost(QUrl(URL_GET_XML), QString(XML_PARAMS).arg(videoID));
+	
+	qDebug() << URL_GET_XML << QString(XML_PARAMS).arg(videoID);
+	qDebug() << xml;
+	
+	// get the host IP
+	QString hostIP = copyBetween(xml, "MediaIP=\"", "\"");
+	// get the FLV url
+	result.URL = QString("http://%1/%2/%3.flv").arg(hostIP).arg(copy(videoID, 0, 3)).arg(videoID);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
 	// return the video information
 	return result;
 }
