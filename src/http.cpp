@@ -84,18 +84,24 @@ void Http::jumpToURL(QUrl url)
 	// set http user and password (only if is requiered)
 	if (!url.userName().isEmpty())
 		http->setUser(url.userName(), url.password());
-	// get url
-	if (postMethodFlag) // post method
+	// post method
+	if (postMethodFlag) 
 	{
 		QByteArray paramsStr;
 		paramsStr.append(parameters);
 
+		QHttpRequestHeader header("POST", getPathAndQuery(url));
+		header.setValue("Host", url.host());
+		header.setContentType("application/x-www-form-urlencoded"); // important
+		header.setContentLength(paramsStr.length());
+		
 		if (file != NULL)
-			httpGetId = http->post(getPathAndQuery(url), paramsStr, file);
+			httpGetId = http->request(header, paramsStr, file);
 		else
-			httpGetId = http->post(getPathAndQuery(url), paramsStr);
+			httpGetId = http->request(header, paramsStr);
 	}
-	else // get method
+	// get method
+	else 
 		if (file != NULL)
 			httpGetId = http->get(getPathAndQuery(url), file); //http->get(url.toEncoded(), file);
 		else
@@ -308,6 +314,8 @@ void Http::requestFinished(int id, bool error)
 			// disable the sync flag
 			syncFlag = false;
 		}
+		// post method off
+		postMethodFlag = false;
 	}
 }
 
