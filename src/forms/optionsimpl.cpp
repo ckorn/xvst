@@ -242,6 +242,8 @@ void OptionsImpl::setInitialOptionsValues()
 	chbDontrestoreDownloads->setChecked(programOptions->getDontRememberDownloadedVideos());
 	chbSaveLog->setChecked(programOptions->getSaveLogDownloadedVideos());
 
+	chbDontrestoreDownloads->setEnabled(chbSaveRestore->isChecked());
+
 	chbDisableAdultSupport->setChecked(programOptions->getBlockAdultContent());
 
 	// get the blocked items

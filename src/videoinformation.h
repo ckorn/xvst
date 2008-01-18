@@ -188,6 +188,96 @@ class VideoInformation_123video : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for 5min Videos */
+class VideoInformation_5min : public VideoInformation_plugin
+{
+	public:
+		/*! 5min plugin class constructor */
+		VideoInformation_5min(VideoInformation *videoInformation);
+		/*! Get the full Video Information of 5min Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for aBum Videos */
+class VideoInformation_aBum : public VideoInformation_plugin
+{
+	public:
+		/*! aBum plugin class constructor */
+		VideoInformation_aBum(VideoInformation *videoInformation);
+		/*! Get the full Video Information of aBum Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Aniboom Videos */
+class VideoInformation_Aniboom : public VideoInformation_plugin
+{
+	public:
+		/*! Aniboom plugin class constructor */
+		VideoInformation_Aniboom(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Aniboom Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Bebo Videos */
+class VideoInformation_Bebo : public VideoInformation_plugin
+{
+	public:
+		/*! Bebo plugin class constructor */
+		VideoInformation_Bebo(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Bebo Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Break Videos */
+class VideoInformation_Break : public VideoInformation_plugin
+{
+	public:
+		/*! Break plugin class constructor */
+		VideoInformation_Break(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Break Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Broadcaster Videos */
+class VideoInformation_Broadcaster : public VideoInformation_plugin
+{
+	public:
+		/*! Broadcaster plugin class constructor */
+		VideoInformation_Broadcaster(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Broadcaster Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for CaughtOnVideo Videos */
+class VideoInformation_CaughtOnVideo : public VideoInformation_plugin
+{
+	public:
+		/*! CaughtOnVideo plugin class constructor */
+		VideoInformation_CaughtOnVideo(VideoInformation *videoInformation);
+		/*! Get the full Video Information of CaughtOnVideo Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Clip4e Videos */
+class VideoInformation_Clip4e : public VideoInformation_plugin
+{
+	public:
+		/*! Clip4e plugin class constructor */
+		VideoInformation_Clip4e(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Clip4e Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for VideoCa Videos */
+class VideoInformation_VideoCa : public VideoInformation_plugin
+{
+	public:
+		/*! VideoCa plugin class constructor */
+		VideoInformation_VideoCa(VideoInformation *videoInformation);
+		/*! Get the full Video Information of VideoCa Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 /*! Main video information class */
 class VideoInformation : public QThread
 {

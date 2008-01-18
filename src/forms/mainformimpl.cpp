@@ -159,6 +159,15 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.livevideo.com/video/ShatnerVision/D65C961087944AC5AAA4C0BF2893591F/shatner-plans-for-the-future.aspx");
 	videoList->addVideo("http://www.yikers.com/video_woman_attacked_by_cheetah.html");
 	videoList->addVideo("http://www.123video.nl/playvideos.asp?MovieID=199615");
+	videoList->addVideo("http://www.5min.com/Video/7-knots-every-scout-should-know-12334");
+	videoList->addVideo("http://www.abum.com/62464/NASA-records-the-sounds-of-Jupiter.html");
+	videoList->addVideo("http://www.aniboom.com/Player.aspx?v=94346&CATG=1&SortMethod=3&TimeLine=0");
+	videoList->addVideo("http://www.bebo.com/FlashBox.jsp?FlashBoxId=3811155676");
+	videoList->addVideo("http://www.break.com/index/monkey-needs-a-drink.html");
+	videoList->addVideo("http://www.broadcaster.com/clip/32505");
+	videoList->addVideo("http://videos.caught-on-video.com/video/0f0f5255-310d-4f95-87f5-9881018b4697.htm");
+	videoList->addVideo("http://clip4e.com/play_po_belyo_na_rabotnoto_mqsto.htm");
+	videoList->addVideo("http://www.video.ca/video.php?id=1178558732");
 */
 }
 
