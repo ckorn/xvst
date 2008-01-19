@@ -278,6 +278,78 @@ class VideoInformation_VideoCa : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+// Adult websites
+
+/*! Plugin for Yuvutu Videos */
+class VideoInformation_Yuvutu : public VideoInformation_plugin
+{
+	public:
+		/*! Yuvutu plugin class constructor */
+		VideoInformation_Yuvutu(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Yuvutu Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Badjojo Videos */
+class VideoInformation_Badjojo : public VideoInformation_plugin
+{
+	public:
+		/*! Badjojo plugin class constructor */
+		VideoInformation_Badjojo(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Badjojo Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for DesiSexTube Videos */
+class VideoInformation_DesiSexTube : public VideoInformation_plugin
+{
+	public:
+		/*! DesiSexTube plugin class constructor */
+		VideoInformation_DesiSexTube(VideoInformation *videoInformation);
+		/*! Get the full Video Information of DesiSexTube Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for YouPorn Videos */
+class VideoInformation_YouPorn : public VideoInformation_plugin
+{
+	public:
+		/*! YouPorn plugin class constructor */
+		VideoInformation_YouPorn(VideoInformation *videoInformation);
+		/*! Get the full Video Information of YouPorn Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for TuPorno Videos */
+class VideoInformation_TuPorno : public VideoInformation_plugin
+{
+	public:
+		/*! TuPorno plugin class constructor */
+		VideoInformation_TuPorno(VideoInformation *videoInformation);
+		/*! Get the full Video Information of TuPorno Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for PornoTube Videos */
+class VideoInformation_PornoTube : public VideoInformation_plugin
+{
+	public:
+		/*! PornoTube plugin class constructor */
+		VideoInformation_PornoTube(VideoInformation *videoInformation);
+		/*! Get the full Video Information of PornoTube Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for DaleAlPlay Videos */
+class VideoInformation_DaleAlPlay : public VideoInformation_plugin
+{
+	public:
+		/*! DaleAlPlay plugin class constructor */
+		VideoInformation_DaleAlPlay(VideoInformation *videoInformation);
+		/*! Get the full Video Information of DaleAlPlay Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 /*! Main video information class */
 class VideoInformation : public QThread
 {

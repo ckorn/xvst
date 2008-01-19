@@ -55,6 +55,14 @@ VideoInformation::VideoInformation()
 	new VideoInformation_CaughtOnVideo(this);
 	new VideoInformation_Clip4e(this);
 	new VideoInformation_VideoCa(this);
+	// adult sites
+	new VideoInformation_Yuvutu(this);
+	new VideoInformation_Badjojo(this);
+	new VideoInformation_DesiSexTube(this);
+	new VideoInformation_YouPorn(this);
+	new VideoInformation_TuPorno(this);
+	new VideoInformation_PornoTube(this);
+	new VideoInformation_DaleAlPlay(this);
 }
 
 VideoInformation::~VideoInformation()
@@ -965,7 +973,7 @@ VideoDefinition VideoInformation_Clip4e::getVideoInformation(const QString URL)
 	// get video title
 	result.title = copyBetween(html, "<TITLE>", "</TITLE>").trimmed();
 	// get the video ID
-	QString videoID = copyBetween(html, "\"cl_id\", \"", "\"");	
+	QString videoID = copyBetween(html, "\"cl_id\", \"", "\"");
 	// get the xml
 	QString xml = http.downloadWebpage(QUrl(QString(URL_GEL_XML).arg(videoID)));
 	// get flv url
@@ -1003,6 +1011,240 @@ VideoDefinition VideoInformation_VideoCa::getVideoInformation(const QString URL)
 	QString videoID = UrlInf.queryItemValue("id");
 	// clear and get the final url
 	result.URL = cleanURL(QString(URL_GET_FLV).arg(videoID));
+	// return the video information
+	return result;
+}
+
+// Adult websites
+
+// Plugin for Yuvutu Videos
+
+VideoInformation_Yuvutu::VideoInformation_Yuvutu(VideoInformation *videoInformation)
+{
+	setID("yuvutu.com");
+	setCaption("yuvutu");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Yuvutu::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_HTML = "http://yuvutu.com/modules.php?name=Video&op=view&video_id=%1&name=Video&proceed=yes";
+
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the video id
+	QUrl UrlInf(URL);
+	QString videoID = UrlInf.queryItemValue("video_id");
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(QString(URL_GET_HTML).arg(videoID)));
+	// get video title
+	result.title = copyBetween(html, "class=\"videoTitle\"", "<td");
+	result.title = copyBetween(result.title, "</span>", "</td>").trimmed();
+	// get the flv url
+	result.URL = copyBetween(html, "flashvars=\"", "\"");
+	result.URL = copyBetween(result.URL, "file=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for Badjojo Videos
+
+VideoInformation_Badjojo::VideoInformation_Badjojo(VideoInformation *videoInformation)
+{
+	setID("badjojo.com");
+	setCaption("BadJojo");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Badjojo::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_XML = "http://www.badjojo.com/videoConfigXmlIndraCode.php?vId=%1";
+
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the video id
+	QUrl UrlInf(URL);
+	QString videoID = UrlInf.queryItemValue("Id");
+	// get the xml
+	Http http;
+	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(videoID)));
+	// get the title
+	result.title = copyBetween(xml, "Name=\"Header\" Value=\"", "\"").trimmed();
+	// get flv url
+	result.URL = copyBetween(xml, "Name=\"FLVPath\" Value=\"", "\"/>");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for DesiSexTube Videos
+
+VideoInformation_DesiSexTube::VideoInformation_DesiSexTube(VideoInformation *videoInformation)
+{
+	setID("desisextube.com");
+	setCaption("DesiSexTube");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_DesiSexTube::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get the title
+	result.title = copyBetween(html, "<DIV class=moduleFrameTitle>", "</DIV>");
+	result.title = copyBetween(result.title, "parent>", "</A>").trimmed();
+	// get the flv url
+	result.URL = copyBetween(html, "flvplayer.swf?file=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for YouPorn Videos
+
+VideoInformation_YouPorn::VideoInformation_YouPorn(VideoInformation *videoInformation)
+{
+	setID("youporn.com");
+	setCaption("YouPorn");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_YouPorn::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL + "/?user_choice=Enter"));
+	// get video title
+	result.title = copyBetween(html, "<title>", "</title>");
+	result.title = result.title.remove(0, result.title.indexOf("-") + 1).trimmed();
+	// get the flv url
+	result.URL = copyBetween(html, "http://download.youporn.com/download/", ".flv");
+	result.URL = QString("http://download.youporn.com/download/%1.flv").arg(result.URL);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for TuPorno Videos
+
+VideoInformation_TuPorno::VideoInformation_TuPorno(VideoInformation *videoInformation)
+{
+	setID("tuporno.tv");
+	setCaption("TuPorno TV");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_TuPorno::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_FLV = "http://vc1n.tuporno.tv/videoscodi/%1/%2/%3.flv";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "<title>tuporno.tv - Videos -", "</title>").trimmed();
+	// get the video name
+	QString videoName = copy(URL, URL.lastIndexOf("/") + 1, URL.length());
+	result.URL = QString(URL_GET_FLV).arg(videoName.at(0)).arg(videoName.at(1)).arg(videoName);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for PornoTube Videos
+
+VideoInformation_PornoTube::VideoInformation_PornoTube(VideoInformation *videoInformation)
+{
+	setID("pornotube.com");
+	setCaption("PornoTube");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_PornoTube::getVideoInformation(const QString URL)
+{
+	const QString AGE_VALIDATION = "bMonth=01&bDay=1&bYear=1970&verifyAge=true&submit=CONTINUE &raquo;";
+	const QString GET_FLV_INFO_URL = "http://www.pornotube.com/player/player.php?%1";
+	const QString GET_FLV_URL = "http://%1.pornotube.com/%2/%3.flv";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// emulate the "validation process"
+	Http http;
+	QString html = http.downloadWebpagePost(QUrl(URL), AGE_VALIDATION);
+	// get video title
+	result.title = copyBetween(html, "<title>PornoTube.com -", "-").trimmed();
+	// get the video ID
+	QString videoID = copyBetween(html, "player/v.swf?v=", "\"");
+	// get the video Information
+	html = http.downloadWebpage(QUrl(QString(GET_FLV_INFO_URL).arg(videoID)));
+	// get the video ID
+	QString flvId = copyBetween(html, "mediaId=", "&");
+	// get the User ID
+	QString userId = copyBetween(html, "userId=", "&");
+	// get domain
+	QString domain = copyBetween(html, "mediaDomain=", "&");
+	// build url
+	result.URL = QString(GET_FLV_URL).arg(domain).arg(userId).arg(flvId);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for DaleAlPlay Videos
+
+VideoInformation_DaleAlPlay::VideoInformation_DaleAlPlay(VideoInformation *videoInformation)
+{
+	setID("dalealplay.com");
+	setCaption("DaleAlPlay");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_DaleAlPlay::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_FLV = "http://videos.dalealplay.com/contenidos/%1";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL), false);
+	// get video title
+	result.title = copyBetween(html, "<title>", "- www.dalealplay.com</title>").trimmed();
+	// get the video path
+	QString videoPath = copyBetween(html, "file=", "&");
+	// build url
+	result.URL = QString(URL_GET_FLV).arg(videoPath);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
 	// return the video information
 	return result;
 }

@@ -85,6 +85,7 @@ Q_OBJECT
 		bool syncFlag;		//!< sync. flag
 		bool postMethodFlag;//!< post method flag
 		bool notLength;		//!< Content length found?
+		QStringList cookies;//!< Stored cookies
 		/*! Get if response is object moved */
 		bool isObjectMoved(int statusCode);
 		/*! Init the internal http data */

@@ -95,17 +95,40 @@ void Http::jumpToURL(QUrl url)
 		header.setContentType("application/x-www-form-urlencoded"); // important
 		header.setContentLength(paramsStr.length());
 		
+		// add cookies
+		QString cookiesToAdd;
+		foreach (QString cookie, cookies)
+			cookiesToAdd += getToken(cookie, ";", 0) + ";";
+		// has cookies?
+		if (!cookiesToAdd.isEmpty())
+			header.setValue("Cookie", cookiesToAdd);
+		
+		// send request
 		if (file != NULL)
 			httpGetId = http->request(header, paramsStr, file);
 		else
 			httpGetId = http->request(header, paramsStr);
 	}
 	// get method
-	else 
+	else
+	{
+		QHttpRequestHeader header("GET", getPathAndQuery(url));
+		header.setValue("Host", url.host());
+	
+		// add cookies
+		QString cookiesToAdd;
+		foreach (QString cookie, cookies)
+			cookiesToAdd += getToken(cookie, ";", 0) + ";";
+		// has cookies?
+		if (!cookiesToAdd.isEmpty())
+			header.setValue("Cookie", cookiesToAdd);
+		
+		// send request
 		if (file != NULL)
-			httpGetId = http->get(getPathAndQuery(url), file); //http->get(url.toEncoded(), file);
+			httpGetId = http->request(header, NULL, file);
 		else
-			httpGetId = http->get(getPathAndQuery(url)); //http->get(url.toEncoded());
+			httpGetId = http->request(header, NULL, NULL);
+	}
 }
 
 int Http::download(const QUrl URL, const QDir destination, QString fileName)
@@ -291,7 +314,7 @@ void Http::requestFinished(int id, bool error)
 					emit downloadError(http->error());
 			}
 			else // no error, but...
-				if (file->size() != fileSize && !notLength)
+				if (file->size() < fileSize && !notLength)
 				{
 					file->remove();
 					emit downloadError(INVALID_FILE_SIZE);
@@ -326,6 +349,10 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 		fileSize = resp.value("content-length").toInt();
 	else
 		notLength = true;
+	
+	// get cookies
+	cookies.clear();
+	cookies << resp.allValues("set-cookie");
 
 	if (isObjectMoved(resp.statusCode()) && autoJump)
 		jumpToURL(QUrl(resp.value("location")));
