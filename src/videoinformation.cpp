@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 Xesc & Technology
@@ -115,7 +115,11 @@ void VideoInformation::run()
 			videoItem->setAsGettingURL(this);
 			emit informationStarted(videoItem);
 
-			videoItem->setVideoInformation(service->getVideoInformation(videoItem->getURL()), this);
+			VideoDefinition info = service->getVideoInformation(videoItem->getURL());
+			// canceled?
+			if (videoItem == NULL) return;
+
+			videoItem->setVideoInformation(info, this);
 			videoItem->setVideoFile(videoItem->getVideoInformation().title + ".flv", this);
 
 			videoItem->setAsGettedURL(this);
@@ -125,7 +129,6 @@ void VideoInformation::run()
 		videoItem->setAsError(this);
 
 	videoItem->unlock(this);
-
 	emit informationFinished(videoItem);
 }
 
@@ -170,6 +173,11 @@ void VideoInformation::getVideoInformation(VideoItem *videoItem)
 	this->start();
 }
 
+void VideoInformation::cancel()
+{
+	videoItem = NULL;
+}
+
 bool VideoInformation::getBlockAdultContent()
 {
 	return blockAdultContent;
@@ -185,7 +193,7 @@ QString VideoInformation::getBlockAdultContentList()
 	QString result = "";
 	for (int n = 0; n < blockAdultContentList.count(); n++)
 		result += "|" + blockAdultContentList.at(n);
-		
+
 	return result;
 }
 
@@ -207,19 +215,19 @@ bool VideoInformation::canGetInformation()
 QString VideoInformation::getHostImage(QString URL)
 {
 	const QString path = ":/services/images/services/%1.png";
-	
+
 	if (QUrl(URL).isValid())
 	{
 		VideoInformation_plugin *plugin = getPluginByHost(QUrl(URL));
-		
-		QString result = plugin != NULL ? 
-						 QString(path).arg(plugin->getID()):
-						 QString(path).arg("invalid");
-		
+
+		QString result = plugin != NULL ?
+		                 QString(path).arg(plugin->getID()):
+		                 QString(path).arg("invalid");
+
 		if (!QFile::exists(result))
 			result = QString(path).arg("no_icon");
-		
-		return result;		
+
+		return result;
 	}
 	else
 		return QString(path).arg("link_error");
@@ -245,7 +253,7 @@ bool VideoInformation::isBlockedHost(QString URL, BlockedState &result)
 {
 	VideoInformation_plugin *service = getPluginByHost(QUrl(URL));
 	result = bsNotBlocked;
-	
+
 	if (service != NULL)
 	{
 		if (service->hasAdultContent() && blockAdultContent)
@@ -261,7 +269,7 @@ bool VideoInformation::isBlockedHost(QString URL, BlockedState &result)
 bool VideoInformation::isBlockedHost(QString URL)
 {
 	BlockedState bs;
-	
+
 	return isBlockedHost(URL, bs);
 }
 
@@ -436,7 +444,7 @@ VideoInformation_ZappInternet::VideoInformation_ZappInternet(VideoInformation *v
 VideoDefinition VideoInformation_ZappInternet::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_URL = "http://213.190.0.235/videos/%1/%2.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -524,7 +532,7 @@ VideoInformation_Glumbert::VideoInformation_Glumbert(VideoInformation *videoInfo
 VideoDefinition VideoInformation_Glumbert::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_FLV = "http://cdn.glumbert.com/video/flash/%1.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -553,7 +561,7 @@ VideoInformation_Sclipo::VideoInformation_Sclipo(VideoInformation *videoInformat
 VideoDefinition VideoInformation_Sclipo::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_FLV = "http://www.sclipo.com/videos/%1.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -613,7 +621,7 @@ VideoInformation_LiveVideo::VideoInformation_LiveVideo(VideoInformation *videoIn
 VideoDefinition VideoInformation_LiveVideo::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_XML = "http://www.livevideo.com/media/GetFlashVideo.ashx?cid=%1&path=%2&mid=%3&t=/image/%4&f=flash8&?";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -659,7 +667,7 @@ VideoInformation_Yikers::VideoInformation_Yikers(VideoInformation *videoInformat
 VideoDefinition VideoInformation_Yikers::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_XML = "http://www.yikers.com/%1&f=flash8&";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -696,7 +704,7 @@ VideoDefinition VideoInformation_123video::getVideoInformation(const QString URL
 {
 	const QString URL_GET_XML = "http://www.123video.nl/initialize_player_v3.asp";
 	const QString XML_PARAMS  = "<movie><id>%1</id></movie>";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -762,7 +770,7 @@ VideoInformation_aBum::VideoInformation_aBum(VideoInformation *videoInformation)
 VideoDefinition VideoInformation_aBum::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_FLV = "http://media.abum.com/video/%1.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -793,7 +801,7 @@ VideoInformation_Aniboom::VideoInformation_Aniboom(VideoInformation *videoInform
 VideoDefinition VideoInformation_Aniboom::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_FLV = "http://video.aniboom.com/http/%1.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -825,7 +833,7 @@ VideoInformation_Bebo::VideoInformation_Bebo(VideoInformation *videoInformation)
 VideoDefinition VideoInformation_Bebo::getVideoInformation(const QString URL)
 {
 	const QString FLV_FILE = "%1_high.flv?showAd=false";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -855,7 +863,7 @@ VideoInformation_Break::VideoInformation_Break(VideoInformation *videoInformatio
 VideoDefinition VideoInformation_Break::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_FLV = "http://media1.break.com/dnet/media/%1/%2.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -917,7 +925,7 @@ VideoInformation_CaughtOnVideo::VideoInformation_CaughtOnVideo(VideoInformation 
 VideoDefinition VideoInformation_CaughtOnVideo::getVideoInformation(const QString URL)
 {
 	const QString URL_GEL_XML = "http://videos.caught-on-video.com/playlistbuilder/buildflash.ashx?%1";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -956,7 +964,7 @@ VideoInformation_Clip4e::VideoInformation_Clip4e(VideoInformation *videoInformat
 VideoDefinition VideoInformation_Clip4e::getVideoInformation(const QString URL)
 {
 	const QString URL_GEL_XML = "http://clip4e.com/getflv.php?id=%1";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -997,7 +1005,7 @@ VideoInformation_VideoCa::VideoInformation_VideoCa(VideoInformation *videoInform
 VideoDefinition VideoInformation_VideoCa::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_FLV = "http://www.video.ca/media/video/%1.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -1157,7 +1165,7 @@ VideoInformation_TuPorno::VideoInformation_TuPorno(VideoInformation *videoInform
 VideoDefinition VideoInformation_TuPorno::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_FLV = "http://vc1n.tuporno.tv/videoscodi/%1/%2/%3.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -1190,7 +1198,7 @@ VideoDefinition VideoInformation_PornoTube::getVideoInformation(const QString UR
 	const QString AGE_VALIDATION = "bMonth=01&bDay=1&bYear=1970&verifyAge=true&submit=CONTINUE &raquo;";
 	const QString GET_FLV_INFO_URL = "http://www.pornotube.com/player/player.php?%1";
 	const QString GET_FLV_URL = "http://%1.pornotube.com/%2/%3.flv";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -1230,7 +1238,7 @@ VideoInformation_DaleAlPlay::VideoInformation_DaleAlPlay(VideoInformation *video
 VideoDefinition VideoInformation_DaleAlPlay::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_FLV = "http://videos.dalealplay.com/contenidos/%1";
-	
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);

@@ -169,7 +169,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://clip4e.com/play_po_belyo_na_rabotnoto_mqsto.htm");
 	videoList->addVideo("http://www.video.ca/video.php?id=1178558732");
 	// adult sites
-	videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
+	//videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
 	videoList->addVideo("http://badjojo.com/video_play_front.php?Id=6292");
 	videoList->addVideo("http://www.desisextube.com/dst/view_video.php?viewkey=d7fbdea1afc51c7c6ad2&page=1&viewtype=&category=mv");
 	videoList->addVideo("http://youporn.com/watch/126002");

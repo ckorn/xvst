@@ -150,6 +150,9 @@ void VideoListController::deleteVideo(VideoItem *videoItem)
 
 void VideoListController::clear()
 {
+	if (videoInformation->isGettingInfo())
+		videoInformation->cancel();
+	
 	while (!videoList->isEmpty())
 		deleteVideo(videoList->at(0));
 }

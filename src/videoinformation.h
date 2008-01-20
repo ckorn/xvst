@@ -384,6 +384,8 @@ Q_OBJECT
 		QStringList getPluginsCompleteList(const QString separator = "|");
 		/*! Get the video URL */
 		void getVideoInformation(VideoItem *videoItem);
+		/*! Cancel the current work */
+		void cancel();
 		/*! Get block adult content flag */
 		bool getBlockAdultContent();
 		/*! Set the block adult content flag */

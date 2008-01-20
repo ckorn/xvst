@@ -327,8 +327,16 @@ void VideoConverter::finished(int exitCode, QProcess::ExitStatus exitStatus)
 {
 	if (QFile::exists(videoItem->getVideoFileSavedTo()))
 	{
-		if (deleteOriginalVideo)
-			QFile::remove(videoItem->getVideoFile());
+		QFile output(videoItem->getVideoFileSavedTo());
+		// has been converted?!
+		if (output.size() == 0) // no
+			{
+				QFile::remove(videoItem->getVideoFileSavedTo());
+				videoItem->setVideoFileSavedTo(videoItem->getVideoFile(), this);
+			}
+		else // yes
+			if (deleteOriginalVideo)
+				QFile::remove(videoItem->getVideoFile());
 	}
 	else
 		videoItem->setVideoFileSavedTo(videoItem->getVideoFile(), this);

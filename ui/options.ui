@@ -70,7 +70,7 @@
    <item row="0" column="1" >
     <widget class="QStackedWidget" name="pgOptions" >
      <property name="currentIndex" >
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="pgBasic" >
       <layout class="QGridLayout" >
@@ -105,7 +105,7 @@
           <item row="1" column="0" >
            <widget class="QCheckBox" name="chbDisplayPopup" >
             <property name="text" >
-             <string>Display a popup on video Downloaded (only when the main form is not visible)</string>
+             <string>Display a popup window on video Downloaded</string>
             </property>
            </widget>
           </item>
