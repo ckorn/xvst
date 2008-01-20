@@ -295,7 +295,15 @@ void VideoListController::startGetInformation(VideoItem *videoItem)
 
 void VideoListController::startDownload(VideoItem *videoItem)
 {
-	videoDownload->downloadVideo(videoItem);
+	// check if is possible download this video
+	if (!videoInformation->isBlockedHost(videoItem->getURL()))
+		videoDownload->downloadVideo(videoItem);
+	else
+	{
+		videoItem->setAsBlocked();
+		
+		emit videoItemUpdated(videoItem);
+	}
 }
 
 void VideoListController::cancelDownload()
