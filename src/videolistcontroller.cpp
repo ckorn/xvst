@@ -295,6 +295,7 @@ void VideoListController::startGetInformation(VideoItem *videoItem)
 
 void VideoListController::startDownload(VideoItem *videoItem)
 {
+	if (videoItem == NULL) return;
 	// check if is possible download this video
 	if (!videoInformation->isBlockedHost(videoItem->getURL()))
 		videoDownload->downloadVideo(videoItem);
