@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="es">
+<defaultcodec></defaultcodec>
 <context>
     <name>AddVideo</name>
     <message>
         <location filename="../../ui/addvideo.ui" line="25"/>
         <source>Add Video URL</source>
-        <translation>Añadir Video URL</translation>
+        <translation>Añadir URL Video</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="37"/>
@@ -28,12 +29,12 @@
     <message>
         <location filename="../../src/forms/addvideoimpl.cpp" line="56"/>
         <source> - Blocked site</source>
-        <translation type="unfinished"></translation>
+        <translation> - Sitio bloqueado</translation>
     </message>
     <message>
         <location filename="../../src/forms/addvideoimpl.cpp" line="58"/>
         <source> - Adult content is not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation> - Contenido para adultos no permitido</translation>
     </message>
 </context>
 <context>
@@ -41,17 +42,17 @@
     <message>
         <location filename="../../ui/checkupdates.ui" line="25"/>
         <source>Check updates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar actualizaciones...</translation>
     </message>
     <message>
         <location filename="../../ui/checkupdates.ui" line="34"/>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Conectando...</translation>
     </message>
     <message>
         <location filename="../../ui/checkupdates.ui" line="87"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -59,22 +60,22 @@
     <message>
         <location filename="../../src/forms/checkupdatesimpl.cpp" line="89"/>
         <source>Checking for updates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobando actualizaciones...</translation>
     </message>
     <message>
         <location filename="../../src/forms/checkupdatesimpl.cpp" line="80"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizaciones</translation>
     </message>
     <message>
         <location filename="../../src/forms/checkupdatesimpl.cpp" line="81"/>
         <source>You are using the most recent version of this program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Usted esta usando la versión mas reciente del programa.</translation>
     </message>
     <message>
         <location filename="../../src/forms/checkupdatesimpl.cpp" line="82"/>
         <source>Ok</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
     </message>
 </context>
 <context>
@@ -82,47 +83,47 @@
     <message>
         <location filename="../../ui/completedpopup.ui" line="25"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="55"/>
         <source>QFrame{background-color:#ffecbf}</source>
-        <translation type="unfinished"></translation>
+        <translation>QFrame{background-color:#ffecbf}</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="73"/>
         <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Descarga completa&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="86"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="89"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="125"/>
         <source>QFrame{background-color:#fff7dd}</source>
-        <translation type="unfinished"></translation>
+        <translation>QFrame{background-color:#fff7dd}</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="149"/>
         <source>?</source>
-        <translation type="unfinished"></translation>
+        <translation>?</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="245"/>
         <source>Play video</source>
-        <translation type="unfinished"></translation>
+        <translation>Reproducir video</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="248"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
 </context>
 <context>
@@ -130,37 +131,37 @@
     <message>
         <location filename="../../ui/customalphablend.ui" line="19"/>
         <source>Custom Alpha Blend</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de Transparencia personalizada</translation>
     </message>
     <message>
         <location filename="../../ui/customalphablend.ui" line="28"/>
         <source>Select the Alpha Blend Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el nivel de Transparencia:</translation>
     </message>
     <message>
         <location filename="../../ui/customalphablend.ui" line="37"/>
         <source>1%</source>
-        <translation type="unfinished"></translation>
+        <translation>1%</translation>
     </message>
     <message>
         <location filename="../../ui/customalphablend.ui" line="63"/>
         <source>100%</source>
-        <translation type="unfinished"></translation>
+        <translation>100%</translation>
     </message>
     <message>
         <location filename="../../ui/customalphablend.ui" line="74"/>
         <source>Current: &lt;b&gt;0.1%&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Actual: &lt;b&gt;0.1%&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/customalphablend.ui" line="100"/>
         <source>Ok</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <location filename="../../ui/customalphablend.ui" line="113"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -168,7 +169,7 @@
     <message>
         <location filename="../../src/forms/customalphablendimpl.cpp" line="68"/>
         <source>Current: &lt;b&gt;%1%&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Actual: &lt;b&gt;%1%&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -176,17 +177,17 @@
     <message>
         <location filename="../../ui/downloadlog.ui" line="27"/>
         <source>Downloaded Videos Log:</source>
-        <translation type="unfinished"></translation>
+        <translation>Historial de los Videos descargados:</translation>
     </message>
     <message>
         <location filename="../../ui/downloadlog.ui" line="87"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../../ui/downloadlog.ui" line="13"/>
         <source>Download Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Historial de Desgargas</translation>
     </message>
 </context>
 <context>
@@ -194,17 +195,17 @@
     <message>
         <location filename="../../src/forms/downloadlogimpl.cpp" line="37"/>
         <source>Date/Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha/Hora</translation>
     </message>
     <message>
         <location filename="../../src/forms/downloadlogimpl.cpp" line="37"/>
         <source>Video Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Título del Video</translation>
     </message>
     <message>
         <location filename="../../src/forms/downloadlogimpl.cpp" line="37"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
 </context>
 <context>
@@ -212,87 +213,87 @@
     <message>
         <location filename="../../ui/dragdrop.ui" line="95"/>
         <source>Drag&amp;Drop</source>
-        <translation type="unfinished"></translation>
+        <translation>Drag &amp; Drop</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="110"/>
         <source>Drop the video link here</source>
-        <translation type="unfinished"></translation>
+        <translation>Suelte el link del video aquí</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="140"/>
         <source>Display main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar la ventana principal</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="145"/>
         <source>Alpha Blend Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de Transparencia</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="150"/>
         <source>Paste URL from clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Pegar la URL del portapapeles</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="158"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation>OFF</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="163"/>
         <source>10%</source>
-        <translation type="unfinished"></translation>
+        <translation>10%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="168"/>
         <source>20%</source>
-        <translation type="unfinished"></translation>
+        <translation>20%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="173"/>
         <source>30%</source>
-        <translation type="unfinished"></translation>
+        <translation>30%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="178"/>
         <source>40%</source>
-        <translation type="unfinished"></translation>
+        <translation>40%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="183"/>
         <source>50%</source>
-        <translation type="unfinished"></translation>
+        <translation>50%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="188"/>
         <source>60%</source>
-        <translation type="unfinished"></translation>
+        <translation>60%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="193"/>
         <source>70%</source>
-        <translation type="unfinished"></translation>
+        <translation>70%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="198"/>
         <source>80%</source>
-        <translation type="unfinished"></translation>
+        <translation>80%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="203"/>
         <source>90%</source>
-        <translation type="unfinished"></translation>
+        <translation>90%</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="208"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizada</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="153"/>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+V</translation>
     </message>
 </context>
 <context>
@@ -300,22 +301,22 @@
     <message>
         <location filename="../../src/forms/dragdropimpl.cpp" line="118"/>
         <source>Alpha Blend Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel deNivel de Transparencia</translation>
     </message>
     <message>
         <location filename="../../src/forms/dragdropimpl.cpp" line="65"/>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+V</translation>
     </message>
     <message>
         <location filename="../../src/forms/dragdropimpl.cpp" line="175"/>
         <source> - Blocked site</source>
-        <translation type="unfinished"></translation>
+        <translation> - Sitio bloqueado</translation>
     </message>
     <message>
         <location filename="../../src/forms/dragdropimpl.cpp" line="177"/>
         <source> - Adult content is not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation> - Contenido para adultos no permitido</translation>
     </message>
 </context>
 <context>
@@ -323,46 +324,48 @@
     <message>
         <location filename="../../ui/information.ui" line="25"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="34"/>
         <source>QFrame{
 background: white;
 } </source>
-        <translation type="unfinished"></translation>
+        <translation>QFrame{background: white;} </translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="69"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="98"/>
         <source>Program version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versión del programa:</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="128"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma:</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="158"/>
         <source>Homepage:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitio web:</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="184"/>
         <source>xVideoServiceThief is a tool for downloading your favourite video clips from a lot of video websites.
 
 xVideoServiceThief also provide you the ability to convert each video in most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.</source>
-        <translation type="unfinished"></translation>
+        <translation>xVideoServiceThief es una utilidad para descargar tus videos favoritos desde un montón de sitios Web.
+
+xVideoServiceThief te permite también convertir estos videos descargados a los formatos mas populares: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3.</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="199"/>
         <source>&lt;b&gt;xVideoServiceThief currently supports download from:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;xVideoServiceThief actualmente puede bajar de:&lt;/b&lt;</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="206"/>
@@ -409,17 +412,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/information.ui" line="301"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="138"/>
         <source>&lt;b&gt;English (UK)&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;English (UK)&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="168"/>
         <source>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -429,256 +432,259 @@ p, li { white-space: pre-wrap; }
         <source>QFrame{
 <byte value="x9"/>background: white;
 } </source>
-        <translation type="unfinished"></translation>
+        <translation>QFrame{
+<byte value="x9"/>background: white;
+} </translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="86"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="130"/>
         <source>Open the Drag &amp; Drop Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar ventana del Drag &amp; Drop</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="158"/>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar actualizaciones</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="624"/>
         <source>Online Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayuda en línea</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="214"/>
         <source>Program Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información del programa</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="235"/>
         <source>Download List:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de descargas:</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="640"/>
         <source>Add Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir Video</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="648"/>
         <source>Delete Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar Video</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="656"/>
         <source>Start Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar Descarga</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="664"/>
         <source>Cancel Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar Descarga</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="417"/>
         <source>Clear List</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar Lista</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="677"/>
         <source>More Options...</source>
-        <translation type="unfinished"></translation>
+        <translation>Más Opciones...</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="685"/>
         <source>Download videos automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargas videos automáticamente</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="493"/>
         <source>Convert videos to Mpeg/DivX/etc...</source>
-        <translation type="unfinished"></translation>
+        <translation>Convertir videos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="513"/>
         <source>Downloads Directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio de las Descargas:</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="567"/>
         <source>Select the downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el directorio de las descargas</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="570"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="701"/>
         <source>Open downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir directorio de las descargas</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="608"/>
         <source>Open the Drag&amp;Drop window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir ventana del Drag &amp; Drop</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="616"/>
         <source>Check for Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar actualizaciones</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="632"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="669"/>
         <source>Clear list</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar Lista</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="693"/>
         <source>Convert videos to Mpeg\DivX\etc...</source>
-        <translation type="unfinished"></translation>
+        <translation>Convertir videos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="706"/>
         <source>Select downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el directorio de las descargas</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="714"/>
         <source>Restore xVideoServiceThief</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurar xVideoServiceThief</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="722"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="730"/>
         <source>Display popup window on download ends</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar un cartel informativo al finalizar una descarga</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="735"/>
         <source>Clear Completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar Completados</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="743"/>
         <source>Move UP</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover ARRIBA</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="751"/>
         <source>Move Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover ABAJO</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="759"/>
         <source>Play Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Reproducir video</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="767"/>
         <source>Reset State</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiniciar el Estado</translation>
     </message>
     <message encoding="UTF-8">
         <location filename="../../ui/mainform.ui" line="22"/>
         <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2007</source>
-        <translation type="unfinished"></translation>
+        <translation>xVideoServiceThief %1 by Xesc &amp; Technology ® 2007</translation>
     </message>
 </context>
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="258"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="279"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opciones</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="341"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="362"/>
         <source>Select the download directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el directorio de las descargas:</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Video </source>
-        <translation type="unfinished"></translation>
+        <translation> Video </translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Size </source>
-        <translation type="unfinished"></translation>
+        <translation> Tamaño </translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Progress </source>
-        <translation type="unfinished"></translation>
+        <translation> Progreso </translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Time </source>
-        <translation type="unfinished"></translation>
+        <translation> Tiempo </translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="46"/>
         <source> Speed </source>
-        <translation type="unfinished"></translation>
+        <translation> Velocidad </translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="142"/>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="211"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="232"/>
         <source>Closing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrando...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="212"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="233"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
-        <translation type="unfinished"></translation>
+        <translation>xVideoServiceThief está trabajando, ¿desea usted Cancelar eltrabajo actual?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="213"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="234"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="213"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="234"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="293"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="314"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizaciones</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="240"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="261"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha encontrado la aplicaciónxUpdater.&lt;br&gt;&lt;br&gt;Reinstale xVideoServiceThief si usted quiere lafunción de actualizaciones automáticas.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="295"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="316"/>
         <source>Ok</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="294"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="315"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otro proceso esta actualmente trabajando, por favor párelo oespere a su finalización.</translation>
     </message>
 </context>
 <context>
@@ -686,269 +692,269 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="13"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opciones</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1057"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="80"/>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargas</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="158"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="108"/>
-        <source>Display a popup on video Downloaded (only when the main form is not visible)</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="125"/>
         <source>FFmpeg Lib</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg Lib</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="168"/>
         <source>Convert videos to Mpeg/DivX/etc...</source>
-        <translation type="unfinished"></translation>
+        <translation>Convertir videos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="192"/>
         <source>Output format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de Salida:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="202"/>
         <source>Video Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resolución del Video:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="212"/>
         <source>Audio sampling rate (Hz):</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio sampling rate (Hz):</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="222"/>
         <source>Video frame rate (Hz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Video frame rate (Hz)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="232"/>
         <source>Output quality:</source>
-        <translation type="unfinished"></translation>
+        <translation>Calidad de Salida:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="242"/>
         <source>Delete the Original Downloaded File after the conversion</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar el fichero descargado originalmente después de suconversión</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="256"/>
         <source>Language Configuration </source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración  delIdioma </translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="262"/>
         <source>Select a Language file from the list:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione un Idioma de la lista:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="269"/>
         <source>Language Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información del Idioma</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="293"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="360"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="313"/>
         <source>Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versión:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="333"/>
         <source>Author:</source>
-        <translation type="unfinished"></translation>
+        <translation>Autor:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="353"/>
         <source>Contact:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contacto:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="367"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Descripción:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="392"/>
         <source>Use This Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar este Idioma</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="474"/>
         <source>Session Configuration </source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de las Sesiones </translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="494"/>
         <source>Save and Restore the curren session</source>
-        <translation type="unfinished"></translation>
+        <translation>Guarda y Recupera la sesión actual</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="519"/>
         <source>Don&apos;t restore downloaded videos</source>
-        <translation type="unfinished"></translation>
+        <translation>No recuperar los videos ya descargados</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="544"/>
         <source>Save a Log with all downloaded videos (Date + Title + URL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Guarda un Historial con todos los videos descargados (Fecha + Título + URL)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="575"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver Historial</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="588"/>
         <source>Clear Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar Historial</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="658"/>
         <source>Updates Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar Actualizaciones</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="676"/>
         <source>Check for new Versions on Program Startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar nuevas versiones al iniciar el programa</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="685"/>
         <source>Check for new Versions every:</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar nuevas versiones cada:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="713"/>
         <source>Install automatically the new Versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar automáticamente las nuevas Versiones</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="726"/>
         <source>Check for new Versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar nuevas Versiones</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="779"/>
         <source>Ups! Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ups! Configuración</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="797"/>
         <source>Disable adult websites support</source>
-        <translation type="unfinished"></translation>
+        <translation>Desactivar el soporte a sitios para adultos</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="804"/>
         <source>Select which websites are Allowed and which websites must be Blocked:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione que sitios Web están permitidos y cuales debenestar bloqueados:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="811"/>
         <source>Allowed websites:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitios Web permitidos:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="818"/>
         <source>Blocked websites:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitios Web bloqueados:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="849"/>
         <source>&lt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="865"/>
         <source>&lt;&lt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;&lt;</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="881"/>
         <source>&gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt;&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="897"/>
         <source>&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1107"/>
         <source>Use Proxy Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar Servidor Proxy</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1119"/>
         <source>User Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de Usuario:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1126"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contraseña:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1153"/>
         <source>Adress:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1162"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1254"/>
         <source>Remember last viewed Options page (only for this session)</source>
-        <translation type="unfinished"></translation>
+        <translation>Recordar la última pagina usada en las Opciones (sólo paraesta sesión)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1283"/>
         <source>Ok</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1299"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="149"/>
         <source>QTextLine{
 background-color:#124565;
 }</source>
-        <translation type="unfinished"></translation>
+        <translation>QTextLine{background-color:#124565;}</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1209"/>
         <source>Proxy type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de Proxy:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="108"/>
+        <source>Display a popup window on video Downloaded</source>
+        <translation>Mostrar una ventana informativa al finalizar una Descarga</translation>
     </message>
 </context>
 <context>
@@ -956,197 +962,197 @@ background-color:#124565;
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="92"/>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Básico</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="98"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="103"/>
         <source>Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesión</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="108"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizaciones</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="113"/>
         <source>Ups!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ups!</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="118"/>
         <source>Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
         <source>AVI Format (*.avi)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato AVI (*.avi)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="137"/>
         <source>3GP Format (*.3gp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato 3GP (*.3gp)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="137"/>
         <source>MP3 Format (*.mp3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato MP3 (*.mp3)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="156"/>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Original</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>Muy baja calidad (Video bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="163"/>
         <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baja calidad (Video bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="164"/>
         <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>Calidad normal (Video bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="165"/>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>Calidad media (Video bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="166"/>
         <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>Buena calidad (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
         <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>Calidad suprema (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
         <source>The Same quality as the original Video</source>
-        <translation type="unfinished"></translation>
+        <translation>La misma que calidad que el Video original</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>Day</source>
-        <translation type="unfinished"></translation>
+        <translation>Día</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>2 Days</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Días</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>3 Days</source>
-        <translation type="unfinished"></translation>
+        <translation>3 Días</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>4 Days</source>
-        <translation type="unfinished"></translation>
+        <translation>4 Días</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>5 Days</source>
-        <translation type="unfinished"></translation>
+        <translation>5 Días</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>6 Days</source>
-        <translation type="unfinished"></translation>
+        <translation>6 Días</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>Week</source>
-        <translation type="unfinished"></translation>
+        <translation>Semana</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="178"/>
         <source>Http Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Http Proxy</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="178"/>
         <source>Socks5 Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="459"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="461"/>
         <source>Clear Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar Historial</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="460"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="462"/>
         <source>Are you sure to Clear the Historic File?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de querer limpiar el Historial?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="461"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="463"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="461"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="463"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="390"/>
-        <source>Language Setup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="391"/>
-        <source>In order to apply the new selected language, the program must be restarted.</source>
-        <translation type="unfinished"></translation>
+        <translation>No</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="392"/>
+        <source>Language Setup</source>
+        <translation>Instalación del Idioma</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="393"/>
+        <source>In order to apply the new selected language, the program must be restarted.</source>
+        <translation>Para poder aplicar el idioma seleccionado, el programa necesita ser reiniciado.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="394"/>
         <source>Ok</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
         <source>WMV Format ( *.wmv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato WMV (*.wmv)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="135"/>
         <source>MPEG1 Format ( *.mpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato MPEG1 (*..mpg)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
         <source>MPEG2 Format ( *.mpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato MPEG2 (*.mpg)</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="136"/>
         <source>Apple iPod (*.mp4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Apple iPot (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="419"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="421"/>
         <source>Select the download directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el directorio de las descargas:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="428"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="430"/>
         <source>Select the ffmpeg lib:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione donde encontrar la lib ffmpeg:</translation>
     </message>
 </context>
 <context>
@@ -1154,37 +1160,37 @@ background-color:#124565;
     <message>
         <location filename="../../ui/updatecenter.ui" line="13"/>
         <source>Update Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro de Actualizaciones</translation>
     </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="25"/>
         <source>Available updates:</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizaciones disponibles:</translation>
     </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="96"/>
         <source>&lt;b&gt;Update state:&lt;/b&gt; Stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Estado de la actualización:&lt;/b&gt; Parado</translation>
     </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="159"/>
         <source>Current xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Versión actual del xVST: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="187"/>
         <source>Install updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar actualizaciones</translation>
     </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="203"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="119"/>
         <source>0 bytes (0 bytes)</source>
-        <translation type="unfinished"></translation>
+        <translation>0 bytes (0 bytes)</translation>
     </message>
 </context>
 <context>
@@ -1192,50 +1198,50 @@ background-color:#124565;
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
         <source> File </source>
-        <translation type="unfinished"></translation>
+        <translation> Fichero </translation>
     </message>
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
         <source> Version </source>
-        <translation type="unfinished"></translation>
+        <translation> Versión </translation>
     </message>
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
         <source> Size </source>
-        <translation type="unfinished"></translation>
+        <translation> Tamaño </translation>
     </message>
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
         <source> Progress </source>
-        <translation type="unfinished"></translation>
+        <translation> Progreso </translation>
     </message>
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="107"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>Hecho</translation>
     </message>
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="99"/>
         <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Estado de la actualización:&lt;/b&gt; Descargando %1</translation>
     </message>
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="101"/>
         <source>%1 (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (%2)</translation>
     </message>
 </context>
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="212"/>
+        <location filename="../../src/videoinformation.cpp" line="233"/>
         <source>Unsupported video service</source>
-        <translation type="unfinished"></translation>
+        <translation>Servicio no soportado</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="215"/>
+        <location filename="../../src/videoinformation.cpp" line="236"/>
         <source>Invalid URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL Errónea</translation>
     </message>
 </context>
 <context>
@@ -1243,67 +1249,67 @@ background-color:#124565;
     <message>
         <location filename="../../src/videoitem.cpp" line="124"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="126"/>
         <source>Getting info...</source>
-        <translation type="unfinished"></translation>
+        <translation>Obteniendo Info...</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="128"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Preparado</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="130"/>
         <source>Downloading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargando...</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="132"/>
         <source>Downloaded</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargado</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="134"/>
         <source>Converting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Convirtiendo...</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="136"/>
         <source>Converted</source>
-        <translation type="unfinished"></translation>
+        <translation>Convertido</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="138"/>
         <source>Completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Completado</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="140"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelado</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="142"/>
         <source>Blocked</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloqueado</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="144"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="146"/>
         <source>Deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminado</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="267"/>
         <source>/sec</source>
-        <translation type="unfinished"></translation>
+        <translation>/sec</translation>
     </message>
 </context>
 </TS>

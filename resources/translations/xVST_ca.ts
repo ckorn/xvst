@@ -6,7 +6,7 @@
     <message>
         <location filename="../../ui/addvideo.ui" line="25"/>
         <source>Add Video URL</source>
-        <translation>Afegeix Video URL</translation>
+        <translation>Afegeix URL Video</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="150"/>
@@ -629,7 +629,7 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="211"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="232"/>
         <source>Closing...</source>
         <translation>Tancant...</translation>
     </message>
@@ -639,47 +639,47 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="213"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="234"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="258"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="279"/>
         <source>Options</source>
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="341"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="362"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="212"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="233"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
         <translation>xVideoServiceThief esta treballant, vols cancel·lar els processos actuals?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="213"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="234"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="293"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="314"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="240"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="261"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;aplicació xUpdater no s&apos;ha poguttrobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="295"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="316"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="294"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="315"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plaupara&apos;l o espera a que finalitzi.</translation>
     </message>
@@ -795,11 +795,6 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <location filename="../../ui/options.ui" line="797"/>
         <source>Disable adult websites support</source>
         <translation>Desactiva el suport als webs per adults</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="108"/>
-        <source>Display a popup on video Downloaded (only when the main form is not visible)</source>
-        <translation>Mostra un missatge al finalitzar una Descàrrega (només quan el formulari principal no és visible)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="519"/>
@@ -953,6 +948,11 @@ background-color:#124565;
         <source>View Log</source>
         <translation>Veure Històric</translation>
     </message>
+    <message>
+        <location filename="../../ui/options.ui" line="108"/>
+        <source>Display a popup window on video Downloaded</source>
+        <translation>Mostra una finestra informativa al finalitzar una Descarga</translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -987,7 +987,7 @@ background-color:#124565;
         <translation>6 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="460"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="462"/>
         <source>Are you sure to Clear the Historic File?</source>
         <translation>Estàs segur de netejar l&apos;Històric?</translation>
     </message>
@@ -1002,7 +1002,7 @@ background-color:#124565;
         <translation>Bàsic</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="459"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="461"/>
         <source>Clear Log</source>
         <translation>Neteja l&apos;Històric</translation>
     </message>
@@ -1047,7 +1047,7 @@ background-color:#124565;
         <translation>MP3 Format (*.mp3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="461"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="463"/>
         <source>No</source>
         <translation>No</translation>
     </message>
@@ -1102,22 +1102,22 @@ background-color:#124565;
         <translation>Setmana</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="461"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="463"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="390"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="392"/>
         <source>Language Setup</source>
         <translation>Configuració del Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="391"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="393"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Per tal d&apos;aplicar el idioma seleccionat, esnecessari reiniciar el programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="392"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="394"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -1142,12 +1142,12 @@ background-color:#124565;
         <translation>Apple iPod (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="419"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="421"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="428"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="430"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Selecciona on es troba el programa ffmpeg:</translation>
     </message>
@@ -1231,12 +1231,12 @@ background-color:#124565;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="215"/>
+        <location filename="../../src/videoinformation.cpp" line="236"/>
         <source>Invalid URL</source>
         <translation>URL Invàlida</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="212"/>
+        <location filename="../../src/videoinformation.cpp" line="233"/>
         <source>Unsupported video service</source>
         <translation>Servei de vídeos no suportat</translation>
     </message>
