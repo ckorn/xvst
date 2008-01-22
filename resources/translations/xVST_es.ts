@@ -9,11 +9,6 @@
         <translation>Añadir URL Video</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="37"/>
-        <source>Enter the Video URL to download:</source>
-        <translation>Entre la URL del video a descargar:</translation>
-    </message>
-    <message>
         <location filename="../../ui/addvideo.ui" line="122"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
@@ -22,6 +17,11 @@
         <location filename="../../ui/addvideo.ui" line="150"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addvideo.ui" line="37"/>
+        <source>Enter the video URL to download:</source>
+        <translation>Escriba la URL del vídeo a bajar:</translation>
     </message>
 </context>
 <context>
@@ -81,11 +81,6 @@
 <context>
     <name>CompletedPopup</name>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="25"/>
-        <source>Form</source>
-        <translation>Form</translation>
-    </message>
-    <message>
         <location filename="../../ui/completedpopup.ui" line="55"/>
         <source>QFrame{background-color:#ffecbf}</source>
         <translation>QFrame{background-color:#ffecbf}</translation>
@@ -134,11 +129,6 @@
         <translation>Nivel de Transparencia personalizada</translation>
     </message>
     <message>
-        <location filename="../../ui/customalphablend.ui" line="28"/>
-        <source>Select the Alpha Blend Value:</source>
-        <translation>Seleccione el nivel de Transparencia:</translation>
-    </message>
-    <message>
         <location filename="../../ui/customalphablend.ui" line="37"/>
         <source>1%</source>
         <translation>1%</translation>
@@ -163,6 +153,11 @@
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
+    <message>
+        <location filename="../../ui/customalphablend.ui" line="28"/>
+        <source>Select the alpha blend value:</source>
+        <translation>Seleccione el nivel de transparencia:</translation>
+    </message>
 </context>
 <context>
     <name>CustomAlphaBlendImpl</name>
@@ -175,11 +170,6 @@
 <context>
     <name>DownloadLog</name>
     <message>
-        <location filename="../../ui/downloadlog.ui" line="27"/>
-        <source>Downloaded Videos Log:</source>
-        <translation>Historial de los Videos descargados:</translation>
-    </message>
-    <message>
         <location filename="../../ui/downloadlog.ui" line="87"/>
         <source>1</source>
         <translation>1</translation>
@@ -188,6 +178,11 @@
         <location filename="../../ui/downloadlog.ui" line="13"/>
         <source>Download Log</source>
         <translation>Historial de Desgargas</translation>
+    </message>
+    <message>
+        <location filename="../../ui/downloadlog.ui" line="27"/>
+        <source>Downloaded videos log:</source>
+        <translation>Historial de los vídeos bajados:</translation>
     </message>
 </context>
 <context>
@@ -219,16 +214,6 @@
         <location filename="../../ui/dragdrop.ui" line="110"/>
         <source>Drop the video link here</source>
         <translation>Suelte el link del video aquí</translation>
-    </message>
-    <message>
-        <location filename="../../ui/dragdrop.ui" line="140"/>
-        <source>Display main Window</source>
-        <translation>Mostrar la ventana principal</translation>
-    </message>
-    <message>
-        <location filename="../../ui/dragdrop.ui" line="145"/>
-        <source>Alpha Blend Value</source>
-        <translation>Nivel de Transparencia</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="150"/>
@@ -295,14 +280,19 @@
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
+    <message>
+        <location filename="../../ui/dragdrop.ui" line="140"/>
+        <source>Display main window</source>
+        <translation>Mostrar la ventana principal</translation>
+    </message>
+    <message>
+        <location filename="../../ui/dragdrop.ui" line="145"/>
+        <source>Alpha blend value</source>
+        <translation>Nivel de transparencia</translation>
+    </message>
 </context>
 <context>
     <name>DragDropImpl</name>
-    <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="118"/>
-        <source>Alpha Blend Value</source>
-        <translation>Nivel deNivel de Transparencia</translation>
-    </message>
     <message>
         <location filename="../../src/forms/dragdropimpl.cpp" line="65"/>
         <source>Ctrl+V</source>
@@ -317,6 +307,11 @@
         <location filename="../../src/forms/dragdropimpl.cpp" line="177"/>
         <source> - Adult content is not allowed</source>
         <translation> - Contenido para adultos no permitido</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="118"/>
+        <source>Alpha blend value</source>
+        <translation>Nivel de transparencia</translation>
     </message>
 </context>
 <context>
@@ -407,7 +402,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;   - Yuvutu&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;(*) Under revision, some videos cannot be downloaded (yet)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="301"/>
@@ -444,59 +439,9 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="130"/>
-        <source>Open the Drag &amp; Drop Window</source>
-        <translation>Mostrar ventana del Drag &amp; Drop</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="158"/>
+        <location filename="../../ui/mainform.ui" line="616"/>
         <source>Check for updates</source>
         <translation>Buscar actualizaciones</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="624"/>
-        <source>Online Help</source>
-        <translation>Ayuda en línea</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="214"/>
-        <source>Program Information</source>
-        <translation>Información del programa</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="235"/>
-        <source>Download List:</source>
-        <translation>Lista de descargas:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="640"/>
-        <source>Add Video</source>
-        <translation>Añadir Video</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="648"/>
-        <source>Delete Video</source>
-        <translation>Eliminar Video</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="656"/>
-        <source>Start Download</source>
-        <translation>Iniciar Descarga</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="664"/>
-        <source>Cancel Download</source>
-        <translation>Cancelar Descarga</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="417"/>
-        <source>Clear List</source>
-        <translation>Limpiar Lista</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="677"/>
-        <source>More Options...</source>
-        <translation>Más Opciones...</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="685"/>
@@ -507,11 +452,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/mainform.ui" line="493"/>
         <source>Convert videos to Mpeg/DivX/etc...</source>
         <translation>Convertir videos a Mpeg/DivX/etc...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="513"/>
-        <source>Downloads Directory:</source>
-        <translation>Directorio de las Descargas:</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="567"/>
@@ -527,16 +467,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/mainform.ui" line="701"/>
         <source>Open downloads directory</source>
         <translation>Abrir directorio de las descargas</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="608"/>
-        <source>Open the Drag&amp;Drop window</source>
-        <translation>Abrir ventana del Drag &amp; Drop</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="616"/>
-        <source>Check for Updates</source>
-        <translation>Buscar actualizaciones</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="632"/>
@@ -569,39 +499,89 @@ p, li { white-space: pre-wrap; }
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="730"/>
-        <source>Display popup window on download ends</source>
-        <translation>Mostrar un cartel informativo al finalizar una descarga</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="735"/>
-        <source>Clear Completed</source>
-        <translation>Limpiar Completados</translation>
-    </message>
-    <message>
         <location filename="../../ui/mainform.ui" line="743"/>
         <source>Move UP</source>
         <translation>Mover ARRIBA</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="751"/>
-        <source>Move Down</source>
-        <translation>Mover ABAJO</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="759"/>
-        <source>Play Video</source>
-        <translation>Reproducir video</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="767"/>
-        <source>Reset State</source>
-        <translation>Reiniciar el Estado</translation>
     </message>
     <message encoding="UTF-8">
         <location filename="../../ui/mainform.ui" line="22"/>
         <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2007</source>
         <translation>xVideoServiceThief %1 by Xesc &amp; Technology ® 2007</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="235"/>
+        <source>Download list:</source>
+        <translation>Lista de descargas:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="640"/>
+        <source>Add video</source>
+        <translation>Añadir video</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="648"/>
+        <source>Delete video</source>
+        <translation>Eliminar video</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="656"/>
+        <source>Start download</source>
+        <translation>Iniciar descarga</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="664"/>
+        <source>Cancel download</source>
+        <translation>Cancelar descarga</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="735"/>
+        <source>Clear completed</source>
+        <translation>Limpiar completados</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="677"/>
+        <source>More options...</source>
+        <translation>Más opciones...</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="513"/>
+        <source>Downloads directory:</source>
+        <translation>Directorio de las descargas:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="608"/>
+        <source>Open the Drag &amp; Drop window</source>
+        <translation>Abrir la ventana del Drag &amp; Drop</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="624"/>
+        <source>Online help</source>
+        <translation>Ayuda en línea</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="751"/>
+        <source>Move DOWN</source>
+        <translation>Mover ABAJO</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="759"/>
+        <source>Play video</source>
+        <translation>Reproducir video</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="767"/>
+        <source>Reset state</source>
+        <translation>Marcar como nuevo</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="214"/>
+        <source>Program information</source>
+        <translation>Información del programa</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="730"/>
+        <source>Display a popup window on finish a download/conversion video</source>
+        <translation>Mostrar una ventana informativa al finalizar la descarga/conversión de un video</translation>
     </message>
 </context>
 <context>
@@ -725,11 +705,6 @@ p, li { white-space: pre-wrap; }
         <translation>Formato de Salida:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="202"/>
-        <source>Video Resolution:</source>
-        <translation>Resolución del Video:</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="212"/>
         <source>Audio sampling rate (Hz):</source>
         <translation>Audio sampling rate (Hz):</translation>
@@ -745,24 +720,9 @@ p, li { white-space: pre-wrap; }
         <translation>Calidad de Salida:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="242"/>
-        <source>Delete the Original Downloaded File after the conversion</source>
-        <translation>Eliminar el fichero descargado originalmente después de suconversión</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="256"/>
         <source>Language Configuration </source>
         <translation>Configuración  delIdioma </translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="262"/>
-        <source>Select a Language file from the list:</source>
-        <translation>Seleccione un Idioma de la lista:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="269"/>
-        <source>Language Information</source>
-        <translation>Información del Idioma</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="293"/>
@@ -795,19 +755,9 @@ p, li { white-space: pre-wrap; }
         <translation>Descripción:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="392"/>
-        <source>Use This Language</source>
-        <translation>Usar este Idioma</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="474"/>
         <source>Session Configuration </source>
         <translation>Configuración de las Sesiones </translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="494"/>
-        <source>Save and Restore the curren session</source>
-        <translation>Guarda y Recupera la sesión actual</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="519"/>
@@ -835,26 +785,6 @@ p, li { white-space: pre-wrap; }
         <translation>Configurar Actualizaciones</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="676"/>
-        <source>Check for new Versions on Program Startup</source>
-        <translation>Buscar nuevas versiones al iniciar el programa</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="685"/>
-        <source>Check for new Versions every:</source>
-        <translation>Buscar nuevas versiones cada:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="713"/>
-        <source>Install automatically the new Versions</source>
-        <translation>Instalar automáticamente las nuevas Versiones</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="726"/>
-        <source>Check for new Versions</source>
-        <translation>Buscar nuevas Versiones</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="779"/>
         <source>Ups! Configuration</source>
         <translation>Ups! Configuración</translation>
@@ -863,11 +793,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/options.ui" line="797"/>
         <source>Disable adult websites support</source>
         <translation>Desactivar el soporte a sitios para adultos</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="804"/>
-        <source>Select which websites are Allowed and which websites must be Blocked:</source>
-        <translation>Seleccione que sitios Web están permitidos y cuales debenestar bloqueados:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="811"/>
@@ -900,16 +825,6 @@ p, li { white-space: pre-wrap; }
         <translation>&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1107"/>
-        <source>Use Proxy Server</source>
-        <translation>Usar Servidor Proxy</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="1119"/>
-        <source>User Name:</source>
-        <translation>Nombre de Usuario:</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="1126"/>
         <source>Password:</source>
         <translation>Contraseña:</translation>
@@ -923,11 +838,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/options.ui" line="1162"/>
         <source>Port:</source>
         <translation>Puerto:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="1254"/>
-        <source>Remember last viewed Options page (only for this session)</source>
-        <translation>Recordar la última pagina usada en las Opciones (sólo paraesta sesión)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1283"/>
@@ -953,8 +863,78 @@ background-color:#124565;
     </message>
     <message>
         <location filename="../../ui/options.ui" line="108"/>
-        <source>Display a popup window on video Downloaded</source>
-        <translation>Mostrar una ventana informativa al finalizar una Descarga</translation>
+        <source>Display a popup window on finish a download/conversion video</source>
+        <translation>Mostrar una ventana informativa al finalizar la descarga/conversión de un video</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="202"/>
+        <source>Video resolution:</source>
+        <translation>Resolución video:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="242"/>
+        <source>Delete the original downloaded file after the conversion</source>
+        <translation>Eliminar el video descargado después de su conversión</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="262"/>
+        <source>Select a language file from the list:</source>
+        <translation>Seleccione un idioma de la lista:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="269"/>
+        <source>Language information</source>
+        <translation>Información del idioma</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="392"/>
+        <source>Use this language</source>
+        <translation>Usar este idioma</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="494"/>
+        <source>Save and restore the curren session</source>
+        <translation>Guardar y recuperar la sesión actual</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="685"/>
+        <source>Check for new versions every:</source>
+        <translation>Buscar nuevas versiones cada:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="726"/>
+        <source>Check for new versions</source>
+        <translation>Buscar nuevas versiones</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="804"/>
+        <source>Select which websites are allowed and which websites must be blocked:</source>
+        <translation>Seleccione que sitios Web están permitidos y cuales debenestar bloqueados:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1107"/>
+        <source>Use proxy server</source>
+        <translation>Usar un servidor proxy</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1119"/>
+        <source>User name:</source>
+        <translation>Nombre de usuario:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1254"/>
+        <source>Remember last viewed options page (only for this session)</source>
+        <translation>Recordar la última pagina visitada de las opciones (validosólo para esta sesión)</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="713"/>
+        <source>Install automatically the new versions</source>
+        <translation>Instalar automáticamente las nuevas versiones</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="676"/>
+        <source>Check for new versions on program startup</source>
+        <translation>Buscar nuevas versiones al arrancar el programa</translation>
     </message>
 </context>
 <context>
@@ -1095,11 +1075,6 @@ background-color:#124565;
         <translation>Limpiar Historial</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="462"/>
-        <source>Are you sure to Clear the Historic File?</source>
-        <translation>¿Está seguro de querer limpiar el Historial?</translation>
-    </message>
-    <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="463"/>
         <source>Yes</source>
         <translation>Sí</translation>
@@ -1154,14 +1129,14 @@ background-color:#124565;
         <source>Select the ffmpeg lib:</source>
         <translation>Seleccione donde encontrar la lib ffmpeg:</translation>
     </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="462"/>
+        <source>Are you sure to clear the downloads/conversions historic file?</source>
+        <translation>¿Está seguro de querer borrar el historial dedescargas/conversiones?</translation>
+    </message>
 </context>
 <context>
     <name>UpdateCenter</name>
-    <message>
-        <location filename="../../ui/updatecenter.ui" line="13"/>
-        <source>Update Center</source>
-        <translation>Centro de Actualizaciones</translation>
-    </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="25"/>
         <source>Available updates:</source>
@@ -1191,6 +1166,11 @@ background-color:#124565;
         <location filename="../../ui/updatecenter.ui" line="119"/>
         <source>0 bytes (0 bytes)</source>
         <translation>0 bytes (0 bytes)</translation>
+    </message>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="13"/>
+        <source>Update center</source>
+        <translation>Centro de actualizaciones</translation>
     </message>
 </context>
 <context>
@@ -1234,12 +1214,12 @@ background-color:#124565;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="233"/>
+        <location filename="../../src/videoinformation.cpp" line="241"/>
         <source>Unsupported video service</source>
         <translation>Servicio no soportado</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="236"/>
+        <location filename="../../src/videoinformation.cpp" line="244"/>
         <source>Invalid URL</source>
         <translation>URL Errónea</translation>
     </message>

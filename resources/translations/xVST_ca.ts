@@ -6,7 +6,7 @@
     <message>
         <location filename="../../ui/addvideo.ui" line="25"/>
         <source>Add Video URL</source>
-        <translation>Afegeix URL Video</translation>
+        <translation>Afegeix URL vídeo</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="150"/>
@@ -14,14 +14,14 @@
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="37"/>
-        <source>Enter the Video URL to download:</source>
-        <translation>Entra la URL del Vídeo a descarregar:</translation>
-    </message>
-    <message>
         <location filename="../../ui/addvideo.ui" line="122"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addvideo.ui" line="37"/>
+        <source>Enter the video URL to download:</source>
+        <translation>Entra la URL del vídeo a baixar:</translation>
     </message>
 </context>
 <context>
@@ -70,7 +70,7 @@
     <message>
         <location filename="../../src/forms/checkupdatesimpl.cpp" line="81"/>
         <source>You are using the most recent version of this program.</source>
-        <translation>Estàs utilitzant la versió més recent d&apos;aquestprograma.</translation>
+        <translation>Estàs utilitzant la versió més recent d&apos;aquest programa.</translation>
     </message>
     <message>
         <location filename="../../src/forms/checkupdatesimpl.cpp" line="82"/>
@@ -99,11 +99,6 @@
         <location filename="../../ui/completedpopup.ui" line="86"/>
         <source>Close</source>
         <translation>Tanca</translation>
-    </message>
-    <message>
-        <location filename="../../ui/completedpopup.ui" line="25"/>
-        <source>Form</source>
-        <translation>Form</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="245"/>
@@ -160,7 +155,7 @@
     </message>
     <message>
         <location filename="../../ui/customalphablend.ui" line="28"/>
-        <source>Select the Alpha Blend Value:</source>
+        <source>Select the alpha blend value:</source>
         <translation>Selecciona el nivell de transparència:</translation>
     </message>
 </context>
@@ -186,8 +181,8 @@
     </message>
     <message>
         <location filename="../../ui/downloadlog.ui" line="27"/>
-        <source>Downloaded Videos Log:</source>
-        <translation>Històric de vídeos descarregats:</translation>
+        <source>Downloaded videos log:</source>
+        <translation>Històric de vídeos baixats:</translation>
     </message>
 </context>
 <context>
@@ -256,11 +251,6 @@
         <translation>90%</translation>
     </message>
     <message>
-        <location filename="../../ui/dragdrop.ui" line="145"/>
-        <source>Alpha Blend Value</source>
-        <translation>Nivell de transparència</translation>
-    </message>
-    <message>
         <location filename="../../ui/dragdrop.ui" line="153"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
@@ -269,11 +259,6 @@
         <location filename="../../ui/dragdrop.ui" line="208"/>
         <source>Custom</source>
         <translation>Personalitzat</translation>
-    </message>
-    <message>
-        <location filename="../../ui/dragdrop.ui" line="140"/>
-        <source>Display main Window</source>
-        <translation>Mostra la finestra principal</translation>
     </message>
     <message>
         <location filename="../../ui/dragdrop.ui" line="95"/>
@@ -295,6 +280,16 @@
         <source>Paste URL from clipboard</source>
         <translation>Enganxa la URL del portapapers</translation>
     </message>
+    <message>
+        <location filename="../../ui/dragdrop.ui" line="140"/>
+        <source>Display main window</source>
+        <translation>Mostra la finestra principal</translation>
+    </message>
+    <message>
+        <location filename="../../ui/dragdrop.ui" line="145"/>
+        <source>Alpha blend value</source>
+        <translation>Nivell de transparència</translation>
+    </message>
 </context>
 <context>
     <name>DragDropImpl</name>
@@ -309,14 +304,14 @@
         <translation> - Bloquejat</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="118"/>
-        <source>Alpha Blend Value</source>
-        <translation>Nivell de transparència</translation>
-    </message>
-    <message>
         <location filename="../../src/forms/dragdropimpl.cpp" line="65"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="118"/>
+        <source>Alpha blend value</source>
+        <translation>Nivell de transparència</translation>
     </message>
 </context>
 <context>
@@ -366,7 +361,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;   - Yuvutu&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;(*) Under revision, some videos cannot be downloaded (yet)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="69"/>
@@ -410,9 +405,9 @@ background: white;
         <source>xVideoServiceThief is a tool for downloading your favourite video clips from a lot of video websites.
 
 xVideoServiceThief also provide you the ability to convert each video in most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.</source>
-        <translation>xVideoServiceThief és una utilitat per a descarregar els teus vídeos prefereits des d&apos;un munt de llocs web.
+        <translation>xVideoServiceThief és una utilitat per a baixar els teus vídeos prefereits d&apos;un munt de llocs web.
 
-xVideoServiceThief també pot convertir cada video a diferents formats, com són: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3.</translation>
+xVideoServiceThief també pot convertir elsvídeos baixats a un altre format més estàndard, com és: AVI, MPEG1, MPEG2, WMV,MP4, 3GP, MP3.</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="138"/>
@@ -439,39 +434,14 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="640"/>
-        <source>Add Video</source>
-        <translation>Afegeix Vídeo</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="664"/>
-        <source>Cancel Download</source>
-        <translation>Atura Descàrrega</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="158"/>
+        <location filename="../../ui/mainform.ui" line="616"/>
         <source>Check for updates</source>
         <translation>Busca actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="616"/>
-        <source>Check for Updates</source>
-        <translation>Busca actualitzacions</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="735"/>
-        <source>Clear Completed</source>
-        <translation>Nateja Completats</translation>
-    </message>
-    <message>
         <location filename="../../ui/mainform.ui" line="669"/>
         <source>Clear list</source>
-        <translation>Neteja la llista</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="417"/>
-        <source>Clear List</source>
-        <translation>Neteja la llista</translation>
+        <translation>Esborra la llista</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="722"/>
@@ -489,29 +459,9 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation>Converteix els vídeos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="648"/>
-        <source>Delete Video</source>
-        <translation>El·limina Vídeo</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="730"/>
-        <source>Display popup window on download ends</source>
-        <translation>Mostra el cartell al finalitzar una descàrrega</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="235"/>
-        <source>Download List:</source>
-        <translation>Llista de descàrregues:</translation>
-    </message>
-    <message>
         <location filename="../../ui/mainform.ui" line="685"/>
         <source>Download videos automatically</source>
         <translation>Descarrega automàticament els Vídeos</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="513"/>
-        <source>Downloads Directory:</source>
-        <translation>Directori de les Descàrregues:</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="632"/>
@@ -519,24 +469,9 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation>Informació</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="677"/>
-        <source>More Options...</source>
-        <translation>Més Opcions...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="751"/>
-        <source>Move Down</source>
-        <translation>Mou ABALL</translation>
-    </message>
-    <message>
         <location filename="../../ui/mainform.ui" line="743"/>
         <source>Move UP</source>
         <translation>Mou AMUNT</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="624"/>
-        <source>Online Help</source>
-        <translation>Ajuda en línia</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="701"/>
@@ -544,36 +479,11 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation>Obra el directory de les descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="130"/>
-        <source>Open the Drag &amp; Drop Window</source>
-        <translation>Obra la finestra del Drag &amp; Drop</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="608"/>
-        <source>Open the Drag&amp;Drop window</source>
-        <translation>Obra la finestra del Drag &amp; Drop</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="759"/>
-        <source>Play Video</source>
-        <translation>Reprodueix el vídeo</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="214"/>
-        <source>Program Information</source>
-        <translation>Inormació del Programa</translation>
-    </message>
-    <message>
         <location filename="../../ui/mainform.ui" line="50"/>
         <source>QFrame{
 <byte value="x9"/>background: white;
 } </source>
         <translation>QFrame{<byte value="x9"/>background: white;} </translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="767"/>
-        <source>Reset State</source>
-        <translation>Estat inicial</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="714"/>
@@ -590,15 +500,85 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <source>Select the downloads directory</source>
         <translation>Selecciona el directori de les descàrregues</translation>
     </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="656"/>
-        <source>Start Download</source>
-        <translation>Inicia Descàrrega</translation>
-    </message>
     <message encoding="UTF-8">
         <location filename="../../ui/mainform.ui" line="22"/>
         <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2007</source>
         <translation>xVideoServiceThief %1 by Xesc &amp; Technology ® 2007</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="235"/>
+        <source>Download list:</source>
+        <translation>Llista de descàrrgues:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="640"/>
+        <source>Add video</source>
+        <translation>Afegeix vídeo</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="648"/>
+        <source>Delete video</source>
+        <translation>Esborra vídeo</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="656"/>
+        <source>Start download</source>
+        <translation>Inicia descàrrega</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="664"/>
+        <source>Cancel download</source>
+        <translation>Cancel·la descàrrega</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="735"/>
+        <source>Clear completed</source>
+        <translation>Esborra completats</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="677"/>
+        <source>More options...</source>
+        <translation>Més opcions...</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="513"/>
+        <source>Downloads directory:</source>
+        <translation>Directori de les descàrregues:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="608"/>
+        <source>Open the Drag &amp; Drop window</source>
+        <translation>Obra la finestra del Drag &amp; Drop</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="624"/>
+        <source>Online help</source>
+        <translation>Ajuda en línia</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="751"/>
+        <source>Move DOWN</source>
+        <translation>Mou ABALL</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="759"/>
+        <source>Play video</source>
+        <translation>Reprodueix el vídeo</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="767"/>
+        <source>Reset state</source>
+        <translation>Marca&apos;l com a nou</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="214"/>
+        <source>Program information</source>
+        <translation>Informació del programa</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="730"/>
+        <source>Display a popup window on finish a download/conversion video</source>
+        <translation>Mostra un cartell informatiu al finalitzar la descàrrega/conversió d&apos;un vídeo</translation>
     </message>
 </context>
 <context>
@@ -656,7 +636,7 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="233"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
-        <translation>xVideoServiceThief esta treballant, vols cancel·lar els processos actuals?</translation>
+        <translation>xVideoServiceThief esta treballant, vols Cancel·lar els processos actuals?</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="234"/>
@@ -671,7 +651,7 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="261"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
-        <translation>L&apos;aplicació xUpdater no s&apos;ha poguttrobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
+        <translation>L&apos;aplicació xUpdater no s&apos;ha pogut trobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="316"/>
@@ -681,7 +661,7 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="315"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
-        <translation>Un altre procés està treballant, si us plaupara&apos;l o espera a que finalitzi.</translation>
+        <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>
 </context>
 <context>
@@ -752,21 +732,6 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="726"/>
-        <source>Check for new Versions</source>
-        <translation>Busca noves Versions</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="685"/>
-        <source>Check for new Versions every:</source>
-        <translation>Busca noves versions cada:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="676"/>
-        <source>Check for new Versions on Program Startup</source>
-        <translation>Busca noves versions al iniciar el Programa</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="588"/>
         <source>Clear Log</source>
         <translation>Neteja l&apos;Històric</translation>
@@ -780,11 +745,6 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <location filename="../../ui/options.ui" line="168"/>
         <source>Convert videos to Mpeg/DivX/etc...</source>
         <translation>Converteix els vídeos a Mpeg/DivX/etc...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="242"/>
-        <source>Delete the Original Downloaded File after the conversion</source>
-        <translation>Esborra el vídeo descarregat (l’original) després de la seva conversió</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="367"/>
@@ -812,11 +772,6 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <translation>Llibreria FFmpeg</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="713"/>
-        <source>Install automatically the new Versions</source>
-        <translation>Instal·la automàticament les noves Versions</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="293"/>
         <source>Language</source>
         <translation>Idioma</translation>
@@ -825,11 +780,6 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
         <location filename="../../ui/options.ui" line="256"/>
         <source>Language Configuration </source>
         <translation>Configuració del idioma </translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="269"/>
-        <source>Language Information</source>
-        <translation>Informació del Idioma</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1283"/>
@@ -849,7 +799,7 @@ xVideoServiceThief també pot convertir cada video a diferents formats, com són
     <message>
         <location filename="../../ui/options.ui" line="232"/>
         <source>Output quality:</source>
-        <translation>Qualitat de Sortida:</translation>
+        <translation>Qualitat de sortida:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1126"/>
@@ -874,29 +824,9 @@ background-color:#124565;
         <translation>QTextLine{background-color:#124565;}</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1254"/>
-        <source>Remember last viewed Options page (only for this session)</source>
-        <translation>Recorda l&apos;ultima pàgina de les Opcions (nomesper aquesta sessió)</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="544"/>
         <source>Save a Log with all downloaded videos (Date + Title + URL)</source>
         <translation>Guarda un Històric amb tots els vídeos descarregats (Data + Títol + URL)</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="494"/>
-        <source>Save and Restore the curren session</source>
-        <translation>Guarda i Restaura la sessió actual</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="262"/>
-        <source>Select a Language file from the list:</source>
-        <translation>Selecciona un Idioma de la llista:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="804"/>
-        <source>Select which websites are Allowed and which websites must be Blocked:</source>
-        <translation>Selecciona quins webs estan Permesos i quins han d&apos;estar Bloquejats:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="474"/>
@@ -914,21 +844,6 @@ background-color:#124565;
         <translation>Ups! Configuració</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1107"/>
-        <source>Use Proxy Server</source>
-        <translation>Usa un Servidor Proxy</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="392"/>
-        <source>Use This Language</source>
-        <translation>Usa aqest Idioma</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="1119"/>
-        <source>User Name:</source>
-        <translation>Nom d&apos;Usuari:</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="313"/>
         <source>Version:</source>
         <translation>Versió:</translation>
@@ -939,19 +854,84 @@ background-color:#124565;
         <translation>Vídeo frame rate (Hz)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="202"/>
-        <source>Video Resolution:</source>
-        <translation>Resolució del Vídeo:</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="575"/>
         <source>View Log</source>
         <translation>Veure Històric</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="108"/>
-        <source>Display a popup window on video Downloaded</source>
-        <translation>Mostra una finestra informativa al finalitzar una Descarga</translation>
+        <source>Display a popup window on finish a download/conversion video</source>
+        <translation>Mostra un cartell informatiu al finalitzar la descàrrega/conversió d&apos;un vídeo</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="202"/>
+        <source>Video resolution:</source>
+        <translation>Resolució del vídeo:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="242"/>
+        <source>Delete the original downloaded file after the conversion</source>
+        <translation type="unfinished">Esborra el vídeo original després de la seva conversió</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="262"/>
+        <source>Select a language file from the list:</source>
+        <translation>Selecciona un idioma de la llista:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="269"/>
+        <source>Language information</source>
+        <translation>Informació del idioma</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="392"/>
+        <source>Use this language</source>
+        <translation>Usa aquest idioma</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="494"/>
+        <source>Save and restore the curren session</source>
+        <translation>Desa i recupera la sessió actual</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="685"/>
+        <source>Check for new versions every:</source>
+        <translation>Cerca noves versions cada:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="726"/>
+        <source>Check for new versions</source>
+        <translation>Cerca noves versions</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="804"/>
+        <source>Select which websites are allowed and which websites must be blocked:</source>
+        <translation>Selecciona quins llocs Web estan permesos i quins han d&apos;estar bloquejats:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1107"/>
+        <source>Use proxy server</source>
+        <translation>Usa un servidor proxy</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1119"/>
+        <source>User name:</source>
+        <translation>Nom d&apos;usuari:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1254"/>
+        <source>Remember last viewed options page (only for this session)</source>
+        <translation>Recorda l&apos;ultima pàgina visitada de lesopcions (només vàlid per aquesta sessió)</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="713"/>
+        <source>Install automatically the new versions</source>
+        <translation>Instal·la automàticament les noves versions</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="676"/>
+        <source>Check for new versions on program startup</source>
+        <translation>Cerca noves versions al iniciar el programa</translation>
     </message>
 </context>
 <context>
@@ -985,11 +965,6 @@ background-color:#124565;
         <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>6 Days</source>
         <translation>6 Dies</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="462"/>
-        <source>Are you sure to Clear the Historic File?</source>
-        <translation>Estàs segur de netejar l&apos;Històric?</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
@@ -1151,14 +1126,14 @@ background-color:#124565;
         <source>Select the ffmpeg lib:</source>
         <translation>Selecciona on es troba el programa ffmpeg:</translation>
     </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="462"/>
+        <source>Are you sure to clear the downloads/conversions historic file?</source>
+        <translation>Estàs segur d&apos;esborrar el històric de vídeos baixats/convertits?</translation>
+    </message>
 </context>
 <context>
     <name>UpdateCenter</name>
-    <message>
-        <location filename="../../ui/updatecenter.ui" line="13"/>
-        <source>Update Center</source>
-        <translation>Centre d&apos;Actualitzacions</translation>
-    </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="25"/>
         <source>Available updates:</source>
@@ -1188,6 +1163,11 @@ background-color:#124565;
         <location filename="../../ui/updatecenter.ui" line="119"/>
         <source>0 bytes (0 bytes)</source>
         <translation>0 bytes (0 bytes)</translation>
+    </message>
+    <message>
+        <location filename="../../ui/updatecenter.ui" line="13"/>
+        <source>Update center</source>
+        <translation>Centre d&apos;actualitzacions</translation>
     </message>
 </context>
 <context>
@@ -1220,7 +1200,7 @@ background-color:#124565;
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="99"/>
         <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
-        <translation>&lt;b&gt;Estat de l&apos;actualització:&lt;/b&gt; Downloading %1</translation>
+        <translation>&lt;b&gt;Estat de l&apos;actualització:&lt;/b&gt; Descarregant %1</translation>
     </message>
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="101"/>
@@ -1231,12 +1211,12 @@ background-color:#124565;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="236"/>
+        <location filename="../../src/videoinformation.cpp" line="244"/>
         <source>Invalid URL</source>
         <translation>URL Invàlida</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="233"/>
+        <location filename="../../src/videoinformation.cpp" line="241"/>
         <source>Unsupported video service</source>
         <translation>Servei de vídeos no suportat</translation>
     </message>
@@ -1246,7 +1226,7 @@ background-color:#124565;
     <message>
         <location filename="../../src/videoitem.cpp" line="124"/>
         <source>-</source>
-        <translation></translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="267"/>

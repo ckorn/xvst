@@ -25,7 +25,7 @@
    <string>Add Video URL</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/resources.qrc" >:/buttons/images/add.png</iconset>
+   <iconset/>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
@@ -34,7 +34,7 @@
    <item row="0" column="0" >
     <widget class="QLabel" name="lblTitle" >
      <property name="text" >
-      <string>Enter the Video URL to download:</string>
+      <string>Enter the video URL to download:</string>
      </property>
     </widget>
    </item>

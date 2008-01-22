@@ -70,7 +70,7 @@
    <item row="0" column="1" >
     <widget class="QStackedWidget" name="pgOptions" >
      <property name="currentIndex" >
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="pgBasic" >
       <layout class="QGridLayout" >
@@ -105,7 +105,7 @@
           <item row="1" column="0" >
            <widget class="QCheckBox" name="chbDisplayPopup" >
             <property name="text" >
-             <string>Display a popup window on video Downloaded</string>
+             <string>Display a popup window on finish a download/conversion video</string>
             </property>
            </widget>
           </item>
@@ -199,7 +199,7 @@ background-color:#124565;
           <item row="0" column="2" >
            <widget class="QLabel" name="lblVideoResolution" >
             <property name="text" >
-             <string>Video Resolution:</string>
+             <string>Video resolution:</string>
             </property>
            </widget>
           </item>
@@ -239,7 +239,7 @@ background-color:#124565;
           <item row="3" column="0" colspan="4" >
            <widget class="QCheckBox" name="chbDeleteOriginalVideo" >
             <property name="text" >
-             <string>Delete the Original Downloaded File after the conversion</string>
+             <string>Delete the original downloaded file after the conversion</string>
             </property>
            </widget>
           </item>
@@ -259,14 +259,14 @@ background-color:#124565;
           <item row="0" column="0" >
            <widget class="QLabel" name="lblSelectLanguage" >
             <property name="text" >
-             <string>Select a Language file from the list:</string>
+             <string>Select a language file from the list:</string>
             </property>
            </widget>
           </item>
           <item rowspan="2" row="0" column="1" >
            <widget class="QGroupBox" name="gpbLanguageInfo" >
             <property name="title" >
-             <string>Language Information</string>
+             <string>Language information</string>
             </property>
             <layout class="QGridLayout" >
              <property name="leftMargin" >
@@ -389,7 +389,7 @@ background-color:#124565;
                 </size>
                </property>
                <property name="text" >
-                <string>Use This Language</string>
+                <string>Use this language</string>
                </property>
               </widget>
              </item>
@@ -491,7 +491,7 @@ background-color:#124565;
             <item>
              <widget class="QCheckBox" name="chbSaveRestore" >
               <property name="text" >
-               <string>Save and Restore the curren session</string>
+               <string>Save and restore the curren session</string>
               </property>
              </widget>
             </item>
@@ -673,7 +673,7 @@ background-color:#124565;
           <item row="0" column="0" colspan="2" >
            <widget class="QCheckBox" name="chbCheckOnStartup" >
             <property name="text" >
-             <string>Check for new Versions on Program Startup</string>
+             <string>Check for new versions on program startup</string>
             </property>
            </widget>
           </item>
@@ -682,7 +682,7 @@ background-color:#124565;
             <item>
              <widget class="QLabel" name="lblUpdateEvery" >
               <property name="text" >
-               <string>Check for new Versions every:</string>
+               <string>Check for new versions every:</string>
               </property>
              </widget>
             </item>
@@ -710,7 +710,7 @@ background-color:#124565;
           <item row="3" column="0" colspan="2" >
            <widget class="QCheckBox" name="chbInstallAutomatically" >
             <property name="text" >
-             <string>Install automatically the new Versions</string>
+             <string>Install automatically the new versions</string>
             </property>
            </widget>
           </item>
@@ -723,7 +723,7 @@ background-color:#124565;
              </size>
             </property>
             <property name="text" >
-             <string>Check for new Versions</string>
+             <string>Check for new versions</string>
             </property>
            </widget>
           </item>
@@ -801,7 +801,7 @@ background-color:#124565;
           <item row="1" column="0" colspan="3" >
            <widget class="QLabel" name="lblUpsInfo" >
             <property name="text" >
-             <string>Select which websites are Allowed and which websites must be Blocked:</string>
+             <string>Select which websites are allowed and which websites must be blocked:</string>
             </property>
            </widget>
           </item>
@@ -1104,7 +1104,7 @@ background-color:#124565;
           </size>
          </property>
          <property name="title" >
-          <string>Use Proxy Server</string>
+          <string>Use proxy server</string>
          </property>
          <property name="checkable" >
           <bool>true</bool>
@@ -1116,7 +1116,7 @@ background-color:#124565;
           <item row="0" column="0" colspan="2" >
            <widget class="QLabel" name="lblUserName" >
             <property name="text" >
-             <string>User Name:</string>
+             <string>User name:</string>
             </property>
            </widget>
           </item>
@@ -1251,7 +1251,7 @@ background-color:#124565;
      <item>
       <widget class="QCheckBox" name="chbRememberView" >
        <property name="text" >
-        <string>Remember last viewed Options page (only for this session)</string>
+        <string>Remember last viewed options page (only for this session)</string>
        </property>
        <property name="checked" >
         <bool>true</bool>

@@ -22,7 +22,7 @@
    </size>
   </property>
   <property name="windowTitle" >
-   <string>Form</string>
+   <string/>
   </property>
   <widget class="QFrame" name="frameBase" >
    <property name="geometry" >

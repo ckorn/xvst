@@ -137,12 +137,12 @@
   </widget>
   <action name="actDisplayMainWindo" >
    <property name="text" >
-    <string>Display main Window</string>
+    <string>Display main window</string>
    </property>
   </action>
   <action name="actAlphaBlendValue" >
    <property name="text" >
-    <string>Alpha Blend Value</string>
+    <string>Alpha blend value</string>
    </property>
   </action>
   <action name="actPasteURLfromClipboard" >

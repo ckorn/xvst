@@ -115,7 +115,7 @@ void DragDropImpl::createDragDropMenu()
 	dragDropMenu = new QMenu(this);
 	dragDropMenu->addAction(actPasteURLfromClipboard);
 	dragDropMenu->addSeparator();
-	alphaBlendMenu = dragDropMenu->addMenu(tr("Alpha Blend Value"));
+	alphaBlendMenu = dragDropMenu->addMenu(tr("Alpha blend value"));
 	alphaBlendMenu->addAction(actAlphaOFF);
 	alphaBlendMenu->addSeparator();
 	alphaBlendMenu->addAction(actAlpha10);

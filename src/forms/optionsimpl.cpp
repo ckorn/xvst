@@ -459,7 +459,7 @@ void OptionsImpl::btnViewLogClicked()
 void OptionsImpl::btnClearLogClicked()
 {
 	if (QMessageBox::question(this, tr("Clear Log"),
-	                          tr("Are you sure to Clear the Historic File?"),
+	                          tr("Are you sure to clear the downloads/conversions historic file?"),
 	                          tr("Yes"), tr("No"), QString(), 0, 1) == 0)
 		sessionManager->clearLog();
 }

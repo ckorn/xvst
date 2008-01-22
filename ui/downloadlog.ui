@@ -24,7 +24,7 @@
      <item>
       <widget class="QLabel" name="lblTitle" >
        <property name="text" >
-        <string>Downloaded Videos Log:</string>
+        <string>Downloaded videos log:</string>
        </property>
       </widget>
      </item>

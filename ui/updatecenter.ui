@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Update Center</string>
+   <string>Update center</string>
   </property>
   <property name="windowIcon" >
    <iconset resource="../resources/resources.qrc" >:/buttons/images/transmit_blue.png</iconset>
