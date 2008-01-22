@@ -710,6 +710,12 @@ void MainFormImpl::updateVisualControls()
 	actCancelDownload->setEnabled(btnCancelDownload->isEnabled());
 	actClearList->setEnabled(btnClearList->isEnabled());
 	actClearCompleted->setEnabled(btnClearCompleted->isEnabled());
+	
+	// update tray icon
+	if (videoList->isWorking())
+		trayIcon->setIcon(QIcon(":/icons/images/film_save.png"));
+	else
+		trayIcon->setIcon(QIcon(":/icons/images/film_go.png"));
 }
 
 // lsvDownloadList signals
