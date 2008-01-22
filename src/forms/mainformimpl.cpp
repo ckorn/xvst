@@ -432,6 +432,8 @@ void MainFormImpl::moreOptionsClicked()
 	optionsForm_active = true;
 	actMoreOptions->setEnabled(false);
 	btnMoreOptions->setEnabled(false);
+	
+	if (!isVisible()) restoreAppClicked();
 
 	OptionsImpl optionsForm(programOptions, sessionManager, videoList->getVideoInformation(),
 	                        lastOptionsPage, this);

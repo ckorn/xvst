@@ -70,7 +70,7 @@
    <item row="0" column="1" >
     <widget class="QStackedWidget" name="pgOptions" >
      <property name="currentIndex" >
-      <number>3</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="pgBasic" >
       <layout class="QGridLayout" >
@@ -261,10 +261,19 @@ background-color:#124565;
             <property name="text" >
              <string>Select a language file from the list:</string>
             </property>
+            <property name="wordWrap" >
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item rowspan="2" row="0" column="1" >
            <widget class="QGroupBox" name="gpbLanguageInfo" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="title" >
              <string>Language information</string>
             </property>
