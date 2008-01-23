@@ -1171,7 +1171,7 @@ VideoDefinition VideoInformation_TuPorno::getVideoInformation(const QString URL)
 	VideoItem::initVideoDefinition(result);
 	// get the html
 	Http http;
-	QString html = http.downloadWebpage(QUrl(URL));
+	QString html = http.downloadWebpage(QUrl(URL), false);
 	// get video title
 	result.title = copyBetween(html, "<title>tuporno.tv - Videos -", "</title>").trimmed();
 	// get the video name
