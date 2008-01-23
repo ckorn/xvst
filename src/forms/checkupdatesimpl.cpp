@@ -72,9 +72,13 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 		this->setVisible(false);
 		// dispaly
 		UpdateCenterImpl updateCenterForm(updates, programOptions->getInstallAutomaticallyUpdates(), this);
-		// check te "exit" result (!accepted == cancelled)
-		if (updateCenterForm.exec() == QDialog::Accepted)
-			done(QDialog::Accepted);
+		// open update center
+		int result = updateCenterForm.exec();
+		// wait until "thread end"
+		while (updates->isRunning())
+			qApp->processEvents();
+		// close window
+		done(result);
 	}
 	else
 	{
@@ -88,13 +92,11 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 
 void CheckUpdatesImpl::updatesCancelled()
 {
-	qDebug() << "CANCEL";
-	
 	lblUpdating->setText(tr("Cancelling... please wait..."));
 	
 	while (updates->isRunning())
 		qApp->processEvents();
-		
+
 	done(QDialog::Rejected);
 }
 
