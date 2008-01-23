@@ -145,7 +145,7 @@ void Unpacker::extractPackage(std::string packageFile, std::string destination, 
 				package->read(reinterpret_cast<char *>(&fileNameLength), sizeof(fileNameLength));
 
 				// get the file name
-				char *fileName = new char[fileNameLength];
+				char *fileName = new char[fileNameLength + 1];
 				package->read(fileName, fileNameLength);
 				fileName[fileNameLength] = '\0';
 				
@@ -162,7 +162,7 @@ void Unpacker::extractPackage(std::string packageFile, std::string destination, 
 					fileNameLength = tmpFileName.length();
 
 					delete[] fileName;
-					fileName = new char[fileNameLength];
+					fileName = new char[fileNameLength + 1];
 
 					strcpy(fileName, tmpFileName.c_str());
 					fileName[fileNameLength] = '\0';
@@ -177,21 +177,21 @@ void Unpacker::extractPackage(std::string packageFile, std::string destination, 
 				package->read(buffer , fileSize);
 
 				// get the destination file name
-				char *fullFileName = new char[destination.length() + fileNameLength];
-				strcpy(fullFileName, destination.c_str());
-				strcat(fullFileName, fileName);
-				fullFileName[destination.length() + fileNameLength] = '\0';
+				char *finalFileName = new char[destination.length() + fileNameLength + 1];
+				strcpy(finalFileName, destination.c_str());
+				strcat(finalFileName, fileName);
+				finalFileName[destination.length() + fileNameLength] = '\0';
+
+				// add this to the extracted list
+				filesInDisc->push_back(std::string(finalFileName));
 
 				// write the packed file to disc
-				std::ofstream *file = new std::ofstream(fullFileName, std::ios::binary);
+				std::ofstream *file = new std::ofstream(finalFileName, std::ios::binary);
 				file->write(buffer, fileSize);
 				file->close();
 
-				// add this to the extracted list
-				filesInDisc->push_back(std::string(fullFileName));
-
 				// delete buffers
-				delete[] fullFileName;
+				delete[] finalFileName;
 				delete[] fileName;
 				delete[] buffer;
 				delete file;
