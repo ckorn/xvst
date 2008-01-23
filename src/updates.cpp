@@ -273,16 +273,12 @@ void Updates::run()
 
 		case usDownloading:
 		{
-			qDebug() << "start usDownloading";
-			
 			currentItem = 0;
 			int lastItem = -1;
 			getTotalSizeToDownload();
 			// download updates
 			while (!cancelled && updateState == usDownloading)
 			{
-				qDebug() << "!cancelled && updateState == usDownloading";
-				
 				if (lastItem != currentItem)
 				{
 					lastItem = currentItem;
@@ -298,9 +294,6 @@ void Updates::run()
 				// wait 100 miliseconds (prevent 100% cpu)
 				msleep(100);
 			}
-			
-			qDebug() << "exit loop";
-			
 			// install updates
 			if (!cancelled && updateState == usInstalling) 
 				run();
