@@ -88,6 +88,10 @@ void UpdateCenterImpl::btnCancelClicked()
 
 void UpdateCenterImpl::btnUpdateClicked()
 {
+	// select checked updates
+	for (int n = 0; n < lsvUpdates->topLevelItemCount(); n++)
+		updates->getUpdateItem(n)->setChecked(lsvUpdates->topLevelItem(n)->checkState(0) == Qt::Checked);
+	
 	lsvUpdates->setEnabled(false);
 	btnUpdate->setEnabled(false);
 	updates->downloadUpdates();
