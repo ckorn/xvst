@@ -38,6 +38,7 @@ CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, 
 	// signals
 	connect(updates, SIGNAL(progressCheckUpdate(int)), this, SLOT(progressCheckUpdate(int)));
 	connect(updates, SIGNAL(updatesChecked(bool)), this, SLOT(updatesChecked(bool)));
+	connect(updates, SIGNAL(updatesCancelled()), this, SLOT(updatesCancelled()));
 	//
 	connect(btnCancel, SIGNAL(clicked()), this, SLOT(btnCancelClicked()));
 	// check for updates
@@ -61,7 +62,6 @@ void CheckUpdatesImpl::btnCancelClicked()
 {
 	btnCancel->setEnabled(false);
 	updates->cancel();
-	done(QDialog::Rejected);
 }
 
 void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
@@ -72,7 +72,9 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 		this->setVisible(false);
 		// dispaly
 		UpdateCenterImpl updateCenterForm(updates, programOptions->getInstallAutomaticallyUpdates(), this);
-		done(updateCenterForm.exec());
+		// check te "exit" result (!accepted == cancelled)
+		if (updateCenterForm.exec() == QDialog::Accepted)
+			done(QDialog::Accepted);
 	}
 	else
 	{
@@ -82,6 +84,18 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 			                               tr("Ok"));
 		done(QDialog::Rejected);
 	}
+}
+
+void CheckUpdatesImpl::updatesCancelled()
+{
+	qDebug() << "CANCEL";
+	
+	lblUpdating->setText(tr("Cancelling... please wait..."));
+	
+	while (updates->isRunning())
+		qApp->processEvents();
+		
+	done(QDialog::Rejected);
 }
 
 void CheckUpdatesImpl::progressCheckUpdate(int progress)

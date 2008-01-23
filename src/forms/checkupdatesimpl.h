@@ -54,6 +54,7 @@ Q_OBJECT
 	private slots:
 		void btnCancelClicked();
 		void updatesChecked(bool hasUpdates);
-		void progressCheckUpdate(int progress);
+		void updatesCancelled();
+		void progressCheckUpdate(int progress);		
 };
 #endif

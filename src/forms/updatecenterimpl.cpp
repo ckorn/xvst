@@ -81,6 +81,8 @@ void UpdateCenterImpl::itemChanged(QTreeWidgetItem * item, int column)
 
 void UpdateCenterImpl::btnCancelClicked()
 {
+	updates->cancel();
+
 	done(QDialog::Rejected);
 }
 
