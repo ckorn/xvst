@@ -131,6 +131,8 @@ Q_OBJECT
 		void buildInstalScript();
 		/*! Get the total size to download */
 		void getTotalSizeToDownload();
+		/*! Get the first update file to download */
+		int getFirstUpdateToDownload();
 		/*! Thread executation */
 		void run();
 	public:

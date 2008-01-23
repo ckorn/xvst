@@ -273,11 +273,11 @@ void Updates::run()
 
 		case usDownloading:
 		{
-			currentItem = 0;
+			currentItem = getFirstUpdateToDownload();
 			int lastItem = -1;
 			getTotalSizeToDownload();
 			// download updates
-			while (!cancelled && updateState == usDownloading)
+			while (!cancelled && updateState == usDownloading && currentItem != -1)
 			{
 				if (lastItem != currentItem)
 				{
@@ -295,7 +295,7 @@ void Updates::run()
 				msleep(100);
 			}
 			// install updates
-			if (!cancelled && updateState == usInstalling) 
+			if (!cancelled && updateState == usInstalling && currentItem != -1)
 				run();
 			else // process cancelled?
 				if (cancelled) // yes
@@ -365,6 +365,15 @@ int Updates::getCurrentDownloaded()
 int Updates::getTotalToDownload()
 {
 	return totalToDownload;
+}
+
+int Updates::getFirstUpdateToDownload()
+{
+	for (int n = 0; n < getUpdatesCount(); n++)
+		if (updateList->at(n)->getChecked())
+			return n;
+	
+	return -1;
 }
 
 bool Updates::canUpdate()
