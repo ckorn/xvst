@@ -164,6 +164,8 @@ Q_OBJECT
 	signals:
 		/*! After check for updates */
 		void updatesChecked(bool hasUpdates);
+		/*! Update proces cancelled */
+		void updatesCancelled();
 		/*! On progress update */
 		void progressCheckUpdate(int progress);
 		/*! Downloading update */

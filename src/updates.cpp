@@ -257,6 +257,7 @@ void Updates::run()
 		{
 			// analyze the update file
 			pareseUpdateFile(http->downloadWebpage(QUrl(updateURL), false));
+
 			// cancelled?
 			if (!cancelled)
 			{
@@ -265,17 +266,23 @@ void Updates::run()
 				// check versions
 				emit updatesChecked(hasUpdates());
 			}
+			else // yes, cancelled
+				emit updatesCancelled();
 			break;
 		}
 
 		case usDownloading:
 		{
+			qDebug() << "start usDownloading";
+			
 			currentItem = 0;
 			int lastItem = -1;
 			getTotalSizeToDownload();
 			// download updates
 			while (!cancelled && updateState == usDownloading)
 			{
+				qDebug() << "!cancelled && updateState == usDownloading";
+				
 				if (lastItem != currentItem)
 				{
 					lastItem = currentItem;
@@ -291,9 +298,15 @@ void Updates::run()
 				// wait 100 miliseconds (prevent 100% cpu)
 				msleep(100);
 			}
+			
+			qDebug() << "exit loop";
+			
 			// install updates
 			if (!cancelled && updateState == usInstalling) 
 				run();
+			else // process cancelled?
+				if (cancelled) // yes
+					emit updatesCancelled();
 			break;
 		}
 
@@ -326,9 +339,9 @@ void Updates::installUpdates()
 
 void Updates::cancel()
 {
+	updateState = usWaiting;
 	cancelled = true;
 	http->cancel();
-	this->quit();
 }
 
 Update* Updates::getUpdateItem(const int index)
