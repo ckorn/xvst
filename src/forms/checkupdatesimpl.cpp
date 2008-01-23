@@ -77,8 +77,15 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 		// wait until "thread end"
 		while (updates->isRunning())
 			qApp->processEvents();
-		// close window
-		done(result);
+		// updates downloaded??? yes? then install them
+		if (result == QDialog::Accepted)
+		{
+			updates->installUpdates();
+			
+			QApplication::closeAllWindows();
+		}
+		else // update center has been cancelled
+			done(QDialog::Rejected);
 	}
 	else
 	{

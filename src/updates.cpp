@@ -99,7 +99,7 @@ bool Updates::hasUpdates()
 {
 	if (cancelled) return false;
 
-	for (int n = updateList->count() - 1; n >= 0; n--)
+	for (int n = getUpdatesCount() - 1; n >= 0; n--)
 	{
 		bool deleteUpdate = false;
 		Update *update = updateList->at(n);
@@ -132,7 +132,7 @@ bool Updates::hasUpdates()
 			updateList->removeAt(n);
 		}
 	}
-	return updateList->count() > 0;
+	return getUpdatesCount() > 0;
 }
 
 void Updates::clear()
@@ -214,10 +214,10 @@ void Updates::buildInstalScript()
 				// empty block id
 				updateScript << QString(":install_file_%1").arg(n)
 							 << (n < getUpdatesCount() - 1 ? QString("goto install_file_%1").arg(n + 1) : "goto finish_update");
-			// finish update block
-			updateScript << ":finish_update"
-						 << QString("del \"%1\"").arg(QDir::tempPath() + XUPDATER_FILE);
 		}
+		// finish update block
+		updateScript << ":finish_update"
+					 << QString("del \"%1\"").arg(QDir::tempPath() + XUPDATER_FILE);
 		// replace dirs separators
 #ifdef Q_OS_WIN32
 		updateScript.replaceInStrings("/", "\\");
@@ -299,7 +299,14 @@ void Updates::run()
 				run();
 			else // process cancelled?
 				if (cancelled) // yes
+				{
+					// delete all temporal files
+					for (int n = 0; n < getUpdatesCount(); n++)
+						if (QFile::exists(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(currentItem)))
+							QFile::remove(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(currentItem));
+					
 					emit updatesCancelled();
+				}
 			break;
 		}
 
@@ -377,7 +384,6 @@ void Updates::downloadEvent(int pos, int max)
 							   static_cast<int>(calculePercent(pos, max)), 
 							   static_cast<int>(calculePercent(currentDownloaded, totalToDownload)));
 	}
-
 }
 
 void Updates::downloadFinished(const QFileInfo destFile)

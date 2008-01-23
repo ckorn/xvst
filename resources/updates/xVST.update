@@ -34,10 +34,18 @@
 #COMMON{
 	#FILE:0
 		caption="Language: Català (CAT)"
-		version="1.0"
-		size="32522"
+		version="1.0.0"
+		size="17043"
 		installTo="/languages/catala.language"
 		url="http://xviservicethief.sourceforge.net/updates/special-files/catala_lang.update"
 		packed="true"
 	#END:0
+	#FILE:1
+		caption="Language: Castellano (ES)"
+		version="1.0.0"
+		size="17113"
+		installTo="/languages/espanol.language"
+		url="http://xviservicethief.sourceforge.net/updates/special-files/espanol_lang.update"
+		packed="true"
+	#END:1
 }

@@ -116,9 +116,6 @@ void UpdateCenterImpl::downloadsFinished()
 
 void UpdateCenterImpl::readyToInstallUpdates()
 {
-	updates->installUpdates();
-	// restart the xVST
-	setResult(QDialog::Accepted);
-	QApplication::closeAllWindows();
+	done(QDialog::Accepted);
 }
 //
