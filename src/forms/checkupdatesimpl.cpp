@@ -58,6 +58,12 @@ void CheckUpdatesImpl::checkUpdates()
 	updates->checkForUpdates(URL_UPDATE_FILE);
 }
 
+void CheckUpdatesImpl::waitThread()
+{
+	while (updates->isRunning())
+		qApp->processEvents();
+}
+
 void CheckUpdatesImpl::btnCancelClicked()
 {
 	btnCancel->setEnabled(false);
@@ -75,8 +81,7 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 		// open update center
 		int result = updateCenterForm.exec();
 		// wait until "thread end"
-		while (updates->isRunning())
-			qApp->processEvents();
+		waitThread();
 		// updates downloaded??? yes? then install them
 		if (result == QDialog::Accepted)
 		{
@@ -89,6 +94,8 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 	}
 	else
 	{
+		waitThread();
+		
 		if (isUser)
 			QMessageBox::information(this, tr("Updates"),
 			                               tr("You are using the most recent version of this program."),
@@ -101,8 +108,7 @@ void CheckUpdatesImpl::updatesCancelled()
 {
 	lblUpdating->setText(tr("Cancelling... please wait..."));
 	
-	while (updates->isRunning())
-		qApp->processEvents();
+	waitThread();
 
 	done(QDialog::Rejected);
 }
@@ -112,6 +118,7 @@ void CheckUpdatesImpl::progressCheckUpdate(int progress)
 	lblUpdating->setText(tr("Checking for updates..."));
 	pbrUpdate->setMaximum(100);
 	pbrUpdate->setValue(progress);
+	
 	// imposible cancel it
 	if (progress == 100)
 		btnCancel->setEnabled(false);

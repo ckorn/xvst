@@ -48,6 +48,7 @@ Q_OBJECT
 		Updates *updates;
 		bool isUser;
 		void checkUpdates();
+		void waitThread();
 	public:
 		CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent = 0, Qt::WFlags f = 0 );
 		~CheckUpdatesImpl();
