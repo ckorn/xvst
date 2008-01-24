@@ -85,6 +85,7 @@ Q_OBJECT
 		VideoItem *videoItem;		//!< current video item
 		float videoLength;			//!< video time duration (seconds)
 		bool deleteOriginalVideo;	//!< delete the input video on finish?
+		QString outputAll;			//!< Temporal console output
 		/*! Build the ffmpeg command line */
 		QStringList getCommandLine();
 		/*! Convert & set the video duration to seconds */

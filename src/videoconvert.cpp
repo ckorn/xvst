@@ -228,12 +228,14 @@ void VideoConverter::parseOutput(QString output)
 {
 	if (videoLength == 0)
 	{
-		if (output.indexOf("Duration: ") > -1)
+		outputAll += output;
+		
+		if (outputAll.indexOf("Duration: ") > -1)
 		{
-			setVideoDuration(copyBetween(output, "Duration: ", ", start"));
+			setVideoDuration(copyBetween(outputAll, "Duration: ", ", start"));
 			// we have the durtion? if yes, then capture the first step
 			if (videoLength != 0)
-				getCurrentTimeConversion(copyBetween(output, "time=", " bitrate"));
+				getCurrentTimeConversion(copyBetween(outputAll, "time=", " bitrate"));
 		}
 	}
 	else // get the current frame
@@ -249,6 +251,7 @@ void VideoConverter::startConversionVideo(VideoItem *videoItem)
 	videoItem->setProgress(0, this);
 	// init internal data
 	videoLength = 0;
+	outputAll = "";
 	// exec ffmpeg
 	ffmpegProcess->start(ffmpegApp, getCommandLine());
 }
