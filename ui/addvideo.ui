@@ -25,7 +25,7 @@
    <string>Add Video URL</string>
   </property>
   <property name="windowIcon" >
-   <iconset/>
+   <iconset resource="../resources/resources.qrc" >:/buttons/images/film_add.png</iconset>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
