@@ -144,8 +144,9 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// updater timer
 	if (programOptions->getCheckForUpdatesOnStartup())
 		updaterTimer = this->startTimer(250);
-/*
+
 	// videos examples
+/*
 	videoList->addVideo("http://es.youtube.com/watch?v=0z-hdo3-UEU");
 	videoList->addVideo("http://www.metacafe.com/watch/952453/fart_football_funny_tape_ep34/");
 	videoList->addVideo("http://video.google.es/videoplay?docid=-6002479527438850286");
@@ -158,7 +159,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.lulu.tv/?p=20611");
 	videoList->addVideo("http://www.livevideo.com/video/ShatnerVision/D65C961087944AC5AAA4C0BF2893591F/shatner-plans-for-the-future.aspx");
 	videoList->addVideo("http://www.yikers.com/video_woman_attacked_by_cheetah.html");
-	videoList->addVideo("http://www.123video.nl/playvideos.asp?MovieID=199615");
+	videoList->addVideo("http://www.123video.nl/playvideos.asp?MovieID=57709");
 	videoList->addVideo("http://www.5min.com/Video/7-knots-every-scout-should-know-12334");
 	videoList->addVideo("http://www.abum.com/62464/NASA-records-the-sounds-of-Jupiter.html");
 	videoList->addVideo("http://www.aniboom.com/Player.aspx?v=94346&CATG=1&SortMethod=3&TimeLine=0");
@@ -168,6 +169,10 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://videos.caught-on-video.com/video/0f0f5255-310d-4f95-87f5-9881018b4697.htm");
 	videoList->addVideo("http://clip4e.com/play_po_belyo_na_rabotnoto_mqsto.htm");
 	videoList->addVideo("http://www.video.ca/video.php?id=1178558732");
+	videoList->addVideo("http://www.liveleak.com/view?i=969_1191475546");
+*/
+
+/*
 	// adult sites
 	//videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
 	videoList->addVideo("http://badjojo.com/video_play_front.php?Id=6292");
@@ -194,12 +199,12 @@ MainFormImpl::~MainFormImpl()
 	// delete program options
 	delete programOptions;
 
+	// delete main objects
+	delete videoList;
+	
 	// delete tray icon
 	delete trayIconMenu;
 	delete trayIcon;
-
-	// delete main objects
-	delete videoList;
 }
 
 void MainFormImpl::centerWindow()

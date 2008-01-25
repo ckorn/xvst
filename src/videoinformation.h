@@ -268,6 +268,16 @@ class VideoInformation_Clip4e : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for LiveLeak Videos */
+class VideoInformation_LiveLeak : public VideoInformation_plugin
+{
+	public:
+		/*! LiveLeak plugin class constructor */
+		VideoInformation_LiveLeak(VideoInformation *videoInformation);
+		/*! Get the full Video Information of LiveLeak Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 /*! Plugin for VideoCa Videos */
 class VideoInformation_VideoCa : public VideoInformation_plugin
 {

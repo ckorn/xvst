@@ -55,6 +55,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_CaughtOnVideo(this);
 	new VideoInformation_Clip4e(this);
 	new VideoInformation_VideoCa(this);
+	new VideoInformation_LiveLeak(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -342,7 +343,7 @@ VideoDefinition VideoInformation_Youtube::getVideoInformation(const QString URL)
 	QString html = http.downloadWebpage(QUrl(URL));
 	// get the video ID and the video HASH
 	QString vidID = QUrl(URL).queryItemValue("v");
-	QString vidHash = copyBetween(html, ",t:'", "'");
+	QString vidHash = copyBetween(html, "\"t\": \"", "\"");
 	// get the video title
 	result.title = copyBetween(html, "<title>YouTube - ", "</title>").trimmed();
 	// build the video url
@@ -569,7 +570,7 @@ VideoDefinition VideoInformation_Sclipo::getVideoInformation(const QString URL)
 	Http http;
 	QString html = http.downloadWebpage(QUrl(URL));
 	// get video info
-	result.title = copyBetween(html, "<title>Sclipo: ", "</title>").trimmed();
+	result.title = copyBetween(html, "<title>", "- video - Sclipo</title>").trimmed();
 	// get the video url
 	result.URL = copyBetween(html, "<link rel=\"videothumbnail\" href=\"", "\"");
 	result.URL = copy(result.URL, result.URL.lastIndexOf("/") + 1, result.URL.length());
@@ -599,7 +600,7 @@ VideoDefinition VideoInformation_LuluTV::getVideoInformation(const QString URL)
 	Http http;
 	QString html = http.downloadWebpage(QUrl(URL));
 	// get video info
-	result.title = copyBetween(html, "<title>Lulu TV  &raquo; ", "</title>").trimmed();
+	result.title = copyBetween(html, "<title>luluTV   &raquo;", "</title>").trimmed();
 	// get the video url
 	result.URL = copyBetween(html, "swf?file=", "&");
 	// clear and get the final url
@@ -720,7 +721,7 @@ VideoDefinition VideoInformation_123video::getVideoInformation(const QString URL
 	// get the host IP
 	QString hostIP = copyBetween(xml, "MediaIP=\"", "\"");
 	// get the FLV url
-	result.URL = QString("http://%1/%2/%3.flv").arg(hostIP).arg(copy(videoID, 0, 3)).arg(videoID);
+	result.URL = QString("http://%1/%2/%3.flv").arg(hostIP).arg(copy(videoID, 0, 2)).arg(videoID);
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information
@@ -1019,6 +1020,42 @@ VideoDefinition VideoInformation_VideoCa::getVideoInformation(const QString URL)
 	QString videoID = UrlInf.queryItemValue("id");
 	// clear and get the final url
 	result.URL = cleanURL(QString(URL_GET_FLV).arg(videoID));
+	// return the video information
+	return result;
+}
+
+// Plugin for VideoLeak Videos
+
+VideoInformation_LiveLeak::VideoInformation_LiveLeak(VideoInformation *videoInformation)
+{
+	setID("liveleak.com");
+	setCaption("LiveLeak");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_LiveLeak::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_XML = "http://www.liveleak.com/mi?token=%1&s=%2&p=%3";
+
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpagePost(QUrl(URL), "adult_confirmed=yes");
+	// get video title
+	result.title = copyBetween(html, "<title>LiveLeak.com -", "</title>").trimmed();
+	// get the video parameters
+	QString token = copyBetween(html, "\"token\", \"", "\"").trimmed();
+	QString p = copyBetween(html, "\"p\", \"", "\"").trimmed();
+	QString s = copyBetween(html, "\"s\", \"", "\"").trimmed();
+	// download the video info
+	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(token).arg(s).arg(p)));
+	// get the flv url
+	result.URL = copyBetween(xml, "&file_location=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
 	// return the video information
 	return result;
 }
