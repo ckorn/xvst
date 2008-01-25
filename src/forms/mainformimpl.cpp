@@ -154,6 +154,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.zappinternet.com/video/tivWjuQyaP/Sabotaje-en-el-metro-de-Madrid");
 	videoList->addVideo("http://www.dailymotion.com/es/cluster/music/featured/video/x3vdt4_james-brown-dance-lessons_music");
 	videoList->addVideo("http://www.dumpalink.com/videos/No_whoppers-2jg2.html");
+/*
 	videoList->addVideo("http://www.glumbert.com/media/bushrailroad");
 	videoList->addVideo("http://sclipo.com/video/massage-videos-lower-back-wrap-around-massage");
 	videoList->addVideo("http://www.lulu.tv/?p=20611");
@@ -298,9 +299,10 @@ void MainFormImpl::createTrayIcon()
 	trayIconMenu->setDefaultAction(actRestoreApp);
 
 	// create the Tray Icon object
+	lastTrayIconStr = ":/icons/images/film_go.png";
 	trayIcon = new QSystemTrayIcon(this);
 	trayIcon->setContextMenu(trayIconMenu);
-	trayIcon->setIcon(QIcon(":/icons/images/film_go.png"));
+	trayIcon->setIcon(QIcon(lastTrayIconStr));
 	trayIcon->setToolTip(this->windowTitle());
 	trayIcon->show();
 }
@@ -719,10 +721,10 @@ void MainFormImpl::updateVisualControls()
 	actClearCompleted->setEnabled(btnClearCompleted->isEnabled());
 	
 	// update tray icon
-	if (videoList->isWorking())
-		trayIcon->setIcon(QIcon(":/icons/images/film_save.png"));
-	else
-		trayIcon->setIcon(QIcon(":/icons/images/film_go.png"));
+	QString trayIconStr = videoList->isWorking() ? ":/icons/images/film_save.png" : ":/icons/images/film_go.png";
+	if (lastTrayIconStr != trayIconStr)
+		trayIcon->setIcon(QIcon(trayIconStr));
+	lastTrayIconStr = trayIconStr;
 }
 
 // lsvDownloadList signals

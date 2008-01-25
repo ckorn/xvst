@@ -59,6 +59,7 @@ Q_OBJECT
 		QMenu *trayIconMenu;
 		QMenu *trayIconMenuOptions;
 		QSystemTrayIcon *trayIcon;
+		QString lastTrayIconStr;
 		void createTrayIcon();
 		// completed popup window
 		CompletedPopupImpl *completedPopup;
