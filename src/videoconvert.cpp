@@ -203,7 +203,7 @@ QStringList VideoConverter::getCommandLine()
 
 void VideoConverter::setVideoDuration(QString strVideoDuration)
 {
-	if (strVideoDuration == "N/A") return;
+	if (strVideoDuration == "N/A" || strVideoDuration.isEmpty()) return;
 	// extrat h-m-s
 	QStringList hms = strVideoDuration.split(":");
 	// get hours
