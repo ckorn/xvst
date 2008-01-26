@@ -1,4 +1,4 @@
-CONFIG += qt warn_on debug_and_release console
+CONFIG += qt warn_on release
 QT = core gui network
 TEMPLATE = app
 DESTDIR = bin
