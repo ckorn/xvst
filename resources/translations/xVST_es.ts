@@ -660,7 +660,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="266"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
-        <translation>No se ha encontrado la aplicaciónxUpdater.&lt;br&gt;&lt;br&gt;Reinstale xVideoServiceThief si usted quiere lafunción de actualizaciones automáticas.</translation>
+        <translation>No se ha encontrado la aplicación xUpdater.&lt;br&gt;&lt;br&gt;Reinstale xVideoServiceThief si usted quiere la función de actualizaciones automáticas.</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="322"/>
@@ -670,7 +670,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="321"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
-        <translation>Otro proceso esta actualmente trabajando, por favor párelo oespere a su finalización.</translation>
+        <translation>Otro proceso esta actualmente trabajando, por favor párelo o espere a su finalización.</translation>
     </message>
 </context>
 <context>
@@ -728,7 +728,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="256"/>
         <source>Language Configuration </source>
-        <translation>Configuración  delIdioma </translation>
+        <translation>Configuración del Idioma </translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="302"/>
@@ -915,7 +915,7 @@ background-color:#124565;
     <message>
         <location filename="../../ui/options.ui" line="813"/>
         <source>Select which websites are allowed and which websites must be blocked:</source>
-        <translation>Seleccione que sitios Web están permitidos y cuales debenestar bloqueados:</translation>
+        <translation>Seleccione que sitios Web están permitidos y cuales deben estar bloqueados:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1116"/>
@@ -930,7 +930,7 @@ background-color:#124565;
     <message>
         <location filename="../../ui/options.ui" line="1263"/>
         <source>Remember last viewed options page (only for this session)</source>
-        <translation>Recordar la última pagina visitada de las opciones (validosólo para esta sesión)</translation>
+        <translation>Recordar la última pagina visitada de las opciones (valido sólo para esta sesión)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="722"/>
@@ -1138,12 +1138,12 @@ background-color:#124565;
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="471"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
-        <translation>¿Está seguro de querer borrar el historial dedescargas/conversiones?</translation>
+        <translation>¿Está seguro de querer borrar el historial: descargas/conversiones?</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="409"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
-        <translation>Otro proceso esta actualmente trabajando, por favor párelo oespere a su finalización.</translation>
+        <translation>Otro proceso esta actualmente trabajando, por favor párelo o espere a su finalización.</translation>
     </message>
 </context>
 <context>

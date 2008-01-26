@@ -34,7 +34,7 @@
     <message>
         <location filename="../../src/forms/addvideoimpl.cpp" line="56"/>
         <source> - Blocked site</source>
-        <translation> - Bloqejat</translation>
+        <translation> - Bloquejat</translation>
     </message>
 </context>
 <context>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../../ui/information.ui" line="158"/>
         <source>Homepage:</source>
-        <translation>Pàgina web:</translation>
+        <translation>Pàgina Web:</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="25"/>
@@ -370,7 +370,7 @@ background: white;
 xVideoServiceThief also provide you the ability to convert each video in most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.</source>
         <translation>xVideoServiceThief és una utilitat per a baixar els teus vídeos prefereits d&apos;un munt de llocs web.
 
-xVideoServiceThief també pot convertir elsvídeos baixats a un altre format més estàndard, com és: AVI, MPEG1, MPEG2, WMV,MP4, 3GP, MP3.</translation>
+xVideoServiceThief també pot convertir els vídeos baixats a un altre format més estàndard, com és: AVI, MPEG1, MPEG2, WMV,MP4, 3GP, MP3.</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="138"/>
@@ -482,7 +482,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/mainform.ui" line="701"/>
         <source>Open downloads directory</source>
-        <translation>Obra el directory de les descàrregues</translation>
+        <translation>Obre el directori de les descàrregues</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="50"/>
@@ -514,7 +514,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/mainform.ui" line="235"/>
         <source>Download list:</source>
-        <translation>Llista de descàrrgues:</translation>
+        <translation>Llista de descàrregues:</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="640"/>
@@ -554,7 +554,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/mainform.ui" line="608"/>
         <source>Open the Drag &amp; Drop window</source>
-        <translation>Obra la finestra del Drag &amp; Drop</translation>
+        <translation>Obre la finestra del Drag &amp; Drop</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="624"/>
@@ -715,7 +715,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="820"/>
         <source>Allowed websites:</source>
-        <translation>Permesos:</translation>
+        <translation>Webs permesos:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="212"/>
@@ -760,12 +760,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="806"/>
         <source>Disable adult websites support</source>
-        <translation>Desactiva el suport als webs per adults</translation>
+        <translation>Desactiva el suport dels Webs per adults</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="528"/>
         <source>Don&apos;t restore downloaded videos</source>
-        <translation>No restuaris els vídeos finalitzats</translation>
+        <translation>No recuperis els vídeos finalitzats</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="80"/>
@@ -837,7 +837,7 @@ background-color:#124565;
     <message>
         <location filename="../../ui/options.ui" line="483"/>
         <source>Session Configuration </source>
-        <translation>Configuracio de les Sessions </translation>
+        <translation>Configuració de les Sessions </translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="667"/>
@@ -927,7 +927,7 @@ background-color:#124565;
     <message>
         <location filename="../../ui/options.ui" line="1263"/>
         <source>Remember last viewed options page (only for this session)</source>
-        <translation>Recorda l&apos;ultima pàgina visitada de lesopcions (només vàlid per aquesta sessió)</translation>
+        <translation>Recorda l&apos;ultima pàgina visitada de les opcions (només vàlid per aquesta sessió)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="722"/>
@@ -1095,7 +1095,7 @@ background-color:#124565;
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="394"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
-        <translation>Per tal d&apos;aplicar el idioma seleccionat, esnecessari reiniciar el programa.</translation>
+        <translation>Per tal d&apos;aplicar el idioma seleccionat, és necessari reiniciar el programa.</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="410"/>
@@ -1252,7 +1252,7 @@ background-color:#124565;
     <message>
         <location filename="../../src/videoitem.cpp" line="140"/>
         <source>Canceled</source>
-        <translation>Cancelat</translation>
+        <translation>Cancel·lat</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="138"/>
