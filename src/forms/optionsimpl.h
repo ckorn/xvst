@@ -36,6 +36,7 @@
 #include "checkupdatesimpl.h"
 //
 #include "../options.h"
+#include "../videolistcontroller.h"
 #include "../sessionmanager.h"
 #include "../videoinformation.h"
 #include "../languages.h"
@@ -48,6 +49,7 @@ Q_OBJECT
 		SessionManager *sessionManager;
 		VideoInformation *videoInformation;
 		LanguageManager *languageManager;
+		VideoListController *videoList;
 		int lastPageViewed;
 		QString tmpLangFile;
 		void createMenu();
@@ -59,7 +61,7 @@ Q_OBJECT
 		void dropEvent(QDropEvent *event);
 	public:
 		OptionsImpl(ProgramOptions *programOptions, SessionManager *sessionManager,
-			VideoInformation *videoInformation, int lastOptionsPage, 
+			VideoListController *videoList, int lastOptionsPage, 
 			QWidget * parent = 0, Qt::WFlags f = 0);
 		~OptionsImpl();
 		int getLastPageViewed();

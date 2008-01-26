@@ -154,7 +154,6 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.zappinternet.com/video/tivWjuQyaP/Sabotaje-en-el-metro-de-Madrid");
 	videoList->addVideo("http://www.dailymotion.com/es/cluster/music/featured/video/x3vdt4_james-brown-dance-lessons_music");
 	videoList->addVideo("http://www.dumpalink.com/videos/No_whoppers-2jg2.html");
-/*
 	videoList->addVideo("http://www.glumbert.com/media/bushrailroad");
 	videoList->addVideo("http://sclipo.com/video/massage-videos-lower-back-wrap-around-massage");
 	videoList->addVideo("http://www.lulu.tv/?p=20611");
@@ -321,7 +320,6 @@ void MainFormImpl::updatesClicked()
 		QMessageBox::information(this, tr("Updates"),
 		                               tr("Another process is currently working, please stop it or wait until the end of process."),
 		                               tr("Ok"));
-		                               
 		return;
 	}
 
@@ -442,8 +440,7 @@ void MainFormImpl::moreOptionsClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 
-	OptionsImpl optionsForm(programOptions, sessionManager, videoList->getVideoInformation(),
-	                        lastOptionsPage, this);
+	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage, this);
 	if (optionsForm.exec() == QDialog::Accepted)
 	{
 		updateVisualOptions();

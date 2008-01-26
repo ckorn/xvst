@@ -28,14 +28,15 @@
 #include "optionsimpl.h"
 //
 OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *sessionManager,
-                         VideoInformation *videoInformation, int lastOptionsPage,
+                         VideoListController *videoList, int lastOptionsPage,
                          QWidget * parent, Qt::WFlags f)
 		: QDialog(parent, f)
 {
 	setupUi(this);
 	this->programOptions = programOptions;
 	this->sessionManager = sessionManager;
-	this->videoInformation = videoInformation;
+	this->videoList = videoList;
+	this->videoInformation = videoList->getVideoInformation();
 	this->lastPageViewed = lastOptionsPage;
 	languageManager = new LanguageManager;
 	//signals
@@ -402,6 +403,14 @@ void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem *item, int column)
 
 void OptionsImpl::btnCheckNowClicked()
 {
+	if (videoList->isWorking())
+	{
+		QMessageBox::information(this, tr("Updates"),
+		                               tr("Another process is currently working, please stop it or wait until the end of process."),
+		                               tr("Ok"));
+		return;
+	}
+	
 	btnCheckNow->setEnabled(false);
 	
 	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
