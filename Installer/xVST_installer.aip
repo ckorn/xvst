@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT type="Advanced Installer" CreateVersion="5.2.2" version="6.1" modules="freeware" RootPath="." Language="en">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="ALLUSERS" Value="2"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPHELPLINK" Value="http://xviservicethief.sourceforge.net/index.php?action=onlinehelp"/>
+    <ROW Property="ARPURLINFOABOUT" Value="http://xviservicethief.sourceforge.net/"/>
+    <ROW Property="ARPURLUPDATEINFO" Value="http://xviservicethief.sourceforge.net/"/>
+    <ROW Property="BannerBitmap" Value="default_banner.bmp" Type="1"/>
+    <ROW Property="DialogBitmap" Value="default_dialog.bmp" Type="1"/>
+    <ROW Property="Manufacturer" Value="Xesc &amp; Technology" ValueLocId="*"/>
+    <ROW Property="ProductCode" Value="1033:{523FA81A-60F2-47D2-B5A4-F110B8C359F8} "/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="xVideoServiceThief" ValueLocId="*"/>
+    <ROW Property="ProductVersion" Value="1.2.0"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{FA98D6CA-0AA3-4897-9928-194EC4DEEA4D}"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="Deskto~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="Microsoft.VC80.CRT_DIR" Directory_Parent="APPDIR" DefaultDir="Micros~1.CRT|Microsoft.VC80.CRT"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="bin_DIR" Directory_Parent="APPDIR" DefaultDir="bin"/>
+    <ROW Directory="languages_DIR" Directory_Parent="APPDIR" DefaultDir="langua~1|languages"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Microsoft.VC80.CRT.manifest" ComponentId="{D9711163-A6F4-4B07-835E-13E9FECBA2A2}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="Microsoft.VC80.CRT.manifest" FullKeyPath="APPDIR\Microsoft.VC80.CRT"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{A2849C9F-F1BB-46BE-9E59-BC17B2E0528E}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="catala.language" ComponentId="{0F077FBE-3E31-4726-AFC2-661503A93BBC}" Directory_="languages_DIR" Attributes="0" KeyPath="catala.language" FullKeyPath="APPDIR\languages"/>
+    <ROW Component="ffmpeg.exe" ComponentId="{C1171B40-C396-4C62-AC62-EC8DE2A0EE7D}" Directory_="bin_DIR" Attributes="0" KeyPath="ffmpeg.exe" FullKeyPath="APPDIR\bin\ffmpeg.exe"/>
+    <ROW Component="msvcm80.dll" ComponentId="{F172EFF4-4F82-48AF-A5CA-5F7722CF688D}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcm80.dll" FullKeyPath="APPDIR\Microsoft.VC80.CRT\msvcm80.dll"/>
+    <ROW Component="msvcp80.dll" ComponentId="{865B6AE5-89EA-4A4E-BF4A-788D08ECB176}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcp80.dll" FullKeyPath="APPDIR\Microsoft.VC80.CRT\msvcp80.dll"/>
+    <ROW Component="msvcr80.dll" ComponentId="{56F74F17-81B4-4685-9E11-C584779E60DF}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcr80.dll" FullKeyPath="APPDIR\Microsoft.VC80.CRT\msvcr80.dll"/>
+    <ROW Component="pthreadGC2.dll" ComponentId="{8EEEEE43-9111-4DE5-8550-F764E75B77F7}" Directory_="bin_DIR" Attributes="0" KeyPath="pthreadGC2.dll" FullKeyPath="APPDIR\bin\pthreadGC2.dll"/>
+    <ROW Component="xUpdater.exe" ComponentId="{DDC7EE60-1F82-4DFF-91F7-3151AB2D8679}" Directory_="bin_DIR" Attributes="0" KeyPath="xUpdater.exe" FullKeyPath="APPDIR\bin\xUpdater.exe"/>
+    <ROW Component="xVideoServiceThief.exe" ComponentId="{C34A3B7C-1629-466D-BE28-C63FBFAD7C36}" Directory_="APPDIR" Attributes="0" KeyPath="xVideoServiceThief.exe" FullKeyPath="APPDIR\xVideoServiceThief.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="ffmpeg.exe pthreadGC2.dll xUpdater.exe SHORTCUTDIR catala.language Microsoft.VC80.CRT.manifest msvcm80.dll msvcp80.dll msvcr80.dll xVideoServiceThief.exe"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Microsoft.VC80.CRT.manifest" Component_="Microsoft.VC80.CRT.manifest" FileName="Micros~1.man|Microsoft.VC80.CRT.manifest" Attributes="0" SourcePath="..\bin\Microsoft.VC80.CRT\Microsoft.VC80.CRT.manifest" SelfReg="false" Sequence="9"/>
+    <ROW File="catala.language" Component_="catala.language" FileName="catala~1.lan|catala.language" Attributes="0" SourcePath="..\bin\languages\catala.language" SelfReg="false" Sequence="4"/>
+    <ROW File="english_uk.language" Component_="catala.language" FileName="englis~1.lan|english_uk.language" Attributes="0" SourcePath="..\bin\languages\english_uk.language" SelfReg="false" Sequence="5"/>
+    <ROW File="espanol.language" Component_="catala.language" FileName="espano~1.lan|espanol.language" Attributes="0" SourcePath="..\bin\languages\espanol.language" SelfReg="false" Sequence="6"/>
+    <ROW File="ffmpeg.exe" Component_="ffmpeg.exe" FileName="ffmpeg.exe" Attributes="0" SourcePath="..\bin\bin\ffmpeg.exe" SelfReg="false" Sequence="1"/>
+    <ROW File="msvcm80.dll" Component_="msvcm80.dll" FileName="msvcm80.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC80.CRT\msvcm80.dll" SelfReg="false" Sequence="10"/>
+    <ROW File="msvcp80.dll" Component_="msvcp80.dll" FileName="msvcp80.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC80.CRT\msvcp80.dll" SelfReg="false" Sequence="11"/>
+    <ROW File="msvcr80.dll" Component_="msvcr80.dll" FileName="msvcr80.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC80.CRT\msvcr80.dll" SelfReg="false" Sequence="12"/>
+    <ROW File="pthreadGC2.dll" Component_="pthreadGC2.dll" FileName="pthrea~1.dll|pthreadGC2.dll" Attributes="0" SourcePath="..\bin\bin\pthreadGC2.dll" SelfReg="false" Sequence="2"/>
+    <ROW File="xUpdater.exe" Component_="xUpdater.exe" FileName="xUpdater.exe" Attributes="0" SourcePath="..\bin\bin\xUpdater.exe" SelfReg="false" Sequence="3"/>
+    <ROW File="xVST_ca.qm" Component_="catala.language" FileName="xVST_ca.qm" Attributes="0" SourcePath="..\bin\languages\xVST_ca.qm" SelfReg="false" Sequence="7"/>
+    <ROW File="xVST_es.qm" Component_="catala.language" FileName="xVST_es.qm" Attributes="0" SourcePath="..\bin\languages\xVST_es.qm" SelfReg="false" Sequence="8"/>
+    <ROW File="xVideoServiceThief.exe" Component_="xVideoServiceThief.exe" FileName="xVideo~1.exe|xVideoServiceThief.exe" Attributes="0" SourcePath="..\bin\xVideoServiceThief.exe" SelfReg="false" Sequence="13"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" InstallationType="4"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;ui.ail&gt;"/>
+    <ROW Path="&lt;ui_en.ail&gt;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="FolderDlg.aip" Path="&lt;FolderDlg.aip&gt;"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;StaticUIStrings.aip&gt;"/>
+    <ROW Fragment="UI.aip" Path="&lt;UI.aip&gt;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;aicustact.dll&gt;"/>
+    <ROW Name="default_banner.bmp" SourcePath="&lt;default-banner.bmp&gt;"/>
+    <ROW Name="default_dialog.bmp" SourcePath="&lt;default-dialog.bmp&gt;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ATTRIBUTE name="FixedSizeBitmaps" value="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="3"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="2"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="3"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="SystemFolder_msiexec.exe" SourcePath="&lt;uninstall.ico&gt;" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="740"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="Not Installed" Sequence="1545"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1300"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="740"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Uninstall" Directory_="SHORTCUTDIR" Name="Uninst~1|Uninstall" Component_="SHORTCUTDIR" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFolder_msiexec.exe" IconIndex="0" ShowCmd="1"/>
+    <ROW Shortcut="xVideoServiceThief" Directory_="DesktopFolder" Name="xVST" Component_="xVideoServiceThief.exe" Target="[#xVideoServiceThief.exe]" Description="Run the xVideoServiceThief and download videos" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="xVideoServiceThief_1" Directory_="SHORTCUTDIR" Name="xVideo~2|xVideoServiceThief" Component_="xVideoServiceThief.exe" Target="[#xVideoServiceThief.exe]" Description="Run the xVideoServiceThief and download videos" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMax="[|ProductVersion]" Attributes="1025" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>
