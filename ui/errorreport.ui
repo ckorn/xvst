@@ -1,0 +1,310 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>477</width>
+    <height>414</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Error Report</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/resources.qrc" >:/services/images/services/invalid.png</iconset>
+  </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" >
+    <widget class="QFrame" name="frame" >
+     <property name="minimumSize" >
+      <size>
+       <width>0</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="styleSheet" >
+      <string>QFrame{background: white;} </string>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" >
+       <widget class="QLabel" name="imgError" >
+        <property name="maximumSize" >
+         <size>
+          <width>110</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="pixmap" >
+         <pixmap resource="../resources/resources.qrc" >:/error/images/errorVideo.png</pixmap>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QLabel" name="lblErrorInfo" >
+        <property name="text" >
+         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-size:10pt; font-weight:600;">Ops! An error occurred while trying to download the video.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">You can help to fix this problem sending us an "&lt;span style=" font-weight:600;">Error report&lt;/span>". This Report will help us to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" color:#000000;">Your help is allways welcomed!&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+        <property name="wordWrap" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QGroupBox" name="gpbErrorInfo" >
+     <property name="title" >
+      <string>Error information </string>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" colspan="3" >
+       <widget class="QLabel" name="lblVideoURL" >
+        <property name="text" >
+         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">Video URL: &lt;span style=" font-weight:600;">%1&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="3" >
+       <widget class="QLabel" name="lblxVSTVersion" >
+        <property name="text" >
+         <string>xVST version: &lt;b>%1&lt;/b></string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3" >
+       <widget class="Line" name="line" >
+        <property name="minimumSize" >
+         <size>
+          <width>0</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <layout class="QVBoxLayout" >
+        <item>
+         <widget class="QLabel" name="label" >
+          <property name="text" >
+           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">Your name: &lt;span style=" font-style:italic; color:#a9a9a9;">(optional)&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit" >
+          <property name="minimumSize" >
+           <size>
+            <width>0</width>
+            <height>21</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="3" column="1" >
+       <layout class="QVBoxLayout" >
+        <item>
+         <widget class="QLabel" name="label_2" >
+          <property name="text" >
+           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">Email: &lt;span style=" font-style:italic; color:#a9a9a9;">(optional)&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_2" >
+          <property name="minimumSize" >
+           <size>
+            <width>0</width>
+            <height>21</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="3" column="2" >
+       <layout class="QVBoxLayout" >
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QToolButton" name="toolButton" >
+          <property name="minimumSize" >
+           <size>
+            <width>25</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>25</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="toolTip" >
+           <string>View which information will be sent</string>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../resources/resources.qrc" >:/error/images/view.png</iconset>
+          </property>
+          <property name="autoRaise" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="4" column="0" colspan="3" >
+       <widget class="QLabel" name="label_4" >
+        <property name="text" >
+         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">Comment: &lt;span style=" font-style:italic; color:#a9a9a9;">(optional)&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="3" >
+       <widget class="QTextEdit" name="rchComments" />
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <layout class="QGridLayout" >
+     <item row="0" column="0" >
+      <widget class="QCheckBox" name="chbNoErrors" >
+       <property name="text" >
+        <string>Do not display "Error Report" the next time</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" >
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>49</width>
+         <height>25</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="2" >
+      <widget class="QPushButton" name="btnSend" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>90</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>90</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="baseSize" >
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>Send</string>
+       </property>
+       <property name="default" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3" >
+      <widget class="QPushButton" name="btnCancel" >
+       <property name="minimumSize" >
+        <size>
+         <width>90</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>90</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="baseSize" >
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources/resources.qrc" />
+ </resources>
+ <connections/>
+</ui>

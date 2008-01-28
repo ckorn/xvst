@@ -15,7 +15,8 @@ FORMS = ui/addvideo.ui \
  ui/information.ui \
  ui/mainform.ui \
  ui/options.ui \
- ui/updatecenter.ui
+ ui/updatecenter.ui \
+ ui/errorreport.ui
 HEADERS = src/forms/addvideoimpl.h \
  src/forms/checkupdatesimpl.h \
  src/forms/completedpopupimpl.h \

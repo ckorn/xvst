@@ -21,6 +21,10 @@
         <file>images/script_go.png</file>
         <file>images/transmit_blue.png</file>
     </qresource>
+    <qresource prefix="/error" >
+        <file>images/errorVideo.png</file>
+        <file>images/view.png</file>
+    </qresource>
     <qresource prefix="/header" >
         <file>images/DragDropWindow.png</file>
         <file>images/InformationLogo.png</file>
@@ -40,30 +44,30 @@
         <file>images/ups.png</file>
     </qresource>
     <qresource prefix="/services" >
-        <file>images/services/dailymotion.com.png</file>
-        <file>images/services/glumbert.com.png</file>
-        <file>images/services/invalid.png</file>
-        <file>images/services/link_error.png</file>
-        <file>images/services/metacafe.com.png</file>
-        <file>images/services/no_icon.png</file>
-        <file>images/services/sclipo.com.png</file>
-        <file>images/services/video.google.png</file>
-        <file>images/services/youtube.com.png</file>
-        <file>images/services/zappinternet.com.png</file>
-        <file>images/services/lulu.tv.png</file>
-        <file>images/services/livevideo.com.png</file>
-        <file>images/services/yikers.com.png</file>
         <file>images/services/5min.com.png</file>
         <file>images/services/abum.com.png</file>
         <file>images/services/aniboom.com.png</file>
         <file>images/services/bebo.com.png</file>
-        <file>images/services/clip4e.com.png</file>
-        <file>images/services/video.ca.png</file>
         <file>images/services/break.com.png</file>
-        <file>images/services/yuvutu.com.png</file>
-        <file>images/services/youporn.com.png</file>
-        <file>images/services/tuporno.tv.png</file>
+        <file>images/services/clip4e.com.png</file>
+        <file>images/services/dailymotion.com.png</file>
         <file>images/services/dalealplay.com.png</file>
+        <file>images/services/glumbert.com.png</file>
+        <file>images/services/invalid.png</file>
+        <file>images/services/link_error.png</file>
         <file>images/services/liveleak.com.png</file>
+        <file>images/services/livevideo.com.png</file>
+        <file>images/services/lulu.tv.png</file>
+        <file>images/services/metacafe.com.png</file>
+        <file>images/services/no_icon.png</file>
+        <file>images/services/sclipo.com.png</file>
+        <file>images/services/tuporno.tv.png</file>
+        <file>images/services/video.ca.png</file>
+        <file>images/services/video.google.png</file>
+        <file>images/services/yikers.com.png</file>
+        <file>images/services/youporn.com.png</file>
+        <file>images/services/youtube.com.png</file>
+        <file>images/services/yuvutu.com.png</file>
+        <file>images/services/zappinternet.com.png</file>
     </qresource>
 </RCC>
