@@ -574,6 +574,15 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 			                             videoItem->getVideoInformation().title,
 			                             videoItem->getVideoFileSavedTo());
 	}
+
+	if (videoItem->hasErrors() && !videoItem->isReported())
+	{
+		BugReportImpl errorReport(this);
+		errorReport.fillErrorInfo(videoItem);
+		errorReport.exec();
+		// mark it as reported
+		videoItem->setAsReported();
+	}
 }
 
 void MainFormImpl::videoMoved(int from, int to)
@@ -732,8 +741,6 @@ void MainFormImpl::videoItemDoubleClicked(QTreeWidgetItem *item, int column)
 
 void MainFormImpl::videoItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous)
 {
-	//if (current != NULL)
-	//	updateVisualControls(videoList->getVideoItemFromQVAriant(current->data(0, Qt::UserRole)));
 	if (current != NULL)
 		updateVisualControls();
 }

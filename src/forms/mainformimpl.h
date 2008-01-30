@@ -38,6 +38,7 @@
 #include "informationimpl.h"
 #include "optionsimpl.h"
 #include "checkupdatesimpl.h"
+#include "bugreportimpl.h"
 //
 #include "../tools.h"
 #include "../options.h"

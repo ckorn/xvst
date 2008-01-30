@@ -1192,6 +1192,9 @@ background-color:#124565;
               <property name="maximum" >
                <number>9999</number>
               </property>
+              <property name="value" >
+               <number>1</number>
+              </property>
              </widget>
             </item>
            </layout>

@@ -59,6 +59,7 @@ void VideoItem::assign(VideoItem *videoItem)
 	videoState = videoItem->getVideoState();
 	videoInfo.URL = videoItem->getVideoInformation().URL;
 	videoInfo.title = videoItem->getVideoInformation().title;
+	reported = videoItem->isReported();
 }
 
 void VideoItem::initData()
@@ -73,6 +74,7 @@ void VideoItem::initData()
 	videoState = vsNULL;
 	videoInfo.URL = "";
 	videoInfo.title = "";
+	reported = false;
 }
 
 void VideoItem::assignID()
@@ -222,6 +224,11 @@ bool VideoItem::isCanceled()
 bool VideoItem::isDeleted()
 {
 	return videoState == vsDeleted;
+}
+
+bool VideoItem::isReported()
+{
+	return reported;
 }
 
 int VideoItem::getID()
@@ -455,6 +462,12 @@ void VideoItem::setAsDeleted(QObject *who)
 {
 	if (isLocked() && who != locker) return;
 	videoState = vsDeleted;
+}
+
+void VideoItem::setAsReported(QObject *who)
+{
+	if (isLocked() && who != locker) return;
+	reported = true;
 }
 
 void VideoItem::initVideoDefinition(VideoDefinition &videoDef)

@@ -92,6 +92,7 @@ void SessionManager::loadSession(VideoListController *videoListController)
 		videoInformation.URL = settings.value(videos.at(n) + "/VIDEO_URL", "").toString();
 		videoInformation.title = settings.value(videos.at(n) + "/VIDEO_title", "").toString();
 		videoItem->setVideoInformation(videoInformation);
+		if (videoItem->hasErrors()) videoItem->setAsReported();
 		videoListController->addVideo(videoItem);
 	}
 }

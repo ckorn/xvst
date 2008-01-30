@@ -1,4 +1,4 @@
-CONFIG += qt warn_on release
+CONFIG += qt warn_on debug_and_release console
 QT = core gui network
 TEMPLATE = app
 DESTDIR = bin
@@ -16,7 +16,8 @@ FORMS = ui/addvideo.ui \
  ui/mainform.ui \
  ui/options.ui \
  ui/updatecenter.ui \
- ui/errorreport.ui
+ ui/infoview.ui \
+ ui/bugreport.ui
 HEADERS = src/forms/addvideoimpl.h \
  src/forms/checkupdatesimpl.h \
  src/forms/completedpopupimpl.h \
@@ -27,6 +28,7 @@ HEADERS = src/forms/addvideoimpl.h \
  src/forms/mainformimpl.h \
  src/forms/optionsimpl.h \
  src/forms/updatecenterimpl.h \
+ src/forms/infoviewimpl.h \
  src/pakunpak/pakunpak.h \
  src/http.h \
  src/languages.h \
@@ -40,7 +42,8 @@ HEADERS = src/forms/addvideoimpl.h \
  src/videodownload.h \
  src/videoinformation.h \
  src/videoitem.h \
- src/videolistcontroller.h
+ src/videolistcontroller.h \
+ src/forms/bugreportimpl.h
 SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/checkupdatesimpl.cpp \
  src/forms/completedpopupimpl.cpp \
@@ -51,6 +54,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/mainformimpl.cpp \
  src/forms/optionsimpl.cpp \
  src/forms/updatecenterimpl.cpp \
+ src/forms/infoviewimpl.cpp \
  src/pakunpak/pakunpak.cpp \
  src/http.cpp \
  src/languages.cpp \
@@ -64,9 +68,10 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videodownload.cpp \
  src/videoinformation.cpp \
  src/videoitem.cpp \
- src/videolistcontroller.cpp
+ src/videolistcontroller.cpp \
+ src/forms/bugreportimpl.cpp
 RESOURCES += resources/resources.qrc
-TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts
+TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts
 macx {
  ICON +=  resources/icons/MacOSX.icns
  OBJECTS_DIR +=  build/o/mac

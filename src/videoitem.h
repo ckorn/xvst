@@ -68,6 +68,7 @@ Q_OBJECT
 		int timeRemaining;			//!< current time remaining
 		VideoState videoState;		//!< current video state
 		QObject *locker;			//!< pointer to the locker
+		bool reported;				//!< flag for know if this item has been reported (error)
 		/*! Init internal data */
 		void initData();
 		/*! Assign a unique ID for this instance */
@@ -119,6 +120,8 @@ Q_OBJECT
 		bool isCanceled();
 		/*! Get if is market as "deleted" */
 		bool isDeleted();
+		/*! Get if is reported */
+		bool isReported();
 		/*! Get the internal ID */
 		int getID();
 		/*! Get the display label */
@@ -189,6 +192,8 @@ Q_OBJECT
 		void setAsError(QObject *who = NULL);
 		/*! Set as deleted */
 		void setAsDeleted(QObject *who = NULL);
+		/*! Set as Reported */
+		void setAsReported(QObject *who = NULL);
 		/*! Init a VideoDefinition structure */
 		static void initVideoDefinition(VideoDefinition &videoDef);
 };

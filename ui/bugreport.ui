@@ -1,12 +1,12 @@
 <ui version="4.0" >
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog" >
+ <class>BugReport</class>
+ <widget class="QDialog" name="BugReport" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
     <width>477</width>
-    <height>414</height>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -115,7 +115,7 @@ p, li { white-space: pre-wrap; }
       <item row="3" column="0" >
        <layout class="QVBoxLayout" >
         <item>
-         <widget class="QLabel" name="label" >
+         <widget class="QLabel" name="lblName" >
           <property name="text" >
            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
@@ -125,7 +125,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit" >
+         <widget class="QLineEdit" name="edtName" >
           <property name="minimumSize" >
            <size>
             <width>0</width>
@@ -139,7 +139,7 @@ p, li { white-space: pre-wrap; }
       <item row="3" column="1" >
        <layout class="QVBoxLayout" >
         <item>
-         <widget class="QLabel" name="label_2" >
+         <widget class="QLabel" name="lblEmail" >
           <property name="text" >
            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
@@ -149,7 +149,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2" >
+         <widget class="QLineEdit" name="edtEmail" >
           <property name="minimumSize" >
            <size>
             <width>0</width>
@@ -176,7 +176,7 @@ p, li { white-space: pre-wrap; }
          </spacer>
         </item>
         <item>
-         <widget class="QToolButton" name="toolButton" >
+         <widget class="QToolButton" name="spbViewInfo" >
           <property name="minimumSize" >
            <size>
             <width>25</width>
@@ -206,7 +206,7 @@ p, li { white-space: pre-wrap; }
        </layout>
       </item>
       <item row="4" column="0" colspan="3" >
-       <widget class="QLabel" name="label_4" >
+       <widget class="QLabel" name="lblComment" >
         <property name="text" >
          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
@@ -217,6 +217,49 @@ p, li { white-space: pre-wrap; }
       </item>
       <item row="5" column="0" colspan="3" >
        <widget class="QTextEdit" name="rchComments" />
+      </item>
+      <item row="6" column="0" colspan="3" >
+       <widget class="Line" name="line_2" >
+        <property name="minimumSize" >
+         <size>
+          <width>0</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0" colspan="3" >
+       <layout class="QVBoxLayout" >
+        <item>
+         <widget class="QLabel" name="lblSending" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="text" >
+           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">Sending your "&lt;span style=" font-weight:600;">Error report&lt;/span>"... please wait...&lt;/p>&lt;/body>&lt;/html></string>
+          </property>
+          <property name="margin" >
+           <number>-1</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QProgressBar" name="prbSending" >
+          <property name="value" >
+           <number>24</number>
+          </property>
+          <property name="textVisible" >
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
