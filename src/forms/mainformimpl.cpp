@@ -265,6 +265,8 @@ void MainFormImpl::timerEvent(QTimerEvent *event)
 			QMessageBox::information(this, tr("Updates"),
 			                               tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
 			                               tr("Ok"));
+			// start the download list
+			videoList->start();
 		}
 		else
 			checkUpdates();
@@ -578,7 +580,7 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 	if (videoItem->hasErrors() && !videoItem->isReported())
 	{
 		BugReportImpl errorReport(this);
-		errorReport.fillErrorInfo(videoItem);
+		errorReport.fillErrorInfo(videoItem, videoList->getVideoInformation());
 		errorReport.exec();
 		// mark it as reported
 		videoItem->setAsReported();

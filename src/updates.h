@@ -37,15 +37,6 @@
 #include "tools.h"
 
 #ifdef Q_OS_WIN32
-static const QString CURRENT_OS = "MSWINDOWS"; //<! Microsoft windows version
-#endif
-#ifdef Q_OS_LINUX 
-static const QString CURRENT_OS = "LINUX"; //<! Gnu/Linux version
-#endif
-#ifdef Q_WS_MAC
-static const QString CURRENT_OS = "MACOSX"; //<! MacOS X version
-#endif
-#ifdef Q_OS_WIN32
 static const QString XUPDATER_PATH = "/bin/xUpdater.exe";	//<! xUpdater app (win32)
 #else
 static const QString XUPDATER_PATH = "/bin/xUpdater";		//<! xUpdater app (unix)

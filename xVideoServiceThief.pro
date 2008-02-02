@@ -43,7 +43,8 @@ HEADERS = src/forms/addvideoimpl.h \
  src/videoinformation.h \
  src/videoitem.h \
  src/videolistcontroller.h \
- src/forms/bugreportimpl.h
+ src/forms/bugreportimpl.h \
+ src/trackerreport.h
 SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/checkupdatesimpl.cpp \
  src/forms/completedpopupimpl.cpp \
@@ -69,7 +70,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videoinformation.cpp \
  src/videoitem.cpp \
  src/videolistcontroller.cpp \
- src/forms/bugreportimpl.cpp
+ src/forms/bugreportimpl.cpp \
+ src/trackerreport.cpp
 RESOURCES += resources/resources.qrc
 TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts
 macx {

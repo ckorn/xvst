@@ -28,6 +28,16 @@
 #ifndef __PROGRAMVERSION_H__
 #define __PROGRAMVERSION_H__
 
-static const QString PROGRAM_VERSION = "1.5 Alpha"; //<! Current program version
+static const QString PROGRAM_VERSION		= "1.5 Alpha"; 	//<! Current program version
+static const QString PROGRAM_VERSION_SHORT	= "1.5a"; 		//<! Current program version (short version)
+#ifdef Q_OS_WIN32
+static const QString CURRENT_OS = "MSWINDOWS"; //<! Microsoft windows version
+#endif
+#ifdef Q_OS_LINUX 
+static const QString CURRENT_OS = "LINUX"; //<! Gnu/Linux version
+#endif
+#ifdef Q_WS_MAC
+static const QString CURRENT_OS = "MACOSX"; //<! MacOS X version
+#endif
 
 #endif // __PROGRAMVERSION_H__

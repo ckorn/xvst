@@ -8,13 +8,13 @@ InfoViewImpl::InfoViewImpl(VideoItem *videoItem, QString userName, QString email
 	QStringList info;
 	info 	<< "<p><b>Video Information:</b>\n"
 			<< "Video URL: " + videoItem->getURL() + "\n"
-			<< "xVST Version: " + PROGRAM_VERSION + "\n"
+			<< "xVST Version: " + PROGRAM_VERSION + " (" + CURRENT_OS + ")" + "\n"
 			<< "FLV URL: " + videoItem->getVideoInformation().URL + "\n"
 			<< "FLV Title: " + videoItem->getVideoInformation().title + "</p>"
 			<< "<p><b>Sender Information:</b>\n"
 			<< "User name: " + userName + "\n"
 			<< "User eMail: " + email + "\n"
-			<< "Comments: " + comments + "</p>";
+			<< "User Comments: " + comments + "</p>";
 			
 	foreach (QString line, info)
 		rchInformation->setHtml(rchInformation->toHtml() + line);
