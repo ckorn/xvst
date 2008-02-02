@@ -360,6 +360,15 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>edtName</tabstop>
+  <tabstop>edtEmail</tabstop>
+  <tabstop>spbViewInfo</tabstop>
+  <tabstop>rchComments</tabstop>
+  <tabstop>chbNoErrors</tabstop>
+  <tabstop>btnSend</tabstop>
+  <tabstop>btnCancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/resources.qrc" />
  </resources>
