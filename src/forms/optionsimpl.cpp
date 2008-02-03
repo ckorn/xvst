@@ -274,7 +274,6 @@ void OptionsImpl::setInitialOptionsValues()
 	cmbUpdateEvery->setCurrentIndex(programOptions->getCheckForUpdatesEvery() - 1);
 	chbInstallAutomatically->setChecked(programOptions->getInstallAutomaticallyUpdates());
 	
-	qDebug() << programOptions->getDisplayBugReport();
 	gpbDisplayErrorReport->setChecked(programOptions->getDisplayBugReport());
 }
 

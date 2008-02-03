@@ -564,8 +564,7 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 	else
 		item->setToolTip(2, "");
 
-	updateVisualControls();
-
+	// display completed popup
 	if (videoItem->isCompleted())
 	{
 		// add to log
@@ -577,14 +576,22 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 			                             videoItem->getVideoFileSavedTo());
 	}
 
+	// error form
 	if (videoItem->hasErrors() && !videoItem->isReported() && programOptions->getDisplayBugReport())
 	{
+		// update tray icon
+		QString trayIconStr = ":/icons/images/film_error.png";
+		trayIcon->setIcon(QIcon(trayIconStr));
+		lastTrayIconStr = trayIconStr;
+		// display error report form
 		BugReportImpl errorReport(programOptions, this);
 		errorReport.fillErrorInfo(videoItem, videoList->getVideoInformation());
 		errorReport.exec();
 		// mark it as reported
 		videoItem->setAsReported();
 	}
+	
+	updateVisualControls();
 }
 
 void MainFormImpl::videoMoved(int from, int to)

@@ -32,6 +32,7 @@
         <file>images/tick.png</file>
     </qresource>
     <qresource prefix="/icons" >
+        <file>images/film_error.png</file>
         <file>images/film_go.png</file>
         <file>images/film_save.png</file>
     </qresource>
