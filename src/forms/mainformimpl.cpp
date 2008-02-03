@@ -367,7 +367,7 @@ void MainFormImpl::restoreAppClicked()
 void MainFormImpl::selectDownloadDirClicked()
 {
 	QString s = QFileDialog::getExistingDirectory(this, tr("Select the download directory:"),
-	            edtDownloadDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
+	            edtDownloadDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	// if is emtpy, cancel the proces
 	if (s.isEmpty()) return;
 	edtDownloadDir->setText(QDir::toNativeSeparators(s));
