@@ -12,17 +12,19 @@
 #include "../programversion.h"
 #include "../videoitem.h"
 #include "../videoinformation.h"
+#include "../options.h"
 //
 class BugReportImpl : public QDialog, public Ui::BugReport
 {
 Q_OBJECT
 	private:
+		ProgramOptions *programOptions;		//<! Program options reference
 		VideoItem *videoItem; 				//<! VideoItem with the error
 		TrackerReport *trackerReport;		//<! Tracker report class
 		VideoInformation *videoInformation;	//<! Video service info
 	public:
 		/*! Class constructor */
-		BugReportImpl( QWidget * parent = 0, Qt::WFlags f = 0 );
+		BugReportImpl(ProgramOptions *programOptions, QWidget * parent = 0, Qt::WFlags f = 0);
 		/*! Class destructor */
 		~BugReportImpl();
 		/*! Fill the error information */

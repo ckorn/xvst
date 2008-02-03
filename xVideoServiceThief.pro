@@ -29,6 +29,7 @@ HEADERS = src/forms/addvideoimpl.h \
  src/forms/optionsimpl.h \
  src/forms/updatecenterimpl.h \
  src/forms/infoviewimpl.h \
+ src/forms/bugreportimpl.h \
  src/pakunpak/pakunpak.h \
  src/http.h \
  src/languages.h \
@@ -43,7 +44,6 @@ HEADERS = src/forms/addvideoimpl.h \
  src/videoinformation.h \
  src/videoitem.h \
  src/videolistcontroller.h \
- src/forms/bugreportimpl.h \
  src/trackerreport.h
 SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/checkupdatesimpl.cpp \
@@ -56,6 +56,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/optionsimpl.cpp \
  src/forms/updatecenterimpl.cpp \
  src/forms/infoviewimpl.cpp \
+ src/forms/bugreportimpl.cpp \
  src/pakunpak/pakunpak.cpp \
  src/http.cpp \
  src/languages.cpp \
@@ -70,7 +71,6 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videoinformation.cpp \
  src/videoitem.cpp \
  src/videolistcontroller.cpp \
- src/forms/bugreportimpl.cpp \
  src/trackerreport.cpp
 RESOURCES += resources/resources.qrc
 TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts

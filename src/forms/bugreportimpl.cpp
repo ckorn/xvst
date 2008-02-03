@@ -1,9 +1,11 @@
 #include "bugreportimpl.h"
 //
-BugReportImpl::BugReportImpl( QWidget * parent, Qt::WFlags f) 
+BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
 {
 	setupUi(this);
+	// program options
+	this->programOptions = programOptions;
 	// hide "send group"
 	line_2->hide();
 	lblSending->hide();
@@ -30,6 +32,8 @@ BugReportImpl::BugReportImpl( QWidget * parent, Qt::WFlags f)
 
 BugReportImpl::~BugReportImpl()
 {
+	programOptions->setDisplayBugReport(!chbNoErrors->isChecked());
+	
 	delete trackerReport;
 }
 

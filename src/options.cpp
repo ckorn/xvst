@@ -88,6 +88,8 @@ void ProgramOptions::load()
 	checkForUpdatesOnStartup = settings.value("configuration/checkForUpdatesOnStartup", checkForUpdatesOnStartup).toBool();
 	checkForUpdatesEvery = settings.value("configuration/checkForUpdatesEvery", checkForUpdatesEvery).toInt();
 
+	displayBugReport = settings.value("configuration/displayBugReport", displayBugReport).toBool();
+
 	emit optionsLoadAfter();
 }
 
@@ -135,6 +137,8 @@ void ProgramOptions::save()
 	settings.setValue("lastUpdate", lastUpdate);
 	settings.setValue("checkForUpdatesOnStartup", checkForUpdatesOnStartup);
 	settings.setValue("checkForUpdatesEvery", checkForUpdatesEvery);
+	
+	settings.setValue("displayBugReport", displayBugReport);
 
 	settings.endGroup();
 
@@ -185,6 +189,8 @@ void ProgramOptions::setDefault()
 	lastUpdate = QDate::currentDate();
 	checkForUpdatesOnStartup = true;
 	checkForUpdatesEvery = 1;
+	
+	displayBugReport = true;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -485,4 +491,14 @@ bool ProgramOptions::getInstallAutomaticallyUpdates()
 void ProgramOptions::setInstallAutomaticallyUpdates(bool value)
 {
 	installAutomaticallyUpdates = value;
+}
+
+bool ProgramOptions::getDisplayBugReport()
+{
+	return displayBugReport;
+}
+
+void ProgramOptions::setDisplayBugReport(bool value)
+{
+	displayBugReport = value;
 }

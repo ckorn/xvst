@@ -577,9 +577,9 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 			                             videoItem->getVideoFileSavedTo());
 	}
 
-	if (videoItem->hasErrors() && !videoItem->isReported())
+	if (videoItem->hasErrors() && !videoItem->isReported() && programOptions->getDisplayBugReport())
 	{
-		BugReportImpl errorReport(this);
+		BugReportImpl errorReport(programOptions, this);
 		errorReport.fillErrorInfo(videoItem, videoList->getVideoInformation());
 		errorReport.exec();
 		// mark it as reported

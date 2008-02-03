@@ -36,6 +36,7 @@
         <file>images/film_save.png</file>
     </qresource>
     <qresource prefix="/options" >
+        <file>images/errorReport.png</file>
         <file>images/language.png</file>
         <file>images/proxy.png</file>
         <file>images/session.png</file>

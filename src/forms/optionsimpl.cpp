@@ -87,9 +87,8 @@ void OptionsImpl::createMenu()
 	// add the menu items
 	QTreeWidgetItem *newItem;
 
-	newItem = new QTreeWidgetItem(trvMenu);
-
 	// basic
+	newItem = new QTreeWidgetItem(trvMenu);
 	newItem->setText(0, tr("Basic"));
 	newItem->setIcon(0, QIcon(":/options/images/tools.png"));
 	newItem->setSelected(true);
@@ -118,6 +117,11 @@ void OptionsImpl::createMenu()
 	newItem = new QTreeWidgetItem(trvMenu);
 	newItem->setText(0, tr("Proxy"));
 	newItem->setIcon(0, QIcon(":/options/images/proxy.png"));
+	
+	// Errors
+	newItem = new QTreeWidgetItem(trvMenu);
+	newItem->setText(0, tr("Tracker"));
+	newItem->setIcon(0, QIcon(":/options/images/errorReport.png"));
 
 	if (lastPageViewed != -1)
 	{
@@ -269,6 +273,9 @@ void OptionsImpl::setInitialOptionsValues()
 	chbCheckOnStartup->setChecked(programOptions->getCheckForUpdatesOnStartup());
 	cmbUpdateEvery->setCurrentIndex(programOptions->getCheckForUpdatesEvery() - 1);
 	chbInstallAutomatically->setChecked(programOptions->getInstallAutomaticallyUpdates());
+	
+	qDebug() << programOptions->getDisplayBugReport();
+	gpbDisplayErrorReport->setChecked(programOptions->getDisplayBugReport());
 }
 
 void OptionsImpl::setOptionsValues()
@@ -317,6 +324,8 @@ void OptionsImpl::setOptionsValues()
 	programOptions->setInstallAutomaticallyUpdates(chbInstallAutomatically->isChecked());
 
 	lastPageViewed = chbRememberView->isChecked() ? pgOptions->currentIndex() : -1;
+	
+	programOptions->setDisplayBugReport(gpbDisplayErrorReport->isChecked());
 }
 
 void OptionsImpl::dragEnterEvent(QDragEnterEvent *event)

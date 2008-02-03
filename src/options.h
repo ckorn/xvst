@@ -73,7 +73,7 @@ Q_OBJECT
 		QDate lastUpdate;				//!< Last update date
 		bool checkForUpdatesOnStartup;	//!< Flag for know if must check for updates on program start
 		int checkForUpdatesEvery;		//!< Check for updates every X days
-
+		bool displayBugReport;			//!< Flag for know if can display the "Error Report"
 		QDir appDir;			//!< Initial program path
 		QString appExecutable;	//!< Executable program path
 		QString optionsFile;	//!< Options file name (path + name)
@@ -151,6 +151,8 @@ Q_OBJECT
 		bool getCheckForUpdatesOnStartup();
 		void setCheckForUpdatesEvery(int value);
 		int getCheckForUpdatesEvery();
+		void setDisplayBugReport(bool value);
+		bool getDisplayBugReport();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();
