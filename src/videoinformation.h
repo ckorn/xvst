@@ -288,6 +288,16 @@ class VideoInformation_VideoCa : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Tu.tv Videos */
+class VideoInformation_TuTv : public VideoInformation_plugin
+{
+	public:
+		/*! Tu.tv plugin class constructor */
+		VideoInformation_TuTv(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Tu.tv Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

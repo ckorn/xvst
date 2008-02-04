@@ -69,6 +69,9 @@
 	/*! Clear the URL */
 	QString cleanURL(QString URL);
 	
+	/*! Validate url */
+	bool validURL(QString URL);
+	
 	/*! Get the URL path + query */
 	QString getPathAndQuery(QUrl URL);
 	

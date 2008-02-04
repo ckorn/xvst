@@ -98,6 +98,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actMoveUP, SIGNAL(triggered()), this, SLOT(moveItemUpClicked())); // actMoveUP (clicked)
 	connect(actMoveDOWN, SIGNAL(triggered()), this, SLOT(moveItemDownClicked())); // actMoveDOWN (clicked)
 	connect(actResetState, SIGNAL(triggered()), this, SLOT(resetStateClicked())); // actResetState (clicked)
+	// edtDownloadDir
+	connect(edtDownloadDir, SIGNAL(textChanged(const QString &)), this, SLOT(edtDownloadDirChanged(const QString &)));
 	// connect buttons
 	connect(btnAddVideo, SIGNAL(clicked()), this, SLOT(addVideoClicked())); //btnAddVideo (clicked)
 	connect(btnDeleteVideo, SIGNAL(clicked()), this, SLOT(deleteVideoClicked())); //btnAddVideo (clicked)
@@ -170,6 +172,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://clip4e.com/play_po_belyo_na_rabotnoto_mqsto.htm");
 	videoList->addVideo("http://www.video.ca/video.php?id=1178558732");
 	videoList->addVideo("http://www.liveleak.com/view?i=969_1191475546");
+	videoList->addVideo("http://www.tu.tv/videos/ficeb-2007_6");
 */
 
 /*
@@ -186,6 +189,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 
 MainFormImpl::~MainFormImpl()
 {
+	
+	
 	// delete shortcuts
 	delete shortCurtPasteURL;
 
@@ -495,6 +500,11 @@ void MainFormImpl::downloadAutomaticallyStateChanged(int state)
 	programOptions->setCanSendUpdateSignal(false);
 	programOptions->setDownloadAutomatically(state == 2 ? true : false);
 	programOptions->setCanSendUpdateSignal(true);
+}
+
+void MainFormImpl::edtDownloadDirChanged(const QString &text)
+{
+	programOptions->setDownloadDir(text);
 }
 
 void MainFormImpl::convertVideosStateChanged(int state)

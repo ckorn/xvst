@@ -148,7 +148,11 @@ void ProgramOptions::save()
 void ProgramOptions::setDefault()
 {
 	downloadAutomatically = true;
+#ifdef Q_WS_MAC
+	downloadDir = QString(QDir::homePath() + DEFAULT_DOWNLOADS);
+#else
 	downloadDir = QString(appDir.absolutePath() + DEFAULT_DOWNLOADS);
+#endif
 	convertVideos = true;
 	deleteVideosOnConvert = true;
 #ifdef Q_OS_WIN32

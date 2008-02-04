@@ -114,6 +114,7 @@ Q_OBJECT
 		void playVideoClicked();
 		void downloadAutomaticallyStateChanged(int state);
 		void convertVideosStateChanged(int state);
+		void edtDownloadDirChanged(const QString &text);
 		// tray icon menu signals
 		void trayIconAboutToShow();
 		void optionSelected(bool checked);

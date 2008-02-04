@@ -56,6 +56,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Clip4e(this);
 	new VideoInformation_VideoCa(this);
 	new VideoInformation_LiveLeak(this);
+	new VideoInformation_TuTv(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -88,6 +89,8 @@ void VideoInformation::clearPlugins()
 
 VideoInformation_plugin* VideoInformation::getPluginByHost(QUrl URL)
 {
+	if (!validURL(URL.toString())) return NULL;
+	// get the plugin by host
 	QString host = URL.host().isEmpty() ? URL.toString() : URL.host();
 	for (int n = 0; n < getPluginsCount(); n++)
 		if (plugins->at(n)->isLikeMyId(host))
@@ -236,7 +239,7 @@ QString VideoInformation::getHostImage(QString URL)
 
 QString VideoInformation::getHostCaption(QString URL)
 {
-	if (QUrl(URL).isValid())
+	if (validURL(URL)) //QUrl(URL).isValid())
 	{
 		VideoInformation_plugin *plugin = getPluginByHost(QUrl(URL));
 		return plugin != NULL ? plugin->getCaption() : tr("Unsupported video service");
@@ -247,6 +250,7 @@ QString VideoInformation::getHostCaption(QString URL)
 
 bool VideoInformation::isValidHost(QString URL)
 {
+
 	return getPluginByHost(QUrl(URL)) != NULL && QUrl(URL).isValid() ? true : false;
 }
 
@@ -1054,6 +1058,47 @@ VideoDefinition VideoInformation_LiveLeak::getVideoInformation(const QString URL
 	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(token).arg(s).arg(p)));
 	// get the flv url
 	result.URL = copyBetween(xml, "&file_location=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for VideoCa Videos
+
+VideoInformation_TuTv::VideoInformation_TuTv(VideoInformation *videoInformation)
+{
+	setID("tu.tv");
+	setCaption("Tu.tv");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_TuTv::getVideoInformation(const QString URL)
+{
+	const QString URL_CONFIRM = "http://www.tu.tv%1";
+	const QString URL_GET_XML = "http://tu.tv/visualizacionExterna2.php?web=&codVideo=%1";
+
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// +18?
+	if (html.indexOf("txt_alerta") > -1)
+	{
+		QString confirm_url = copyBetween(html, "<h5 class=\"txt_alerta\"><a href=\"", "\">Si");
+		html = http.downloadWebpage(QUrl(QString(URL_CONFIRM).arg(confirm_url)));
+	}
+	// Get the video title
+	result.title = copyBetween(html, "<title>Tu.tv - Videos -", "</title>").trimmed();
+	// get the video code
+	QString videoCode = copyBetween(html, "?codVideo=", "\"");
+	// get the video info
+	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(videoCode)));
+	// get the flv url
+	result.URL = copyBetween(xml, "urlVideo1=", "&");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information

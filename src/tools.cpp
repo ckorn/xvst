@@ -232,6 +232,17 @@ QString cleanURL(QString URL)
 	return url.toString();
 }
 
+bool validURL(QString URL)
+{
+	// first at all, check if have the "http://"
+	if (URL.indexOf("http://") == 0)
+	{
+		return QUrl(URL).isValid();
+	}
+	else
+		return false;
+}
+
 QString getPathAndQuery(QUrl URL)
 {
 	QString result = URL.toEncoded();
