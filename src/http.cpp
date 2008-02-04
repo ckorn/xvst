@@ -77,6 +77,9 @@ void Http::initData()
 
 void Http::jumpToURL(QUrl url)
 {
+	// check if the current url has a host
+	if (url.host().isEmpty())
+		url = QUrl("http://" + oriURL.host() + url.toString());
 	// http mode
 	QHttp::ConnectionMode mode = url.scheme().toLower() == "https" ? QHttp::ConnectionModeHttps : QHttp::ConnectionModeHttp;
 	// set http host
@@ -161,6 +164,7 @@ int Http::download(const QUrl URL, const QDir destination, QString fileName)
 			if (internalTimer != 0) this->killTimer(internalTimer);
 			internalTimer = this->startTimer(1000);
 			// make the first jump
+			oriURL = URL;
 			jumpToURL(URL);
 			// ok
 			return QHttp::NoError;
@@ -184,6 +188,7 @@ QString Http::downloadWebpage(const QUrl URL, bool isUtf8)
 			syncFlag = true;
 			postMethodFlag = false;
 			// do the first jump
+			oriURL = URL;
 			jumpToURL(URL);
 			// wait while the webpage is being downloaded
 			while (syncFlag)
@@ -213,6 +218,7 @@ QString Http::downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf
 			// set parameters
 			this->parameters = parameters;
 			// do the first jump
+			oriURL = URL;
 			jumpToURL(URL);
 			// wait while the webpage is being downloaded
 			while (syncFlag)
@@ -237,6 +243,7 @@ QHttpResponseHeader Http::head(const QUrl URL, bool autoJump)
 			// init http variables
 			initData();
 			this->autoJump = autoJump;
+			oriURL = URL;
 			// set the sync flag active
 			syncFlag = true;
 			postMethodFlag = false;

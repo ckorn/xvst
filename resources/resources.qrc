@@ -71,5 +71,6 @@
         <file>images/services/youtube.com.png</file>
         <file>images/services/yuvutu.com.png</file>
         <file>images/services/zappinternet.com.png</file>
+        <file>images/services/tu.tv.png</file>
     </qresource>
 </RCC>
