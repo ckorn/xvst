@@ -175,8 +175,9 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.tu.tv/videos/ficeb-2007_6");
 	videoList->addVideo("http://www.spike.com/video/2938314/collection/25823/minisite/superbowl");
 	videoList->addVideo("http://www.myspace.com/index.cfm?fuseaction=vids.individual&VideoID=23409638");
+	videoList->addVideo("http://videos.cinemavip.com/informaciondecontenido.php?con=3015");
 */
-videoList->addVideo("http://videos.cinemavip.com/informaciondecontenido.php?con=3015");
+
 /*
 	// adult sites
 	videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
