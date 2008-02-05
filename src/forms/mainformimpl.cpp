@@ -173,24 +173,25 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.video.ca/video.php?id=1178558732");
 	videoList->addVideo("http://www.liveleak.com/view?i=969_1191475546");
 	videoList->addVideo("http://www.tu.tv/videos/ficeb-2007_6");
+	videoList->addVideo("http://www.spike.com/video/2938314/collection/25823/minisite/superbowl");
+	videoList->addVideo("http://www.myspace.com/index.cfm?fuseaction=vids.individual&VideoID=23409638");
 */
-
+videoList->addVideo("http://videos.cinemavip.com/informaciondecontenido.php?con=3015");
 /*
 	// adult sites
-	//videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
+	videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
 	videoList->addVideo("http://badjojo.com/video_play_front.php?Id=6292");
 	videoList->addVideo("http://www.desisextube.com/dst/view_video.php?viewkey=d7fbdea1afc51c7c6ad2&page=1&viewtype=&category=mv");
 	videoList->addVideo("http://youporn.com/watch/126002");
 	videoList->addVideo("http://tuporno.tv/videos/sexo-virtual-morenaza");
 	videoList->addVideo("http://pornotube.com/media.php?m=1541072");
 	videoList->addVideo("http://www.dalealplay.com/informaciondecontenido.php?con=62750");
+	videoList->addVideo("http://www.shufuni.com/milf/FEA3744E-DC96-4FB6-9344-0D6B16C44081.html");
 */
 }
 
 MainFormImpl::~MainFormImpl()
 {
-	
-	
 	// delete shortcuts
 	delete shortCurtPasteURL;
 

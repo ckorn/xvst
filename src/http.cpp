@@ -105,12 +105,8 @@ void Http::jumpToURL(QUrl url)
 		// has cookies?
 		if (!cookiesToAdd.isEmpty())
 			header.setValue("Cookie", cookiesToAdd);
-		
 		// send request
-		if (file != NULL)
-			httpGetId = http->request(header, paramsStr, file);
-		else
-			httpGetId = http->request(header, paramsStr);
+		httpGetId = http->request(header, paramsStr, file);
 	}
 	// get method
 	else
@@ -125,12 +121,8 @@ void Http::jumpToURL(QUrl url)
 		// has cookies?
 		if (!cookiesToAdd.isEmpty())
 			header.setValue("Cookie", cookiesToAdd);
-		
 		// send request
-		if (file != NULL)
-			httpGetId = http->request(header, NULL, file);
-		else
-			httpGetId = http->request(header, NULL, NULL);
+		httpGetId = http->request(header, NULL, file);
 	}
 }
 
@@ -184,6 +176,7 @@ QString Http::downloadWebpage(const QUrl URL, bool isUtf8)
 		{
 			// init http variables
 			initData();
+			file = NULL;
 			// set the sync flag active
 			syncFlag = true;
 			postMethodFlag = false;
@@ -212,6 +205,7 @@ QString Http::downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf
 		{
 			// init http variables
 			initData();
+			file = NULL;
 			// set the sync flag active
 			syncFlag = true;
 			postMethodFlag = true;
@@ -242,6 +236,7 @@ QHttpResponseHeader Http::head(const QUrl URL, bool autoJump)
 		{
 			// init http variables
 			initData();
+			file = NULL;
 			this->autoJump = autoJump;
 			oriURL = URL;
 			// set the sync flag active
@@ -367,7 +362,11 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 		if (resp.statusCode() != 200)
 			http->abort();
 		else
+		{
+			// clear all possible prev downloaded data
+			if (file != NULL) file->reset();
 			canDownload = true;
+		}
 }
 
 void Http::stateChanged(int state)

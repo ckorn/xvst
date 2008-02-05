@@ -44,7 +44,7 @@ void AddVideoImpl::btnOkClicked()
 
 void AddVideoImpl::edtURLChanged(const QString &text)
 {
-	bool ok = videoInformation->isValidHost(text);
+	bool ok = videoInformation->isValidHost(text) && validURL(text);
 	QString blockMsg = "";
 	
 	if (ok)

@@ -53,13 +53,13 @@
         <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
 &lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Error report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
 &lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
-        <translation>&lt;b&gt;Ops! S&apos;ha produït un error al provar de baixar el vídeo.&lt;/b&gt;&lt;p&gt;Pots ajudar a solucionar el problema enviant-nos un &quot;&lt;b&gt;Informa d&apos;Errors&lt;/b&gt;&quot;. Aquest Informe serà usat per analitzar l&apos;error i si és necessari arreglar-lo per tal de millorar la pròxima versió del xVST.&lt;/p&gt;&lt;p&gt;La teva ajuda és sempre benvinguda!&lt;/p&gt;</translation>
+        <translation>&lt;b&gt;Ops! S&apos;ha produït un error al provar de baixar el vídeo.&lt;/b&gt;&lt;p&gt;Pots ajudar a solucionar el problema enviant-nos un &quot;&lt;b&gt;Informa d&apos;Errors&lt;/b&gt;&quot;. Aquest Informa serà usat per analitzar l&apos;error i si és necessari arreglar-lo per tal de millorar la pròxima versió del xVST.&lt;/p&gt;&lt;p&gt;La teva ajuda és sempre benvinguda!&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="77"/>
         <source>&lt;p&gt;The &quot;&lt;b&gt;Error report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Error comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;L&apos;&quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot; serà enviat al &lt;ahref=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+        <translation>&lt;p&gt;L&apos;&quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot; serà enviat al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;El teu nom i email seran inclosos al &quot;&lt;b&gt;Comentari de l&apos;error&lt;/b&gt;&quot;, de totes maneres és totalment opcional i innecessari.&lt;/p&gt;</translation>
     </message>
     <message>
@@ -719,57 +719,57 @@ p, li { white-space: pre-wrap; }
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="237"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="243"/>
         <source>Closing...</source>
         <translation>Tancant...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="142"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="144"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="239"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="245"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="286"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="292"/>
         <source>Options</source>
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="369"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="375"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="238"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="244"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
         <translation>xVideoServiceThief esta treballant, vols Cancel·lar els processos actuals?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="239"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="245"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="322"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="328"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="266"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="272"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;aplicació xUpdater no s&apos;ha pogut trobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="324"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="330"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="323"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="329"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>
@@ -1341,12 +1341,12 @@ background-color:#124565;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="245"/>
+        <location filename="../../src/videoinformation.cpp" line="252"/>
         <source>Invalid URL</source>
         <translation>URL Invàlida</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="242"/>
+        <location filename="../../src/videoinformation.cpp" line="249"/>
         <source>Unsupported video service</source>
         <translation>Servei de vídeos no suportat</translation>
     </message>

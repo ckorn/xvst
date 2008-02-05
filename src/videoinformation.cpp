@@ -57,6 +57,9 @@ VideoInformation::VideoInformation()
 	new VideoInformation_VideoCa(this);
 	new VideoInformation_LiveLeak(this);
 	new VideoInformation_TuTv(this);
+	new VideoInformation_Spike(this);
+	new VideoInformation_MySpaceTV(this);
+	new VideoInformation_CinemaVIP(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -65,6 +68,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_TuPorno(this);
 	new VideoInformation_PornoTube(this);
 	new VideoInformation_DaleAlPlay(this);
+	new VideoInformation_Shufuni(this);
 }
 
 VideoInformation::~VideoInformation()
@@ -89,8 +93,6 @@ void VideoInformation::clearPlugins()
 
 VideoInformation_plugin* VideoInformation::getPluginByHost(QUrl URL)
 {
-	if (!validURL(URL.toString())) return NULL;
-	// get the plugin by host
 	QString host = URL.host().isEmpty() ? URL.toString() : URL.host();
 	for (int n = 0; n < getPluginsCount(); n++)
 		if (plugins->at(n)->isLikeMyId(host))
@@ -216,11 +218,13 @@ bool VideoInformation::canGetInformation()
 	return !isRunning();
 }
 
-QString VideoInformation::getHostImage(QString URL)
+QString VideoInformation::getHostImage(QString URL, bool checkURL)
 {
 	const QString path = ":/services/images/services/%1.png";
 
-	if (QUrl(URL).isValid())
+	bool valid = !checkURL ? true : validURL(URL);
+
+	if (valid)//QUrl(URL).isValid())
 	{
 		VideoInformation_plugin *plugin = getPluginByHost(QUrl(URL));
 
@@ -1105,6 +1109,102 @@ VideoDefinition VideoInformation_TuTv::getVideoInformation(const QString URL)
 	return result;
 }
 
+// Plugin for Spike Videos
+
+VideoInformation_Spike::VideoInformation_Spike(VideoInformation *videoInformation)
+{
+	setID("spike.com");
+	setCaption("Spike");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Spike::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "-").trimmed();
+	// get the video code
+	result.URL = copyBetween(html, "*url* : *http://", "*");
+	// replace the "$" for "&"
+	result.URL = result.URL.replace("$", "&");
+	// clear and get the final url
+	result.URL = cleanURL("http://" + result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for MySpaceTV Videos
+
+VideoInformation_MySpaceTV::VideoInformation_MySpaceTV(VideoInformation *videoInformation)
+{
+	setID("myspace.com");
+	setCaption("MySpaceTV");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_MySpaceTV::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_XML = "http://mediaservices.myspace.com/services/rss.ashx?type=video&videoID=%1";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<h1>", "</h1>").trimmed();
+	// get the video code
+	QString VideoID = QUrl(URL).queryItemValue("VideoID");
+	// get the xml file
+	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(VideoID)));
+	// get the video flv
+	result.URL = copyBetween(xml, "content url=\"", "\"").trimmed();
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for CinemaVIP Videos
+
+VideoInformation_CinemaVIP::VideoInformation_CinemaVIP(VideoInformation *videoInformation)
+{
+	setID("videos.cinemavip.com");
+	setCaption("CinemaVIP");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_CinemaVIP::getVideoInformation(const QString URL)
+{
+	const QString URL_GET_XML = "http://films.cinemavip.com/contenidos/cinemavip/%1";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "-").trimmed();
+	// get the flv pre-path
+	QString videPath = copyBetween(html, "file=", "&");
+	// get the video flv
+	result.URL = QString(URL_GET_XML).arg(videPath);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
 // Adult websites
 
 // Plugin for Yuvutu Videos
@@ -1333,6 +1433,34 @@ VideoDefinition VideoInformation_DaleAlPlay::getVideoInformation(const QString U
 	QString videoPath = copyBetween(html, "file=", "&");
 	// build url
 	result.URL = QString(URL_GET_FLV).arg(videoPath);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for Shufuni  Videos
+
+VideoInformation_Shufuni::VideoInformation_Shufuni(VideoInformation *videoInformation)
+{
+	setID("shufuni.com");
+	setCaption("Shufuni");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Shufuni::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL), false);
+	// get video title
+	result.title = copyBetween(html, "<title>", "- Shufuni.com").trimmed();
+	// get video url
+	result.URL = copyBetween(html, "file\", \"", "\"");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information

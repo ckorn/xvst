@@ -298,6 +298,36 @@ class VideoInformation_TuTv : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Spike Videos */
+class VideoInformation_Spike : public VideoInformation_plugin
+{
+	public:
+		/*! Spike plugin class constructor */
+		VideoInformation_Spike(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Spike Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for MySpaceTV Videos */
+class VideoInformation_MySpaceTV : public VideoInformation_plugin
+{
+	public:
+		/*! MySpaceTV plugin class constructor */
+		VideoInformation_MySpaceTV(VideoInformation *videoInformation);
+		/*! Get the full Video Information of MySpaceTV Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for CinemaVIP Videos */
+class VideoInformation_CinemaVIP : public VideoInformation_plugin
+{
+	public:
+		/*! CinemaVIP plugin class constructor */
+		VideoInformation_CinemaVIP(VideoInformation *videoInformation);
+		/*! Get the full Video Information of CinemaVIP Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */
@@ -370,6 +400,16 @@ class VideoInformation_DaleAlPlay : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Shufuni Videos */
+class VideoInformation_Shufuni : public VideoInformation_plugin
+{
+	public:
+		/*! Shufuni plugin class constructor */
+		VideoInformation_Shufuni(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Shufuni Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 /*! Main video information class */
 class VideoInformation : public QThread
 {
@@ -419,7 +459,7 @@ Q_OBJECT
 		/*! Get if can start to get information */
 		bool canGetInformation();
 		/*! Get the host icon */
-		QString getHostImage(QString URL);
+		QString getHostImage(QString URL, bool checkURL = false);
 		/*! Get the caption of this host */
 		QString getHostCaption(QString URL);
 		/*! Get if is a valid host */
