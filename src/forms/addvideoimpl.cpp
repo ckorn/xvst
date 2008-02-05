@@ -70,6 +70,6 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 	
 	// set host info
 	lblVideoService->setText(videoInformation->getHostCaption(text) + blockMsg);
-	imgService->setPixmap(QPixmap(videoInformation->getHostImage(text)));
+	imgService->setPixmap(QPixmap(videoInformation->getHostImage(text, true)));
 }
 //
