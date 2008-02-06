@@ -1,0 +1,33 @@
+1.5a
+----
+
+- Added "Error Report" module
+- Added 5 new services:
+    - Tu.tv
+    - Shufuni
+    - Spike
+    - MySpaceTv
+    - CinemaVIP
+
+- Revised 1 service:
+    - Yahoo! Videos
+
+- Changed "Proxy Port" max. value from "4999" to "9999"
+
+- Fixed bug (Error: when the xUpdater was missing, the videos were not downloaded)
+- Fixed bug (Error: downloads directory modified in main form was not saved)
+- Fixed bug (Error: some downloaded videos were corrupted by stupid http class bug)
+
+- Improved "URL" validation functions
+
+Windows:
+--------
+
+- Added ProgramVersion information (.RC)
+
+Mac OS X:
+---------
+
+- Improved all dialogs
+
+- Changed "Downloads Directory" default dir (to usr/{name}/downloads)
