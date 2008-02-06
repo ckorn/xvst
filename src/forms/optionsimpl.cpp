@@ -65,6 +65,8 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	fillLanguages();
 	// set values
 	setInitialOptionsValues();
+	// can update?
+	btnCheckNow->setEnabled(Updates::canUpdate());
 }
 
 OptionsImpl::~OptionsImpl()

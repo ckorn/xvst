@@ -70,7 +70,7 @@
    <item row="0" column="1" >
     <widget class="QStackedWidget" name="pgOptions" >
      <property name="currentIndex" >
-      <number>6</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="pgBasic" >
       <layout class="QGridLayout" >
@@ -1153,6 +1153,9 @@ background-color:#124565;
               <width>0</width>
               <height>21</height>
              </size>
+            </property>
+            <property name="echoMode" >
+             <enum>QLineEdit::Password</enum>
             </property>
            </widget>
           </item>
