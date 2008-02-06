@@ -98,6 +98,16 @@ class VideoInformation_Google : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Yahoo Videos */
+class VideoInformation_Yahoo : public VideoInformation_plugin
+{
+	public:
+		/*! Yahoo plugin class constructor */
+		VideoInformation_Yahoo(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Yahoo Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 /*! Plugin for ZappInternet Videos */
 class VideoInformation_ZappInternet : public VideoInformation_plugin
 {

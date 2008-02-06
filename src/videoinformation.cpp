@@ -37,6 +37,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Youtube(this);
 	new VideoInformation_Metacafe(this);
 	new VideoInformation_Google(this);
+	new VideoInformation_Yahoo(this);
 	new VideoInformation_ZappInternet(this);
 	new VideoInformation_Dailymotion(this);
 	new VideoInformation_Dumpalink(this);
@@ -440,6 +441,54 @@ VideoDefinition VideoInformation_Google::getVideoInformation(const QString URL)
 	return result;
 }
 
+// Plugin for Yahoo Videos
+
+VideoInformation_Yahoo::VideoInformation_Yahoo(VideoInformation *videoInformation)
+{
+	setID("video.yahoo.com");
+	setCaption("Yahoo! Video");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Yahoo::getVideoInformation(const QString URL)
+{
+	const QString GET_SEQUENCE  = "http://cosmos.bcst.yahoo.com/ver/234/process/getSequence.php?&node_id=%1&tech=flv&eventID=0&chid=0&s=&output=%2&bw=101&ptr=playerAPI&callback=y_up.playlist._receive";
+	const QString GET_PLAY_LIST = "http://playlist.yahoo.com/makeplaylist.dll?%1&pt=xml&pt=xml";
+	const QString GET_FLV_URL   = "http://%1%2?%3";
+
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video info
+	result.title = copyBetween(html, "<title>", "- Yahoo!").trimmed();
+	// get the xml url
+	QString videoId = copyBetween(html, "videoid=", "\">").trimmed();
+	videoId = cleanURL(videoId);
+	// get sequence ID
+	QString sequenceID = copyBetween(html, "c id='", "'");
+	QString f = copyBetween(html, "&f=", "&");
+	// download sequence
+	html = http.downloadWebpage(QUrl(QString(GET_SEQUENCE).arg(sequenceID).arg(f)));
+	// get the play list parameters
+	QString playListParams = copyBetween(html, "makeplaylist.dll?", "\"}");
+	// download the play list
+	QString xml = http.downloadWebpage(QUrl(QString(GET_PLAY_LIST).arg(playListParams)));
+	// get the flv info
+	QString server = copyBetween(xml, "SERVER=\"", "\"");
+	QString path = copyBetween(xml, "PATH=\"", "\"");
+	QString queryString = copyBetween(xml, "QUERYSTRING=\"", "\"");
+	// clear and get the final flv url
+	result.URL = cleanURL(QString(GET_FLV_URL).arg(server).arg(path).arg(queryString));
+	// convert html to string
+	result.URL = result.URL.replace("&amp;", "&");
+	// return the video information
+	return result;
+}
+
 // Plugin for ZappInternet Videos
 
 VideoInformation_ZappInternet::VideoInformation_ZappInternet(VideoInformation *videoInformation)
@@ -461,7 +510,7 @@ VideoDefinition VideoInformation_ZappInternet::getVideoInformation(const QString
 	Http http;
 	QString html = http.downloadWebpage(QUrl(URL));
 	// get video info
-	result.title = copyBetween(html, "<title>", " - ZappInternet.com</title>").trimmed();
+	result.title = copyBetween(html, "<title>", "- ZappInternet.com</title>").trimmed();
 	QString videoID = copyBetween(html, "var idvideo = \"", "\"");
 	// clear and get the final flv url
 	result.URL = cleanURL(QString(URL_GET_URL).arg(videoID[0]).arg(videoID));

@@ -242,8 +242,7 @@ p, li { white-space: pre-wrap; }
 &lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Shufuni&lt;/span>&lt;/li>
 &lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">TuPorno &lt;/span>&lt;/li>
 &lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">YouPorn &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Yuvutu &lt;/span>&lt;/li>&lt;/ul>
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:8pt;">&lt;span style=" font-size:large; font-style:italic;">(*) Under revision, some videos cannot be downloaded (yet)&lt;/span>&lt;span style=" font-size:large;"> &lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Yuvutu &lt;/span>&lt;/li>&lt;/ul>&lt;/body>&lt;/html></string>
      </property>
      <property name="textInteractionFlags" >
       <set>Qt::NoTextInteraction</set>

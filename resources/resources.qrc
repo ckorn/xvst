@@ -74,5 +74,6 @@
         <file>images/services/tu.tv.png</file>
         <file>images/services/spike.com.png</file>
         <file>images/services/videos.cinemavip.com.png</file>
+        <file>images/services/video.yahoo.com.png</file>
     </qresource>
 </RCC>
