@@ -5,7 +5,6 @@ DESTDIR = bin
 UI_DIR = build/ui
 MOC_DIR = build/moc
 RCC_DIR += build/rcc
-RC_FILE += resources/xVST.rc
 FORMS = ui/addvideo.ui \
  ui/checkupdates.ui \
  ui/completedpopup.ui \
@@ -82,5 +81,6 @@ unix {
  OBJECTS_DIR +=  build/o/unix
 }
 win32 {
+ RC_FILE += resources/xVST.rc
  OBJECTS_DIR +=  build/o/win32
 }
