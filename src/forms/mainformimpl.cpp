@@ -383,7 +383,7 @@ void MainFormImpl::selectDownloadDirClicked()
 
 void MainFormImpl::openDownloadDirClicked()
 {
-	QDesktopServices::openUrl(edtDownloadDir->text());
+	openDirectory(edtDownloadDir->text());
 }
 
 void MainFormImpl::closeAppClicked()
@@ -495,7 +495,7 @@ void MainFormImpl::playVideoClicked()
 
 	if (videoItem->isCompleted())
 		if (QFile::exists(videoItem->getVideoFileSavedTo()))
-			QDesktopServices::openUrl(getSelectedVideoItem()->getVideoFileSavedTo());
+			openDirectory(getSelectedVideoItem()->getVideoFileSavedTo());
 }
 
 void MainFormImpl::downloadAutomaticallyStateChanged(int state)

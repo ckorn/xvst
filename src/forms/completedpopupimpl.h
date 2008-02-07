@@ -32,6 +32,7 @@
 //
 #include "ui_completedpopup.h"
 //
+#include "../tools.h"
 
 enum DisplayState {dsInactive, dsShowing, dsWaiting, dsHiding};
 

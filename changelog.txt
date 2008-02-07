@@ -27,6 +27,12 @@ Windows:
 
 - Added ProgramVersion information (.RC)
 
+Linux:
+------
+
+- Fixed bug (Error: "Play video" did not work, file not found error was raised)
+- Fixed bug (Error: "Open downloads directory" did not work, some dist. did not open the directory)
+
 Mac OS X:
 ---------
 

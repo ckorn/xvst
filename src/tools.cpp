@@ -366,3 +366,17 @@ QString strToHtml(QString str, bool htmlCodes)
 
 	return result;
 }
+
+bool openFile(QString filePath)
+{
+#ifdef Q_OS_WIN32
+	return QDesktopServices::openUrl(filePath);
+#else
+	return QDesktopServices::openUrl("file://" + filePath);
+#endif
+}
+
+bool openDirectory(QString directoryPath)
+{
+	return openFile(directoryPath);
+}

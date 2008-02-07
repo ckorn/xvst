@@ -75,6 +75,12 @@
 	/*! Get the URL path + query */
 	QString getPathAndQuery(QUrl URL);
 	
+	/*! Open the file with its associated program */
+	bool openFile(QString filePath);
+	
+	/*! Open the directory into the defined explorer */
+	bool openDirectory(QString directoryPath);
+	
 	/*! Convert a Decimal HTML Char into the respective HTML Code */
 	QString htmlCharToHtmlCode(QString html);
 	

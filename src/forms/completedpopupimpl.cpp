@@ -105,6 +105,6 @@ void CompletedPopupImpl::closeClicked()
 void CompletedPopupImpl::playVideoClicked()
 {
 	if (QFile::exists(videoFile))
-		QDesktopServices::openUrl(videoFile);
+		openFile(videoFile);
 }
 //
