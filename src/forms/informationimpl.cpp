@@ -31,6 +31,8 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 		: QDialog(parent, f)
 {
 	setupUi(this);
+	// signals
+	connect(btnCredits, SIGNAL(clicked()), this, SLOT(btnCreditsClicked()));
 	// set the program version
 	lblProgramVersion->setText(QString("<b>%1</b>").arg(PROGRAM_VERSION));
 	// set language info
@@ -40,5 +42,11 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 		lblLanguage->setText(QString("<b>%1</b>").arg(language->getId()));
 		lblURL->setText(QString("<a href=\"%1\">%2</href>").arg(language->getContact()).arg(language->getContact()));
 	}
+}
+
+void InformationImpl::btnCreditsClicked()
+{
+	CreditsImpl creditsForm(this);
+	creditsForm.exec();
 }
 //

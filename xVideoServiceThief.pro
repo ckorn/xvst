@@ -16,7 +16,8 @@ FORMS = ui/addvideo.ui \
  ui/options.ui \
  ui/updatecenter.ui \
  ui/infoview.ui \
- ui/bugreport.ui
+ ui/bugreport.ui \
+ ui/credits.ui
 HEADERS = src/forms/addvideoimpl.h \
  src/forms/checkupdatesimpl.h \
  src/forms/completedpopupimpl.h \
@@ -43,7 +44,8 @@ HEADERS = src/forms/addvideoimpl.h \
  src/videoinformation.h \
  src/videoitem.h \
  src/videolistcontroller.h \
- src/trackerreport.h
+ src/trackerreport.h \
+ src/forms/creditsimpl.h
 SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/checkupdatesimpl.cpp \
  src/forms/completedpopupimpl.cpp \
@@ -70,7 +72,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videoinformation.cpp \
  src/videoitem.cpp \
  src/videolistcontroller.cpp \
- src/trackerreport.cpp
+ src/trackerreport.cpp \
+ src/forms/creditsimpl.cpp
 RESOURCES += resources/resources.qrc
 TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts resources/translations/xVST_it.ts
 macx {

@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Error Report</string>
+   <string>Bug Report</string>
   </property>
   <property name="windowIcon" >
    <iconset resource="../resources/resources.qrc" >:/services/images/services/invalid.png</iconset>

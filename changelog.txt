@@ -1,6 +1,7 @@
 1.5a
 ----
 
+- Added "Credits" form
 - Added "Error Report" module
 - Added 5 new services:
     - Tu.tv
