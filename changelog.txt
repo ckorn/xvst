@@ -13,7 +13,7 @@
     - Yahoo! Videos
 
 - Changed "Proxy Port" max. value from "4999" to "9999"
-- Changed "Proxy password" edit to "Echo mode -> Password"
+- Changed "Proxy password" "Echo mode -> normal" to "Echo mode -> Password"
 
 - Fixed bug (Error: when the xUpdater was missing, the videos were not downloaded)
 - Fixed bug (Error: downloads directory modified in main form was not saved)
