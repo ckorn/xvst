@@ -72,7 +72,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videolistcontroller.cpp \
  src/trackerreport.cpp
 RESOURCES += resources/resources.qrc
-TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts
+TRANSLATIONS += resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts resources/translations/xVST_it.ts
 macx {
  ICON +=  resources/icons/MacOSX.icns
  OBJECTS_DIR +=  build/o/mac
@@ -81,6 +81,6 @@ unix {
  OBJECTS_DIR +=  build/o/unix
 }
 win32 {
- RC_FILE += resources/xVST.rc
+ RC_FILE +=  resources/xVST.rc
  OBJECTS_DIR +=  build/o/win32
 }
