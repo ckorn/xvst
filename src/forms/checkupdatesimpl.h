@@ -38,7 +38,7 @@
 #include "../updates.h"
 //
 
-static const QString URL_UPDATE_FILE = "http://xviservicethief.sourceforge.net/updates/xVST.update.tmp";
+static const QString URL_UPDATE_FILE = "http://xviservicethief.sourceforge.net/updates/xVST.update";
 
 class CheckUpdatesImpl : public QDialog, public Ui::CheckUpdates
 {
