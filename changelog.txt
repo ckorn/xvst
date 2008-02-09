@@ -21,6 +21,8 @@
 - Fixed bug (Error: downloads directory modified in main form was not saved)
 - Fixed bug (Error: some downloaded videos were corrupted by stupid http class bug)
 - Fixed bug (Error: the button "check for updates" in Options is now deactivated if xUpdater is missing)
+- Fixed bug (Error: Application updates didn't work!!! ***SHAME***)
+- Fixed bug (Error: xUpdater was not launched as "detached process"!!! ***SHAME***)
 
 - Improved "URL" validation functions
 - Improved "Updates", Dynamic version will download the correspondent "Dynamic xVST" (and not the static version)

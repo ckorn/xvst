@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ca">
+<defaultcodec></defaultcodec>
 <context>
     <name>AddVideo</name>
     <message>
@@ -38,11 +39,6 @@
 </context>
 <context>
     <name>BugReport</name>
-    <message>
-        <location filename="../../ui/bugreport.ui" line="13"/>
-        <source>Error Report</source>
-        <translation>Informa d&apos;Errors</translation>
-    </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="31"/>
         <source>QFrame{background: white;} </source>
@@ -116,6 +112,11 @@
         <location filename="../../ui/bugreport.ui" line="251"/>
         <source>Sending your &quot;&lt;b&gt;Error report&lt;/b&gt;&quot;... please wait...</source>
         <translation>Enviant el teu &quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot;... espera un instants...</translation>
+    </message>
+    <message>
+        <location filename="../../ui/bugreport.ui" line="13"/>
+        <source>Bug Report</source>
+        <translation>Bug Report</translation>
     </message>
 </context>
 <context>
@@ -213,6 +214,34 @@
         <location filename="../../ui/completedpopup.ui" line="89"/>
         <source>X</source>
         <translation>X</translation>
+    </message>
+</context>
+<context encoding="UTF-8">
+    <name>Credits</name>
+    <message>
+        <location filename="../../ui/credits.ui" line="13"/>
+        <source>Credits</source>
+        <translation>Crèdits</translation>
+    </message>
+    <message>
+        <location filename="../../ui/credits.ui" line="38"/>
+        <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
+        <translation>Desenvolupat per &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contacte: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../ui/credits.ui" line="48"/>
+        <source>This software is OpenSource and is licenced under &lt;b&gt;GNU GPL&lt;/b&gt; licence (General Public Licence)</source>
+        <translation>Aquest software és OpenSource i té llicència &lt;b&gt;GNU GPL&lt;/b&gt; (General Public Licence)</translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../../ui/credits.ui" line="74"/>
+        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
+        <translation>&lt;b&gt;Agraïments especials:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
+    </message>
+    <message>
+        <location filename="../../ui/credits.ui" line="128"/>
+        <source>Ok</source>
+        <translation>D&apos;acord</translation>
     </message>
 </context>
 <context>
@@ -421,7 +450,7 @@
         <translation>Aquesta és la informació que s&apos;enviarà:</translation>
     </message>
     <message>
-        <location filename="../../ui/infoview.ui" line="56"/>
+        <location filename="../../ui/infoview.ui" line="60"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
@@ -434,12 +463,7 @@
         <translation>&lt;b&gt;xVideoServiceThief actualment suporta les descàrregues de:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="69"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../ui/information.ui" line="303"/>
+        <location filename="../../ui/information.ui" line="316"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
@@ -533,6 +557,16 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yuvutu &lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large;&quot;&gt;Total websites supported (05/02/2008): &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large; font-weight:600;&quot;&gt;35&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;ul style=&quot;-qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;123video &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;5min &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;aBum &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Aniboom &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Bebo &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Break &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Broadcaster &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Caught On Video &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;CinemaVIP&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Clip4e &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Dailymotion &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Dumpalink &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Glumbert &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Google Video &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;LiveVideo &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Lulu TV &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Metacafe &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;MySpaceTv&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Sclipo &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Spike&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Tu.tv&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Video.ca &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;VideoLeak &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yahoo Video (*) &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yikers &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;YouTube &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;ZappInternet &lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Arial&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Adult web sites: &lt;/span&gt;&lt;/p&gt;&lt;ul style=&quot;-qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Badjojo &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;DaleAlPlay &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;DesiSexTube &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;PornoTube &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Shufuni&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;TuPorno &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;YouPorn &lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yuvutu &lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <location filename="../../ui/information.ui" line="69"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../ui/information.ui" line="291"/>
+        <source>Credits...</source>
+        <translation>Crèdits...</translation>
+    </message>
 </context>
 <context>
     <name>MainForm</name>
@@ -540,12 +574,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/mainform.ui" line="570"/>
         <source>...</source>
         <translation>...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="86"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="616"/>
@@ -694,6 +722,12 @@ p, li { white-space: pre-wrap; }
         <source>Display a popup window on finish a download/conversion video</source>
         <translation>Mostra un cartell informatiu al finalitzar la descàrrega/conversió d&apos;un vídeo</translation>
     </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="86"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
 </context>
 <context>
     <name>MainFormImpl</name>
@@ -738,12 +772,12 @@ p, li { white-space: pre-wrap; }
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="294"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="298"/>
         <source>Options</source>
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="377"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="381"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
@@ -758,22 +792,22 @@ p, li { white-space: pre-wrap; }
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="330"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="334"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="274"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="276"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;aplicació xUpdater no s&apos;ha pogut trobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="332"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="336"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="331"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="335"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>

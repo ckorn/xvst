@@ -85,7 +85,7 @@ macx {
 }
 unix {
  OBJECTS_DIR +=  build/o/unix
- TARGET = xVST
+ TARGET = xvst
 }
 win32 {
  RC_FILE +=  resources/xVST.rc

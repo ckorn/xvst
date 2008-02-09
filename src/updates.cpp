@@ -160,6 +160,12 @@ void Updates::buildInstalScript()
 		for (int n = 0; n < getUpdatesCount(); n++)
 		{
 			Update *update = updateList->at(n);
+			// check if is "this" reference
+			if (update->getInstallTo().toLower() == "this")
+			{
+				QFileInfo appExe(QCoreApplication::applicationFilePath());
+				update->setInstallTo("/" + appExe.fileName());
+			}
 			// is checked?
 			if (update->getChecked())
 				if (!update->getPacked())
@@ -338,7 +344,7 @@ void Updates::downloadUpdates()
 
 void Updates::installUpdates()
 {
-	QProcess::execute(appPath + XUPDATER_PATH, QStringList() << QDir::toNativeSeparators(QDir::tempPath() + XUPDATER_FILE));
+	QProcess::startDetached(appPath + XUPDATER_PATH, QStringList() << QDir::toNativeSeparators(QDir::tempPath() + XUPDATER_FILE));
 }
 
 void Updates::cancel()
