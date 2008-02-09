@@ -77,6 +77,7 @@ Q_OBJECT
 		QDir appDir;			//!< Initial program path
 		QString appExecutable;	//!< Executable program path
 		QString optionsFile;	//!< Options file name (path + name)
+		bool firstTime;			//!< Is the first program executation??
 		
 		bool canSendUpdateSignal;	//!< flag for know if is the update signal can be sended
 		/*! Send the update signal (only if is possible) */
@@ -153,6 +154,8 @@ Q_OBJECT
 		int getCheckForUpdatesEvery();
 		void setDisplayBugReport(bool value);
 		bool getDisplayBugReport();
+		void setFirstTime(bool value);
+		bool getFirstTime();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();

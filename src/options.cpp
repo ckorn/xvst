@@ -90,6 +90,8 @@ void ProgramOptions::load()
 
 	displayBugReport = settings.value("configuration/displayBugReport", displayBugReport).toBool();
 
+	firstTime = settings.value("configuration/firstTime", firstTime).toBool();
+
 	emit optionsLoadAfter();
 }
 
@@ -139,6 +141,8 @@ void ProgramOptions::save()
 	settings.setValue("checkForUpdatesEvery", checkForUpdatesEvery);
 	
 	settings.setValue("displayBugReport", displayBugReport);
+
+	settings.setValue("firstTime", firstTime);
 
 	settings.endGroup();
 
@@ -195,6 +199,8 @@ void ProgramOptions::setDefault()
 	checkForUpdatesEvery = 1;
 	
 	displayBugReport = true;
+	
+	firstTime = true;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -505,4 +511,14 @@ bool ProgramOptions::getDisplayBugReport()
 void ProgramOptions::setDisplayBugReport(bool value)
 {
 	displayBugReport = value;
+}
+
+bool ProgramOptions::getFirstTime()
+{
+	return firstTime;
+}
+
+void ProgramOptions::setFirstTime(bool value)
+{
+	firstTime = value;
 }

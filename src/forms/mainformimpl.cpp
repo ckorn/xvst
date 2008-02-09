@@ -270,11 +270,15 @@ void MainFormImpl::timerEvent(QTimerEvent *event)
 		{
 			actUpdates->setEnabled(false);
 			spbUpdates->setEnabled(false);
-			QMessageBox::information(this, tr("Updates"),
-			                               tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
-			                               tr("Ok"));
+			// running the app for 1st time? then display this warning message
+			if (programOptions->getFirstTime())
+				QMessageBox::information(this, tr("Updates"),
+				                               tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
+				                               tr("Ok"));
 			// start the download list
 			videoList->start();
+			// ok, no more first time
+			programOptions->setFirstTime(false);
 		}
 		else
 			checkUpdates();

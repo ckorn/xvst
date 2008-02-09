@@ -41,7 +41,7 @@ static const QString CURRENT_OS = "LINUX"; //<! Gnu/Linux version
 static const QString CURRENT_OS = "MACOSX"; //<! MacOS X version
 #endif
 
-#ifdef STATIC_COMPILATION
+#ifdef STATIC_BUILD
 static const QString COMPILATION_MODE = "STATIC"; //<! Static compilation
 #else
 static const QString COMPILATION_MODE = "DYNAMIC"; //<! Dynamic compilation
