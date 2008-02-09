@@ -90,7 +90,11 @@ void Updates::pareseUpdateFile(QString updateFile)
 {
 	if (cancelled) return;
 	// parse current OS updates
+#ifdef STATIC_BUILD
 	parseBlock(copyBetween(updateFile, "#" + CURRENT_OS + "{", "}"));
+#else
+	parseBlock(copyBetween(updateFile, "#" + CURRENT_OS + "_" + COMPILATION_MODE + "{", "}"));
+#endif
 	// parse common updates (OS independent)
 	parseBlock(copyBetween(updateFile, "#COMMON{", "}"));
 }

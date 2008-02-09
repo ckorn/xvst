@@ -23,6 +23,7 @@
 - Fixed bug (Error: the button "check for updates" in Options is now deactivated if xUpdater is missing)
 
 - Improved "URL" validation functions
+- Improved "Updates", Dynamic version will download the corresponent "Dynamic xVST" (and not the static version)
 
 Windows:
 --------
