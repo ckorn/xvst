@@ -6,11 +6,11 @@
      FILEVERSION 1,5,0,0
      PRODUCTVERSION 1,5,0,0
      FILEFLAGSMASK 0x3fL
-    #ifdef _DEBUG
+#ifdef _DEBUG
      FILEFLAGS 0x1L
-    #else
+#else
      FILEFLAGS 0x0L
-    #endif
+#endif
      FILEOS 0x4L
      FILETYPE 0x2L
      FILESUBTYPE 0x0L
@@ -19,7 +19,11 @@
         BEGIN
             BLOCK "040904e4"
             BEGIN
-                VALUE "Comments", "The xVST is Alpha version\0"
+#ifdef STATIC_BUILD
+                VALUE "Comments", "The xVST is Alpha version (Static build)\0"
+#else
+                VALUE "Comments", "The xVST is Alpha version (dynamic build)\0"
+#endif
                 VALUE "CompanyName", "Xesc & Technology\0"
                 VALUE "FileDescription", "Download videos from Internet Video Services\0"
                 VALUE "FileVersion", "1.5 Alpha\0"

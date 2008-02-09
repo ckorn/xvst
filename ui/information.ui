@@ -66,7 +66,7 @@ background: white;
         <item>
          <widget class="QLabel" name="lblHeader" >
           <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;title>xVideoServiceThief&lt;/title>&lt;/head>&lt;body>&lt;div align="center">&lt;p>&lt;span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;">xVideoServiceThief&lt;/span>&lt;br />&lt;span style="font-family: Arial, Helvetica, sans-serif;font-size: 13px;">Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span>&lt;/p>&lt;/div>&lt;/body>&lt;/html></string>
+           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;title>xVideoServiceThief&lt;/title>&lt;/head>&lt;body>&lt;div align="center">&lt;p>&lt;span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;">xVideoServiceThief&lt;/span>&lt;br />&lt;span style="font-family: Arial, Helvetica, sans-serif;font-size: 13px;">Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span>&lt;/p>&lt;/div>&lt;/body>&lt;/html></string>
           </property>
           <property name="alignment" >
            <set>Qt::AlignCenter</set>

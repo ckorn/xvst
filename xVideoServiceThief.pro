@@ -91,4 +91,4 @@ win32 {
  RC_FILE +=  resources/xVST.rc
  OBJECTS_DIR +=  build/o/win32
 }
-CONFIG(dynamic_build):DEFINES += STATIC_BUILD
+CONFIG(static_build):DEFINES += STATIC_BUILD
