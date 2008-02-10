@@ -46,9 +46,12 @@ Q_OBJECT
 	private:
 		ProgramOptions *programOptions;
 		Updates *updates;
+		bool closedByButton;
 		bool isUser;
 		void checkUpdates();
 		void waitThread();
+	protected:
+		void closeEvent(QCloseEvent *event);
 	public:
 		CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent = 0, Qt::WFlags f = 0 );
 		~CheckUpdatesImpl();

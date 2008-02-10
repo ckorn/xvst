@@ -1,4 +1,4 @@
-CONFIG += qt warn_on debug_and_release console $$[build_mode]
+CONFIG += qt warn_on release $$[build_mode]
 QT = core gui network
 TEMPLATE = app
 DESTDIR = bin
@@ -74,10 +74,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videolistcontroller.cpp \
  src/trackerreport.cpp \
  src/forms/creditsimpl.cpp
-TRANSLATIONS = resources/translations/xVST_ca.ts \
- resources/translations/xVST_es.ts \
- resources/translations/xVST_pl.ts \
- resources/translations/xVST_it.ts
+TRANSLATIONS = resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts resources/translations/xVST_it.ts
 RESOURCES = resources/resources.qrc
 macx {
  ICON +=  resources/icons/MacOSX.icns
@@ -85,10 +82,12 @@ macx {
 }
 unix {
  OBJECTS_DIR +=  build/o/unix
- TARGET = xvst
+ TARGET =  xvst
 }
 win32 {
  RC_FILE +=  resources/xVST.rc
  OBJECTS_DIR +=  build/o/win32
 }
-CONFIG(static_build):DEFINES += STATIC_BUILD
+CONFIG(static_build) {
+ DEFINES +=  STATIC_BUILD
+}

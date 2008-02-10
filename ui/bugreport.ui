@@ -60,7 +60,7 @@
        <widget class="QLabel" name="lblErrorInfo" >
         <property name="text" >
          <string>&lt;b>Ops! An error occurred while trying to download the video.&lt;/b>&#xd;
-&lt;p>You can help to fix this problem sending us an "&lt;b>Error report&lt;/b>". This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p>&#xd;
+&lt;p>You can help to fix this problem sending us an "&lt;b>Bug report&lt;/b>". This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p>&#xd;
 &lt;p>Your help is allways welcomed!&lt;/p></string>
         </property>
         <property name="wordWrap" >
@@ -74,8 +74,8 @@
    <item row="1" column="0" >
     <widget class="QLabel" name="label" >
      <property name="text" >
-      <string>&lt;p>The "&lt;b>Error report&lt;/b>" will be sent to &lt;a href="http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803">xVST SourceForge tracker&lt;/a>.&lt;/p>&#xd;
-&lt;p>Your name and email will be included into the "&lt;b>Error comment&lt;/b>", however is totally optional and unecessary.&lt;/p></string>
+      <string>&lt;p>The "&lt;b>Bug report&lt;/b>" will be sent to &lt;a href="http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803">xVST SourceForge tracker&lt;/a>.&lt;/p>&#xd;
+&lt;p>Your name and email will be included into the "&lt;b>Bug comment&lt;/b>", however is totally optional and unecessary.&lt;/p></string>
      </property>
      <property name="wordWrap" >
       <bool>true</bool>

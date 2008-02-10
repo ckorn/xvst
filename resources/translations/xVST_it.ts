@@ -44,19 +44,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="62"/>
-        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
-&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Error report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
-&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/bugreport.ui" line="77"/>
-        <source>&lt;p&gt;The &quot;&lt;b&gt;Error report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Error comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../ui/bugreport.ui" line="88"/>
         <source>Error information</source>
         <translation type="unfinished"></translation>
@@ -114,6 +101,19 @@
     <message>
         <location filename="../../ui/bugreport.ui" line="13"/>
         <source>Bug Report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/bugreport.ui" line="62"/>
+        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
+&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
+&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/bugreport.ui" line="77"/>
+        <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1063,16 +1063,6 @@ background-color:#124565;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1299"/>
-        <source>Display &quot;Error Report&quot; window on Video error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="1308"/>
-        <source>When a video throws an error, you can help to fix the error sending an &quot;&lt;b&gt;Error Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Error Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="1353"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation type="unfinished"></translation>
@@ -1085,6 +1075,16 @@ background-color:#124565;
     <message>
         <location filename="../../ui/options.ui" line="1398"/>
         <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1299"/>
+        <source>Display &quot;Bug Report&quot; window on Video error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1308"/>
+        <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

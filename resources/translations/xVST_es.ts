@@ -45,21 +45,6 @@
         <translation>QFrame{background: white;} </translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="62"/>
-        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
-&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Error report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
-&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
-        <translation>&lt;b&gt;¡Ops! Se ha producido unerror mientras se intentaba bajar el vídeo.&lt;/b&gt;&lt;p&gt;Puedeayudar a solucionar el problema enviándonos un &quot;Informe de errores&quot;.Este Informe será usado para analizar el error y si es necesario serásolucionado para mejorar la próxima versión del xVST.&lt;/p&gt;
-&lt;p&gt;¡Su ayuda es siemprebienvenida!&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../ui/bugreport.ui" line="77"/>
-        <source>&lt;p&gt;The &quot;&lt;b&gt;Error report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Error comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;El &quot;&lt;b&gt;Informede errores&lt;/b&gt;&quot; será enviado al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVSTSourceForge tracker&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Su nombre y email estaránincluidos en el &quot;&lt;b&gt;Comentario del error&lt;/b&gt;&quot;, de todasformas es totalmente opcional y innecesario.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../../ui/bugreport.ui" line="88"/>
         <source>Error information</source>
         <translation>Información del error</translation>
@@ -118,6 +103,21 @@
         <location filename="../../ui/bugreport.ui" line="13"/>
         <source>Bug Report</source>
         <translation>Bug Report</translation>
+    </message>
+    <message>
+        <location filename="../../ui/bugreport.ui" line="62"/>
+        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
+&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
+&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
+        <translation>&lt;b&gt;¡Ops! Se ha producido unerror mientras se intentaba bajar el vídeo.&lt;/b&gt;&lt;p&gt;Puedeayudar a solucionar el problema enviándonos un &quot;Informe de errores&quot;.Este Informe será usado para analizar el error y si es necesario serásolucionado para mejorar la próxima versión del xVST.&lt;/p&gt;
+&lt;p&gt;¡Su ayuda es siemprebienvenida!&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../ui/bugreport.ui" line="77"/>
+        <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;El &quot;&lt;b&gt;Informede errores&lt;/b&gt;&quot; será enviado al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVSTSourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Su nombre y email estaránincluidos en el &quot;&lt;b&gt;Comentario del error&lt;/b&gt;&quot;, de todasformas es totalmente opcional y innecesario.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1086,12 +1086,12 @@ background-color:#124565;
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1299"/>
-        <source>Display &quot;Error Report&quot; window on Video error</source>
+        <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Mostrar la ventana de &quot;Informe de errores&quot; al fallar un Vídeo</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1308"/>
-        <source>When a video throws an error, you can help to fix the error sending an &quot;&lt;b&gt;Error Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Error Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
+        <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Cuando un vídeo provoca un error, puede ayudar asolucionar el problema enviandonos un &quot;&lt;b&gt;Informe deerrores&lt;/b&gt;&quot; vía &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.nettracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;El &quot;&lt;b&gt;Informe de errores&lt;/b&gt;&quot; se guardará sólo en el &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; y será visible para todo el mundo, y ninguna información extra será guardada en una Base de Datos externa.</translation>
     </message>
 </context>

@@ -33,6 +33,7 @@ CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, 
 	setupUi(this);
 	this->programOptions = programOptions;
 	this->isUser = isUser;
+	closedByButton = false;
 	// init update class
 	updates = new Updates(programOptions->getApplicationPath());
 	// signals
@@ -48,6 +49,15 @@ CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, 
 CheckUpdatesImpl::~CheckUpdatesImpl()
 {
 	delete updates;
+}
+
+void CheckUpdatesImpl::closeEvent(QCloseEvent *event)
+{
+	if (!closedByButton)
+	{
+		event->ignore();
+		btnCancelClicked();
+	}
 }
 
 void CheckUpdatesImpl::checkUpdates()
@@ -90,7 +100,10 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 			QApplication::closeAllWindows();
 		}
 		else // update center has been cancelled
+		{
+			closedByButton = true;
 			done(QDialog::Rejected);
+		}
 	}
 	else
 	{
@@ -100,6 +113,7 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 			QMessageBox::information(this, tr("Updates"),
 			                               tr("You are using the most recent version of this program."),
 			                               tr("Ok"));
+		closedByButton = true;
 		done(QDialog::Rejected);
 	}
 }
@@ -110,6 +124,7 @@ void CheckUpdatesImpl::updatesCancelled()
 	
 	waitThread();
 
+	closedByButton = true;
 	done(QDialog::Rejected);
 }
 

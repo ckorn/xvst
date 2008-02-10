@@ -4,6 +4,7 @@ UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall
 		: QDialog(parent, f)
 {
 	setupUi(this);
+	closedByButton = false;
 	// version
 	lblxVSTVersion->setText(QString(lblxVSTVersion->text()).arg(PROGRAM_VERSION));
 	// set update class
@@ -44,6 +45,15 @@ UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall
 		btnUpdateClicked();
 }
 
+void UpdateCenterImpl::closeEvent(QCloseEvent *event)
+{
+	if (!closedByButton)
+	{
+		event->ignore();
+		btnCancelClicked();
+	}
+}
+
 void UpdateCenterImpl::fillUpdates()
 {
 	for (int n = 0; n < updates->getUpdatesCount(); n++)
@@ -81,8 +91,8 @@ void UpdateCenterImpl::itemChanged(QTreeWidgetItem * item, int column)
 
 void UpdateCenterImpl::btnCancelClicked()
 {
+	closedByButton = true;
 	updates->cancel();
-
 	done(QDialog::Rejected);
 }
 
@@ -120,6 +130,7 @@ void UpdateCenterImpl::downloadsFinished()
 
 void UpdateCenterImpl::readyToInstallUpdates()
 {
+	closedByButton = true;
 	done(QDialog::Accepted);
 }
 //

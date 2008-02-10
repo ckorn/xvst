@@ -14,7 +14,10 @@ class UpdateCenterImpl : public QDialog, public Ui::UpdateCenter
 Q_OBJECT
 	private:
 		Updates *updates;
+		bool closedByButton;
 		void fillUpdates();
+	protected:
+		void closeEvent(QCloseEvent *event);
 	public:
 		UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall, QWidget * parent = 0, Qt::WFlags f = 0 );
 	private slots:

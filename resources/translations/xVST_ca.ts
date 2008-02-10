@@ -45,20 +45,6 @@
         <translation>QFrame{background: white;} </translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="62"/>
-        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
-&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Error report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
-&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
-        <translation>&lt;b&gt;Ops! S&apos;ha produït un error al provar de baixar el vídeo.&lt;/b&gt;&lt;p&gt;Pots ajudar a solucionar el problema enviant-nos un &quot;&lt;b&gt;Informa d&apos;Errors&lt;/b&gt;&quot;. Aquest Informa serà usat per analitzar l&apos;error i si és necessari arreglar-lo per tal de millorar la pròxima versió del xVST.&lt;/p&gt;&lt;p&gt;La teva ajuda és sempre benvinguda!&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../ui/bugreport.ui" line="77"/>
-        <source>&lt;p&gt;The &quot;&lt;b&gt;Error report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Error comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;L&apos;&quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot; serà enviat al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;El teu nom i email seran inclosos al &quot;&lt;b&gt;Comentari de l&apos;error&lt;/b&gt;&quot;, de totes maneres és totalment opcional i innecessari.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../../ui/bugreport.ui" line="88"/>
         <source>Error information</source>
         <translation>Informació de l&apos;error</translation>
@@ -117,6 +103,20 @@
         <location filename="../../ui/bugreport.ui" line="13"/>
         <source>Bug Report</source>
         <translation>Bug Report</translation>
+    </message>
+    <message>
+        <location filename="../../ui/bugreport.ui" line="62"/>
+        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
+&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
+&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
+        <translation>&lt;b&gt;Ops! S&apos;ha produït un error al provar de baixar el vídeo.&lt;/b&gt;&lt;p&gt;Pots ajudar a solucionar el problema enviant-nos un &quot;&lt;b&gt;Informa d&apos;Errors&lt;/b&gt;&quot;. Aquest Informa serà usat per analitzar l&apos;error i si és necessari arreglar-lo per tal de millorar la pròxima versió del xVST.&lt;/p&gt;&lt;p&gt;La teva ajuda és sempre benvinguda!&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../ui/bugreport.ui" line="77"/>
+        <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;L&apos;&quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot; serà enviat al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;El teu nom i email seran inclosos al &quot;&lt;b&gt;Comentari de l&apos;error&lt;/b&gt;&quot;, de totes maneres és totalment opcional i innecessari.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1083,12 +1083,12 @@ background-color:#124565;
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1299"/>
-        <source>Display &quot;Error Report&quot; window on Video error</source>
+        <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Mostra la finestra de &quot;L&apos;Informa d&apos;errors&quot; al fallar una descàrrega</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1308"/>
-        <source>When a video throws an error, you can help to fix the error sending an &quot;&lt;b&gt;Error Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Error Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
+        <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Quan un vídeo produeix un error, pots ajudar a solucionar el problema enviant-nos un&quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot; via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;L&apos;&quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot; serà desat només al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; i serà visible per a tothom, no es desarà informació extra a cap Base de Dades externa.</translation>
     </message>
 </context>
