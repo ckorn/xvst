@@ -1,3 +1,12 @@
+1.5.1a
+------
+
+- Revised 1 service:
+    - Dailymotion (also updated Dailymotion icon)
+    - Yuvutu
+
+- Fixed bug (Error: fixed POST and GET methods in http class)
+
 1.5a
 ----
 

@@ -228,8 +228,17 @@ int compareVersions(QString version1, QString version2)
 
 QString cleanURL(QString URL)
 {
-	QUrl url = QUrl::fromEncoded(URL.toAscii());
-	return url.toString();
+	// replace hex chars to ascii chars
+	while (URL.indexOf("%") != -1)
+	{
+		int p = URL.indexOf("%");
+		QString hexChar = copy(URL, p + 1, p + 3);
+		URL.replace("%" + hexChar, QString(hexChar.toInt(NULL, 16)));
+	}
+	return URL;
+	
+//	QUrl url = QUrl::fromEncoded(URL.toAscii());
+//	return url.toString();
 }
 
 bool validURL(QString URL)

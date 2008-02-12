@@ -17,12 +17,13 @@ BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Q
 	// add category
 	trackerReport->addCategory("None", "100");
 	// add groups
-	trackerReport->addGroup("1.0a", "804496");
-	trackerReport->addGroup("1.1a", "804497");
-	trackerReport->addGroup("1.2a", "804498");
-	trackerReport->addGroup("1.3a", "804499");
-	trackerReport->addGroup("1.4a", "804500");
-	trackerReport->addGroup("1.5a", "804501");
+	trackerReport->addGroup("1.0a",   "804496");
+	trackerReport->addGroup("1.1a",   "804497");
+	trackerReport->addGroup("1.2a",   "804498");
+	trackerReport->addGroup("1.3a",   "804499");
+	trackerReport->addGroup("1.4a",   "804500");
+	trackerReport->addGroup("1.5a",   "804501");
+	trackerReport->addGroup("1.5.1a", "807976");
 	// signals
 	connect(spbViewInfo, SIGNAL(clicked()), this, SLOT(viewInfoClicked()));
 	connect(btnSend, SIGNAL(clicked()), this, SLOT(sendReportClicked()));

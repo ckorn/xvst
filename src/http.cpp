@@ -152,6 +152,7 @@ int Http::download(const QUrl URL, const QDir destination, QString fileName)
 			destFile = QFileInfo(fileName);
 			// init http variables
 			initData();
+			postMethodFlag = false;
 			// start internal timer
 			if (internalTimer != 0) this->killTimer(internalTimer);
 			internalTimer = this->startTimer(1000);

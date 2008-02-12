@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="pl">
+<defaultcodec></defaultcodec>
 <context>
     <name>AddVideo</name>
     <message>
@@ -41,80 +42,80 @@
     <message>
         <location filename="../../ui/bugreport.ui" line="31"/>
         <source>QFrame{background: white;} </source>
-        <translation type="unfinished"></translation>
+        <translation>QFrame{background: white;} </translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="88"/>
         <source>Error information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacje o błędzie</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="103"/>
         <source>xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersja xVST: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="194"/>
         <source>View which information will be sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż, które informacje zostaną wysłane</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="284"/>
         <source>Do not display &quot;Error Report&quot; the next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Następnym razem nie wyświetlaj &quot;Raportu o błędzie&quot;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="325"/>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Wysłane</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="353"/>
         <source>Cancel</source>
-        <translation type="unfinished">Anuluj</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="96"/>
         <source>Video URL: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Wideo URL: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="127"/>
         <source>Your name: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Twoje imię: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(opcjonalne)&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="148"/>
         <source>Email: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Email: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(opcjonalne)&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="214"/>
         <source>Your comments: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Twoje komentarze: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(opcjonalne)&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="251"/>
         <source>Sending your &quot;&lt;b&gt;Error report&lt;/b&gt;&quot;... please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wysylanie twojego &quot;&lt;b&gt;Raportu o błędzie&lt;/b&gt;&quot;... proszę czekać...</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="13"/>
         <source>Bug Report</source>
-        <translation type="unfinished"></translation>
+        <translation>Raport o błędzie</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="62"/>
         <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
 &lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
 &lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Ops! Wystąpił błąd podczas ściagania pliku wideo.&lt;/b&gt;&lt;p&gt;Możesz pomóc nam w naprawie błędu wysyłając &quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot;. Ten Raport zostanie użyty do zanalizowania błędu i jeśłi konieczne jego usunięcia w celu polepszenia jakości programu.&lt;/p&gt;&lt;p&gt;Twoja pomoc jest zawsze mile widziana!&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="77"/>
         <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot; zostanie wysłany do &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Twoje imię i adres email zostanie umieszczony w &quot;&lt;b&gt;Komentarzu o błędzie&lt;/b&gt;&quot;, jednakże jest to całkowicie opcjonalne i niekonieczne.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -122,7 +123,7 @@
     <message>
         <location filename="../../src/forms/bugreportimpl.cpp" line="105"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -219,27 +220,27 @@
     <message>
         <location filename="../../ui/credits.ui" line="13"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Zasługi</translation>
     </message>
     <message>
         <location filename="../../ui/credits.ui" line="38"/>
         <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Kontakt: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/credits.ui" line="48"/>
         <source>This software is OpenSource and is licenced under &lt;b&gt;GNU GPL&lt;/b&gt; licence (General Public Licence)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ten program jest Otwartym Oprogramowaniem na licencji &lt;b&gt;GNU GPL&lt;/b&gt; licence (General Public Licence)</translation>
     </message>
     <message encoding="UTF-8">
         <location filename="../../ui/credits.ui" line="74"/>
         <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Specjalne podziękowania dla:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: odpowiedzialny za w. Mac OS X&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polskie tłumaczenie&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japońskie tłumaczenie&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;:  Autor zestawu ikon Silk 1.3&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: Autor zestawu ikon &quot;I&apos;m not a Patriot&quot;</translation>
     </message>
     <message>
         <location filename="../../ui/credits.ui" line="128"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -440,17 +441,17 @@
     <message>
         <location filename="../../ui/infoview.ui" line="13"/>
         <source>Information View</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacje</translation>
     </message>
     <message>
         <location filename="../../ui/infoview.ui" line="25"/>
         <source>This is the information which will be send:</source>
-        <translation type="unfinished"></translation>
+        <translation>To są informacje, które zostaną wysłane:</translation>
     </message>
     <message>
         <location filename="../../ui/infoview.ui" line="60"/>
         <source>Close</source>
-        <translation type="unfinished">Zamknij</translation>
+        <translation>Zamknij</translation>
     </message>
 </context>
 <context>
@@ -553,17 +554,17 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;TuPorno &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;YouPorn &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yuvutu &lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="69"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {24p?} {666666;?} {13p?} {2008&lt;?}</translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {24p?} {666666;?} {13p?} {2008&lt;?}</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="291"/>
         <source>Credits...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zasługi...</translation>
     </message>
 </context>
 <context>
@@ -675,7 +676,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/mainform.ui" line="735"/>
         <source>Clear completed</source>
-        <translation>Czyszczenie zakończono</translation>
+        <translation>Wyczyść ukończone</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="677"/>
@@ -726,7 +727,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/mainform.ui" line="86"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {13p?} {999999}?} {0000F?} {32p?} {666666;?} {13p?} {2008&lt;?}</translation>
     </message>
 </context>
@@ -1085,12 +1086,12 @@ background-color:#124565;
     <message>
         <location filename="../../ui/options.ui" line="1299"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż &quot;Raport o błędzie&quot;, jeśli takowy się wydarzy</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1308"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy wystąpi błąd ściągania pliku wideo, możesz pomóc go naprawić wysyłając do nas &quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot; poprzez &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot; jest przechowywany tylko na &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt;, jest widoczny dla wszystkich i żadne dodatkowe dane nie są zapisywane w jakiejkolwiek innej/zewnętrznej bazie.</translation>
     </message>
 </context>
 <context>
@@ -1298,7 +1299,7 @@ background-color:#124565;
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="125"/>
         <source>Tracker</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1336,7 +1337,7 @@ background-color:#124565;
     <message>
         <location filename="../../ui/updatecenter.ui" line="13"/>
         <source>Update center</source>
-        <translation>Cantrum aktualizacji</translation>
+        <translation>Centrum aktualizacji</translation>
     </message>
 </context>
 <context>

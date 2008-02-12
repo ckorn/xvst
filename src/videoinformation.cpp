@@ -530,15 +530,21 @@ VideoInformation_Dailymotion::VideoInformation_Dailymotion(VideoInformation *vid
 
 VideoDefinition VideoInformation_Dailymotion::getVideoInformation(const QString URL)
 {
+	const QString URL_GET_URL = "http://www.dailymotion.com%1";
+	
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
 	// download webpage
 	Http http;
 	QString html = http.downloadWebpage(QUrl(URL));
-	// get video info
+	// get video title
 	result.title = copyBetween(html, "class=\"nav with_uptitle\">", "<");
-	result.URL = copyBetween(html, "\"url\", \"", "\");");
+	// get flv url
+	result.URL = cleanURL(copyBetween(html, ".addVariable(\"video\", \"", "\");"));
+	result.URL = getToken(result.URL, "||", 0);
+	result.URL = getToken(result.URL, "@@", 0);
+	result.URL = QString(URL_GET_URL).arg(result.URL);
 	// clear and get the final flv url
 	result.URL = cleanURL(result.URL);
 	// return the video information
@@ -1283,7 +1289,8 @@ VideoDefinition VideoInformation_Yuvutu::getVideoInformation(const QString URL)
 	result.title = copyBetween(html, "class=\"videoTitle\"", "<td");
 	result.title = copyBetween(result.title, "</span>", "</td>").trimmed();
 	// get the flv url
-	result.URL = copyBetween(html, "flashvars=\"", "\"");
+	result.URL = copyBetween(html, "longTailPlayer", "/>");
+	result.URL = copyBetween(result.URL, "flashvars=\"", "\"");
 	result.URL = copyBetween(result.URL, "file=", "&");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
