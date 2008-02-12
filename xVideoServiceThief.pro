@@ -1,8 +1,4 @@
-CONFIG += qt \
- warn_on \
- release \
- console \
- $$[build_mode]
+CONFIG += qt warn_on release $$[build_mode]
 QT = core gui network
 TEMPLATE = app
 DESTDIR = bin
@@ -34,6 +30,7 @@ HEADERS = src/forms/addvideoimpl.h \
  src/forms/updatecenterimpl.h \
  src/forms/infoviewimpl.h \
  src/forms/bugreportimpl.h \
+ src/forms/creditsimpl.h \
  src/pakunpak/pakunpak.h \
  src/http.h \
  src/languages.h \
@@ -48,8 +45,7 @@ HEADERS = src/forms/addvideoimpl.h \
  src/videoinformation.h \
  src/videoitem.h \
  src/videolistcontroller.h \
- src/trackerreport.h \
- src/forms/creditsimpl.h
+ src/trackerreport.h
 SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/checkupdatesimpl.cpp \
  src/forms/completedpopupimpl.cpp \
@@ -62,6 +58,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/forms/updatecenterimpl.cpp \
  src/forms/infoviewimpl.cpp \
  src/forms/bugreportimpl.cpp \
+ src/forms/creditsimpl.cpp \
  src/pakunpak/pakunpak.cpp \
  src/http.cpp \
  src/languages.cpp \
@@ -76,8 +73,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videoinformation.cpp \
  src/videoitem.cpp \
  src/videolistcontroller.cpp \
- src/trackerreport.cpp \
- src/forms/creditsimpl.cpp
+ src/trackerreport.cpp
 TRANSLATIONS = resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts resources/translations/xVST_it.ts
 RESOURCES = resources/resources.qrc
 macx {
