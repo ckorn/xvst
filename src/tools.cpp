@@ -210,9 +210,7 @@ int compareVersions(QString version1, QString version2)
 		{
 			num1 = getToken(s1, ".", level).toInt();
 			num2 = getToken(s2, ".", level).toInt();
-			
-			qDebug() << num1 << num2;
-			
+
 			if (num1 > num2)
 				return -1;
 			else if (num1 < num2)
