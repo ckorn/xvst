@@ -4,7 +4,7 @@
 - Added 1 new service:
     - GameSpot
 
-- Revised 1 service:
+- Revised 2 services:
     - Dailymotion (also updated Dailymotion icon)
     - Yuvutu
 
