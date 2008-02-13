@@ -61,6 +61,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Spike(this);
 	new VideoInformation_MySpaceTV(this);
 	new VideoInformation_CinemaVIP(this);
+	new VideoInformation_GameSpot(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -1254,6 +1255,37 @@ VideoDefinition VideoInformation_CinemaVIP::getVideoInformation(const QString UR
 	QString videPath = copyBetween(html, "file=", "&");
 	// get the video flv
 	result.URL = QString(URL_GET_XML).arg(videPath);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for GameSpot Videos
+
+VideoInformation_GameSpot::VideoInformation_GameSpot(VideoInformation *videoInformation)
+{
+	setID("gamespot.com");
+	setCaption("GameSpot");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_GameSpot::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>GameSpot Video:", "</title>").trimmed();
+	// get the xml file
+	QString xmlUrl = cleanURL(copyBetween(html, "'paramsURI', '", "'"));
+	QString xml = http.downloadWebpage(QUrl(xmlUrl));
+	// get the flv url
+	result.URL = copyBetween(xml, "<URI>", "</URI>");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information

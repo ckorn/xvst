@@ -338,6 +338,16 @@ class VideoInformation_CinemaVIP : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for GameSpot Videos */
+class VideoInformation_GameSpot : public VideoInformation_plugin
+{
+	public:
+		/*! GameSpot plugin class constructor */
+		VideoInformation_GameSpot(VideoInformation *videoInformation);
+		/*! Get the full Video Information of GameSpot Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

@@ -177,6 +177,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.myspace.com/index.cfm?fuseaction=vids.individual&VideoID=23409638");
 	videoList->addVideo("http://videos.cinemavip.com/informaciondecontenido.php?con=3015");
 	videoList->addVideo("http://video.yahoo.com/video/play?vid=1899050&fr=&cache=1");
+	videoList->addVideo("http://www.gamespot.com/video/943596/6185607/turok-official-trailer-2");
 */
 
 /*

@@ -1,6 +1,9 @@
 1.6a
 ------
 
+- Added 1 new service:
+    - GameSpot
+
 - Revised 1 service:
     - Dailymotion (also updated Dailymotion icon)
     - Yuvutu
