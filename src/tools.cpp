@@ -206,10 +206,12 @@ int compareVersions(QString version1, QString version2)
 			s2 = getToken(s2, " ", 0);
 		}
 		// Check for number versions
-		for (int level = 0; level < max; level++)
+		for (int level = 0; level <= max; level++)
 		{
 			num1 = getToken(s1, ".", level).toInt();
 			num2 = getToken(s2, ".", level).toInt();
+			
+			qDebug() << num1 << num2;
 			
 			if (num1 > num2)
 				return -1;
