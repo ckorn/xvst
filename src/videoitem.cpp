@@ -474,4 +474,5 @@ void VideoItem::initVideoDefinition(VideoDefinition &videoDef)
 {
 	videoDef.URL = "";
 	videoDef.title = "";
+	videoDef.extension = ".flv";
 }

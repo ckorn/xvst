@@ -129,7 +129,7 @@ void VideoInformation::run()
 			if (videoItem == NULL) return;
 
 			videoItem->setVideoInformation(info, this);
-			videoItem->setVideoFile(videoItem->getVideoInformation().title + ".flv", this);
+			videoItem->setVideoFile(videoItem->getVideoInformation().title + info.extension, this);
 
 			videoItem->setAsGettedURL(this);
 		}
@@ -1310,6 +1310,7 @@ VideoDefinition VideoInformation_Stage6::getVideoInformation(const QString URL)
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
+	result.extension = ".divx";
 	// download webpage
 	Http http;
 	QString html = http.downloadWebpage(QUrl(URL));

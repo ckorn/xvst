@@ -47,9 +47,9 @@ enum VideoState
 
 struct VideoDefinition
 {
-	QString URL;	//!< real video URL
-	QString title;	//!< video title
-	
+	QString URL;		//!< real video URL
+	QString title;		//!< video title
+	QString extension;	//!< video extension (default = flv)
 };
 
 class VideoItem : public QObject

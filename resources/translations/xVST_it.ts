@@ -120,7 +120,7 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="105"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="106"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
@@ -146,27 +146,27 @@
 <context>
     <name>CheckUpdatesImpl</name>
     <message>
-        <location filename="../../src/forms/checkupdatesimpl.cpp" line="100"/>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="113"/>
         <source>Updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/checkupdatesimpl.cpp" line="101"/>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="114"/>
         <source>You are using the most recent version of this program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/checkupdatesimpl.cpp" line="102"/>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="115"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/checkupdatesimpl.cpp" line="109"/>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="123"/>
         <source>Cancelling... please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/checkupdatesimpl.cpp" line="118"/>
+        <location filename="../../src/forms/checkupdatesimpl.cpp" line="133"/>
         <source>Checking for updates...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -505,11 +505,26 @@ xVideoServiceThief also provide you the ability to convert each video in most po
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../ui/information.ui" line="318"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/information.ui" line="69"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/information.ui" line="293"/>
+        <source>Credits...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../ui/information.ui" line="206"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large;&quot;&gt;Total websites supported (05/02/2008): &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large; font-weight:600;&quot;&gt;35&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large;&quot;&gt;Total websites supported (14/02/2008): &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large; font-weight:600;&quot;&gt;37&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;-qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;123video &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;5min &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;aBum &lt;/span&gt;&lt;/li&gt;
@@ -522,6 +537,7 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Clip4e &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Dailymotion &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Dumpalink &lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;GameSpot&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Glumbert &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Google Video &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;LiveVideo &lt;/span&gt;&lt;/li&gt;
@@ -530,6 +546,7 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;MySpaceTv&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Sclipo &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Spike&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Stage6&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Tu.tv&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Video.ca &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;VideoLeak &lt;/span&gt;&lt;/li&gt;
@@ -546,21 +563,6 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;TuPorno &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;YouPorn &lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yuvutu &lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/information.ui" line="316"/>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/information.ui" line="69"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/information.ui" line="291"/>
-        <source>Credits...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -758,52 +760,52 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="245"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="247"/>
         <source>Closing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="246"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="248"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="247"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="247"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="334"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="336"/>
         <source>Updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="276"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="278"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="336"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="338"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="298"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="300"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="335"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="337"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="381"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="383"/>
         <source>Select the download directory:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1337,37 +1339,37 @@ background-color:#124565;
 <context>
     <name>UpdateCenterImpl</name>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="14"/>
         <source> File </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="14"/>
         <source> Version </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="14"/>
         <source> Size </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="13"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="14"/>
         <source> Progress </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="105"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="115"/>
         <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="107"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="117"/>
         <source>%1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="113"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="123"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1375,12 +1377,12 @@ background-color:#124565;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="250"/>
+        <location filename="../../src/videoinformation.cpp" line="252"/>
         <source>Unsupported video service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="253"/>
+        <location filename="../../src/videoinformation.cpp" line="255"/>
         <source>Invalid URL</source>
         <translation type="unfinished"></translation>
     </message>
