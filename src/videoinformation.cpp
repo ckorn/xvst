@@ -62,6 +62,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_MySpaceTV(this);
 	new VideoInformation_CinemaVIP(this);
 	new VideoInformation_GameSpot(this);
+	new VideoInformation_Stage6(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -1288,6 +1289,38 @@ VideoDefinition VideoInformation_GameSpot::getVideoInformation(const QString URL
 	result.URL = copyBetween(xml, "<URI>", "</URI>");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for GameSpot Videos
+
+VideoInformation_Stage6::VideoInformation_Stage6(VideoInformation *videoInformation)
+{
+	setID("stage6.com");
+	setCaption("Stage6");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Stage6::getVideoInformation(const QString URL)
+{
+	const QString GET_URL_FLV = "http://%1";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "</title>").trimmed();
+	result.title = htmlToStr(result.title);
+	result.title = copyBetween(result.title, "Stage6 ·", " - Video and Download");
+	// get the flv url
+	result.URL = copyBetween(html, "value=&quot;http://", "&quot;");
+	// clear and get the final url
+	result.URL = cleanURL(QString(GET_URL_FLV).arg(result.URL));
 	// return the video information
 	return result;
 }

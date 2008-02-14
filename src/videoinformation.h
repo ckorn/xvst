@@ -348,6 +348,16 @@ class VideoInformation_GameSpot : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Stage6 Videos */
+class VideoInformation_Stage6 : public VideoInformation_plugin
+{
+	public:
+		/*! Stage6 plugin class constructor */
+		VideoInformation_Stage6(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Stage6 Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

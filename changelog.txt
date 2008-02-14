@@ -1,8 +1,9 @@
 1.6a
 ------
 
-- Added 1 new service:
+- Added 2 new services:
     - GameSpot
+    - Stage6
 
 - Revised 2 services:
     - Dailymotion (also updated Dailymotion icon)
