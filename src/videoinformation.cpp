@@ -1293,7 +1293,7 @@ VideoDefinition VideoInformation_GameSpot::getVideoInformation(const QString URL
 	return result;
 }
 
-// Plugin for GameSpot Videos
+// Plugin for Stage6 Videos
 
 VideoInformation_Stage6::VideoInformation_Stage6(VideoInformation *videoInformation)
 {
