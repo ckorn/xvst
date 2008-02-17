@@ -10,10 +10,10 @@
     <ROW Property="BannerBitmap" Value="default_banner.bmp" Type="1"/>
     <ROW Property="DialogBitmap" Value="default_dialog.bmp" Type="1"/>
     <ROW Property="Manufacturer" Value="Xesc &amp; Technology" ValueLocId="*"/>
-    <ROW Property="ProductCode" Value="1033:{A5465E6E-1CB9-4B7B-A999-7A657AEDA264} "/>
+    <ROW Property="ProductCode" Value="1033:{306D89DE-20FB-4455-AACE-4D68E3AD3DEA} "/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="xVideoServiceThief" ValueLocId="*"/>
-    <ROW Property="ProductVersion" Value="1.5.0"/>
+    <ROW Property="ProductVersion" Value="1.6.0"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{FA98D6CA-0AA3-4897-9928-194EC4DEEA4D}"/>
   </COMPONENT>
@@ -55,10 +55,12 @@
     <ROW File="msvcm80.dll" Component_="msvcm80.dll" FileName="msvcm80.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC80.CRT\msvcm80.dll" SelfReg="false" Sequence="10"/>
     <ROW File="msvcp80.dll" Component_="msvcp80.dll" FileName="msvcp80.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC80.CRT\msvcp80.dll" SelfReg="false" Sequence="11"/>
     <ROW File="msvcr80.dll" Component_="msvcr80.dll" FileName="msvcr80.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC80.CRT\msvcr80.dll" SelfReg="false" Sequence="12"/>
+    <ROW File="polish.language" Component_="catala.language" FileName="polish~1.lan|polish.language" Attributes="0" SourcePath="..\bin\languages\polish.language" SelfReg="false" Sequence="16"/>
     <ROW File="pthreadGC2.dll" Component_="pthreadGC2.dll" FileName="pthrea~1.dll|pthreadGC2.dll" Attributes="0" SourcePath="..\bin\bin\pthreadGC2.dll" SelfReg="false" Sequence="2"/>
     <ROW File="xUpdater.exe" Component_="xUpdater.exe" FileName="xUpdater.exe" Attributes="0" SourcePath="..\bin\bin\xUpdater.exe" SelfReg="false" Sequence="3"/>
     <ROW File="xVST_ca.qm" Component_="catala.language" FileName="xVST_ca.qm" Attributes="0" SourcePath="..\bin\languages\xVST_ca.qm" SelfReg="false" Sequence="7"/>
     <ROW File="xVST_es.qm" Component_="catala.language" FileName="xVST_es.qm" Attributes="0" SourcePath="..\bin\languages\xVST_es.qm" SelfReg="false" Sequence="8"/>
+    <ROW File="xVST_pl.qm" Component_="catala.language" FileName="xVST_pl.qm" Attributes="0" SourcePath="..\bin\languages\xVST_pl.qm" SelfReg="false" Sequence="15"/>
     <ROW File="xVideoServiceThief.exe" Component_="xVideoServiceThief.exe" FileName="xVideo~1.exe|xVideoServiceThief.exe" Attributes="0" SourcePath="..\bin\xVideoServiceThief.exe" SelfReg="false" Sequence="13"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
