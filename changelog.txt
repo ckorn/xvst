@@ -10,7 +10,7 @@
     - Yuvutu
 
 - Fixed bug (Error: fixed POST and GET methods in http class)
-- Fixed bug (Error: invalid version compare rutine)
+- Fixed bug (Error: invalid version comparation)
 
 - Revised Polish (PL) language file
 
