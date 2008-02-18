@@ -1,5 +1,20 @@
-1.6a
+1.6.1a
 ------
+
+- Revised 1 service:
+    - Tu.tv
+
+- Fixed bug (Error: the app was closed if the drag&drop window was active and "Bug Report" was closed)
+- Fixed bug (Error: dropped videos were corrupted)
+
+- Improved TrayIcon (on double click over the tray icon, now the main form is restored)
+- Improved internal parser functions
+
+- Revised Spanish (ES) language file
+- Revised Catalan (CAT) language file
+
+1.6a
+----
 
 - Added 2 new services:
     - GameSpot

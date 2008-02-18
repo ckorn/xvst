@@ -131,6 +131,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(programOptions, SIGNAL(optionsSaveBefore()), this, SLOT(optionsDidSomething()));
 	connect(programOptions, SIGNAL(optionsSaveAfter()), this, SLOT(optionsDidSomething()));
 	connect(programOptions, SIGNAL(optionsUpdated()), this, SLOT(optionsDidSomething()));
+	// tray icon events
+	connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
 	// update visual options
 	updateVisualOptions();
 	// session manager
@@ -375,7 +377,7 @@ void MainFormImpl::informationClicked()
 void MainFormImpl::restoreAppClicked()
 {
 	dragDropForm->hide();
-	show();
+	showNormal();
 }
 
 void MainFormImpl::selectDownloadDirClicked()
@@ -540,6 +542,12 @@ void MainFormImpl::optionSelected(bool checked)
 		programOptions->setDisplayPopup(checked);
 }
 
+void MainFormImpl::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
+{
+	if (reason == QSystemTrayIcon::DoubleClick)
+		restoreAppClicked();
+}
+
 // VideoList events
 void MainFormImpl::videoAdded(VideoItem *videoItem)
 {
@@ -598,6 +606,8 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 	// error form
 	if (videoItem->hasErrors() && !videoItem->isReported() && programOptions->getDisplayBugReport())
 	{
+		// display the main form if it is not visible
+		if (!isVisible()) restoreAppClicked();
 		// update tray icon
 		QString trayIconStr = ":/icons/images/film_error.png";
 		trayIcon->setIcon(QIcon(trayIconStr));

@@ -147,7 +147,12 @@ void DragDropImpl::dragEnterEvent(QDragEnterEvent *event)
 
 void DragDropImpl::dropEvent(QDropEvent *event)
 {
-	addVideo(event->mimeData()->text());
+	// get the url
+	QString url = event->mimeData()->text();
+	if (getTokenCount(url, "\n") > 0)
+		url = getToken(url, "\n", 0);
+	// add url
+	addVideo(url);
 	event->acceptProposedAction();
 }
 

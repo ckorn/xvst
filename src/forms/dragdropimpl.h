@@ -34,6 +34,7 @@
 //
 #include "customalphablendimpl.h"
 //
+#include "../tools.h"
 #include "../options.h"
 #include "../videolistcontroller.h"
 

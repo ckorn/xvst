@@ -1160,6 +1160,8 @@ VideoDefinition VideoInformation_TuTv::getVideoInformation(const QString URL)
 	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(videoCode)));
 	// get the flv url
 	result.URL = copyBetween(xml, "urlVideo1=", "&");
+	// check it...
+	if (result.URL.isEmpty()) result.URL = copyBetween(xml, "urlVideo0=", "&");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information

@@ -109,7 +109,7 @@
         <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
 &lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
 &lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
-        <translation>&lt;b&gt;¡Ops! Se ha producido unerror mientras se intentaba bajar el vídeo.&lt;/b&gt;&lt;p&gt;Puedeayudar a solucionar el problema enviándonos un &quot;Informe de errores&quot;.Este Informe será usado para analizar el error y si es necesario serásolucionado para mejorar la próxima versión del xVST.&lt;/p&gt;
+        <translation>&lt;b&gt;¡Ops! Se ha producido un error mientras se intentaba bajar el vídeo.&lt;/b&gt;&lt;p&gt;Puede ayudar a solucionar el problema enviándonos un &quot;Informe de errores&quot;.Este Informe será usado para analizar el error y si es necesario será solucionado para mejorar la próxima versión del xVST.&lt;/p&gt;
 &lt;p&gt;¡Su ayuda es siemprebienvenida!&lt;/p&gt;</translation>
     </message>
     <message>
@@ -590,7 +590,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/mainform.ui" line="685"/>
         <source>Download videos automatically</source>
-        <translation>Descargas videos automáticamente</translation>
+        <translation>Descargar videos automáticamente</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="493"/>
@@ -1094,7 +1094,7 @@ background-color:#124565;
     <message>
         <location filename="../../ui/options.ui" line="1308"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
-        <translation>Cuando un vídeo provoca un error, puede ayudar asolucionar el problema enviandonos un &quot;&lt;b&gt;Informe deerrores&lt;/b&gt;&quot; vía &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.nettracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;El &quot;&lt;b&gt;Informe de errores&lt;/b&gt;&quot; se guardará sólo en el &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; y será visible para todo el mundo, y ninguna información extra será guardada en una Base de Datos externa.</translation>
+        <translation>Cuando un vídeo provoca un error, puede ayudar a solucionar el problema enviandonos un &quot;&lt;b&gt;Informe de errores&lt;/b&gt;&quot; vía &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.nettracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;El &quot;&lt;b&gt;Informe de errores&lt;/b&gt;&quot; se guardará sólo en el &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; y será visible para todo el mundo, y ninguna información extra será guardada en una Base de Datos externa.</translation>
     </message>
 </context>
 <context>
@@ -1182,7 +1182,7 @@ background-color:#124565;
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="174"/>
         <source>The Same quality as the original Video</source>
-        <translation>La misma que calidad que el Video original</translation>
+        <translation>La misma calidad que el Video original</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="179"/>

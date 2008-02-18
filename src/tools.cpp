@@ -60,10 +60,20 @@ int getTokenCount(QString str, QString separator)
 
 QString copyBetween(QString str, QString from, QString to)
 {
-	int start = str.indexOf(from, 0) + from.length();
-	int end = str.indexOf(to, start + 1);
+	QString result = "";
+	int start = str.indexOf(from, 0);
+	int end;
+	
+	if (start != -1)
+	{
+		start += from.length();
+		end = str.indexOf(to, start + 1);
+		
+		if (end != -1)
+			result = copy(str, start, end);
+	}
 
-	return copy(str, start, end);
+	return result;
 }
 
 QString fileSizeToString(const int bytes)

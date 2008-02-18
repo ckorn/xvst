@@ -118,6 +118,7 @@ Q_OBJECT
 		// tray icon menu signals
 		void trayIconAboutToShow();
 		void optionSelected(bool checked);
+		void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
 		// options signals
 		void optionsDidSomething();
 		// lsvDownloadList signals
