@@ -62,7 +62,7 @@
     <message>
         <location filename="../../ui/bugreport.ui" line="284"/>
         <source>Do not display &quot;Error Report&quot; the next time</source>
-        <translation>No mostrar &quot;L&apos;informa d&apos;errors&quot; lapròxima vegada</translation>
+        <translation>No mostrar &quot;L&apos;informe d&apos;errors&quot; lapròxima vegada</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="325"/>
@@ -115,7 +115,7 @@
         <location filename="../../ui/bugreport.ui" line="77"/>
         <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;L&apos;&quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot; serà enviat al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+        <translation>&lt;p&gt;L&apos;&quot;&lt;b&gt;Informe d&apos;errors&lt;/b&gt;&quot; serà enviat al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;El teu nom i email seran inclosos al &quot;&lt;b&gt;Comentari de l&apos;error&lt;/b&gt;&quot;, de totes maneres és totalment opcional i innecessari.&lt;/p&gt;</translation>
     </message>
 </context>
@@ -1086,7 +1086,7 @@ background-color:#124565;
     <message>
         <location filename="../../ui/options.ui" line="1299"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
-        <translation>Mostra la finestra de &quot;L&apos;Informa d&apos;errors&quot; al fallar una descàrrega</translation>
+        <translation>Mostra la finestra de &quot;L&apos;Informe d&apos;errors&quot; al fallar una descàrrega</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1308"/>
