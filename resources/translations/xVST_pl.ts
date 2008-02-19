@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="pl">
-<defaultcodec></defaultcodec>
 <context>
     <name>AddVideo</name>
     <message>
@@ -121,7 +120,7 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="106"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="107"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -421,12 +420,12 @@
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="175"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="180"/>
         <source> - Blocked site</source>
         <translation> - Zablokowana strona</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="177"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="182"/>
         <source> - Adult content is not allowed</source>
         <translation> - Zawartość dla dorosłych jest niedozwolona</translation>
     </message>
@@ -736,12 +735,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="300"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="302"/>
         <source>Options</source>
         <translation>Opcje</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="383"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="385"/>
         <source>Select the download directory:</source>
         <translation>Wybierz katalog dla ściągniętych plików:</translation>
     </message>
@@ -771,47 +770,47 @@ p, li { white-space: pre-wrap; }
         <translation> Prędkość </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="144"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="146"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="247"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
         <source>Closing...</source>
         <translation>Zamykanie...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="248"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="250"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
         <translation>xVideoServiceThief nadal działa, czy napewno chcesz Anulować aktualne zadania?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="251"/>
         <source>Yes</source>
         <translation>Tak</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="251"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="336"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="338"/>
         <source>Updates</source>
         <translation>Aktualizacje</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="278"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="280"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>Brak aplikacji xUpdater.&lt;br&gt;&lt;br&gt;Reinstaluj xVideoServiceThief chcesz mieć automatyczne aktualizacje programu.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="338"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="340"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="337"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="339"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Inny proces jest aktualnie uruchomiony, proszę go zatrzymać lub poczekać aż się zakończy.</translation>
     </message>
