@@ -123,7 +123,7 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="106"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="107"/>
         <source>Ok</source>
         <translation>Budiž</translation>
     </message>
@@ -234,15 +234,15 @@
         <source>This software is OpenSource and is licenced under &lt;b&gt;GNU GPL&lt;/b&gt; licence (General Public Licence)</source>
         <translation>Tento software je OpenSource pod licencí &lt;b&gt;GNU GPL&lt;/b&gt; (General Public Licence)</translation>
     </message>
-    <message encoding="UTF-8">
-        <location filename="../../ui/credits.ui" line="74"/>
-        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation>&lt;b&gt;Speciální poděkování:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: vývojář verze pro Mac OS X&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: překlad do polštiny&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: překlad do japonštiny&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt;: překlad do  češtiny&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: autor ikon Silk icon set 1.3&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: autor ikon &quot;I&apos;m not a Patriot&quot;</translation>
-    </message>
     <message>
         <location filename="../../ui/credits.ui" line="128"/>
         <source>Ok</source>
         <translation>Budiž</translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../../ui/credits.ui" line="74"/>
+        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt;: Czech language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -423,12 +423,12 @@
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="175"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="180"/>
         <source> - Blocked site</source>
         <translation> - Blokovaná stránka</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="177"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="182"/>
         <source> - Adult content is not allowed</source>
         <translation> - Obsah určený pro dospělé není povolen</translation>
     </message>
@@ -737,12 +737,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="300"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="302"/>
         <source>Options</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="383"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="385"/>
         <source>Select the download directory:</source>
         <translation>Vyberte složku pro stažená videa:</translation>
     </message>
@@ -772,47 +772,47 @@ p, li { white-space: pre-wrap; }
         <translation> Rychlost </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="144"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="146"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="247"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
         <source>Closing...</source>
         <translation>Zavírání...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="248"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="250"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
         <translation>xVideoServiceThief pracuje. Přejete si zastavit právě probíhající úkoly?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="251"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="251"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="336"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="338"/>
         <source>Updates</source>
         <translation>Aktualizace</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="278"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="280"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>Aplikace xUpdater nebyla nalezena.&lt;br&gt;&lt;br&gt;Pokud chcete automaticky aktualizovat tento program, znovu nainstalujte xVideoServiceThief.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="338"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="340"/>
         <source>Ok</source>
         <translation>Budiž</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="337"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="339"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Přávě probíhá jiný proces. Ukončete jej nebo počkejte na jeno dokončení.</translation>
     </message>

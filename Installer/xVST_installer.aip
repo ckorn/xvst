@@ -49,6 +49,7 @@
     <ROW File="GPL.txt" Component_="GPL.txt" FileName="GPL.txt" Attributes="0" SourcePath="..\bin\GPL.txt" SelfReg="false" Sequence="14"/>
     <ROW File="Microsoft.VC80.CRT.manifest" Component_="Microsoft.VC80.CRT.manifest" FileName="Micros~1.man|Microsoft.VC80.CRT.manifest" Attributes="0" SourcePath="..\bin\Microsoft.VC80.CRT\Microsoft.VC80.CRT.manifest" SelfReg="false" Sequence="9"/>
     <ROW File="catala.language" Component_="catala.language" FileName="catala~1.lan|catala.language" Attributes="0" SourcePath="..\bin\languages\catala.language" SelfReg="false" Sequence="4"/>
+    <ROW File="czech.language" Component_="catala.language" FileName="czech~1.lan|czech.language" Attributes="0" SourcePath="..\bin\languages\czech.language" SelfReg="false" Sequence="17"/>
     <ROW File="english_uk.language" Component_="catala.language" FileName="englis~1.lan|english_uk.language" Attributes="0" SourcePath="..\bin\languages\english_uk.language" SelfReg="false" Sequence="5"/>
     <ROW File="espanol.language" Component_="catala.language" FileName="espano~1.lan|espanol.language" Attributes="0" SourcePath="..\bin\languages\espanol.language" SelfReg="false" Sequence="6"/>
     <ROW File="ffmpeg.exe" Component_="ffmpeg.exe" FileName="ffmpeg.exe" Attributes="0" SourcePath="..\bin\bin\ffmpeg.exe" SelfReg="false" Sequence="1"/>
@@ -59,6 +60,7 @@
     <ROW File="pthreadGC2.dll" Component_="pthreadGC2.dll" FileName="pthrea~1.dll|pthreadGC2.dll" Attributes="0" SourcePath="..\bin\bin\pthreadGC2.dll" SelfReg="false" Sequence="2"/>
     <ROW File="xUpdater.exe" Component_="xUpdater.exe" FileName="xUpdater.exe" Attributes="0" SourcePath="..\bin\bin\xUpdater.exe" SelfReg="false" Sequence="3"/>
     <ROW File="xVST_ca.qm" Component_="catala.language" FileName="xVST_ca.qm" Attributes="0" SourcePath="..\bin\languages\xVST_ca.qm" SelfReg="false" Sequence="7"/>
+    <ROW File="xVST_cs.qm" Component_="catala.language" FileName="xVST_cs.qm" Attributes="0" SourcePath="..\bin\languages\xVST_cs.qm" SelfReg="false" Sequence="18"/>
     <ROW File="xVST_es.qm" Component_="catala.language" FileName="xVST_es.qm" Attributes="0" SourcePath="..\bin\languages\xVST_es.qm" SelfReg="false" Sequence="8"/>
     <ROW File="xVST_pl.qm" Component_="catala.language" FileName="xVST_pl.qm" Attributes="0" SourcePath="..\bin\languages\xVST_pl.qm" SelfReg="false" Sequence="15"/>
     <ROW File="xVideoServiceThief.exe" Component_="xVideoServiceThief.exe" FileName="xVideo~1.exe|xVideoServiceThief.exe" Attributes="0" SourcePath="..\bin\xVideoServiceThief.exe" SelfReg="false" Sequence="13"/>
