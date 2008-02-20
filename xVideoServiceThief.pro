@@ -74,7 +74,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
  src/videoitem.cpp \
  src/videolistcontroller.cpp \
  src/trackerreport.cpp
-TRANSLATIONS = resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts resources/translations/xVST_it.ts
+TRANSLATIONS = resources/translations/xVST_ca.ts resources/translations/xVST_es.ts resources/translations/xVST_pl.ts resources/translations/xVST_it.ts resources/translations/xVST_cs.ts
 RESOURCES = resources/resources.qrc
 macx {
  ICON +=  resources/icons/MacOSX.icns
