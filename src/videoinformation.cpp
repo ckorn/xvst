@@ -63,6 +63,9 @@ VideoInformation::VideoInformation()
 	new VideoInformation_CinemaVIP(this);
 	new VideoInformation_GameSpot(this);
 	new VideoInformation_Stage6(this);
+	new VideoInformation_Zuuble(this);
+	new VideoInformation_ZippyVideos(this);
+	new VideoInformation_Zedge(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -687,8 +690,7 @@ VideoInformation_LiveVideo::VideoInformation_LiveVideo(VideoInformation *videoIn
 
 VideoDefinition VideoInformation_LiveVideo::getVideoInformation(const QString URL)
 {
-	const QString URL_GET_XML = "http://www.livevideo.com/media/GetFlashVideo.ashx?cid=%1&path=%2&mid=%3&t=/image/%4&f=flash8&?";
-
+	const QString URL_GET_XML = "http://www.livevideo.com/media/getflashvideo.ashx?cid=%1&path=%2&mid=%3&t=/image/%4&et=%5&f=flash8&?";
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -705,14 +707,17 @@ VideoDefinition VideoInformation_LiveVideo::getVideoInformation(const QString UR
 	// get video ID (from the URL)
 	QString videoID = getToken(URL, "/", getTokenCount(URL, "/") - 2);
 	// ge T parameter
-	QString T = copyBetween(html, "livevideo/image/", "\"");
+	QString T = copyBetween(html, "rel=\"videothumbnail\"", "/>");
+	T = copyBetween(T, "livevideo/image/", "\"");
 	// get path parameter
 	QString path = getToken(T, "/", 0) + "/" + getToken(T, "/", 1);
 	// get mid parameter
 	QString mid = getToken(T, "/", 2);
 	mid = copy(mid, 0, mid.indexOf("_"));
+	// get et parameter
+	QString et = copyBetween(html, "et%3d", "'");
 	// download the xml file
-	QString xml = http.downloadWebpage(QString(URL_GET_XML).arg(videoID).arg(path).arg(mid).arg(T));
+	QString xml = http.downloadWebpage(QString(URL_GET_XML).arg(videoID).arg(path).arg(mid).arg(T).arg(et));
 	// get the FLV url
 	result.URL = copyBetween(xml, "video_id=", "&");
 	// clear and get the final url
@@ -1323,6 +1328,117 @@ VideoDefinition VideoInformation_Stage6::getVideoInformation(const QString URL)
 	result.URL = copyBetween(html, "value=&quot;http://", "&quot;");
 	// clear and get the final url
 	result.URL = cleanURL(QString(GET_URL_FLV).arg(result.URL));
+	// return the video information
+	return result;
+}
+
+// Plugin for Zuuble Videos
+
+VideoInformation_Zuuble::VideoInformation_Zuuble(VideoInformation *videoInformation)
+{
+	setID("zuuble.com");
+	setCaption("Zuuble");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Zuuble::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "|").trimmed();
+	// get the flv url
+	result.URL = copyBetween(html, "&flvFileName=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for ZippyVideos Videos
+
+VideoInformation_ZippyVideos::VideoInformation_ZippyVideos(VideoInformation *videoInformation)
+{
+	setID("zippyvideos.com");
+	setCaption("ZippyVideos");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_ZippyVideos::getVideoInformation(const QString URL)
+{
+	const QString GET_URL_FLV = "%1/%2/%3/%4";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "-").trimmed();
+	// check if is a windows media video or a FLV
+	if (html.indexOf("application/x-mplayer2") != -1) // is a WMV file
+	{
+		// get the wmv url
+		result.URL = copyBetween(html, "<embed type=\"application/x-mplayer2\"", "</embed>");
+		result.URL = copyBetween(result.URL, "src=\"", "\"");
+		// set the video extension
+		result.extension = ".wmv";
+	}
+	else
+	{
+		// build the flv url
+		QString storageId = copyBetween(html, "storageId=", "&");
+		QString userName = copyBetween(html, "userName=", "&");
+		QString videoId = copyBetween(html, "&videoId=", "&");
+		QString srvURL = copyBetween(html, "srvURL=", "'");
+		// get the final flv url
+		result.URL = QString(GET_URL_FLV).arg(srvURL).arg(storageId).arg(userName).arg(videoId);
+	}
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for Zedge Videos
+
+VideoInformation_Zedge::VideoInformation_Zedge(VideoInformation *videoInformation)
+{
+	setID("zedge.net");
+	setCaption("Zedge");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Zedge::getVideoInformation(const QString URL)
+{
+	const QString GET_URL_XML = "http://www.zedge.net/zedge-api/api-video-player.php";
+	const QString XML_PARAMS = "zapi_session_id=%1&video_id=%2&get_video=";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get the video id
+	QString zapId = copyBetween(html, "sessionid=", "&");
+	QString vidID = copyBetween(html, "vid=", "&");
+	// get xml file
+	QString xml = http.downloadWebpagePost(QUrl(GET_URL_XML), QString(XML_PARAMS).arg(zapId).arg(vidID));
+	// get the video title
+	result.title = copyBetween(xml, "vtitle=", "&").trimmed();
+	// get the flv url
+	result.URL = copyBetween(xml, "vflv=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
 	// return the video information
 	return result;
 }

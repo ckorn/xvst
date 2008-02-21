@@ -181,6 +181,10 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://video.yahoo.com/video/play?vid=1899050&fr=&cache=1");
 	videoList->addVideo("http://www.gamespot.com/video/943596/6185607/turok-official-trailer-2");
 	videoList->addVideo("http://www.stage6.com/Shutdown/video/2010536/-/shutdown-1x06:-DDR-Hero-(part-3-of-4)---720-HD");
+	videoList->addVideo("http://pcdnv4.xtube.com/watch_video.php?v_user_id=xtube_sponsor&cv=9&idx=5&v=uxNMB_S114_&cl=1XgcC-S114-");
+	videoList->addVideo("http://www.zuuble.com/media/5628/baby-gives-the-evil-eye.html");
+	videoList->addVideo("http://www.zippyvideos.com/5095924715953276/flexible/");
+	videoList->addVideo("http://www.zippyvideos.com/7648675377380426/bask/");
 */
 
 /*
@@ -193,6 +197,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://pornotube.com/media.php?m=1541072");
 	videoList->addVideo("http://www.dalealplay.com/informaciondecontenido.php?con=62750");
 	videoList->addVideo("http://www.shufuni.com/milf/FEA3744E-DC96-4FB6-9344-0D6B16C44081.html");
+	videoList->addVideo("http://pcdnv4.xtube.com/watch_video.php?v_user_id=Tatum76&cv=9&idx=6&v=oWf40_S314_&cl=GgIpm_S314_");
 */
 }
 

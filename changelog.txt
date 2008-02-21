@@ -1,8 +1,11 @@
 1.7a
 ----
 
-- Added 1 new service:
+- Added 4 new services:
     - XTube
+    - Zuuble
+    - ZippyVideos (FLV & WMV videos)
+    - Zedge
 
 - Revised 1 service:
     - Tu.tv (yes, again... :P)

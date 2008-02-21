@@ -78,5 +78,6 @@
         <file>images/services/gamespot.com.png</file>
         <file>images/services/stage6.com.png</file>
 		<file>images/services/xtube.com.png</file>
+		<file>images/services/zedge.net.png</file>
     </qresource>
 </RCC>

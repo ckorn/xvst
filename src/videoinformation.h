@@ -358,6 +358,36 @@ class VideoInformation_Stage6 : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Zuuble Videos */
+class VideoInformation_Zuuble : public VideoInformation_plugin
+{
+	public:
+		/*! Zuuble plugin class constructor */
+		VideoInformation_Zuuble(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Zuuble Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for ZippyVideos Videos */
+class VideoInformation_ZippyVideos : public VideoInformation_plugin
+{
+	public:
+		/*! ZippyVideos plugin class constructor */
+		VideoInformation_ZippyVideos(VideoInformation *videoInformation);
+		/*! Get the full Video Information of ZippyVideos Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Zedge Videos */
+class VideoInformation_Zedge : public VideoInformation_plugin
+{
+	public:
+		/*! Zedge plugin class constructor */
+		VideoInformation_Zedge(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Zedge Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

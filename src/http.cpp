@@ -104,7 +104,10 @@ void Http::jumpToURL(QUrl url)
 			cookiesToAdd += getToken(cookie, ";", 0) + ";";
 		// has cookies?
 		if (!cookiesToAdd.isEmpty())
+		{
 			header.setValue("Cookie", cookiesToAdd);
+			header.setValue("Cookie2", "$Version=1");
+		}
 		// send request
 		httpGetId = http->request(header, paramsStr, file);
 	}
@@ -120,7 +123,10 @@ void Http::jumpToURL(QUrl url)
 			cookiesToAdd += getToken(cookie, ";", 0) + ";";
 		// has cookies?
 		if (!cookiesToAdd.isEmpty())
+		{
 			header.setValue("Cookie", cookiesToAdd);
+			header.setValue("Cookie2", "$Version=1");
+		}
 		// send request
 		httpGetId = http->request(header, NULL, file);
 	}
