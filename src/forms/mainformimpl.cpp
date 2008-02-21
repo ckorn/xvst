@@ -185,6 +185,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.zuuble.com/media/5628/baby-gives-the-evil-eye.html");
 	videoList->addVideo("http://www.zippyvideos.com/5095924715953276/flexible/");
 	videoList->addVideo("http://www.zippyvideos.com/7648675377380426/bask/");
+	videoList->addVideo("http://www.zedge.net/videos/30829/yuridia-video/");
 */
 
 /*
