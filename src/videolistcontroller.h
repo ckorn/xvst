@@ -81,6 +81,10 @@ Q_OBJECT
 		VideoItem* getFirstDownloaded();
 		/*! Get the first item converted */
 		VideoItem* getFirstConverted();
+		/* Get the current downloading video */
+		VideoItem* getCurrentDownloadingVideo();
+		/* get the current converting video */
+		VideoItem* getCurrentConvertingVideo();
 		/*! Get if this item can be deleted or not (by Position) */
 		bool canBeDeleted(const int index);
 		/*! Get if this item can be deleted or not (by Item) */

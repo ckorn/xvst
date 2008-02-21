@@ -177,6 +177,16 @@ VideoItem* VideoListController::getFirstConverted()
 	return getFirstByState(vsConverted);
 }
 
+VideoItem* VideoListController::getCurrentDownloadingVideo()
+{
+	return getFirstByState(vsDownloading);
+}
+
+VideoItem* VideoListController::getCurrentConvertingVideo()
+{
+	return getFirstByState(vsConverting);
+}
+
 bool VideoListController::canBeDeleted(const int index)
 {
 	return !isBussy(index);

@@ -776,6 +776,22 @@ void MainFormImpl::updateVisualControls()
 	if (lastTrayIconStr != trayIconStr)
 		trayIcon->setIcon(QIcon(trayIconStr));
 	lastTrayIconStr = trayIconStr;
+	// set the tray icon tool tip
+	QString trayIconToolTip = this->windowTitle();
+	// set the current download video
+	if (videoList->isDownloading())
+	{
+		VideoItem *videoItem = videoList->getCurrentDownloadingVideo();
+		trayIconToolTip += "\n" + tr("- Downloading: %1 (%2, %3)").arg(videoItem->getDisplayLabel()).arg(videoItem->getDisplayDownloadSpeed()).arg(videoItem->getDisplayProgress());
+	}
+	// set the current convertion video
+	if (videoList->isConverting())
+	{
+		VideoItem *videoItem = videoList->getCurrentConvertingVideo();
+		trayIconToolTip += "\n" + tr("- Converting: %1 (%2)").arg(videoItem->getDisplayLabel()).arg(videoItem->getDisplayProgress());
+	}
+	// set the tooltip
+	trayIcon->setToolTip(trayIconToolTip);
 }
 
 // lsvDownloadList signals

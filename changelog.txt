@@ -13,6 +13,7 @@
 
 - Improved download speed avarage 
 - Improved time remaining
+- Improved TrayIcon (now displays more information when the xVST is running, the current download and convertion is displayed)
 
 - Fixed bug (Error: external links were not opened... such as "sf.net tracker", "homepage in information form", etc...)
 
