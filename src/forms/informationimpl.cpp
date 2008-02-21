@@ -42,6 +42,8 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 		lblLanguage->setText(QString("<b>%1</b>").arg(language->getId()));
 		lblURL->setText(QString("<a href=\"%1\">%2</href>").arg(language->getContact()).arg(language->getContact()));
 	}
+	// load the service list
+	rchServices->setSource(QUrl("qrc:/service_list/service_list.html"));
 }
 
 void InformationImpl::btnCreditsClicked()

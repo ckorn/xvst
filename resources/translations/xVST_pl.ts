@@ -228,19 +228,19 @@
         <translation>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Kontakt: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="48"/>
+        <location filename="../../ui/credits.ui" line="51"/>
         <source>This software is OpenSource and is licenced under &lt;b&gt;GNU GPL&lt;/b&gt; licence (General Public Licence)</source>
         <translation>Ten program jest Otwartym Oprogramowaniem na licencji &lt;b&gt;GNU GPL&lt;/b&gt; licence (General Public Licence)</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="128"/>
+        <location filename="../../ui/credits.ui" line="131"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../../ui/credits.ui" line="74"/>
-        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt;: Czech language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation></translation>
+        <location filename="../../ui/credits.ui" line="77"/>
+        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
+        <translation>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
     </message>
 </context>
 <context>
@@ -484,7 +484,7 @@ background: white;
         <translation>Strona domowa:</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="184"/>
+        <location filename="../../ui/information.ui" line="187"/>
         <source>xVideoServiceThief is a tool for downloading your favourite video clips from a lot of video websites.
 
 xVideoServiceThief also provide you the ability to convert each video in most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.</source>
@@ -493,12 +493,12 @@ xVideoServiceThief also provide you the ability to convert each video in most po
 xVideoServiceThief potrafi także konwertować każdy plik wideo do popularnych formatów takich jak: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3.</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="199"/>
+        <location filename="../../ui/information.ui" line="202"/>
         <source>&lt;b&gt;xVideoServiceThief currently supports download from:&lt;/b&gt;</source>
         <translation>&lt;b&gt;xVideoServiceThief w tej chwili wspiera:&lt;/b&lt;</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="318"/>
+        <location filename="../../ui/information.ui" line="283"/>
         <source>Close</source>
         <translation>Zamknij</translation>
     </message>
@@ -518,55 +518,17 @@ xVideoServiceThief potrafi także konwertować każdy plik wideo do popularnych 
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {24p?} {666666;?} {13p?} {2008&lt;?}</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="293"/>
+        <location filename="../../ui/information.ui" line="258"/>
         <source>Credits...</source>
         <translation>Zasługi...</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="206"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large;&quot;&gt;Total websites supported (14/02/2008): &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large; font-weight:600;&quot;&gt;37&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:large;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;-qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;123video &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;5min &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;aBum &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Aniboom &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Bebo &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Break &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Broadcaster &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Caught On Video &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;CinemaVIP&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Clip4e &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Dailymotion &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Dumpalink &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;GameSpot&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Glumbert &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Google Video &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;LiveVideo &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Lulu TV &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Metacafe &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;MySpaceTv&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Sclipo &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Spike&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Stage6&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Tu.tv&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Video.ca &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;VideoLeak &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yahoo Video&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yikers &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;YouTube &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;ZappInternet &lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Arial&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Adult web sites: &lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;-qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Badjojo &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;DaleAlPlay &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;DesiSexTube &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;PornoTube &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Shufuni&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;TuPorno &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;YouPorn &lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:&apos;Arial&apos;; font-size:8pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:large;&quot;&gt;Yuvutu &lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <location filename="../../ui/information.ui" line="209"/>
+        <source>QTextBrowser{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}</source>
+        <translation>QTextBrowser{font-family:Arial, Helvetica, sans-serif;font-size:12px;}</translation>
     </message>
 </context>
 <context>
@@ -736,12 +698,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="302"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="309"/>
         <source>Options</source>
         <translation>Opcje</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="385"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="392"/>
         <source>Select the download directory:</source>
         <translation>Wybierz katalog dla ściągniętych plików:</translation>
     </message>
@@ -776,42 +738,42 @@ p, li { white-space: pre-wrap; }
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="249"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="256"/>
         <source>Closing...</source>
         <translation>Zamykanie...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="250"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="257"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
         <translation>xVideoServiceThief nadal działa, czy napewno chcesz Anulować aktualne zadania?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="251"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="258"/>
         <source>Yes</source>
         <translation>Tak</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="251"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="258"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="338"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="345"/>
         <source>Updates</source>
         <translation>Aktualizacje</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="280"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="287"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>Brak aplikacji xUpdater.&lt;br&gt;&lt;br&gt;Reinstaluj xVideoServiceThief chcesz mieć automatyczne aktualizacje programu.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="340"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="347"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="339"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="346"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Inny proces jest aktualnie uruchomiony, proszę go zatrzymać lub poczekać aż się zakończy.</translation>
     </message>
@@ -824,7 +786,7 @@ p, li { white-space: pre-wrap; }
         <translation>Opcje</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1066"/>
+        <location filename="../../ui/options.ui" line="1069"/>
         <source>1</source>
         <translation>1</translation>
     </message>
@@ -899,102 +861,102 @@ p, li { white-space: pre-wrap; }
         <translation>Kontakt:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="376"/>
+        <location filename="../../ui/options.ui" line="379"/>
         <source>Description:</source>
         <translation>Opis:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="483"/>
+        <location filename="../../ui/options.ui" line="486"/>
         <source>Session Configuration </source>
         <translation>Konfiguracja sesji </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="528"/>
+        <location filename="../../ui/options.ui" line="531"/>
         <source>Don&apos;t restore downloaded videos</source>
         <translation>Nie odzyskuj ściągniętych plików wideo</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="553"/>
+        <location filename="../../ui/options.ui" line="556"/>
         <source>Save a Log with all downloaded videos (Date + Title + URL)</source>
         <translation>Zapisz historię wszystkich ściągniętych plików wideo (Data + Tytuł + URL)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="584"/>
+        <location filename="../../ui/options.ui" line="587"/>
         <source>View Log</source>
         <translation>Pokaż logi</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="597"/>
+        <location filename="../../ui/options.ui" line="600"/>
         <source>Clear Log</source>
         <translation>Wyczyść historię</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="667"/>
+        <location filename="../../ui/options.ui" line="670"/>
         <source>Updates Configuration</source>
         <translation>Konfiguracja aktualizacji</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="788"/>
+        <location filename="../../ui/options.ui" line="791"/>
         <source>Ups! Configuration</source>
         <translation>Ups! Konfiguracja</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="806"/>
+        <location filename="../../ui/options.ui" line="809"/>
         <source>Disable adult websites support</source>
         <translation>Wyłącz wspieranie stron dla dorosłych</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="820"/>
+        <location filename="../../ui/options.ui" line="823"/>
         <source>Allowed websites:</source>
         <translation>Dopuszczone strony:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="827"/>
+        <location filename="../../ui/options.ui" line="830"/>
         <source>Blocked websites:</source>
         <translation>Zablokowane strony:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="858"/>
+        <location filename="../../ui/options.ui" line="861"/>
         <source>&lt;</source>
         <translation>&lt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="874"/>
+        <location filename="../../ui/options.ui" line="877"/>
         <source>&lt;&lt;</source>
         <translation>&lt;&lt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="890"/>
+        <location filename="../../ui/options.ui" line="893"/>
         <source>&gt;&gt;</source>
         <translation>&gt;&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="906"/>
+        <location filename="../../ui/options.ui" line="909"/>
         <source>&gt;</source>
         <translation>&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1135"/>
+        <location filename="../../ui/options.ui" line="1138"/>
         <source>Password:</source>
         <translation>Hasło:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1165"/>
+        <location filename="../../ui/options.ui" line="1168"/>
         <source>Adress:</source>
         <translation>Adres:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1174"/>
+        <location filename="../../ui/options.ui" line="1177"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1382"/>
+        <location filename="../../ui/options.ui" line="1388"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1398"/>
+        <location filename="../../ui/options.ui" line="1404"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
     </message>
@@ -1006,7 +968,7 @@ background-color:#124565;
         <translation>QTextLine{background-color:#124565;}</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1224"/>
+        <location filename="../../ui/options.ui" line="1227"/>
         <source>Proxy type:</source>
         <translation>Rodzaj Proxy:</translation>
     </message>
@@ -1036,62 +998,62 @@ background-color:#124565;
         <translation>Informacje o języku</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="401"/>
+        <location filename="../../ui/options.ui" line="404"/>
         <source>Use this language</source>
         <translation>Użyj tego języka</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="503"/>
+        <location filename="../../ui/options.ui" line="506"/>
         <source>Save and restore the curren session</source>
         <translation>Zapisz i odzyskaj aktualną sesję</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="694"/>
+        <location filename="../../ui/options.ui" line="697"/>
         <source>Check for new versions every:</source>
         <translation>Sprawdź czy jest nowa wersja co:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="735"/>
+        <location filename="../../ui/options.ui" line="738"/>
         <source>Check for new versions</source>
         <translation>Aktualizuj teraz</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="813"/>
+        <location filename="../../ui/options.ui" line="816"/>
         <source>Select which websites are allowed and which websites must be blocked:</source>
         <translation>Wybierz, które strony mają być dostępne a które zablokowane:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1116"/>
+        <location filename="../../ui/options.ui" line="1119"/>
         <source>Use proxy server</source>
         <translation>Użyj serwera proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1128"/>
+        <location filename="../../ui/options.ui" line="1131"/>
         <source>User name:</source>
         <translation>Nazwa użytkownika:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1353"/>
+        <location filename="../../ui/options.ui" line="1359"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation>Zapamiętaj opcje ostatnio oglądanej strony (tylko dla sesji)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="722"/>
+        <location filename="../../ui/options.ui" line="725"/>
         <source>Install automatically the new versions</source>
         <translation>Instaluj automatycznie nową wersję</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="685"/>
+        <location filename="../../ui/options.ui" line="688"/>
         <source>Check for new versions on program startup</source>
         <translation>Sprawdź aktualizacje przy każdym uruchomieniu programu</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1299"/>
+        <location filename="../../ui/options.ui" line="1302"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Pokaż &quot;Raport o błędzie&quot;, jeśli takowy się wydarzy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1308"/>
+        <location filename="../../ui/options.ui" line="1311"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Kiedy wystąpi błąd ściągania pliku wideo, możesz pomóc go naprawić wysyłając do nas &quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot; poprzez &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot; jest przechowywany tylko na &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt;, jest widoczny dla wszystkich i żadne dodatkowe dane nie są zapisywane w jakiejkolwiek innej/zewnętrznej bazie.</translation>
     </message>
@@ -1383,12 +1345,12 @@ background-color:#124565;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="252"/>
+        <location filename="../../src/videoinformation.cpp" line="257"/>
         <source>Unsupported video service</source>
         <translation>Nie wspierany serwis wideo</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="255"/>
+        <location filename="../../src/videoinformation.cpp" line="260"/>
         <source>Invalid URL</source>
         <translation>Błędny URL</translation>
     </message>

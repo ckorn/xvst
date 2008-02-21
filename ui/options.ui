@@ -70,7 +70,7 @@
    <item row="0" column="1" >
     <widget class="QStackedWidget" name="pgOptions" >
      <property name="currentIndex" >
-      <number>6</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="pgBasic" >
       <layout class="QGridLayout" >
@@ -367,6 +367,9 @@ background-color:#124565;
               <widget class="QLabel" name="lblContact" >
                <property name="text" >
                 <string>-</string>
+               </property>
+               <property name="openExternalLinks" >
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -1308,6 +1311,9 @@ background-color:#124565;
              <string>When a video throws an error, you can help to fix the error sending a "&lt;b>Bug Report&lt;/b>" to us via &lt;a href="http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803">SourceForge.net tracker system&lt;/a>.&lt;br>&lt;br>The "&lt;b>Bug Report&lt;/b>" is stored only in the &lt;a href="http://sourceforge.net/tracker/?group_id=205061">SF.net tracker&lt;/a> and is visible for everyone, and no extra data is saved to any external DataBase.</string>
             </property>
             <property name="wordWrap" >
+             <bool>true</bool>
+            </property>
+            <property name="openExternalLinks" >
              <bool>true</bool>
             </property>
            </widget>

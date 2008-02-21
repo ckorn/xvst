@@ -167,6 +167,9 @@ background: white;
               <property name="text" >
                <string>&lt;a href="http://xviservicethief.sourceforge.net/">http://xviservicethief.sourceforge.net/&lt;/a></string>
               </property>
+              <property name="openExternalLinks" >
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
            </layout>
@@ -201,50 +204,12 @@ xVideoServiceThief also provide you the ability to convert each video in most po
     </widget>
    </item>
    <item row="3" column="0" >
-    <widget class="QTextBrowser" name="textBrowser" >
-     <property name="html" >
-      <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-family:'Arial'; font-size:large;">Total websites supported (14/02/2008): &lt;/span>&lt;span style=" font-family:'Arial'; font-size:large; font-weight:600;">37&lt;/span>&lt;span style=" font-family:'Arial'; font-size:large;"> &lt;/span>&lt;/p>
-&lt;ul style="-qt-list-indent: 1;">&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">123video &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">5min &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">aBum &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Aniboom &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Bebo &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Break &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Broadcaster &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Caught On Video &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">CinemaVIP&lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Clip4e &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Dailymotion &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Dumpalink &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">GameSpot&lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Glumbert &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Google Video &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">LiveVideo &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Lulu TV &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Metacafe &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">MySpaceTv&lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Sclipo &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Spike&lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Stage6&lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Tu.tv&lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Video.ca &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">VideoLeak &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Yahoo Video&lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Yikers &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">YouTube &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">ZappInternet &lt;/span>&lt;/li>&lt;/ul>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:8pt;">&lt;span style=" font-size:large;">Adult web sites: &lt;/span>&lt;/p>
-&lt;ul style="-qt-list-indent: 1;">&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Badjojo &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">DaleAlPlay &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">DesiSexTube &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">PornoTube &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Shufuni&lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">TuPorno &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">YouPorn &lt;/span>&lt;/li>
-&lt;li style=" font-family:'Arial'; font-size:8pt;" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:large;">Yuvutu &lt;/span>&lt;/li>&lt;/ul>&lt;/body>&lt;/html></string>
+    <widget class="QTextBrowser" name="rchServices" >
+     <property name="styleSheet" >
+      <string>QTextBrowser{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}</string>
      </property>
      <property name="textInteractionFlags" >
       <set>Qt::NoTextInteraction</set>

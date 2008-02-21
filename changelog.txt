@@ -14,6 +14,8 @@
 - Improved download speed avarage 
 - Improved time remaining
 
+- Fixed bug (Error: external links were not opened... such as "sf.net tracker", "homepage in information form", etc...)
+
 1.6.1a
 ------
 

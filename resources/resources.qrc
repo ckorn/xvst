@@ -45,15 +45,20 @@
         <file>images/updates.png</file>
         <file>images/ups.png</file>
     </qresource>
+    <qresource prefix="/service_list" >
+        <file>service_list.html</file>
+    </qresource>
     <qresource prefix="/services" >
         <file>images/services/5min.com.png</file>
         <file>images/services/abum.com.png</file>
         <file>images/services/aniboom.com.png</file>
         <file>images/services/bebo.com.png</file>
+        <file>images/services/blip.tv.png</file>
         <file>images/services/break.com.png</file>
         <file>images/services/clip4e.com.png</file>
         <file>images/services/dailymotion.com.png</file>
         <file>images/services/dalealplay.com.png</file>
+        <file>images/services/gamespot.com.png</file>
         <file>images/services/glumbert.com.png</file>
         <file>images/services/invalid.png</file>
         <file>images/services/link_error.png</file>
@@ -63,22 +68,20 @@
         <file>images/services/metacafe.com.png</file>
         <file>images/services/no_icon.png</file>
         <file>images/services/sclipo.com.png</file>
+        <file>images/services/spike.com.png</file>
+        <file>images/services/stage6.com.png</file>
+        <file>images/services/tu.tv.png</file>
         <file>images/services/tuporno.tv.png</file>
         <file>images/services/video.ca.png</file>
         <file>images/services/video.google.png</file>
+        <file>images/services/video.yahoo.com.png</file>
+        <file>images/services/videos.cinemavip.com.png</file>
+        <file>images/services/xtube.com.png</file>
         <file>images/services/yikers.com.png</file>
         <file>images/services/youporn.com.png</file>
         <file>images/services/youtube.com.png</file>
         <file>images/services/yuvutu.com.png</file>
         <file>images/services/zappinternet.com.png</file>
-        <file>images/services/tu.tv.png</file>
-        <file>images/services/spike.com.png</file>
-        <file>images/services/videos.cinemavip.com.png</file>
-        <file>images/services/video.yahoo.com.png</file>
-        <file>images/services/gamespot.com.png</file>
-        <file>images/services/stage6.com.png</file>
-		<file>images/services/xtube.com.png</file>
-		<file>images/services/zedge.net.png</file>
-		<file>images/services/blip.tv.png</file>
+        <file>images/services/zedge.net.png</file>
     </qresource>
 </RCC>
