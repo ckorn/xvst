@@ -66,6 +66,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Zuuble(this);
 	new VideoInformation_ZippyVideos(this);
 	new VideoInformation_Zedge(this);
+	new VideoInformation_Blip(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -1437,6 +1438,34 @@ VideoDefinition VideoInformation_Zedge::getVideoInformation(const QString URL)
 	result.title = copyBetween(xml, "vtitle=", "&").trimmed();
 	// get the flv url
 	result.URL = copyBetween(xml, "vflv=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for Blip Videos
+
+VideoInformation_Blip::VideoInformation_Blip(VideoInformation *videoInformation)
+{
+	setID("blip.tv");
+	setCaption("Blip");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Blip::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "</title>").trimmed();
+	// get the flv url
+	result.URL = copyBetween(html, "setPrimaryMediaUrl(\"", "?");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information

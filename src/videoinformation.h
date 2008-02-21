@@ -388,6 +388,16 @@ class VideoInformation_Zedge : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Blip Videos */
+class VideoInformation_Blip : public VideoInformation_plugin
+{
+	public:
+		/*! Blip plugin class constructor */
+		VideoInformation_Blip(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Blip Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

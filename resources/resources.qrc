@@ -79,5 +79,6 @@
         <file>images/services/stage6.com.png</file>
 		<file>images/services/xtube.com.png</file>
 		<file>images/services/zedge.net.png</file>
+		<file>images/services/blip.tv.png</file>
     </qresource>
 </RCC>
