@@ -440,6 +440,16 @@ class VideoInformation_Shufuni : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for XTube Videos */
+class VideoInformation_XTube : public VideoInformation_plugin
+{
+	public:
+		/*! XTube plugin class constructor */
+		VideoInformation_XTube(VideoInformation *videoInformation);
+		/*! Get the full Video Information of XTube Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 /*! Main video information class */
 class VideoInformation : public QThread
 {

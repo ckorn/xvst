@@ -1,5 +1,8 @@
-1.6.2a
-------
+1.7a
+----
+
+- Added 1 new service:
+    - XTube
 
 - Revised 1 service:
     - Tu.tv (yes, again... :P)
