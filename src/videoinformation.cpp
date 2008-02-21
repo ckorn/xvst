@@ -1145,12 +1145,12 @@ VideoDefinition VideoInformation_TuTv::getVideoInformation(const QString URL)
 	VideoItem::initVideoDefinition(result);
 	// download webpage
 	Http http;
-	QString html = http.downloadWebpage(QUrl(URL));
+	QString html = http.downloadWebpage(QUrl(URL), false);
 	// +18?
 	if (html.indexOf("txt_alerta") > -1)
 	{
 		QString confirm_url = copyBetween(html, "<h5 class=\"txt_alerta\"><a href=\"", "\">Si");
-		html = http.downloadWebpage(QUrl(QString(URL_CONFIRM).arg(confirm_url)));
+		html = http.downloadWebpage(QUrl(QString(URL_CONFIRM).arg(confirm_url)), false);
 	}
 	// Get the video title
 	result.title = copyBetween(html, "<title>Tu.tv - Videos -", "</title>").trimmed();
@@ -1159,9 +1159,7 @@ VideoDefinition VideoInformation_TuTv::getVideoInformation(const QString URL)
 	// get the video info
 	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(videoCode)));
 	// get the flv url
-	result.URL = copyBetween(xml, "urlVideo1=", "&");
-	// check it...
-	if (result.URL.isEmpty()) result.URL = copyBetween(xml, "urlVideo0=", "&");
+	result.URL = copyBetween(xml, "urlVideo0=", "&");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information

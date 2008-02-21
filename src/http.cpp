@@ -32,7 +32,7 @@ Http::Http()
 	// http protocol
 	http = new QHttp(this);
 	// download speed avg calculator
-	downloadSpeedAvg = new ArrayAvg(10);
+	downloadSpeedAvg = new ArrayAvg(100);
 	// init internal timmer
 	internalTimer = 0;
 	// destination file

@@ -1,3 +1,12 @@
+1.6.2a
+------
+
+- Revised 1 service:
+    - Tu.tv (yes, again... :P)
+
+- Improved download speed avarage 
+- Improved time remaining
+
 1.6.1a
 ------
 
