@@ -438,6 +438,16 @@ class VideoInformation_YouTubeIslam : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for YourFileHost Videos */
+class VideoInformation_YourFileHost : public VideoInformation_plugin
+{
+	public:
+		/*! YourFileHost plugin class constructor */
+		VideoInformation_YourFileHost(VideoInformation *videoInformation);
+		/*! Get the full Video Information of YourFileHost Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */
@@ -527,16 +537,6 @@ class VideoInformation_XTube : public VideoInformation_plugin
 		/*! XTube plugin class constructor */
 		VideoInformation_XTube(VideoInformation *videoInformation);
 		/*! Get the full Video Information of XTube Videos */
-		VideoDefinition getVideoInformation(const QString URL);
-};
-
-/*! Plugin for YourFileHost Videos */
-class VideoInformation_YourFileHost : public VideoInformation_plugin
-{
-	public:
-		/*! YourFileHost plugin class constructor */
-		VideoInformation_YourFileHost(VideoInformation *videoInformation);
-		/*! Get the full Video Information of YourFileHost Videos */
 		VideoDefinition getVideoInformation(const QString URL);
 };
 

@@ -1598,6 +1598,34 @@ VideoDefinition VideoInformation_YouTubeIslam::getVideoInformation(const QString
 	return result;
 }
 
+// Plugin for YourFileHost Videos
+
+VideoInformation_YourFileHost::VideoInformation_YourFileHost(VideoInformation *videoInformation)
+{
+	setID("yourfilehost.com");
+	setCaption("YourFileHost");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_YourFileHost::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "Description:", "<br>").trimmed();
+	// get flv url
+	result.URL = copyBetween(html, "videoembed_id=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
 // Adult websites
 
 // Plugin for Yuvutu Videos
@@ -1892,34 +1920,6 @@ VideoDefinition VideoInformation_XTube::getVideoInformation(const QString URL)
 	QString flv_path = copyBetween(xml, "&filename=", "&");
 	// build the final flv url
 	result.URL = QString("%1.xtube.com%2").arg(flv_url).arg(flv_path);
-	// clear and get the final url
-	result.URL = cleanURL(result.URL);
-	// return the video information
-	return result;
-}
-
-// Plugin for YourFileHost Videos
-
-VideoInformation_YourFileHost::VideoInformation_YourFileHost(VideoInformation *videoInformation)
-{
-	setID("yourfilehost.com");
-	setCaption("YourFileHost");
-	adultContent = true;
-	registPlugin(videoInformation);
-}
-
-VideoDefinition VideoInformation_YourFileHost::getVideoInformation(const QString URL)
-{
-	// init result
-	VideoDefinition result;
-	VideoItem::initVideoDefinition(result);
-	// get the html
-	Http http;
-	QString html = http.downloadWebpage(QUrl(URL));
-	// get video title
-	result.title = copyBetween(html, "Description:", "<br>").trimmed();
-	// get flv url
-	result.URL = copyBetween(html, "videoembed_id=", "&");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information

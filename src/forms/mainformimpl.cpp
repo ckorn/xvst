@@ -193,8 +193,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://zaable.com/media/4128/Shark_tears_entire_calf_off_and_eats_it_in_oene_bite/");
 	videoList->addVideo("http://www.youtubeislam.com/view_video.php?viewkey=073bc11916c6c1de226b");
 	videoList->addVideo("http://www.yourfilehost.com/media.php?cat=video&file=06411009_niceshirt.wmv");
+	videoList->addVideo("http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=26910554");
 */
-	//http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=26910554
 /*
 	// adult sites
 	videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
