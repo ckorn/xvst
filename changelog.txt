@@ -13,8 +13,9 @@
     - YouTubeIslam
     - YourFileHost
 
-- Revised 1 service:
+- Revised 2 services:
     - Tu.tv (yes, again... :P)
+    - MySpaceTv
 
 - Improved download speed avarage 
 - Improved time remaining

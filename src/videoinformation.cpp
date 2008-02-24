@@ -1233,7 +1233,7 @@ VideoDefinition VideoInformation_MySpaceTV::getVideoInformation(const QString UR
 	// Get the video title
 	result.title = copyBetween(html, "<h1>", "</h1>").trimmed();
 	// get the video code
-	QString VideoID = QUrl(URL).queryItemValue("VideoID");
+	QString VideoID = QUrl(URL.toLower()).queryItemValue("videoid");
 	// get the xml file
 	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(VideoID)));
 	// get the video flv
