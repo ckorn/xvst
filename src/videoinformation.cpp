@@ -29,6 +29,8 @@
 
 VideoInformation::VideoInformation()
 {
+	setObjectName("VideoInformation");
+	// plugins
 	plugins = new QList<VideoInformation_plugin *>;
 	// init data
 	videoItem = NULL;
@@ -67,6 +69,10 @@ VideoInformation::VideoInformation()
 	new VideoInformation_ZippyVideos(this);
 	new VideoInformation_Zedge(this);
 	new VideoInformation_Blip(this);
+	new VideoInformation_Ceknito(this);
+	new VideoInformation_ZanyVideos(this);
+	new VideoInformation_Zaable(this);
+	new VideoInformation_YouTubeIslam(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -77,6 +83,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_DaleAlPlay(this);
 	new VideoInformation_Shufuni(this);
 	new VideoInformation_XTube(this);
+	new VideoInformation_YourFileHost(this);
 }
 
 VideoInformation::~VideoInformation()
@@ -1472,6 +1479,125 @@ VideoDefinition VideoInformation_Blip::getVideoInformation(const QString URL)
 	return result;
 }
 
+// Plugin for Ceknito Videos
+
+VideoInformation_Ceknito::VideoInformation_Ceknito(VideoInformation *videoInformation)
+{
+	setID("ceknito.sk");
+	setCaption("Ceknito");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Ceknito::getVideoInformation(const QString URL)
+{
+	const QString GET_URL_FLV = "http://ceknito.sk/d/vf/%1.flv";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "-").trimmed();
+	// get the flv url
+	QString fid = copyBetween(html, "fid\", \"", "\"");
+	// clear and get the final url
+	result.URL = cleanURL(QString(GET_URL_FLV).arg(fid));
+	// return the video information
+	return result;
+}
+
+// Plugin for ZanyVideos Videos
+
+VideoInformation_ZanyVideos::VideoInformation_ZanyVideos(VideoInformation *videoInformation)
+{
+	setID("zanyvideos.com");
+	setCaption("ZanyVideos");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_ZanyVideos::getVideoInformation(const QString URL)
+{
+	const QString GET_URL_FLV = "http://www.zanyvideos.com%1";
+	
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "</title>").trimmed();
+	// get the flv url
+	QString path = copyBetween(html, "\"file\",\"", "\"");
+	// clear and get the final url
+	result.URL = cleanURL(QString(GET_URL_FLV).arg(path));
+	// return the video information
+	return result;
+}
+
+// Plugin for Zaable Videos
+
+VideoInformation_Zaable::VideoInformation_Zaable(VideoInformation *videoInformation)
+{
+	setID("zaable.com");
+	setCaption("Zaable");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Zaable::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<title>", "-").trimmed();
+	// get the flv url
+	result.URL = copyBetween(html, "flv_filename=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for YouTubeIslam Videos
+
+VideoInformation_YouTubeIslam::VideoInformation_YouTubeIslam(VideoInformation *videoInformation)
+{
+	setID("youtubeislam.com");
+	setCaption("YouTubeIslam");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_YouTubeIslam::getVideoInformation(const QString URL)
+{
+	const QString GET_URL_FLV = "http://www.youtubeislam.com/flvideo/%1";
+
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// download webpage
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// Get the video title
+	result.title = copyBetween(html, "<li id=\"main\"", "<h3>").trimmed();
+	result.title = copyBetween(result.title, "<h2>", "</h2>");
+	// get the flv url
+	QString id = copyBetween(html, "video=", "&");
+	// clear and get the final url
+	result.URL = cleanURL(QString(GET_URL_FLV).arg(id));
+	// return the video information
+	return result;
+}
+
 // Adult websites
 
 // Plugin for Yuvutu Videos
@@ -1766,6 +1892,34 @@ VideoDefinition VideoInformation_XTube::getVideoInformation(const QString URL)
 	QString flv_path = copyBetween(xml, "&filename=", "&");
 	// build the final flv url
 	result.URL = QString("%1.xtube.com%2").arg(flv_url).arg(flv_path);
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for YourFileHost Videos
+
+VideoInformation_YourFileHost::VideoInformation_YourFileHost(VideoInformation *videoInformation)
+{
+	setID("yourfilehost.com");
+	setCaption("YourFileHost");
+	adultContent = true;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_YourFileHost::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "Description:", "<br>").trimmed();
+	// get flv url
+	result.URL = copyBetween(html, "videoembed_id=", "&");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information

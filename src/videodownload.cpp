@@ -29,6 +29,8 @@
 
 VideoDownload::VideoDownload(QString saveTo)
 {
+	setObjectName("VideoDownload");
+	// init http
 	http = new Http;
 	// init data
 	videoItem = NULL;
@@ -108,7 +110,7 @@ void VideoDownload::downloadCanceled()
 }
 
 void VideoDownload::downloadError(int error)
-{
+{	
 	videoItem->setAsError(this);
 	workFinished();
 }

@@ -31,6 +31,8 @@
 
 VideoListController::VideoListController(ProgramOptions *programOptions)
 {
+	setObjectName("VideoListController");
+
 	this->programOptions = programOptions;
 
 	videoList = new QList<VideoItem *>;
@@ -102,6 +104,9 @@ void VideoListController::timerEvent(QTimerEvent *event)
 	if (videoInformation->canGetInformation())
 		startGetInformation(getFirstNULL());
 
+	// get the first error item, to display the bug report (if is necessary)
+	displayError(getFirstError());
+
 	// get the first ready item, to start the download
 	if (programOptions->getDownloadAutomatically() && videoDownload->canStartDownload())
 		startDownload(getFirstReady());
@@ -165,6 +170,20 @@ VideoItem* VideoListController::getFirstNULL()
 VideoItem* VideoListController::getFirstReady()
 {
 	return getFirstByState(vsGettedURL);
+}
+
+VideoItem* VideoListController::getFirstError(bool ignoreReported)
+{
+	if (!ignoreReported)
+		return getFirstByState(vsError);
+	else
+	{
+		for (int n = 0; n < getVideoItemCount(); n++)
+			if (getVideoItem(n)->getVideoState() == vsError && !getVideoItem(n)->isReported())
+				return getVideoItem(n);
+		// no items are ready to be downloaded
+		return NULL;
+	}
 }
 
 VideoItem* VideoListController::getFirstDownloaded()
@@ -330,6 +349,12 @@ void VideoListController::startConversion(VideoItem *videoItem)
 void VideoListController::cancelConversion()
 {
 	videoConverter->cancelConversion();
+}
+
+void VideoListController::displayError(VideoItem *videoItem)
+{
+	if (videoItem != NULL)
+		emit videoError(videoItem);
 }
 
 void VideoListController::updateOptions()

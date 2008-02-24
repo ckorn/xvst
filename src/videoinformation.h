@@ -398,6 +398,46 @@ class VideoInformation_Blip : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Ceknito Videos */
+class VideoInformation_Ceknito : public VideoInformation_plugin
+{
+	public:
+		/*! Ceknito plugin class constructor */
+		VideoInformation_Ceknito(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Ceknito Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for ZanyVideos Videos */
+class VideoInformation_ZanyVideos : public VideoInformation_plugin
+{
+	public:
+		/*! ZanyVideos plugin class constructor */
+		VideoInformation_ZanyVideos(VideoInformation *videoInformation);
+		/*! Get the full Video Information of ZanyVideos Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Zaable Videos */
+class VideoInformation_Zaable : public VideoInformation_plugin
+{
+	public:
+		/*! Zaable plugin class constructor */
+		VideoInformation_Zaable(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Zaable Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for YouTubeIslam Videos */
+class VideoInformation_YouTubeIslam : public VideoInformation_plugin
+{
+	public:
+		/*! YouTubeIslam plugin class constructor */
+		VideoInformation_YouTubeIslam(VideoInformation *videoInformation);
+		/*! Get the full Video Information of YouTubeIslam Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */
@@ -487,6 +527,16 @@ class VideoInformation_XTube : public VideoInformation_plugin
 		/*! XTube plugin class constructor */
 		VideoInformation_XTube(VideoInformation *videoInformation);
 		/*! Get the full Video Information of XTube Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for YourFileHost Videos */
+class VideoInformation_YourFileHost : public VideoInformation_plugin
+{
+	public:
+		/*! YourFileHost plugin class constructor */
+		VideoInformation_YourFileHost(VideoInformation *videoInformation);
+		/*! Get the full Video Information of YourFileHost Videos */
 		VideoDefinition getVideoInformation(const QString URL);
 };
 

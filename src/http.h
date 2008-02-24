@@ -70,6 +70,7 @@ Q_OBJECT
 		QFile *file;				//!< destination file
 		int httpGetId;				//!< current download id
 		bool userAborted;			//!< flag for know if the user aborted
+		bool useInternalTimer;		//!< can use an internal timer?
 		int downloadSpeed;	//!< download speed in bytes
 		int timeRemaining;	//!< time remaining in seconds
 		int fileSize;		//!< total file size
@@ -93,12 +94,16 @@ Q_OBJECT
 		void initData();
 		/*! Jump to url */
 		void jumpToURL(QUrl url);
+		/*! Start timer */
+		void initTimer();
+		/*! Stop timer */
+		void deinitTimer();
 	protected:
 		/*! internal timer event */
 		void timerEvent(QTimerEvent *event);
 	public:
 		/*! class constructor */
-		Http();
+		Http(bool useInternalTimer = true);
 		/*! class destructor */
 		~Http();
 		/*! Start a new asynchronously download */

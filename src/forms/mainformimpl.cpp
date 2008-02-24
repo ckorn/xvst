@@ -118,8 +118,9 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(chbConvertVideos, SIGNAL(stateChanged(int)), this, SLOT(convertVideosStateChanged(int)));
 	// VideoListController signals
 	connect(videoList, SIGNAL(videoAdded(VideoItem *)), this, SLOT(videoAdded(VideoItem *))); //onVideList added
-	connect(videoList, SIGNAL(videoDeleted(VideoItem *)), this, SLOT(videoDeleted(VideoItem *))); //onVideList deleted
-	connect(videoList, SIGNAL(videoUpdated(VideoItem *)), this, SLOT(videoUpdated(VideoItem *))); //onVideList updated
+	connect(videoList, SIGNAL(videoDeleted(VideoItem *)), this, SLOT(videoDeleted(VideoItem *))); //onVideoList deleted
+	connect(videoList, SIGNAL(videoUpdated(VideoItem *)), this, SLOT(videoUpdated(VideoItem *))); //onVideoList updated
+	connect(videoList, SIGNAL(videoError(VideoItem *)), this, SLOT(videoError(VideoItem *))); //onVideoList error
 	connect(videoList, SIGNAL(videoMoved(int, int)), this, SLOT(videoMoved(int, int))); //onVideList item moved
 	// lsvDownloadList
 	connect(lsvDownloadList, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), this, SLOT(videoItemDoubleClicked(QTreeWidgetItem *, int)));
@@ -187,8 +188,12 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.zippyvideos.com/7648675377380426/bask/");
 	videoList->addVideo("http://www.zedge.net/videos/30829/yuridia-video/");
 	videoList->addVideo("http://blip.tv/file/683334/");
+	videoList->addVideo("http://www.ceknito.sk/video/115184");
+	videoList->addVideo("http://www.zanyvideos.com/videos/crazy_guy_hangs_on_top_of_a_crane_in_paris");
+	videoList->addVideo("http://zaable.com/media/4128/Shark_tears_entire_calf_off_and_eats_it_in_oene_bite/");
+	videoList->addVideo("http://www.youtubeislam.com/view_video.php?viewkey=073bc11916c6c1de226b");
 */
-
+	//http://www.yourfilehost.com/media.php?cat=video&file=06411009_niceshirt.wmv
 /*
 	// adult sites
 	videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
@@ -610,23 +615,34 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 			                             videoItem->getVideoFileSavedTo());
 	}
 
+	// update the visual controls
+	updateVisualControls();
+}
+
+void MainFormImpl::videoError(VideoItem *videoItem)
+{
 	// error form
 	if (videoItem->hasErrors() && !videoItem->isReported() && programOptions->getDisplayBugReport())
 	{
+		// mark as reported				
+		videoItem->setAsReported();
+
 		// display the main form if it is not visible
 		if (!isVisible()) restoreAppClicked();
 		// update tray icon
 		QString trayIconStr = ":/icons/images/film_error.png";
 		trayIcon->setIcon(QIcon(trayIconStr));
 		lastTrayIconStr = trayIconStr;
+	
 		// display error report form
 		BugReportImpl errorReport(programOptions, this);
 		errorReport.fillErrorInfo(videoItem, videoList->getVideoInformation());
 		errorReport.exec();
-		// mark it as reported
-		videoItem->setAsReported();
 	}
-	
+	else
+		videoItem->setAsReported();
+
+	// update the visual controls
 	updateVisualControls();
 }
 
@@ -782,13 +798,15 @@ void MainFormImpl::updateVisualControls()
 	if (videoList->isDownloading())
 	{
 		VideoItem *videoItem = videoList->getCurrentDownloadingVideo();
-		trayIconToolTip += "\n" + tr("- Downloading: %1 (%2, %3)").arg(videoItem->getDisplayLabel()).arg(videoItem->getDisplayDownloadSpeed()).arg(videoItem->getDisplayProgress());
+		if (videoItem != NULL)
+			trayIconToolTip += "\n" + tr("- Downloading: %1 (%2, %3)").arg(videoItem->getDisplayLabel()).arg(videoItem->getDisplayDownloadSpeed()).arg(videoItem->getDisplayProgress());
 	}
 	// set the current convertion video
 	if (videoList->isConverting())
 	{
 		VideoItem *videoItem = videoList->getCurrentConvertingVideo();
-		trayIconToolTip += "\n" + tr("- Converting: %1 (%2)").arg(videoItem->getDisplayLabel()).arg(videoItem->getDisplayProgress());
+		if (videoItem != NULL)
+			trayIconToolTip += "\n" + tr("- Converting: %1 (%2)").arg(videoItem->getDisplayLabel()).arg(videoItem->getDisplayProgress());
 	}
 	// set the tooltip
 	trayIcon->setToolTip(trayIconToolTip);

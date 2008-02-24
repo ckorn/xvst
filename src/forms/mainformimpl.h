@@ -129,6 +129,7 @@ Q_OBJECT
 		void videoAdded(VideoItem *videoItem);
 		void videoDeleted(VideoItem *videoItem);
 		void videoUpdated(VideoItem *videoItem);
+		void videoError(VideoItem *videoItem);
 		void videoMoved(int from, int to);
 		// shortcuts signals
 		void pasteURLfromClipboardClicked();

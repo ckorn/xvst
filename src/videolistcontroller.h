@@ -77,6 +77,8 @@ Q_OBJECT
 		VideoItem* getFirstNULL();
 		/*! Get the first ready to be downloaded */
 		VideoItem* getFirstReady();
+		/*! Get the first video with an error */
+		VideoItem* getFirstError(bool ignoreReported = true);
 		/*! Get the first downloaded to be converted */
 		VideoItem* getFirstDownloaded();
 		/*! Get the first item converted */
@@ -125,6 +127,8 @@ Q_OBJECT
 		void startConversion(VideoItem *videoItem);
 		/*! Cancel conversion */
 		void cancelConversion();
+		/*! Inform about an error */
+		void displayError(VideoItem *videoItem);
 		/*! Update options */
 		void updateOptions();
 		/*! Get the internal video information */
@@ -147,6 +151,8 @@ Q_OBJECT
 		void videoDeleted(VideoItem *videoItem);
 		/*! When a videoItem is updated, this signal is emited */
 		void videoUpdated(VideoItem *videoItem);
+		/*! When a videoItem trhows an error */
+		void videoError(VideoItem *videoItem);
 		/*! When a videoItem has been moved */
 		void videoMoved(int from, int to);
 };

@@ -27,14 +27,16 @@
 
 #include "http.h"
 
-Http::Http()
+Http::Http(bool useInternalTimer)
 {
+	setObjectName("Http");
 	// http protocol
 	http = new QHttp(this);
 	// download speed avg calculator
 	downloadSpeedAvg = new ArrayAvg(100);
 	// init internal timmer
 	internalTimer = 0;
+	this->useInternalTimer = useInternalTimer;
 	// destination file
 	file = NULL;
 	// connect signals
@@ -127,8 +129,32 @@ void Http::jumpToURL(QUrl url)
 			header.setValue("Cookie", cookiesToAdd);
 			header.setValue("Cookie2", "$Version=1");
 		}
+
+		header.setValue("Connection", "Keep-Alive, TE");
+
 		// send request
 		httpGetId = http->request(header, NULL, file);
+	}
+}
+
+void Http::initTimer()
+{
+	if (useInternalTimer)
+	{
+		// start internal timer
+		if (internalTimer != 0) 
+			this->killTimer(internalTimer);
+		internalTimer = this->startTimer(1000);
+	}
+}
+
+void Http::deinitTimer()
+{
+	if (useInternalTimer && internalTimer!=0)
+	{
+		// finish timer
+		this->killTimer(internalTimer);
+		internalTimer = 0;
 	}
 }
 
@@ -160,8 +186,7 @@ int Http::download(const QUrl URL, const QDir destination, QString fileName)
 			initData();
 			postMethodFlag = false;
 			// start internal timer
-			if (internalTimer != 0) this->killTimer(internalTimer);
-			internalTimer = this->startTimer(1000);
+			initTimer();
 			// make the first jump
 			oriURL = URL;
 			jumpToURL(URL);
@@ -320,19 +345,29 @@ void Http::requestFinished(int id, bool error)
 				if (http->error() == QHttp::Aborted && userAborted) // cancel
 					emit downloadCanceled();
 				else // others
+				{
+					// abort all (and clear pending requests)
+					http->clearPendingRequests();
+					// send error signal
 					emit downloadError(http->error());
+				}
 			}
 			else // no error, but...
 				if (file->size() < fileSize && !notLength)
 				{
+					// remove the temporal file
 					file->remove();
+					// abort all (and clear pending requests)
+					http->clearPendingRequests();
+					// send the error signal
 					emit downloadError(INVALID_FILE_SIZE);
 				}
 				else
 					emit downloadFinished(destFile);
+
 			// finish timer
-			this->killTimer(internalTimer);
-			internalTimer = 0;
+			deinitTimer();
+			
 			// close file
 			delete file;
 			file = NULL;
@@ -355,7 +390,13 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 {
 	// get the file size
 	if (resp.hasContentLength())
-		fileSize = resp.value("content-length").toInt();
+	{
+		// remove the ";" char if exists from "Content-Length"
+		QString preSize = resp.value("content-length").remove(";");
+		// convert to int
+		fileSize = preSize.toInt(&notLength);
+		notLength = !notLength;
+	}
 	else
 		notLength = true;
 	

@@ -44,9 +44,9 @@ void SessionManager::saveSession(VideoListController *videoListController)
 	for (int n = 0; n < videoListController->getVideoItemCount(); n++)
 	{
 		VideoItem *videoItem = videoListController->getVideoItem(n);
-		bool canAdd = true;
+		bool canAdd = !videoItem->isDeleted();
 
-		if (programOptions->getDontRememberDownloadedVideos() && videoItem->isCompleted())
+		if (canAdd && programOptions->getDontRememberDownloadedVideos() && videoItem->isCompleted())
 			canAdd = false;
 
 		if (canAdd || !videoItem->isCompleted())

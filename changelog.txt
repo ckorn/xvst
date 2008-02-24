@@ -1,21 +1,30 @@
 1.7a
 ----
 
-- Added 5 new services:
+- Added 10 new services:
     - XTube
     - Zuuble
     - ZippyVideos (FLV & WMV videos)
     - Zedge
     - Blip
+    - Ceknito
+    - ZanyVideos
+    - Zaable
+    - YouTubeIslam
+    - YourFileHost
 
 - Revised 1 service:
     - Tu.tv (yes, again... :P)
 
 - Improved download speed avarage 
 - Improved time remaining
-- Improved TrayIcon (now displays more information when the xVST is running, the current download and convertion is displayed)
+- Improved TrayIcon (extended display information: current download/convertion video is displayed)
+- Improved internal HTTP class
+- Improved video errors manegment
 
 - Fixed bug (Error: external links were not opened... such as "sf.net tracker", "homepage in information form", etc...)
+- Fixed bug (Error: "Content-Length" was now correctly parsed in http class when a ";" was found)
+- Fixed bug (Error: multiple "Bug Reports" were displayed at same time and always the same video)
 
 1.6.1a
 ------

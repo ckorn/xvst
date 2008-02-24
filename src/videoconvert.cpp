@@ -30,6 +30,7 @@
 VideoConverter::VideoConverter(QString ffmpegApp, QString workingDir,
                                VideoConversionConfig convConf, bool deleteOriginalVideo)
 {
+	setObjectName("VideoConverter");
 	// set vars
 	setFFmpegApp(ffmpegApp);
 	setWorkingDir(workingDir);

@@ -83,5 +83,8 @@
         <file>images/services/yuvutu.com.png</file>
         <file>images/services/zappinternet.com.png</file>
         <file>images/services/zedge.net.png</file>
+		<file>images/services/ceknito.sk.png</file>
+		<file>images/services/zaable.com.png</file>
+		<file>images/services/yourfilehost.com.png</file>
     </qresource>
 </RCC>
