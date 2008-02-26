@@ -1,6 +1,5 @@
 CONFIG	+= qt \
 	warn_on \
-	console \
 	release \
 	$$[build_mode]
 QT	= core gui network
