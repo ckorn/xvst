@@ -71,7 +71,7 @@ Q_OBJECT
 		void deleteVideo(const int index);
 		/*! Delete an existent TDownloadVideoItem */
 		void deleteVideo(VideoItem *videoItem);
-		/*! Clear TDownloadVideoItem list */
+		/*! Clear videoList list */
 		void clear();
 		/*! Get the first null item to get info */
 		VideoItem* getFirstNULL();
