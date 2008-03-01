@@ -3,6 +3,8 @@
 
 - Added "Paste URL from Clipboard" button in "Add Video" form
 
+- Fixed bug (Error: "Display popup" option was not saved)
+
 1.7a
 ----
 

@@ -55,6 +55,7 @@ void ProgramOptions::load()
 	convertVideos = settings.value("configuration/convertVideos", convertVideos).toBool();
 	deleteVideosOnConvert = settings.value("configuration/deleteVideosOnConvert", deleteVideosOnConvert).toBool();
 	ffmpegLibLocation = settings.value("configuration/ffmpegLibLocation", ffmpegLibLocation).toString();
+	displayPopup = settings.value("configuration/displayPopup", displayPopup).toBool();
 
 	conversionConf.outputFormat = static_cast<OutputFormat>(settings.value("configuration/outputFormat", conversionConf.outputFormat).toInt());
 	conversionConf.videoResolution = static_cast<VideoResolution>(settings.value("configuration/videoResolution", conversionConf.videoResolution).toInt());
@@ -107,6 +108,7 @@ void ProgramOptions::save()
 	settings.setValue("convertVideos", convertVideos);
 	settings.setValue("deleteVideosOnConvert", deleteVideosOnConvert);
 	settings.setValue("ffmpegLibLocation", ffmpegLibLocation);
+	settings.setValue("displayPopup", displayPopup);
 
 	settings.setValue("outputFormat", conversionConf.outputFormat);
 	settings.setValue("videoResolution", conversionConf.videoResolution);
