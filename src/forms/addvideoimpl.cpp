@@ -35,6 +35,7 @@ AddVideoImpl::AddVideoImpl(VideoInformation *videoInformation, QWidget * parent,
 	// connect ok button
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
 	connect(edtURL, SIGNAL(textChanged(const QString &)), this, SLOT(edtURLChanged(const QString &))); //edtURL changed
+	connect(spbPasteURL, SIGNAL(clicked()), this, SLOT(spbPasteURLClicked()));
 }
 
 void AddVideoImpl::btnOkClicked()
@@ -71,5 +72,10 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 	// set host info
 	lblVideoService->setText(videoInformation->getHostCaption(text) + blockMsg);
 	imgService->setPixmap(QPixmap(videoInformation->getHostImage(text, true)));
+}
+
+void AddVideoImpl::spbPasteURLClicked()
+{
+	edtURL->setText(QApplication::clipboard()->text());
 }
 //

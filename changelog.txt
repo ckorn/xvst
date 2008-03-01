@@ -1,3 +1,8 @@
+1.8a:
+-----
+
+- Added "Paste URL from Clipboard" button in "Add Video" form
+
 1.7a
 ----
 
@@ -17,15 +22,15 @@
     - Tu.tv (yes, again... :P)
     - MySpaceTv
 
-- Improved download speed avarage 
-- Improved time remaining
-- Improved TrayIcon (extended display information: current download/conversion video is displayed)
-- Improved internal HTTP class
-- Improved video errors management
-
 - Fixed bug (Error: external links were not opened... such as "sf.net tracker", "homepage in information form", etc...)
 - Fixed bug (Error: "Content-Length" was now correctly parsed in http class when a ";" was found)
 - Fixed bug (Error: multiple "Bug Reports" were displayed at same time and always the same video)
+
+- Improved download speed average 
+- Improved time remaining calculation
+- Improved TrayIcon (extended display information: current download/conversion video is displayed)
+- Improved internal HTTP class
+- Improved video errors management
 
 
 1.6.1a

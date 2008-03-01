@@ -42,5 +42,6 @@ Q_OBJECT
 	private slots:
 		void btnOkClicked();
 		void edtURLChanged(const QString &text);
+		void spbPasteURLClicked();
 };
 #endif
