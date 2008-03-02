@@ -2,6 +2,7 @@
 -----
 
 - Added "Paste URL from Clipboard" button in "Add Video" form
+- Added "Stay always on top" option (accessible from trayIcon->Options->Stay always on top)
 
 - Fixed bug (Error: "Display popup" option was not saved)
 

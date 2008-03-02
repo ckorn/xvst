@@ -74,11 +74,13 @@ Q_OBJECT
 		bool checkForUpdatesOnStartup;	//!< Flag for know if must check for updates on program start
 		int checkForUpdatesEvery;		//!< Check for updates every X days
 		bool displayBugReport;			//!< Flag for know if can display the "Error Report"
+		bool firstTime;					//!< Is the first program executation??
+		bool stayOnTop;					//!< Display the application always on top?
+
 		QDir appDir;			//!< Initial program path
 		QString appExecutable;	//!< Executable program path
 		QString optionsFile;	//!< Options file name (path + name)
-		bool firstTime;			//!< Is the first program executation??
-		
+
 		bool canSendUpdateSignal;	//!< flag for know if is the update signal can be sended
 		/*! Send the update signal (only if is possible) */
 		void sendUpdateSignal();
@@ -156,6 +158,8 @@ Q_OBJECT
 		bool getDisplayBugReport();
 		void setFirstTime(bool value);
 		bool getFirstTime();
+		void setStayOnTop(bool value);
+		bool getStayOnTop(); 
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();

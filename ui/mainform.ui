@@ -767,6 +767,14 @@
     <string>Reset state</string>
    </property>
   </action>
+  <action name="actStayOnTop" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Stay always on top</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
   <tabstop>btnAddVideo</tabstop>

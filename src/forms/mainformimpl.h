@@ -86,6 +86,8 @@ Q_OBJECT
 		// updates
 		int updaterTimer;
 		void checkUpdates();
+		// set stay on top flag
+		void setStayOnTopFlag();
 	protected:
 		void closeEvent(QCloseEvent *event);
 		void timerEvent(QTimerEvent *event);
@@ -112,6 +114,7 @@ Q_OBJECT
 		void moveItemUpClicked();
 		void moveItemDownClicked();
 		void playVideoClicked();
+		void stayOnTopClicked();
 		void downloadAutomaticallyStateChanged(int state);
 		void convertVideosStateChanged(int state);
 		void edtDownloadDirChanged(const QString &text);

@@ -98,6 +98,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actMoveUP, SIGNAL(triggered()), this, SLOT(moveItemUpClicked())); // actMoveUP (clicked)
 	connect(actMoveDOWN, SIGNAL(triggered()), this, SLOT(moveItemDownClicked())); // actMoveDOWN (clicked)
 	connect(actResetState, SIGNAL(triggered()), this, SLOT(resetStateClicked())); // actResetState (clicked)
+	connect(actStayOnTop, SIGNAL(triggered()), this, SLOT(stayOnTopClicked())); // actStayOnTop (clicked)
 	// edtDownloadDir
 	connect(edtDownloadDir, SIGNAL(textChanged(const QString &)), this, SLOT(edtDownloadDirChanged(const QString &)));
 	// connect buttons
@@ -136,6 +137,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
 	// update visual options
 	updateVisualOptions();
+	// set the "stay on top" flag
+	setStayOnTopFlag();
 	// session manager
 	sessionManager = new SessionManager(programOptions);
 	sessionManager->loadSession(videoList);
@@ -313,6 +316,8 @@ void MainFormImpl::createTrayIcon()
 	trayIconMenu->addAction(actOpenDownloadDir);
 	trayIconMenu->addSeparator();
 	trayIconMenuOptions = trayIconMenu->addMenu(tr("Options"));
+	trayIconMenuOptions->addAction(actStayOnTop);
+	trayIconMenuOptions->addSeparator();
 	trayIconMenuOptions->addAction(actDownloadVideosAutomatically);
 	trayIconMenuOptions->addAction(actConvertVideos);
 	trayIconMenuOptions->addAction(actDisplayPopup);
@@ -517,6 +522,13 @@ void MainFormImpl::playVideoClicked()
 	if (videoItem->isCompleted())
 		if (QFile::exists(videoItem->getVideoFileSavedTo()))
 			openDirectory(getSelectedVideoItem()->getVideoFileSavedTo());
+}
+
+void MainFormImpl::stayOnTopClicked()
+{
+	programOptions->setStayOnTop(actStayOnTop->isChecked());
+	// update the stay on top flag
+	setStayOnTopFlag();
 }
 
 void MainFormImpl::downloadAutomaticallyStateChanged(int state)
@@ -724,6 +736,8 @@ void MainFormImpl::updateVisualOptions()
 	actConvertVideos->setEnabled(QFile::exists(programOptions->getFfmpegLibLocation()));
 	actConvertVideos->setChecked(actConvertVideos->isEnabled() ? programOptions->getConvertVideos() : false);
 	actDisplayPopup->setChecked(programOptions->getDisplayPopup());
+	// stay on top action (this is special)
+	actStayOnTop->setChecked(programOptions->getStayOnTop());
 
 	// controls
 	chbDownloadVideosAuto->setChecked(programOptions->getDownloadAutomatically());
@@ -751,6 +765,18 @@ void MainFormImpl::checkUpdates()
 	// if no updates are ready then, start the main loop of video List
 	if (noUpdates)
 		videoList->start();
+}
+
+// stay on top control
+void MainFormImpl::setStayOnTopFlag()
+{
+	if (programOptions->getStayOnTop())
+		setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
+	else
+		setWindowFlags(windowFlags() & (~ Qt::WindowStaysOnTopHint));
+
+	// refresh window
+	show();
 }
 
 // visual controls

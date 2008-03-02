@@ -93,6 +93,8 @@ void ProgramOptions::load()
 
 	firstTime = settings.value("configuration/firstTime", firstTime).toBool();
 
+	stayOnTop = settings.value("configuration/stayOnTop", stayOnTop).toBool();
+
 	emit optionsLoadAfter();
 }
 
@@ -145,6 +147,8 @@ void ProgramOptions::save()
 	settings.setValue("displayBugReport", displayBugReport);
 
 	settings.setValue("firstTime", firstTime);
+
+	settings.setValue("stayOnTop", stayOnTop);
 
 	settings.endGroup();
 
@@ -203,6 +207,8 @@ void ProgramOptions::setDefault()
 	displayBugReport = true;
 	
 	firstTime = true;
+
+	stayOnTop = false;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -523,4 +529,14 @@ bool ProgramOptions::getFirstTime()
 void ProgramOptions::setFirstTime(bool value)
 {
 	firstTime = value;
+}
+
+bool ProgramOptions::getStayOnTop()
+{
+	return stayOnTop;
+}
+
+void ProgramOptions::setStayOnTop(bool value)
+{
+	stayOnTop = value;
 }
