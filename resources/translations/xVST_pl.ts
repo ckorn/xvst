@@ -77,7 +77,7 @@
     <message>
         <location filename="../../ui/bugreport.ui" line="96"/>
         <source>Video URL: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>Wideo URL: &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>URL wideo: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="127"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../../ui/bugreport.ui" line="251"/>
         <source>Sending your &quot;&lt;b&gt;Error report&lt;/b&gt;&quot;... please wait...</source>
-        <translation>Wysylanie twojego &quot;&lt;b&gt;Raportu o błędzie&lt;/b&gt;&quot;... proszę czekać...</translation>
+        <translation>Wysyłanie twojego &quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot;... proszę czekać...</translation>
     </message>
     <message>
         <location filename="../../ui/bugreport.ui" line="13"/>
@@ -115,7 +115,8 @@
         <location filename="../../ui/bugreport.ui" line="77"/>
         <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot; zostanie wysłany do &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Twoje imię i adres email zostanie umieszczony w &quot;&lt;b&gt;Komentarzu o błędzie&lt;/b&gt;&quot;, jednakże jest to całkowicie opcjonalne i niekonieczne.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&quot;&lt;b&gt;Raport o błędzie&lt;/b&gt;&quot; zostanie wysłany do &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Twoje imię i adres email zostanie umieszczony w &quot;&lt;b&gt;Komentarzu o błędzie&lt;/b&gt;&quot;, jednakże jest to całkowicie opcjonalne i niekonieczne.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -240,7 +241,7 @@
     <message encoding="UTF-8">
         <location filename="../../ui/credits.ui" line="77"/>
         <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
+        <translation>&lt;b&gt;Specjalne podziękowania:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: odpowiedzialny za Mac OS X&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Autor polskiego tłumaczenia&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Autor japońskiego tłumaczenia&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Autor czeskiego tłumaczenia&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Autor motywu ikon Silk 1.3 &lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: Autor motywu ikon &quot;I&apos;m not a Patriot&quot;</translation>
     </message>
 </context>
 <context>
@@ -466,7 +467,9 @@
         <source>QFrame{
 background: white;
 } </source>
-        <translation>QFrame{background: white;} </translation>
+        <translation>QFrame{
+background: white;
+} </translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="98"/>
@@ -515,7 +518,7 @@ xVideoServiceThief potrafi także konwertować każdy plik wideo do popularnych 
     <message>
         <location filename="../../ui/information.ui" line="69"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {24p?} {666666;?} {13p?} {2008&lt;?}</translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="258"/>
@@ -528,7 +531,10 @@ xVideoServiceThief potrafi także konwertować każdy plik wideo do popularnych 
 font-family:Arial, Helvetica, sans-serif;
 font-size:12px;
 }</source>
-        <translation>QTextBrowser{font-family:Arial, Helvetica, sans-serif;font-size:12px;}</translation>
+        <translation>QTextBrowser{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}</translation>
     </message>
 </context>
 <context>
@@ -615,7 +621,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/mainform.ui" line="235"/>
         <source>Download list:</source>
-        <translation>Download list:</translation>
+        <translation>Lista zadań:</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="640"/>
@@ -692,7 +698,7 @@ font-size:12px;
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {13p?} {999999}?} {0000F?} {32p?} {666666;?} {13p?} {2008&lt;?}</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2007&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -765,7 +771,7 @@ font-size:12px;
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="287"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
-        <translation>Brak aplikacji xUpdater.&lt;br&gt;&lt;br&gt;Reinstaluj xVideoServiceThief chcesz mieć automatyczne aktualizacje programu.</translation>
+        <translation>Brak aplikacji xUpdater.&lt;br&gt;&lt;br&gt;Reinstaluj xVideoServiceThief jeśli chcesz mieć automatyczne aktualizacje programu.</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="347"/>
@@ -803,7 +809,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="125"/>
         <source>FFmpeg Lib</source>
-        <translation>FFmpeg Lib</translation>
+        <translation>Biblioteka FFmpeg</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="168"/>
@@ -818,12 +824,12 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="212"/>
         <source>Audio sampling rate (Hz):</source>
-        <translation>Audio sampling rate (Hz):</translation>
+        <translation>Częstotliwość próbkowania dźwięku (Hz):</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="222"/>
         <source>Video frame rate (Hz)</source>
-        <translation>Video frame rate (Hz)</translation>
+        <translation>Ilość klatek wideo (FPS)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="232"/>
@@ -965,7 +971,9 @@ font-size:12px;
         <source>QTextLine{
 background-color:#124565;
 }</source>
-        <translation>QTextLine{background-color:#124565;}</translation>
+        <translation>QTextLine{
+background-color:#124565;
+}</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1227"/>
@@ -1296,7 +1304,7 @@ background-color:#124565;
     <message>
         <location filename="../../ui/updatecenter.ui" line="119"/>
         <source>0 bytes (0 bytes)</source>
-        <translation>0 bytes (0 bytes)</translation>
+        <translation>0 bajtów (0 bajtów)</translation>
     </message>
     <message>
         <location filename="../../ui/updatecenter.ui" line="13"/>
@@ -1420,7 +1428,7 @@ background-color:#124565;
     <message>
         <location filename="../../src/videoitem.cpp" line="274"/>
         <source>/sec</source>
-        <translation>/sec</translation>
+        <translation>/sek</translation>
     </message>
 </context>
 </TS>
