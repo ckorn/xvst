@@ -36,9 +36,6 @@ AddVideoImpl::AddVideoImpl(VideoInformation *videoInformation, QWidget * parent,
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
 	connect(edtURL, SIGNAL(textChanged(const QString &)), this, SLOT(edtURLChanged(const QString &))); //edtURL changed
 	connect(spbPasteURL, SIGNAL(clicked()), this, SLOT(spbPasteURLClicked()));
-
-	// Hide the paste clipboard icon (only for 1.7.1a)
-	spbPasteURL->hide();
 }
 
 void AddVideoImpl::btnOkClicked()

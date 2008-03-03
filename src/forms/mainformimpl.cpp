@@ -316,8 +316,8 @@ void MainFormImpl::createTrayIcon()
 	trayIconMenu->addAction(actOpenDownloadDir);
 	trayIconMenu->addSeparator();
 	trayIconMenuOptions = trayIconMenu->addMenu(tr("Options"));
-	//trayIconMenuOptions->addAction(actStayOnTop);
-	//trayIconMenuOptions->addSeparator();
+	trayIconMenuOptions->addAction(actStayOnTop);
+	trayIconMenuOptions->addSeparator();
 	trayIconMenuOptions->addAction(actDownloadVideosAutomatically);
 	trayIconMenuOptions->addAction(actConvertVideos);
 	trayIconMenuOptions->addAction(actDisplayPopup);
