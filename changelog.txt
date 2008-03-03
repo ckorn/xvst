@@ -5,6 +5,7 @@
 - Added "Stay always on top" option (accessible from trayIcon->Options->Stay always on top)
 
 - Fixed bug (Error: "Display popup" option was not saved)
+- Fixed bug (Error: prevent access violation on invalid videos)
 
 1.7a
 ----

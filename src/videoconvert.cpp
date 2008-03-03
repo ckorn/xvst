@@ -248,13 +248,27 @@ void VideoConverter::startConversionVideo(VideoItem *videoItem)
 	if (videoItem == NULL || !canStartConversion() || !ffmpegInstalled()) return;
 	// assign data
 	this->videoItem = videoItem;
-	videoItem->lock (this);
+	videoItem->lock(this);
 	videoItem->setProgress(0, this);
 	// init internal data
 	videoLength = 0;
 	outputAll = "";
-	// exec ffmpeg
-	ffmpegProcess->start(ffmpegApp, getCommandLine());
+	// check if the "input" video file exists
+	if (QFile::exists(videoItem->getVideoFile()))
+	{
+		QFile input(videoItem->getVideoFile());
+		// the video is > than 0kb? if yes, then start the conversion
+		if (input.size() > 0)
+		{
+			// launch the ffmpeg application
+			ffmpegProcess->start(ffmpegApp, getCommandLine());
+			return;
+		}
+	}
+	// if we are here, then this video is invalid (error)
+	videoItem->setAsError(this);
+	videoItem->unlock(this);
+	emit videoItemUpdated(videoItem);
 }
 
 void VideoConverter::cancelConversion()
