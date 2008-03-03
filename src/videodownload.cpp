@@ -53,13 +53,16 @@ VideoDownload::~VideoDownload()
 
 void VideoDownload::downloadVideo(VideoItem *videoItem)
 {
-	if (videoItem == NULL || !canStartDownload()) return;
+	if (videoItem == NULL || !canStartDownload() || this->videoItem != NULL) return;
 	// assign data
 	this->videoItem = videoItem;
 	videoItem->lock (this);
 	videoItem->setAsDownloading(this);
 	videoItem->setProgress(0, this);
 	// start download video
+
+	qDebug() << "downloadVideo" << videoItem->getID();
+
 	if (int er = http->download(QUrl(videoItem->getVideoInformation().URL),
 	                            QDir(downloadDir),
 	                            videoItem->getVideoFile()) != 0)
@@ -135,4 +138,6 @@ void VideoDownload::workFinished()
 	videoItem->unlock(this);
 	// emit signal
 	emit downloadFinished(videoItem);
+	// 
+	this->videoItem = NULL;
 }

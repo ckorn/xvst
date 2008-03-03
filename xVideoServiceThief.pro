@@ -1,7 +1,6 @@
 CONFIG += qt \
  warn_on \
- debug_and_release \
- console \
+ release \
  $$[build_mode]
 QT = core gui network
 TEMPLATE = app

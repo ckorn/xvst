@@ -4,6 +4,10 @@
 - Added "Paste URL from Clipboard" button in "Add Video" form
 - Added "Stay always on top" option (accessible from trayIcon->Options->Stay always on top)
 
+1.7.1a:
+-------
+
+- Fixed bug (Error: downloads were not finished!! ** IMPORTANT **)
 - Fixed bug (Error: "Display popup" option was not saved)
 - Fixed bug (Error: prevent access violation on invalid videos)
 
