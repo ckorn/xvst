@@ -60,9 +60,6 @@ void VideoDownload::downloadVideo(VideoItem *videoItem)
 	videoItem->setAsDownloading(this);
 	videoItem->setProgress(0, this);
 	// start download video
-
-	qDebug() << "downloadVideo" << videoItem->getID();
-
 	if (int er = http->download(QUrl(videoItem->getVideoInformation().URL),
 	                            QDir(downloadDir),
 	                            videoItem->getVideoFile()) != 0)

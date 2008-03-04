@@ -3,6 +3,7 @@
 
 - Added "Paste URL from Clipboard" button in "Add Video" form
 - Added "Stay always on top" option (accessible from trayIcon->Options->Stay always on top)
+- Added "Time Remaining" for video conversions
 
 1.7.1a:
 -------

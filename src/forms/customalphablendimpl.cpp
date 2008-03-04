@@ -44,12 +44,12 @@ void CustomAlphaBlendImpl::setInitialAlphaBlend(float value)
 	hsAlphaBlendvalueChanged(hsAlphaBlend->value());
 }
 
-float CustomAlphaBlendImpl::getAlphaBlend()
+double CustomAlphaBlendImpl::getAlphaBlend()
 {
 	if (hsAlphaBlend->value() <= 0)
 		return 0.01;
 	else
-		return static_cast<float>(hsAlphaBlend->value()) / 100;
+		return static_cast<double>(hsAlphaBlend->value()) / 100;
 }
 
 void CustomAlphaBlendImpl::okClicked()

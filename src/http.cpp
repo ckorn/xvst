@@ -144,13 +144,14 @@ void Http::initTimer()
 		// start internal timer
 		if (internalTimer != 0) 
 			this->killTimer(internalTimer);
+
 		internalTimer = this->startTimer(1000);
 	}
 }
 
 void Http::deinitTimer()
 {
-	if (useInternalTimer && internalTimer!=0)
+	if (useInternalTimer && internalTimer != 0)
 	{
 		// finish timer
 		this->killTimer(internalTimer);

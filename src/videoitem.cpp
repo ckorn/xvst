@@ -262,7 +262,7 @@ QString VideoItem::getDisplayProgress()
 
 QString VideoItem::getDisplayTimeRemaining()
 {
-	if (isDownloading())
+	if (isDownloading() || isConverting())
 		return secondsToHMS(timeRemaining, false);
 	else
 		return "-";

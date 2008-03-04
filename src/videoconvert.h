@@ -86,6 +86,8 @@ Q_OBJECT
 		float videoLength;			//!< video time duration (seconds)
 		bool deleteOriginalVideo;	//!< delete the input video on finish?
 		QString outputAll;			//!< Temporal console output
+		int internalTimer;			//!< Internal timer id
+		float lastProgress;			//!< Last progress value
 		/*! Build the ffmpeg command line */
 		QStringList getCommandLine();
 		/*! Convert & set the video duration to seconds */
@@ -94,6 +96,13 @@ Q_OBJECT
 		void getCurrentTimeConversion(QString strFrame);
 		/*! Parse the current output text */
 		void parseOutput(QString output);
+		/*! Start timer */
+		void initTimer();
+		/*! Stop timer */
+		void deinitTimer();
+	protected:
+		/*! internal timer event */
+		void timerEvent(QTimerEvent *event);
 	public:
 		/*! Class constructor */
 		VideoConverter(QString ffmpegApp, QString workingDir, 

@@ -36,7 +36,7 @@ Q_OBJECT
 	public:
 		CustomAlphaBlendImpl( QWidget * parent = 0, Qt::WFlags f = 0 );
 		void setInitialAlphaBlend(float value);
-		float getAlphaBlend();
+		double getAlphaBlend();
 	private slots:
 		void okClicked();
 		void cancelClicked();

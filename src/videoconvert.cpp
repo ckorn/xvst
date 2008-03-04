@@ -36,6 +36,8 @@ VideoConverter::VideoConverter(QString ffmpegApp, QString workingDir,
 	setWorkingDir(workingDir);
 	setConversionConfig(convConf);
 	setDeleteOriginalVideo(deleteOriginalVideo);
+	//
+	internalTimer = 0;
 	// create a new qprocess
 	ffmpegProcess = new QProcess();
 	// connect signals
@@ -243,6 +245,35 @@ void VideoConverter::parseOutput(QString output)
 		getCurrentTimeConversion(copyBetween(output, "time=", " bitrate"));
 }
 
+void VideoConverter::initTimer()
+{
+	// start internal timer
+	if (internalTimer != 0) 
+		this->killTimer(internalTimer);
+
+	internalTimer = this->startTimer(1000);
+}
+
+void VideoConverter::deinitTimer()
+{
+	if (internalTimer != 0)
+	{
+		// finish timer
+		this->killTimer(internalTimer);
+		internalTimer = 0;
+	}
+}
+
+void VideoConverter::timerEvent(QTimerEvent *event)
+{
+	if (event->timerId() == internalTimer)
+	{
+		float step = videoItem->getProgress() - lastProgress;
+		videoItem->setTimeRemaining(static_cast<int>((100 - videoItem->getProgress()) / step), this);
+		lastProgress = videoItem->getProgress();
+	}
+}
+
 void VideoConverter::startConversionVideo(VideoItem *videoItem)
 {
 	if (videoItem == NULL || !canStartConversion() || !ffmpegInstalled()) return;
@@ -260,6 +291,7 @@ void VideoConverter::startConversionVideo(VideoItem *videoItem)
 		// the video is > than 0kb? if yes, then start the conversion
 		if (input.size() > 0)
 		{
+			lastProgress = 0;
 			// launch the ffmpeg application
 			ffmpegProcess->start(ffmpegApp, getCommandLine());
 			return;
@@ -337,12 +369,16 @@ void VideoConverter::setDeleteOriginalVideo(bool deleteOriginalVideo)
 
 void VideoConverter::started()
 {
+	initTimer();
+
 	videoItem->setAsConverting(this);
 	emit conversionStarted(videoItem);
 }
 
 void VideoConverter::finished(int exitCode, QProcess::ExitStatus exitStatus)
 {
+	deinitTimer();
+
 	if (QFile::exists(videoItem->getVideoFileSavedTo()))
 	{
 		QFile output(videoItem->getVideoFileSavedTo());
