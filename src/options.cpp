@@ -200,7 +200,7 @@ void ProgramOptions::setDefault()
 	languageFile = "english_uk.language";
 	
 	installAutomaticallyUpdates = true;
-	lastUpdate = QDate::currentDate();
+	lastUpdate = QDate(2007, 01, 01);
 	checkForUpdatesOnStartup = true;
 	checkForUpdatesEvery = 1;
 	
