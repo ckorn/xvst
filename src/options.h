@@ -76,6 +76,7 @@ Q_OBJECT
 		bool displayBugReport;			//!< Flag for know if can display the "Error Report"
 		bool firstTime;					//!< Is the first program executation??
 		bool stayOnTop;					//!< Display the application always on top?
+		bool minimizeToSystemTray;		//!< Minimize the application to the system tray?
 
 		QDir appDir;			//!< Initial program path
 		QString appExecutable;	//!< Executable program path
@@ -160,6 +161,8 @@ Q_OBJECT
 		bool getFirstTime();
 		void setStayOnTop(bool value);
 		bool getStayOnTop(); 
+		void setMinimizeToSystemTray(bool value);
+		bool getMinimizeToSystemTray();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();

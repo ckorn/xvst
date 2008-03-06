@@ -94,6 +94,7 @@ void ProgramOptions::load()
 	firstTime = settings.value("configuration/firstTime", firstTime).toBool();
 
 	stayOnTop = settings.value("configuration/stayOnTop", stayOnTop).toBool();
+	minimizeToSystemTray = settings.value("configuration/minimizeToSystemTray", minimizeToSystemTray).toBool();
 
 	emit optionsLoadAfter();
 }
@@ -149,6 +150,7 @@ void ProgramOptions::save()
 	settings.setValue("firstTime", firstTime);
 
 	settings.setValue("stayOnTop", stayOnTop);
+	settings.setValue("minimizeToSystemTray", minimizeToSystemTray);
 
 	settings.endGroup();
 
@@ -209,6 +211,7 @@ void ProgramOptions::setDefault()
 	firstTime = true;
 
 	stayOnTop = false;
+	minimizeToSystemTray = false;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -539,4 +542,14 @@ bool ProgramOptions::getStayOnTop()
 void ProgramOptions::setStayOnTop(bool value)
 {
 	stayOnTop = value;
+}
+
+void ProgramOptions::setMinimizeToSystemTray(bool value)
+{
+	minimizeToSystemTray = value;
+}
+
+bool ProgramOptions::getMinimizeToSystemTray()
+{
+	return minimizeToSystemTray;
 }

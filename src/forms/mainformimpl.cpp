@@ -99,6 +99,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actMoveDOWN, SIGNAL(triggered()), this, SLOT(moveItemDownClicked())); // actMoveDOWN (clicked)
 	connect(actResetState, SIGNAL(triggered()), this, SLOT(resetStateClicked())); // actResetState (clicked)
 	connect(actStayOnTop, SIGNAL(triggered()), this, SLOT(stayOnTopClicked())); // actStayOnTop (clicked)
+	connect(actMinimizeToSystemTray, SIGNAL(triggered()), this, SLOT(minimizeToSystemTrayClicked())); // actMinimizeToSystemTray (clicked)
 	// edtDownloadDir
 	connect(edtDownloadDir, SIGNAL(textChanged(const QString &)), this, SLOT(edtDownloadDirChanged(const QString &)));
 	// connect buttons
@@ -258,6 +259,18 @@ void MainFormImpl::centerWindow()
 	move(x, y);
 }
 
+void MainFormImpl::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::WindowStateChange) 
+		if (isMinimized() && programOptions->getMinimizeToSystemTray())
+        {
+            QTimer::singleShot(0, this, SLOT(hide()));
+            event->ignore();
+            return;
+        }
+    QMainWindow::changeEvent(event);
+} 
+
 void MainFormImpl::closeEvent(QCloseEvent *event)
 {
 	if (videoList->isWorking())
@@ -317,6 +330,7 @@ void MainFormImpl::createTrayIcon()
 	trayIconMenu->addSeparator();
 	trayIconMenuOptions = trayIconMenu->addMenu(tr("Options"));
 	trayIconMenuOptions->addAction(actStayOnTop);
+	trayIconMenuOptions->addAction(actMinimizeToSystemTray);
 	trayIconMenuOptions->addSeparator();
 	trayIconMenuOptions->addAction(actDownloadVideosAutomatically);
 	trayIconMenuOptions->addAction(actConvertVideos);
@@ -531,6 +545,11 @@ void MainFormImpl::stayOnTopClicked()
 	setStayOnTopFlag();
 }
 
+void MainFormImpl::minimizeToSystemTrayClicked()
+{
+	programOptions->setMinimizeToSystemTray(actMinimizeToSystemTray->isChecked());
+}
+
 void MainFormImpl::downloadAutomaticallyStateChanged(int state)
 {
 	programOptions->setCanSendUpdateSignal(false);
@@ -736,8 +755,9 @@ void MainFormImpl::updateVisualOptions()
 	actConvertVideos->setEnabled(QFile::exists(programOptions->getFfmpegLibLocation()));
 	actConvertVideos->setChecked(actConvertVideos->isEnabled() ? programOptions->getConvertVideos() : false);
 	actDisplayPopup->setChecked(programOptions->getDisplayPopup());
-	// stay on top action (this is special)
+	// other action options
 	actStayOnTop->setChecked(programOptions->getStayOnTop());
+	actMinimizeToSystemTray->setChecked(programOptions->getMinimizeToSystemTray());
 
 	// controls
 	chbDownloadVideosAuto->setChecked(programOptions->getDownloadAutomatically());

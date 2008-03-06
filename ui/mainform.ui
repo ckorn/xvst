@@ -775,6 +775,14 @@
     <string>Stay always on top</string>
    </property>
   </action>
+  <action name="actMinimizeToSystemTray" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Minimize to system tray</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
   <tabstop>btnAddVideo</tabstop>

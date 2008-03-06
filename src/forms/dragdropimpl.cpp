@@ -158,7 +158,8 @@ void DragDropImpl::dropEvent(QDropEvent *event)
 
 void DragDropImpl::closeEvent(QCloseEvent *event)
 {
-	parent->show();
+	if (!parent->isMinimized())
+		parent->show();
 }
 
 void DragDropImpl::contextMenuEvent(QContextMenuEvent * event)

@@ -89,6 +89,7 @@ Q_OBJECT
 		// set stay on top flag
 		void setStayOnTopFlag();
 	protected:
+		void changeEvent(QEvent *event);
 		void closeEvent(QCloseEvent *event);
 		void timerEvent(QTimerEvent *event);
 	public:
@@ -115,6 +116,7 @@ Q_OBJECT
 		void moveItemDownClicked();
 		void playVideoClicked();
 		void stayOnTopClicked();
+		void minimizeToSystemTrayClicked();
 		void downloadAutomaticallyStateChanged(int state);
 		void convertVideosStateChanged(int state);
 		void edtDownloadDirChanged(const QString &text);
