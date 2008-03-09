@@ -816,7 +816,7 @@ void MainFormImpl::setStayOnTopFlag()
 
 void MainFormImpl::updateListInformation()
 {
-	lblVideosCount->setText(tr("<b>Videos count:</b> %1 <span style=\"color:#a9a9a9;\">(%2 finished)</span>")
+	lblVideosCount->setText(tr("<b>Videos count:</b> %1 <span style=\"color:#a9a9a9;\">(%2 completed)</span>")
 		.arg(videoList->getVideoItemCount(true))
 		.arg(videoList->getCompletedItemsCount()));
 

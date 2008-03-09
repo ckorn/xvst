@@ -9,7 +9,7 @@
     <x>0</x>
     <y>0</y>
     <width>704</width>
-    <height>429</height>
+    <height>458</height>
    </rect>
   </property>
   <property name="minimumSize" >
@@ -505,7 +505,7 @@
        <item row="0" column="0" >
         <widget class="QLabel" name="lblVideosCount" >
          <property name="text" >
-          <string>&lt;b>Videos count:&lt;/b> 0 &lt;span style="color:#a9a9a9;">(0 finished)&lt;/span></string>
+          <string>&lt;b>Videos count:&lt;/b> 0 &lt;span style="color:#a9a9a9;">(0 completed)&lt;/span></string>
          </property>
         </widget>
        </item>
@@ -522,7 +522,7 @@
        <item row="0" column="4" >
         <widget class="QLabel" name="lblDownloadSpeed" >
          <property name="text" >
-          <string>&lt;b>Download speed:&lt;/b> 0 Kb/sec</string>
+          <string>&lt;b>Download speed:&lt;/b> 0,00 Kb/sec</string>
          </property>
          <property name="alignment" >
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
