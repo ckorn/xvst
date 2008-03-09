@@ -33,6 +33,7 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 	setupUi(this);
 	// signals
 	connect(btnCredits, SIGNAL(clicked()), this, SLOT(btnCreditsClicked()));
+	connect(imgSupport, SIGNAL(linkActivated(const QString &)), this, SLOT(linkActivated(const QString &)));
 	// set the program version
 	lblProgramVersion->setText(QString("<b>%1</b>").arg(PROGRAM_VERSION));
 	// set language info
@@ -50,5 +51,10 @@ void InformationImpl::btnCreditsClicked()
 {
 	CreditsImpl creditsForm(this);
 	creditsForm.exec();
+}
+
+void InformationImpl::linkActivated(const QString &link)
+{
+	qDebug() << link;
 }
 //

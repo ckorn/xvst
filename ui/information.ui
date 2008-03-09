@@ -230,9 +230,28 @@ font-size:12px;
      </item>
      <item>
       <layout class="QHBoxLayout" >
-       <property name="spacing" >
-        <number>6</number>
-       </property>
+       <item>
+        <widget class="QLabel" name="imgSupport" >
+         <property name="cursor" >
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
+         <property name="focusPolicy" >
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip" >
+          <string>Make a donation to this project! :)</string>
+         </property>
+         <property name="text" >
+          <string>&lt;a href="http://sourceforge.net/project/project_donations.php?group_id=205061">&lt;img src=":/buttons/images/support_button.png" />&lt;/a></string>
+         </property>
+         <property name="pixmap" >
+          <pixmap/>
+         </property>
+         <property name="openExternalLinks" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
        <item>
         <spacer>
          <property name="orientation" >
@@ -240,8 +259,8 @@ font-size:12px;
          </property>
          <property name="sizeHint" >
           <size>
-           <width>311</width>
-           <height>20</height>
+           <width>121</width>
+           <height>25</height>
           </size>
          </property>
         </spacer>

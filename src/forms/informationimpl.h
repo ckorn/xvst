@@ -43,5 +43,6 @@ Q_OBJECT
 		InformationImpl(ProgramOptions *programOptions, QWidget * parent = 0, Qt::WFlags f = 0);
 	private slots:
 		void btnCreditsClicked();
+		void linkActivated(const QString &link);
 };
 #endif

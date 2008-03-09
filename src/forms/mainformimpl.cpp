@@ -828,7 +828,7 @@ void MainFormImpl::updateVisualControls()
 	{
 		btnDeleteVideo->setEnabled(videoItem->isRemovable());
 		btnStartDownload->setEnabled(videoList->canStartDownload() && 
-			(videoItem->isReady() || videoItem->isCanceled() || videoItem->hasErrors()));
+			(videoItem->isReady() || videoItem->isCanceled()));
 		btnCancelDownload->setEnabled(videoItem->isDownloading());
 
 		actPlayVideo->setEnabled(videoItem->isCompleted());
