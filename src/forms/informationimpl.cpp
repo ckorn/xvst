@@ -33,7 +33,6 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 	setupUi(this);
 	// signals
 	connect(btnCredits, SIGNAL(clicked()), this, SLOT(btnCreditsClicked()));
-	connect(imgSupport, SIGNAL(linkActivated(const QString &)), this, SLOT(linkActivated(const QString &)));
 	// set the program version
 	lblProgramVersion->setText(QString("<b>%1</b>").arg(PROGRAM_VERSION));
 	// set language info
@@ -45,16 +44,13 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 	}
 	// load the service list
 	rchServices->setSource(QUrl("qrc:/service_list/service_list.html"));
+	// set the support project link
+	imgSupport->setText("<a href=\"http://sourceforge.net/project/project_donations.php?group_id=205061\"><img src=\":/buttons/images/support_button.png\" /></a>");
 }
 
 void InformationImpl::btnCreditsClicked()
 {
 	CreditsImpl creditsForm(this);
 	creditsForm.exec();
-}
-
-void InformationImpl::linkActivated(const QString &link)
-{
-	qDebug() << link;
 }
 //

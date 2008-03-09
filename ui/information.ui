@@ -235,17 +235,11 @@ font-size:12px;
          <property name="cursor" >
           <cursorShape>ArrowCursor</cursorShape>
          </property>
-         <property name="focusPolicy" >
-          <enum>Qt::NoFocus</enum>
-         </property>
          <property name="toolTip" >
-          <string>Make a donation to this project! :)</string>
-         </property>
-         <property name="text" >
-          <string>&lt;a href="http://sourceforge.net/project/project_donations.php?group_id=205061">&lt;img src=":/buttons/images/support_button.png" />&lt;/a></string>
+          <string>Make a donation to &lt;b>xVideoServiceThief&lt;/b>!</string>
          </property>
          <property name="pixmap" >
-          <pixmap/>
+          <pixmap resource="../resources/resources.qrc" >:/buttons/images/support_button.png</pixmap>
          </property>
          <property name="openExternalLinks" >
           <bool>true</bool>
