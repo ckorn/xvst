@@ -153,6 +153,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// updater timer
 	if (programOptions->getCheckForUpdatesOnStartup())
 		updaterTimer = this->startTimer(250);
+	// update information
+	updateListInformation();
 
 	// videos examples
 /*
@@ -810,6 +812,22 @@ void MainFormImpl::setStayOnTopFlag()
 	show();
 }
 
+// Information window
+
+void MainFormImpl::updateListInformation()
+{
+	lblVideosCount->setText(tr("<b>Videos count:</b> %1 <span style=\"color:#a9a9a9;\">(%2 finished)</span>")
+		.arg(videoList->getVideoItemCount(true))
+		.arg(videoList->getCompletedItemsCount()));
+
+	lblDownloadingCount->setText(tr("<b>Downloading:</b> %1 of %2")
+		.arg(videoList->getActiveDownloadsCount())
+		.arg(videoList->getDownloableVideosCount()));
+
+	lblDownloadSpeed->setText(tr("<b>Download speed:</b> %1")
+		.arg(fileSizeToString(videoList->getTotalDownloadSpeed()) + tr("/sec")));
+}
+
 // visual controls
 void MainFormImpl::updateVisualControls()
 {
@@ -875,6 +893,8 @@ void MainFormImpl::updateVisualControls()
 	}
 	// set the tooltip
 	trayIcon->setToolTip(trayIconToolTip);
+	// update information
+	updateListInformation();
 }
 
 // lsvDownloadList signals

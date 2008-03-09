@@ -309,6 +309,41 @@ int VideoListController::getVideoItemCount(bool ignoreDeleted)
 		return videoList->count();
 }
 
+int VideoListController::getActiveDownloadsCount()
+{
+	int total = 0;
+
+	for (int n = 0; n < videoList->count(); n++)
+		if (videoList->at(n)->isDownloading())
+			total++;
+
+	return total;
+}
+
+int VideoListController::getDownloableVideosCount(bool includeDownloadingVideos)
+{
+	int total = 0;
+
+	for (int n = 0; n < videoList->count(); n++)
+		if (videoList->at(n)->isReady())
+			total++;
+		else if (includeDownloadingVideos && videoList->at(n)->isDownloading())
+			total++;
+
+	return total;
+}
+
+int VideoListController::getTotalDownloadSpeed()
+{
+	int totalDownloadSpeed = 0;
+
+	for (int n = 0; n < videoList->count(); n++)
+		if (videoList->at(n)->isDownloading())
+			totalDownloadSpeed += videoList->at(n)->getDownloadSpeed();
+
+	return totalDownloadSpeed;
+}
+
 bool VideoListController::isWorking()
 {
 	return isDownloading() || isConverting();

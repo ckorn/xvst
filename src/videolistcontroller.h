@@ -111,6 +111,12 @@ Q_OBJECT
 		int getVideoItemIndexByVideoItem(VideoItem* videoItem);
 		/*! Get videos count */
 		int getVideoItemCount(bool ignoreDeleted = false);
+		/*! Get active downloads count */
+		int getActiveDownloadsCount();
+		/*! Get downloable items count */
+		int getDownloableVideosCount(bool includeDownloadingVideos = true);
+		/*! Get total download speed */
+		int getTotalDownloadSpeed();
 		/*! Get if some process is working */
 		bool isWorking();
 		/*! Get if is downloading */

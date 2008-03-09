@@ -88,6 +88,8 @@ Q_OBJECT
 		void checkUpdates();
 		// set stay on top flag
 		void setStayOnTopFlag();
+		// extra information
+		void updateListInformation();
 	protected:
 		void changeEvent(QEvent *event);
 		void closeEvent(QCloseEvent *event);
