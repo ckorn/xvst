@@ -63,6 +63,8 @@ Q_OBJECT
 		~VideoListController();
 		/*! Start the main loop */
 		void start();
+		/*! Stop the main loop */
+		void stop();
 		/*! Add a new TDownloadVideoItem */
 		VideoItem* addVideo(const QString URL);
 		/*! Add a Stored TDownloadVideoItem */
@@ -122,7 +124,9 @@ Q_OBJECT
 		/*! Start a new download */
 		void startDownload(VideoItem *videoItem);
 		/*! Cancel download */
-		void cancelDownload();
+		void cancelDownload(VideoItem *videoItem);
+		/*! Cancel all downloads */
+		void cancelAllDownloads();
 		/*! Start a new conversion */
 		void startConversion(VideoItem *videoItem);
 		/*! Cancel conversion */

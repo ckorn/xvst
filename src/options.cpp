@@ -75,6 +75,8 @@ void ProgramOptions::load()
 	dragDropAlphaBlendValue = settings.value("configuration/dragDropAlphaBlendValue", dragDropAlphaBlendValue).toInt();
 	dragDropAlphaBlend = settings.value("configuration/dragDropAlphaBlend", dragDropAlphaBlend).toBool();
 
+	maxActiveDownloads = settings.value("configuration/maxActiveDownloads", maxActiveDownloads).toInt();
+
 	useProxy = settings.value("configuration/useProxy", useProxy).toBool();
 	proxyAdress = settings.value("configuration/proxyAdress", proxyAdress).toString();
 	proxyPassword = settings.value("configuration/proxyPassword", proxyPassword).toString();
@@ -125,6 +127,8 @@ void ProgramOptions::save()
 
 	settings.setValue("blockAdultContent", blockAdultContent);
 	settings.setValue("blockedWebsitesList", blockedWebsitesList);
+
+	settings.setValue("maxActiveDownloads", maxActiveDownloads);
 
 	settings.setValue("useProxy", useProxy);
 	settings.setValue("proxyAdress", proxyAdress);
@@ -186,6 +190,8 @@ void ProgramOptions::setDefault()
 	saveRestoreSessions = true;
 	saveLogDownloadedVideos = true;
 	dontRememberDownloadedVideos = true;
+
+	maxActiveDownloads = 4;
 
 	useProxy = false;
 	proxyAdress = "";
@@ -362,6 +368,16 @@ QString ProgramOptions::getBlockedWebsitesList()
 void ProgramOptions::setBlockedWebsitesList(QString value)
 {
 	blockedWebsitesList = value;
+}
+
+void ProgramOptions::setMaxActiveDownloads(int value)
+{
+	maxActiveDownloads = value;
+}
+
+int ProgramOptions::getMaxActiveDownloads()
+{
+	return maxActiveDownloads;
 }
 
 bool ProgramOptions::getUseProxy()

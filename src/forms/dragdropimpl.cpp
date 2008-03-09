@@ -141,8 +141,8 @@ void DragDropImpl::setAlphaBlend(float alphaBlend)
 
 void DragDropImpl::dragEnterEvent(QDragEnterEvent *event)
 {
-	if (event->mimeData()->hasFormat("text/plain"));
-	event->acceptProposedAction();
+	if (event->mimeData()->hasFormat("text/plain"))
+		event->acceptProposedAction();
 }
 
 void DragDropImpl::dropEvent(QDropEvent *event)

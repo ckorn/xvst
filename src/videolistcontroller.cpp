@@ -35,10 +35,12 @@ VideoListController::VideoListController(ProgramOptions *programOptions)
 
 	this->programOptions = programOptions;
 
+	internalTimer = 0;
+
 	videoList = new QList<VideoItem *>;
 
 	videoInformation = new VideoInformation;
-	videoDownload = new VideoDownload(programOptions->getDownloadDir());
+	videoDownload = new VideoDownload(programOptions->getDownloadDir(), programOptions->getMaxActiveDownloads());
 	videoConverter = new VideoConverter(programOptions->getFfmpegLibLocation(),
 	                                    programOptions->getDownloadDir(),
 	                                    programOptions->getConversionConf(),
@@ -59,7 +61,7 @@ VideoListController::VideoListController(ProgramOptions *programOptions)
 
 VideoListController::~VideoListController()
 {
-	this->killTimer(internalTimer);
+	stop();
 
 	clear();
 	delete videoList;
@@ -118,7 +120,17 @@ void VideoListController::timerEvent(QTimerEvent *event)
 
 void VideoListController::start()
 {
+	stop();
+
 	internalTimer = this->startTimer(100);
+}
+
+void VideoListController::stop()
+{
+	if (internalTimer != 0)
+		this->killTimer(internalTimer);
+
+	internalTimer = 0;
 }
 
 VideoItem* VideoListController::addVideo(const QString URL)
@@ -314,7 +326,7 @@ bool VideoListController::isConverting()
 
 bool VideoListController::canStartDownload()
 {
-	return !videoDownload->isDownloading();
+	return videoDownload->canStartDownload();
 }
 
 void VideoListController::startGetInformation(VideoItem *videoItem)
@@ -336,9 +348,14 @@ void VideoListController::startDownload(VideoItem *videoItem)
 	}
 }
 
-void VideoListController::cancelDownload()
+void VideoListController::cancelDownload(VideoItem *videoItem)
 {
-	videoDownload->cancelDownload();
+	videoDownload->cancelDownload(videoItem);
+}
+
+void VideoListController::cancelAllDownloads()
+{
+	videoDownload->cancelAllDownloads();
 }
 
 void VideoListController::startConversion(VideoItem *videoItem)
@@ -365,6 +382,7 @@ void VideoListController::updateOptions()
 	
 	// video download
 	videoDownload->setDownloadDir(programOptions->getDownloadDir());
+	videoDownload->setMaxActiveDownloads(programOptions->getMaxActiveDownloads());
 	
 	// converter
 	videoConverter->setFFmpegApp(programOptions->getFfmpegLibLocation());

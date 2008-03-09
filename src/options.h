@@ -58,6 +58,7 @@ Q_OBJECT
 		bool dontRememberDownloadedVideos;	//!< flag for know if can remember "completed" videos
 		bool blockAdultContent;			//!< flag for know if adult content is allowed or not
 		QString blockedWebsitesList;	//!< fist of services which are blocked (not allowed)	int proxyPort;
+		int maxActiveDownloads;			//!< Maximum active downloads
 		bool useProxy;					//!< flag for know if Proxy is enabled or not
 		QString proxyAdress;			//!< Proxy Adress
 		QString proxyPassword;			//!< Proxy Password
@@ -125,6 +126,8 @@ Q_OBJECT
 		bool getBlockAdultContent();
 		void setBlockedWebsitesList(QString value);
 		QString getBlockedWebsitesList();
+		void setMaxActiveDownloads(int value);
+		int getMaxActiveDownloads();
 		void setProxyPort(int value);
 		int getProxyPort();
 		void setProxyAdress(QString value);

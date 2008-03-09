@@ -27,14 +27,16 @@
 
 #include "videodownload.h"
 
-VideoDownload::VideoDownload(QString saveTo)
+/* DownloadItem Class */
+
+DownloadItem::DownloadItem(VideoDownload *parent, VideoItem *videoItem)
 {
-	setObjectName("VideoDownload");
-	// init http
+	setObjectName("DownloadItem");
+	// assign main info
+	this->parent = parent;
+	this->videoItem = videoItem;
+	// create the http object
 	http = new Http;
-	// init data
-	videoItem = NULL;
-	setDownloadDir(saveTo);
 	// connect signals
 	connect(http, SIGNAL(downloadStarted()), this, SLOT(downloadStarted()));
 	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
@@ -43,17 +45,17 @@ VideoDownload::VideoDownload(QString saveTo)
 	connect(http, SIGNAL(downloadEvent(int, int)), this, SLOT(downloadEvent(int, int)));
 }
 
-VideoDownload::~VideoDownload()
+DownloadItem::~DownloadItem()
 {
-	if (http->isDownloading())
-		http->cancel();
+	cancelDownload();
 
 	delete http;
+
+	videoItem = NULL;
 }
 
-void VideoDownload::downloadVideo(VideoItem *videoItem)
+void DownloadItem::startDownload()
 {
-	if (videoItem == NULL || !canStartDownload() || this->videoItem != NULL) return;
 	// assign data
 	this->videoItem = videoItem;
 	videoItem->lock (this);
@@ -61,24 +63,141 @@ void VideoDownload::downloadVideo(VideoItem *videoItem)
 	videoItem->setProgress(0, this);
 	// start download video
 	if (int er = http->download(QUrl(videoItem->getVideoInformation().URL),
-	                            QDir(downloadDir),
-	                            videoItem->getVideoFile()) != 0)
+		QDir(parent->getDownloadDir()), videoItem->getVideoFile()) != 0)
 		downloadError(er);
 }
 
-void VideoDownload::cancelDownload()
+void DownloadItem::cancelDownload()
 {
-	http->cancel();
+	if (http->isDownloading())
+		http->cancel();
+}
+
+VideoItem* DownloadItem::getVideoItem()
+{
+	return videoItem;
+}
+
+void DownloadItem::downloadStarted()
+{
+	workStarted();
+}
+
+void DownloadItem::downloadFinished(const QFileInfo destFile)
+{
+	videoItem->setVideoFile(destFile.absoluteFilePath(), this);
+	videoItem->setAsDownloaded(this);
+	workFinished();
+}
+
+void DownloadItem::downloadCanceled()
+{
+	videoItem->setAsCanceled(this);
+	workFinished();
+}
+
+void DownloadItem::downloadError(int error)
+{	
+	videoItem->setAsError(this);
+	workFinished();
+}
+
+void DownloadItem::downloadEvent(int pos, int max)
+{
+	videoItem->setProgress(calculePercent(pos, max), this);
+	videoItem->setVideoSize(max, this);
+	videoItem->setDownloadSpeed(http->getDownloadSpeed(), this);
+	videoItem->setTimeRemaining(http->getTimeRemaining(), this);
+	// emit signal
+	emit videoItemUpdated_child(videoItem);
+}
+
+void DownloadItem::workStarted()
+{
+	emit downloadStarted_child(videoItem);
+}
+
+void DownloadItem::workFinished()
+{
+	videoItem->unlock(this);
+	// emit signal
+	emit downloadFinished_child(videoItem);
+	// emit the destroy signal (bye bye cruel world!)
+	emit downloadDestroyable();
+}
+
+/* VideoDownload Class */
+
+VideoDownload::VideoDownload(QString saveTo, int maxActiveDownloads)
+{
+	setObjectName("VideoDownload");
+	// init vars
+	setDownloadDir(saveTo);
+	setMaxActiveDownloads(maxActiveDownloads);
+	// init downloads list
+	downloads = new QList<DownloadItem *>;
+}
+
+VideoDownload::~VideoDownload()
+{
+	cancelAllDownloads();
+	
+	delete downloads;
+}
+
+DownloadItem* VideoDownload::findDownloadItemByVideoItem(VideoItem *videoItem)
+{
+	if (videoItem == NULL) return NULL;
+
+	for (int n = 0; n < downloads->size(); n++)
+		if (downloads->at(n)->getVideoItem() == videoItem)
+			return downloads->at(n);
+
+	return NULL;
+}
+
+void VideoDownload::downloadVideo(VideoItem *videoItem)
+{
+	if (videoItem == NULL || !canStartDownload()) return;
+	// add a new download
+	downloads->append(new DownloadItem(this, videoItem));
+	// get the new item added
+	DownloadItem *downloadItem = downloads->last();
+	// connect signals of this new child
+	connect(downloadItem, SIGNAL(videoItemUpdated_child(VideoItem*)), this, SLOT(videoItemUpdated_child(VideoItem*)));
+	connect(downloadItem, SIGNAL(downloadStarted_child(VideoItem*)), this, SLOT(downloadStarted_child(VideoItem*)));
+	connect(downloadItem, SIGNAL(downloadFinished_child(VideoItem*)), this, SLOT(downloadFinished_child(VideoItem*)));
+	connect(downloadItem, SIGNAL(downloadDestroyable()), this, SLOT(downloadDestroyable()));
+	// start to download the video
+	downloadItem->startDownload();
+}
+
+void VideoDownload::cancelDownload(VideoItem *videoItem)
+{
+	DownloadItem *downloadItem = findDownloadItemByVideoItem(videoItem);
+
+	if (downloadItem != NULL)
+		downloadItem->cancelDownload();
+}
+
+void VideoDownload::cancelAllDownloads()
+{
+	for (int n = downloads->size() - 1; n >= 0; n--)
+	{
+		downloads->at(n)->cancelDownload();
+		// process events
+		qApp->processEvents();
+	}
 }
 
 bool VideoDownload::canStartDownload()
 {
-	return !http->isDownloading();
+	return downloads->size() < maxActiveDownloads;
 }
 
 bool VideoDownload::isDownloading()
 {
-	return http->isDownloading();
+	return !downloads->isEmpty();
 }
 
 QString VideoDownload::getDownloadDir()
@@ -91,50 +210,45 @@ void VideoDownload::setDownloadDir(QString downloadDir)
 	this->downloadDir = downloadDir;
 }
 
-void VideoDownload::downloadStarted()
+int VideoDownload::getMaxActiveDownloads()
 {
-	workStarted();
+	return maxActiveDownloads;
 }
 
-void VideoDownload::downloadFinished(const QFileInfo destFile)
+void VideoDownload::setMaxActiveDownloads(int maxActiveDownloads)
 {
-	videoItem->setVideoFile(destFile.absoluteFilePath(), this);
-	videoItem->setAsDownloaded(this);
-	workFinished();
+	maxActiveDownloads = maxActiveDownloads < 1 ? 1 : maxActiveDownloads;
+
+	this->maxActiveDownloads = maxActiveDownloads;
 }
 
-void VideoDownload::downloadCanceled()
+void VideoDownload::videoItemUpdated_child(VideoItem *videoItem)
 {
-	videoItem->setAsCanceled(this);
-	workFinished();
-}
-
-void VideoDownload::downloadError(int error)
-{	
-	videoItem->setAsError(this);
-	workFinished();
-}
-
-void VideoDownload::downloadEvent(int pos, int max)
-{
-	videoItem->setProgress(calculePercent(pos, max), this);
-	videoItem->setVideoSize(max, this);
-	videoItem->setDownloadSpeed(http->getDownloadSpeed(), this);
-	videoItem->setTimeRemaining(http->getTimeRemaining(), this);
-	// emit signal
 	emit videoItemUpdated(videoItem);
 }
 
-void VideoDownload::workStarted()
+void VideoDownload::downloadStarted_child(VideoItem *videoItem)
 {
 	emit downloadStarted(videoItem);
 }
 
-void VideoDownload::workFinished()
+void VideoDownload::downloadFinished_child(VideoItem *videoItem)
 {
-	videoItem->unlock(this);
-	// emit signal
 	emit downloadFinished(videoItem);
-	// 
-	this->videoItem = NULL;
+}
+
+void VideoDownload::downloadDestroyable()
+{
+	downloadItemToDestroy = static_cast<DownloadItem *>(sender());
+	// destroy the current download
+	QTimer::singleShot(0, this, SLOT(destroyDownload()));
+}
+
+void VideoDownload::destroyDownload()
+{
+	// disconnect signals
+	downloadItemToDestroy->disconnect();
+	// delete and destroy the DownloadItem
+	downloads->removeAt(downloads->indexOf(downloadItemToDestroy));
+	delete downloadItemToDestroy;
 }

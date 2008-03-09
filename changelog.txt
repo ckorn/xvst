@@ -1,11 +1,14 @@
 1.8a:
 -----
 
+- Added Multiple simultaneous downloads
 - Added "Stay always on top" option (accessible from trayIcon->Options->Stay always on top)
 - Added "Minimize to System tray" option (accessible from trayIcon->Options->Minimize to System tray)
 - Added "Paste URL from Clipboard" button in "Add Video" form
 - Added "Time Remaining" for video conversions
 - Added: After a new instalation, the program check for new updates
+
+- Updated ProgressBar class (now is more configurable)
 
 1.7.1a:
 -------

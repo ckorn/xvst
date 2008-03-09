@@ -279,7 +279,8 @@ void MainFormImpl::closeEvent(QCloseEvent *event)
 		                          tr("xVideoServiceThief is working, do you wish Cancel the current work?"),
 		                          tr("Yes"), tr("No"), QString(), 0, 1) == 0)
 		{
-			videoList->cancelDownload();
+			videoList->stop();
+			videoList->cancelAllDownloads();
 			videoList->cancelConversion();
 			event->accept();
 		}
@@ -476,8 +477,18 @@ void MainFormImpl::startDownloadVideoClicked()
 
 void MainFormImpl::cancelDownloadVideoClicked()
 {
-	videoList->cancelDownload();
-	btnCancelDownload->setEnabled(false);
+	VideoItem *videoItem;
+
+	if (lsvDownloadList->currentItem() != NULL)
+		if (getSelectedVideoItem()->isDownloading())
+			videoItem = getSelectedVideoItem();
+
+	// we have a video to cancel?
+	if (videoItem != NULL)
+	{
+		videoList->cancelDownload(videoItem);
+		btnCancelDownload->setEnabled(false);
+	}
 }
 
 void MainFormImpl::moreOptionsClicked()
@@ -803,27 +814,29 @@ void MainFormImpl::setStayOnTopFlag()
 void MainFormImpl::updateVisualControls()
 {
 	VideoItem *videoItem = getSelectedVideoItem();
-	
+
 	if (videoItem == NULL)
 	{
 		btnDeleteVideo->setEnabled(false);
 		btnStartDownload->setEnabled(false);
-		btnCancelDownload->setEnabled(!videoList->canStartDownload());
+		btnCancelDownload->setEnabled(false);
 
 		actPlayVideo->setEnabled(false);
 		actResetState->setEnabled(false);
 	}
-	else // item is clicked
+	else
 	{
 		btnDeleteVideo->setEnabled(videoItem->isRemovable());
-		btnStartDownload->setEnabled(videoList->canStartDownload() && videoItem->isReady());
-		btnCancelDownload->setEnabled(!videoList->canStartDownload());
+		btnStartDownload->setEnabled(videoList->canStartDownload() && 
+			(videoItem->isReady() || videoItem->isCanceled() || videoItem->hasErrors()));
+		btnCancelDownload->setEnabled(videoItem->isDownloading());
 
 		actPlayVideo->setEnabled(videoItem->isCompleted());
 		actResetState->setEnabled(videoItem->isCanceled() ||
 		                          videoItem->isBlocked() ||
 		                          videoItem->hasErrors());
 	}
+
 	btnClearList->setEnabled(!videoList->isWorking() && videoList->getVideoItemCount(true) > 0);
 	btnClearCompleted->setEnabled(videoList->getCompletedItemsCount() > 0);
 
@@ -844,9 +857,14 @@ void MainFormImpl::updateVisualControls()
 	// set the current download video
 	if (videoList->isDownloading())
 	{
-		VideoItem *videoItem = videoList->getCurrentDownloadingVideo();
-		if (videoItem != NULL)
-			trayIconToolTip += "\n" + tr("- Downloading: %1 (%2, %3)").arg(videoItem->getDisplayLabel()).arg(videoItem->getDisplayDownloadSpeed()).arg(videoItem->getDisplayProgress());
+		// get all current downloads
+		for (int n = 0; n < videoList->getVideoItemCount(); n++)
+		{
+			VideoItem *videoItem = videoList->getVideoItem(n);
+			// is it downloading?
+			if (videoItem->isDownloading())
+				trayIconToolTip += "\n" + tr("- Downloading: %1 (%2, %3)").arg(videoItem->getDisplayLabel()).arg(videoItem->getDisplayDownloadSpeed()).arg(videoItem->getDisplayProgress());
+		}
 	}
 	// set the current convertion video
 	if (videoList->isConverting())

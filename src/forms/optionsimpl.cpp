@@ -234,6 +234,7 @@ void OptionsImpl::setInitialOptionsValues()
 {
 	edtDownloadsDir->setText(programOptions->getDownloadDir());
 	chbDisplayPopup->setChecked(programOptions->getDisplayPopup());
+	spinBoxMaxDownloads->setValue(programOptions->getMaxActiveDownloads());
 
 	edtFFmpegLib->setText(programOptions->getFfmpegLibLocation());
 
@@ -285,6 +286,7 @@ void OptionsImpl::setOptionsValues()
 
 	programOptions->setDownloadDir(edtDownloadsDir->text());
 	programOptions->setDisplayPopup(chbDisplayPopup->isChecked());
+	programOptions->setMaxActiveDownloads(spinBoxMaxDownloads->value());
 
 	programOptions->setFfmpegLibLocation(edtFFmpegLib->text());
 
