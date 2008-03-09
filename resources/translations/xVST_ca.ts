@@ -9,12 +9,12 @@
         <translation>Afegeix URL vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="150"/>
+        <location filename="../../ui/addvideo.ui" line="166"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="122"/>
+        <location filename="../../ui/addvideo.ui" line="138"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -23,16 +23,21 @@
         <source>Enter the video URL to download:</source>
         <translation>Entra la URL del vídeo a baixar:</translation>
     </message>
+    <message>
+        <location filename="../../ui/addvideo.ui" line="57"/>
+        <source>Paste URL from clipboard</source>
+        <translation>Enganxa la URL del portapapers</translation>
+    </message>
 </context>
 <context>
     <name>AddVideoImpl</name>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="58"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="59"/>
         <source> - Adult content is not allowed</source>
         <translation> - El contingut per adults no està permès</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="56"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="57"/>
         <source> - Blocked site</source>
         <translation> - Bloquejat</translation>
     </message>
@@ -45,57 +50,57 @@
         <translation>QFrame{background: white;} </translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="88"/>
+        <location filename="../../ui/bugreport.ui" line="91"/>
         <source>Error information</source>
         <translation>Informació de l&apos;error</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="103"/>
+        <location filename="../../ui/bugreport.ui" line="106"/>
         <source>xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Versió xVST: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="194"/>
+        <location filename="../../ui/bugreport.ui" line="197"/>
         <source>View which information will be sent</source>
         <translation>Veure quina informació s&apos;enviarà</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="284"/>
+        <location filename="../../ui/bugreport.ui" line="287"/>
         <source>Do not display &quot;Error Report&quot; the next time</source>
         <translation>No mostrar &quot;L&apos;informe d&apos;errors&quot; lapròxima vegada</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="325"/>
+        <location filename="../../ui/bugreport.ui" line="328"/>
         <source>Send</source>
         <translation>Envia</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="353"/>
+        <location filename="../../ui/bugreport.ui" line="356"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="96"/>
+        <location filename="../../ui/bugreport.ui" line="99"/>
         <source>Video URL: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>URL del vídeo: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="127"/>
+        <location filename="../../ui/bugreport.ui" line="130"/>
         <source>Your name: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
         <translation>El teu nom: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(opcional)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="148"/>
+        <location filename="../../ui/bugreport.ui" line="151"/>
         <source>Email: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
         <translation>Email: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(opcional)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="214"/>
+        <location filename="../../ui/bugreport.ui" line="217"/>
         <source>Your comments: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
         <translation>Els teus comentaris: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(opcional)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/bugreport.ui" line="251"/>
+        <location filename="../../ui/bugreport.ui" line="254"/>
         <source>Sending your &quot;&lt;b&gt;Error report&lt;/b&gt;&quot;... please wait...</source>
         <translation>Enviant el teu &quot;&lt;b&gt;Informa d&apos;errors&lt;/b&gt;&quot;... espera un instants...</translation>
     </message>
@@ -122,7 +127,7 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="107"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="109"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -417,12 +422,12 @@
 <context>
     <name>DragDropImpl</name>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="182"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="183"/>
         <source> - Adult content is not allowed</source>
         <translation> - El contingut per adults no està permès</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="180"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="181"/>
         <source> - Blocked site</source>
         <translation> - Bloquejat</translation>
     </message>
@@ -692,6 +697,16 @@ font-size:12px;
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="775"/>
+        <source>Stay always on top</source>
+        <translation>Mostra sempre per sobre</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="783"/>
+        <source>Minimize to system tray</source>
+        <translation>Minimitza a la barra del sistema</translation>
+    </message>
 </context>
 <context>
     <name>MainFormImpl</name>
@@ -721,155 +736,165 @@ font-size:12px;
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="256"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="278"/>
         <source>Closing...</source>
         <translation>Tancant...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="146"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="151"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="258"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="280"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="309"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="332"/>
         <source>Options</source>
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="392"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="418"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="257"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="279"/>
         <source>xVideoServiceThief is working, do you wish Cancel the current work?</source>
         <translation>xVideoServiceThief esta treballant, vols Cancel·lar els processos actuals?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="258"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="280"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="345"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="371"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="287"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="310"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;aplicació xUpdater no s&apos;ha pogut trobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="347"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="373"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="346"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="372"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="866"/>
+        <source>- Downloading: %1 (%2, %3)</source>
+        <translation>- Descarregant: %1 (%2, %3)</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="874"/>
+        <source>- Converting: %1 (%2)</source>
+        <translation>- Convertint: %1 (%2)</translation>
     </message>
 </context>
 <context>
     <name>Options</name>
     <message>
-        <location filename="../../ui/options.ui" line="369"/>
+        <location filename="../../ui/options.ui" line="383"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="158"/>
+        <location filename="../../ui/options.ui" line="172"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="861"/>
+        <location filename="../../ui/options.ui" line="875"/>
         <source>&lt;</source>
         <translation>&lt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="877"/>
+        <location filename="../../ui/options.ui" line="891"/>
         <source>&lt;&lt;</source>
         <translation>&lt;&lt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="909"/>
+        <location filename="../../ui/options.ui" line="923"/>
         <source>&gt;</source>
         <translation>&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="893"/>
+        <location filename="../../ui/options.ui" line="907"/>
         <source>&gt;&gt;</source>
         <translation>&gt;&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1069"/>
+        <location filename="../../ui/options.ui" line="1083"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1168"/>
+        <location filename="../../ui/options.ui" line="1182"/>
         <source>Adress:</source>
         <translation>Adreça:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="823"/>
+        <location filename="../../ui/options.ui" line="837"/>
         <source>Allowed websites:</source>
         <translation>Webs permesos:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="212"/>
+        <location filename="../../ui/options.ui" line="226"/>
         <source>Audio sampling rate (Hz):</source>
         <translation>Audio sampling rate (Hz):</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="342"/>
+        <location filename="../../ui/options.ui" line="356"/>
         <source>Author:</source>
         <translation>Autor:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="830"/>
+        <location filename="../../ui/options.ui" line="844"/>
         <source>Blocked websites:</source>
         <translation>Bloquejats:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1404"/>
+        <location filename="../../ui/options.ui" line="1418"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="600"/>
+        <location filename="../../ui/options.ui" line="614"/>
         <source>Clear Log</source>
         <translation>Neteja l&apos;Històric</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="362"/>
+        <location filename="../../ui/options.ui" line="376"/>
         <source>Contact:</source>
         <translation>Contacte:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="168"/>
+        <location filename="../../ui/options.ui" line="182"/>
         <source>Convert videos to Mpeg/DivX/etc...</source>
         <translation>Converteix els vídeos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="379"/>
+        <location filename="../../ui/options.ui" line="393"/>
         <source>Description:</source>
         <translation>Descripció:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="809"/>
+        <location filename="../../ui/options.ui" line="823"/>
         <source>Disable adult websites support</source>
         <translation>Desactiva el suport dels Webs per adults</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="531"/>
+        <location filename="../../ui/options.ui" line="545"/>
         <source>Don&apos;t restore downloaded videos</source>
         <translation>No recuperis els vídeos finalitzats</translation>
     </message>
@@ -879,22 +904,22 @@ font-size:12px;
         <translation>Descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="125"/>
+        <location filename="../../ui/options.ui" line="139"/>
         <source>FFmpeg Lib</source>
         <translation>Llibreria FFmpeg</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="302"/>
+        <location filename="../../ui/options.ui" line="316"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="256"/>
+        <location filename="../../ui/options.ui" line="270"/>
         <source>Language Configuration </source>
         <translation>Configuració del idioma </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1388"/>
+        <location filename="../../ui/options.ui" line="1402"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -904,156 +929,161 @@ font-size:12px;
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="192"/>
+        <location filename="../../ui/options.ui" line="206"/>
         <source>Output format:</source>
         <translation>Format de sortida:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="232"/>
+        <location filename="../../ui/options.ui" line="246"/>
         <source>Output quality:</source>
         <translation>Qualitat de sortida:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1138"/>
+        <location filename="../../ui/options.ui" line="1152"/>
         <source>Password:</source>
         <translation>Contrasenya:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1177"/>
+        <location filename="../../ui/options.ui" line="1191"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1227"/>
+        <location filename="../../ui/options.ui" line="1241"/>
         <source>Proxy type:</source>
         <translation>Tipus de Proxy:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="149"/>
+        <location filename="../../ui/options.ui" line="163"/>
         <source>QTextLine{
 background-color:#124565;
 }</source>
         <translation>QTextLine{background-color:#124565;}</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="556"/>
+        <location filename="../../ui/options.ui" line="570"/>
         <source>Save a Log with all downloaded videos (Date + Title + URL)</source>
         <translation>Guarda un Històric amb tots els vídeos descarregats (Data + Títol + URL)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="486"/>
+        <location filename="../../ui/options.ui" line="500"/>
         <source>Session Configuration </source>
         <translation>Configuració de les Sessions </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="670"/>
+        <location filename="../../ui/options.ui" line="684"/>
         <source>Updates Configuration</source>
         <translation>Configuració de les Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="791"/>
+        <location filename="../../ui/options.ui" line="805"/>
         <source>Ups! Configuration</source>
         <translation>Ups! Configuració</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="322"/>
+        <location filename="../../ui/options.ui" line="336"/>
         <source>Version:</source>
         <translation>Versió:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="222"/>
+        <location filename="../../ui/options.ui" line="236"/>
         <source>Video frame rate (Hz)</source>
         <translation>Vídeo frame rate (Hz)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="587"/>
+        <location filename="../../ui/options.ui" line="601"/>
         <source>View Log</source>
         <translation>Veure Històric</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="108"/>
+        <location filename="../../ui/options.ui" line="103"/>
         <source>Display a popup window on finish a download/conversion video</source>
         <translation>Mostra un cartell informatiu al finalitzar la descàrrega/conversió d&apos;un vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="202"/>
+        <location filename="../../ui/options.ui" line="216"/>
         <source>Video resolution:</source>
         <translation>Resolució del vídeo:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="242"/>
+        <location filename="../../ui/options.ui" line="256"/>
         <source>Delete the original downloaded file after the conversion</source>
         <translation>Esborra el vídeo original després de la seva conversió</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="262"/>
+        <location filename="../../ui/options.ui" line="276"/>
         <source>Select a language file from the list:</source>
         <translation>Selecciona un idioma de la llista:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="278"/>
+        <location filename="../../ui/options.ui" line="292"/>
         <source>Language information</source>
         <translation>Informació del idioma</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="404"/>
+        <location filename="../../ui/options.ui" line="418"/>
         <source>Use this language</source>
         <translation>Usa aquest idioma</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="506"/>
+        <location filename="../../ui/options.ui" line="520"/>
         <source>Save and restore the curren session</source>
         <translation>Desa i recupera la sessió actual</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="697"/>
+        <location filename="../../ui/options.ui" line="711"/>
         <source>Check for new versions every:</source>
         <translation>Cerca noves versions cada:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="738"/>
+        <location filename="../../ui/options.ui" line="752"/>
         <source>Check for new versions</source>
         <translation>Cerca noves versions</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="816"/>
+        <location filename="../../ui/options.ui" line="830"/>
         <source>Select which websites are allowed and which websites must be blocked:</source>
         <translation>Selecciona quins llocs Web estan permesos i quins han d&apos;estar bloquejats:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1119"/>
+        <location filename="../../ui/options.ui" line="1133"/>
         <source>Use proxy server</source>
         <translation>Usa un servidor proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1131"/>
+        <location filename="../../ui/options.ui" line="1145"/>
         <source>User name:</source>
         <translation>Nom d&apos;usuari:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1359"/>
+        <location filename="../../ui/options.ui" line="1373"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation>Recorda l&apos;ultima pàgina visitada de les opcions (només vàlid per aquesta sessió)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="725"/>
+        <location filename="../../ui/options.ui" line="739"/>
         <source>Install automatically the new versions</source>
         <translation>Instal·la automàticament les noves versions</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="688"/>
+        <location filename="../../ui/options.ui" line="702"/>
         <source>Check for new versions on program startup</source>
         <translation>Cerca noves versions al iniciar el programa</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1302"/>
+        <location filename="../../ui/options.ui" line="1316"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Mostra la finestra de &quot;L&apos;Informe d&apos;errors&quot; al fallar una descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1311"/>
+        <location filename="../../ui/options.ui" line="1325"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Quan un vídeo produeix un error, pots ajudar a solucionar el problema enviant-nos un&quot;&lt;b&gt;Informe d&apos;errors&lt;/b&gt;&quot; via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;L&apos;&quot;&lt;b&gt;Informe d&apos;errors&lt;/b&gt;&quot; serà desat només al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; i serà visible per a tothom, no es desarà informació extra a cap Base de Dades externa.</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="110"/>
+        <source>Maximum simultaneous downloads &lt;span style=&quot;color:#a9a9a9;&quot;&gt;(the recomended value is 4/6 downloads)&lt;/span&gt;</source>
+        <translation type="unfinished">Nombre màxim de descàrregues simultànies &lt;span style=&quot;color:#a9a9a9;&quot;&gt;(el valor recomanat és 4/6 descàrregues)&lt;/span&gt;</translation>
     </message>
 </context>
 <context>
@@ -1099,7 +1129,7 @@ background-color:#124565;
         <translation>Bàsic</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="480"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="482"/>
         <source>Clear Log</source>
         <translation>Neteja l&apos;Històric</translation>
     </message>
@@ -1144,7 +1174,7 @@ background-color:#124565;
         <translation>MP3 Format (*.mp3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="482"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="484"/>
         <source>No</source>
         <translation>No</translation>
     </message>
@@ -1184,7 +1214,7 @@ background-color:#124565;
         <translation>Mantenir la qualitat del vídeo original</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="418"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="420"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
@@ -1199,22 +1229,22 @@ background-color:#124565;
         <translation>Setmana</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="482"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="484"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="403"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="405"/>
         <source>Language Setup</source>
         <translation>Configuració del Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="404"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="406"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Per tal d&apos;aplicar el idioma seleccionat, és necessari reiniciar el programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="420"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="422"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -1239,22 +1269,22 @@ background-color:#124565;
         <translation>Apple iPod (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="440"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="442"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="449"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="451"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Selecciona on es troba el programa ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="481"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="483"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation>Estàs segur d&apos;esborrar el històric de vídeos baixats/convertits?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="419"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="421"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>
@@ -1343,12 +1373,12 @@ background-color:#124565;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="260"/>
+        <location filename="../../src/videoinformation.cpp" line="267"/>
         <source>Invalid URL</source>
         <translation>URL Invàlida</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="257"/>
+        <location filename="../../src/videoinformation.cpp" line="264"/>
         <source>Unsupported video service</source>
         <translation>Servei de vídeos no suportat</translation>
     </message>
