@@ -50,8 +50,6 @@ DownloadItem::~DownloadItem()
 	cancelDownload();
 
 	delete http;
-
-	videoItem = NULL;
 }
 
 void DownloadItem::startDownload()
