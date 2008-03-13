@@ -84,7 +84,6 @@ Q_OBJECT
 		// paste shortcut
 		QShortcut *shortCurtPasteURL;	//!< Paste from clipboard Shortcut
 		// updates
-		int updaterTimer;
 		void checkUpdates();
 		// set stay on top flag
 		void setStayOnTopFlag();
@@ -93,7 +92,6 @@ Q_OBJECT
 	protected:
 		void changeEvent(QEvent *event);
 		void closeEvent(QCloseEvent *event);
-		void timerEvent(QTimerEvent *event);
 	public:
 		MainFormImpl(QWidget * parent = 0, Qt::WFlags f = 0);
 		~MainFormImpl();
@@ -140,5 +138,7 @@ Q_OBJECT
 		void videoMoved(int from, int to);
 		// shortcuts signals
 		void pasteURLfromClipboardClicked();
+		// first program executation
+		void checkForUpdates();
 };
 #endif

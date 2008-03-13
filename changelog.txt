@@ -10,6 +10,8 @@
 - Added "Support this project" button in "Information" form
 - Added "Information" panel in main form (Display items count, downloading count and total download speed)
 
+- Fixed bug (Error: Disabling the automatic updates, the downloads were not started) 
+
 - Updated ProgressBar class (now is more configurable)
 - Updated Spanish (ES) language file
 - Updated Catalan (CAT) language file 

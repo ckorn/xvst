@@ -151,8 +151,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	shortCurtPasteURL = new QShortcut(QKeySequence(tr("Ctrl+V")), this);
 	connect(shortCurtPasteURL, SIGNAL(activated()), this, SLOT(pasteURLfromClipboardClicked()));
 	// updater timer
-	if (programOptions->getCheckForUpdatesOnStartup())
-		updaterTimer = this->startTimer(250);
+	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
 	// update information
 	updateListInformation();
 
@@ -292,33 +291,6 @@ void MainFormImpl::closeEvent(QCloseEvent *event)
 	// closing?
 	if (event->isAccepted())
 		sessionManager->saveSession(videoList);
-}
-
-void MainFormImpl::timerEvent(QTimerEvent *event)
-{
-	if (event->timerId() == updaterTimer)
-	{
-		// kill this timer, after one executation
-		this->killTimer(updaterTimer);
-		
-		// check if the xUpdater is installed (can install updates?)
-		if (!Updates::canUpdate())
-		{
-			actUpdates->setEnabled(false);
-			spbUpdates->setEnabled(false);
-			// running the app for 1st time? then display this warning message
-			if (programOptions->getFirstTime())
-				QMessageBox::information(this, tr("Updates"),
-				                               tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
-				                               tr("Ok"));
-			// start the download list
-			videoList->start();
-			// ok, no more first time
-			programOptions->setFirstTime(false);
-		}
-		else
-			checkUpdates();
-	}
 }
 
 void MainFormImpl::createTrayIcon()
@@ -737,6 +709,31 @@ void MainFormImpl::pasteURLfromClipboardClicked()
 	dragDropForm->addVideoURL(QApplication::clipboard()->text());
 }
 
+// updates
+void MainFormImpl::checkForUpdates()
+{
+	if (programOptions->getCheckForUpdatesOnStartup())
+		// check if the xUpdater is installed (can install updates?)
+		if (!Updates::canUpdate())
+		{
+			actUpdates->setEnabled(false);
+			spbUpdates->setEnabled(false);
+			// running the app for 1st time? then display this warning message
+			if (programOptions->getFirstTime())
+				QMessageBox::information(this, tr("Updates"),
+				                               tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
+				                               tr("Ok"));
+			// start the download list
+			videoList->start();
+			// ok, no more first time
+			programOptions->setFirstTime(false);
+		}
+		else // can check for updates
+			checkUpdates();
+	else // start the download list, and do not check for updates
+		videoList->start();
+}
+
 // lsvDownloadList functions
 QTreeWidgetItem* MainFormImpl::getQTreeWidgetItemByVideoItem(VideoItem *videoItem)
 {
@@ -816,7 +813,7 @@ void MainFormImpl::setStayOnTopFlag()
 
 void MainFormImpl::updateListInformation()
 {
-	lblVideosCount->setText(tr("<b>Videos count:</b> %1 <span style=\"color:#a9a9a9;\">(%2 completed)</span>")
+	lblVideosCount->setText(tr("<b>Videos count:</b> %1 <span style=\"color:#666666;\">(%2 completed)</span>")
 		.arg(videoList->getVideoItemCount(true))
 		.arg(videoList->getCompletedItemsCount()));
 
