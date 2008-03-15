@@ -89,6 +89,15 @@
          <height>25</height>
         </size>
        </property>
+       <property name="whatsThis" >
+        <string>Cancel the checking for updates process and close this dialog</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Cancel button</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>Cancel the checking for updates process and close this dialog</string>
+       </property>
        <property name="text" >
         <string>Cancel</string>
        </property>

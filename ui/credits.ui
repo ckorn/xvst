@@ -127,6 +127,15 @@
        <height>0</height>
       </size>
      </property>
+     <property name="whatsThis" >
+      <string>Close the Credits dialog</string>
+     </property>
+     <property name="accessibleName" >
+      <string>Ok button</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Close the Credits dialog</string>
+     </property>
      <property name="text" >
       <string>Ok</string>
      </property>

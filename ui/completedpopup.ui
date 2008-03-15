@@ -85,6 +85,12 @@
      <property name="toolTip" >
       <string>Close</string>
      </property>
+     <property name="accessibleName" >
+      <string>Close button</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Close the information dialog</string>
+     </property>
      <property name="text" >
       <string>X</string>
      </property>
@@ -244,6 +250,15 @@
      <property name="toolTip" >
       <string>Play video</string>
      </property>
+     <property name="whatsThis" >
+      <string/>
+     </property>
+     <property name="accessibleName" >
+      <string>Play button</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Play the downloaded video</string>
+     </property>
      <property name="text" >
       <string>...</string>
      </property>
@@ -263,6 +278,10 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>spbPlayVideo</tabstop>
+  <tabstop>spbClose</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/resources.qrc" />
  </resources>

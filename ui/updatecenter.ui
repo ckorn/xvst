@@ -65,6 +65,15 @@
        </disabled>
       </palette>
      </property>
+     <property name="whatsThis" >
+      <string>List with all available updates</string>
+     </property>
+     <property name="accessibleName" >
+      <string>Available updates list</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>List with all available updates</string>
+     </property>
      <property name="alternatingRowColors" >
       <bool>true</bool>
      </property>
@@ -183,6 +192,15 @@
            <height>0</height>
           </size>
          </property>
+         <property name="whatsThis" >
+          <string>Download and install the selected updates from the list</string>
+         </property>
+         <property name="accessibleName" >
+          <string>Download and install button</string>
+         </property>
+         <property name="accessibleDescription" >
+          <string>Download and install the selected updates from the list</string>
+         </property>
          <property name="text" >
           <string>Install updates</string>
          </property>
@@ -199,6 +217,15 @@
            <height>0</height>
           </size>
          </property>
+         <property name="whatsThis" >
+          <string>Close without installing updates</string>
+         </property>
+         <property name="accessibleName" >
+          <string>Cancel button</string>
+         </property>
+         <property name="accessibleDescription" >
+          <string>Close without installing updates</string>
+         </property>
          <property name="text" >
           <string>Cancel</string>
          </property>
@@ -210,6 +237,11 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lsvUpdates</tabstop>
+  <tabstop>btnUpdate</tabstop>
+  <tabstop>btnCancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/resources.qrc" />
  </resources>

@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>303</width>
+    <width>329</width>
     <height>94</height>
    </rect>
   </property>
@@ -40,6 +40,15 @@
      </item>
      <item>
       <widget class="QSlider" name="hsAlphaBlend" >
+       <property name="whatsThis" >
+        <string>Alpha blend value (%)</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Alpha blend value slider</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>Alpha blend value (%)</string>
+       </property>
        <property name="minimum" >
         <number>0</number>
        </property>
@@ -92,12 +101,24 @@
       <widget class="QPushButton" name="btnOk" >
        <property name="minimumSize" >
         <size>
-         <width>77</width>
+         <width>100</width>
          <height>25</height>
         </size>
        </property>
+       <property name="whatsThis" >
+        <string>Set the selected alpha blend value and close this dialog</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Ok button</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>Set the selected alpha blend value and close this dialog</string>
+       </property>
        <property name="text" >
         <string>Ok</string>
+       </property>
+       <property name="default" >
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -105,9 +126,18 @@
       <widget class="QPushButton" name="btnCancel" >
        <property name="minimumSize" >
         <size>
-         <width>77</width>
+         <width>100</width>
          <height>25</height>
         </size>
+       </property>
+       <property name="whatsThis" >
+        <string>Close this dialog without changes</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Cancel button</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>Close this dialog without changes</string>
        </property>
        <property name="text" >
         <string>Cancel</string>

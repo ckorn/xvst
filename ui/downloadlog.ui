@@ -67,6 +67,15 @@
          </disabled>
         </palette>
        </property>
+       <property name="whatsThis" >
+        <string>Display the downloaded log list</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Downloads log list</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>Display the downloaded log list</string>
+       </property>
        <property name="alternatingRowColors" >
         <bool>true</bool>
        </property>

@@ -9,10 +9,16 @@
 - Added After a new instalation, the program check for new updates
 - Added "Support this project" button in "Information" form
 - Added "Information" panel in main form (Display items count, downloading count and total download speed)
+- Added "Help messages" (accessible from "?" button)
+- Added "Accessible information" usable for people with disabilities
 
 - Fixed bug (Error: Disabling the automatic updates, the downloads were not started) 
 
+- Revised and sorted all Tab orders into the application
+
 - Updated ProgressBar class (now is more configurable)
+
+- Updated english (UK) language file
 - Updated Spanish (ES) language file
 - Updated Catalan (CAT) language file 
 

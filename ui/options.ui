@@ -36,6 +36,15 @@
      <property name="cursor" stdset="0" >
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
+     <property name="whatsThis" >
+      <string>Options menu</string>
+     </property>
+     <property name="accessibleName" >
+      <string>Options menu</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Options menu</string>
+     </property>
      <property name="frameShape" >
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -88,10 +97,31 @@
               <height>21</height>
              </size>
             </property>
+            <property name="whatsThis" >
+             <string>Path which the downloaded video will be saved</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Downloads directory</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Path which the downloaded video will be saved</string>
+            </property>
            </widget>
           </item>
           <item row="0" column="2" >
            <widget class="QToolButton" name="spbSelectDownloadDir" >
+            <property name="toolTip" >
+             <string>Select the downloads directory</string>
+            </property>
+            <property name="whatsThis" >
+             <string>Open the Select directory dialog for select the downloads directory</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Select downloads directory</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Open the Select directory dialog for select the downloads directory</string>
+            </property>
             <property name="text" >
              <string>...</string>
             </property>
@@ -99,6 +129,15 @@
           </item>
           <item row="1" column="0" colspan="2" >
            <widget class="QCheckBox" name="chbDisplayPopup" >
+            <property name="whatsThis" >
+             <string>If this option is checked, on finish a download/conversion video an information popup window will be displayed</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Display popup checkbox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>If this option is checked, on finish a download/conversion video an information popup window will be displayed</string>
+            </property>
             <property name="text" >
              <string>Display a popup window on finish a download/conversion video</string>
             </property>
@@ -121,6 +160,15 @@
               <width>50</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="whatsThis" >
+             <string>Maximum simultaneous downloads value (the recommended value is between 4 and 6)</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Maximum simultaneous downloads value</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Maximum simultaneous downloads value (the recommended value is between 4 and 6)</string>
             </property>
             <property name="minimum" >
              <number>1</number>
@@ -159,15 +207,31 @@
               <height>21</height>
              </size>
             </property>
-            <property name="styleSheet" >
-             <string>QTextLine{
-background-color:#124565;
-}</string>
+            <property name="whatsThis" >
+             <string>Path of the ffmpeg library (video conversions program)</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Ffmpeg directory</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Path of the ffmpeg library (video conversions program)</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1" >
            <widget class="QToolButton" name="spbSelectFFmpegLib" >
+            <property name="toolTip" >
+             <string>Select the ffmpeg directory</string>
+            </property>
+            <property name="whatsThis" >
+             <string>Open the Select directory dialog for select the ffmpeg directory</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Select ffmpeg directory</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Open the Select directory dialog for select the ffmpeg directory</string>
+            </property>
             <property name="text" >
              <string>...</string>
             </property>
@@ -178,6 +242,15 @@ background-color:#124565;
        </item>
        <item row="2" column="0" >
         <widget class="QGroupBox" name="gpbVideoConversion" >
+         <property name="whatsThis" >
+          <string>Enable/disable the video conversions</string>
+         </property>
+         <property name="accessibleName" >
+          <string>Convert videos</string>
+         </property>
+         <property name="accessibleDescription" >
+          <string>Enable/disable the video conversions</string>
+         </property>
          <property name="title" >
           <string>Convert videos to Mpeg/DivX/etc...</string>
          </property>
@@ -208,7 +281,17 @@ background-color:#124565;
            </widget>
           </item>
           <item row="0" column="1" >
-           <widget class="QComboBox" name="cmbOutputFormat" />
+           <widget class="QComboBox" name="cmbOutputFormat" >
+            <property name="whatsThis" >
+             <string>Video output format</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Video output format combobox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Video output format</string>
+            </property>
+           </widget>
           </item>
           <item row="0" column="2" >
            <widget class="QLabel" name="lblVideoResolution" >
@@ -218,7 +301,17 @@ background-color:#124565;
            </widget>
           </item>
           <item row="0" column="3" >
-           <widget class="QComboBox" name="cmbVideoResolution" />
+           <widget class="QComboBox" name="cmbVideoResolution" >
+            <property name="whatsThis" >
+             <string>Video resolution</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Video resolution combobox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Video resolution</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0" >
            <widget class="QLabel" name="lblAudioSampling" >
@@ -228,7 +321,17 @@ background-color:#124565;
            </widget>
           </item>
           <item row="1" column="1" >
-           <widget class="QComboBox" name="cmbAudioSampling" />
+           <widget class="QComboBox" name="cmbAudioSampling" >
+            <property name="whatsThis" >
+             <string>Video audio sampling rate (Hz)</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Video audio sampling rate combobox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Video audio sampling rate (Hz)</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="2" >
            <widget class="QLabel" name="lblVideoFrameRate" >
@@ -238,7 +341,17 @@ background-color:#124565;
            </widget>
           </item>
           <item row="1" column="3" >
-           <widget class="QComboBox" name="cmbVideoFrameRate" />
+           <widget class="QComboBox" name="cmbVideoFrameRate" >
+            <property name="whatsThis" >
+             <string>Video frame rate (Hz)</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Video frame rate combobox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Video frame rate (Hz)</string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0" >
            <widget class="QLabel" name="lblOutputQuality" >
@@ -248,10 +361,32 @@ background-color:#124565;
            </widget>
           </item>
           <item row="2" column="1" colspan="3" >
-           <widget class="QComboBox" name="cmbOutputQuality" />
+           <widget class="QComboBox" name="cmbOutputQuality" >
+            <property name="whatsThis" >
+             <string>General video output quality</string>
+            </property>
+            <property name="accessibleName" >
+             <string>General video output quality combobox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>General video output quality</string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0" colspan="4" >
            <widget class="QCheckBox" name="chbDeleteOriginalVideo" >
+            <property name="statusTip" >
+             <string/>
+            </property>
+            <property name="whatsThis" >
+             <string>If this option is checked, after convert a downloaded video, the original video (FLV) is deleted from your hard disk</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Delete original video after conversion checkbox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>If this option is checked, after convert a downloaded video, the original video (FLV) is deleted from your hard disk</string>
+            </property>
             <property name="text" >
              <string>Delete the original downloaded file after the conversion</string>
             </property>
@@ -414,6 +549,15 @@ background-color:#124565;
                  <height>25</height>
                 </size>
                </property>
+               <property name="whatsThis" >
+                <string>Use the selected language file</string>
+               </property>
+               <property name="accessibleName" >
+                <string>Use language selected</string>
+               </property>
+               <property name="accessibleDescription" >
+                <string>Use the selected language file</string>
+               </property>
                <property name="text" >
                 <string>Use this language</string>
                </property>
@@ -429,6 +573,15 @@ background-color:#124565;
               <width>180</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="whatsThis" >
+             <string>List with all installed languages</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Languages list</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>List with all installed languages</string>
             </property>
             <property name="selectionBehavior" >
              <enum>QAbstractItemView::SelectRows</enum>
@@ -516,6 +669,15 @@ background-color:#124565;
            <layout class="QVBoxLayout" >
             <item>
              <widget class="QCheckBox" name="chbSaveRestore" >
+              <property name="whatsThis" >
+               <string>If this option is checked, on close the xVideoServiceThief, the downloads list will be saved (and restored on open again the xVST)</string>
+              </property>
+              <property name="accessibleName" >
+               <string>Save and restore current session checkbox</string>
+              </property>
+              <property name="accessibleDescription" >
+               <string>If this option is checked, on close the xVideoServiceThief, the downloads list will be saved (and restored on open again the xVST)</string>
+              </property>
               <property name="text" >
                <string>Save and restore the curren session</string>
               </property>
@@ -541,6 +703,15 @@ background-color:#124565;
               </item>
               <item>
                <widget class="QCheckBox" name="chbDontrestoreDownloads" >
+                <property name="whatsThis" >
+                 <string>If this option is checked, the completed videos will not be restored in next session</string>
+                </property>
+                <property name="accessibleName" >
+                 <string>Don't restore downloaded videos</string>
+                </property>
+                <property name="accessibleDescription" >
+                 <string>If this option is checked, the completed videos will not be restored in next session</string>
+                </property>
                 <property name="text" >
                  <string>Don't restore downloaded videos</string>
                 </property>
@@ -566,6 +737,15 @@ background-color:#124565;
             </item>
             <item>
              <widget class="QCheckBox" name="chbSaveLog" >
+              <property name="whatsThis" >
+               <string>If this option is checked, the xVST will save a log with all downloaded videos (Date + Title + URL)</string>
+              </property>
+              <property name="accessibleName" >
+               <string>Save log checkbox</string>
+              </property>
+              <property name="accessibleDescription" >
+               <string>If this option is checked, the xVST will save a log with all downloaded videos (Date + Title + URL)</string>
+              </property>
               <property name="text" >
                <string>Save a Log with all downloaded videos (Date + Title + URL)</string>
               </property>
@@ -597,6 +777,15 @@ background-color:#124565;
                   <height>25</height>
                  </size>
                 </property>
+                <property name="whatsThis" >
+                 <string>Open the Log viewer</string>
+                </property>
+                <property name="accessibleName" >
+                 <string>Log viewer button</string>
+                </property>
+                <property name="accessibleDescription" >
+                 <string>Open the Log viewer</string>
+                </property>
                 <property name="text" >
                  <string>View Log</string>
                 </property>
@@ -609,6 +798,15 @@ background-color:#124565;
                   <width>111</width>
                   <height>25</height>
                  </size>
+                </property>
+                <property name="whatsThis" >
+                 <string>Clear the current downloads log</string>
+                </property>
+                <property name="accessibleName" >
+                 <string>Clear log button</string>
+                </property>
+                <property name="accessibleDescription" >
+                 <string>Clear the current downloads log</string>
                 </property>
                 <property name="text" >
                  <string>Clear Log</string>
@@ -698,6 +896,15 @@ background-color:#124565;
           </property>
           <item row="0" column="0" colspan="2" >
            <widget class="QCheckBox" name="chbCheckOnStartup" >
+            <property name="whatsThis" >
+             <string>If this option is checked, on program startup the xVST will check for new versions</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Check for updates checkbox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>If this option is checked, on program startup the xVST will check for new versions</string>
+            </property>
             <property name="text" >
              <string>Check for new versions on program startup</string>
             </property>
@@ -713,7 +920,17 @@ background-color:#124565;
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="cmbUpdateEvery" />
+             <widget class="QComboBox" name="cmbUpdateEvery" >
+              <property name="whatsThis" >
+               <string>Period of time which automatic updates will check for new versions</string>
+              </property>
+              <property name="accessibleName" >
+               <string>Period of time combobox</string>
+              </property>
+              <property name="accessibleDescription" >
+               <string>Period of time which automatic updates will check for new versions</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -735,6 +952,15 @@ background-color:#124565;
           </item>
           <item row="3" column="0" colspan="2" >
            <widget class="QCheckBox" name="chbInstallAutomatically" >
+            <property name="whatsThis" >
+             <string>If this option is checked, the xVST will download and install automatically the new updates</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Install automatically new versions checkbox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>If this option is checked, the xVST will download and install automatically the new updates</string>
+            </property>
             <property name="text" >
              <string>Install automatically the new versions</string>
             </property>
@@ -747,6 +973,15 @@ background-color:#124565;
               <width>0</width>
               <height>25</height>
              </size>
+            </property>
+            <property name="whatsThis" >
+             <string>Check now for new updates</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Check updates button</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Check now for new updates</string>
             </property>
             <property name="text" >
              <string>Check for new versions</string>
@@ -819,6 +1054,18 @@ background-color:#124565;
           </property>
           <item row="0" column="0" colspan="3" >
            <widget class="QCheckBox" name="chbDisableAdultSupport" >
+            <property name="statusTip" >
+             <string/>
+            </property>
+            <property name="whatsThis" >
+             <string>If this option is checked, the support of adult websites will be disabled</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Disable adult websites support checkbox</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>If this option is checked, the support of adult websites will be disabled</string>
+            </property>
             <property name="text" >
              <string>Disable adult websites support</string>
             </property>
@@ -978,6 +1225,15 @@ background-color:#124565;
               </disabled>
              </palette>
             </property>
+            <property name="whatsThis" >
+             <string>Allowed websites list</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Allowed websites list</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Allowed websites list</string>
+            </property>
             <property name="dragEnabled" >
              <bool>true</bool>
             </property>
@@ -1050,6 +1306,15 @@ background-color:#124565;
                </colorrole>
               </disabled>
              </palette>
+            </property>
+            <property name="whatsThis" >
+             <string>Blocked websites list</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Blocked websites list</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Blocked websites list</string>
             </property>
             <property name="dragEnabled" >
              <bool>true</bool>
@@ -1129,6 +1394,15 @@ background-color:#124565;
            <height>0</height>
           </size>
          </property>
+         <property name="whatsThis" >
+          <string>Enable/disable proxy support</string>
+         </property>
+         <property name="accessibleName" >
+          <string>Enable/disable proxy support</string>
+         </property>
+         <property name="accessibleDescription" >
+          <string>Enable/disable proxy support</string>
+         </property>
          <property name="title" >
           <string>Use proxy server</string>
          </property>
@@ -1161,6 +1435,15 @@ background-color:#124565;
               <height>21</height>
              </size>
             </property>
+            <property name="whatsThis" >
+             <string>User name of your proxy configuration</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Proxy user name</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>User name of your proxy configuration</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="2" colspan="2" >
@@ -1170,6 +1453,15 @@ background-color:#124565;
               <width>0</width>
               <height>21</height>
              </size>
+            </property>
+            <property name="whatsThis" >
+             <string>Password of your proxy configuration</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Proxy password</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Password of your proxy configuration</string>
             </property>
             <property name="echoMode" >
              <enum>QLineEdit::Password</enum>
@@ -1206,6 +1498,15 @@ background-color:#124565;
                 <height>16777215</height>
                </size>
               </property>
+              <property name="whatsThis" >
+               <string>Port of your proxy configuration</string>
+              </property>
+              <property name="accessibleName" >
+               <string>Proxy port</string>
+              </property>
+              <property name="accessibleDescription" >
+               <string>Port of your proxy configuration</string>
+              </property>
               <property name="minimum" >
                <number>1</number>
               </property>
@@ -1227,6 +1528,15 @@ background-color:#124565;
               <height>21</height>
              </size>
             </property>
+            <property name="whatsThis" >
+             <string>Adress of your proxy configuration</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Proxy adress</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Adress of your proxy configuration</string>
+            </property>
            </widget>
           </item>
           <item row="4" column="0" >
@@ -1243,7 +1553,17 @@ background-color:#124565;
            </widget>
           </item>
           <item row="4" column="1" >
-           <widget class="QComboBox" name="cmbProxyType" />
+           <widget class="QComboBox" name="cmbProxyType" >
+            <property name="whatsThis" >
+             <string>Type of your proxy configuration</string>
+            </property>
+            <property name="accessibleName" >
+             <string>Proxy type</string>
+            </property>
+            <property name="accessibleDescription" >
+             <string>Type of your proxy configuration</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -1312,6 +1632,15 @@ background-color:#124565;
            <height>0</height>
           </size>
          </property>
+         <property name="whatsThis" >
+          <string>Enable/disable the "Bug report" window on video Error</string>
+         </property>
+         <property name="accessibleName" >
+          <string>Bug report</string>
+         </property>
+         <property name="accessibleDescription" >
+          <string>Enable/disable the "Bug report" window on video Error</string>
+         </property>
          <property name="title" >
           <string>Display "Bug Report" window on Video error</string>
          </property>
@@ -1369,6 +1698,18 @@ background-color:#124565;
     <layout class="QHBoxLayout" >
      <item>
       <widget class="QCheckBox" name="chbRememberView" >
+       <property name="toolTip" >
+        <string/>
+       </property>
+       <property name="whatsThis" >
+        <string>If this option is checked, on open again the "Options" dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Remember last viewed options page checkbox</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>If this option is checked, on open again the "Options" dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</string>
+       </property>
        <property name="text" >
         <string>Remember last viewed options page (only for this session)</string>
        </property>
@@ -1398,6 +1739,15 @@ background-color:#124565;
          <height>25</height>
         </size>
        </property>
+       <property name="whatsThis" >
+        <string>Save and close the current configuration</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Save and close button</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>Save and close the current configuration</string>
+       </property>
        <property name="text" >
         <string>Ok</string>
        </property>
@@ -1414,6 +1764,15 @@ background-color:#124565;
          <height>25</height>
         </size>
        </property>
+       <property name="whatsThis" >
+        <string>Close without saving changes</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Cancel and close button</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>Close without saving changes</string>
+       </property>
        <property name="text" >
         <string>Cancel</string>
        </property>
@@ -1426,15 +1785,19 @@ background-color:#124565;
  <tabstops>
   <tabstop>trvMenu</tabstop>
   <tabstop>edtDownloadsDir</tabstop>
+  <tabstop>spbSelectDownloadDir</tabstop>
   <tabstop>chbDisplayPopup</tabstop>
+  <tabstop>spinBoxMaxDownloads</tabstop>
   <tabstop>edtFFmpegLib</tabstop>
   <tabstop>spbSelectFFmpegLib</tabstop>
+  <tabstop>gpbVideoConversion</tabstop>
   <tabstop>cmbOutputFormat</tabstop>
   <tabstop>cmbVideoResolution</tabstop>
   <tabstop>cmbAudioSampling</tabstop>
   <tabstop>cmbVideoFrameRate</tabstop>
   <tabstop>cmbOutputQuality</tabstop>
   <tabstop>chbDeleteOriginalVideo</tabstop>
+  <tabstop>lsvLanguages</tabstop>
   <tabstop>rchDescription</tabstop>
   <tabstop>btnUseThis</tabstop>
   <tabstop>chbSaveRestore</tabstop>
@@ -1447,14 +1810,19 @@ background-color:#124565;
   <tabstop>chbInstallAutomatically</tabstop>
   <tabstop>btnCheckNow</tabstop>
   <tabstop>chbDisableAdultSupport</tabstop>
+  <tabstop>lsvServices1</tabstop>
+  <tabstop>lsvServices2</tabstop>
   <tabstop>spbRemove</tabstop>
   <tabstop>spbRemoveAll</tabstop>
   <tabstop>spbAddAll</tabstop>
   <tabstop>spbAdd</tabstop>
+  <tabstop>gpbProxy</tabstop>
   <tabstop>edtUserName</tabstop>
   <tabstop>edtPassword</tabstop>
   <tabstop>edtAdress</tabstop>
   <tabstop>spinBoxPort</tabstop>
+  <tabstop>cmbProxyType</tabstop>
+  <tabstop>gpbDisplayErrorReport</tabstop>
   <tabstop>chbRememberView</tabstop>
   <tabstop>btnOk</tabstop>
   <tabstop>btnCancel</tabstop>

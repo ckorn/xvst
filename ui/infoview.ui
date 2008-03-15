@@ -28,6 +28,15 @@
    </item>
    <item row="1" column="0" >
     <widget class="QTextEdit" name="rchInformation" >
+     <property name="whatsThis" >
+      <string>Information which will be send to SourceForge.net tracker</string>
+     </property>
+     <property name="accessibleName" >
+      <string>Information which will be sent</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Information which will be send to SourceForge.net tracker</string>
+     </property>
      <property name="readOnly" >
       <bool>true</bool>
      </property>
@@ -55,6 +64,15 @@
          <width>110</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="whatsThis" >
+        <string>Close the Information view</string>
+       </property>
+       <property name="accessibleName" >
+        <string>Close button</string>
+       </property>
+       <property name="accessibleDescription" >
+        <string>Close the Information view</string>
        </property>
        <property name="text" >
         <string>Close</string>

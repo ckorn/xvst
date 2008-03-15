@@ -8,7 +8,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
+    <width>717</width>
     <height>458</height>
    </rect>
   </property>
@@ -19,16 +19,13 @@
    </size>
   </property>
   <property name="windowTitle" >
-   <string>xVideoServiceThief %1 by Xesc &amp; Technology ® 2007</string>
+   <string>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</string>
   </property>
   <property name="windowIcon" >
    <iconset resource="../resources/resources.qrc" >:/icons/images/film_go.png</iconset>
   </property>
   <property name="layoutDirection" >
    <enum>Qt::LeftToRight</enum>
-  </property>
-  <property name="autoFillBackground" >
-   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" >
@@ -127,6 +124,15 @@
            <property name="toolTip" >
             <string>Open the Drag &amp; Drop window</string>
            </property>
+           <property name="whatsThis" >
+            <string/>
+           </property>
+           <property name="accessibleName" >
+            <string>Open Drag &amp; Drop window</string>
+           </property>
+           <property name="accessibleDescription" >
+            <string>Open Drag &amp; Drop window</string>
+           </property>
            <property name="text" >
             <string/>
            </property>
@@ -153,6 +159,12 @@
             </size>
            </property>
            <property name="toolTip" >
+            <string>Check for updates</string>
+           </property>
+           <property name="accessibleName" >
+            <string>Check for updates</string>
+           </property>
+           <property name="accessibleDescription" >
             <string>Check for updates</string>
            </property>
            <property name="text" >
@@ -183,6 +195,12 @@
            <property name="toolTip" >
             <string>Online help</string>
            </property>
+           <property name="accessibleName" >
+            <string>Online help</string>
+           </property>
+           <property name="accessibleDescription" >
+            <string>Online help</string>
+           </property>
            <property name="text" >
             <string/>
            </property>
@@ -209,6 +227,12 @@
             </size>
            </property>
            <property name="toolTip" >
+            <string>Program information</string>
+           </property>
+           <property name="accessibleName" >
+            <string>Program information</string>
+           </property>
+           <property name="accessibleDescription" >
             <string>Program information</string>
            </property>
            <property name="text" >
@@ -318,6 +342,12 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="accessibleName" >
+         <string>Add video button</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Add a new URL video</string>
+        </property>
         <property name="text" >
          <string>Add video</string>
         </property>
@@ -336,6 +366,12 @@
           <width>115</width>
           <height>25</height>
          </size>
+        </property>
+        <property name="accessibleName" >
+         <string>Delete video button</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Delete the selected video</string>
         </property>
         <property name="text" >
          <string>Delete video</string>
@@ -366,6 +402,12 @@
           <height>25</height>
          </size>
         </property>
+        <property name="accessibleName" >
+         <string>Start download button</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Start to download the current selected video</string>
+        </property>
         <property name="text" >
          <string>Start download</string>
         </property>
@@ -381,6 +423,12 @@
           <width>115</width>
           <height>25</height>
          </size>
+        </property>
+        <property name="accessibleName" >
+         <string>Cancel download button</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Cancel the current selected video</string>
         </property>
         <property name="text" >
          <string>Cancel download</string>
@@ -411,6 +459,12 @@
           <height>25</height>
          </size>
         </property>
+        <property name="accessibleName" >
+         <string>Clear list button</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Clear downloads list</string>
+        </property>
         <property name="text" >
          <string>Clear list</string>
         </property>
@@ -426,6 +480,12 @@
           <width>115</width>
           <height>25</height>
          </size>
+        </property>
+        <property name="accessibleName" >
+         <string>Clear completed button</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Clear completed videos from list</string>
         </property>
         <property name="text" >
          <string>Clear completed</string>
@@ -455,6 +515,12 @@
           <width>115</width>
           <height>25</height>
          </size>
+        </property>
+        <property name="accessibleName" >
+         <string>More options button</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Display the Options dialog</string>
         </property>
         <property name="text" >
          <string>More options...</string>
@@ -505,7 +571,7 @@
        <item row="0" column="0" >
         <widget class="QLabel" name="lblVideosCount" >
          <property name="text" >
-          <string>&lt;b>Videos count:&lt;/b> 0 &lt;span style="color:#a9a9a9;">(0 completed)&lt;/span></string>
+          <string>&lt;b>Videos count:&lt;/b> 0 &lt;span style="color:#666666;">(0 completed)&lt;/span></string>
          </property>
         </widget>
        </item>
@@ -536,6 +602,12 @@
      <layout class="QHBoxLayout" >
       <item>
        <widget class="QCheckBox" name="chbDownloadVideosAuto" >
+        <property name="accessibleName" >
+         <string>Download videos automatically checkbox</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Download videos automatically</string>
+        </property>
         <property name="text" >
          <string>Download videos automatically</string>
         </property>
@@ -556,6 +628,12 @@
       </item>
       <item>
        <widget class="QCheckBox" name="chbConvertVideos" >
+        <property name="accessibleName" >
+         <string>Convert videos checkbox</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Convert videos</string>
+        </property>
         <property name="text" >
          <string>Convert videos to Mpeg/DivX/etc...</string>
         </property>
@@ -614,6 +692,12 @@
           <height>21</height>
          </size>
         </property>
+        <property name="accessibleName" >
+         <string>Downloads directory</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Downloads directory</string>
+        </property>
        </widget>
       </item>
       <item>
@@ -632,6 +716,12 @@
         </property>
         <property name="toolTip" >
          <string>Select the downloads directory</string>
+        </property>
+        <property name="accessibleName" >
+         <string>Select downloads directory</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Open the Select directory dialog for select the downloads directory</string>
         </property>
         <property name="text" >
          <string>...</string>
@@ -654,6 +744,12 @@
         </property>
         <property name="toolTip" >
          <string>Open downloads directory</string>
+        </property>
+        <property name="accessibleName" >
+         <string>Open downloads directory</string>
+        </property>
+        <property name="accessibleDescription" >
+         <string>Open the downloads directory</string>
         </property>
         <property name="text" >
          <string/>
@@ -856,18 +952,19 @@
   <tabstop>btnDeleteVideo</tabstop>
   <tabstop>btnStartDownload</tabstop>
   <tabstop>btnCancelDownload</tabstop>
+  <tabstop>btnClearList</tabstop>
   <tabstop>btnClearCompleted</tabstop>
+  <tabstop>btnMoreOptions</tabstop>
   <tabstop>chbDownloadVideosAuto</tabstop>
   <tabstop>chbConvertVideos</tabstop>
   <tabstop>edtDownloadDir</tabstop>
   <tabstop>spbSelectDownloadDir</tabstop>
   <tabstop>spbOpenDownloadDir</tabstop>
-  <tabstop>btnMoreOptions</tabstop>
-  <tabstop>lsvDownloadList</tabstop>
   <tabstop>spbDragDrop</tabstop>
   <tabstop>spbUpdates</tabstop>
   <tabstop>spbHelp</tabstop>
   <tabstop>spbInformation</tabstop>
+  <tabstop>lsvDownloadList</tabstop>
  </tabstops>
  <resources>
   <include location="../resources/resources.qrc" />
