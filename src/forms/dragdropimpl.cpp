@@ -62,7 +62,7 @@ DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *
 	connect(actAlpha90, SIGNAL(triggered()), this, SLOT(alphaBlendValueClicked())); // actAlpha90
 	connect(actAlphaCustom, SIGNAL(triggered()), this, SLOT(alphaBlendValueClicked())); // actAlphaCustom
 	// shortucut config
-	shortCurtPasteURL = new QShortcut(QKeySequence(tr("Ctrl+V")), this);
+	shortCurtPasteURL = new QShortcut(QKeySequence(QKeySequence::Paste), this);
 	connect(shortCurtPasteURL, SIGNAL(activated()), this, SLOT(pasteURLfromClipboardClicked()));
 }
 
