@@ -47,7 +47,6 @@ Q_OBJECT
 		QMenu *alphaBlendMenu;			//!< Alpha blend menu
 		ProgramOptions *programOptions;	//!< Program Options reference
 		VideoListController *videoList;	//!< Video list controller reference
-		int internalTimer;				//!< Internal timer
 		QShortcut *shortCurtPasteURL;	//!< Paste from clipboard Shortcut
 		void setInitialPos();
 		void createDragDropMenu();
@@ -57,8 +56,6 @@ Q_OBJECT
 		void closeEvent (QCloseEvent *event);
 		void contextMenuEvent(QContextMenuEvent * event);
 		void addVideo(QString URL);
-	protected:
-		void timerEvent(QTimerEvent *event);
 	public:
 		DragDropImpl(ProgramOptions *programOptions, VideoListController *videoList, 
 					QWidget * parent = 0, Qt::WFlags f = 0);
@@ -68,5 +65,6 @@ Q_OBJECT
 		void pasteURLfromClipboardClicked();
 		void displayMainWindowClicked();
 		void alphaBlendValueClicked();
+		void removeServiceIcon();
 };
 #endif

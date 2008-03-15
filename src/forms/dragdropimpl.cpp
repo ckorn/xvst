@@ -36,8 +36,6 @@ DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *
 	this->parent = parent;
 	this->programOptions = programOptions;
 	this->videoList = videoList;
-	// init internall timer
-	internalTimer = 0;
 	// set up the window position
 	setInitialPos();
 	// set alpha blend
@@ -75,10 +73,6 @@ DragDropImpl::~DragDropImpl()
 	programOptions->setDragDropLeft(this->x());
 	programOptions->setDragDropTop(this->y());
 	programOptions->blockSignals(false);
-	
-	// kill internal timer
-	if (internalTimer != 0)
-		this->killTimer(internalTimer);
 		
 	delete shortCurtPasteURL;
 }
@@ -189,16 +183,7 @@ void DragDropImpl::addVideo(QString URL)
 	if (ok)
 		videoList->addVideo(URL);
 
-	if (internalTimer != 0) this->killTimer(internalTimer);
-	internalTimer = this->startTimer(5000);
-}
-
-void DragDropImpl::timerEvent(QTimerEvent *event)
-{
-	imgVideoService->setPixmap(NULL);
-	imgVideoService->setToolTip("");
-
-	this->killTimer(internalTimer);
+	QTimer::singleShot(5000, this, SLOT(removeServiceIcon()));
 }
 
 void DragDropImpl::pasteURLfromClipboardClicked()
@@ -232,5 +217,11 @@ void DragDropImpl::alphaBlendValueClicked()
 		if (converted)
 			setAlphaBlend(alphaValue / 100);
 	}
+}
+
+void DragDropImpl::removeServiceIcon()
+{
+	imgVideoService->setPixmap(NULL);
+	imgVideoService->setToolTip("");
 }
 //
