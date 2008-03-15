@@ -146,6 +146,10 @@ QString VideoItem::getVideoStateAsString()
 			return tr("Error");
 		case vsDeleted:
 			return tr("Deleted");
+		case vsPaused:
+			return tr("Paused");
+		case vsResuming:
+			return tr("Resuming...");
 	}
 	// default value
 	return "-";
@@ -224,6 +228,16 @@ bool VideoItem::isCanceled()
 bool VideoItem::isDeleted()
 {
 	return videoState == vsDeleted;
+}
+
+bool VideoItem::isPaused()
+{
+	return videoState == vsPaused;
+}
+
+bool VideoItem::isResuming()
+{
+	return videoState == vsResuming;
 }
 
 bool VideoItem::isReported()
@@ -462,6 +476,18 @@ void VideoItem::setAsDeleted(QObject *who)
 {
 	if (isLocked() && who != locker) return;
 	videoState = vsDeleted;
+}
+
+void VideoItem::setAsPaused(QObject *who)
+{
+	if (isLocked() && who != locker) return;
+	videoState = vsPaused;
+}
+
+void VideoItem::setAsResuming(QObject *who)
+{
+	if (isLocked() && who != locker) return;
+	videoState = vsResuming;
 }
 
 void VideoItem::setAsReported(QObject *who)

@@ -42,7 +42,8 @@ enum VideoState
 	vsCanceled,
 	vsBlocked,
 	vsError,
-	vsDeleted
+	vsDeleted,
+	vsPaused, vsResuming
 };
 
 struct VideoDefinition
@@ -120,6 +121,10 @@ Q_OBJECT
 		bool isCanceled();
 		/*! Get if is market as "deleted" */
 		bool isDeleted();
+		/*! Get if is paused */
+		bool isPaused();
+		/*! Get if is being resumed */
+		bool isResuming();
 		/*! Get if is reported */
 		bool isReported();
 		/*! Get the internal ID */
@@ -192,6 +197,10 @@ Q_OBJECT
 		void setAsError(QObject *who = NULL);
 		/*! Set as deleted */
 		void setAsDeleted(QObject *who = NULL);
+		/*! Set as paused */
+		void setAsPaused(QObject *who = NULL);
+		/*! Set as resuming */
+		void setAsResuming(QObject *who = NULL);
 		/*! Set as Reported */
 		void setAsReported(QObject *who = NULL);
 		/*! Init a VideoDefinition structure */
