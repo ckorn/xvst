@@ -1768,7 +1768,8 @@ VideoInformation_TuPorno::VideoInformation_TuPorno(VideoInformation *videoInform
 
 VideoDefinition VideoInformation_TuPorno::getVideoInformation(const QString URL)
 {
-	const QString URL_GET_FLV = "http://vc1n.tuporno.tv/videoscodi/%1/%2/%3.flv";
+	//const QString URL_GET_FLV = "http://vc1n.tuporno.tv/videoscodi/%1/%2/%3.flv";
+	const QString URL_GET_FLV = "http://130.117.82.221/videoscodi/%1/%2/%3.flv";
 
 	// init result
 	VideoDefinition result;
