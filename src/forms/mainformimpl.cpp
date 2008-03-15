@@ -148,8 +148,11 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	optionsForm_active = false;
 	infoForm_active = false;
 	// shortcut paste
-	shortCurtPasteURL = new QShortcut(QKeySequence(tr("Ctrl+V")), this);
-	connect(shortCurtPasteURL, SIGNAL(activated()), this, SLOT(pasteURLfromClipboardClicked()));
+	shortCutPasteURL = new QShortcut(QKeySequence(QKeySequence::Paste), this);
+	connect(shortCutPasteURL, SIGNAL(activated()), this, SLOT(pasteURLfromClipboardClicked()));
+	// shortcut delete
+	shortCutDeleteVideo = new QShortcut(QKeySequence(QKeySequence::Delete), this);
+	connect(shortCutDeleteVideo, SIGNAL(activated()), this, SLOT(deleteVideoClicked()));
 	// updater timer
 	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
 	// update information
@@ -217,7 +220,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 MainFormImpl::~MainFormImpl()
 {
 	// delete shortcuts
-	delete shortCurtPasteURL;
+	delete shortCutPasteURL;
+	delete shortCutDeleteVideo;
 
 	// delete the session manager
 	delete sessionManager;

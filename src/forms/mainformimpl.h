@@ -82,7 +82,8 @@ Q_OBJECT
 		bool optionsForm_active;
 		bool infoForm_active;
 		// paste shortcut
-		QShortcut *shortCurtPasteURL;	//!< Paste from clipboard Shortcut
+		QShortcut *shortCutPasteURL;	//!< Paste from clipboard Shortcut
+		QShortcut *shortCutDeleteVideo;	//!< Delete the selected video from list
 		// updates
 		void checkUpdates();
 		// set stay on top flag
