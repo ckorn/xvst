@@ -6,7 +6,7 @@ A compiler directrive (STATIC_BUILD) must be defined if you want to get a "valid
 - Static mode:
 
 	If you want compile the xVST in STATIC version, you should do:
-		> qmake -set build_mode dynamic_build
+		> qmake -set build_mode static_build
 		> qmake
 		> make
 
@@ -14,6 +14,6 @@ A compiler directrive (STATIC_BUILD) must be defined if you want to get a "valid
 - Dynamic mode:
 
 	If you want compile the xVST in DYNAMIC version, you should do:
-		> qmake -set build_mode static_build
+		> qmake -set build_mode dynamic_build
 		> qmake
 		> make
