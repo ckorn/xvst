@@ -1820,7 +1820,6 @@ VideoDefinition VideoInformation_PornoTube::getVideoInformation(const QString UR
 	Http http;
 	QString html = http.downloadWebpagePost(QUrl(URL), AGE_VALIDATION);
 	// get video title
-	//result.title = copyBetween(html, "<title>PornoTube.com -", "-").trimmed();
 	result.title = copyBetween(html, "<span class=\"blue\">", "<").trimmed();
 	// get the video ID
 	QString videoID = copyBetween(html, "player/v.swf?v=", "\"");
