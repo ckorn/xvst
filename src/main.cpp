@@ -25,13 +25,18 @@
 *
 */
 
-#include <QtGui>//<QApplication>
+#include <QtGui> //<QApplication>
 //
 #include "forms/mainformimpl.h"
 //
 #include "options.h"
 #include "languages.h"
 //
+#ifdef STATIC_BUILD
+#include <QtPlugin>
+Q_IMPORT_PLUGIN(qjpeg)
+#endif
+
 int main(int argc, char ** argv)
 {
 	QApplication app(argc, argv);

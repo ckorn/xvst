@@ -208,7 +208,7 @@ Q_OBJECT
 		/*! when a download finished */
 		void downloadFinished(const QFileInfo destFile);
 		/*! when a download has been paused */
-		void downloadPaused();
+		void downloadPaused(const QFileInfo destFile);
 		/*! when a download has been resumed */
 		void downloadResumed();
 		/*! when a download file has been canceled */

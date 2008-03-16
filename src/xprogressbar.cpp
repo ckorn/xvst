@@ -34,6 +34,7 @@ xProgressBar::xProgressBar(QRect rect, QPainter *painter, int schemaIndex)
 	this->rect = rect;
 	this->painter = painter;
 	this->progressValue = 0.00;
+	this->text = "";
 	// set the progress bar colors
 	setColor();
 	// configure span
@@ -89,11 +90,13 @@ void xProgressBar::setColor()
 		case 3:
 			// background
 			backgroundBorderColor.setRgb(116, 177, 160);
-			backgroundColor.setRgb(178, 215, 205);
+			backgroundColor.setRgb(231, 231, 231);
 			// progress
 			gradBorderColor.setRgb(106, 106, 106);
 			gradColor1.setRgb(168, 168, 168);
 			gradColor2.setRgb(197, 197, 197);
+			// set text color (white is not a good option)
+			textColor = QColor(58, 58, 58);
 			// ok
 			break;
 			
@@ -106,6 +109,8 @@ void xProgressBar::setColor()
 			gradBorderColor.setRgb(215, 182, 0);
 			gradColor1.setRgb(233, 197, 0);
 			gradColor2.setRgb(255, 236, 130);
+			// set text color (white is not a good option)
+			textColor = QColor(215, 71, 0);
 			// ok
 			break;
 			
@@ -156,6 +161,20 @@ void xProgressBar::setColor()
 			gradColor2.setRgb(255, 227, 190);
 			// ok
 			break;
+
+		/* light gray */
+		case 9:
+			// background
+			backgroundBorderColor.setRgb(194, 194, 194);
+			backgroundColor.setRgb(232, 233, 233);
+			// progress
+			gradBorderColor.setRgb(176, 176, 176);
+			gradColor1.setRgb(201, 201, 201);
+			gradColor2.setRgb(223, 223, 223);
+			// set text color (white is not a good option)
+			textColor = QColor(58, 58, 58);
+			// ok
+			break;
 	}
 }
 
@@ -186,9 +205,15 @@ void xProgressBar::paint()
 	// paint text?
 	if (displayText)
 	{
-		QLocale locale;
 		painter->setPen(textColor);
-		painter->drawText(rect, Qt::AlignCenter, locale.toString(progressValue, 'f', 2) + "%");
+
+		if (text.isEmpty())
+		{
+			QLocale locale;
+			painter->drawText(rect, Qt::AlignCenter, locale.toString(progressValue, 'f', 2) + "%");
+		}
+		else
+			painter->drawText(rect, Qt::AlignCenter, text);
 	}
 }
 
@@ -202,6 +227,11 @@ void xProgressBar::setColorSchema(const int value)
 void xProgressBar::setValue(const float value)
 {
 	progressValue = value < 0 ? 0 : value > 100 ? 100 : value;
+}
+
+void xProgressBar::setText(const QString value)
+{
+	text = value;
 }
 
 void xProgressBar::setDisplayText(const bool display)

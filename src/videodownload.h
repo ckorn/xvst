@@ -54,6 +54,10 @@ Q_OBJECT
 		~DownloadItem();
 		/*! Start the download */
 		void startDownload();
+		/*! Pause the download */
+		void pauseDownload();
+		/*! Resume the download */
+		void resumeDownload();
 		/*! Cancel the download */
 		void cancelDownload();
 		/*! Get the video item associated */
@@ -61,6 +65,10 @@ Q_OBJECT
 	private slots:
 		/*! A new download started */
 		void downloadStarted();
+		/*! Download has been paused */
+		void downloadPaused(const QFileInfo destFile);
+		/*! Download has resumed */
+		void downloadResumed();
 		/*! A download finished */
 		void downloadFinished(const QFileInfo destFile);
 		/*! Download has been canceled */
@@ -91,6 +99,8 @@ Q_OBJECT
 		DownloadItem *downloadItemToDestroy;	//!< Download item to destroy
 		/*! Find a download item by a video item*/
 		DownloadItem* findDownloadItemByVideoItem(VideoItem *videoItem);
+		/*! Stop all downloads */
+		void stopAllDownloads(bool doCancel = false);
 	public:
 		/*! Class csontructor */
 		VideoDownload(QString downloadDir, int maxActiveDownloads);
@@ -98,8 +108,14 @@ Q_OBJECT
 		~VideoDownload();
 		/*! start to download video */
 		void downloadVideo(VideoItem *videoItem);
+		/*! pause the video download */
+		void pauseDownload(VideoItem *videoItem);
+		/*! resume the video download */
+		void resumeDownload(VideoItem *videoItem);
 		/*! cancel download */
 		void cancelDownload(VideoItem *videoItem);
+		/*! pause all downloads */
+		void pauseAllDownloads();
 		/*! cancel all downloads */
 		void cancelAllDownloads();
 		/*! Get if possible start a new download */

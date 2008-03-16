@@ -129,8 +129,14 @@ Q_OBJECT
 		void startGetInformation(VideoItem *videoItem);
 		/*! Start a new download */
 		void startDownload(VideoItem *videoItem);
+		/*! Pause download */
+		void pauseDownload(VideoItem *videoItem);
+		/*! Resume download */
+		void resumeDownload(VideoItem *videoItem);
 		/*! Cancel download */
 		void cancelDownload(VideoItem *videoItem);
+		/*! Pause all downloads */
+		void pauseAllDownloads();
 		/*! Cancel all downloads */
 		void cancelAllDownloads();
 		/*! Start a new conversion */

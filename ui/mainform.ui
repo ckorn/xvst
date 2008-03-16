@@ -414,6 +414,16 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btnPauseResumeDownload" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="text" >
+         <string>Pause Download</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="btnCancelDownload" >
         <property name="enabled" >
          <bool>false</bool>
@@ -944,6 +954,14 @@
    </property>
    <property name="text" >
     <string>Minimize to system tray</string>
+   </property>
+  </action>
+  <action name="actPauseResumeDownload" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/buttons/images/control_pause.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Pause download</string>
    </property>
   </action>
  </widget>

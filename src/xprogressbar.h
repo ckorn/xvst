@@ -41,6 +41,7 @@ Q_OBJECT
 	private:
 		// progress vlues
 		float progressValue;	//!< Progress bar value
+		QString text;			//!< Custom text to display
 		int schemaIndex;		//!< Color schema
 		bool displayText;		//!< Flag for know if can display a % text or not
 		int vSpan;				//!< Vertical span
@@ -67,6 +68,8 @@ Q_OBJECT
 		void setColorSchema(const int value);
 		/*! Set a progress bar value */
 		void setValue(const float value);
+		/*! Set a custom text */
+		void setText(const QString value);
 		/*! Set if should display the % text */
 		void setDisplayText(const bool display);
 		/*! Set the vertical span */

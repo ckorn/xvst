@@ -111,7 +111,14 @@ void VideoListController::timerEvent(QTimerEvent *event)
 
 	// get the first ready item, to start the download
 	if (programOptions->getDownloadAutomatically() && videoDownload->canStartDownload())
-		startDownload(getFirstReady());
+	{
+		VideoItem *videoItem = getFirstReady();
+		if (videoItem != NULL)
+		{
+			if (videoItem->isResuming()) resumeDownload(videoItem);
+			else startDownload(videoItem);
+		}
+	}
 
 	// get the first downloaded item, to start the conversion
 	if (programOptions->getConvertVideos() && videoConverter->canStartConversion())
@@ -181,7 +188,12 @@ VideoItem* VideoListController::getFirstNULL()
 
 VideoItem* VideoListController::getFirstReady()
 {
-	return getFirstByState(vsGettedURL);
+	VideoItem *result = getFirstByState(vsResuming);
+	// return the first item ready to "be downloaded" (first try to get the resuming items)
+	if (result == NULL)
+		return getFirstByState(vsGettedURL);
+	else
+		return result;
 }
 
 VideoItem* VideoListController::getFirstError(bool ignoreReported)
@@ -383,9 +395,33 @@ void VideoListController::startDownload(VideoItem *videoItem)
 	}
 }
 
+void VideoListController::pauseDownload(VideoItem *videoItem)
+{
+	if (videoItem != NULL)
+	{	
+		if (videoItem->isResuming()) 
+		{
+			videoItem->setAsPaused();
+			emit videoUpdated(videoItem);
+		}
+		else
+			videoDownload->pauseDownload(videoItem);
+	}
+}
+
+void VideoListController::resumeDownload(VideoItem *videoItem)
+{
+	videoDownload->resumeDownload(videoItem);
+}
+
 void VideoListController::cancelDownload(VideoItem *videoItem)
 {
 	videoDownload->cancelDownload(videoItem);
+}
+
+void VideoListController::pauseAllDownloads()
+{
+	videoDownload->pauseAllDownloads();
 }
 
 void VideoListController::cancelAllDownloads()

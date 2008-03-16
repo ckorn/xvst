@@ -11,12 +11,22 @@
 - Added "Information" panel in main form (Display items count, downloading count and total download speed)
 - Added "Help messages" (accessible from "?" button)
 - Added "Accessible information" usable for people with disabilities
+- Added possibility to delete videos pressing the "delete" key
+
+- Revised 4 services:
+    - YouTube (added support for embeded videos)
+    - PornoTube
+    - TuPorno
+    - LiveLeak
 
 - Fixed bug (Error: Disabling the automatic updates, the downloads were not started) 
+- Fixed bug (Error: Missing restaured items, where not deleted)
 
-- Revised and sorted all Tab orders into the application
+- Revised and sorted the "Tab orders" into the application for a better accessibility
+- Revised all shortcuts and replaced for Standard and cross-platform shortcuts
 
-- Updated ProgressBar class (now is more configurable)
+- Improved the "ProgressBar class" (now is more configurable)
+- Improved internal "HTTP implementation" (full class rewrited)
 
 - Updated english (UK) language file
 - Updated Spanish (ES) language file

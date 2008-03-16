@@ -64,9 +64,9 @@ void SessionManager::saveSession(VideoListController *videoListController)
 			else
 				settings.setValue("videoState", videoItem->getVideoState());
 			settings.setValue("videoSize", videoItem->getVideoSize());
+			settings.setValue("videoProgress", videoItem->getProgress());
 			settings.setValue("VIDEO_URL", videoItem->getVideoInformation().URL);
 			settings.setValue("VIDEO_title", videoItem->getVideoInformation().title);
-
 			settings.endGroup();
 		}
 	}
@@ -88,11 +88,13 @@ void SessionManager::loadSession(VideoListController *videoListController)
 		videoItem->setVideoFile(settings.value(videos.at(n) + "/videoFile", "").toString());
 		videoItem->setState(static_cast<VideoState>(settings.value(videos.at(n) + "/videoState", 0).toInt()));
 		videoItem->setVideoSize(settings.value(videos.at(n) + "/videoSize", 0).toInt());
+		videoItem->setProgress(settings.value(videos.at(n) + "/videoProgress", 0).toDouble());
 		VideoDefinition videoInformation;
 		videoInformation.URL = settings.value(videos.at(n) + "/VIDEO_URL", "").toString();
 		videoInformation.title = settings.value(videos.at(n) + "/VIDEO_title", "").toString();
 		videoItem->setVideoInformation(videoInformation);
 		if (videoItem->hasErrors()) videoItem->setAsReported();
+		if (!videoItem->isReady() && !videoItem->isNULL() && !QFile::exists(videoItem->getVideoFile())) continue;
 		videoListController->addVideo(videoItem);
 	}
 }

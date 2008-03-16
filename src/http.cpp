@@ -586,7 +586,7 @@ void Http::requestFinished(int id, bool error)
 						break;
 					case USER_PAUSED:
 						canRemove = false;
-						emit downloadPaused();
+						emit downloadPaused(destFile);
 						break;
 				}
 			else // others
@@ -651,7 +651,7 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 		notLength = true;
 
 	// get range if we are resuming
-	if (resuming && resp.statusCode() == 206)
+	if (resuming)
 	{
 		realStartSize = copyBetween(resp.value("content-range"), "bytes ", "-").toInt();
 		realTotalSize = getToken(resp.value("content-range"), "/", 1).toInt();
@@ -671,7 +671,7 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 	if (isObjectMoved(resp.statusCode()) && autoJump)
 		jumpToURL(QUrl(resp.value("location")));
 	else
-		if ((resp.statusCode() != 200 && !resuming) || (resp.statusCode() != 206 && resuming))	
+		if (resp.statusCode() != 200 && resp.statusCode() != 206)
 		{
 			restartDownload = resuming && autoRestartOnFail;
 			http->abort();
@@ -680,7 +680,7 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 		{
 			// clear all possible prev downloaded data
 			if (file != NULL) if (!resuming) file->reset();
-			if (resuming && resp.statusCode() == 206) file->seek(realStartSize);
+			if (resuming) file->seek(realStartSize);
 			// send the download/resume signal
 			if (resuming)
 				emit downloadResumed();

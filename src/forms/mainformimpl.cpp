@@ -91,6 +91,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actAddVideo, SIGNAL(triggered()), this, SLOT(addVideoClicked())); // actAddVideo (clicked)
 	connect(actDeleteVideo, SIGNAL(triggered()), this, SLOT(deleteVideoClicked())); // actMoreOptions (clicked)
 	connect(actStartDownload, SIGNAL(triggered()), this, SLOT(startDownloadVideoClicked())); // actStartDownload (clicked)
+	connect(actPauseResumeDownload, SIGNAL(triggered()), this, SLOT(pauseResumeDownloadVideoClicked())); // actPauseResumeDownload (clicked)
 	connect(actCancelDownload, SIGNAL(triggered()), this, SLOT(cancelDownloadVideoClicked())); // actCancelDownload (clicked)
 	connect(actClearList, SIGNAL(triggered()), this, SLOT(clearListClicked())); // actClearList (clicked)
 	connect(actClearCompleted, SIGNAL(triggered()), this, SLOT(clearCompletedClicked())); // actClearCompleted (clicked)
@@ -106,6 +107,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(btnAddVideo, SIGNAL(clicked()), this, SLOT(addVideoClicked())); //btnAddVideo (clicked)
 	connect(btnDeleteVideo, SIGNAL(clicked()), this, SLOT(deleteVideoClicked())); //btnAddVideo (clicked)
 	connect(btnStartDownload, SIGNAL(clicked()), this, SLOT(startDownloadVideoClicked())); //btnAddVideo (clicked)
+	connect(btnPauseResumeDownload, SIGNAL(clicked()), this, SLOT(pauseResumeDownloadVideoClicked())); //btnPauseResumeDownload (clicked)
 	connect(btnCancelDownload, SIGNAL(clicked()), this, SLOT(cancelDownloadVideoClicked())); //btnAddVideo (clicked)
 	connect(btnMoreOptions, SIGNAL(clicked()), this, SLOT(moreOptionsClicked())); //btnMoreOptions (clicked)
 	connect(btnClearList, SIGNAL(clicked()), this, SLOT(clearListClicked())); //btnMoreOptions (clicked)
@@ -281,11 +283,11 @@ void MainFormImpl::closeEvent(QCloseEvent *event)
 	if (videoList->isWorking())
 	{
 		if (QMessageBox::question(this, tr("Closing..."),
-		                          tr("xVideoServiceThief is working, do you wish Cancel the current work?"),
+		                          tr("xVideoServiceThief is working, do you wish Pause the current work?"),
 		                          tr("Yes"), tr("No"), QString(), 0, 1) == 0)
 		{
 			videoList->stop();
-			videoList->cancelAllDownloads();
+			videoList->pauseAllDownloads();
 			videoList->cancelConversion();
 			event->accept();
 		}
@@ -449,6 +451,22 @@ void MainFormImpl::startDownloadVideoClicked()
 	if (videoItem != NULL)
 	{
 		videoList->startDownload(videoItem);
+		updateVisualControls();
+	}
+}
+
+void MainFormImpl::pauseResumeDownloadVideoClicked()
+{
+	VideoItem *videoItem;
+
+	if (lsvDownloadList->currentItem() != NULL)
+		if (!getSelectedVideoItem()->isDownloaded())
+			videoItem = getSelectedVideoItem();
+	// we have a video to resume or pause?
+	if (videoItem != NULL)
+	{
+		if (videoItem->isDownloading() || videoItem->isResuming()) videoList->pauseDownload(videoItem);
+		else if (videoItem->isPaused())	videoList->resumeDownload(videoItem); 
 		updateVisualControls();
 	}
 }
@@ -838,7 +856,10 @@ void MainFormImpl::updateVisualControls()
 	{
 		btnDeleteVideo->setEnabled(false);
 		btnStartDownload->setEnabled(false);
+		btnPauseResumeDownload->setEnabled(false);
 		btnCancelDownload->setEnabled(false);
+
+		btnPauseResumeDownload->setText(tr("Pause download"));
 
 		actPlayVideo->setEnabled(false);
 		actResetState->setEnabled(false);
@@ -846,9 +867,14 @@ void MainFormImpl::updateVisualControls()
 	else
 	{
 		btnDeleteVideo->setEnabled(videoItem->isRemovable());
-		btnStartDownload->setEnabled(videoList->canStartDownload() && 
-			(videoItem->isReady() || videoItem->isCanceled()));
+		btnStartDownload->setEnabled(videoList->canStartDownload() && (videoItem->isReady() || videoItem->isCanceled()));
+		btnPauseResumeDownload->setEnabled(videoItem->isDownloading() || videoItem->isPaused() || videoItem->isResuming());
 		btnCancelDownload->setEnabled(videoItem->isDownloading());
+		
+		if (videoItem->isPaused())
+			btnPauseResumeDownload->setText(tr("Resume download"));
+		else 
+			btnPauseResumeDownload->setText(tr("Pause download"));
 
 		actPlayVideo->setEnabled(videoItem->isCompleted());
 		actResetState->setEnabled(videoItem->isCanceled() ||
@@ -862,6 +888,8 @@ void MainFormImpl::updateVisualControls()
 	// update actions
 	actDeleteVideo->setEnabled(btnDeleteVideo->isEnabled());
 	actStartDownload->setEnabled(btnStartDownload->isEnabled());
+	actPauseResumeDownload->setEnabled(btnPauseResumeDownload->isEnabled());
+	actPauseResumeDownload->setText(btnPauseResumeDownload->text());
 	actCancelDownload->setEnabled(btnCancelDownload->isEnabled());
 	actClearList->setEnabled(btnClearList->isEnabled());
 	actClearCompleted->setEnabled(btnClearCompleted->isEnabled());
@@ -923,6 +951,7 @@ void MainFormImpl::videoListContextMenu(const QPoint & pos)
 		videoItemMenu->addAction(actDeleteVideo);
 		videoItemMenu->addSeparator();
 		videoItemMenu->addAction(actStartDownload);
+		videoItemMenu->addAction(actPauseResumeDownload);
 		videoItemMenu->addAction(actCancelDownload);
 		videoItemMenu->addSeparator();
 		videoItemMenu->addAction(actMoveUP);

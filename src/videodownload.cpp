@@ -39,6 +39,8 @@ DownloadItem::DownloadItem(VideoDownload *parent, VideoItem *videoItem)
 	http = new Http;
 	// connect signals
 	connect(http, SIGNAL(downloadStarted()), this, SLOT(downloadStarted()));
+	connect(http, SIGNAL(downloadPaused(const QFileInfo)), this, SLOT(downloadPaused(const QFileInfo)));
+	connect(http, SIGNAL(downloadResumed()), this, SLOT(downloadResumed()));
 	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
 	connect(http, SIGNAL(downloadCanceled()), this, SLOT(downloadCanceled()));
 	connect(http, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
@@ -65,10 +67,26 @@ void DownloadItem::startDownload()
 		downloadError(er);
 }
 
+void DownloadItem::pauseDownload()
+{
+	http->pause();
+}
+
+void DownloadItem::resumeDownload()
+{
+	// assign data
+	this->videoItem = videoItem;
+	videoItem->lock (this);
+	videoItem->setAsDownloading(this);
+	// resume download
+	if (int er = http->resume(QUrl(videoItem->getVideoInformation().URL), 
+		videoItem->getVideoFile()) != 0)
+		downloadError(er);
+}
+
 void DownloadItem::cancelDownload()
 {
-	if (http->isDownloading())
-		http->cancel();
+	http->cancel();
 }
 
 VideoItem* DownloadItem::getVideoItem()
@@ -77,6 +95,18 @@ VideoItem* DownloadItem::getVideoItem()
 }
 
 void DownloadItem::downloadStarted()
+{
+	workStarted();
+}
+
+void DownloadItem::downloadPaused(const QFileInfo destFile)
+{
+	videoItem->setVideoFile(destFile.absoluteFilePath(), this);
+	videoItem->setAsPaused(this);
+	workFinished();
+}
+
+void DownloadItem::downloadResumed()
 {
 	workStarted();
 }
@@ -154,6 +184,17 @@ DownloadItem* VideoDownload::findDownloadItemByVideoItem(VideoItem *videoItem)
 	return NULL;
 }
 
+void VideoDownload::stopAllDownloads(bool doCancel)
+{
+	for (int n = downloads->size() - 1; n >= 0; n--)
+	{
+		if (doCancel) downloads->at(n)->cancelDownload();
+		else downloads->at(n)->pauseDownload();
+		// process events
+		qApp->processEvents();
+	}
+}
+
 void VideoDownload::downloadVideo(VideoItem *videoItem)
 {
 	if (videoItem == NULL || !canStartDownload()) return;
@@ -170,6 +211,37 @@ void VideoDownload::downloadVideo(VideoItem *videoItem)
 	downloadItem->startDownload();
 }
 
+void VideoDownload::pauseDownload(VideoItem *videoItem)
+{
+	DownloadItem *downloadItem = findDownloadItemByVideoItem(videoItem);
+
+	if (downloadItem != NULL)
+		downloadItem->pauseDownload();
+}
+
+void VideoDownload::resumeDownload(VideoItem *videoItem)
+{
+	if (videoItem == NULL) return;
+	// cant resume the download now, so mark it as "next to start"
+	if (!canStartDownload())
+	{
+		videoItem->setAsResuming();
+		emit videoItemUpdated(videoItem);
+		return;
+	}
+	// add a new download
+	downloads->append(new DownloadItem(this, videoItem));
+	// get the new item added
+	DownloadItem *downloadItem = downloads->last();
+	// connect signals of this new child
+	connect(downloadItem, SIGNAL(videoItemUpdated_child(VideoItem*)), this, SLOT(videoItemUpdated_child(VideoItem*)));
+	connect(downloadItem, SIGNAL(downloadStarted_child(VideoItem*)), this, SLOT(downloadStarted_child(VideoItem*)));
+	connect(downloadItem, SIGNAL(downloadFinished_child(VideoItem*)), this, SLOT(downloadFinished_child(VideoItem*)));
+	connect(downloadItem, SIGNAL(downloadDestroyable()), this, SLOT(downloadDestroyable()));
+	// start to download the video
+	downloadItem->resumeDownload();
+}
+
 void VideoDownload::cancelDownload(VideoItem *videoItem)
 {
 	DownloadItem *downloadItem = findDownloadItemByVideoItem(videoItem);
@@ -178,14 +250,14 @@ void VideoDownload::cancelDownload(VideoItem *videoItem)
 		downloadItem->cancelDownload();
 }
 
+void VideoDownload::pauseAllDownloads()
+{
+	stopAllDownloads();
+}
+
 void VideoDownload::cancelAllDownloads()
 {
-	for (int n = downloads->size() - 1; n >= 0; n--)
-	{
-		downloads->at(n)->cancelDownload();
-		// process events
-		qApp->processEvents();
-	}
+	stopAllDownloads(true);
 }
 
 bool VideoDownload::canStartDownload()
