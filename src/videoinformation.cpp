@@ -1115,7 +1115,8 @@ VideoInformation_LiveLeak::VideoInformation_LiveLeak(VideoInformation *videoInfo
 
 VideoDefinition VideoInformation_LiveLeak::getVideoInformation(const QString URL)
 {
-	const QString URL_GET_XML = "http://www.liveleak.com/mi?token=%1&s=%2&p=%3";
+	//const QString URL_GET_XML = "http://www.liveleak.com/mi?token=%1&s=%2&p=%3";
+	const QString URL_GET_XML = "http://www.liveleak.com/play_flash_xml.php?token=%1&autoplay=true";
 
 	// init result
 	VideoDefinition result;
@@ -1126,13 +1127,16 @@ VideoDefinition VideoInformation_LiveLeak::getVideoInformation(const QString URL
 	// get video title
 	result.title = copyBetween(html, "<title>LiveLeak.com -", "</title>").trimmed();
 	// get the video parameters
-	QString token = copyBetween(html, "\"token\", \"", "\"").trimmed();
-	QString p = copyBetween(html, "\"p\", \"", "\"").trimmed();
-	QString s = copyBetween(html, "\"s\", \"", "\"").trimmed();
+	//QString token = copyBetween(html, "\"token\", \"", "\"").trimmed();
+	//QString p = copyBetween(html, "\"p\", \"", "\"").trimmed();
+	//QString s = copyBetween(html, "\"s\", \"", "\"").trimmed();
+	QString token = QUrl(URL).queryItemValue("i");
 	// download the video info
-	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(token).arg(s).arg(p)));
+	//QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(token).arg(s).arg(p)));
+	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(token)));
 	// get the flv url
-	result.URL = copyBetween(xml, "&file_location=", "&");
+	//result.URL = copyBetween(xml, "&file_location=", "&");
+	result.URL = copyBetween(xml, "<flv8><![CDATA[", "]");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information
