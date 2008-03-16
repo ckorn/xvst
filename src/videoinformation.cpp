@@ -356,21 +356,32 @@ VideoInformation_Youtube::VideoInformation_Youtube(VideoInformation *videoInform
 
 VideoDefinition VideoInformation_Youtube::getVideoInformation(const QString URL)
 {
+	const QString URL_YOUTBE  = "http://youtube.com/watch?v=%1";
 	const QString URL_GET_FLV = "http://%1/get_video?video_id=%2&t=%3";
 
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
+	// default URL
+	QString youTubeURL = URL;
+	// check if is an embeded video, and get the "real url" of youtube
+	if (URL.indexOf(".youtube.com/v/") != -1)
+	{
+		QString embededID = URL;
+		embededID = embededID.remove(0, embededID.lastIndexOf("/v/") + 3);
+		if (embededID.indexOf("&") != -1) embededID = copy(embededID, 0, embededID.indexOf("&"));
+		youTubeURL = QString(URL_YOUTBE).arg(embededID);
+	}
 	// download webpage
 	Http http;
-	QString html = http.downloadWebpage(QUrl(URL));
+	QString html = http.downloadWebpage(QUrl(youTubeURL));
 	// get the video ID and the video HASH
-	QString vidID = QUrl(URL).queryItemValue("v");
+	QString vidID = QUrl(youTubeURL).queryItemValue("v");
 	QString vidHash = copyBetween(html, "\"t\": \"", "\"");
 	// get the video title
 	result.title = copyBetween(html, "<title>YouTube - ", "</title>").trimmed();
 	// build the video url
-	result.URL = URL_GET_FLV.arg(QUrl(URL).host()).arg(vidID).arg(vidHash);
+	result.URL = URL_GET_FLV.arg(QUrl(youTubeURL).host()).arg(vidID).arg(vidHash);
 	// return the video information
 	return result;
 }
@@ -1115,7 +1126,6 @@ VideoInformation_LiveLeak::VideoInformation_LiveLeak(VideoInformation *videoInfo
 
 VideoDefinition VideoInformation_LiveLeak::getVideoInformation(const QString URL)
 {
-	//const QString URL_GET_XML = "http://www.liveleak.com/mi?token=%1&s=%2&p=%3";
 	const QString URL_GET_XML = "http://www.liveleak.com/play_flash_xml.php?token=%1&autoplay=true";
 
 	// init result
@@ -1127,15 +1137,10 @@ VideoDefinition VideoInformation_LiveLeak::getVideoInformation(const QString URL
 	// get video title
 	result.title = copyBetween(html, "<title>LiveLeak.com -", "</title>").trimmed();
 	// get the video parameters
-	//QString token = copyBetween(html, "\"token\", \"", "\"").trimmed();
-	//QString p = copyBetween(html, "\"p\", \"", "\"").trimmed();
-	//QString s = copyBetween(html, "\"s\", \"", "\"").trimmed();
 	QString token = QUrl(URL).queryItemValue("i");
 	// download the video info
-	//QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(token).arg(s).arg(p)));
 	QString xml = http.downloadWebpage(QUrl(QString(URL_GET_XML).arg(token)));
 	// get the flv url
-	//result.URL = copyBetween(xml, "&file_location=", "&");
 	result.URL = copyBetween(xml, "<flv8><![CDATA[", "]");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
@@ -1815,7 +1820,8 @@ VideoDefinition VideoInformation_PornoTube::getVideoInformation(const QString UR
 	Http http;
 	QString html = http.downloadWebpagePost(QUrl(URL), AGE_VALIDATION);
 	// get video title
-	result.title = copyBetween(html, "<title>PornoTube.com -", "-").trimmed();
+	//result.title = copyBetween(html, "<title>PornoTube.com -", "-").trimmed();
+	result.title = copyBetween(html, "<span class=\"blue\">", "<").trimmed();
 	// get the video ID
 	QString videoID = copyBetween(html, "player/v.swf?v=", "\"");
 	// get the video Information
