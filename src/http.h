@@ -39,7 +39,18 @@ enum Error
 	UNABLE_CREATE_FILE,			//21
 	INVALID_URL,				//22
 	ALREADY_DOWNLOADING,		//23
-	INVALID_FILE_SIZE			//24
+	INVALID_FILE_SIZE,			//24
+	MISSING_RESUME_FILE,		//25
+	UNABLE_RESUME_DOWNLOAD,		//26
+	UNABLE_APPEND_FILE			//27
+};
+
+enum StopReason
+{
+	NO_STOPPED,
+	DOWNLOAD_FINISHED,
+	USER_CANCELLED,
+	USER_PAUSED
 };
 
 class ArrayAvg : public QObject
@@ -61,43 +72,87 @@ Q_OBJECT
 		void reset();
 };
 
+class Cookie : public QObject
+{
+Q_OBJECT
+	private:
+		QString cookieBoddy;	//!< Cookie boddy
+		QString expires;		//!< Cookie expiration date
+		QString domain;			//!< Cookie working domain
+		QString path;			//!< Cookie working path
+	public:
+		/*! Class constructor */
+		Cookie(QString cookieInf);
+		/*! Get the cookie boddy */
+		QString getCookieBoddy();
+		/*! Get the cookie expiration date */
+		QString getExpires();
+		/*! Get the working domain */
+		QString getDomain();
+		/*! Get the cookie working path */
+		QString getPath();
+};
+
+class CookieController : public QObject
+{
+Q_OBJECT
+	private:
+		QList<Cookie*> *cookies;
+	public:
+		/*! Class constructor */
+		CookieController();
+		/*! Class dsetructor */
+		~CookieController();
+		/*! Add a new cookie */
+		void addCookie(QString cookie);
+		/*! Clear all stored cookies */
+		void clear();
+		/*! Get host cookies */
+		QString getCookies(QUrl URL);
+};
+
 class Http : public QObject
 {
 Q_OBJECT
 	private:
 		QHttp *http;				//!< http protocol
 		ArrayAvg *downloadSpeedAvg;	//!< download speed avg calculator
+		CookieController *cookies;	//!< cookies manager (controller)
+		int internalTimer;			//!< internal timer id
+		bool useInternalTimer;		//!< flag for know if is being used an internal timer
 		QFile *file;				//!< destination file
 		int httpGetId;				//!< current download id
-		bool userAborted;			//!< flag for know if the user aborted
-		bool useInternalTimer;		//!< can use an internal timer?
-		int downloadSpeed;	//!< download speed in bytes
-		int timeRemaining;	//!< time remaining in seconds
-		int fileSize;		//!< total file size
-		int internalTimer;	//!< internal timer id
-		int totalDownload;	//!< virtual total to download
-		int currDownload;	//!< current downloaded bytes
-		int prevDownload;	//!< previous downloaded bytes
-		QFileInfo destFile;	//!< destination file information
-		bool canDownload;	//!< response result is 200 (ok)
-		QString data;		//!< internal downloaded data
-		QString parameters;	//!< internal post parameters
-		bool autoJump;		//!< should jump to next url? only for head requests
-		bool syncFlag;		//!< sync. flag
-		bool postMethodFlag;//!< post method flag
-		bool notLength;		//!< Content length found?
-		QStringList cookies;//!< Stored cookies
-		QUrl oriURL;		//!< First url
-		/*! Get if response is object moved */
-		bool isObjectMoved(int statusCode);
+		StopReason stopReason;		//!< flag for know if the user aborted
+		bool pauseOnDestroyF;		//!< should pause the download instead of cancel it?
+		int timeRemaining;			//!< time remaining in seconds
+		int downloadSpeed;			//!< download speed in bytes
+		int totalDownload;			//!< virtual total to download
+		int currDownload;			//!< current downloaded bytes
+		int prevDownload;			//!< previous downloaded bytes
+		int realStartSize;			//!< real dwonloaded data (important for resuming downloads)
+		int realTotalSize;			//!< real file size (important for resuming downloads)
+		QFileInfo destFile;			//!< destination file information
+		QUrl oriURL;				//!< First url (original)
+		int fileSize;				//!< total file size
+		bool notLength;				//!< Content length found?
+		bool autoJump;				//!< should jump to next url? only for head requests
+		bool resuming;				//!< flag for know if is being resumed
+		bool autoRestartOnFail;		//!< restart the download on fail?
+		bool restartDownload;		//!< flog for know if should restart again
+		bool syncFlag;				//!< sync. flag
+		bool postMethodFlag;		//!< post method flag
+		QString data;				//!< internal downloaded data
+		QString parameters;			//!< internal post parameters
 		/*! Init the internal http data */
 		void initData();
-		/*! Jump to url */
-		void jumpToURL(QUrl url);
 		/*! Start timer */
 		void initTimer();
 		/*! Stop timer */
 		void deinitTimer();
+		/*! Get if response is object moved */
+		bool isObjectMoved(int statusCode);
+		/*! Jump to url */
+		void jumpToURL(QUrl url);
 	protected:
 		/*! internal timer event */
 		void timerEvent(QTimerEvent *event);
@@ -107,15 +162,27 @@ Q_OBJECT
 		/*! class destructor */
 		~Http();
 		/*! Start a new asynchronously download */
-		int download(const QUrl URL, const QDir destination, QString fileName = "");
+		int download(const QUrl URL, const QDir destination, QString fileName = "", bool autoName = true);
+		/*! Resume a previous asynchronously download */
+		int resume(const QUrl URL, QString fileName, bool autoRestartOnFail = true);
+		/*! Pause the current asynchronously download */
+		void pause();
+		/*! Cancel current download */
+		void cancel();
 		/*! Download a Webpage synchronously (return the webpage content) */
 		QString downloadWebpage(const QUrl URL, bool isUtf8 = true);
 		/*! Download a Webpage synchronously: post mode (return the webpage content) */
 		QString downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf8 = true);
 		/*! Get only the response header */
 		QHttpResponseHeader head(const QUrl URL, bool autoJump = false);
-		/*! Cancel current download */
-		void cancel();
+		/*! Add custom cookie */
+		void addCookie(QString cookie);
+		/*! Clear the stored cookies */
+		void clearCookies();
+		/*! Pause on destroy the Http class (only if is downloading) */
+		void pauseOnDestroy(bool pauseOnDestroyF = true);
+		/*! Get if is downloading */
+		bool isDownloading();
 		/*! Get file size */
 		int getFileSize();
 		/*! Get download speed */
@@ -124,8 +191,6 @@ Q_OBJECT
 		int getTimeRemaining();
 		/*! Get the destination file name */
 		QFileInfo getDestiationFile();
-		/*! Get if is downloading */
-		bool isDownloading();
 	private slots:
 		/*! when the http protocol read data */
 		void dataReadProgress(int done, int total);
@@ -135,11 +200,17 @@ Q_OBJECT
 		void responseHeaderReceived(const QHttpResponseHeader &resp);
 		/*! current http state changed */
 		void stateChanged(int state);
+		/*! restart the download signal */
+		void restartDownloadSignal();
 	signals:
 		/*! when a download started */
 		void downloadStarted();
 		/*! when a download finished */
 		void downloadFinished(const QFileInfo destFile);
+		/*! when a download has been paused */
+		void downloadPaused();
+		/*! when a download has been resumed */
+		void downloadResumed();
 		/*! when a download file has been canceled */
 		void downloadCanceled();
 		/*! an error ocurred during the download process */
