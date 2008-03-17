@@ -155,11 +155,19 @@ VideoItem* VideoListController::addVideo(VideoItem *videoItem)
 	return videoList->last();
 }
 
-void VideoListController::deleteVideo(const int index)
+void VideoListController::deleteVideo(const int index, bool removePausedFile)
 {
 	if (validItemIndex(index))
 	{
 		VideoItem *videoItem = getVideoItem(index);
+
+		if (!videoItem->isRemovable()) return;
+
+		// remove the "incompleted" video
+		if (videoItem->isPaused() && removePausedFile) 
+			if (QFile::exists(videoItem->getVideoFile()))
+				QFile::remove(videoItem->getVideoFile());
+
 		videoItem->setAsDeleted();
 		emit videoDeleted(videoItem);
 		delete videoList->at(index);
@@ -167,18 +175,18 @@ void VideoListController::deleteVideo(const int index)
 	}
 }
 
-void VideoListController::deleteVideo(VideoItem *videoItem)
+void VideoListController::deleteVideo(VideoItem *videoItem, bool removePausedFile)
 {
-	deleteVideo(videoList->indexOf(videoItem));
+	deleteVideo(videoList->indexOf(videoItem), removePausedFile);
 }
 
-void VideoListController::clear()
+void VideoListController::clear(bool removePausedFile)
 {
 	if (videoInformation->isGettingInfo())
 		videoInformation->cancel();
 
 	while (!videoList->isEmpty())
-		deleteVideo(videoList->at(0));
+		deleteVideo(videoList->at(0), removePausedFile);
 }
 
 VideoItem* VideoListController::getFirstNULL()

@@ -70,11 +70,11 @@ Q_OBJECT
 		/*! Add a Stored TDownloadVideoItem */
 		VideoItem* addVideo(VideoItem *videoItem);
 		/*! Delete by Index an existent TDownloadVideoItem */
-		void deleteVideo(const int index);
+		void deleteVideo(const int index, bool removePausedFile = false);
 		/*! Delete an existent TDownloadVideoItem */
-		void deleteVideo(VideoItem *videoItem);
+		void deleteVideo(VideoItem *videoItem, bool removePausedFile = false);
 		/*! Clear videoList list */
-		void clear();
+		void clear(bool removePausedFile = false);
 		/*! Get the first null item to get info */
 		VideoItem* getFirstNULL();
 		/*! Get the first ready to be downloaded */
