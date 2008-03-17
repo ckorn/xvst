@@ -13,6 +13,7 @@
 - Added "Accessible information" usable for people with disabilities
 - Added possibility to delete videos pressing the "delete" key
 - Added detection of "Need login" videos
+- Added more exlicit error messages
 
 - Revised 5 services:
     - YouTube (added support for embeded videos)
@@ -27,6 +28,7 @@
 - Revised and sorted the "Tab orders" into the application for a better accessibility
 - Revised all shortcuts and replaced for Standard and cross-platform shortcuts
 
+- Improved error detection (the "Bug report" is only displayed if is a "Connection error")
 - Improved the "ProgressBar class" (now is more configurable)
 - Improved internal "HTTP implementation" (full class rewrited)
 
