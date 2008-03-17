@@ -14,8 +14,9 @@
 - Added possibility to delete videos pressing the "delete" key
 - Added detection of "Need login" videos
 
-- Revised 4 services:
+- Revised 5 services:
     - YouTube (added support for embeded videos)
+    - Metacafe
     - PornoTube
     - TuPorno
     - LiveLeak

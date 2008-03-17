@@ -412,7 +412,7 @@ VideoDefinition VideoInformation_Metacafe::getVideoInformation(const QString URL
 	Http http;
 	QString html = http.downloadWebpage(QUrl(URL));
 	// get the video title
-	result.title = copyBetween(html, "<title>", "</title>").trimmed();
+	result.title = copyBetween(html, "<title>", "- Metacafe</title>").trimmed();
 	result.URL = copyBetween(html, "mediaURL=", "&").trimmed();
 	// clean the video URL
 	result.URL = cleanURL(result.URL);
