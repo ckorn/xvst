@@ -172,7 +172,7 @@ Http::Http(bool useInternalTimer)
 	internalTimer = 0;
 	this->useInternalTimer = useInternalTimer;
 	// default max retries
-	maxRetries = 3;
+	maxRetries = 5;
 	initRetriesData();
 	// destination file
 	file = NULL;
@@ -347,9 +347,15 @@ int Http::download(const QUrl URL, const QDir destination, QString fileName, boo
 	if (fileName.isEmpty())
 		fileName = "download.file";
 
+	fileName = QFileInfo(fileName).fileName();
+
 	// set destination file name
 	fileName = cleanFileName(fileName);
-	if (autoName) fileName = uniqueFileName(destination.absolutePath() + "/" + fileName).absoluteFilePath();
+	// get an unique file name for this download
+	if (autoName) 
+		fileName = uniqueFileName(destination.absolutePath() + "/" + fileName).absoluteFilePath();
+	else
+		fileName =destination.absolutePath() + "/" + fileName;
 
 	// create file
 	file = new QFile(fileName);
@@ -393,9 +399,6 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 	if (!QFile::exists(fileName))
 		return MISSING_RESUME_FILE;
 
-	// set file info
-	destFile = QFileInfo(fileName);
-
 	// open the existent file in append mode
 	file = new QFile(fileName);
 	if (!file->open(QIODevice::Append))
@@ -405,6 +408,9 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 		return UNABLE_APPEND_FILE;
 	}
 
+	// set file info
+	destFile = QFileInfo(fileName);
+
 	// init http variables
 	initData();
 	resuming = true;
@@ -413,6 +419,9 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 
 	// start internal timer
 	initTimer();
+
+	// +1 to retries count
+	retriesCount++;
 
 	// start the download process
 	jumpToURL(URL);
@@ -608,8 +617,8 @@ void Http::requestFinished(int id, bool error)
 				// abort all (and clear pending requests)
 				http->clearPendingRequests();
 				// if is an "auto-abort" for restart the download then do not send the error signal
-				if (restartDownload || (!restartDownload && retriesCount < maxRetries))
-					QTimer::singleShot(100, this, SLOT(restartDownloadSignal()));
+				if (restartDownload || (!restartDownload && retriesCount <= maxRetries))
+					QTimer::singleShot(500, this, SLOT(restartDownloadSignal()));
 				else
 					// send error signal
 					emit downloadError(http->error());
@@ -686,16 +695,21 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 	if (isObjectMoved(resp.statusCode()) && autoJump)
 		jumpToURL(QUrl(resp.value("location")));
 	else
-		if (resp.statusCode() != 200 && resp.statusCode() != 206)
+		if ((resp.statusCode() != 200 && resp.statusCode() != 206) || 
+			(resuming && resp.statusCode() == 200))
 		{
 			restartDownload = resuming && autoRestartOnFail;
 			http->abort();
 		}
 		else
 		{
-			// clear all possible prev downloaded data
-			if (file != NULL) if (!resuming) file->reset();
-			if (resuming) file->seek(realStartSize);
+			if (file != NULL) 
+			{
+				if (!resuming) 
+					file->reset();
+				else
+					file->seek(realStartSize);
+			}
 			// send the download/resume signal
 			if (resuming)
 				emit downloadResumed();
@@ -711,9 +725,7 @@ void Http::stateChanged(int state)
 
 void Http::restartDownloadSignal()
 {
-	qDebug() << "restartDownloadSignal()" << restartDownload << retriesCount;
-
-	download(oriURL, destFile.dir(), destFile.fileName(), false);
+	download(oriURL, QDir(destFile.path()), destFile.fileName(), false);
 }
 
 void Http::timerEvent(QTimerEvent *event)
