@@ -642,6 +642,9 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 	else
 		item->setToolTip(2, "");
 
+	if (videoItem->needLogin())
+		item->setIcon(2, QIcon(":/buttons/images/lock.png"));
+
 	// display completed popup
 	if (videoItem->isCompleted())
 	{

@@ -23,6 +23,7 @@
         <file>images/script_go.png</file>
         <file>images/support_button.png</file>
         <file>images/transmit_blue.png</file>
+        <file>images/lock.png</file>
     </qresource>
     <qresource prefix="/error" >
         <file>images/errorVideo.png</file>
