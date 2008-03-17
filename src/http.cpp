@@ -617,7 +617,7 @@ void Http::requestFinished(int id, bool error)
 				// abort all (and clear pending requests)
 				http->clearPendingRequests();
 				// if is an "auto-abort" for restart the download then do not send the error signal
-				if (restartDownload || (!restartDownload && retriesCount <= maxRetries))
+				if (restartDownload || (!restartDownload && retriesCount < maxRetries))
 					QTimer::singleShot(500, this, SLOT(restartDownloadSignal()));
 				else
 					// send error signal
