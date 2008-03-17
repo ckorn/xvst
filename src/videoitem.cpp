@@ -150,6 +150,8 @@ QString VideoItem::getVideoStateAsString()
 			return tr("Paused");
 		case vsResuming:
 			return tr("Resuming...");
+		case vsNeedLogin:
+			return tr("Need login...");
 	}
 	// default value
 	return "-";
@@ -243,6 +245,11 @@ bool VideoItem::isResuming()
 bool VideoItem::isReported()
 {
 	return reported;
+}
+
+bool VideoItem::needLogin()
+{
+	return videoState == vsNeedLogin;
 }
 
 int VideoItem::getID()
@@ -496,9 +503,16 @@ void VideoItem::setAsReported(QObject *who)
 	reported = true;
 }
 
+void VideoItem::setAsNeedLogin(QObject *who)
+{
+	if (isLocked() && who != locker) return;
+	videoState = vsNeedLogin;
+}
+
 void VideoItem::initVideoDefinition(VideoDefinition &videoDef)
 {
 	videoDef.URL = "";
 	videoDef.title = "";
 	videoDef.extension = ".flv";
+	videoDef.needLogin = false;
 }

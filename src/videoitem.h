@@ -43,7 +43,8 @@ enum VideoState
 	vsBlocked,
 	vsError,
 	vsDeleted,
-	vsPaused, vsResuming
+	vsPaused, vsResuming,
+	vsNeedLogin
 };
 
 struct VideoDefinition
@@ -51,6 +52,7 @@ struct VideoDefinition
 	QString URL;		//!< real video URL
 	QString title;		//!< video title
 	QString extension;	//!< video extension (default = flv)
+	bool needLogin;		//!< flag for know if this video need a login
 };
 
 class VideoItem : public QObject
@@ -127,6 +129,8 @@ Q_OBJECT
 		bool isResuming();
 		/*! Get if is reported */
 		bool isReported();
+		/*! Get if need login */
+		bool needLogin();
 		/*! Get the internal ID */
 		int getID();
 		/*! Get the display label */
@@ -203,6 +207,8 @@ Q_OBJECT
 		void setAsResuming(QObject *who = NULL);
 		/*! Set as Reported */
 		void setAsReported(QObject *who = NULL);
+		/*! Set as Need login */
+		void setAsNeedLogin(QObject *who = NULL);
 		/*! Init a VideoDefinition structure */
 		static void initVideoDefinition(VideoDefinition &videoDef);
 };

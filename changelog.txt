@@ -12,6 +12,7 @@
 - Added "Help messages" (accessible from "?" button)
 - Added "Accessible information" usable for people with disabilities
 - Added possibility to delete videos pressing the "delete" key
+- Added detection of "Need login" videos
 
 - Revised 4 services:
     - YouTube (added support for embeded videos)

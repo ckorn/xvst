@@ -94,7 +94,8 @@ void SessionManager::loadSession(VideoListController *videoListController)
 		videoInformation.title = settings.value(videos.at(n) + "/VIDEO_title", "").toString();
 		videoItem->setVideoInformation(videoInformation);
 		if (videoItem->hasErrors()) videoItem->setAsReported();
-		if (!videoItem->isReady() && !videoItem->isNULL() && !QFile::exists(videoItem->getVideoFile())) continue;
+		if (!videoItem->isReady() && !videoItem->isNULL() && !videoItem->isCanceled()
+			&& !QFile::exists(videoItem->getVideoFile())) continue;
 		videoListController->addVideo(videoItem);
 	}
 }

@@ -140,10 +140,15 @@ void VideoInformation::run()
 			// canceled?
 			if (videoItem == NULL) return;
 
-			videoItem->setVideoInformation(info, this);
-			videoItem->setVideoFile(videoItem->getVideoInformation().title + info.extension, this);
+			if (info.needLogin)
+				videoItem->setAsNeedLogin(this);
+			else
+			{
+				videoItem->setVideoInformation(info, this);
+				videoItem->setVideoFile(videoItem->getVideoInformation().title + info.extension, this);
 
-			videoItem->setAsGettedURL(this);
+				videoItem->setAsGettedURL(this);
+			}
 		}
 	}
 	else
@@ -382,6 +387,8 @@ VideoDefinition VideoInformation_Youtube::getVideoInformation(const QString URL)
 	result.title = copyBetween(html, "<title>YouTube - ", "</title>").trimmed();
 	// build the video url
 	result.URL = URL_GET_FLV.arg(QUrl(youTubeURL).host()).arg(vidID).arg(vidHash);
+	// check if this video need a login
+	result.needLogin = result.title == "Broadcast Yourself.";
 	// return the video information
 	return result;
 }
