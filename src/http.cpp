@@ -695,6 +695,9 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 	if (isObjectMoved(resp.statusCode()) && autoJump)
 		jumpToURL(QUrl(resp.value("location")));
 	else
+		// if the response is distinct to 200 and 206 or
+		// the response is 200 and we are resuming? then the server do not support resuming
+		// files, so... start again the download...
 		if ((resp.statusCode() != 200 && resp.statusCode() != 206) || 
 			(resuming && resp.statusCode() == 200))
 		{
