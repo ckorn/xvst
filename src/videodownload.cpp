@@ -61,10 +61,10 @@ void DownloadItem::startDownload()
 	videoItem->lock (this);
 	videoItem->setAsDownloading(this);
 	videoItem->setProgress(0, this);
-	// start download video
-	if (int er = http->download(QUrl(videoItem->getVideoInformation().URL),
-		QDir(parent->getDownloadDir()), videoItem->getVideoFile()) != 0)
-		downloadError(er);
+	// start download
+	int er = http->download(QUrl(videoItem->getVideoInformation().URL), 
+		QDir(parent->getDownloadDir()), videoItem->getVideoFile());
+	if (er != 0) downloadError(er);
 }
 
 void DownloadItem::pauseDownload()
@@ -79,9 +79,8 @@ void DownloadItem::resumeDownload()
 	videoItem->lock (this);
 	videoItem->setAsDownloading(this);
 	// resume download
-	if (int er = http->resume(QUrl(videoItem->getVideoInformation().URL), 
-		videoItem->getVideoFile()) != 0)
-		downloadError(er);
+	int er = http->resume(QUrl(videoItem->getVideoInformation().URL), videoItem->getVideoFile());
+	if (er != 0) downloadError(er);
 }
 
 void DownloadItem::cancelDownload()
@@ -125,7 +124,8 @@ void DownloadItem::downloadCanceled()
 }
 
 void DownloadItem::downloadError(int error)
-{	
+{	qDebug() << error;
+	videoItem->setErrorCode(error, this);	
 	videoItem->setAsError(this);
 	workFinished();
 }

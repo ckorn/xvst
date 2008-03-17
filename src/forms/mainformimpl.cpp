@@ -433,7 +433,7 @@ void MainFormImpl::addVideoClicked()
 
 void MainFormImpl::deleteVideoClicked()
 {
-	videoList->deleteVideo(getSelectedVideoItem());
+	videoList->deleteVideo(getSelectedVideoItem(), true);
 }
 
 void MainFormImpl::startDownloadVideoClicked()
@@ -481,10 +481,13 @@ void MainFormImpl::cancelDownloadVideoClicked()
 
 	// we have a video to cancel?
 	if (videoItem != NULL)
-	{
-		videoList->cancelDownload(videoItem);
-		btnCancelDownload->setEnabled(false);
-	}
+		if (QMessageBox::question(this, tr("Cancel download"),
+			tr("Wish you Cancel the download of <b>%1</b>?").arg(videoItem->getDisplayLabel()),
+			tr("Yes"), tr("No"), QString(), 0, 1) == 0)
+		{
+			videoList->cancelDownload(videoItem);
+			btnCancelDownload->setEnabled(false);
+		}
 }
 
 void MainFormImpl::moreOptionsClicked()
@@ -511,7 +514,7 @@ void MainFormImpl::moreOptionsClicked()
 
 void MainFormImpl::clearListClicked()
 {
-	videoList->clear();
+	videoList->clear(true);
 
 	updateVisualControls();
 }
@@ -636,12 +639,19 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 	item->setText(3, videoItem->getDisplayTimeRemaining());
 	item->setText(4, videoItem->getDisplayDownloadSpeed());
 
+	// set hints
 	item->setToolTip(0, videoItem->getDisplayLabel());
+	// if is being converted, then display the "%"
 	if (videoItem->isDownloading() || videoItem->isConverting())
 		item->setToolTip(2, videoItem->getVideoStateAsString() + " (" + videoItem->getDisplayProgress() + ")");
+	// if has errors, then display the error message
+	else if (videoItem->hasErrors())
+		item->setToolTip(2, videoItem->getErrorMessage());
+	// do not display anything...
 	else
 		item->setToolTip(2, "");
 
+	// if this video need a login, then display a "lock image"
 	if (videoItem->needLogin())
 		item->setIcon(2, QIcon(":/buttons/images/lock.png"));
 
@@ -663,26 +673,32 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 
 void MainFormImpl::videoError(VideoItem *videoItem)
 {
-	// error form
-	if (videoItem->hasErrors() && !videoItem->isReported() && programOptions->getDisplayBugReport())
-	{
-		// mark as reported				
-		videoItem->setAsReported();
+	if (videoItem == NULL) return;
+	if (videoItem->isReported() || !videoItem->hasErrors()) return;
 
-		// display the main form if it is not visible
-		if (!isVisible()) restoreAppClicked();
-		// update tray icon
-		QString trayIconStr = ":/icons/images/film_error.png";
-		trayIcon->setIcon(QIcon(trayIconStr));
-		lastTrayIconStr = trayIconStr;
-	
-		// display error report form
-		BugReportImpl errorReport(programOptions, this);
-		errorReport.fillErrorInfo(videoItem, videoList->getVideoInformation());
-		errorReport.exec();
+	// mark as reported				
+	videoItem->setAsReported();
+
+	// error form
+	if (programOptions->getDisplayBugReport())
+	{
+		// display only the "Bug report" only if is a connection error
+		if (videoItem->getErrorCode() > 0 && videoItem->getErrorCode() < 20)
+		{
+			// display the main form if it is not visible
+			if (!isVisible()) restoreAppClicked();
+			
+			// update tray icon
+			QString trayIconStr = ":/icons/images/film_error.png";
+			trayIcon->setIcon(QIcon(trayIconStr));
+			lastTrayIconStr = trayIconStr;
+		
+			// display error report form
+			BugReportImpl errorReport(programOptions, this);
+			errorReport.fillErrorInfo(videoItem, videoList->getVideoInformation());
+			errorReport.exec();
+		}
 	}
-	else
-		videoItem->setAsReported();
 
 	// update the visual controls
 	updateVisualControls();
