@@ -101,6 +101,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actResetState, SIGNAL(triggered()), this, SLOT(resetStateClicked())); // actResetState (clicked)
 	connect(actStayOnTop, SIGNAL(triggered()), this, SLOT(stayOnTopClicked())); // actStayOnTop (clicked)
 	connect(actMinimizeToSystemTray, SIGNAL(triggered()), this, SLOT(minimizeToSystemTrayClicked())); // actMinimizeToSystemTray (clicked)
+	connect(actViewErrorMessage, SIGNAL(triggered()), this, SLOT(viewErrorMessageClicked())); // actViewErrorMessage (clicked)
 	// edtDownloadDir
 	connect(edtDownloadDir, SIGNAL(textChanged(const QString &)), this, SLOT(edtDownloadDirChanged(const QString &)));
 	// connect buttons
@@ -560,6 +561,17 @@ void MainFormImpl::minimizeToSystemTrayClicked()
 	programOptions->setMinimizeToSystemTray(actMinimizeToSystemTray->isChecked());
 }
 
+void MainFormImpl::viewErrorMessageClicked()
+{
+	VideoItem *videoItem = getSelectedVideoItem();
+
+	if (videoItem != NULL)
+		QMessageBox::information(this, 
+		tr("Error message"),
+		tr("This video has the following error:<br><br><b>%1</b>").arg(videoItem->getErrorMessage()), 
+		tr("Ok"));
+}
+
 void MainFormImpl::downloadAutomaticallyStateChanged(int state)
 {
 	programOptions->setCanSendUpdateSignal(false);
@@ -795,6 +807,14 @@ VideoItem* MainFormImpl::getSelectedVideoItem()
 		return NULL;
 }
 
+VideoItem* MainFormImpl::getVideoItemByQTreeWidgetItem(QTreeWidgetItem* treeItem)
+{
+	if (treeItem != NULL)
+		return videoList->getVideoItemFromQVAriant(treeItem->data(0, Qt::UserRole));
+	else
+		return NULL;
+}
+
 // options controls
 void MainFormImpl::updateVisualOptions()
 {
@@ -960,11 +980,26 @@ void MainFormImpl::videoItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *p
 void MainFormImpl::videoListContextMenu(const QPoint & pos)
 {
 	QTreeWidgetItem *item = lsvDownloadList->itemAt(pos);
+	VideoItem *videoItem = getVideoItemByQTreeWidgetItem(item);
 
-	if (item != NULL)
+	if (item != NULL && videoItem != NULL)
 	{
 		QMenu *videoItemMenu = new QMenu(this);
-		videoItemMenu->addAction(actPlayVideo);
+		
+		// the default video is the "View error message" cuz has an error
+		if (videoItem->hasErrors()) 
+		{
+			videoItemMenu->addAction(actViewErrorMessage);
+			// set defaut
+			videoItemMenu->setDefaultAction(actViewErrorMessage);
+		}
+		else // the default action is the "PLAY video"
+		{
+			videoItemMenu->addAction(actPlayVideo);	
+			// set defaut
+			videoItemMenu->setDefaultAction(actPlayVideo);
+		}
+		// add the rest of actions
 		videoItemMenu->addSeparator();
 		videoItemMenu->addAction(actAddVideo);
 		videoItemMenu->addAction(actDeleteVideo);
@@ -980,8 +1015,7 @@ void MainFormImpl::videoListContextMenu(const QPoint & pos)
 		videoItemMenu->addSeparator();
 		videoItemMenu->addAction(actClearList);
 		videoItemMenu->addAction(actClearCompleted);
-		// set defaut
-		videoItemMenu->setDefaultAction(actPlayVideo);
+
 		// update move up/down actions
 		actMoveUP->setEnabled(lsvDownloadList->topLevelItem(0) != item);
 		actMoveDOWN->setEnabled(lsvDownloadList->topLevelItem(lsvDownloadList->topLevelItemCount() - 1) != item);

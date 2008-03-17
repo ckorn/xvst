@@ -63,6 +63,7 @@ void SessionManager::saveSession(VideoListController *videoListController)
 				settings.setValue("videoState", vsDownloaded);
 			else
 				settings.setValue("videoState", videoItem->getVideoState());
+			settings.setValue("errorCode", videoItem->getErrorCode());
 			settings.setValue("videoSize", videoItem->getVideoSize());
 			settings.setValue("videoProgress", videoItem->getProgress());
 			settings.setValue("VIDEO_URL", videoItem->getVideoInformation().URL);
@@ -89,6 +90,7 @@ void SessionManager::loadSession(VideoListController *videoListController)
 		videoItem->setState(static_cast<VideoState>(settings.value(videos.at(n) + "/videoState", 0).toInt()));
 		videoItem->setVideoSize(settings.value(videos.at(n) + "/videoSize", 0).toInt());
 		videoItem->setProgress(settings.value(videos.at(n) + "/videoProgress", 0).toDouble());
+		videoItem->setErrorCode(settings.value(videos.at(n) + "/errorCode", 0).toInt());
 		VideoDefinition videoInformation;
 		videoInformation.URL = settings.value(videos.at(n) + "/VIDEO_URL", "").toString();
 		videoInformation.title = settings.value(videos.at(n) + "/VIDEO_title", "").toString();

@@ -14,6 +14,7 @@
 - Added possibility to delete videos pressing the "delete" key
 - Added detection of "Need login" videos
 - Added more exlicit error messages
+- Added "View error message" option on found errors
 
 - Revised 5 services:
     - YouTube (added support for embeded videos)

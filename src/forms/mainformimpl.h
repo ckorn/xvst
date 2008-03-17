@@ -73,6 +73,7 @@ Q_OBJECT
 		// lsvDownloadList functions
 		QTreeWidgetItem* getQTreeWidgetItemByVideoItem(VideoItem *videoItem);
 		VideoItem *getSelectedVideoItem();
+		VideoItem *getVideoItemByQTreeWidgetItem(QTreeWidgetItem* treeItem);
 		// visual controls update
 		void updateVisualControls();
 		// Session manager
@@ -119,6 +120,7 @@ Q_OBJECT
 		void playVideoClicked();
 		void stayOnTopClicked();
 		void minimizeToSystemTrayClicked();
+		void viewErrorMessageClicked();
 		void downloadAutomaticallyStateChanged(int state);
 		void convertVideosStateChanged(int state);
 		void edtDownloadDirChanged(const QString &text);

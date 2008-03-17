@@ -964,6 +964,14 @@
     <string>Pause download</string>
    </property>
   </action>
+  <action name="actViewErrorMessage" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/icons/images/film_error.png</iconset>
+   </property>
+   <property name="text" >
+    <string>View error message</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
   <tabstop>btnAddVideo</tabstop>
