@@ -196,12 +196,14 @@ void xProgressBar::paint()
 	// calculate progress value
 	int preWidth = static_cast<int>((rect.width() - 1 - hSpan)*(progressValue/100));
 	int progressWidth = rect.width() - preWidth;
-	if (progressWidth == rect.width() - hSpan) return;
 
-	// paint the progress
-	painter->setBrush(linearGrad);
-	painter->drawRect(rect.x() + hSpan, rect.y() + vSpan, rect.width() - progressWidth - hSpan, rect.height() - 1 - vSpan * 2);
-	
+	// paint the progress (only if have somethin to paint...)
+	if (progressWidth != rect.width() - hSpan)
+	{
+		painter->setBrush(linearGrad);
+		painter->drawRect(rect.x() + hSpan, rect.y() + vSpan, rect.width() - progressWidth - hSpan, rect.height() - 1 - vSpan * 2);
+	}
+
 	// paint text?
 	if (displayText)
 	{
