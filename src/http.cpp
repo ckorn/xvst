@@ -171,6 +171,9 @@ Http::Http(bool useInternalTimer)
 	// init internal timer
 	internalTimer = 0;
 	this->useInternalTimer = useInternalTimer;
+	// default max retries
+	maxRetries = 3;
+	initRetriesData();
 	// destination file
 	file = NULL;
 	// cancel or pause on finish?
@@ -211,8 +214,6 @@ void Http::initData()
 	fileSize = 0;
 	notLength = false;
 
-	//cookies->clear();
-
 	oriURL.clear();
 
 	autoJump = true;
@@ -224,6 +225,11 @@ void Http::initData()
 	syncFlag = false;
 	data = "";
 	parameters = "";
+}
+
+void Http::initRetriesData()
+{
+	retriesCount = 0;
 }
 
 void Http::initTimer()
@@ -363,6 +369,9 @@ int Http::download(const QUrl URL, const QDir destination, QString fileName, boo
 
 	// start internal timer
 	initTimer();
+
+	// +1 to retries count
+	retriesCount++;
 
 	// start the download process
 	jumpToURL(URL);
@@ -560,6 +569,11 @@ QFileInfo Http::getDestiationFile()
 	return destFile;
 }
 
+void Http::setMaxRetries(int value)
+{
+	maxRetries = value;
+}
+
 void Http::dataReadProgress(int done, int total)
 {
 	totalDownload = realTotalSize != 0 ? realTotalSize : total;
@@ -594,7 +608,7 @@ void Http::requestFinished(int id, bool error)
 				// abort all (and clear pending requests)
 				http->clearPendingRequests();
 				// if is an "auto-abort" for restart the download then do not send the error signal
-				if (restartDownload)
+				if (restartDownload || (!restartDownload && retriesCount < maxRetries))
 					QTimer::singleShot(100, this, SLOT(restartDownloadSignal()));
 				else
 					// send error signal
@@ -614,7 +628,10 @@ void Http::requestFinished(int id, bool error)
 				emit downloadError(INVALID_FILE_SIZE);
 			}
 			else
+			{
+				initRetriesData();			
 				emit downloadFinished(destFile);
+			}
 
 		// finish timer
 		deinitTimer();
@@ -632,8 +649,6 @@ void Http::requestFinished(int id, bool error)
 		// disable the sync flag
 		syncFlag = false;
 	}
-	// post method off
-	//postMethodFlag = false;
 }
 
 void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
@@ -696,6 +711,8 @@ void Http::stateChanged(int state)
 
 void Http::restartDownloadSignal()
 {
+	qDebug() << "restartDownloadSignal()" << restartDownload << retriesCount;
+
 	download(oriURL, destFile.dir(), destFile.fileName(), false);
 }
 

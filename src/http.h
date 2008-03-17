@@ -143,8 +143,12 @@ Q_OBJECT
 		bool postMethodFlag;		//!< post method flag
 		QString data;				//!< internal downloaded data
 		QString parameters;			//!< internal post parameters
+		int maxRetries;				//!< maximum retries for session (each download is a session)
+		int retriesCount;			//!< current retries in this session (each download is a session)
 		/*! Init the internal http data */
 		void initData();
+		/*! Init retries data */
+		void initRetriesData();
 		/*! Start timer */
 		void initTimer();
 		/*! Stop timer */
@@ -191,6 +195,8 @@ Q_OBJECT
 		int getTimeRemaining();
 		/*! Get the destination file name */
 		QFileInfo getDestiationFile();
+		/*! Set the max retries */
+		void setMaxRetries(int value);
 	private slots:
 		/*! when the http protocol read data */
 		void dataReadProgress(int done, int total);
