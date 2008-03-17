@@ -60,6 +60,7 @@ void VideoItem::assign(VideoItem *videoItem)
 	videoInfo.URL = videoItem->getVideoInformation().URL;
 	videoInfo.title = videoItem->getVideoInformation().title;
 	reported = videoItem->isReported();
+	errorCode = videoItem->getErrorCode();
 }
 
 void VideoItem::initData()
@@ -75,6 +76,7 @@ void VideoItem::initData()
 	videoInfo.URL = "";
 	videoInfo.title = "";
 	reported = false;
+	errorCode = 0;
 }
 
 void VideoItem::assignID()
@@ -337,6 +339,38 @@ int VideoItem::getTimeRemaining()
 	return timeRemaining;
 }
 
+int VideoItem::getErrorCode()
+{
+	return errorCode;
+}
+
+QString VideoItem::getErrorMessage()
+{
+	switch (errorCode)
+	{
+		//00 NO_ERROR
+		case 00: return "";
+		//20 UNABLE_CREATE_DIR
+		case 20: return tr("Unable to create the destination dir");
+		//21 UNABLE_CREATE_FILE
+		case 21: return tr("Unable to create the destination file");
+		//22 INVALID_URL
+		case 22: return tr("Invalid URL");
+		//23 ALREADY_DOWNLOADING
+		case 23: return tr("An another download is already active");
+		//24 INVALID_FILE_SIZE
+		case 24: return tr("Invalid file size");
+		//25 MISSING_RESUME_FILE
+		case 25: return tr("The video to resume is missing");
+		//26 UNABLE_RESUME_DOWNLOAD
+		case 26: return tr("Unable resume the download");
+		//27 UNABLE_APPEND_FILE
+		case 27: return tr("Unable append data to file");
+		// other errors, are "download errors"
+		default: return tr("Connection error: Unable to download the video");
+	}
+}
+
 void VideoItem::setVideoInformation(VideoDefinition videoInformation, QObject *who)
 {
 	if (isLocked() && who != locker) return;
@@ -400,6 +434,12 @@ void VideoItem::setTimeRemaining(int timeRemaining, QObject *who)
 		timeRemaining = 0;
 	// set value
 	this->timeRemaining = timeRemaining;
+}
+
+void VideoItem::setErrorCode(int errorCode, QObject *who)
+{
+	if (isLocked() && who != locker) return;
+	this->errorCode = errorCode;
 }
 
 void VideoItem::setState(VideoState videoState, QObject *who)

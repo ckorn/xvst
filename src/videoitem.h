@@ -65,6 +65,7 @@ Q_OBJECT
 		QString URL;				//!< initial video url (i.e.: http://youtube.com/watch?v=AzXR58sd2jY)
 		QString videoFile;			//!< downloaded file (*.flv)
 		QString videoFileSavedTo;	//!< where to find the final video
+		int errorCode;				//!< what error is (if exsit an error)
 		float progress;				//!< current action progress (downloading/converting)
 		int videoSize;				//!< video file size in bytes
 		int downloadSpeed;			//!< current downoad speed
@@ -159,6 +160,10 @@ Q_OBJECT
 		int getDownloadSpeed();
 		/*! Get time remaingin */
 		int getTimeRemaining();
+		/*! Get the error code */
+		int getErrorCode();
+		/*! Get the error as String */
+		QString getErrorMessage();
 		/*! Set the video information */
 		void setVideoInformation(VideoDefinition videoInformation, QObject *who = NULL);
 		/*! Set video file */
@@ -173,6 +178,8 @@ Q_OBJECT
 		void setDownloadSpeed(int downloadSpeed, QObject *who = NULL);
 		/*! Set the time remaining */
 		void setTimeRemaining(int timeRemaining, QObject *who = NULL);
+		/*! Set the error code */
+		void setErrorCode(int errorCode, QObject *who = NULL);
 		/*! Set state */
 		void setState(VideoState videoState, QObject *who = NULL);
 		/*! Set as NULL */
