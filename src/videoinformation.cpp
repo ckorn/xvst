@@ -1677,7 +1677,6 @@ VideoDefinition VideoInformation_IndiaVideoBomb::getVideoInformation(const QStri
 	// get the video ID
 	QString vID = copyBetween(html, "vID=", "\"").trimmed();
 	// get the video info
-	qDebug() << vID;
 	//QString flvData = http.downloadWebpagePost(QUrl(URL), vID);
 	// get the flv url
 	//qDebug() << flvData;
@@ -1748,8 +1747,6 @@ VideoDefinition VideoInformation_Gametrailers::getVideoInformation(const QString
 	result.URL = copyBetween(result.URL, "href=\"", "\""); 
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
-
-	qDebug() << result.URL;
 	// return the video information
 	return result;
 }
