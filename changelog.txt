@@ -6,14 +6,14 @@
 - Added "Minimize to System tray" option (accessible from trayIcon->Options->Minimize to System tray)
 - Added "Paste URL from Clipboard" button in "Add Video" form
 - Added "Time Remaining" for video conversions
-- Added After a new instalation, the program check for new updates
+- Added After a new installation, the program check for new updates
 - Added "Support this project" button in "Information" form
 - Added "Information" panel in main form (Display items count, downloading count and total download speed)
 - Added "Help messages" (accessible from "?" button)
 - Added "Accessible information" usable for people with disabilities
 - Added possibility to delete videos pressing the "delete" key
 - Added detection of "Need login" videos
-- Added more exlicit error messages
+- Added more explicit error messages
 - Added "View error message" option on found errors
 - Added link to "GNU GPL" licence website (in credits form)
 
@@ -23,7 +23,7 @@
     - Tudou
 
 - Revised 6 services:
-    - YouTube (added support for embeded videos and added "need login" detection)
+    - YouTube (added support for embedded videos and added "need login" detection)
     - Tu.tv (added "need login" detection)
     - Metacafe
     - PornoTube
@@ -43,11 +43,12 @@
 
 - Improved error detection (the "Bug report" is only displayed if is a "Connection error" or "Invalid url")
 - Improved the "ProgressBar class" (now is more configurable)
-- Improved internal "HTTP implementation" (full class rewrited)
+- Improved internal "HTTP implementation" (full class rewritten)
 
-- Updated english (UK) language file
+- Updated English (UK) language file
 - Updated Spanish (ES) language file
-- Updated Catalan (CAT) language file 
+- Updated Catalan (CAT) language file
+
 
 1.7.1a:
 -------
