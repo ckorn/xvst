@@ -5,20 +5,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>462</width>
-    <height>496</height>
+    <width>435</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize" >
    <size>
-    <width>462</width>
-    <height>496</height>
+    <width>335</width>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize" >
    <size>
-    <width>462</width>
-    <height>496</height>
+    <width>435</width>
+    <height>500</height>
    </size>
   </property>
   <property name="windowTitle" >
@@ -28,7 +28,7 @@
    <iconset resource="../resources/resources.qrc" >:/buttons/images/information.png</iconset>
   </property>
   <layout class="QGridLayout" >
-   <item row="0" column="0" >
+   <item row="0" column="0" colspan="4" >
     <widget class="QFrame" name="frameHeader" >
      <property name="styleSheet" >
       <string>QFrame{
@@ -43,7 +43,7 @@ background: white;
      </property>
      <layout class="QGridLayout" >
       <item row="0" column="0" >
-       <widget class="QLabel" name="imgIcon" >
+       <widget class="QLabel" name="imgIcon_2" >
         <property name="maximumSize" >
          <size>
           <width>125</width>
@@ -60,9 +60,6 @@ background: white;
       </item>
       <item row="0" column="1" >
        <layout class="QVBoxLayout" >
-        <property name="spacing" >
-         <number>2</number>
-        </property>
         <item>
          <widget class="QLabel" name="lblHeader" >
           <property name="text" >
@@ -77,102 +74,99 @@ background: white;
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" >
+         <widget class="Line" name="line" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" >
           <property name="spacing" >
-           <number>0</number>
+           <number>4</number>
           </property>
           <item>
-           <layout class="QHBoxLayout" >
-            <property name="spacing" >
-             <number>10</number>
+           <widget class="QLabel" name="lblProgramVersionTitle" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <item>
-             <widget class="QLabel" name="lblProgramVersionTitle" >
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text" >
-               <string>Program version:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="lblProgramVersion" >
-              <property name="font" >
-               <font/>
-              </property>
-              <property name="text" >
-               <string/>
-              </property>
-             </widget>
-            </item>
-           </layout>
+            <property name="text" >
+             <string>Program version:</string>
+            </property>
+           </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" >
-            <property name="spacing" >
-             <number>10</number>
+           <widget class="QLabel" name="lblProgramVersion" >
+            <property name="font" >
+             <font/>
             </property>
-            <item>
-             <widget class="QLabel" name="lblLanguageTitle" >
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text" >
-               <string>Language:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="lblLanguage" >
-              <property name="font" >
-               <font/>
-              </property>
-              <property name="text" >
-               <string>&lt;b>English (UK)&lt;/b></string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+            <property name="text" >
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblLanguageTitle" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text" >
+             <string>Language:</string>
+            </property>
+           </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" >
-            <property name="spacing" >
-             <number>10</number>
+           <widget class="QLabel" name="lblLanguage" >
+            <property name="font" >
+             <font/>
             </property>
-            <item>
-             <widget class="QLabel" name="lblURLTitle" >
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text" >
-               <string>Homepage:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="lblURL" >
-              <property name="frameShadow" >
-               <enum>QFrame::Plain</enum>
-              </property>
-              <property name="text" >
-               <string>&lt;a href="http://xviservicethief.sourceforge.net/">http://xviservicethief.sourceforge.net/&lt;/a></string>
-              </property>
-              <property name="openExternalLinks" >
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
+            <property name="text" >
+             <string>&lt;b>English (UK)&lt;/b></string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblURLTitle" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text" >
+             <string>Homepage:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblURL" >
+            <property name="text" >
+             <string>&lt;a href="http://xviservicethief.sourceforge.net/">http://xviservicethief.sourceforge.net/&lt;/a></string>
+            </property>
+            <property name="openExternalLinks" >
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -181,7 +175,7 @@ background: white;
      </layout>
     </widget>
    </item>
-   <item row="1" column="0" >
+   <item row="1" column="0" colspan="4" >
     <widget class="QLabel" name="lblInformation" >
      <property name="text" >
       <string>xVideoServiceThief is a tool for downloading your favourite video clips from a lot of video websites.
@@ -196,14 +190,14 @@ xVideoServiceThief also provide you the ability to convert each video in most po
      </property>
     </widget>
    </item>
-   <item row="2" column="0" >
+   <item row="2" column="0" colspan="4" >
     <widget class="QLabel" name="lblWebsitesTitle" >
      <property name="text" >
       <string>&lt;b>xVideoServiceThief currently supports download from:&lt;/b></string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0" >
+   <item row="3" column="0" colspan="4" >
     <widget class="QTextBrowser" name="rchServices" >
      <property name="whatsThis" >
       <string>List of supported services</string>
@@ -225,120 +219,109 @@ font-size:12px;
      </property>
     </widget>
    </item>
-   <item row="4" column="0" >
-    <layout class="QVBoxLayout" >
-     <property name="spacing" >
-      <number>4</number>
+   <item row="4" column="0" colspan="4" >
+    <widget class="Line" name="bvlSeparator" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
      </property>
-     <item>
-      <widget class="Line" name="bvlSeparator" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" >
-       <item>
-        <widget class="QLabel" name="imgSupport" >
-         <property name="cursor" >
-          <cursorShape>ArrowCursor</cursorShape>
-         </property>
-         <property name="toolTip" >
-          <string>Make a donation to &lt;b>xVideoServiceThief&lt;/b>!</string>
-         </property>
-         <property name="whatsThis" >
-          <string>Make a donation to &lt;b>xVideoServiceThief&lt;/b> via Paypal! It's easy and fast! :)</string>
-         </property>
-         <property name="accessibleName" >
-          <string>Support button</string>
-         </property>
-         <property name="accessibleDescription" >
-          <string>Make a donation to &lt;b>xVideoServiceThief&lt;/b> via Paypal! It's easy and fast! :)</string>
-         </property>
-         <property name="pixmap" >
-          <pixmap resource="../resources/resources.qrc" >:/buttons/images/support_button.png</pixmap>
-         </property>
-         <property name="openExternalLinks" >
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer>
-         <property name="orientation" >
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" >
-          <size>
-           <width>121</width>
-           <height>25</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnCredits" >
-         <property name="minimumSize" >
-          <size>
-           <width>106</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="whatsThis" >
-          <string>Display the credits dialog</string>
-         </property>
-         <property name="accessibleName" >
-          <string>Credits button</string>
-         </property>
-         <property name="accessibleDescription" >
-          <string>Display the credits dialog</string>
-         </property>
-         <property name="text" >
-          <string>Credits...</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnAddVideo" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize" >
-          <size>
-           <width>106</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="whatsThis" >
-          <string>Close the Information dialog</string>
-         </property>
-         <property name="accessibleName" >
-          <string>Close button</string>
-         </property>
-         <property name="accessibleDescription" >
-          <string>Close the Information dialog</string>
-         </property>
-         <property name="text" >
-          <string>Close</string>
-         </property>
-         <property name="default" >
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
+    </widget>
+   </item>
+   <item row="5" column="0" >
+    <widget class="QLabel" name="imgSupport" >
+     <property name="cursor" >
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="toolTip" >
+      <string>Make a donation to &lt;b>xVideoServiceThief&lt;/b>!</string>
+     </property>
+     <property name="whatsThis" >
+      <string>Make a donation to &lt;b>xVideoServiceThief&lt;/b> via Paypal! It's easy and fast! :)</string>
+     </property>
+     <property name="accessibleName" >
+      <string>Support button</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Make a donation to &lt;b>xVideoServiceThief&lt;/b> via Paypal! It's easy and fast! :)</string>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="../resources/resources.qrc" >:/buttons/images/support_button.png</pixmap>
+     </property>
+     <property name="openExternalLinks" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>121</width>
+       <height>25</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="2" >
+    <widget class="QPushButton" name="btnCredits" >
+     <property name="minimumSize" >
+      <size>
+       <width>106</width>
+       <height>25</height>
+      </size>
+     </property>
+     <property name="whatsThis" >
+      <string>Display the credits dialog</string>
+     </property>
+     <property name="accessibleName" >
+      <string>Credits button</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Display the credits dialog</string>
+     </property>
+     <property name="text" >
+      <string>Credits...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="3" >
+    <widget class="QPushButton" name="btnAddVideo" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize" >
+      <size>
+       <width>106</width>
+       <height>25</height>
+      </size>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="whatsThis" >
+      <string>Close the Information dialog</string>
+     </property>
+     <property name="accessibleName" >
+      <string>Close button</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Close the Information dialog</string>
+     </property>
+     <property name="text" >
+      <string>Close</string>
+     </property>
+     <property name="default" >
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
