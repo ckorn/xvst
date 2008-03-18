@@ -52,6 +52,7 @@ BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Q
 	trackerReport->addGroup("1.6.1a", "809584");
 	trackerReport->addGroup("1.7a",   "813251");
 	trackerReport->addGroup("1.7.1a", "814954");
+	trackerReport->addGroup("1.8a",   "820796");
 	// signals
 	connect(spbViewInfo, SIGNAL(clicked()), this, SLOT(viewInfoClicked()));
 	connect(btnSend, SIGNAL(clicked()), this, SLOT(sendReportClicked()));
