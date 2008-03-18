@@ -3,7 +3,7 @@ CONFIG += qt \
  debug_and_release \
  console \
  $$[build_mode]
-QTPLUGIN += qjpeg
+//QTPLUGIN += qjpeg
 QT = core gui network
 TEMPLATE = app
 DESTDIR = bin
