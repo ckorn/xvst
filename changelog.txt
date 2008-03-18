@@ -2,6 +2,7 @@
 -----
 
 - Added Multiple simultaneous downloads
+- Added possibility to Pause and Resume downloads
 - Added "Stay always on top" option (accessible from trayIcon->Options->Stay always on top)
 - Added "Minimize to System tray" option (accessible from trayIcon->Options->Minimize to System tray)
 - Added "Paste URL from Clipboard" button in "Add Video" form
