@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>352</width>
-    <height>315</height>
+    <width>392</width>
+    <height>317</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -16,78 +16,95 @@
    <bool>true</bool>
   </property>
   <layout class="QGridLayout" >
-   <item row="0" column="0" >
-    <widget class="QLabel" name="label" >
-     <property name="maximumSize" >
-      <size>
-       <width>116</width>
-       <height>116</height>
-      </size>
-     </property>
-     <property name="text" >
-      <string/>
-     </property>
-     <property name="pixmap" >
-      <pixmap resource="../resources/resources.qrc" >:/header/images/InformationLogo.png</pixmap>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" colspan="2" >
-    <layout class="QVBoxLayout" >
+   <item row="0" column="0" colspan="3" >
+    <layout class="QHBoxLayout" >
      <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" >
+      <widget class="QLabel" name="label" >
+       <property name="maximumSize" >
         <size>
-         <width>20</width>
-         <height>16</height>
+         <width>116</width>
+         <height>116</height>
         </size>
        </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_2" >
        <property name="text" >
-        <string>Powered by &lt;b>Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b>&lt;br>Contact: &lt;a href="mailto:xeskuu.xvst@gmail.com">xeskuu.xvst@gmail.com&lt;/a></string>
+        <string/>
        </property>
-       <property name="alignment" >
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="openExternalLinks" >
-        <bool>true</bool>
+       <property name="pixmap" >
+        <pixmap resource="../resources/resources.qrc" >:/header/images/InformationLogo.png</pixmap>
        </property>
       </widget>
      </item>
      <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>20</width>
-         <height>16</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_4" >
-       <property name="text" >
-        <string>This software is OpenSource and is licenced under &lt;a href="http://www.gnu.org/licenses/gpl.html">&lt;b>GNU GPL&lt;/b>&lt;/a> licence (General Public Licence)</string>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="wordWrap" >
-        <bool>true</bool>
-       </property>
-       <property name="openExternalLinks" >
-        <bool>true</bool>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" >
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>239</width>
+           <height>16</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2" >
+         <property name="text" >
+          <string>Powered by &lt;b>Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b>&lt;br>Contact: &lt;a href="mailto:xeskuu.xvst@gmail.com">xeskuu.xvst@gmail.com&lt;/a></string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="openExternalLinks" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>239</width>
+           <height>16</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4" >
+         <property name="text" >
+          <string>This software is OpenSource and is licenced under &lt;a href="http://www.gnu.org/licenses/gpl.html">&lt;b>GNU GPL&lt;/b>&lt;/a> licence (General Public Licence)</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+         <property name="openExternalLinks" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>16</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
