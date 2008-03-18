@@ -446,6 +446,36 @@ class VideoInformation_YourFileHost : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for IndiaVideo Bomb Videos */
+class VideoInformation_IndiaVideoBomb : public VideoInformation_plugin
+{
+	public:
+		/*! IndiaVideo Bomb plugin class constructor */
+		VideoInformation_IndiaVideoBomb(VideoInformation *videoInformation);
+		/*! Get the full Video Information of IndiaVideo Bomb Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Boingboing TV Videos */
+class VideoInformation_BoingboingTv : public VideoInformation_plugin
+{
+	public:
+		/*! Boingboing TV plugin class constructor */
+		VideoInformation_BoingboingTv(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Boingboing TV Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for Gametrailers Videos */
+class VideoInformation_Gametrailers : public VideoInformation_plugin
+{
+	public:
+		/*! Gametrailers TV plugin class constructor */
+		VideoInformation_Gametrailers(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Gametrailers TV Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

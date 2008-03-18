@@ -203,6 +203,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://www.youtubeislam.com/view_video.php?viewkey=073bc11916c6c1de226b");
 	videoList->addVideo("http://www.yourfilehost.com/media.php?cat=video&file=06411009_niceshirt.wmv");
 	videoList->addVideo("http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=26910554");
+	videoList->addVideo("http://tv.boingboing.net/2008/03/14/russell-porter-with-1.html");
+	videoList->addVideo("http://www.gametrailers.com/player/31902.html");
 */
 /*
 	// adult sites

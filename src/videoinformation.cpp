@@ -71,6 +71,9 @@ VideoInformation::VideoInformation()
 	new VideoInformation_ZanyVideos(this);
 	new VideoInformation_Zaable(this);
 	new VideoInformation_YouTubeIslam(this);
+	//new VideoInformation_IndiaVideoBomb(this);
+	new VideoInformation_BoingboingTv(this);
+	new VideoInformation_Gametrailers(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -1646,6 +1649,106 @@ VideoDefinition VideoInformation_YourFileHost::getVideoInformation(const QString
 	result.URL = copyBetween(html, "videoembed_id=", "&");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for IndiaVideo Bomb videos
+
+VideoInformation_IndiaVideoBomb::VideoInformation_IndiaVideoBomb(VideoInformation *videoInformation)
+{
+	setID("indavideo.hu");
+	setCaption("IndiaVideo Bomb");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_IndiaVideoBomb::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "<title>", "</title>").trimmed();
+	// get the video ID
+	QString vID = copyBetween(html, "vID=", "\"").trimmed();
+	// get the video info
+	qDebug() << vID;
+	//QString flvData = http.downloadWebpagePost(QUrl(URL), vID);
+	// get the flv url
+	//qDebug() << flvData;
+	// clear and get the final url
+	//result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+
+	//http://www.indavideo.hu/video/Cipotisztitas
+}
+
+// Plugin for Boingboing TV Videos
+
+VideoInformation_BoingboingTv::VideoInformation_BoingboingTv(VideoInformation *videoInformation)
+{
+	setID("tv.boingboing.net");
+	setCaption("Boingboing TV");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_BoingboingTv::getVideoInformation(const QString URL)
+{
+	const QString FLV_URL = "http://video.boingboing.net%1";
+
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "<title>", "</title>").trimmed();
+	result.title = result.title.remove("- Boing Boing TV").trimmed();
+	// get flv url
+	result.URL = copyBetween(html, "<embed class=", "</embed>");
+	result.URL = copyBetween(result.URL, "src='", "'");
+	result.URL = result.URL.remove(0, result.URL.indexOf("/video/"));
+	// clear and get the final url
+	result.URL = cleanURL(QString(FLV_URL).arg(result.URL));
+	// return the video information
+	return result;
+}
+
+// Plugin for Gametrailers Videos
+
+VideoInformation_Gametrailers::VideoInformation_Gametrailers(VideoInformation *videoInformation)
+{
+	setID("gametrailers.com");
+	setCaption("GameTrailers");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Gametrailers::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	result.extension = ".wmv";
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "<title>Gametrailers.com -", "</title>").trimmed();
+	// get flv url
+	result.URL = copyBetween(html, ".mov", ">Windows Media");
+	result.URL = copyBetween(result.URL, "href=\"", "\""); 
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+
+	qDebug() << result.URL;
 	// return the video information
 	return result;
 }

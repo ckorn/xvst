@@ -17,9 +17,13 @@
 - Added "View error message" option on found errors
 - Added link to "GNU GPL" licence website (in credits form)
 
+- Added 2 new services:
+    - Boingboing TV
+    - GameTrailers
+
 - Revised 6 services:
-    - YouTube (added support for embeded videos and added need login detection)
-    - Tu.tv (added need login detection)
+    - YouTube (added support for embeded videos and added "need login" detection)
+    - Tu.tv (added "need login" detection)
     - Metacafe
     - PornoTube
     - TuPorno

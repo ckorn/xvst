@@ -90,5 +90,7 @@
         <file>images/services/zaable.com.png</file>
         <file>images/services/zappinternet.com.png</file>
         <file>images/services/zedge.net.png</file>
+        <file>images/services/tv.boingboing.net.png</file>
+        <file>images/services/gametrailers.com.png</file>
     </qresource>
 </RCC>
