@@ -476,6 +476,16 @@ class VideoInformation_Gametrailers : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for Tudou Videos */
+class VideoInformation_Tudou : public VideoInformation_plugin
+{
+	public:
+		/*! Tudou plugin class constructor */
+		VideoInformation_Tudou(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Tudou Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

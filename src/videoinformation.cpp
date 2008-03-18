@@ -74,6 +74,7 @@ VideoInformation::VideoInformation()
 	//new VideoInformation_IndiaVideoBomb(this);
 	new VideoInformation_BoingboingTv(this);
 	new VideoInformation_Gametrailers(this);
+	new VideoInformation_Tudou(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -1749,6 +1750,48 @@ VideoDefinition VideoInformation_Gametrailers::getVideoInformation(const QString
 	result.URL = cleanURL(result.URL);
 
 	qDebug() << result.URL;
+	// return the video information
+	return result;
+}
+
+// Plugin for Tudou Videos
+
+VideoInformation_Tudou::VideoInformation_Tudou(VideoInformation *videoInformation)
+{
+	setID("tudou.com");
+	setCaption("Tudou");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Tudou::getVideoInformation(const QString URL)
+{
+	const QString GET_PLAY_LIST = "http://www.tudou.com/player/v.php?id=%1";
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// create a http instance
+	Http http;
+	QString id;
+	// get the ID (play list method)
+	if (URL.indexOf("/playlist/") != -1)
+		id = QUrl(URL).queryItemValue("iid");
+	// get the ID (simple watch)
+	else 
+	{
+		// get the html
+		QString html = http.downloadWebpage(QUrl(URL));
+		// get the id
+		id = copyBetween(html, "var iid=", ";");
+	}
+	// get the video info
+	QString playList = http.downloadWebpage(QString(GET_PLAY_LIST).arg(id));
+	// get video title
+	result.title = copyBetween(playList, "q='", "'");	
+	// get the flv url
+	result.URL = copyBetween(playList, "<f w='10'>", "</f>");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
 	// return the video information
 	return result;
 }

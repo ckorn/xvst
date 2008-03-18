@@ -205,6 +205,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	videoList->addVideo("http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=26910554");
 	videoList->addVideo("http://tv.boingboing.net/2008/03/14/russell-porter-with-1.html");
 	videoList->addVideo("http://www.gametrailers.com/player/31902.html");
+	videoList->addVideo("http://www.tudou.com/playlist/playindex.do?lid=3105702&iid=15650679");
+	videoList->addVideo("http://www.tudou.com/programs/view/btMyaEXJr4E/");
 */
 /*
 	// adult sites
