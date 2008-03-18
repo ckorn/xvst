@@ -15,6 +15,7 @@
 - Added detection of "Need login" videos
 - Added more exlicit error messages
 - Added "View error message" option on found errors
+- Added link to "GNU GPL" licence website (in credits form)
 
 - Revised 6 services:
     - YouTube (added support for embeded videos and added need login detection)
@@ -23,6 +24,8 @@
     - PornoTube
     - TuPorno
     - LiveLeak
+
+- Changed licence to GNU GPL v3 (http://www.gnu.org/licenses/gpl.html)
 
 - Fixed bug (Error: Disabling the automatic updates, the downloads were not started) 
 - Fixed bug (Error: On restore session, the missing videos where not deleted from list)
