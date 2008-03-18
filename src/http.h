@@ -145,6 +145,7 @@ Q_OBJECT
 		QString parameters;			//!< internal post parameters
 		int maxRetries;				//!< maximum retries for session (each download is a session)
 		int retriesCount;			//!< current retries in this session (each download is a session)
+		bool startedDownload;		//!< flag for know if is downloading (or just redirecting...)
 		/*! Init the internal http data */
 		void initData();
 		/*! Init retries data */

@@ -225,6 +225,8 @@ void Http::initData()
 	syncFlag = false;
 	data = "";
 	parameters = "";
+
+	startedDownload = false;
 }
 
 void Http::initRetriesData()
@@ -585,6 +587,8 @@ void Http::setMaxRetries(int value)
 
 void Http::dataReadProgress(int done, int total)
 {
+	if (!startedDownload) return;
+
 	totalDownload = realTotalSize != 0 ? realTotalSize : total;
 	currDownload = total != 0 ? realStartSize + done : 0;
 
@@ -718,6 +722,8 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 				emit downloadResumed();
 			else
 				emit downloadStarted();
+			// ok, real download started...
+			startedDownload = true;
 		}
 }
 
