@@ -412,7 +412,8 @@ VideoDefinition VideoInformation_Metacafe::getVideoInformation(const QString URL
 	Http http;
 	QString html = http.downloadWebpage(QUrl(URL));
 	// get the video title
-	result.title = copyBetween(html, "<title>", "- Metacafe</title>").trimmed();
+	result.title = copyBetween(html, "<title>", "</title>").trimmed();
+	result.title = result.title.remove("- Metacafe");
 	result.URL = copyBetween(html, "mediaURL=", "&").trimmed();
 	// clean the video URL
 	result.URL = cleanURL(result.URL);
@@ -717,6 +718,7 @@ VideoInformation_LiveVideo::VideoInformation_LiveVideo(VideoInformation *videoIn
 VideoDefinition VideoInformation_LiveVideo::getVideoInformation(const QString URL)
 {
 	const QString URL_GET_XML = "http://www.livevideo.com/media/getflashvideo.ashx?cid=%1&path=%2&mid=%3&t=/image/%4&et=%5&f=flash8&?";
+
 	// init result
 	VideoDefinition result;
 	VideoItem::initVideoDefinition(result);
@@ -1176,11 +1178,19 @@ VideoDefinition VideoInformation_TuTv::getVideoInformation(const QString URL)
 	// download webpage
 	Http http;
 	QString html = http.downloadWebpage(QUrl(URL), false);
-	// +18?
-	if (html.indexOf("txt_alerta") > -1)
+	// +18 without login?
+	if (html.indexOf(">Si<") != -1)
 	{
 		QString confirm_url = copyBetween(html, "<h5 class=\"txt_alerta\"><a href=\"", "\">Si");
 		html = http.downloadWebpage(QUrl(QString(URL_CONFIRM).arg(confirm_url)), false);
+	}
+	// +18 and need login?
+	else if (html.indexOf("<title>Tu.tv - Advertencia de contenido inapropiado</title>") != -1)
+	{
+		// ohms, need login
+		result.needLogin = true;
+		// return the video information
+		return result;
 	}
 	// Get the video title
 	result.title = copyBetween(html, "<title>Tu.tv - Videos -", "</title>").trimmed();

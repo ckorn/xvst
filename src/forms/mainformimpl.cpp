@@ -695,7 +695,8 @@ void MainFormImpl::videoError(VideoItem *videoItem)
 	if (programOptions->getDisplayBugReport())
 	{
 		// display only the "Bug report" only if is a connection error
-		if (videoItem->getErrorCode() > 0 && videoItem->getErrorCode() < 20)
+		if ((videoItem->getErrorCode() > 0 && videoItem->getErrorCode() < 20) ||
+			videoItem->getErrorCode() == 22)
 		{
 			// display the main form if it is not visible
 			if (!isVisible()) restoreAppClicked();

@@ -16,20 +16,21 @@
 - Added more exlicit error messages
 - Added "View error message" option on found errors
 
-- Revised 5 services:
-    - YouTube (added support for embeded videos)
+- Revised 6 services:
+    - YouTube (added support for embeded videos and added need login detection)
+    - Tu.tv (added need login detection)
     - Metacafe
     - PornoTube
     - TuPorno
     - LiveLeak
 
 - Fixed bug (Error: Disabling the automatic updates, the downloads were not started) 
-- Fixed bug (Error: Missing restaured items, where not deleted)
+- Fixed bug (Error: On restore session, the missing videos where not deleted from list)
 
 - Revised and sorted the "Tab orders" into the application for a better accessibility
 - Revised all shortcuts and replaced for Standard and cross-platform shortcuts
 
-- Improved error detection (the "Bug report" is only displayed if is a "Connection error")
+- Improved error detection (the "Bug report" is only displayed if is a "Connection error" or "Invalid url")
 - Improved the "ProgressBar class" (now is more configurable)
 - Improved internal "HTTP implementation" (full class rewrited)
 

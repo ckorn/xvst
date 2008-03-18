@@ -124,7 +124,7 @@ void DownloadItem::downloadCanceled()
 }
 
 void DownloadItem::downloadError(int error)
-{	qDebug() << error;
+{
 	videoItem->setErrorCode(error, this);	
 	videoItem->setAsError(this);
 	workFinished();
