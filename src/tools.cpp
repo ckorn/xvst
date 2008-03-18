@@ -239,7 +239,7 @@ QString cleanURL(QString URL)
 	if (URL.indexOf("?") != -1 && URL.indexOf("%") != -1)
 		if (URL.indexOf("?") < URL.indexOf("%"))
 			return URL;
-		
+
 	// replace hex chars to ascii chars
 	while (URL.indexOf("%") != -1)
 	{
@@ -264,7 +264,13 @@ bool validURL(QString URL)
 QString getPathAndQuery(QUrl URL)
 {
 	QString result = URL.toString();
-	return result.remove("http://" + URL.host()); 
+	// remove the host
+	if (result.indexOf("https://") != 1)
+		result = result.remove("https://" + URL.host());
+	else 
+		result = result.remove("http://" + URL.host());
+	// return the final path and query
+	return QUrl(result).toEncoded();
 }
 
 QString htmlCharToHtmlCode(QString html)
