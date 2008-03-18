@@ -33,6 +33,7 @@
 - Changed licence to GNU GPL v3 (http://www.gnu.org/licenses/gpl.html)
 - Changed main window size
 - Changed Information window size
+- Changed Credits window size
 
 - Fixed bug (Error: Disabling the automatic updates, the downloads were not started) 
 - Fixed bug (Error: On restore session, the missing videos where not deleted from list)
