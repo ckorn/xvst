@@ -236,6 +236,10 @@ int compareVersions(QString version1, QString version2)
 
 QString cleanURL(QString URL)
 {
+	if (URL.indexOf("?") != -1 && URL.indexOf("%") != -1)
+		if (URL.indexOf("?") < URL.indexOf("%"))
+			return URL;
+		
 	// replace hex chars to ascii chars
 	while (URL.indexOf("%") != -1)
 	{
@@ -244,9 +248,6 @@ QString cleanURL(QString URL)
 		URL.replace("%" + hexChar, QString(hexChar.toInt(NULL, 16)));
 	}
 	return URL;
-	
-//	QUrl url = QUrl::fromEncoded(URL.toAscii());
-//	return url.toString();
 }
 
 bool validURL(QString URL)
@@ -262,7 +263,7 @@ bool validURL(QString URL)
 
 QString getPathAndQuery(QUrl URL)
 {
-	QString result = URL.toEncoded();
+	QString result = URL.toString();
 	return result.remove("http://" + URL.host()); 
 }
 
