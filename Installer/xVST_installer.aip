@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT type="Advanced Installer" CreateVersion="5.2.2" version="6.1.1" modules="freeware" RootPath="." Language="en">
+<DOCUMENT type="Advanced Installer" CreateVersion="5.2.2" version="6.2" modules="freeware" RootPath="." Language="en">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="ALLUSERS" Value="2"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
@@ -10,10 +10,10 @@
     <ROW Property="BannerBitmap" Value="default_banner.bmp" Type="1"/>
     <ROW Property="DialogBitmap" Value="default_dialog.bmp" Type="1"/>
     <ROW Property="Manufacturer" Value="Xesc &amp; Technology" ValueLocId="*"/>
-    <ROW Property="ProductCode" Value="1033:{93EF6481-07A9-4B24-AEC8-6CA38615BA87} "/>
+    <ROW Property="ProductCode" Value="1033:{A6385E32-F81A-46F8-A6A2-D8673605FE6B} "/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="xVideoServiceThief" ValueLocId="*"/>
-    <ROW Property="ProductVersion" Value="1.7.1"/>
+    <ROW Property="ProductVersion" Value="1.8"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{FA98D6CA-0AA3-4897-9928-194EC4DEEA4D}"/>
   </COMPONENT>
@@ -28,18 +28,18 @@
     <ROW Directory="languages_DIR" Directory_Parent="APPDIR" DefaultDir="langua~1|languages"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="GPL.txt" ComponentId="{F18E021C-46DB-403D-ACC9-BF71EBF311AF}" Directory_="APPDIR" Attributes="0" KeyPath="GPL.txt" FullKeyPath="APPDIR"/>
-    <ROW Component="Microsoft.VC80.CRT.manifest" ComponentId="{D9711163-A6F4-4B07-835E-13E9FECBA2A2}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="Microsoft.VC80.CRT.manifest" FullKeyPath="APPDIR\Microsoft.VC80.CRT"/>
+    <ROW Component="GPL.txt" ComponentId="{F18E021C-46DB-403D-ACC9-BF71EBF311AF}" Directory_="APPDIR" Attributes="0" KeyPath="GPL.txt" Type="0"/>
+    <ROW Component="Microsoft.VC80.CRT.manifest" ComponentId="{D9711163-A6F4-4B07-835E-13E9FECBA2A2}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="Microsoft.VC80.CRT.manifest" Type="0"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{A2849C9F-F1BB-46BE-9E59-BC17B2E0528E}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="catala.language" ComponentId="{0F077FBE-3E31-4726-AFC2-661503A93BBC}" Directory_="languages_DIR" Attributes="0" KeyPath="catala.language" FullKeyPath="APPDIR\languages"/>
+    <ROW Component="catala.language" ComponentId="{0F077FBE-3E31-4726-AFC2-661503A93BBC}" Directory_="languages_DIR" Attributes="0" KeyPath="catala.language" Type="0"/>
     <ROW Component="downloads" ComponentId="{6788E29F-0CCC-491B-964D-619EA1AE9F1D}" Directory_="downloads_DIR" Attributes="0"/>
-    <ROW Component="ffmpeg.exe" ComponentId="{C1171B40-C396-4C62-AC62-EC8DE2A0EE7D}" Directory_="bin_DIR" Attributes="0" KeyPath="ffmpeg.exe" FullKeyPath="APPDIR\bin\ffmpeg.exe"/>
-    <ROW Component="msvcm80.dll" ComponentId="{F172EFF4-4F82-48AF-A5CA-5F7722CF688D}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcm80.dll" FullKeyPath="APPDIR\Microsoft.VC80.CRT\msvcm80.dll"/>
-    <ROW Component="msvcp80.dll" ComponentId="{865B6AE5-89EA-4A4E-BF4A-788D08ECB176}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcp80.dll" FullKeyPath="APPDIR\Microsoft.VC80.CRT\msvcp80.dll"/>
-    <ROW Component="msvcr80.dll" ComponentId="{56F74F17-81B4-4685-9E11-C584779E60DF}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcr80.dll" FullKeyPath="APPDIR\Microsoft.VC80.CRT\msvcr80.dll"/>
-    <ROW Component="pthreadGC2.dll" ComponentId="{8EEEEE43-9111-4DE5-8550-F764E75B77F7}" Directory_="bin_DIR" Attributes="0" KeyPath="pthreadGC2.dll" FullKeyPath="APPDIR\bin\pthreadGC2.dll"/>
-    <ROW Component="xUpdater.exe" ComponentId="{DDC7EE60-1F82-4DFF-91F7-3151AB2D8679}" Directory_="bin_DIR" Attributes="0" KeyPath="xUpdater.exe" FullKeyPath="APPDIR\bin\xUpdater.exe"/>
-    <ROW Component="xVideoServiceThief.exe" ComponentId="{C34A3B7C-1629-466D-BE28-C63FBFAD7C36}" Directory_="APPDIR" Attributes="0" KeyPath="xVideoServiceThief.exe" FullKeyPath="APPDIR\xVideoServiceThief.exe"/>
+    <ROW Component="ffmpeg.exe" ComponentId="{C1171B40-C396-4C62-AC62-EC8DE2A0EE7D}" Directory_="bin_DIR" Attributes="0" KeyPath="ffmpeg.exe" Type="0"/>
+    <ROW Component="msvcm80.dll" ComponentId="{F172EFF4-4F82-48AF-A5CA-5F7722CF688D}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcm80.dll" Type="0"/>
+    <ROW Component="msvcp80.dll" ComponentId="{865B6AE5-89EA-4A4E-BF4A-788D08ECB176}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcp80.dll" Type="0"/>
+    <ROW Component="msvcr80.dll" ComponentId="{56F74F17-81B4-4685-9E11-C584779E60DF}" Directory_="Microsoft.VC80.CRT_DIR" Attributes="0" KeyPath="msvcr80.dll" Type="0"/>
+    <ROW Component="pthreadGC2.dll" ComponentId="{8EEEEE43-9111-4DE5-8550-F764E75B77F7}" Directory_="bin_DIR" Attributes="0" KeyPath="pthreadGC2.dll" Type="0"/>
+    <ROW Component="xUpdater.exe" ComponentId="{DDC7EE60-1F82-4DFF-91F7-3151AB2D8679}" Directory_="bin_DIR" Attributes="0" KeyPath="xUpdater.exe" Type="0"/>
+    <ROW Component="xVideoServiceThief.exe" ComponentId="{C34A3B7C-1629-466D-BE28-C63FBFAD7C36}" Directory_="APPDIR" Attributes="0" KeyPath="xVideoServiceThief.exe" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="ffmpeg.exe pthreadGC2.dll xUpdater.exe SHORTCUTDIR catala.language Microsoft.VC80.CRT.manifest msvcm80.dll msvcp80.dll msvcr80.dll xVideoServiceThief.exe downloads GPL.txt"/>
