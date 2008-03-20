@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="es">
+<defaultcodec></defaultcodec>
 <context>
     <name>AddVideo</name>
     <message>
@@ -1018,7 +1019,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/mainform.ui" line="578"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</source>
-        <translation>&lt;b&gt;Total vídeos:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 compleatdos)&lt;/span&gt;</translation>
+        <translation>&lt;b&gt;Total vídeos:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completados)&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="585"/>
@@ -1161,7 +1162,7 @@ font-size:12px;
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="881"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
-        <translation>&lt;b&gt;Total vídeos:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 compleatdos)&lt;/span&gt;</translation>
+        <translation>&lt;b&gt;Total vídeos:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completados)&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="885"/>
