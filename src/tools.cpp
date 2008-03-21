@@ -266,9 +266,9 @@ QString getPathAndQuery(QUrl URL)
 	QString result = URL.toString();
 	// remove the host
 	if (result.indexOf("https://") != 1)
-		result = result.remove("https://" + URL.host());
+		result.remove("https://" + URL.host());
 	else 
-		result = result.remove("http://" + URL.host());
+		result.remove("http://" + URL.host());
 	// return the final path and query
 	return QUrl(result).toEncoded();
 }
