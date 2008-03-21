@@ -306,7 +306,7 @@ void Http::jumpToURL(QUrl url)
 	}
 
 	// set connection: "keep alive"
-	header.setValue("Connection", "Keep-Alive, TE");
+	header.setValue("Connection", "Keep-Alive");
 
 	// set Accept-Ranges: "bytes" (to indicate its acceptance of range requests for a resource)
 	header.setValue("Accept-Ranges", "bytes");

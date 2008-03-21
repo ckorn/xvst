@@ -270,7 +270,7 @@ QString getPathAndQuery(QUrl URL)
 	else
 		params = "";
 
-	return QUrl(URL.path() + params).toEncoded();
+	return QUrl(URL.path()).toEncoded() + params;
 }
 
 QString htmlCharToHtmlCode(QString html)
