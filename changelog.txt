@@ -1,8 +1,11 @@
 1.8.1a:
 -------
 
-- Revised 1 service:
+- Revised 2 services:
     - Dailymotion (added "need login" detection)
+    - 123Video
+
+- Fixed bug (Error: Wrong HTTP request were send (wrong host and path))
 
 1.8a:
 -----

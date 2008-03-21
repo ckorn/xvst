@@ -825,7 +825,7 @@ VideoDefinition VideoInformation_123video::getVideoInformation(const QString URL
 	// get the host IP
 	QString hostIP = copyBetween(xml, "MediaIP=\"", "\"");
 	// get the FLV url
-	result.URL = QString("http://%1/%2/%3.flv").arg(hostIP).arg(copy(videoID, 0, 2)).arg(videoID);
+	result.URL = QString("http://%1/%2/%3.flv").arg(hostIP).arg(copy(videoID, 0, 3)).arg(videoID);
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information
