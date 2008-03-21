@@ -5,6 +5,8 @@
     - Dailymotion (added "need login" detection)
     - 123Video
 
+- The last window size and state is now saved
+
 - Fixed bug (Error: Wrong HTTP request were send (wrong host and path))
 
 1.8a:

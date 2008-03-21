@@ -224,6 +224,16 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 
 MainFormImpl::~MainFormImpl()
 {
+	// save the window state
+	if (windowState() == Qt::WindowMaximized)
+		programOptions->setMainWinowMaximized(true);
+	else
+	{
+		programOptions->setMainWinowMaximized(false);
+		programOptions->setMainWindowHeight(height());
+		programOptions->setMainWindowWidth(width());
+	}
+
 	// delete shortcuts
 	delete shortCutPasteURL;
 	delete shortCutDeleteVideo;
@@ -249,6 +259,14 @@ MainFormImpl::~MainFormImpl()
 void MainFormImpl::centerWindow()
 {
 	QDesktopWidget *desktop = QApplication::desktop();
+
+	// set the window maximized
+	if (programOptions->getMainWinowMaximized())
+		setWindowState(Qt::WindowMaximized);
+	else // only if this window is not maximized
+		// set up the window height and width
+		if (programOptions->getMainWindowWidth() != 0 && programOptions->getMainWindowHeight() != 0)
+			resize(programOptions->getMainWindowWidth(), programOptions->getMainWindowHeight());
 
 	int screenWidth, width;
 	int screenHeight, height;

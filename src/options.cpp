@@ -96,6 +96,10 @@ void ProgramOptions::load()
 	stayOnTop = settings.value("configuration/stayOnTop", stayOnTop).toBool();
 	minimizeToSystemTray = settings.value("configuration/minimizeToSystemTray", minimizeToSystemTray).toBool();
 
+	mainWindowHeight = settings.value("configuration/mainWindowHeight", mainWindowHeight).toInt();
+	mainWindowWidth = settings.value("configuration/mainWindowWidth", mainWindowWidth).toInt();
+	mainWinowMaximized = settings.value("configuration/mainWinowMaximized", mainWinowMaximized).toBool();
+
 	emit optionsLoadAfter();
 }
 
@@ -106,6 +110,7 @@ void ProgramOptions::save()
 	QSettings settings(optionsFile, QSettings::IniFormat);
 
 	settings.beginGroup("configuration");
+
 	settings.setValue("downloadAutomatically", downloadAutomatically);
 	settings.setValue("downloadDir", downloadDir);
 	settings.setValue("convertVideos", convertVideos);
@@ -153,6 +158,10 @@ void ProgramOptions::save()
 
 	settings.setValue("stayOnTop", stayOnTop);
 	settings.setValue("minimizeToSystemTray", minimizeToSystemTray);
+
+	settings.setValue("mainWindowHeight", mainWindowHeight);
+	settings.setValue("mainWindowWidth", mainWindowWidth);
+	settings.setValue("mainWinowMaximized", mainWinowMaximized);
 
 	settings.endGroup();
 
@@ -216,6 +225,10 @@ void ProgramOptions::setDefault()
 
 	stayOnTop = false;
 	minimizeToSystemTray = false;
+
+	mainWindowHeight = 0;
+	mainWindowWidth = 0;
+	mainWinowMaximized = false;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -566,4 +579,34 @@ void ProgramOptions::setMinimizeToSystemTray(bool value)
 bool ProgramOptions::getMinimizeToSystemTray()
 {
 	return minimizeToSystemTray;
+}
+
+void ProgramOptions::setMainWindowHeight(int value)
+{
+	mainWindowHeight = value;
+}
+
+int ProgramOptions::getMainWindowHeight()
+{
+	return mainWindowHeight;
+}
+
+void ProgramOptions::setMainWindowWidth(int value)
+{
+	mainWindowWidth = value;
+}
+
+int ProgramOptions::getMainWindowWidth()
+{
+	return mainWindowWidth;
+}
+
+void ProgramOptions::setMainWinowMaximized(bool value)
+{
+	mainWinowMaximized = value;
+}
+
+bool ProgramOptions::getMainWinowMaximized()
+{
+	return mainWinowMaximized;
 }

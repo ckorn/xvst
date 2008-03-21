@@ -76,6 +76,9 @@ Q_OBJECT
 		bool firstTime;					//!< Is the first program executation??
 		bool stayOnTop;					//!< Display the application always on top?
 		bool minimizeToSystemTray;		//!< Minimize the application to the system tray?
+		int mainWindowHeight;			//!< Main window height
+		int mainWindowWidth;			//!< Main window width
+		bool mainWinowMaximized;		//!< Flag for know if the main window should be maximized
 
 		QDir appDir;			//!< Initial program path
 		QString appExecutable;	//!< Executable program path
@@ -164,6 +167,12 @@ Q_OBJECT
 		bool getStayOnTop(); 
 		void setMinimizeToSystemTray(bool value);
 		bool getMinimizeToSystemTray();
+		void setMainWindowHeight(int value);
+		int getMainWindowHeight();
+		void setMainWindowWidth(int value);
+		int getMainWindowWidth();
+		void setMainWinowMaximized(bool value);
+		bool getMainWinowMaximized();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();
