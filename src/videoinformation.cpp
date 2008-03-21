@@ -583,6 +583,8 @@ VideoDefinition VideoInformation_Dailymotion::getVideoInformation(const QString 
 	result.URL = QString(URL_GET_URL).arg(result.URL);
 	// clear and get the final flv url
 	result.URL = cleanURL(result.URL);
+	// check if need login
+	result.needLogin = html.indexOf("addVariable(\"start\"") != -1;
 	// return the video information
 	return result;
 }

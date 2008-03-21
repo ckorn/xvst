@@ -1,4 +1,8 @@
-CONFIG += qt warn_on release $$[build_mode]
+CONFIG += qt \
+ warn_on \
+ debug_and_release \
+ console \
+ $$[build_mode]
 //QTPLUGIN += qjpeg
 QT = core gui network
 TEMPLATE = app
