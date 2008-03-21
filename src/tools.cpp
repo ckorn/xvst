@@ -263,14 +263,14 @@ bool validURL(QString URL)
 
 QString getPathAndQuery(QUrl URL)
 {
-	QString result = URL.toString();
-	// remove the host
-	if (result.indexOf("https://") != 1)
-		result.remove("https://" + URL.host());
-	else 
-		result.remove("http://" + URL.host());
-	// return the final path and query
-	return QUrl(result).toEncoded();
+	QString params = URL.toString();
+
+	if (params.indexOf("?") != -1)
+		params.remove(0, params.indexOf("?"));
+	else
+		params = "";
+
+	return QUrl(URL.path() + params).toEncoded();
 }
 
 QString htmlCharToHtmlCode(QString html)
