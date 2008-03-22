@@ -486,6 +486,16 @@ class VideoInformation_Tudou : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for MySpass Videos */
+class VideoInformation_MySpass : public VideoInformation_plugin
+{
+	public:
+		/*! MySpass plugin class constructor */
+		VideoInformation_MySpass(VideoInformation *videoInformation);
+		/*! Get the full Video Information of MySpass Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

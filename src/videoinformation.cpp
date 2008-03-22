@@ -75,6 +75,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_BoingboingTv(this);
 	new VideoInformation_Gametrailers(this);
 	new VideoInformation_Tudou(this);
+	new VideoInformation_MySpass(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -1790,6 +1791,37 @@ VideoDefinition VideoInformation_Tudou::getVideoInformation(const QString URL)
 	result.title = copyBetween(playList, "q='", "'");	
 	// get the flv url
 	result.URL = copyBetween(playList, "<f w='10'>", "</f>");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for MySpass Videos
+
+VideoInformation_MySpass::VideoInformation_MySpass(VideoInformation *videoInformation)
+{
+	setID("myspass.de");
+	setCaption("MySpass");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_MySpass::getVideoInformation(const QString URL)
+{
+	const QString GET_XML = "http://www.myspass.de/myspass/portal/macros/xml/getUrlById.xml?id=%1";
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get id
+	QString id = QUrl(URL).queryItemValue("id");
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(QString(GET_XML).arg(id)));
+	// get video title
+	result.title = copyBetween(html, "<title><![CDATA[", "]").trimmed();
+	// get flv url
+	result.URL = copyBetween(html, "<url_flv><![CDATA[", "]");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
 	// return the video information
