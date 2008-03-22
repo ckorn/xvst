@@ -221,7 +221,7 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="134"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="136"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -353,32 +353,32 @@
         <translation>Crèdits</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="38"/>
+        <location filename="../../ui/credits.ui" line="55"/>
         <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
         <translation>Desenvolupat per &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contacte: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="143"/>
+        <location filename="../../ui/credits.ui" line="190"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../../ui/credits.ui" line="80"/>
+        <location filename="../../ui/credits.ui" line="127"/>
         <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
         <translation>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="140"/>
+        <location filename="../../ui/credits.ui" line="187"/>
         <source>Close the Credits dialog</source>
         <translation>Tanca la finestra dels Crèdits</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="137"/>
+        <location filename="../../ui/credits.ui" line="184"/>
         <source>Ok button</source>
         <translation>Botó d&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="51"/>
+        <location filename="../../ui/credits.ui" line="81"/>
         <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
         <translation>Aquest software és OpenSource i té llicencia &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; (General Public Licence)</translation>
     </message>
@@ -1103,112 +1103,112 @@ font-size:12px;
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="288"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="306"/>
         <source>Closing...</source>
         <translation>Tancant...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="489"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="507"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="315"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="333"/>
         <source>Options</source>
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="401"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="419"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="489"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="507"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="779"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="797"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="780"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="798"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;aplicació xUpdater no s&apos;ha pogut trobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="781"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="799"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="355"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="373"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="955"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="973"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Descarregant: %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="963"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="981"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertint: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="881"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="899"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Vídeos afegits:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completats)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="885"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="903"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Descarregant:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="889"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="907"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Velocitat de baixada:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="889"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="907"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="289"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="307"/>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
         <translation>xVideoServiceThief està treballant, realment vols Pausar totes les descàrregues?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="487"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="505"/>
         <source>Cancel download</source>
         <translation>Cancel·la descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="488"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="506"/>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Desitges cancel·lar la descàrrega de &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="572"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="590"/>
         <source>Error message</source>
         <translation>Missatge d&apos;error</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="573"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="591"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Aquest vídeo té el següent error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="919"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="937"/>
         <source>Pause download</source>
         <translation>Pausa descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="917"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="935"/>
         <source>Resume download</source>
         <translation>Continua descàrrega</translation>
     </message>

@@ -81,7 +81,9 @@ TRANSLATIONS = resources/translations/xVST_ca.ts \
  resources/translations/xVST_es.ts \
  resources/translations/xVST_pl.ts \
  resources/translations/xVST_it.ts \
- resources/translations/xVST_cz.ts
+ resources/translations/xVST_cz.ts \
+ resources/translations/xVST_fr.ts \
+ resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc
 macx {
  ICON +=  resources/icons/MacOSX.icns
