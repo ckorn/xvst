@@ -66,6 +66,7 @@ void SessionManager::saveSession(VideoListController *videoListController)
 			settings.setValue("videoProgress", videoItem->getProgress());
 			settings.setValue("VIDEO_URL", videoItem->getVideoInformation().URL);
 			settings.setValue("VIDEO_title", videoItem->getVideoInformation().title);
+			settings.setValue("VIDEO_extension", videoItem->getVideoInformation().extension);
 			settings.setValue("VIDEO_audioFile", videoItem->getVideoInformation().isAudioFile);
 			settings.endGroup();
 		}
@@ -93,7 +94,7 @@ void SessionManager::loadSession(VideoListController *videoListController)
 		VideoDefinition videoInformation;
 		videoInformation.URL = settings.value(videos.at(n) + "/VIDEO_URL", "").toString();
 		videoInformation.title = settings.value(videos.at(n) + "/VIDEO_title", "").toString();
-		videoInformation.isAudioFile = settings.value(videos.at(n) + "/VIDEO_audioFile", false).toBool();
+		videoInformation.extension = settings.value(videos.at(n) + "/VIDEO_extension", ".flv").toString();
 		videoItem->setVideoInformation(videoInformation);
 		if (videoItem->hasErrors()) videoItem->setAsReported();
 		if (!videoItem->isReady() && !videoItem->isNULL() && !videoItem->isCanceled()

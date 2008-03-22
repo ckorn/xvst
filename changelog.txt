@@ -1,8 +1,9 @@
 1.8.1a:
 -------
 
-- Added 1 new service:
+- Added 2 new services:
     - MySpass
+    - Mp3Tube
 
 - Revised 2 services:
     - Dailymotion (added "need login" detection)

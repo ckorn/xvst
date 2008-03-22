@@ -588,6 +588,17 @@ class VideoInformation_XTube : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+// Music websites
+
+class VideoInformation_Mp3Tube : public VideoInformation_plugin
+{
+	public:
+		/*! Mp3Tube plugin class constructor */
+		VideoInformation_Mp3Tube(VideoInformation *videoInformation);
+		/*! Get the full Video Information of Mp3Tube Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 /*! Main video information class */
 class VideoInformation : public QThread
 {

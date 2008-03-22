@@ -51,6 +51,7 @@ struct VideoDefinition
 	QString title;		//!< video title
 	QString extension;	//!< video extension (default = flv)
 	bool needLogin;		//!< flag for know if this video need a login
+	bool isAudioFile;	//!< flag for know if is a audio file
 };
 
 class VideoItem : public QObject
@@ -71,6 +72,7 @@ Q_OBJECT
 		VideoState videoState;		//!< current video state
 		QObject *locker;			//!< pointer to the locker
 		bool reported;				//!< flag for know if this item has been reported (error)
+		bool audioFile;				//!< flag for know if this item is a "Audio only" (no conversion...)
 		/*! Init internal data */
 		void initData();
 		/*! Assign a unique ID for this instance */
@@ -128,6 +130,8 @@ Q_OBJECT
 		bool isResuming();
 		/*! Get if is reported */
 		bool isReported();
+		/*! Get if is an Audio file */
+		bool isAudioFile();
 		/*! Get if need login */
 		bool needLogin();
 		/*! Get the internal ID */
@@ -212,6 +216,8 @@ Q_OBJECT
 		void setAsResuming(QObject *who = NULL);
 		/*! Set as Reported */
 		void setAsReported(QObject *who = NULL);
+		/*! Set as Audio file */
+		void setAsAudioFile(QObject *who = NULL);
 		/*! Set as Need login */
 		void setAsNeedLogin(QObject *who = NULL);
 		/*! Init a VideoDefinition structure */

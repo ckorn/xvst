@@ -87,6 +87,8 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Shufuni(this);
 	new VideoInformation_XTube(this);
 	new VideoInformation_YourFileHost(this);
+	// music sites
+	new VideoInformation_Mp3Tube(this);
 }
 
 VideoInformation::~VideoInformation()
@@ -2125,6 +2127,40 @@ VideoDefinition VideoInformation_XTube::getVideoInformation(const QString URL)
 	result.URL = QString("%1.xtube.com%2").arg(flv_url).arg(flv_path);
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Music websites
+
+// Plugin for Mp3Tube Music
+
+VideoInformation_Mp3Tube::VideoInformation_Mp3Tube(VideoInformation *videoInformation)
+{
+	setID("mp3tube.net");
+	setCaption("Mp3Tube");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_Mp3Tube::getVideoInformation(const QString URL)
+{
+	const QString GET_MP3 = "http://storm.mp3tube.net/d.php?file=%1.tube";
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// set this as "audio file"
+	result.isAudioFile = true;
+	result.extension = ".mp3";
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL), false);
+	// get video title
+	result.title = copyBetween(html, "<TITLE>", "- Mp3Tube</TITLE>").trimmed();
+	// get video id
+	QString fileId = copyBetween(html, "swf?id=", "&").trimmed();
+	// clear and get the final url
+	result.URL = cleanURL(QString(GET_MP3).arg(fileId));
 	// return the video information
 	return result;
 }

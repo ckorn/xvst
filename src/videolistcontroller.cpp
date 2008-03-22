@@ -528,7 +528,8 @@ void VideoListController::actionFinished(VideoItem *videoItem)
 		if (!videoItem->isCanceled())
 			if	(sender() == videoConverter ||
 			    (sender() == videoDownload && !programOptions->getConvertVideos()) ||
-			    (sender() == videoDownload && programOptions->getConvertVideos() && !videoConverter->ffmpegInstalled()))
+			    (sender() == videoDownload && programOptions->getConvertVideos() && !videoConverter->ffmpegInstalled()) ||
+				(sender() == videoDownload && videoItem->isAudioFile()))
 			{
 				// set the saved to
 				if (sender() == videoDownload)

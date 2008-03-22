@@ -57,6 +57,9 @@ void VideoItem::assign(VideoItem *videoItem)
 	videoState = videoItem->getVideoState();
 	videoInfo.URL = videoItem->getVideoInformation().URL;
 	videoInfo.title = videoItem->getVideoInformation().title;
+	videoInfo.extension = videoItem->getVideoInformation().extension;
+	videoInfo.needLogin = videoItem->getVideoInformation().needLogin;
+	videoInfo.isAudioFile = videoItem->getVideoInformation().isAudioFile;
 	reported = videoItem->isReported();
 	errorCode = videoItem->getErrorCode();
 }
@@ -75,6 +78,7 @@ void VideoItem::initData()
 	videoInfo.title = "";
 	reported = false;
 	errorCode = 0;
+	audioFile = false;
 }
 
 void VideoItem::assignID()
@@ -247,6 +251,11 @@ bool VideoItem::isReported()
 	return reported;
 }
 
+bool VideoItem::isAudioFile()
+{
+	return videoInfo.isAudioFile;
+}
+
 bool VideoItem::needLogin()
 {
 	return videoState == vsNeedLogin;
@@ -376,6 +385,12 @@ void VideoItem::setVideoInformation(VideoDefinition videoInformation, QObject *w
 	this->videoInfo = videoInformation;
 	// convert the html title to human title
 	this->videoInfo.title = htmlToStr(this->videoInfo.title);
+	// set the extension
+	this->videoInfo.extension = videoInfo.extension; 
+	// set if this video need login
+	this->videoInfo.needLogin = videoInformation.needLogin;
+	// set if is an audio file
+	this->videoInfo.isAudioFile = videoInformation.isAudioFile;
 }
 
 void VideoItem::setVideoFile(QString videoFile, QObject *who)
@@ -541,6 +556,12 @@ void VideoItem::setAsReported(QObject *who)
 	reported = true;
 }
 
+void VideoItem::setAsAudioFile(QObject *who)
+{
+	if (isLocked() && who != locker) return;
+	videoInfo.isAudioFile = true;
+}
+
 void VideoItem::setAsNeedLogin(QObject *who)
 {
 	if (isLocked() && who != locker) return;
@@ -553,4 +574,5 @@ void VideoItem::initVideoDefinition(VideoDefinition &videoDef)
 	videoDef.title = "";
 	videoDef.extension = ".flv";
 	videoDef.needLogin = false;
+	videoDef.isAudioFile = false;
 }
