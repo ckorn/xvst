@@ -48,7 +48,8 @@ enum StopReason
 	NO_STOPPED,
 	DOWNLOAD_FINISHED,
 	USER_CANCELLED,
-	USER_PAUSED
+	USER_PAUSED,
+	TIME_OUT
 };
 
 class ArrayAvg : public QObject
@@ -143,7 +144,10 @@ Q_OBJECT
 		QString parameters;			//!< internal post parameters
 		int maxRetries;				//!< maximum retries for session (each download is a session)
 		int retriesCount;			//!< current retries in this session (each download is a session)
-		bool startedDownload;		//!< flag for know if is downloading (or just redirecting...)
+		bool startedDownload;		//!< flag for know if is downloading (or just redirecting...
+		int stepID;					//!< this number is to know if we are doing the same work (usefull for the time out)
+		int launchedStepID;			//!< the launche step id (used for compare with stepID)
+		int timeOut;				//!< when the connection is considered "time out" in miliseconds (we will ot wait infinite...)
 		/*! Init the internal http data */
 		void initData();
 		/*! Init retries data */
@@ -196,6 +200,8 @@ Q_OBJECT
 		QFileInfo getDestiationFile();
 		/*! Set the max retries */
 		void setMaxRetries(int value);
+		/*! Set the time out in seconds */
+		void setTimeOut(int value);
 	private slots:
 		/*! when the http protocol read data */
 		void dataReadProgress(int done, int total);
@@ -207,6 +213,8 @@ Q_OBJECT
 		void stateChanged(int state);
 		/*! restart the download signal */
 		void restartDownloadSignal();
+		/*! time out checker signal */
+		void timeOutCheckout();
 	signals:
 		/*! when a download started */
 		void downloadStarted();

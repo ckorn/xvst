@@ -172,6 +172,7 @@ Http::Http(bool useInternalTimer)
 	// default max retries
 	maxRetries = 5;
 	initRetriesData();
+	setTimeOut(8);	// 8 seconds
 	// destination file
 	file = NULL;
 	// cancel or pause on finish?
@@ -225,6 +226,9 @@ void Http::initData()
 	parameters = "";
 
 	startedDownload = false;
+
+	stepID = 0;
+	launchedStepID = 0;
 }
 
 void Http::initRetriesData()
@@ -323,8 +327,14 @@ void Http::jumpToURL(QUrl url)
 	if (resuming && file != NULL)
 		header.setValue("Range", QString("bytes=%1-").arg(file->size()));
 
+	stepID++;
+	launchedStepID = stepID;
+
 	// send the request header
 	httpGetId = http->request(header, paramsStr, file);
+
+	// time out controller
+	//QTimer::singleShot(timeOut, this, SLOT(timeOutCheckout()));
 
 	// post method off
 	postMethodFlag = false;
@@ -585,6 +595,11 @@ void Http::setMaxRetries(int value)
 	maxRetries = value;
 }
 
+void Http::setTimeOut(int value)
+{
+	timeOut = value * 1000;
+}
+
 void Http::dataReadProgress(int done, int total)
 {
 	if (!startedDownload) return;
@@ -605,7 +620,8 @@ void Http::requestFinished(int id, bool error)
 		{
 			bool canRemove = true;
 			
-			if (http->error() == QHttp::Aborted && (stopReason == USER_CANCELLED || stopReason == USER_PAUSED))
+			if (http->error() == QHttp::Aborted && 
+				(stopReason == USER_CANCELLED || stopReason == USER_PAUSED))
 				switch (stopReason)
 				{
 					case USER_CANCELLED:
@@ -621,7 +637,8 @@ void Http::requestFinished(int id, bool error)
 				// abort all (and clear pending requests)
 				http->clearPendingRequests();
 				// if is an "auto-abort" for restart the download then do not send the error signal
-				if (restartDownload || (!restartDownload && retriesCount < maxRetries))
+				if (restartDownload || (!restartDownload && retriesCount < maxRetries) ||
+					(stopReason == TIME_OUT && retriesCount < maxRetries))
 					QTimer::singleShot(500, this, SLOT(restartDownloadSignal()));
 				else
 					// send error signal
@@ -736,6 +753,17 @@ void Http::stateChanged(int state)
 void Http::restartDownloadSignal()
 {
 	download(oriURL, QDir(destFile.path()), destFile.fileName(), false);
+}
+
+void Http::timeOutCheckout()
+{
+	if (stepID != 0 && launchedStepID != 0)
+		// if are the same id, then TIME OUT should enter in action
+		if (stepID == launchedStepID)
+		{
+			stopReason = TIME_OUT;
+			http->abort();
+		}
 }
 
 void Http::timerEvent(QTimerEvent *event)
