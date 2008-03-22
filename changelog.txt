@@ -11,6 +11,9 @@
 - The last window size and state is now saved
 
 - Fixed bug (Error: Wrong HTTP request were send (wrong host and path))
+- Fixed bug (Error: The session was not saved correctly)
+
+- Improved internal "VideoItem" class
 
 1.8a:
 -----
