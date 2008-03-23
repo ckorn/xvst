@@ -16,6 +16,12 @@
 
 - Improved internal "VideoItem" class
 
+Windows:
+--------
+
+- Upgraded ffmpeg application to revision 11870
+
+
 1.8a:
 -----
 
