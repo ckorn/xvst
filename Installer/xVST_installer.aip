@@ -10,10 +10,10 @@
     <ROW Property="BannerBitmap" Value="default_banner.bmp" Type="1"/>
     <ROW Property="DialogBitmap" Value="default_dialog.bmp" Type="1"/>
     <ROW Property="Manufacturer" Value="Xesc &amp; Technology" ValueLocId="*"/>
-    <ROW Property="ProductCode" Value="1033:{C9F51441-BBD0-4905-A54A-BB8D44A4787E} "/>
+    <ROW Property="ProductCode" Value="1033:{CE27EACD-B61A-4E4B-8D61-25BF51D40007} "/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="xVideoServiceThief" ValueLocId="*"/>
-    <ROW Property="ProductVersion" Value="1.8.1"/>
+    <ROW Property="ProductVersion" Value="1.8.2"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{FA98D6CA-0AA3-4897-9928-194EC4DEEA4D}"/>
   </COMPONENT>
