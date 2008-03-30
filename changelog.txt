@@ -6,6 +6,9 @@
 - Added 1 new service:
     - GodTube
 
+- Revised 1 service:
+    - MySpaceTV (added service icon)
+
 1.8.1a:
 -------
 

@@ -1249,7 +1249,7 @@ VideoDefinition VideoInformation_Spike::getVideoInformation(const QString URL)
 
 VideoInformation_MySpaceTV::VideoInformation_MySpaceTV(VideoInformation *videoInformation)
 {
-	setID("myspace.com");
+	setID("vids.myspace.com");
 	setCaption("MySpaceTV");
 	adultContent = false;
 	registPlugin(videoInformation);
