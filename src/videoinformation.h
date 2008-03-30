@@ -496,6 +496,16 @@ class VideoInformation_MySpass : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for GodTube Videos */
+class VideoInformation_GodTube : public VideoInformation_plugin
+{
+	public:
+		/*! GodTube plugin class constructor */
+		VideoInformation_GodTube(VideoInformation *videoInformation);
+		/*! Get the full Video Information of GodTube Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

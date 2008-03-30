@@ -3,6 +3,9 @@
 
 - Added French language file
 
+- Added 1 new service:
+    - GodTube
+
 1.8.1a:
 -------
 

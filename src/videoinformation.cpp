@@ -76,6 +76,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Gametrailers(this);
 	new VideoInformation_Tudou(this);
 	new VideoInformation_MySpass(this);
+	new VideoInformation_GodTube(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -1826,6 +1827,38 @@ VideoDefinition VideoInformation_MySpass::getVideoInformation(const QString URL)
 	result.URL = copyBetween(html, "<url_flv><![CDATA[", "]");
 	// clear and get the final url
 	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for GodTube Videos
+
+VideoInformation_GodTube::VideoInformation_GodTube(VideoInformation *videoInformation)
+{
+	setID("godtube.com");
+	setCaption("GodTube");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_GodTube::getVideoInformation(const QString URL)
+{
+	const QString GET_XML = "http://www.godtube.com/xml/xml_v4.php?vkey=%1";
+	const QString FLV_URL = "http://video.godtube.com/%1";
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the vkey
+	QString vkey = QUrl(URL).queryItemValue("viewkey");
+	// get the html
+	Http http;
+	QString xml = http.downloadWebpage(QUrl(QString(GET_XML).arg(vkey)));
+	// get video title
+	result.title = copyBetween(xml, "<title>", "</title>").trimmed();
+	// get flv url
+	result.URL = copyBetween(xml, "<flv>", "</flv>");
+	// clear and get the final url
+	result.URL = cleanURL(QString(FLV_URL).arg(result.URL));
 	// return the video information
 	return result;
 }
