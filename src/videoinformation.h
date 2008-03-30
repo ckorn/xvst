@@ -506,6 +506,26 @@ class VideoInformation_GodTube : public VideoInformation_plugin
 		VideoDefinition getVideoInformation(const QString URL);
 };
 
+/*! Plugin for MyVideo Videos */
+class VideoInformation_MyVideo : public VideoInformation_plugin
+{
+	public:
+		/*! MyVideo plugin class constructor */
+		VideoInformation_MyVideo(VideoInformation *videoInformation);
+		/*! Get the full Video Information of MyVideo Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
+/*! Plugin for ClipFish Videos */
+class VideoInformation_ClipFish : public VideoInformation_plugin
+{
+	public:
+		/*! ClipFish plugin class constructor */
+		VideoInformation_ClipFish(VideoInformation *videoInformation);
+		/*! Get the full Video Information of ClipFish Videos */
+		VideoDefinition getVideoInformation(const QString URL);
+};
+
 // Adult websites
 
 /*! Plugin for Yuvutu Videos */

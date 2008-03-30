@@ -3,8 +3,10 @@
 
 - Added French language file
 
-- Added 1 new service:
+- Added 3 new services:
     - GodTube
+    - MyVideo
+    - ClipFish
 
 - Revised 1 service:
     - MySpaceTV (added service icon)

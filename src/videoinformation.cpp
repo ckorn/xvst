@@ -77,6 +77,8 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Tudou(this);
 	new VideoInformation_MySpass(this);
 	new VideoInformation_GodTube(this);
+	new VideoInformation_MyVideo(this);
+	new VideoInformation_ClipFish(this);
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -1859,6 +1861,73 @@ VideoDefinition VideoInformation_GodTube::getVideoInformation(const QString URL)
 	result.URL = copyBetween(xml, "<flv>", "</flv>");
 	// clear and get the final url
 	result.URL = cleanURL(QString(FLV_URL).arg(result.URL));
+	// return the video information
+	return result;
+}
+
+// Plugin for MyVideo Videos
+
+VideoInformation_MyVideo::VideoInformation_MyVideo(VideoInformation *videoInformation)
+{
+	setID("myvideo.de");
+	setCaption("MyVideo");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_MyVideo::getVideoInformation(const QString URL)
+{
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get the vkey
+	QString vkey = QUrl(URL).queryItemValue("viewkey");
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "<title>", "- MyVideo</title>").trimmed();
+	// get flv url
+	result.URL = copyBetween(html, ".swf?", "&");
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
+	// return the video information
+	return result;
+}
+
+// Plugin for ClipFish Videos
+
+VideoInformation_ClipFish::VideoInformation_ClipFish(VideoInformation *videoInformation)
+{
+	setID("clipfish.de");
+	setCaption("ClipFish");
+	adultContent = false;
+	registPlugin(videoInformation);
+}
+
+VideoDefinition VideoInformation_ClipFish::getVideoInformation(const QString URL)
+{
+	const QString GET_XML = "http://www.clipfish.de/video_n.php?videoid=%1";
+	// init result
+	VideoDefinition result;
+	VideoItem::initVideoDefinition(result);
+	// get id
+	QString videoid = QUrl(URL).queryItemValue("videoid");
+	// get the html
+	Http http;
+	QString html = http.downloadWebpage(QUrl(URL));
+	// get video title
+	result.title = copyBetween(html, "<title>", "<title>").trimmed();
+	// remove: "- Video: Musikvideos bei Clipfish"
+	result.title = result.title.remove("- Video: Musikvideos bei Clipfish");
+	// remove: "- Video"
+	result.title = result.title.remove("- Video");
+	// get flv url
+	QString xml = http.downloadWebpage(QUrl(QString(GET_XML).arg(videoid)));
+	// remove the first "&" and last "&"
+	result.URL = copyBetween(xml, "url=", "&").trimmed();
+	// clear and get the final url
+	result.URL = cleanURL(result.URL);
 	// return the video information
 	return result;
 }

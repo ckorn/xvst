@@ -96,5 +96,7 @@
         <file>images/services/myspass.de.png</file>
         <file>images/services/mp3tube.net.png</file>
         <file>images/services/vids.myspace.com.png</file>
+        <file>images/services/myvideo.de.png</file>
+        <file>images/services/clipfish.de.png</file>
     </qresource>
 </RCC>
