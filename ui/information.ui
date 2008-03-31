@@ -215,7 +215,10 @@ font-size:12px;
 }</string>
      </property>
      <property name="textInteractionFlags" >
-      <set>Qt::NoTextInteraction</set>
+      <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::NoTextInteraction</set>
+     </property>
+     <property name="openExternalLinks" >
+      <bool>true</bool>
      </property>
     </widget>
    </item>
