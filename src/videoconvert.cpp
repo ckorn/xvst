@@ -78,7 +78,10 @@ QStringList VideoConverter::getCommandLine()
 			extension = ".mpeg";
 			break;
 		case ofAppleiPod:
-			extension = "";
+			parameters	<< "-acodec" << "libfaac" << "-ab" << "128kb" << "-vcodec" << "mpeg4" << "-b" << "1200kb" 
+						<< "-mbd" << "2" << "-flags" << "+4mv+trell" << "-aic" << "2" << "-cmp" << "2" << "-subcmp" << "2" 
+						<< "-s" << "320x240" << "-title" << videoItem->getVideoInformation().title;
+			extension = ".mp4";
 			break;
 		case of3GP:
 			extension = ".3gp";
@@ -88,116 +91,122 @@ QStringList VideoConverter::getCommandLine()
 			break;
 	}
 
-	switch (convConf.videoResolution)
+	// this is used only for NON Apple iPod videos
+	if (convConf.outputFormat != ofAppleiPod)
 	{
-		case vrOriginal:
-			break;
-		case vr96x72:
-			parameters << "-s" << "96x72";
-			break;
-		case vr128x96:
-			parameters << "-s" << "128x96";
-			break;
-		case vr160x120:
-			parameters << "-s" << "160x120";
-			break;
-		case vr176x120:
-			parameters << "-s" << "176x120";
-			break;
-		case vr176x144:
-			parameters << "-s" << "176x144";
-			break;
-		case vr192x144:
-			parameters << "-s" << "192x144";
-			break;
-		case vr240x180:
-			parameters << "-s" << "240x180";
-			break;
-		case vr320x200:
-			parameters << "-s" << "320x200";
-			break;
-		case vr320x240:
-			parameters << "-s" << "320x240";
-			break;
-		case vr352x240:
-			parameters << "-s" << "352x240";
-			break;
-		case vr352x288:
-			parameters << "-s" << "352x288";
-			break;
-		case vr480x272:
-			parameters << "-s" << "480x272";
-			break;
-		case vr480x360:
-			parameters << "-s" << "480x360";
-			break;
-		case vr480x480:
-			parameters << "-s" << "480x480";
-			break;
-		case vr624x352:
-			parameters << "-s" << "624x352";
-			break;
-		case vr640x480:
-			parameters << "-s" << "640x480";
-			break;
-		case vr720x480:
-			parameters << "-s" << "720x480";
-			break;
-		case vr720x576:
-			parameters << "-s" << "720x576";
-			break;
-	}
+		switch (convConf.videoResolution)
+		{
+			case vrOriginal:
+				break;
+			case vr96x72:
+				parameters << "-s" << "96x72";
+				break;
+			case vr128x96:
+				parameters << "-s" << "128x96";
+				break;
+			case vr160x120:
+				parameters << "-s" << "160x120";
+				break;
+			case vr176x120:
+				parameters << "-s" << "176x120";
+				break;
+			case vr176x144:
+				parameters << "-s" << "176x144";
+				break;
+			case vr192x144:
+				parameters << "-s" << "192x144";
+				break;
+			case vr240x180:
+				parameters << "-s" << "240x180";
+				break;
+			case vr320x200:
+				parameters << "-s" << "320x200";
+				break;
+			case vr320x240:
+				parameters << "-s" << "320x240";
+				break;
+			case vr352x240:
+				parameters << "-s" << "352x240";
+				break;
+			case vr352x288:
+				parameters << "-s" << "352x288";
+				break;
+			case vr480x272:
+				parameters << "-s" << "480x272";
+				break;
+			case vr480x360:
+				parameters << "-s" << "480x360";
+				break;
+			case vr480x480:
+				parameters << "-s" << "480x480";
+				break;
+			case vr624x352:
+				parameters << "-s" << "624x352";
+				break;
+			case vr640x480:
+				parameters << "-s" << "640x480";
+				break;
+			case vr720x480:
+				parameters << "-s" << "720x480";
+				break;
+			case vr720x576:
+				parameters << "-s" << "720x576";
+				break;
+		}
 
-	if (convConf.videoFrameRate == vfr15)
-		parameters << "-r" << "15";
-	else if (convConf.videoFrameRate == vfr24)
-		parameters << "-r" << "24";
-	else if (convConf.videoFrameRate == vfr25)
-		parameters << "-r" << "25";
-	else if (convConf.videoFrameRate == vfr29_97)
-		parameters << "-r" << "29.97";
-	else if (convConf.videoFrameRate == vfr30)
-		parameters << "-r" << "30";
+		if (convConf.videoFrameRate == vfr15)
+			parameters << "-r" << "15";
+		else if (convConf.videoFrameRate == vfr24)
+			parameters << "-r" << "24";
+		else if (convConf.videoFrameRate == vfr25)
+			parameters << "-r" << "25";
+		else if (convConf.videoFrameRate == vfr29_97)
+			parameters << "-r" << "29.97";
+		else if (convConf.videoFrameRate == vfr30)
+			parameters << "-r" << "30";
 
-	switch (convConf.audioSampleRatio)
-	{
-		case asrOriginal:
-			break;
-		case asr22050:
-			parameters << "-ar" << "22050";
-			break;
-		case asr44100:
-			parameters << "-ar" << "44100";
-			break;
-	}
+		switch (convConf.audioSampleRatio)
+		{
+			case asrOriginal:
+				break;
+			case asr22050:
+				parameters << "-ar" << "22050";
+				break;
+			case asr44100:
+				parameters << "-ar" << "44100";
+				break;
+		}
 
-	switch (convConf.outputQuality)
-	{
-		case oqLower_quality:
-			parameters << "-b" << "384k" << "-ab" << "64k";
-			break;
-		case oqLow_quality:
-			parameters << "-b" << "512k" << "-ab" << "80k";
-			break;
-		case oqNormal_quality:
-			parameters << "-b" << "640k" << "-ab" << "96k";
-			break;
-		case oqMedium_quality:
-			parameters << "-b" << "800k" << "-ab" << "96k";
-			break;
-		case oqGood_quality:
-			parameters << "-b" << "1000k" << "-ab" << "128k";
-			break;
-		case oqSuperb_quality:
-			parameters << "-b" << "1200k" << "-ab" << "128k";
-			break;
-		case oqSame_quality:
-			break;
+		switch (convConf.outputQuality)
+		{
+			case oqLower_quality:
+				parameters << "-b" << "384k" << "-ab" << "64k";
+				break;
+			case oqLow_quality:
+				parameters << "-b" << "512k" << "-ab" << "80k";
+				break;
+			case oqNormal_quality:
+				parameters << "-b" << "640k" << "-ab" << "96k";
+				break;
+			case oqMedium_quality:
+				parameters << "-b" << "800k" << "-ab" << "96k";
+				break;
+			case oqGood_quality:
+				parameters << "-b" << "1000k" << "-ab" << "128k";
+				break;
+			case oqSuperb_quality:
+				parameters << "-b" << "1200k" << "-ab" << "128k";
+				break;
+			case oqSame_quality:
+				break;
+		}
 	}
 
 	videoItem->setVideoFileSavedTo(uniqueFileName(changeFileExt(videoItem->getVideoFile(), extension)).absoluteFilePath(), this);
 
 	parameters << "-y" << videoItem->getVideoFileSavedTo();
+
+	qDebug() << parameters;
 
 	return parameters;
 }
