@@ -1,4 +1,8 @@
-CONFIG += qt warn_on release $$[build_mode]
+CONFIG += qt \
+ warn_on \
+ debug_and_release \
+ console \
+ $$[build_mode]
 //QTPLUGIN += qjpeg
 QT = core gui network
 TEMPLATE = app
@@ -83,6 +87,7 @@ TRANSLATIONS = resources/translations/xVST_ca.ts \
  resources/translations/xVST_it.ts \
  resources/translations/xVST_cz.ts \
  resources/translations/xVST_fr.ts \
+ resources/translations/xVST_da.ts \
  resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc
 macx {
