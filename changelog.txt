@@ -1,7 +1,10 @@
 1.8.3a:
 -------
 
+- Added Danish (DA) language
 - Added URL for each video service in "Information" form
+
+- Fixed bug (Error: iPod mp4 format was not converted, thanks to "Jens Chr. True" for your information)
 
 - Updated french language
 
