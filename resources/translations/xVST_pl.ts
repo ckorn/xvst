@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="pl">
+<defaultcodec></defaultcodec>
 <context>
     <name>AddVideo</name>
     <message>
@@ -25,42 +26,42 @@
     <message>
         <location filename="../../ui/addvideo.ui" line="72"/>
         <source>Paste URL from clipboard</source>
-        <translation type="unfinished">Wklej URL ze schowka</translation>
+        <translation>Wklej URL ze schowka</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="59"/>
         <source>URL of the video to downloaded</source>
-        <translation type="unfinished"></translation>
+        <translation>URL pliku wideo, który chesz ściągnąć</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="56"/>
         <source>Video URL</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="75"/>
         <source>Paste the current clipboard content (only text)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wklej aktualną zawartość schowka (tylko tekst)</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="162"/>
         <source>Add the current URL and close this dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj bieżący URL i zamknij okno dialogowe</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="159"/>
         <source>Ok button</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="199"/>
         <source>Close without adding the URL</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="196"/>
         <source>Cancel button</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -251,7 +252,7 @@
     <message>
         <location filename="../../ui/checkupdates.ui" line="96"/>
         <source>Cancel button</source>
-        <translation type="unfinished"></translation>
+        <translation>Przycisk Anuluj</translation>
     </message>
 </context>
 <context>
@@ -327,22 +328,22 @@
     <message>
         <location filename="../../ui/completedpopup.ui" line="89"/>
         <source>Close button</source>
-        <translation type="unfinished"></translation>
+        <translation>Przycisk zamknij</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="92"/>
         <source>Close the information dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="257"/>
         <source>Play button</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="260"/>
         <source>Play the downloaded video</source>
-        <translation type="unfinished"></translation>
+        <translation>Odtwórz ściągnięty plik wideo</translation>
     </message>
 </context>
 <context encoding="UTF-8">
@@ -370,17 +371,17 @@
     <message>
         <location filename="../../ui/credits.ui" line="187"/>
         <source>Close the Credits dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/credits.ui" line="184"/>
         <source>Ok button</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/credits.ui" line="81"/>
         <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ten program jest OpenSource i jest objęty licencją &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -923,17 +924,17 @@ font-size:12px;
     <message>
         <location filename="../../ui/mainform.ui" line="942"/>
         <source>Stay always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Zawsze na wierzchu</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="950"/>
         <source>Minimize to system tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimalizuj do zasobnika systemowego</translation>
     </message>
     <message encoding="UTF-8">
         <location filename="../../ui/mainform.ui" line="22"/>
         <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</source>
-        <translation type="unfinished">xVideoServiceThief %1 by Xesc &amp; Technology ® 2008 {1 ?}</translation>
+        <translation>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="35"/>
@@ -1068,12 +1069,12 @@ font-size:12px;
     <message>
         <location filename="../../ui/mainform.ui" line="416"/>
         <source>Pause Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstrzymaj</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="958"/>
         <source>Pause download</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstrzymaj</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="966"/>
@@ -1166,32 +1167,32 @@ font-size:12px;
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="899"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Liczba plików wideo:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(zakończono %2)&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="903"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;b&gt;Ściągnięto:&lt;/b&gt; %1 z %2</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="907"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Prędkość ściągania:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="907"/>
         <source>/sec</source>
-        <translation type="unfinished">/sek</translation>
+        <translation>/sek</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="307"/>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
-        <translation type="unfinished"></translation>
+        <translation>xVideoServiceThief pracuje, czy chcesz wstrzymać robotę?</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="505"/>
         <source>Cancel download</source>
-        <translation type="unfinished">Anuluj ściąganie</translation>
+        <translation>Anuluj ściąganie</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="506"/>
@@ -1206,17 +1207,17 @@ font-size:12px;
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="591"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ten plik wideo posiada następujący błąd:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="937"/>
         <source>Pause download</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstrzymaj</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="935"/>
         <source>Resume download</source>
-        <translation type="unfinished"></translation>
+        <translation>Wznów ściąganie</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +1495,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="149"/>
         <source>Maximum simultaneous downloads &lt;span style=&quot;color:#a9a9a9;&quot;&gt;(the recomended value is 4/6 downloads)&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksymalna liczba jednoczesnych procesów ściągań &lt;span style=&quot;color:#a9a9a9;&quot;&gt;(rekomendowana wartość to 4/6)&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="46"/>
@@ -1514,7 +1515,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="114"/>
         <source>Select the downloads directory</source>
-        <translation type="unfinished">Wybierz katalog dla ściągniętych plików</translation>
+        <translation>Wybierz katalog dla ściągniętych plików</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="123"/>
@@ -1524,7 +1525,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="120"/>
         <source>Select downloads directory</source>
-        <translation type="unfinished">Wybierz katalog dla ściągniętych plików</translation>
+        <translation>Wybierz katalog dla ściągniętych plików</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="139"/>
@@ -2254,62 +2255,62 @@ font-size:12px;
     <message>
         <location filename="../../src/videoitem.cpp" line="150"/>
         <source>Paused</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstrzymane</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="152"/>
         <source>Resuming...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wznawianie...</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="154"/>
         <source>Need login...</source>
-        <translation type="unfinished"></translation>
+        <translation>Potrzebuje login...</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="352"/>
         <source>Unable to create the destination dir</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie mogę utworzyć docelowego katalogu</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="354"/>
         <source>Unable to create the destination file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie mogę utworzyć docelowego pliku</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="356"/>
         <source>Invalid URL</source>
-        <translation type="unfinished">Błędny URL</translation>
+        <translation>Błędny URL</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="358"/>
         <source>An another download is already active</source>
-        <translation type="unfinished"></translation>
+        <translation>Inny proces ściągania jest już aktywny</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="360"/>
         <source>Invalid file size</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieprawidłowy rozmiar pliku</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="362"/>
         <source>The video to resume is missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Brakuje pliku wideo do wznowienia</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="364"/>
         <source>Unable resume the download</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie mogę wznowić ściągania</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="366"/>
         <source>Unable append data to file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie mogę dodać danych do pliku</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="368"/>
         <source>Connection error: Unable to download the video</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd połączenia: Nie mogę ściągnąć pliku wideo</translation>
     </message>
 </context>
 </TS>
