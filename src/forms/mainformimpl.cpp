@@ -101,7 +101,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actMinimizeToSystemTray, SIGNAL(triggered()), this, SLOT(minimizeToSystemTrayClicked())); // actMinimizeToSystemTray (clicked)
 	connect(actViewErrorMessage, SIGNAL(triggered()), this, SLOT(viewErrorMessageClicked())); // actViewErrorMessage (clicked)
 	// edtDownloadDir
-	connect(edtDownloadDir, SIGNAL(textChanged(const QString &)), this, SLOT(edtDownloadDirChanged(const QString &)));
+	connect(edtDownloadDir, SIGNAL(editingFinished()), this, SLOT(edtDownloadDirChanged()));
 	// connect buttons
 	connect(btnAddVideo, SIGNAL(clicked()), this, SLOT(addVideoClicked())); //btnAddVideo (clicked)
 	connect(btnDeleteVideo, SIGNAL(clicked()), this, SLOT(deleteVideoClicked())); //btnAddVideo (clicked)
@@ -599,9 +599,9 @@ void MainFormImpl::downloadAutomaticallyStateChanged(int state)
 	programOptions->setCanSendUpdateSignal(true);
 }
 
-void MainFormImpl::edtDownloadDirChanged(const QString &text)
+void MainFormImpl::edtDownloadDirChanged()
 {
-	programOptions->setDownloadDir(text);
+	programOptions->setDownloadDir(edtDownloadDir->text());
 }
 
 void MainFormImpl::convertVideosStateChanged(int state)

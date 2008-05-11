@@ -202,7 +202,7 @@ QStringList VideoConverter::getCommandLine()
 		}
 	}
 
-	videoItem->setVideoFileSavedTo(uniqueFileName(changeFileExt(videoItem->getVideoFile(), extension)).absoluteFilePath(), this);
+	videoItem->setVideoFileSavedTo(uniqueFileName(changeFileExt(videoItem->getVideoFile(), extension))/*.absoluteFilePath()*/, this);
 
 	parameters << "-y" << videoItem->getVideoFileSavedTo();
 

@@ -148,6 +148,7 @@ Q_OBJECT
 		int stepID;					//!< this number is to know if we are doing the same work (usefull for the time out)
 		int launchedStepID;			//!< the launche step id (used for compare with stepID)
 		int timeOut;				//!< when the connection is considered "time out" in miliseconds (we will ot wait infinite...)
+		QStringList *customHeaders;	//!< list with custom header parameters
 		/*! Init the internal http data */
 		void initData();
 		/*! Init retries data */
@@ -169,7 +170,7 @@ Q_OBJECT
 		/*! class destructor */
 		~Http();
 		/*! Start a new asynchronously download */
-		int download(const QUrl URL, const QDir destination, QString fileName = "", bool autoName = true);
+		int download(const QUrl URL, QString destination, QString fileName = "", bool autoName = true);
 		/*! Resume a previous asynchronously download */
 		int resume(const QUrl URL, QString fileName, bool autoRestartOnFail = true);
 		/*! Pause the current asynchronously download */
@@ -186,6 +187,10 @@ Q_OBJECT
 		void addCookie(QString cookie);
 		/*! Clear the stored cookies */
 		void clearCookies();
+		/*! Add custom header parameter */
+		void addHeaderParameter(QString key, QString value);
+		/*! Clear custom header parameters */
+		void clearHeaderParameters();
 		/*! Pause on destroy the Http class (only if is downloading) */
 		void pauseOnDestroy(bool pauseOnDestroyF = true);
 		/*! Get if is downloading */

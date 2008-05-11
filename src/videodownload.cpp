@@ -61,7 +61,7 @@ void DownloadItem::startDownload()
 	videoItem->setProgress(0, this);
 	// start download
 	int er = http->download(QUrl(videoItem->getVideoInformation().URL), 
-		QDir(parent->getDownloadDir()), videoItem->getVideoFile());
+		parent->getDownloadDir(), videoItem->getVideoFile());
 	if (er != 0) downloadError(er);
 }
 

@@ -91,7 +91,7 @@ QString fileSizeToString(const int bytes)
 	return result;
 }
 
-QFileInfo uniqueFileName(const QString fileName)
+QString uniqueFileName(const QString fileName)
 {
 	int n = 1;
 	QString tmp = fileName;
@@ -106,7 +106,7 @@ QFileInfo uniqueFileName(const QString fileName)
 		// next
 		n++;
 	}
-	return QFileInfo(tmp);
+	return tmp;
 }
 
 QString changeFileExt(const QString file, const QString ext)
@@ -124,6 +124,7 @@ QString cleanFileName(const QString fileName, QString replaceFor)
 		if (invalids.indexOf(fileName.at(n), 0) != -1)
 			result.replace(fileName.at(n), replaceFor);
 	}
+
 	return result;
 }
 
@@ -393,8 +394,8 @@ QString strToHtml(QString str, bool htmlCodes)
 
 bool openFile(QString filePath)
 {
-#ifdef Q_OS_WIN32
-	return QDesktopServices::openUrl(filePath);
+#ifdef Q_WS_WIN
+	return QDesktopServices::openUrl(filePath.replace("\\","/"));
 #else
 	return QDesktopServices::openUrl("file://" + filePath);
 #endif

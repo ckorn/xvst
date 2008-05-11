@@ -177,6 +177,8 @@ Http::Http(bool useInternalTimer)
 	file = NULL;
 	// cancel or pause on finish?
 	pauseOnDestroy(false);
+	// init custom header parameters
+	customHeaders = new QStringList;
 	// init data
 	initData();
 	// connect signals
@@ -191,6 +193,7 @@ Http::~Http()
 {
 	if (pauseOnDestroyF) pause(); else cancel();
 
+	delete customHeaders;
 	delete downloadSpeedAvg;
 	delete cookies;
 	delete http;
@@ -330,6 +333,15 @@ void Http::jumpToURL(QUrl url)
 	stepID++;
 	launchedStepID = stepID;
 
+	// add custom header parameters
+	for (int n = 0; n < customHeaders->count(); n++)
+	{
+		QString key = getToken(customHeaders->at(n), "|", 0);
+		QString value = getToken(customHeaders->at(n), "|", 1);
+		// add it
+		header.setValue(key, value);
+	}
+
 	// send the request header
 	httpGetId = http->request(header, paramsStr, file);
 
@@ -340,8 +352,17 @@ void Http::jumpToURL(QUrl url)
 	postMethodFlag = false;
 }
 
-int Http::download(const QUrl URL, const QDir destination, QString fileName, bool autoName)
+int Http::download(const QUrl URL, QString destination, QString fileName, bool autoName)
 {
+	// clean destination dir
+	destination = QDir::cleanPath(destination);
+
+#ifdef Q_WS_WIN
+	// fix Qt4.4.0 bug in windows
+	if (destination.indexOf(":/") == -1) 
+		destination.replace(":", ":/");
+#endif
+
 	// check if is already downloading another file
 	if (isDownloading()) 
 		return ALREADY_DOWNLOADING;
@@ -351,8 +372,8 @@ int Http::download(const QUrl URL, const QDir destination, QString fileName, boo
 		return INVALID_URL;
 
 	// create the destination path, if it don't exists
-	if (!destination.exists())
-		if (!destination.mkpath(destination.absolutePath()))
+	if (!QDir(destination).exists())
+		if (!QDir(destination).mkpath(destination))
 			return UNABLE_CREATE_DIR;
 
 	// set a default name (only if it is empty)
@@ -363,11 +384,12 @@ int Http::download(const QUrl URL, const QDir destination, QString fileName, boo
 
 	// set destination file name
 	fileName = cleanFileName(fileName);
+
 	// get an unique file name for this download
 	if (autoName) 
-		fileName = uniqueFileName(destination.absolutePath() + "/" + fileName).absoluteFilePath();
+		fileName = uniqueFileName(destination + "/" + fileName);
 	else
-		fileName =destination.absolutePath() + "/" + fileName;
+		fileName = destination + "/" + fileName;
 
 	// create file
 	file = new QFile(fileName);
@@ -556,6 +578,16 @@ void Http::addCookie(QString cookie)
 void Http::clearCookies()
 {
 	cookies->clear();
+}
+
+void Http::addHeaderParameter(QString key, QString value)
+{
+	customHeaders->append(key + "|" + value);
+}
+
+void Http::clearHeaderParameters()
+{
+	customHeaders->clear();
 }
 
 void Http::pauseOnDestroy(bool pauseOnDestroyF)
@@ -752,7 +784,7 @@ void Http::stateChanged(int state)
 
 void Http::restartDownloadSignal()
 {
-	download(oriURL, QDir(destFile.path()), destFile.fileName(), false);
+	download(oriURL, destFile.path(), destFile.fileName(), false);
 }
 
 void Http::timeOutCheckout()

@@ -121,7 +121,7 @@ Q_OBJECT
 		void viewErrorMessageClicked();
 		void downloadAutomaticallyStateChanged(int state);
 		void convertVideosStateChanged(int state);
-		void edtDownloadDirChanged(const QString &text);
+		void edtDownloadDirChanged();
 		// tray icon menu signals
 		void trayIconAboutToShow();
 		void optionSelected(bool checked);

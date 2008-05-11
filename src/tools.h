@@ -44,13 +44,13 @@
 	QString fileSizeToString(const int bytes);
 
 	/*! Generates a UniqueFilename, makes sure the file does not exist before returning a result */
-	QFileInfo uniqueFileName(const QString file);
+	QString uniqueFileName(const QString file);
 
 	/*! Change the current file ext for the new extension */
 	QString changeFileExt(const QString file, const QString ext);
 
 	/*! Return a valid File Name */
-	QString cleanFileName(const QString fileName, QString replaceFor = "");
+	QString cleanFileName(const QString fileName, QString replaceFor = " ");
 
 	/*! Convert seconds to Hours minutes seconds */
 	QString secondsToHMS(const int seconds, const bool compact, const bool allowNegative = false);

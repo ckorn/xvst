@@ -79,6 +79,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_GodTube(this);
 	new VideoInformation_MyVideo(this);
 	new VideoInformation_ClipFish(this);
+
 	// adult sites
 	new VideoInformation_Yuvutu(this);
 	new VideoInformation_Badjojo(this);
@@ -90,6 +91,7 @@ VideoInformation::VideoInformation()
 	new VideoInformation_Shufuni(this);
 	new VideoInformation_XTube(this);
 	new VideoInformation_YourFileHost(this);
+
 	// music sites
 	new VideoInformation_Mp3Tube(this);
 }
@@ -153,7 +155,7 @@ void VideoInformation::run()
 			else
 			{
 				videoItem->setVideoInformation(info, this);
-				videoItem->setVideoFile(videoItem->getVideoInformation().title + info.extension, this);
+				videoItem->setVideoFile(cleanFileName(videoItem->getVideoInformation().title + info.extension), this);
 
 				videoItem->setAsGettedURL(this);
 			}
