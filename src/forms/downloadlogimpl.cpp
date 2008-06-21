@@ -25,6 +25,22 @@
 
 #include "downloadlogimpl.h"
 //
+class LogTreeWidgetItem : public QTreeWidgetItem
+{
+	public:
+		// constructors 
+		LogTreeWidgetItem(QTreeWidget *tree) : QTreeWidgetItem(tree) {}
+		LogTreeWidgetItem(QTreeWidget *parent, const QStringList &strings) : QTreeWidgetItem (parent,strings) {}
+		// custom comparation method
+		bool operator< ( const QTreeWidgetItem & other ) const
+		{
+			QDateTime myDate = data(0, Qt::UserRole).toDateTime();
+			QDateTime otherDate = other.data(0, Qt::UserRole).toDateTime();
+			// compare
+			return myDate < otherDate;
+		}
+};
+//
 DownloadLogImpl::DownloadLogImpl(QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
 {
@@ -44,7 +60,7 @@ void DownloadLogImpl::buildLog(QList<LogEntry> logEntries, VideoInformation *vid
 {
 	for (int n = 0; n < logEntries.count(); n++)
 	{
-		QTreeWidgetItem *item = new QTreeWidgetItem(lsvLog);
+		QTreeWidgetItem *item = new LogTreeWidgetItem(lsvLog);//QTreeWidgetItem(lsvLog);
 		
 		item->setText(0, logEntries.at(n).dateTime.toString());
 		item->setText(1, logEntries.at(n).title);
@@ -53,7 +69,11 @@ void DownloadLogImpl::buildLog(QList<LogEntry> logEntries, VideoInformation *vid
 		item->setIcon(0, QIcon(videoInformation->getHostImage(logEntries.at(n).URL)));
 		
 		item->setSizeHint(0, QSize(18,18));
+
+		item->setData(0, Qt::UserRole, logEntries.at(n).dateTime);
 	}
+	// sort list
+	lsvLog->sortItems(0, Qt::AscendingOrder);
 }
 //
 

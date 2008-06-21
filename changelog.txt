@@ -4,6 +4,7 @@
 - Added Danish (DA) language
 - Added Portugese - Brasil (BR) language
 - Added URL for each video service in "Information" form
+- Added sorting for "Downloads log" list (now is sorted from old to new downloads)
 
 - Fixed bug (Error: iPod mp4 format was not converted, thanks to "Jens Chr. True" for your help)
 - Fixed bug (Error: editing the "Downloads Dir" manually in Main form, on type a char the cursor where placed at end of edit)
