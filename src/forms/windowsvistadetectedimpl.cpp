@@ -6,4 +6,3 @@ WindowsVistaDetectedImpl::WindowsVistaDetectedImpl( QWidget * parent, Qt::WFlags
 	setupUi(this);
 }
 //
-
