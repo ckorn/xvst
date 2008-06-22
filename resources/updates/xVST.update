@@ -69,8 +69,8 @@
 	#END:2
 	#FILE:3
 		caption="Language: Polish (PL)"
-		version="1.2.1"
-		size="35214"
+		version="1.3.0"
+		size="49585"
 		installTo="/languages/polish.language"
 		url="http://xviservicethief.sourceforge.net/updates/special-files/polish_pl_lang.update"
 		packed="true"
@@ -83,4 +83,20 @@
 		url="http://xviservicethief.sourceforge.net/updates/special-files/french_fr_lang.update"
 		packed="true"
 	#END:4
+	#FILE:5
+		caption="Language: Português - Brasil (BR)"
+		version="1.3.1"
+		size="61281"
+		installTo="/languages/portugese_br.language"
+		url="http://xviservicethief.sourceforge.net/updates/special-files/portugese_br_lang.update"
+		packed="true"
+	#END:5
+	#FILE:6
+		caption="Language: Korean (KR)"
+		version="1.3.0"
+		size="48620"
+		installTo="/languages/korean_kr.language"
+		url="http://xviservicethief.sourceforge.net/updates/special-files/korean_kr_lang.update"
+		packed="true"
+	#END:6
 }
