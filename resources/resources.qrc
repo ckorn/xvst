@@ -100,4 +100,8 @@
         <file>images/services/zappinternet.com.png</file>
         <file>images/services/zedge.net.png</file>
     </qresource>
+    <qresource prefix="/winvistamsg" >
+        <file>images/howto_vistaadmin.png</file>
+        <file>images/windows_security.png</file>
+    </qresource>
 </RCC>

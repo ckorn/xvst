@@ -24,6 +24,10 @@
 */
 
 #include "checkupdatesimpl.h"
+// windows vista detection
+#ifdef Q_WS_WIN
+	#include <windows.h>
+#endif
 //
 CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent, Qt::WFlags f)
 	: QDialog(parent, f)
@@ -72,6 +76,20 @@ void CheckUpdatesImpl::waitThread()
 		qApp->processEvents();
 }
 
+bool UpdateCenterImpl::isWindowsVista()
+{
+#ifdef Q_WS_WIN
+	OSVERSIONINFO osvi;
+	ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
+	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+	GetVersionEx(&osvi);
+	// return if we are running the windows vista OS
+	return((osvi.dwMajorVersion == 6) && (osvi.dwMinorVersion == 0));
+#else
+	return false;
+#endif
+}
+
 void CheckUpdatesImpl::btnCancelClicked()
 {
 	btnCancel->setEnabled(false);
@@ -84,17 +102,29 @@ void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
 	if (hasUpdates)
 	{
 		this->setVisible(false);
-		// dispaly
-		UpdateCenterImpl updateCenterForm(updates, programOptions->getInstallAutomaticallyUpdates(), this);
-		// open update center
-		int result = updateCenterForm.exec();
+		// result checker
+		int result = QDialog::Accepted;
+		// check if we are running windwos vista
+		if (isWindowsVista() && !programOptions->getVistaUpdatesMessage())
+		{
+			WindowsVistaDetectedImpl windowsVistaDetectedForm(this);
+			result = windowsVistaDetectedForm.exec();
+			// update the option "don't display this message"
+			programOptions->setVistaUpdatesMessage(windowsVistaDetectedForm.chbDontDisplay->isChecked());
+		}
+		// open update center (this condition works only on windows vista)
+		if (result == QDialog::Accepted) 
+		{		
+			// dispaly
+			UpdateCenterImpl updateCenterForm(updates, programOptions->getInstallAutomaticallyUpdates(), this);
+			result = updateCenterForm.exec();
+		}
 		// wait until "thread end"
 		waitThread();
 		// updates downloaded??? yes? then install them
 		if (result == QDialog::Accepted)
 		{
 			updates->installUpdates();
-			
 			QApplication::closeAllWindows();
 		}
 		else // update center has been cancelled

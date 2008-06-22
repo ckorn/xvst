@@ -30,7 +30,6 @@ class LogTreeWidgetItem : public QTreeWidgetItem
 	public:
 		// constructors 
 		LogTreeWidgetItem(QTreeWidget *tree) : QTreeWidgetItem(tree) {}
-		LogTreeWidgetItem(QTreeWidget *parent, const QStringList &strings) : QTreeWidgetItem (parent,strings) {}
 		// custom comparation method
 		bool operator< ( const QTreeWidgetItem & other ) const
 		{

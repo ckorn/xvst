@@ -30,6 +30,8 @@
 //
 #include "ui_updatecenter.h"
 //
+#include "windowsvistadetectedimpl.h"
+//
 #include "../updates.h"
 #include "../tools.h"
 #include "../programversion.h"
@@ -41,6 +43,7 @@ Q_OBJECT
 		Updates *updates;
 		bool closedByButton;
 		void fillUpdates();
+		bool isWindowsVista();
 	protected:
 		void closeEvent(QCloseEvent *event);
 	public:

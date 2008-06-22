@@ -30,6 +30,7 @@
 //
 #include "ui_checkupdates.h"
 //
+#include "windowsvistadetectedimpl.h"
 #include "updatecenterimpl.h"
 //
 #include "../options.h"
@@ -48,6 +49,7 @@ Q_OBJECT
 		bool isUser;
 		void checkUpdates();
 		void waitThread();
+		bool isWindowsVista();
 	protected:
 		void closeEvent(QCloseEvent *event);
 	public:
