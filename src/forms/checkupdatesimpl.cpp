@@ -76,7 +76,7 @@ void CheckUpdatesImpl::waitThread()
 		qApp->processEvents();
 }
 
-bool UpdateCenterImpl::isWindowsVista()
+bool CheckUpdatesImpl::isWindowsVista()
 {
 #ifdef Q_WS_WIN
 	OSVERSIONINFO osvi;
