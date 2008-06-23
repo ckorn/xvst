@@ -470,7 +470,7 @@ void OptionsImpl::ffmpegTextChanged(const QString &text)
 
 void OptionsImpl::btnViewLogClicked()
 {
-	DownloadLogImpl downloadLog;
+	DownloadLogImpl downloadLog(this);
 	downloadLog.buildLog(sessionManager->getLogEntries(), videoInformation);
 	downloadLog.exec();
 }

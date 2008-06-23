@@ -25,21 +25,6 @@
 
 #include "downloadlogimpl.h"
 //
-class LogTreeWidgetItem : public QTreeWidgetItem
-{
-	public:
-		// constructors 
-		LogTreeWidgetItem(QTreeWidget *tree) : QTreeWidgetItem(tree) {}
-		// custom comparation method
-		bool operator< ( const QTreeWidgetItem & other ) const
-		{
-			QDateTime myDate = data(0, Qt::UserRole).toDateTime();
-			QDateTime otherDate = other.data(0, Qt::UserRole).toDateTime();
-			// compare
-			return myDate < otherDate;
-		}
-};
-//
 DownloadLogImpl::DownloadLogImpl(QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
 {

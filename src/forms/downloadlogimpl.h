@@ -33,11 +33,26 @@
 #include "../sessionmanager.h"
 #include "../videoinformation.h"
 //
+class LogTreeWidgetItem : public QTreeWidgetItem
+{
+	public:
+		// constructors 
+		LogTreeWidgetItem(QTreeWidget *tree) : QTreeWidgetItem(tree) {}
+		// custom comparation method
+		bool operator< ( const QTreeWidgetItem & other ) const
+		{
+			QDateTime myDate = data(0, Qt::UserRole).toDateTime();
+			QDateTime otherDate = other.data(0, Qt::UserRole).toDateTime();
+			// compare
+			return myDate < otherDate;
+		}
+};
+//
 class DownloadLogImpl : public QDialog, public Ui::DownloadLog
 {
 Q_OBJECT
 	public:
-		DownloadLogImpl( QWidget * parent = 0, Qt::WFlags f = 0 );
+		DownloadLogImpl( QWidget * parent = 0, Qt::WFlags f = Qt::WindowMaximizeButtonHint );
 		/*! Display the downloads log */
 		void buildLog(QList<LogEntry> logEntries, VideoInformation *videoInformation);
 };
