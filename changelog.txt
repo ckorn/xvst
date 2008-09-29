@@ -7,7 +7,7 @@
 - Added sorting for "Downloads log" list (now is sorted from old to new downloads)
 
 - Fixed bug (Error: iPod mp4 format was not converted, thanks to "Jens Chr. True" for your help)
-- Fixed bug (Error: editing the "Downloads Dir" manually in Main form, on type a char the cursor where placed at end of edit)
+- Fixed bug (Error: editing the "Downloads Dir" manually in Main form, on enter a new char the cursor where placed at end of edit)
 - Fixed bug (Error: Invlaid file names when the video title contains '/' or '\')
 - Fixed bug (Error: Paypal link was corrupt, now the Paypal button links to xVST website donation page)
 

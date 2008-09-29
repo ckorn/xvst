@@ -1,7 +1,6 @@
 CONFIG += qt \
  warn_on \
- debug_and_release \
- console \
+ release \
  $$[build_mode]
 //QTPLUGIN += qjpeg
 QT = core gui network
