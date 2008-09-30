@@ -13,6 +13,13 @@
 
 - Updated french language
 
+
+Linux:
+------
+
+- Configuration file for linux os is now : ~/.xVideoServiceThief (thanks to AzalSup)
+- Default download directory for linux os is now ~/xVideoServiceThief_downloads (thanks to AzalSup)
+
 Windows Vista:
 --------------
 

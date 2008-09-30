@@ -32,7 +32,13 @@
 #include "tools.h"
 #include "videoconvert.h"
 
+#ifdef Q_OS_LINUX
+static const QString DEFAULT_DOWNLOADS = "/xVideoServiceThief_downloads";	//!< Default sub-directory for downloads
+// modification made by "AzalSup"
+#else
 static const QString DEFAULT_DOWNLOADS = "/downloads";	//!< Default sub-directory for downloads
+#endif
+
 #ifdef Q_OS_WIN32
 static const QString DEFAULT_FFMPEGLIB = "/bin";		//!< Default sub-directory for the ffmpeg lib (win32)
 #else
@@ -79,7 +85,6 @@ Q_OBJECT
 		int mainWindowHeight;			//!< Main window height
 		int mainWindowWidth;			//!< Main window width
 		bool mainWinowMaximized;		//!< Flag for know if the main window should be maximized
-		bool vistaUpdatesMessage;		//!< Flag for know if we won't see the attention message of vista (updates)
 
 		QDir appDir;			//!< Initial program path
 		QString appExecutable;	//!< Executable program path
@@ -174,8 +179,6 @@ Q_OBJECT
 		int getMainWindowWidth();
 		void setMainWinowMaximized(bool value);
 		bool getMainWinowMaximized();
-		void setVistaUpdatesMessage(bool value);
-		bool getVistaUpdatesMessage();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();
