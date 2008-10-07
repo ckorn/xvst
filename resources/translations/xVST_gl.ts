@@ -1,0 +1,1876 @@
+<!DOCTYPE TS><TS>
+<context>
+    <name>AddVideo</name>
+    <message>
+        <source>Add Video URL</source>
+        <translation>Engadir URL do video</translation>
+    </message>
+    <message>
+        <source>Enter the video URL to download:</source>
+        <translation>Engadir a URL do video a descargar:</translation>
+    </message>
+    <message>
+        <source>URL of the video to downloaded</source>
+        <translation>URL do video a descargar</translation>
+    </message>
+    <message>
+        <source>Video URL</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Paste URL from clipboard</source>
+        <translation>Pegar URL dende o portapapeis</translation>
+    </message>
+    <message>
+        <source>Paste the current clipboard content (only text)</source>
+        <translation>Pegar o contido do portapapeis (so texto)</translation>
+    </message>
+    <message>
+        <source>Add the current URL and close this dialog</source>
+        <translation>Engadir a URL actual e pechar este cartel</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation>Boton Ok</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <source>Close without adding the URL</source>
+        <translation>Pechar sen engadir a URL
+<byte value="x9"/></translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>Botón cancelar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>AddVideoImpl</name>
+    <message>
+        <source> - Blocked site</source>
+        <translation>Sitio Bloqueado</translation>
+    </message>
+    <message>
+        <source> - Adult content is not allowed</source>
+        <translation>Non está permitido contido de adultos</translation>
+    </message>
+</context>
+<context>
+    <name>BugReport</name>
+    <message>
+        <source>Bug Report</source>
+        <translation>Reportar erro</translation>
+    </message>
+    <message>
+        <source>QFrame{background: white;} </source>
+        <translation>QFrame{background: white;}</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
+&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
+&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
+        <translation>&lt;b&gt;Uy! Ocorreu un erro mentres tentabas descargar o viedo.&lt;/b&gt;(new line)
+&lt;p&gt;Podes arranxar este erro mandandonos un &quot;&lt;b&gt;reporte de erro&lt;/b&gt;&quot;. O reporte só é para analizar o erro e si é necesario reparalo e mellorar a nova versión de xVST.&lt;/p&gt;(new line)
+&lt;p&gt;A túa axuda e sempre benvida!&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;O &quot;&lt;b&gt;reporte de erro&lt;/b&gt;&quot; será enviado a &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;(new line)
+&lt;p&gt;O teu nome e e-mail será incluido no &quot;&lt;b&gt;comentario de erro&lt;/b&gt;&quot;, nembargantes é opcional e non necesario.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Error information</source>
+        <translation>Información de erro</translation>
+    </message>
+    <message>
+        <source>Video URL: &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>URL do bideo: &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>versión do xVST: &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Your name: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
+        <translation>O teu nome: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>Your name will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
+        <translation>O teu nome será engadido no corpo do &quot;Reporte de erro&quot;. Este campo é opcional</translation>
+    </message>
+    <message>
+        <source>Your name</source>
+        <translation>O teu nome</translation>
+    </message>
+    <message>
+        <source>Email: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
+        <translation>Email: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>Your email will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
+        <translation>O teu nome será engadido no corpo do &quot;Reporte de erro&quot;. Este campo é opcional</translation>
+    </message>
+    <message>
+        <source>Your email</source>
+        <translation>O teu e-mail</translation>
+    </message>
+    <message>
+        <source>View which information will be sent</source>
+        <translation>Ver a información que será enviada</translation>
+    </message>
+    <message>
+        <source>Your comments: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
+        <translation>Os teus comentarios: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>You can add your own comment which will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
+        <translation>Podes engadir o teu comentario, será engadido no corpo &quot;Reporte de erros&quot;. Este campo é totalmente opcional</translation>
+    </message>
+    <message>
+        <source>Your comments</source>
+        <translation>Os teus comentarios</translation>
+    </message>
+    <message>
+        <source>Sending your &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;... please wait...</source>
+        <translation>Enviando o teu &quot;&lt;b&gt;Reporte de erros&lt;/b&gt;&quot;... agarde...</translation>
+    </message>
+    <message>
+        <source>If this option is checked, this dialog will not be displayed again (and no &quot;Bug report&quot; will be sent)</source>
+        <translation>Si esta opción está escollida, o texto non se amosará de novo (e enviarase no &quot;reporte de erros&quot;)</translation>
+    </message>
+    <message>
+        <source>Do not display &quot;Bug Report&quot;</source>
+        <translation>Non amosar o &quot;Reporte de erros&quot;</translation>
+    </message>
+    <message>
+        <source>Do not display &quot;Bug Report&quot; the next time</source>
+        <translation>Non amosar o &quot;Reporte de erros&quot; a próxima vez</translation>
+    </message>
+    <message>
+        <source>Send the &quot;Bug report&quot; and close this dialog</source>
+        <translation>Enviar o &quot;Reporte de erros&quot; e pechar esta mensaxe</translation>
+    </message>
+    <message>
+        <source>Send button</source>
+        <translation>Boton enviar</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation>Enviar</translation>
+    </message>
+    <message>
+        <source>Close this dialog without sending the &quot;Bug report&quot;</source>
+        <translation>Pechar esta mensaxe sen enviar o &quot;Reporte de erros&quot;</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>Botón de cancelar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>BugReportImpl</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+</context>
+<context>
+    <name>CheckUpdates</name>
+    <message>
+        <source>Check updates...</source>
+        <translation>Procurando actualizacións...</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation>Conectando...</translation>
+    </message>
+    <message>
+        <source>Cancel the checking for updates process and close this dialog</source>
+        <translation>Cancelar a procura de actualizacións e pechar esta mensaxe</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>Botón Cancelar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>CheckUpdatesImpl</name>
+    <message>
+        <source>Updates</source>
+        <translation>Actualizacións</translation>
+    </message>
+    <message>
+        <source>You are using the most recent version of this program.</source>
+        <translation>Estás a usar a versión máis recente do programa.</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <source>Cancelling... please wait...</source>
+        <translation>Cancelando... agarde...</translation>
+    </message>
+    <message>
+        <source>Checking for updates...</source>
+        <translation>Procurando actualizacións...</translation>
+    </message>
+</context>
+<context>
+    <name>CompletedPopup</name>
+    <message>
+        <source>QFrame{background-color:#ffecbf}</source>
+        <translation>QFrame{background-color:#ffecbf}</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Descarga completa&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Pechar</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>Boton pechar</translation>
+    </message>
+    <message>
+        <source>Close the information dialog</source>
+        <translation>Escoller o texto de información</translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation>X</translation>
+    </message>
+    <message>
+        <source>QFrame{background-color:#fff7dd}</source>
+        <translation>QFrame{background-color:#fff7dd}</translation>
+    </message>
+    <message>
+        <source>?</source>
+        <translation>?</translation>
+    </message>
+    <message>
+        <source>Play video</source>
+        <translation>Ver video</translation>
+    </message>
+    <message>
+        <source>Play button</source>
+        <translation>Pulsar botón</translation>
+    </message>
+    <message>
+        <source>Play the downloaded video</source>
+        <translation>Ver o video descargado</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context encoding="UTF-8">
+    <name>Credits</name>
+    <message>
+        <source>Credits</source>
+        <translation>Créditos</translation>
+    </message>
+    <message>
+        <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
+        <translation>Feito por &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
+        <translation>Este programa é de código aberto e baixo licenza &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licenza (General Public Licence)</translation>
+    </message>
+    <message encoding="UTF-8">
+        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
+        <translation>&lt;b&gt;Graciñas a:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: autor da linguaxe Polaco&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: autor da linguaxe Xaponesa&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: autores da linguaxa Checa&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
+    </message>
+    <message>
+        <source>Close the Credits dialog</source>
+        <translation>Pechar este texto de créditos</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation>Bottón Ok</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+</context>
+<context>
+    <name>CustomAlphaBlend</name>
+    <message>
+        <source>Custom Alpha Blend</source>
+        <translation>Configurar mezcla Alpha</translation>
+    </message>
+    <message>
+        <source>Select the alpha blend value:</source>
+        <translation>Escoller o valor da mezcla Alpha:</translation>
+    </message>
+    <message>
+        <source>1%</source>
+        <translation>1%</translation>
+    </message>
+    <message>
+        <source>Alpha blend value (%)</source>
+        <translation>Valor da mezcla Alpha (%)</translation>
+    </message>
+    <message>
+        <source>Alpha blend value slider</source>
+        <translation>Valor da mezcla Alpha que se desliza</translation>
+    </message>
+    <message>
+        <source>100%</source>
+        <translation>100%</translation>
+    </message>
+    <message>
+        <source>Current: &lt;b&gt;0.1%&lt;/b&gt;</source>
+        <translation>Actual: &lt;b&gt;0.1%&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Set the selected alpha blend value and close this dialog</source>
+        <translation>Escoller o valor da mezcla Alpha e pechar este texto</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation>Botón Ok</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <source>Close this dialog without changes</source>
+        <translation>Pechar este texto sen trocos</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>Botón cancelar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar<byte value="x9"/></translation>
+    </message>
+</context>
+<context>
+    <name>CustomAlphaBlendImpl</name>
+    <message>
+        <source>Current: &lt;b&gt;%1%&lt;/b&gt;</source>
+        <translation>Actual: &lt;b&gt;0.1%&lt;/b&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>DownloadLog</name>
+    <message>
+        <source>Download Log</source>
+        <translation>Rexistro de descarga</translation>
+    </message>
+    <message>
+        <source>Downloaded videos log:</source>
+        <translation>Rexistro de videos descargados:</translation>
+    </message>
+    <message>
+        <source>Display the downloaded log list</source>
+        <translation>Amosar o rexistro da lista de descargas</translation>
+    </message>
+    <message>
+        <source>Downloads log list</source>
+        <translation>Rexistro da lista de descargas</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1<byte value="x9"/></translation>
+    </message>
+</context>
+<context>
+    <name>DownloadLogImpl</name>
+    <message>
+        <source>Date/Time</source>
+        <translation>Data/Tempo</translation>
+    </message>
+    <message>
+        <source>Video Title</source>
+        <translation>Título do video</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation>URL</translation>
+    </message>
+</context>
+<context>
+    <name>DragDrop</name>
+    <message>
+        <source>Drag&amp;Drop</source>
+        <translation>Arrastrar&amp;soltar</translation>
+    </message>
+    <message>
+        <source>Drop the video link here</source>
+        <translation>Soltar o link do video aquí</translation>
+    </message>
+    <message>
+        <source>Display main window</source>
+        <translation>Amosar a ventá principal</translation>
+    </message>
+    <message>
+        <source>Alpha blend value</source>
+        <translation>Valor da mezcla Alpha</translation>
+    </message>
+    <message>
+        <source>Paste URL from clipboard</source>
+        <translation>Pegar a URL dende o portapapeis</translation>
+    </message>
+    <message>
+        <source>Ctrl+V</source>
+        <translation>Ctrl+V</translation>
+    </message>
+    <message>
+        <source>OFF</source>
+        <translation>OFF</translation>
+    </message>
+    <message>
+        <source>10%</source>
+        <translation>10%</translation>
+    </message>
+    <message>
+        <source>20%</source>
+        <translation>20%</translation>
+    </message>
+    <message>
+        <source>30%</source>
+        <translation>30%</translation>
+    </message>
+    <message>
+        <source>40%</source>
+        <translation>40%</translation>
+    </message>
+    <message>
+        <source>50%</source>
+        <translation> 50%</translation>
+    </message>
+    <message>
+        <source>60%</source>
+        <translation>60%</translation>
+    </message>
+    <message>
+        <source>70%</source>
+        <translation>70%</translation>
+    </message>
+    <message>
+        <source>80%</source>
+        <translation>80%</translation>
+    </message>
+    <message>
+        <source>90%</source>
+        <translation>90%</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Configurar</translation>
+    </message>
+</context>
+<context>
+    <name>DragDropImpl</name>
+    <message>
+        <source>Alpha blend value</source>
+        <translation>Valor da mezcla Alpha</translation>
+    </message>
+    <message>
+        <source> - Blocked site</source>
+        <translation>- Sitio bloqueado</translation>
+    </message>
+    <message>
+        <source> - Adult content is not allowed</source>
+        <translation>- Non está permitido contido adulto</translation>
+    </message>
+</context>
+<context>
+    <name>InfoView</name>
+    <message>
+        <source>Information View</source>
+        <translation>Información da vista</translation>
+    </message>
+    <message>
+        <source>This is the information which will be send:</source>
+        <translation>Esta é a información que será enviada:</translation>
+    </message>
+    <message>
+        <source>Information which will be send to SourceForge.net tracker</source>
+        <translation>A información enviarase ó tracker de SourceForge.net</translation>
+    </message>
+    <message>
+        <source>Information which will be sent</source>
+        <translation>Información que se enviará</translation>
+    </message>
+    <message>
+        <source>Close the Information view</source>
+        <translation>Pechar a vista de información</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>Botón Pechar</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Pechar</translation>
+    </message>
+</context>
+<context>
+    <name>Information</name>
+    <message>
+        <source>Information</source>
+        <translation>Información</translation>
+    </message>
+    <message>
+        <source>QFrame{
+background: white;
+} </source>
+        <translation>QFrame{(new line)
+background: white;(new line)
+}(sp)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Program version:</source>
+        <translation>Version do programa:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation>Linguaxe:</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;English (UK)&lt;/b&gt;</source>
+        <translation>&lt;b&gt;English (UK)&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Homepage:</source>
+        <translation>Páxina principal:</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>xVideoServiceThief is a tool for downloading your favourite video clips from a lot of video websites.
+
+xVideoServiceThief also provide you the ability to convert each video in most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.</source>
+        <translation>xVideoServiceThief é unha ferramenta para descargar os teus videos favoritos dende un feixe de páxinas web.(new line)
+(new line)
+xVideoServiceThief tamén ten a posibilidade de converter videos nos formatos mais populares: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 formatos de arquivo.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;xVideoServiceThief currently supports download from:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;xVideoServiceThief agora pode descargar dende:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>List of supported services</source>
+        <translation>Lista dos servicios soportados</translation>
+    </message>
+    <message>
+        <source>QTextBrowser{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}</source>
+        <translation>QTextBrowser{(new line)
+font-family:Arial, Helvetica, sans-serif;(new line)
+font-size:12px;(new line)
+}</translation>
+    </message>
+    <message>
+        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
+        <translation>Fai unha doazón a &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</translation>
+    </message>
+    <message>
+        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
+        <translation>Fai unha doazón a &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! É doado e rápido! :)</translation>
+    </message>
+    <message>
+        <source>Support button</source>
+        <translation>Botón de apoio</translation>
+    </message>
+    <message>
+        <source>Display the credits dialog</source>
+        <translation>Amosar o texto de créditos</translation>
+    </message>
+    <message>
+        <source>Credits button</source>
+        <translation>Botón de créditos</translation>
+    </message>
+    <message>
+        <source>Credits...</source>
+        <translation>Créditos...</translation>
+    </message>
+    <message>
+        <source>Close the Information dialog</source>
+        <translation>Pechar este texto de información</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>Botón pechar</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Pechar</translation>
+    </message>
+</context>
+<context>
+    <name>MainForm</name>
+    <message encoding="UTF-8">
+        <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</source>
+        <translation>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008<byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/>
+</translation>
+    </message>
+    <message>
+        <source>QFrame{background: white;}</source>
+        <translation>QFrame{background: white;}</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}(new line)
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Open the Drag &amp; Drop window</source>
+        <translation>Abrir a ventá de arrastrar &amp; soltar</translation>
+    </message>
+    <message>
+        <source>Open Drag &amp; Drop window</source>
+        <translation>Abrir ventá arrastrar &amp; soltar</translation>
+    </message>
+    <message>
+        <source>Check for updates</source>
+        <translation>Procurar actualizacións</translation>
+    </message>
+    <message>
+        <source>Online help</source>
+        <translation>Axuda online</translation>
+    </message>
+    <message>
+        <source>Program information</source>
+        <translation>Información do programa</translation>
+    </message>
+    <message>
+        <source>Download list:</source>
+        <translation>Lista de descargas:</translation>
+    </message>
+    <message>
+        <source>Add video button</source>
+        <translation>Engadir botón de video</translation>
+    </message>
+    <message>
+        <source>Add a new URL video</source>
+        <translation>Engadir unha nova URL de video</translation>
+    </message>
+    <message>
+        <source>Add video</source>
+        <translation>Engadir video</translation>
+    </message>
+    <message>
+        <source>Delete video button</source>
+        <translation>Botón borrar video</translation>
+    </message>
+    <message>
+        <source>Delete the selected video</source>
+        <translation>Borrar o video escollido</translation>
+    </message>
+    <message>
+        <source>Delete video</source>
+        <translation>Borrar video</translation>
+    </message>
+    <message>
+        <source>Start download button</source>
+        <translation>Botón comezar descarga</translation>
+    </message>
+    <message>
+        <source>Start to download the current selected video</source>
+        <translation>Comezar a descarga do video escollido</translation>
+    </message>
+    <message>
+        <source>Start download</source>
+        <translation>Comezar descarga</translation>
+    </message>
+    <message>
+        <source>Pause Download</source>
+        <translation>Pausar descarga</translation>
+    </message>
+    <message>
+        <source>Cancel download button</source>
+        <translation>Botón cancelar descarga</translation>
+    </message>
+    <message>
+        <source>Cancel the current selected video</source>
+        <translation>Cancelar o video escollido</translation>
+    </message>
+    <message>
+        <source>Cancel download</source>
+        <translation>Cancelar descarga</translation>
+    </message>
+    <message>
+        <source>Clear list button</source>
+        <translation>Botón limpar lista</translation>
+    </message>
+    <message>
+        <source>Clear downloads list</source>
+        <translation>Limpar a lista de descargas</translation>
+    </message>
+    <message>
+        <source>Clear list</source>
+        <translation>Limpar lista</translation>
+    </message>
+    <message>
+        <source>Clear completed button</source>
+        <translation>Botón limpar completados</translation>
+    </message>
+    <message>
+        <source>Clear completed videos from list</source>
+        <translation>Limpar videos completados da lista</translation>
+    </message>
+    <message>
+        <source>Clear completed</source>
+        <translation>Limpar completados</translation>
+    </message>
+    <message>
+        <source>More options button</source>
+        <translation>Botón de máis opcións</translation>
+    </message>
+    <message>
+        <source>Display the Options dialog</source>
+        <translation>Amosar o dialogo de opcións</translation>
+    </message>
+    <message>
+        <source>More options...</source>
+        <translation>Mais pocións...</translation>
+    </message>
+    <message>
+        <source> QFrame{background: white;}</source>
+        <translation>QFrame{background: white;}</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</source>
+        <translation>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloading:&lt;/b&gt; 0 of 0</source>
+        <translation>&lt;b&gt;Descargando:&lt;/b&gt; 0 de 0</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 Kb/sec</source>
+        <translation>&lt;b&gt;Velocidade de descarga:&lt;/b&gt; 0,00 Kb/sec</translation>
+    </message>
+    <message>
+        <source>Download videos automatically checkbox</source>
+        <translation>Checkbox descargar videos automáticamente</translation>
+    </message>
+    <message>
+        <source>Download videos automatically</source>
+        <translation>Descargar videos automaticamente</translation>
+    </message>
+    <message>
+        <source>Convert videos checkbox</source>
+        <translation>Checkbox converter videos</translation>
+    </message>
+    <message>
+        <source>Convert videos</source>
+        <translation>Coverter videos</translation>
+    </message>
+    <message>
+        <source>Convert videos to Mpeg/DivX/etc...</source>
+        <translation>Converter videos a Mpeg/DivX/etc...</translation>
+    </message>
+    <message>
+        <source>Downloads directory:</source>
+        <translation>Cartafol de descargas:</translation>
+    </message>
+    <message>
+        <source>Downloads directory</source>
+        <translation>Cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>Select the downloads directory</source>
+        <translation>Escoller o cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>Select downloads directory</source>
+        <translation>Escoller o cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>Open the Select directory dialog for select the downloads directory</source>
+        <translation>Abrir o dialogo de escoller cartafol para escoller o cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <source>Open downloads directory</source>
+        <translation>Abrir o cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>Open the downloads directory</source>
+        <translation>Abrir o cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informacion</translation>
+    </message>
+    <message>
+        <source>Convert videos to Mpeg\DivX\etc...</source>
+        <translation>Converter videos a Mpeg\DivX\etc...</translation>
+    </message>
+    <message>
+        <source>Restore xVideoServiceThief</source>
+        <translation>Restaurar xVideoServiceThief</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Pechar</translation>
+    </message>
+    <message>
+        <source>Display a popup window on finish a download/conversion video</source>
+        <translation>Amosar ventá emerxente ou rematar a descarga/conversión do video</translation>
+    </message>
+    <message>
+        <source>Move UP</source>
+        <translation>Mover enriba</translation>
+    </message>
+    <message>
+        <source>Move DOWN</source>
+        <translation>Mover abaixo</translation>
+    </message>
+    <message>
+        <source>Play video</source>
+        <translation>Ver video</translation>
+    </message>
+    <message>
+        <source>Reset state</source>
+        <translation>resetear estado</translation>
+    </message>
+    <message>
+        <source>Stay always on top</source>
+        <translation>Deixar sempre enriba</translation>
+    </message>
+    <message>
+        <source>Minimize to system tray</source>
+        <translation>Minimizar á bandexa do sistema</translation>
+    </message>
+    <message>
+        <source>Pause download</source>
+        <translation>Pausar a descarga</translation>
+    </message>
+    <message>
+        <source>View error message</source>
+        <translation>Ver a mensaxe de erro</translation>
+    </message>
+</context>
+<context>
+    <name>MainFormImpl</name>
+    <message>
+        <source> Video </source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source> Size </source>
+        <translation>Tamaño</translation>
+    </message>
+    <message>
+        <source> Progress </source>
+        <translation>Prograso</translation>
+    </message>
+    <message>
+        <source> Time </source>
+        <translation>Tempo</translation>
+    </message>
+    <message>
+        <source> Speed </source>
+        <translation>Velocidade</translation>
+    </message>
+    <message>
+        <source>Closing...</source>
+        <translation>Pechando...</translation>
+    </message>
+    <message>
+        <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
+        <translation>xVideoServiceThief está a traballar, desexa pausar o traballo?</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Si</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opcións</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>Actualizacións</translation>
+    </message>
+    <message>
+        <source>Another process is currently working, please stop it or wait until the end of process.</source>
+        <translation>Outro proceso está traballando agora, detéñao ou agarde ate o final do proceso.</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <source>Select the download directory:</source>
+        <translation>Escolla o cartafol de descargas:</translation>
+    </message>
+    <message>
+        <source>Cancel download</source>
+        <translation>Cancelar descarga</translation>
+    </message>
+    <message>
+        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation>Desexa cancelar a descarga de &lt;b&gt;%1&lt;/b&gt;?</translation>
+    </message>
+    <message>
+        <source>Error message</source>
+        <translation>mensaxe de erro</translation>
+    </message>
+    <message>
+        <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>Este video ten o seguinte erro:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
+        <translation>non se atopa o programa xUpdater.&lt;br&gt;&lt;br&gt;Reinstale xVideoServiceThief si vostede desexa actualizar aurtomáticamente o programa.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
+        <translation>&lt;b&gt;conta de Videos:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 rematado)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
+        <translation>&lt;b&gt;Descargando:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Velocidade de descarga:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>/sec</source>
+        <translation>/sec</translation>
+    </message>
+    <message>
+        <source>Pause download</source>
+        <translation>Pausar descarga</translation>
+    </message>
+    <message>
+        <source>Resume download</source>
+        <translation>Reanudar a descarga</translation>
+    </message>
+    <message>
+        <source>- Downloading: %1 (%2, %3)</source>
+        <translation>- Descargando: %1 (%2, %3)</translation>
+    </message>
+    <message>
+        <source>- Converting: %1 (%2)</source>
+        <translation>- Convertindo: %1 (%2)</translation>
+    </message>
+</context>
+<context>
+    <name>Options</name>
+    <message>
+        <source>Options</source>
+        <translation>Opcións</translation>
+    </message>
+    <message>
+        <source>Options menu</source>
+        <translation>Menú de opcións</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation>Descargas</translation>
+    </message>
+    <message>
+        <source>Path which the downloaded video will be saved</source>
+        <translation>Camiño onde será gardado o video descargado</translation>
+    </message>
+    <message>
+        <source>Downloads directory</source>
+        <translation>Cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>Select the downloads directory</source>
+        <translation>Escoller o cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>Open the Select directory dialog for select the downloads directory</source>
+        <translation>Abrir o dialogo cartafol para escoller o escoller o de descargas</translation>
+    </message>
+    <message>
+        <source>Select downloads directory</source>
+        <translation>Escoller cartafol de descargas</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <source>If this option is checked, on finish a download/conversion video an information popup window will be displayed</source>
+        <translation>Si esta opción está escollida, ao ramatar a descarga/conversión do video, será amosada unha ventá emerxente de información</translation>
+    </message>
+    <message>
+        <source>Display popup checkbox</source>
+        <translation>Amosar ventá emerxente de opcións</translation>
+    </message>
+    <message>
+        <source>Display a popup window on finish a download/conversion video</source>
+        <translation>Amosar una ventá emerxente ao rematar a descarga/conversión do video</translation>
+    </message>
+    <message>
+        <source>Maximum simultaneous downloads &lt;span style=&quot;color:#a9a9a9;&quot;&gt;(the recomended value is 4/6 downloads)&lt;/span&gt;</source>
+        <translation>Máximas descargas simultáneas &lt;span style=&quot;color:#a9a9a9;&quot;&gt;(o valor recomendado é 4/6 downloads)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>Maximum simultaneous downloads value (the recommended value is between 4 and 6)</source>
+        <translation>Máximas descargas simultáneas (o valor recomendado é entre 4 e 6)</translation>
+    </message>
+    <message>
+        <source>Maximum simultaneous downloads value</source>
+        <translation>Máximas desgargas simultáneas</translation>
+    </message>
+    <message>
+        <source>FFmpeg Lib</source>
+        <translation>FFmpeg Lib</translation>
+    </message>
+    <message>
+        <source>Path of the ffmpeg library (video conversions program)</source>
+        <translation>Camiño da libraría ffmpeg (programa de conversión de video)</translation>
+    </message>
+    <message>
+        <source>Ffmpeg directory</source>
+        <translation>Cartafol FFmpeg</translation>
+    </message>
+    <message>
+        <source>Select the ffmpeg directory</source>
+        <translation>Escoller o cartafol ffmpeg</translation>
+    </message>
+    <message>
+        <source>Open the Select directory dialog for select the ffmpeg directory</source>
+        <translation>Abrir o dialogo do cartafol escollido para escoller o cartafol ffmpeg</translation>
+    </message>
+    <message>
+        <source>Select ffmpeg directory</source>
+        <translation>Escoller cartafol do ffmpeg</translation>
+    </message>
+    <message>
+        <source>Enable/disable the video conversions</source>
+        <translation>Permitir/non permitir a conversión de video</translation>
+    </message>
+    <message>
+        <source>Convert videos</source>
+        <translation>Converter videos</translation>
+    </message>
+    <message>
+        <source>Convert videos to Mpeg/DivX/etc...</source>
+        <translation>Converter videos a Mpeg/DivX/etc...</translation>
+    </message>
+    <message>
+        <source>Output format:</source>
+        <translation>Formato de saída:</translation>
+    </message>
+    <message>
+        <source>Video output format</source>
+        <translation>Formato de saída de video</translation>
+    </message>
+    <message>
+        <source>Video output format combobox</source>
+        <translation>Fomato de saida de video combobox</translation>
+    </message>
+    <message>
+        <source>Video resolution:</source>
+        <translation>Resolución de video:</translation>
+    </message>
+    <message>
+        <source>Video resolution</source>
+        <translation>Resolución de video</translation>
+    </message>
+    <message>
+        <source>Video resolution combobox</source>
+        <translation>Resolución de video combobox</translation>
+    </message>
+    <message>
+        <source>Audio sampling rate (Hz):</source>
+        <translation>Audio sampling rate (Hz):</translation>
+    </message>
+    <message>
+        <source>Video audio sampling rate (Hz)</source>
+        <translation>Video audio sampling rate (Hz)</translation>
+    </message>
+    <message>
+        <source>Video audio sampling rate combobox</source>
+        <translation>Video audio sampling rate combobox</translation>
+    </message>
+    <message>
+        <source>Video frame rate (Hz)</source>
+        <translation>Video frame rate (Hz)</translation>
+    </message>
+    <message>
+        <source>Video frame rate combobox</source>
+        <translation>Video frame rate combobox</translation>
+    </message>
+    <message>
+        <source>Output quality:</source>
+        <translation>Calidade de saida:</translation>
+    </message>
+    <message>
+        <source>General video output quality</source>
+        <translation>Calidade de salida xeral de video</translation>
+    </message>
+    <message>
+        <source>General video output quality combobox</source>
+        <translation>Calidade de salida xeral de bideo combobox</translation>
+    </message>
+    <message>
+        <source>If this option is checked, after convert a downloaded video, the original video (FLV) is deleted from your hard disk</source>
+        <translation>Si escolles esta opción, despois de converter o video, o video orixinal (FLV) borrarase do teu disco duro</translation>
+    </message>
+    <message>
+        <source>Delete original video after conversion checkbox</source>
+        <translation>Borrar o video orixinal despois da conversión checkbox</translation>
+    </message>
+    <message>
+        <source>Delete the original downloaded file after the conversion</source>
+        <translation>Borrar o video descargado orixinal despois da conversión</translation>
+    </message>
+    <message>
+        <source>Language Configuration </source>
+        <translation>Configuración da Linguaxe</translation>
+    </message>
+    <message>
+        <source>Select a language file from the list:</source>
+        <translation>Escoller a linguaxe da lista:</translation>
+    </message>
+    <message>
+        <source>Language information</source>
+        <translation>Información da linguaxe</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Linguaxe</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation>Version:</translation>
+    </message>
+    <message>
+        <source>Author:</source>
+        <translation>Autor:</translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation>Contacto:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Descripción:</translation>
+    </message>
+    <message>
+        <source>Use the selected language file</source>
+        <translation>Usar o arquivo de linguaxe escollido</translation>
+    </message>
+    <message>
+        <source>Use language selected</source>
+        <translation>Usar a linguaxe escollida</translation>
+    </message>
+    <message>
+        <source>Use this language</source>
+        <translation>Usar esta linguaxe</translation>
+    </message>
+    <message>
+        <source>List with all installed languages</source>
+        <translation>Lista con todas as linguaxes instaladas</translation>
+    </message>
+    <message>
+        <source>Languages list</source>
+        <translation>Lista de linguaxes</translation>
+    </message>
+    <message>
+        <source>Session Configuration </source>
+        <translation>Configurar a sesion</translation>
+    </message>
+    <message>
+        <source>If this option is checked, on close the xVideoServiceThief, the downloads list will be saved (and restored on open again the xVST)</source>
+        <translation>Si escolles esta opción, ao pechar xVideoServiceThief, as descargas serán gardadas (e restauradas ao abrir de novo o xVST)</translation>
+    </message>
+    <message>
+        <source>Save and restore current session checkbox</source>
+        <translation>Gardar e restaurar a sesión actual checkbox</translation>
+    </message>
+    <message>
+        <source>Save and restore the curren session</source>
+        <translation>Gardar e restaurar esta sesión</translation>
+    </message>
+    <message>
+        <source>If this option is checked, the completed videos will not be restored in next session</source>
+        <translation>Escollendo esta opción, os videos completados non serán restaurandos na seguinte sesión</translation>
+    </message>
+    <message>
+        <source>Don&apos;t restore downloaded videos</source>
+        <translation>Non restaurar os videos descargados</translation>
+    </message>
+    <message>
+        <source>If this option is checked, the xVST will save a log with all downloaded videos (Date + Title + URL)</source>
+        <translation>Escollendo esta opción, o xVST gardará un rexistro cos videos descargados (Data + Titulo + URL)</translation>
+    </message>
+    <message>
+        <source>Save log checkbox</source>
+        <translation>Gardar o rexistro checkbox</translation>
+    </message>
+    <message>
+        <source>Save a Log with all downloaded videos (Date + Title + URL)</source>
+        <translation>Gardar un rexistro cos videos descargados (Data + Titulo + URL)</translation>
+    </message>
+    <message>
+        <source>Open the Log viewer</source>
+        <translation>Abrir o visor de rexistros</translation>
+    </message>
+    <message>
+        <source>Log viewer button</source>
+        <translation>Botón de visor de rexistros</translation>
+    </message>
+    <message>
+        <source>View Log</source>
+        <translation>Visor rexistro</translation>
+    </message>
+    <message>
+        <source>Clear the current downloads log</source>
+        <translation>Limpar o rexistro de descargas</translation>
+    </message>
+    <message>
+        <source>Clear log button</source>
+        <translation>Limpar o botón de rexistro</translation>
+    </message>
+    <message>
+        <source>Clear Log</source>
+        <translation>Limpar rexistro</translation>
+    </message>
+    <message>
+        <source>Updates Configuration</source>
+        <translation>Configuración de actualizacións</translation>
+    </message>
+    <message>
+        <source>If this option is checked, on program startup the xVST will check for new versions</source>
+        <translation>Escollendo esta opción, o programa procurará actualizacións o comezar xVST</translation>
+    </message>
+    <message>
+        <source>Check for updates checkbox</source>
+        <translation>Procurar opcións checkbox</translation>
+    </message>
+    <message>
+        <source>Check for new versions on program startup</source>
+        <translation>Procurar actualizacións ao comezar o programa</translation>
+    </message>
+    <message>
+        <source>Check for new versions every:</source>
+        <translation>
+Procurar actualizacións sempre:</translation>
+    </message>
+    <message>
+        <source>Period of time which automatic updates will check for new versions</source>
+        <translation>Periodo de tempo para procurar actualizacións automáticamente</translation>
+    </message>
+    <message>
+        <source>Period of time combobox</source>
+        <translation>Periodo de tempo combobox</translation>
+    </message>
+    <message>
+        <source>If this option is checked, the xVST will download and install automatically the new updates</source>
+        <translation>Escollendo esta opción, o xVST descargará e instalará actualizacións automáticamente</translation>
+    </message>
+    <message>
+        <source>Install automatically new versions checkbox</source>
+        <translation>Instalar automáticamente actualizacións checkbox</translation>
+    </message>
+    <message>
+        <source>Install automatically the new versions</source>
+        <translation>Instalar automáticamente actualizacións</translation>
+    </message>
+    <message>
+        <source>Check now for new updates</source>
+        <translation>Procurar actualizacións</translation>
+    </message>
+    <message>
+        <source>Check updates button</source>
+        <translation>Botón procurar actualizacións</translation>
+    </message>
+    <message>
+        <source>Check for new versions</source>
+        <translation>Procurar actualizacións</translation>
+    </message>
+    <message>
+        <source>Ups! Configuration</source>
+        <translation>Uy! configuración</translation>
+    </message>
+    <message>
+        <source>If this option is checked, the support of adult websites will be disabled</source>
+        <translation>Escollendo esta opción, o soporte de sitios de adultos será desactivado</translation>
+    </message>
+    <message>
+        <source>Disable adult websites support checkbox</source>
+        <translation>Desactivar soporte websites de adultos chekbox</translation>
+    </message>
+    <message>
+        <source>Disable adult websites support</source>
+        <translation>Desactivar o soporte de webs de adultos</translation>
+    </message>
+    <message>
+        <source>Select which websites are allowed and which websites must be blocked:</source>
+        <translation>Escoller as webs permitidas e as que hai que bloquear:</translation>
+    </message>
+    <message>
+        <source>Allowed websites:</source>
+        <translation>Websites permitidos:</translation>
+    </message>
+    <message>
+        <source>Blocked websites:</source>
+        <translation>Websites bloqueados:</translation>
+    </message>
+    <message>
+        <source>&lt;</source>
+        <translation>&lt;</translation>
+    </message>
+    <message>
+        <source>&lt;&lt;</source>
+        <translation>&lt;&lt;</translation>
+    </message>
+    <message>
+        <source>&gt;&gt;</source>
+        <translation>&gt;&gt;</translation>
+    </message>
+    <message>
+        <source>&gt;</source>
+        <translation>&gt;</translation>
+    </message>
+    <message>
+        <source>Allowed websites list</source>
+        <translation>Lista de websites permitidos</translation>
+    </message>
+    <message>
+        <source>Blocked websites list</source>
+        <translation>Lista de websites bloqueados</translation>
+    </message>
+    <message>
+        <source>Enable/disable proxy support</source>
+        <translation>activar/desactivar soporte para proxy</translation>
+    </message>
+    <message>
+        <source>Use proxy server</source>
+        <translation>Usar servidor proxy</translation>
+    </message>
+    <message>
+        <source>User name:</source>
+        <translation>Nome de ususario:</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation>Contrasinal:</translation>
+    </message>
+    <message>
+        <source>User name of your proxy configuration</source>
+        <translation>Nome de usuario da tua configuración proxy</translation>
+    </message>
+    <message>
+        <source>Proxy user name</source>
+        <translation>Nome de usuario do proxy</translation>
+    </message>
+    <message>
+        <source>Password of your proxy configuration</source>
+        <translation>Contrasinal para a tua configuración proxy</translation>
+    </message>
+    <message>
+        <source>Proxy password</source>
+        <translation>Contrasinal proxy</translation>
+    </message>
+    <message>
+        <source>Adress:</source>
+        <translation>Enderezo:</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation>Porto:</translation>
+    </message>
+    <message>
+        <source>Port of your proxy configuration</source>
+        <translation>Porto da tua configuración proxy</translation>
+    </message>
+    <message>
+        <source>Proxy port</source>
+        <translation>Porto proxy</translation>
+    </message>
+    <message>
+        <source>Adress of your proxy configuration</source>
+        <translation>Enderezo da tua configuración proxy</translation>
+    </message>
+    <message>
+        <source>Proxy adress</source>
+        <translation>Enderezo proxy</translation>
+    </message>
+    <message>
+        <source>Proxy type:</source>
+        <translation>Tipo proxy:</translation>
+    </message>
+    <message>
+        <source>Type of your proxy configuration</source>
+        <translation>Tipo da tua configuración proxy</translation>
+    </message>
+    <message>
+        <source>Proxy type</source>
+        <translation>Tipo proxy</translation>
+    </message>
+    <message>
+        <source>Enable/disable the &quot;Bug report&quot; window on video Error</source>
+        <translation>Activar/desactivar a ventá &quot;reporte de erros&quot; cun error de video</translation>
+    </message>
+    <message>
+        <source>Bug report</source>
+        <translation>Reporte de erro</translation>
+    </message>
+    <message>
+        <source>Display &quot;Bug Report&quot; window on Video error</source>
+        <translation>Amosar a ventá &quot;Reporte de erro&quot; cun erro de video</translation>
+    </message>
+    <message>
+        <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
+        <translation>Si un video da un erro, podes axudar a arranxalo enviandonos un &quot;&lt;b&gt;Reporte de erro&lt;/b&gt;&quot; via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;O &quot;&lt;b&gt;Reporte de erro&lt;/b&gt;&quot; será gardado só na &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; e visible para todo o mundo, non se gardan mais datos nuna base de datos externa.</translation>
+    </message>
+    <message>
+        <source>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</source>
+        <translation>Escollendo esta opción , ao abrir a caixa de &quot;Opcións&quot; de novo, amosase a derradeira páxina vista (só para esa sesión)</translation>
+    </message>
+    <message>
+        <source>Remember last viewed options page checkbox</source>
+        <translation>Lembrar a derradeira páxina de opcións vista</translation>
+    </message>
+    <message>
+        <source>Remember last viewed options page (only for this session)</source>
+        <translation>Lembrar a derradeira páxina de opcións (só para esta sesión)</translation>
+    </message>
+    <message>
+        <source>Save and close the current configuration</source>
+        <translation>Gargar e pechar a configuración actual</translation>
+    </message>
+    <message>
+        <source>Save and close button</source>
+        <translation>Botón Gardar e pechar</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <source>Close without saving changes</source>
+        <translation>Pechar sen gardar cambios</translation>
+    </message>
+    <message>
+        <source>Cancel and close button</source>
+        <translation>Botón cancelar e pechar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>OptionsImpl</name>
+    <message>
+        <source>Basic</source>
+        <translation>Basico</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Linguaxe</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesión</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>Actualizacións</translation>
+    </message>
+    <message>
+        <source>Ups!</source>
+        <translation>Uy!</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>Proxy</translation>
+    </message>
+    <message>
+        <source>Tracker</source>
+        <translation>Tracker</translation>
+    </message>
+    <message>
+        <source>AVI Format (*.avi)</source>
+        <translation>Formato AVI (*.avi)</translation>
+    </message>
+    <message>
+        <source>WMV Format ( *.wmv)</source>
+        <translation>Formato WMV ( *.wmv)</translation>
+    </message>
+    <message>
+        <source>MPEG1 Format ( *.mpg)</source>
+        <translation>Formato MPEG1 ( *.mpg)</translation>
+    </message>
+    <message>
+        <source>MPEG2 Format ( *.mpg)</source>
+        <translation>Formato MPEG2 (*.mpg)</translation>
+    </message>
+    <message>
+        <source>Apple iPod (*.mp4)</source>
+        <translation>Apple iPod (*.mp4)</translation>
+    </message>
+    <message>
+        <source>3GP Format (*.3gp)</source>
+        <translation>Formato 3GP (*.3gp)</translation>
+    </message>
+    <message>
+        <source>MP3 Format (*.mp3)</source>
+        <translation>Formato MP3 (*.mp3)</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation>Orixinal</translation>
+    </message>
+    <message>
+        <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
+        <translation>Mais Baixa calidade (Video bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
+    </message>
+    <message>
+        <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
+        <translation>Baixa calidade (Video bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
+    </message>
+    <message>
+        <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
+        <translation>Calidade normal (Video bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
+    </message>
+    <message>
+        <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
+        <translation>Calidade media (Video bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
+    </message>
+    <message>
+        <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
+        <translation>Boa calidade (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
+    </message>
+    <message>
+        <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
+        <translation>Moi boa calidade (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
+    </message>
+    <message>
+        <source>The Same quality as the original Video</source>
+        <translation>A mesma calidade que o orixinal</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dia</translation>
+    </message>
+    <message>
+        <source>2 Days</source>
+        <translation>2 Dias</translation>
+    </message>
+    <message>
+        <source>3 Days</source>
+        <translation>3 Dias</translation>
+    </message>
+    <message>
+        <source>4 Days</source>
+        <translation>4 Dias</translation>
+    </message>
+    <message>
+        <source>5 Days</source>
+        <translation>5 Dias</translation>
+    </message>
+    <message>
+        <source>6 Days</source>
+        <translation>6 Dias</translation>
+    </message>
+    <message>
+        <source>Week</source>
+        <translation>Semana</translation>
+    </message>
+    <message>
+        <source>Http Proxy</source>
+        <translation>Http Proxy</translation>
+    </message>
+    <message>
+        <source>Socks5 Proxy</source>
+        <translation>Socks5 Proxy</translation>
+    </message>
+    <message>
+        <source>Language Setup</source>
+        <translation>Configurar Linguaxe</translation>
+    </message>
+    <message>
+        <source>In order to apply the new selected language, the program must be restarted.</source>
+        <translation>Reinicia o programa para aplicar a nova selección de linguaxe.</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <source>Another process is currently working, please stop it or wait until the end of process.</source>
+        <translation>
+Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</translation>
+    </message>
+    <message>
+        <source>Select the download directory:</source>
+        <translation>Escolla o cartafol de descargas:</translation>
+    </message>
+    <message>
+        <source>Select the ffmpeg lib:</source>
+        <translation>Escolla o ffmpeg lib:</translation>
+    </message>
+    <message>
+        <source>Clear Log</source>
+        <translation>Limpar rexistro</translation>
+    </message>
+    <message>
+        <source>Are you sure to clear the downloads/conversions historic file?</source>
+        <translation>Estás seguro de limpar o historico de arquivos descargs/conversións?</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Si</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+</context>
+<context>
+    <name>UpdateCenter</name>
+    <message>
+        <source>Update center</source>
+        <translation>Centro de actualizacións</translation>
+    </message>
+    <message>
+        <source>Available updates:</source>
+        <translation>Actualizacions disponibles:</translation>
+    </message>
+    <message>
+        <source>List with all available updates</source>
+        <translation>Lista con todas as actualizacións disponibles</translation>
+    </message>
+    <message>
+        <source>Available updates list</source>
+        <translation>Lista coas actualizacións disponibles</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Update state:&lt;/b&gt; Stopped</source>
+        <translation>&lt;b&gt;Estado da actualización:&lt;/b&gt; Parado</translation>
+    </message>
+    <message>
+        <source>0 bytes (0 bytes)</source>
+        <translation>0 bytes (0 bytes)</translation>
+    </message>
+    <message>
+        <source>Current xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>Versión actual xVST: &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Download and install the selected updates from the list</source>
+        <translation>Descarga e instala as actualizacións escollidad da lista</translation>
+    </message>
+    <message>
+        <source>Download and install button</source>
+        <translation>Botón descargar e instalar</translation>
+    </message>
+    <message>
+        <source>Install updates</source>
+        <translation>Instalar actualizacións</translation>
+    </message>
+    <message>
+        <source>Close without installing updates</source>
+        <translation>Pechar sen instalar actualizacións</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>Botón cancelar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>UpdateCenterImpl</name>
+    <message>
+        <source> File </source>
+        <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source> Version </source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source> Size </source>
+        <translation>Tamaño</translation>
+    </message>
+    <message>
+        <source> Progress </source>
+        <translation>Progreso</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
+        <translation>&lt;b&gt;Actualizar estado:&lt;/b&gt; Descargando %1</translation>
+    </message>
+    <message>
+        <source>%1 (%2)</source>
+        <translation>%1 (%2)</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Feito</translation>
+    </message>
+</context>
+<context>
+    <name>VideoInformation</name>
+    <message>
+        <source>Unsupported video service</source>
+        <translation>Servicio de Video non soportado</translation>
+    </message>
+    <message>
+        <source>Invalid URL</source>
+        <translation>URL non válida</translation>
+    </message>
+</context>
+<context>
+    <name>VideoItem</name>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>Getting info...</source>
+        <translation>Acadando información...</translation>
+    </message>
+    <message>
+        <source>Ready</source>
+        <translation>Listo</translation>
+    </message>
+    <message>
+        <source>Downloading...</source>
+        <translation>Descargando...</translation>
+    </message>
+    <message>
+        <source>Downloaded</source>
+        <translation>Descargado</translation>
+    </message>
+    <message>
+        <source>Converting...</source>
+        <translation>Convertindo...</translation>
+    </message>
+    <message>
+        <source>Converted</source>
+        <translation>Convertido</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>Completado</translation>
+    </message>
+    <message>
+        <source>Canceled</source>
+        <translation>Cancelado</translation>
+    </message>
+    <message>
+        <source>Blocked</source>
+        <translation>Bloqueado</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <source>Deleted</source>
+        <translation>Borrado</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Pausado</translation>
+    </message>
+    <message>
+        <source>Resuming...</source>
+        <translation>Resumindo...</translation>
+    </message>
+    <message>
+        <source>Need login...</source>
+        <translation>É necesario login...</translation>
+    </message>
+    <message>
+        <source>/sec</source>
+        <translation>/sec</translation>
+    </message>
+    <message>
+        <source>Unable to create the destination dir</source>
+        <translation>Non se pode crear o cartafol destino</translation>
+    </message>
+    <message>
+        <source>Unable to create the destination file</source>
+        <translation>Non se pode crear o arquivo destino</translation>
+    </message>
+    <message>
+        <source>Invalid URL</source>
+        <translation>URL non válida</translation>
+    </message>
+    <message>
+        <source>An another download is already active</source>
+        <translation>Hai ourta descarga activa</translation>
+    </message>
+    <message>
+        <source>Invalid file size</source>
+        <translation>Tamaño non válido de arquivo</translation>
+    </message>
+    <message>
+        <source>The video to resume is missing</source>
+        <translation>Perdeuse a reanudación do video</translation>
+    </message>
+    <message>
+        <source>Unable resume the download</source>
+        <translation>Non se pode reanudar a descarga</translation>
+    </message>
+    <message>
+        <source>Unable append data to file</source>
+        <translation>Non se pode engadir información ó arquivo</translation>
+    </message>
+    <message>
+        <source>Connection error: Unable to download the video</source>
+        <translation>Erro de conexión: Non se pode descargar o video</translation>
+    </message>
+</context>
+</TS>

@@ -93,6 +93,7 @@ TRANSLATIONS = resources/translations/xVST_ca.ts \
  resources/translations/xVST_br.ts \
  resources/translations/xVST_kr.ts \
  resources/translations/xVST_hu.ts \
+ resources/translations/xVST_gl.ts \
  resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc
 macx {
