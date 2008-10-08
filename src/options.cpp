@@ -100,6 +100,8 @@ void ProgramOptions::load()
 	mainWindowWidth = settings.value("configuration/mainWindowWidth", mainWindowWidth).toInt();
 	mainWinowMaximized = settings.value("configuration/mainWinowMaximized", mainWinowMaximized).toBool();
 
+	vistaUpdatesMessage = settings.value("configuration/vistaUpdatesMessage", vistaUpdatesMessage).toBool();
+
 	emit optionsLoadAfter();
 }
 
@@ -162,6 +164,8 @@ void ProgramOptions::save()
 	settings.setValue("mainWindowHeight", mainWindowHeight);
 	settings.setValue("mainWindowWidth", mainWindowWidth);
 	settings.setValue("mainWinowMaximized", mainWinowMaximized);
+
+	settings.setValue("vistaUpdatesMessage", vistaUpdatesMessage);
 
 	settings.endGroup();
 
@@ -235,6 +239,8 @@ void ProgramOptions::setDefault()
 	mainWindowHeight = 0;
 	mainWindowWidth = 0;
 	mainWinowMaximized = false;
+
+	vistaUpdatesMessage = false;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -615,4 +621,14 @@ void ProgramOptions::setMainWinowMaximized(bool value)
 bool ProgramOptions::getMainWinowMaximized()
 {
 	return mainWinowMaximized;
+}
+
+void ProgramOptions::setVistaUpdatesMessage(bool value)
+{
+	vistaUpdatesMessage = value;
+}
+
+bool ProgramOptions::getVistaUpdatesMessage()
+{
+	return vistaUpdatesMessage;
 }
