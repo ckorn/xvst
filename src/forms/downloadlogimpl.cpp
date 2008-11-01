@@ -44,7 +44,7 @@ void DownloadLogImpl::buildLog(QList<LogEntry> logEntries, VideoInformation *vid
 {
 	for (int n = 0; n < logEntries.count(); n++)
 	{
-		QTreeWidgetItem *item = new LogTreeWidgetItem(lsvLog);//QTreeWidgetItem(lsvLog);
+		QTreeWidgetItem *item = new LogTreeWidgetItem(lsvLog);
 		
 		item->setText(0, logEntries.at(n).dateTime.toString());
 		item->setText(1, logEntries.at(n).title);

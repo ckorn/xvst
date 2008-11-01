@@ -1,47 +1,48 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>Credits</class>
- <widget class="QDialog" name="Credits" >
-  <property name="geometry" >
+ <widget class="QDialog" name="Credits">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>392</width>
-    <height>401</height>
+    <width>423</width>
+    <height>512</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Credits</string>
   </property>
-  <property name="sizeGripEnabled" >
+  <property name="sizeGripEnabled">
    <bool>true</bool>
   </property>
-  <layout class="QGridLayout" >
-   <item row="0" column="0" colspan="3" >
-    <layout class="QHBoxLayout" >
+  <layout class="QGridLayout">
+   <item row="0" column="0" colspan="3">
+    <layout class="QHBoxLayout">
      <item>
-      <widget class="QLabel" name="label" >
-       <property name="maximumSize" >
+      <widget class="QLabel" name="label">
+       <property name="maximumSize">
         <size>
          <width>116</width>
          <height>116</height>
         </size>
        </property>
-       <property name="text" >
+       <property name="text">
         <string/>
        </property>
-       <property name="pixmap" >
-        <pixmap resource="../resources/resources.qrc" >:/header/images/InformationLogo.png</pixmap>
+       <property name="pixmap">
+        <pixmap resource="../resources/resources.qrc">:/header/images/InformationLogo.png</pixmap>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" >
+      <layout class="QVBoxLayout">
        <item>
         <spacer>
-         <property name="orientation" >
+         <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>239</width>
            <height>16</height>
@@ -50,24 +51,24 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="label_2" >
-         <property name="text" >
-          <string>Powered by &lt;b>Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b>&lt;br>Contact: &lt;a href="mailto:xeskuu.xvst@gmail.com">xeskuu.xvst@gmail.com&lt;/a></string>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</string>
          </property>
-         <property name="alignment" >
+         <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-         <property name="openExternalLinks" >
+         <property name="openExternalLinks">
           <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
         <spacer>
-         <property name="orientation" >
+         <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>239</width>
            <height>16</height>
@@ -76,27 +77,27 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="label_4" >
-         <property name="text" >
-          <string>This software is OpenSource and is licenced under &lt;a href="http://www.gnu.org/licenses/gpl.html">&lt;b>GNU GPL&lt;/b>&lt;/a> licence (General Public Licence)</string>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</string>
          </property>
-         <property name="alignment" >
+         <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-         <property name="wordWrap" >
+         <property name="wordWrap">
           <bool>true</bool>
          </property>
-         <property name="openExternalLinks" >
+         <property name="openExternalLinks">
           <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
         <spacer>
-         <property name="orientation" >
+         <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
            <height>16</height>
@@ -108,48 +109,48 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="0" colspan="3" >
-    <widget class="Line" name="bvlSeparator_2" >
-     <property name="minimumSize" >
+   <item row="1" column="0" colspan="3">
+    <widget class="Line" name="bvlSeparator_2">
+     <property name="minimumSize">
       <size>
        <width>0</width>
        <height>10</height>
       </size>
      </property>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="3" >
-    <widget class="QLabel" name="label_5" >
-     <property name="text" >
-      <string>&lt;b>Special thanks to:&lt;/b>&lt;br>&lt;br>&lt;b>Xavi&lt;/b>: Mac OS X responsable&lt;br>&lt;b>Grzegorz Gibas (Amigib)&lt;/b>: Polish language author&lt;br>&lt;b>Daisuke (barlog)&lt;/b>: Japanese language author&lt;br>&lt;b>Johan Hornof&lt;/b>  &amp;amp; &lt;b>Lukas Vana (fabian)&lt;/b>: Czech language authors&lt;br>&lt;b>Franck (HackenatoN)&lt;/b>  &amp;amp; &lt;b>DODICH&lt;/b>: French language authors&lt;br>&lt;b>Jens Chr. True&lt;/b>: Danish language author&lt;br>&lt;b>Mateus Tuler&lt;/b>: Portugese - Brasil language author&lt;br>&lt;b>Lee Evan&lt;/b>: Korean language author&lt;br>&lt;b>Zoltán Magyar (ZitySoft)&lt;/b>: Hungrianl language author&lt;br>&lt;b>Marcos Díaz&lt;/b>: Galician language author&lt;br>&lt;b>Mark James&lt;/b>: Silk icon set 1.3 author&lt;br>&lt;b>Mayosoft®&lt;/b>: "I'm not a Patriot" icons author</string>
+   <item row="2" column="0" colspan="3">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X coresponsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt;  &amp;amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Franck (HackenatoN)&lt;/b&gt;  &amp;amp; &lt;b&gt;DODICH&lt;/b&gt;: French language authors&lt;br&gt;&lt;b&gt;Jens Chr. True&lt;/b&gt;: Danish language author&lt;br&gt;&lt;b&gt;Mateus Tuler&lt;/b&gt;: Portugese - Brasil language author&lt;br&gt;&lt;b&gt;Lee Evan&lt;/b&gt;: Korean language author&lt;br&gt;&lt;b&gt;Zoltán Magyar (ZitySoft)&lt;/b&gt;: Hungrian language author&lt;br&gt;&lt;b&gt;Marcos Díaz&lt;/b&gt;: Galician language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I'm not a Patriot&quot; icons author</string>
      </property>
-     <property name="alignment" >
+     <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
-   <item row="3" column="0" colspan="3" >
-    <widget class="Line" name="bvlSeparator" >
-     <property name="minimumSize" >
+   <item row="3" column="0" colspan="3">
+    <widget class="Line" name="bvlSeparator">
+     <property name="minimumSize">
       <size>
        <width>0</width>
        <height>10</height>
       </size>
      </property>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="4" column="0" >
+   <item row="4" column="0">
     <spacer>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>111</width>
        <height>20</height>
@@ -157,49 +158,49 @@
      </property>
     </spacer>
    </item>
-   <item row="4" column="1" >
-    <widget class="QPushButton" name="btnOk" >
-     <property name="minimumSize" >
+   <item row="4" column="1">
+    <widget class="QPushButton" name="btnOk">
+     <property name="minimumSize">
       <size>
        <width>90</width>
        <height>25</height>
       </size>
      </property>
-     <property name="maximumSize" >
+     <property name="maximumSize">
       <size>
        <width>16777215</width>
        <height>16777215</height>
       </size>
      </property>
-     <property name="baseSize" >
+     <property name="baseSize">
       <size>
        <width>0</width>
        <height>0</height>
       </size>
      </property>
-     <property name="whatsThis" >
+     <property name="whatsThis">
       <string>Close the Credits dialog</string>
      </property>
-     <property name="accessibleName" >
+     <property name="accessibleName">
       <string>Ok button</string>
      </property>
-     <property name="accessibleDescription" >
+     <property name="accessibleDescription">
       <string>Close the Credits dialog</string>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>Ok</string>
      </property>
-     <property name="default" >
+     <property name="default">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="4" column="2" >
+   <item row="4" column="2">
     <spacer>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>121</width>
        <height>20</height>
@@ -210,8 +211,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../resources/resources.qrc" />
-  <include location="../resources/resources.qrc" />
+  <include location="../resources/resources.qrc"/>
+  <include location="../resources/resources.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -220,11 +221,11 @@
    <receiver>Credits</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>346</x>
      <y>248</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>207</x>
      <y>255</y>
     </hint>

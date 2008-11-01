@@ -42,15 +42,18 @@ int main(int argc, char ** argv)
 	QApplication app(argc, argv);
 
 	// get language file
-	#ifdef Q_OS_LINUX
-	/* ... for linux ... */
+#ifdef Q_OS_LINUX // modification made by "AzalSup"
 	QString _homeDirectory  = getenv("HOME");
 	_homeDirectory += "/.xVideoServiceThief";
 	ProgramOptions *programOptions = new ProgramOptions(_homeDirectory);
-	#else
+#endif
+#ifdef Q_WS_MAC
+	QString preferencesPath = QString(QDir::homePath() + "/Library/Preferences");
+	ProgramOptions *programOptions = new ProgramOptions(preferencesPath);
+#endif
+#ifdef Q_OS_WIN32
 	ProgramOptions *programOptions = new ProgramOptions(qApp->applicationDirPath());
-	#endif /* linux */
-	// modification made by "AzalSup"
+#endif
 	
 	programOptions->load();
 	QString qm = LanguageManager::get_qm_languageFile(programOptions->getLanguageFile(true));

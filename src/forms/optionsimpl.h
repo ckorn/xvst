@@ -32,6 +32,7 @@
 //
 #include "downloadlogimpl.h"
 #include "checkupdatesimpl.h"
+#include "newlanguagesimpl.h"
 //
 #include "../options.h"
 #include "../videolistcontroller.h"
@@ -81,5 +82,6 @@ Q_OBJECT
 		void btnUseThisClicked();
 		void langItemDoubleClicked(QTreeWidgetItem *item, int column);
 		void btnCheckNowClicked();
+		void btnAddNewLanguagesClicked();
 };
 #endif

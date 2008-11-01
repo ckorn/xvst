@@ -13,89 +13,119 @@
    <string>Download Log</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/resources.qrc" >:/options/images/session.png</iconset>
+   <iconset resource="../resources/resources.qrc" >
+    <normaloff>:/options/images/session.png</normaloff>:/options/images/session.png</iconset>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" >
-    <layout class="QVBoxLayout" >
+    <widget class="QLabel" name="lblTitle" >
+     <property name="text" >
+      <string>Downloaded videos log:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QTreeWidget" name="lsvLog" >
+     <property name="palette" >
+      <palette>
+       <active>
+        <colorrole role="AlternateBase" >
+         <brush brushstyle="SolidPattern" >
+          <color alpha="255" >
+           <red>255</red>
+           <green>243</green>
+           <blue>197</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="AlternateBase" >
+         <brush brushstyle="SolidPattern" >
+          <color alpha="255" >
+           <red>255</red>
+           <green>243</green>
+           <blue>197</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="AlternateBase" >
+         <brush brushstyle="SolidPattern" >
+          <color alpha="255" >
+           <red>255</red>
+           <green>243</green>
+           <blue>197</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="whatsThis" >
+      <string>Display the downloaded log list</string>
+     </property>
+     <property name="accessibleName" >
+      <string>Downloads log list</string>
+     </property>
+     <property name="accessibleDescription" >
+      <string>Display the downloaded log list</string>
+     </property>
+     <property name="alternatingRowColors" >
+      <bool>true</bool>
+     </property>
+     <property name="rootIsDecorated" >
+      <bool>false</bool>
+     </property>
+     <property name="uniformRowHeights" >
+      <bool>true</bool>
+     </property>
+     <property name="itemsExpandable" >
+      <bool>false</bool>
+     </property>
+     <property name="allColumnsShowFocus" >
+      <bool>true</bool>
+     </property>
+     <column>
+      <property name="text" >
+       <string>1</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
-      <widget class="QLabel" name="lblTitle" >
-       <property name="text" >
-        <string>Downloaded videos log:</string>
+      <spacer name="horizontalSpacer" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
        </property>
-      </widget>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>578</width>
+         <height>29</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
-      <widget class="QTreeWidget" name="lsvLog" >
-       <property name="palette" >
-        <palette>
-         <active>
-          <colorrole role="AlternateBase" >
-           <brush brushstyle="SolidPattern" >
-            <color alpha="255" >
-             <red>255</red>
-             <green>243</green>
-             <blue>197</blue>
-            </color>
-           </brush>
-          </colorrole>
-         </active>
-         <inactive>
-          <colorrole role="AlternateBase" >
-           <brush brushstyle="SolidPattern" >
-            <color alpha="255" >
-             <red>255</red>
-             <green>243</green>
-             <blue>197</blue>
-            </color>
-           </brush>
-          </colorrole>
-         </inactive>
-         <disabled>
-          <colorrole role="AlternateBase" >
-           <brush brushstyle="SolidPattern" >
-            <color alpha="255" >
-             <red>255</red>
-             <green>243</green>
-             <blue>197</blue>
-            </color>
-           </brush>
-          </colorrole>
-         </disabled>
-        </palette>
+      <widget class="QPushButton" name="pushButton" >
+       <property name="minimumSize" >
+        <size>
+         <width>120</width>
+         <height>0</height>
+        </size>
        </property>
-       <property name="whatsThis" >
-        <string>Display the downloaded log list</string>
+       <property name="text" >
+        <string>Close</string>
        </property>
-       <property name="accessibleName" >
-        <string>Downloads log list</string>
-       </property>
-       <property name="accessibleDescription" >
-        <string>Display the downloaded log list</string>
-       </property>
-       <property name="alternatingRowColors" >
+       <property name="default" >
         <bool>true</bool>
        </property>
-       <property name="rootIsDecorated" >
-        <bool>false</bool>
-       </property>
-       <property name="uniformRowHeights" >
-        <bool>true</bool>
-       </property>
-       <property name="itemsExpandable" >
-        <bool>false</bool>
-       </property>
-       <property name="allColumnsShowFocus" >
-        <bool>true</bool>
-       </property>
-       <column>
-        <property name="text" >
-         <string>1</string>
-        </property>
-       </column>
       </widget>
      </item>
     </layout>
@@ -105,5 +135,22 @@
  <resources>
   <include location="../resources/resources.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DownloadLog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>702</x>
+     <y>326</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>490</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

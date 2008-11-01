@@ -27,8 +27,14 @@
 
 ProgramOptions::ProgramOptions(QString optionsPath)
 {
-	appDir.setPath(optionsPath);
-	optionsFile = QString(optionsPath + "/config.conf");
+
+#ifdef Q_WS_MAC
+        appDir.setPath(QCoreApplication::applicationDirPath());
+        optionsFile = QString(optionsPath + "/com.xVideoServiceThief.config.plist");
+#else
+        appDir.setPath(optionsPath);
+        optionsFile = QString(optionsPath + "/config.conf");
+#endif
 	canSendUpdateSignal = true;
 }
 
@@ -44,10 +50,15 @@ void ProgramOptions::load()
 	// set the default values
 	setDefault();
 	
+	// if options file don't exists, then abort...
 	if (!QFile::exists(optionsFile)) return;
 	
 	// load config
+#ifdef Q_WS_MAC	
+	QSettings settings(optionsFile, QSettings::NativeFormat);
+#else
 	QSettings settings(optionsFile, QSettings::IniFormat);
+#endif
 	downloadAutomatically = settings.value("configuration/downloadAutomatically", downloadAutomatically).toBool();
 	downloadDir = settings.value("configuration/downloadDir", downloadDir).toString();
 	convertVideos = settings.value("configuration/convertVideos", convertVideos).toBool();
@@ -109,7 +120,11 @@ void ProgramOptions::save()
 {
 	emit optionsSaveBefore();
 
+#ifdef Q_WS_MAC	
+	QSettings settings(optionsFile, QSettings::NativeFormat);
+#else
 	QSettings settings(optionsFile, QSettings::IniFormat);
+#endif
 
 	settings.beginGroup("configuration");
 
@@ -191,8 +206,18 @@ void ProgramOptions::setDefault()
 #ifdef Q_OS_WIN32
 	ffmpegLibLocation = QString(appDir.absolutePath() + DEFAULT_FFMPEGLIB + "/ffmpeg.exe");
 #else
+#ifdef Q_WS_MAC
+	// check if our APP has a ffmpeg embeded
+	if (QFile::exists(appDir.absolutePath() +"/../Tools/ffmpeg"))
+		ffmpegLibLocation = appDir.absolutePath() + "/../Tools/ffmpeg";
+	else // ffmpeg is not embedded into our .app, so set the "standard ffmpeg folder"
+		ffmpegLibLocation = QString(DEFAULT_FFMPEGLIB + "/ffmpeg");
+#else 
+	// linux scope
 	ffmpegLibLocation = QString(DEFAULT_FFMPEGLIB + "/ffmpeg");
 #endif
+#endif
+
 	displayPopup = true;
 
 	conversionConf.outputFormat = ofAVI;
@@ -251,6 +276,24 @@ void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
 QString ProgramOptions::getApplicationPath()
 {
 	return appDir.absolutePath();
+}
+
+QString ProgramOptions::getOptionsPath()
+{
+#ifdef Q_WS_MAC
+	return QString(QDir::homePath() + "/Library/Preferences");
+#else
+	return getApplicationPath();
+#endif
+}
+
+QSettings::Format ProgramOptions::getOptionsFormat()
+{
+#ifdef Q_WS_MAC
+	return QSettings::NativeFormat;
+#else
+	return QSettings::IniFormat;
+#endif
 }
 
 void ProgramOptions::sendUpdateSignal()

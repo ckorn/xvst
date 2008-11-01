@@ -87,7 +87,7 @@ Q_OBJECT
 		bool mainWinowMaximized;		//!< Flag for know if the main window should be maximized
 		bool vistaUpdatesMessage;		//!< Flag for know if we won't see the attention message of vista (updates)
 
-		QDir appDir;			//!< Initial program path
+		QDir appDir;		//!< Initial program path
 		QString appExecutable;	//!< Executable program path
 		QString optionsFile;	//!< Options file name (path + name)
 
@@ -109,6 +109,8 @@ Q_OBJECT
 		void setCanSendUpdateSignal(bool canSendUpdateSignal);
 		/*! Get the application path */
 		QString getApplicationPath();
+		/*! Get the options path */
+		QString getOptionsPath();
 		// set / get methods
 		void setFfmpegLibLocation(QString value);
 		QString getFfmpegLibLocation();

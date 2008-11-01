@@ -55,6 +55,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	connect(btnUseThis, SIGNAL(clicked()), this, SLOT(btnUseThisClicked()));
 	connect(lsvLanguages, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), this, SLOT(langItemDoubleClicked(QTreeWidgetItem *, int)));
 	connect(btnCheckNow, SIGNAL(clicked()), this, SLOT(btnCheckNowClicked()));
+	connect(btnAddNewLanguages, SIGNAL(clicked()), this, SLOT(btnAddNewLanguagesClicked()));
 	// create menu
 	createMenu();
 	// add info
@@ -203,7 +204,9 @@ void OptionsImpl::fillInitialData()
 
 void OptionsImpl::fillLanguages()
 {
-	tmpLangFile = programOptions->getLanguageFile(false);
+	lsvLanguages->clear();
+
+    	tmpLangFile = programOptions->getLanguageFile(false);
 	languageManager->loadLangFiles(programOptions->getApplicationPath() + "/languages");
 	lsvLanguages->header()->hide();
 
@@ -429,6 +432,15 @@ void OptionsImpl::btnCheckNowClicked()
 	btnCheckNow->setEnabled(true);
 }
 
+void OptionsImpl::btnAddNewLanguagesClicked()
+{
+	NewLanguagesImpl newLanguagesForm(this);
+	newLanguagesForm.exec();
+
+	// reload languages
+	fillLanguages();
+}
+
 void OptionsImpl::btnOkClicked()
 {
 	setOptionsValues();
@@ -496,6 +508,7 @@ void OptionsImpl::spbRemovePressed()
 
 			delete lsvServices2->topLevelItem(i);
 		}
+	// update event
 	servicesItemSelectionChanged();
 }
 

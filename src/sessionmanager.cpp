@@ -32,12 +32,14 @@ SessionManager::SessionManager(ProgramOptions *programOptions)
 
 void SessionManager::saveSession(VideoListController *videoListController)
 {
+	QString sessionFile = programOptions->getOptionsPath() + SESSION_FILE;
+
 	if (videoListController == NULL || !programOptions->getSaveRestoreSessions()) return;
 
-	if (QFile::exists(programOptions->getApplicationPath() + SESSION_FILE))
-		QFile::remove(programOptions->getApplicationPath() + SESSION_FILE);
+	if (QFile::exists(sessionFile))
+		QFile::remove(sessionFile);
 
-	QSettings settings(programOptions->getApplicationPath() + SESSION_FILE, QSettings::IniFormat);
+	QSettings settings(sessionFile, programOptions->getOptionsFormat());
 
 	for (int n = 0; n < videoListController->getVideoItemCount(); n++)
 	{
@@ -75,11 +77,12 @@ void SessionManager::saveSession(VideoListController *videoListController)
 
 void SessionManager::loadSession(VideoListController *videoListController)
 {
-	if (videoListController == NULL ||
-	    !programOptions->getSaveRestoreSessions() ||
-	    !QFile::exists(programOptions->getApplicationPath() + SESSION_FILE)) return;
+	QString sessionFile = programOptions->getOptionsPath() + SESSION_FILE;
 
-	QSettings settings(programOptions->getApplicationPath() + SESSION_FILE, QSettings::IniFormat);
+	if (videoListController == NULL ||
+	    !programOptions->getSaveRestoreSessions() || !QFile::exists(sessionFile)) return;
+
+	QSettings settings(sessionFile, programOptions->getOptionsFormat());
 
 	QStringList videos = settings.childGroups();
 
@@ -107,7 +110,7 @@ void SessionManager::addToLog(VideoItem *videoItem)
 {
 	if (videoItem == NULL || !programOptions->getSaveLogDownloadedVideos()) return;
 
-	QSettings settings(programOptions->getApplicationPath() + LOG_FILE, QSettings::IniFormat);
+	QSettings settings(programOptions->getOptionsPath() + LOG_FILE, programOptions->getOptionsFormat());
 
 	int lastID = settings.value("information/lastID", 0).toInt() + 1;
 
@@ -124,15 +127,15 @@ void SessionManager::addToLog(VideoItem *videoItem)
 
 void SessionManager::clearLog()
 {
-	if (QFile::exists(programOptions->getApplicationPath() + LOG_FILE))
-		QFile::remove(programOptions->getApplicationPath() + LOG_FILE);
+	if (QFile::exists(programOptions->getOptionsPath() + LOG_FILE))
+		QFile::remove(programOptions->getOptionsPath() + LOG_FILE);
 }
 
 QList<LogEntry> SessionManager::getLogEntries()
 {
 	QList<LogEntry> results;
 
-	QSettings settings(programOptions->getApplicationPath() + LOG_FILE, QSettings::IniFormat);
+	QSettings settings(programOptions->getOptionsPath() + LOG_FILE, programOptions->getOptionsFormat());
 
 	QStringList historics = settings.childGroups();
 
