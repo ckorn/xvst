@@ -111,6 +111,8 @@ Q_OBJECT
 		QString getApplicationPath();
 		/*! Get the options path */
 		QString getOptionsPath();
+		/*! Get the options format */
+		QSettings::Format getOptionsFormat();
 		// set / get methods
 		void setFfmpegLibLocation(QString value);
 		QString getFfmpegLibLocation();
