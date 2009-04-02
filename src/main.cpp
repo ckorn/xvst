@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -41,7 +41,6 @@ int main(int argc, char ** argv)
 {
 	QApplication app(argc, argv);
 
-	// get language file
 #ifdef Q_OS_LINUX // modification made by "AzalSup"
 	QString _homeDirectory  = getenv("HOME");
 	_homeDirectory += "/.xVideoServiceThief";
@@ -54,11 +53,12 @@ int main(int argc, char ** argv)
 #ifdef Q_OS_WIN32
 	ProgramOptions *programOptions = new ProgramOptions(qApp->applicationDirPath());
 #endif
-	
+
+	// get language file
 	programOptions->load();
 	QString qm = LanguageManager::get_qm_languageFile(programOptions->getLanguageFile(true));
 	delete programOptions;
-	
+
 	// install translator
 	QTranslator translator;
 	translator.load(qm);
