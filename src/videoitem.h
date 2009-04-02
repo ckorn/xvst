@@ -52,6 +52,15 @@ struct VideoDefinition
 	QString extension;	//!< video extension (default = flv)
 	bool needLogin;		//!< flag for know if this video need a login
 	bool isAudioFile;	//!< flag for know if is a audio file
+	/*! Struct initializer */
+	VideoDefinition()
+	{
+		URL = "";
+		title = "";
+		extension = ".flv";
+		needLogin = false;
+		isAudioFile = false;
+	}
 };
 
 class VideoItem : public QObject
