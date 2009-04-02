@@ -1,18 +1,32 @@
 1.8.3a:
 -------
 
+- Upgraded to Qt 4.5.0
+
+- Recoded all the internal xVST core (now is based on Plugins)
+
 - Added Danish (DA) language
 - Added Portugese - Brasil (BR) language
+- Added German (DE) language
+- Added Romanian (RO) language
 - Added URL for each video service in "Information" form
 - Added sorting for "Downloads log" list (now is sorted from old to new downloads)
+- Added two new formats to convert:
+	- MP4 (*.mp4) format
+	- Sony PSP (*.mp4) format
 
 - Fixed bug (Error: iPod mp4 format was not converted, thanks to "Jens Chr. True" for your help)
+- Fixed bug (Error: 3gp format was not converted)
 - Fixed bug (Error: editing the "Downloads Dir" manually in Main form, on enter a new char the cursor where placed at end of edit)
 - Fixed bug (Error: Invlaid file names when the video title contains '/' or '\')
 - Fixed bug (Error: Paypal link was corrupt, now the Paypal button links to xVST website donation page)
 
 - Updated french language
 
+- Improved internal HTTP class
+
+- Revised all services:
+	- Added HD videos for Youtube
 
 Linux:
 ------
@@ -24,6 +38,13 @@ Windows Vista:
 --------------
 
 - Added detection of Windows Vista for advertise about "administrator permission"
+
+MacOS X:
+--------
+
+- Added ffmpeg internal detection
+- Configuration file for MacOS X is now: /Users/{User}/Preferences
+
 
 1.8.2a:
 -------
