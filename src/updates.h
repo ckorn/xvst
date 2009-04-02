@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -37,10 +37,14 @@
 #ifdef Q_OS_WIN32
 static const QString XUPDATER_PATH = "/bin/xUpdater.exe";	//<! xUpdater app (win32)
 #else
+#ifdef Q_WS_MAC
+static const QString XUPDATER_PATH = "/Tools/xUpdater";		//<! xUpdater app (MacOSX)
+#else
 static const QString XUPDATER_PATH = "/bin/xUpdater";		//<! xUpdater app (unix)
 #endif
-static const QString XUPDATER_FILE 			= "/xVST.update";		//!< update script file
-static const QString XUPDATER_DWN_FILE 		= "/xVST.update.%1";	//!< downloaded update file
+#endif
+static const QString XUPDATER_FILE 	= "/xVST.update";	//!< update script file
+static const QString XUPDATER_DWN_FILE 	= "/xVST.update.%1";	//!< downloaded update file
 
 enum UpdateState
 {
@@ -57,7 +61,7 @@ Q_OBJECT
 	private:
 		QString caption;	//!< Update caption
 		QString version;	//!< Update version
-		int size;			//!< Update file size
+		int size;		//!< Update file size
 		QString installTo;	//!< Where to find and install the new update
 		QString url;		//!< Where to download this update
 		bool packed;		//!< Flag for know if this update is packed

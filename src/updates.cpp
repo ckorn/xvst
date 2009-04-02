@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -31,7 +31,11 @@ Updates::Updates(QString appPath)
 {
 	updateState = usWaiting;
 	cancelled = false;
+#ifdef Q_WS_MAC
+	this->appPath = appPath + "/..";
+#else
 	this->appPath = appPath;
+#endif
 	currentDownloaded = 0;
 	totalDownloaded = 0;
 	totalToDownload = 0;
@@ -167,8 +171,8 @@ void Updates::buildInstalScript()
 					updateScript << QString(":install_file_%1").arg(n)
 					// copy the downloaded file
 								 << QString("if copy \"%1\" \"%2\"")
-								 		.arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))	// downloaded file
-								 		.arg(appPath + update->getInstallTo())						// destination file
+										.arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))	// downloaded file
+										.arg(appPath + update->getInstallTo())						// destination file
 					// if the downloaded file has been copied, then delete it and jump to the next file
 								 << QString("del \"%1\"").arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))
 					// if isn't the last file, go to next update file
@@ -195,9 +199,9 @@ void Updates::buildInstalScript()
 						updateScript << QString(":install_file_%1_%2").arg(n).arg(i)
 						// copy the downloaded file
 									 << QString("if copy \"%1\" \"%2\"")
-									 		.arg(QString::fromStdString(unpacker->getExtractedFileName(i)))	// unpacked file
-									 		.arg(QFileInfo(appPath + update->getInstallTo()).absolutePath() + 
-									 					   "/" + QString::fromStdString(unpacker->getExtractedFileName(i, true))) // destination file
+											.arg(QString::fromStdString(unpacker->getExtractedFileName(i)))	// unpacked file
+											.arg(QFileInfo(appPath + update->getInstallTo()).absolutePath() +
+														   "/" + QString::fromStdString(unpacker->getExtractedFileName(i, true))) // destination file
 						// if the downloaded file has been copied, then delete it and jump to the next file
 									 << QString("del \"%1\"").arg(QString::fromStdString(unpacker->getExtractedFileName(i)))
 						// next update
@@ -211,7 +215,7 @@ void Updates::buildInstalScript()
 					updateScript << QString(":install_file_%1_%2").arg(n).arg(i)
 								 << QString("del \"%1\"").arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))
 								 << (n < getUpdatesCount() - 1 ? QString("goto install_file_%1").arg(n + 1) : "goto finish_update");
-					
+
 					delete unpacker;
 				}
 			else
@@ -293,7 +297,7 @@ void Updates::run()
 						QFile::remove(fileName);
 					// start to download the current update
 					http->download(QUrl(updateList->at(currentItem)->getUrl()),
-					               QDir::tempPath(), QString(XUPDATER_DWN_FILE).arg(currentItem));
+						       QDir::tempPath(), QString(XUPDATER_DWN_FILE).arg(currentItem));
 				}
 				// wait 100 miliseconds (prevent 100% cpu)
 				msleep(100);
@@ -308,7 +312,7 @@ void Updates::run()
 					for (int n = 0; n < getUpdatesCount(); n++)
 						if (QFile::exists(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(currentItem)))
 							QFile::remove(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(currentItem));
-					
+
 					emit updatesCancelled();
 				}
 			break;
@@ -376,13 +380,17 @@ int Updates::getFirstUpdateToDownload()
 	for (int n = 0; n < getUpdatesCount(); n++)
 		if (updateList->at(n)->getChecked())
 			return n;
-	
+
 	return -1;
 }
 
 bool Updates::canUpdate()
 {
+#ifdef Q_WS_MAC
+	return QFile::exists(QCoreApplication::applicationDirPath() + "/../Resources" + XUPDATER_PATH);
+#else
 	return QFile::exists(QCoreApplication::applicationDirPath() + XUPDATER_PATH);
+#endif
 }
 
 void Updates::downloadEvent(int pos, int max)
@@ -392,14 +400,14 @@ void Updates::downloadEvent(int pos, int max)
 	else
 	{
 		currentDownloaded = totalDownloaded + pos;
-		
-		emit downloadingUpdate(currentItem, 
-							   static_cast<int>(calculePercent(pos, max)), 
+
+		emit downloadingUpdate(currentItem,
+							   static_cast<int>(calculePercent(pos, max)),
 							   static_cast<int>(calculePercent(currentDownloaded, totalToDownload)));
 	}
 }
 
-void Updates::downloadFinished(const QFileInfo destFile)
+void Updates::downloadFinished(const QFileInfo /*destFile*/)
 {
 	if (updateState == usDownloading)
 	{
