@@ -54,7 +54,6 @@ enum StopReason
 
 class ArrayAvg : public QObject
 {
-Q_OBJECT
 	private:
 		QList<float> arrayAvg;	//!< array of floats
 		int maxItems;			//!< max possible values
@@ -73,7 +72,6 @@ Q_OBJECT
 
 class Cookie : public QObject
 {
-Q_OBJECT
 	private:
 		QString cookieBoddy;	//!< Cookie boddy
 		QString expires;		//!< Cookie expiration date
@@ -82,6 +80,8 @@ Q_OBJECT
 	public:
 		/*! Class constructor */
 		Cookie(QString cookieInf);
+		/*! Copy class constructor */
+		Cookie(const Cookie&);
 		/*! Get the cookie boddy */
 		QString getCookieBoddy();
 		/*! Get the cookie expiration date */
@@ -94,16 +94,19 @@ Q_OBJECT
 
 class CookieController : public QObject
 {
-Q_OBJECT
 	private:
 		QList<Cookie*> *cookies;
 	public:
 		/*! Class constructor */
 		CookieController();
+		/* Copy class constructor */
+		CookieController(const CookieController&);
 		/*! Class dsetructor */
 		~CookieController();
 		/*! Add a new cookie */
 		void addCookie(QString cookie);
+		/*! Copy all cookies from another CookieController */
+		void copyCookies(const CookieController&);
 		/*! Clear all stored cookies */
 		void clear();
 		/*! Get host cookies */
@@ -149,6 +152,8 @@ Q_OBJECT
 		int launchedStepID;			//!< the launche step id (used for compare with stepID)
 		int timeOut;				//!< when the connection is considered "time out" in miliseconds (we will ot wait infinite...)
 		QStringList *customHeaders;	//!< list with custom header parameters
+		/*! Init Http class */
+		void initClass(bool useInternalTimer = true);
 		/*! Init the internal http data */
 		void initData();
 		/*! Init retries data */
@@ -167,8 +172,12 @@ Q_OBJECT
 	public:
 		/*! class constructor */
 		Http(bool useInternalTimer = true);
+		/* copy class constructor */
+		Http(const Http&);
 		/*! class destructor */
 		~Http();
+		/*! Override = operator */
+		Http &operator=(const Http &);
 		/*! Start a new asynchronously download */
 		int download(const QUrl URL, QString destination, QString fileName = "", bool autoName = true);
 		/*! Resume a previous asynchronously download */

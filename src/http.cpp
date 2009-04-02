@@ -82,6 +82,15 @@ Cookie::Cookie(QString cookieInf)
 	path = copyBetween(cookieInf, "path=", ";");
 }
 
+Cookie::Cookie(const Cookie &other): QObject()
+{
+	// copy internal cookie data from other cookie
+	cookieBoddy = other.cookieBoddy;
+	expires = other.expires;
+	domain = other.domain;
+	path = other.path;
+}
+
 QString Cookie::getCookieBoddy()
 {
 	return cookieBoddy;
@@ -109,6 +118,13 @@ CookieController::CookieController()
 	cookies = new QList<Cookie*>;
 }
 
+CookieController::CookieController(const CookieController &other): QObject()
+{
+	cookies = new QList<Cookie*>;
+	// copy all cookies from another cookie controller
+	copyCookies(other);
+}
+
 CookieController::~CookieController()
 {
 	clear();
@@ -118,6 +134,15 @@ CookieController::~CookieController()
 void CookieController::addCookie(QString cookie)
 {
 	cookies->append(new Cookie(cookie));
+}
+
+void CookieController::copyCookies(const CookieController &other)
+{
+	for (int n = 0; n < cookies->count(); n++)
+	{
+		Cookie *cookie = other.cookies->at(n);
+		cookies->append(new Cookie(*cookie));
+	}
 }
 
 void CookieController::clear()
@@ -159,6 +184,68 @@ QString CookieController::getCookies(QUrl URL)
 
 Http::Http(bool useInternalTimer)
 {
+	initClass(useInternalTimer);
+}
+
+Http::Http(const Http &other): QObject()
+{
+	initClass();
+	// init internal timer
+	useInternalTimer = other.useInternalTimer;
+	// default max retries
+	maxRetries = other.maxRetries;
+	timeOut = other.timeOut;
+	// copy destination file
+	if (other.file != NULL)
+	{
+		if (file != NULL) delete file;
+		file = new QFile(other.file->fileName());
+	}
+	// cancel or pause on finish?
+	pauseOnDestroyF = other.pauseOnDestroyF;
+	// copy stored cookies
+	cookies->copyCookies(*other.cookies);
+	// copy custom header parameters
+	delete customHeaders;
+	customHeaders = new QStringList(*other.customHeaders);
+}
+
+Http::~Http()
+{
+	if (pauseOnDestroyF) pause(); else cancel();
+
+	delete customHeaders;
+	delete downloadSpeedAvg;
+	delete cookies;
+	delete http;
+}
+
+Http &Http::operator=(const Http &other)
+{
+	// init internal timer
+	useInternalTimer = other.useInternalTimer;
+	// default max retries
+	maxRetries = other.maxRetries;
+	timeOut = other.timeOut;
+	// copy destination file
+	if (other.file != NULL)
+	{
+		if (file != NULL) delete file;
+		file = new QFile(other.file->fileName());
+	}
+	// cancel or pause on finish?
+	pauseOnDestroyF = other.pauseOnDestroyF;
+	// copy stored cookies
+	cookies->copyCookies(*other.cookies);
+	// copy custom header parameters
+	delete customHeaders;
+	customHeaders = new QStringList(*other.customHeaders);
+	// return my self updated
+	return *this;
+}
+
+void Http::initClass(bool useInternalTimer)
+{
 	setObjectName("Http");
 	// http protocol
 	http = new QHttp(this);
@@ -185,18 +272,8 @@ Http::Http(bool useInternalTimer)
 	connect(http, SIGNAL(dataReadProgress(int, int)), this, SLOT(dataReadProgress(int, int)));
 	connect(http, SIGNAL(requestFinished(int, bool)), this, SLOT(requestFinished(int, bool)));
 	connect(http, SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)), this,
-	        SLOT(responseHeaderReceived(const QHttpResponseHeader &)));
+			SLOT(responseHeaderReceived(const QHttpResponseHeader &)));
 	connect(http, SIGNAL(stateChanged(int)), this, SLOT(stateChanged(int)));
-}
-
-Http::~Http()
-{
-	if (pauseOnDestroyF) pause(); else cancel();
-
-	delete customHeaders;
-	delete downloadSpeedAvg;
-	delete cookies;
-	delete http;
 }
 
 void Http::initData()
@@ -663,6 +740,12 @@ void Http::requestFinished(int id, bool error)
 						canRemove = false;
 						emit downloadPaused(destFile);
 						break;
+					case NO_STOPPED:
+						break;
+					case DOWNLOAD_FINISHED:
+						break;
+					case TIME_OUT:
+						break;
 				}
 			else // others
 			{
@@ -777,7 +860,7 @@ void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
 		}
 }
 
-void Http::stateChanged(int state)
+void Http::stateChanged(int /*state*/)
 {
 	// nothing to do...
 }
