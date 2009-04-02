@@ -77,13 +77,27 @@ QStringList VideoConverter::getCommandLine()
 			parameters << "-vcodec" << "mpeg2video";
 			extension = ".mpeg";
 			break;
+		case ofMP4:
+			parameters << "-acodec" << "libfaac" << "-vcodec" << "mpeg4";
+			extension = ".mp4";
+			break;
 		case ofAppleiPod:
-			parameters	<< "-acodec" << "libfaac" << "-ab" << "128kb" << "-vcodec" << "mpeg4" << "-b" << "1200kb" 
-						<< "-mbd" << "2" << "-flags" << "+4mv+trell" << "-aic" << "2" << "-cmp" << "2" << "-subcmp" << "2" 
-						<< "-s" << "320x240" << "-title" << videoItem->getVideoInformation().title;
+//			parameters	<< "-acodec" << "libfaac" << "-ab" << "128kb" << "-vcodec" << "mpeg4" << "-b" << "1200kb"
+//						<< "-mbd" << "2" << /*"-flags" << "+4mv+trell" << "-aic" << "2" <<*/ "-cmp" << "2" << "-subcmp" << "2"
+//						<< "-s" << "320x240" /*<< "-title" << videoItem->getVideoInformation().title*/;
+			parameters	<< "-acodec" << "libfaac" << "-ab" << "128kb" << "-vcodec" << "mpeg4" << "-b" << "1200kb"
+						<< "-mbd" << "2" << "-cmp" << "2" << "-subcmp" << "2" << "-s" << "320x240";
+			extension = ".mp4";
+			break;
+		case ofSonyPSP:
+			parameters << "-acodec" << "libfaac" << "-ab" << "128kb" <<  "-vcodec" << "mpeg4" << "-b" << "1200kb" //<< "-ar" <<  "24000"
+					   << "-mbd" << "2" << "-flags" << "+4mv" << "-trellis" << "2" << "-cmp" << "2" << "-subcmp" << "2"
+					   << "-r" << "30000/1001" << "-f" << "psp";
 			extension = ".mp4";
 			break;
 		case of3GP:
+			parameters << "-vcodec" << "mpeg4" << "-acodec" << "libfaac" << "-ar" << "8000" << "-ac" << "1"
+					   << "-ab" << "12.2k" << "-f" << "3gp";
 			extension = ".3gp";
 			break;
 		case ofMP3:
@@ -382,7 +396,7 @@ void VideoConverter::started()
 	emit conversionStarted(videoItem);
 }
 
-void VideoConverter::finished(int exitCode, QProcess::ExitStatus exitStatus)
+void VideoConverter::finished(int /*exitCode*/, QProcess::ExitStatus /*exitStatus*/)
 {
 	deinitTimer();
 

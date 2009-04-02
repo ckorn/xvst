@@ -33,7 +33,7 @@
 /*! Output format conversion (DivX, MPEG1... ) */
 enum OutputFormat
 {
-	ofAVI, ofWMV, ofMPEG1, ofMPEG2, ofAppleiPod, of3GP, ofMP3
+	ofAVI, ofWMV, ofMPEG1, ofMPEG2, ofMP4, ofAppleiPod, ofSonyPSP, of3GP, ofMP3
 };
 
 /*! Video resolution */
