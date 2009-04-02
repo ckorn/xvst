@@ -37,7 +37,7 @@ VideoListController::VideoListController(ProgramOptions *programOptions)
 
 	videoList = new QList<VideoItem *>;
 
-	videoInformation = new VideoInformation;
+	videoInformation = new VideoInformation(programOptions->getPluginsDir());
 	videoDownload = new VideoDownload(programOptions->getDownloadDir(), programOptions->getMaxActiveDownloads());
 	videoConverter = new VideoConverter(programOptions->getFfmpegLibLocation(),
 	                                    programOptions->getDownloadDir(),
@@ -98,7 +98,7 @@ void VideoListController::swapVideoItems(VideoItem *from, VideoItem *to)
 	}
 }
 
-void VideoListController::timerEvent(QTimerEvent *event)
+void VideoListController::timerEvent(QTimerEvent */*event*/)
 {
 	// get first null item to, to start get info
 	if (videoInformation->canGetInformation())
