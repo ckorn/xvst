@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -54,7 +54,7 @@ Q_OBJECT
 		bool deleteVideosOnConvert;		//!< flag for know if the original video must be deleted after its conversion
 		bool convertVideos;				//!< flag for know if the downloaded video should be converted
 		QString downloadDir;			//!< downloads directory
-		bool downloadAutomatically;		//!< flag for know if can download videos automatically 
+		bool downloadAutomatically;		//!< flag for know if can download videos automatically
 		VideoConversionConfig conversionConf;	//!< Video conversion configuration
 		bool displayPopup;				//!< flag for know if can display popups on finish
 		bool saveRestoreSessions;		//!< flag for know if can save and restore sessions
@@ -86,6 +86,7 @@ Q_OBJECT
 		int mainWindowWidth;			//!< Main window width
 		bool mainWinowMaximized;		//!< Flag for know if the main window should be maximized
 		bool vistaUpdatesMessage;		//!< Flag for know if we won't see the attention message of vista (updates)
+		bool useInternalFFmpeg;			//!< Flag for know if the ffmpeg lib is into the app bundle
 
 		QDir appDir;		//!< Initial program path
 		QString appExecutable;	//!< Executable program path
@@ -111,8 +112,18 @@ Q_OBJECT
 		QString getApplicationPath();
 		/*! Get the options path */
 		QString getOptionsPath();
+		/*! Get the languages path */
+		QString getLanguagesPath();
+		/*! Get the plugins path */
+		QString getPluginsDir();
 		/*! Get the options format */
 		QSettings::Format getOptionsFormat();
+#ifdef Q_WS_MAC
+		/*! Get if internal ffmpeg is installed */
+		bool getIfInternalFFmpegIsInstalled();
+		/*! Get the internal ffmpeg path */
+		QString getInternalFFmpegPath();
+#endif
 		// set / get methods
 		void setFfmpegLibLocation(QString value);
 		QString getFfmpegLibLocation();
@@ -175,7 +186,7 @@ Q_OBJECT
 		void setFirstTime(bool value);
 		bool getFirstTime();
 		void setStayOnTop(bool value);
-		bool getStayOnTop(); 
+		bool getStayOnTop();
 		void setMinimizeToSystemTray(bool value);
 		bool getMinimizeToSystemTray();
 		void setMainWindowHeight(int value);
@@ -186,6 +197,8 @@ Q_OBJECT
 		bool getMainWinowMaximized();
 		void setVistaUpdatesMessage(bool value);
 		bool getVistaUpdatesMessage();
+		void setUseInternalFFmpeg(bool value);
+		bool getUseInternalFFmpeg();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();

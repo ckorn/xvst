@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -29,11 +29,11 @@ ProgramOptions::ProgramOptions(QString optionsPath)
 {
 
 #ifdef Q_WS_MAC
-        appDir.setPath(QCoreApplication::applicationDirPath());
-        optionsFile = QString(optionsPath + "/com.xVideoServiceThief.config.plist");
+	appDir.setPath(QCoreApplication::applicationDirPath());
+	optionsFile = QString(optionsPath + "/com.xVideoServiceThief.config.plist");
 #else
-        appDir.setPath(optionsPath);
-        optionsFile = QString(optionsPath + "/config.conf");
+	appDir.setPath(optionsPath);
+	optionsFile = QString(optionsPath + "/config.conf");
 #endif
 	canSendUpdateSignal = true;
 }
@@ -49,12 +49,12 @@ void ProgramOptions::load()
 
 	// set the default values
 	setDefault();
-	
+
 	// if options file don't exists, then abort...
 	if (!QFile::exists(optionsFile)) return;
-	
+
 	// load config
-#ifdef Q_WS_MAC	
+#ifdef Q_WS_MAC
 	QSettings settings(optionsFile, QSettings::NativeFormat);
 #else
 	QSettings settings(optionsFile, QSettings::IniFormat);
@@ -113,6 +113,11 @@ void ProgramOptions::load()
 
 	vistaUpdatesMessage = settings.value("configuration/vistaUpdatesMessage", vistaUpdatesMessage).toBool();
 
+	useInternalFFmpeg = settings.value("useInternalFFmpeg", useInternalFFmpeg).toBool();
+#ifdef Q_WS_MAC
+	if (useInternalFFmpeg) ffmpegLibLocation = getInternalFFmpegPath();
+#endif
+
 	emit optionsLoadAfter();
 }
 
@@ -120,7 +125,7 @@ void ProgramOptions::save()
 {
 	emit optionsSaveBefore();
 
-#ifdef Q_WS_MAC	
+#ifdef Q_WS_MAC
 	QSettings settings(optionsFile, QSettings::NativeFormat);
 #else
 	QSettings settings(optionsFile, QSettings::IniFormat);
@@ -168,7 +173,7 @@ void ProgramOptions::save()
 	settings.setValue("lastUpdate", lastUpdate);
 	settings.setValue("checkForUpdatesOnStartup", checkForUpdatesOnStartup);
 	settings.setValue("checkForUpdatesEvery", checkForUpdatesEvery);
-	
+
 	settings.setValue("displayBugReport", displayBugReport);
 
 	settings.setValue("firstTime", firstTime);
@@ -181,6 +186,8 @@ void ProgramOptions::save()
 	settings.setValue("mainWinowMaximized", mainWinowMaximized);
 
 	settings.setValue("vistaUpdatesMessage", vistaUpdatesMessage);
+
+	settings.setValue("useInternalFFmpeg", useInternalFFmpeg);
 
 	settings.endGroup();
 
@@ -208,11 +215,11 @@ void ProgramOptions::setDefault()
 #else
 #ifdef Q_WS_MAC
 	// check if our APP has a ffmpeg embeded
-	if (QFile::exists(appDir.absolutePath() +"/../Tools/ffmpeg"))
-		ffmpegLibLocation = appDir.absolutePath() + "/../Tools/ffmpeg";
+	if (QFile::exists(getInternalFFmpegPath()))
+		ffmpegLibLocation = getInternalFFmpegPath();
 	else // ffmpeg is not embedded into our .app, so set the "standard ffmpeg folder"
 		ffmpegLibLocation = QString(DEFAULT_FFMPEGLIB + "/ffmpeg");
-#else 
+#else
 	// linux scope
 	ffmpegLibLocation = QString(DEFAULT_FFMPEGLIB + "/ffmpeg");
 #endif
@@ -241,21 +248,21 @@ void ProgramOptions::setDefault()
 	proxyUserName = "";
 	proxyPort = 0;
 	proxyType = QNetworkProxy::NoProxy;
-	
+
 	dragDropLeft = -1;
 	dragDropTop = -1;
 	dragDropAlphaBlendValue = 100;
 	dragDropAlphaBlend = false;
-	
+
 	languageFile = "english_uk.language";
-	
+
 	installAutomaticallyUpdates = true;
 	lastUpdate = QDate(2007, 01, 01);
 	checkForUpdatesOnStartup = true;
 	checkForUpdatesEvery = 1;
-	
+
 	displayBugReport = true;
-	
+
 	firstTime = true;
 
 	stayOnTop = false;
@@ -266,6 +273,8 @@ void ProgramOptions::setDefault()
 	mainWinowMaximized = false;
 
 	vistaUpdatesMessage = false;
+
+	useInternalFFmpeg = true;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -287,6 +296,24 @@ QString ProgramOptions::getOptionsPath()
 #endif
 }
 
+QString ProgramOptions::getLanguagesPath()
+{
+#ifdef Q_WS_MAC
+	return getApplicationPath() + "/../Resources/Languages";
+#else
+	return getApplicationPath() + "/languages";
+#endif
+}
+
+QString ProgramOptions::getPluginsDir()
+{
+#ifdef Q_WS_MAC
+	return getApplicationPath() + "/../Resources/Plugins";
+#else
+	return getApplicationPath() + "/plugins";
+#endif
+}
+
 QSettings::Format ProgramOptions::getOptionsFormat()
 {
 #ifdef Q_WS_MAC
@@ -295,6 +322,18 @@ QSettings::Format ProgramOptions::getOptionsFormat()
 	return QSettings::IniFormat;
 #endif
 }
+
+#ifdef Q_WS_MAC
+bool ProgramOptions::getIfInternalFFmpegIsInstalled()
+{
+	return QFile::exists(getInternalFFmpegPath());
+}
+
+QString ProgramOptions::getInternalFFmpegPath()
+{
+	return appDir.absolutePath() + "/../Resources/Tools/ffmpeg";
+}
+#endif
 
 void ProgramOptions::sendUpdateSignal()
 {
@@ -548,7 +587,11 @@ void ProgramOptions::setDragDropAlphaBlendValue(int value)
 
 QString ProgramOptions::getLanguageFile(bool fullPath)
 {
+#ifdef Q_WS_MAC
+	return fullPath ? QDir::toNativeSeparators(appDir.absolutePath() + "/../languages/" + languageFile) : languageFile;
+#else
 	return fullPath ? QDir::toNativeSeparators(appDir.absolutePath() + "/languages/" + languageFile) : languageFile;
+#endif
 }
 
 void ProgramOptions::setLanguageFile(QString value)
@@ -674,4 +717,14 @@ void ProgramOptions::setVistaUpdatesMessage(bool value)
 bool ProgramOptions::getVistaUpdatesMessage()
 {
 	return vistaUpdatesMessage;
+}
+
+void ProgramOptions::setUseInternalFFmpeg(bool value)
+{
+	useInternalFFmpeg = value;
+}
+
+bool ProgramOptions::getUseInternalFFmpeg()
+{
+	return useInternalFFmpeg;
 }
