@@ -35,11 +35,13 @@ class AddVideoImpl : public QDialog, public Ui::AddVideo
 Q_OBJECT
 	private:
 		VideoInformation *videoInformation;
+		void fillConversionOptions();
 	public:
 		AddVideoImpl(VideoInformation *videoInformation, QWidget * parent = 0, Qt::WFlags f = 0 );
 	private slots:
 		void btnOkClicked();
 		void edtURLChanged(const QString &text);
 		void spbPasteURLClicked();
+		void chbOverrideConversionClicked();
 };
 #endif
