@@ -3,7 +3,8 @@ CONFIG += qt \
     release
 QT = core \
     gui \
-    network
+    network \
+    script
 TEMPLATE = app
 DESTDIR = bin
 UI_DIR = build/ui
@@ -55,7 +56,9 @@ HEADERS = src/forms/addvideoimpl.h \
     src/xprogressbar.h \
     src/forms/windowsvistadetectedimpl.h \
     src/forms/newlanguagesimpl.h \
-    src/newlanguages.h
+    src/newlanguages.h \
+    src/toolsscriptclass.h \
+    src/httpscriptclass.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \
@@ -87,7 +90,9 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/xprogressbar.cpp \
     src/forms/windowsvistadetectedimpl.cpp \
     src/forms/newlanguagesimpl.cpp \
-    src/newlanguages.cpp
+    src/newlanguages.cpp \
+    src/toolsscriptclass.cpp \
+    src/httpscriptclass.cpp
 TRANSLATIONS = resources/translations/xVST_ca.ts \
     resources/translations/xVST_es.ts \
     resources/translations/xVST_pl.ts \
@@ -100,6 +105,7 @@ TRANSLATIONS = resources/translations/xVST_ca.ts \
     resources/translations/xVST_hu.ts \
     resources/translations/xVST_gl.ts \
     resources/translations/xVST_ro.ts \
+    resources/translations/xVST_de.ts \
     resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc
 unix { 
