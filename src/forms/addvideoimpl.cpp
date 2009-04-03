@@ -25,14 +25,17 @@
 
 #include "addvideoimpl.h"
 //
-AddVideoImpl::AddVideoImpl(VideoInformation *videoInformation, QWidget * parent, Qt::WFlags f)
+AddVideoImpl::AddVideoImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,
+						   QWidget * parent, Qt::WFlags f)
 		: QDialog(parent, f)
 {
 	setupUi(this);
+	this->programOptions = programOptions;
 	this->videoInformation = videoInformation;
 	// hide the conversion options
 	originalSize = size();
 	gpbVideoConversion->setVisible(false);
+	chbOverrideConversion->setVisible(QFile::exists(programOptions->getFfmpegLibLocation()));
 	resize(width(), 50);
 	// prepare conversion options
 	fillConversionOptions();
@@ -45,44 +48,35 @@ AddVideoImpl::AddVideoImpl(VideoInformation *videoInformation, QWidget * parent,
 
 void AddVideoImpl::fillConversionOptions()
 {
-	// string list of items
-	QStringList itemsToAdd;
-	// set items to outputFormat
-	itemsToAdd	<< tr("AVI Format (*.avi)") << tr("WMV Format ( *.wmv)")
-	<< tr("MPEG1 Format ( *.mpg)") << tr("MPEG2 Format ( *.mpg)")
-	<< tr("MP4 Format (*.mp4)") << tr("Apple iPod (*.mp4)") << tr("Sony PSP (*.mp4)")
-	<< tr("3GP Format (*.3gp)") << tr("MP3 Format (*.mp3)");
-	cmbOutputFormat->addItems(itemsToAdd);
+	// set conversion data
+	cmbOutputFormat->addItems(VideoConverter::getOutputFormatAsStrings());
+	cmbVideoResolution->addItems(VideoConverter::getVideoResolutionAsStrings());
+	cmbAudioSampling->addItems(VideoConverter::getAudioSampleRatioAsStrings());
+	cmbVideoFrameRate->addItems(VideoConverter::getVideoFrameRateAsStrings());
+	cmbOutputQuality->addItems(VideoConverter::getOutputQualityAsStrings());
 
-	// set items to video resolution
-	itemsToAdd.clear();
-	itemsToAdd	<< tr("Original") << "96 x 72" << "128 x 96" << "160 x 120"
-	<< "176 x 120" << "176 x 144" << "192 x 144" << "240 x 180"
-	<< "320 x 200" << "320 x 240" << "352 x 240" << "352 x 288"
-	<< "480 x 272" << "480 x 360" << "480 x 480" << "624 x 352"
-	<< "640 x 480" << "720 x 480" << "720 x 576";
-	cmbVideoResolution->addItems(itemsToAdd);
+	// set the current video conversion config
+	gpbVideoConversion->setChecked(programOptions->getConvertVideos());
+	cmbOutputFormat->setCurrentIndex(programOptions->getConversionConf().outputFormat);
+	cmbVideoResolution->setCurrentIndex(programOptions->getConversionConf().videoResolution);
+	cmbAudioSampling->setCurrentIndex(programOptions->getConversionConf().audioSampleRatio);
+	cmbVideoFrameRate->setCurrentIndex(programOptions->getConversionConf().videoFrameRate);
+	cmbOutputQuality->setCurrentIndex(programOptions->getConversionConf().outputQuality);
+}
 
-	// set items to audio sampling
-	itemsToAdd.clear();
-	itemsToAdd	<< tr("Original") << "22050" << "44100";
-	cmbAudioSampling->addItems(itemsToAdd);
-
-	// set items to video frame rate
-	itemsToAdd.clear();
-	itemsToAdd	<< tr("Original") << "15" << "24" << "25" << "29.97" << "30";
-	cmbVideoFrameRate->addItems(itemsToAdd);
-
-	// set items to output quality
-	itemsToAdd.clear();
-	itemsToAdd	<< tr("Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)")
-	<< tr("Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)")
-	<< tr("Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)")
-	<< tr("Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)")
-	<< tr("Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)")
-	<< tr("Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)")
-	<< tr("The Same quality as the original Video");
-	cmbOutputQuality->addItems(itemsToAdd);
+OverridedVideoConversionConfig AddVideoImpl::getOverridedConversionConfig()
+{
+	VideoConversionConfig convConf;
+	convConf.outputFormat = static_cast<OutputFormat>(cmbOutputFormat->currentIndex());
+	convConf.videoResolution = static_cast<VideoResolution>(cmbVideoResolution->currentIndex());
+	convConf.audioSampleRatio = static_cast<AudioSampleRatio>(cmbAudioSampling->currentIndex());
+	convConf.videoFrameRate = static_cast<VideoFrameRate>(cmbVideoFrameRate->currentIndex());
+	convConf.outputQuality = static_cast<OutputQuality>(cmbOutputQuality->currentIndex());
+	// should it be converted?
+	OverridedVideoConversionConfig result;
+	result.convertVideo = gpbVideoConversion->isChecked();
+	result.videoConversionConfig = convConf;
+	return result;
 }
 
 void AddVideoImpl::btnOkClicked()
@@ -140,5 +134,4 @@ void AddVideoImpl::chbOverrideConversionClicked()
 	// enable or disable the groupbox
 	gpbVideoConversion->setEnabled(chbOverrideConversion->isChecked());
 }
-
 //

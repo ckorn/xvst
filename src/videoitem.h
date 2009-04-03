@@ -29,6 +29,7 @@
 #include <QtGui>
 //
 #include "tools.h"
+#include "videoconverttypes.h"
 
 enum VideoState
 {
@@ -63,7 +64,12 @@ struct VideoDefinition
 	}
 };
 
-struct VideoConversionConfig;
+struct OverridedVideoConversionConfig
+{
+	bool convertVideo;
+	VideoConversionConfig videoConversionConfig;
+};
+
 
 class VideoItem : public QObject
 {
@@ -84,6 +90,8 @@ Q_OBJECT
 		QObject *locker;			//!< pointer to the locker
 		bool reported;				//!< flag for know if this item has been reported (error)
 		bool audioFile;				//!< flag for know if this item is a "Audio only" (no conversion...)
+		bool overrideConversionConfig;						//!< flag for know if this video has an overrided conversion config
+		OverridedVideoConversionConfig overridedConvConf;	//!< overrided conversion config for this video
 		/*! Init internal data */
 		void initData();
 		/*! Assign a unique ID for this instance */
@@ -94,7 +102,7 @@ Q_OBJECT
 		/*! Class constructor */
 		VideoItem(const QString URL);
 		/*! Class constructor */
-		VideoItem(const QString URL, const VideoConversionConfig videoConversionConfig);
+		VideoItem(const QString URL, const OverridedVideoConversionConfig overridedConversionConfig);
 		/*! Assign video info */
 		void assign(VideoItem *videoItem);
 		/*! Lock item */
@@ -149,6 +157,10 @@ Q_OBJECT
 		bool needLogin();
 		/*! Get the internal ID */
 		int getID();
+		/*! Get if has an overrided conversion config */
+		bool hasOverridedConversion();
+		/*! Get the overrided conversion config (warning: it may not be initialized if no overrided config is assigned) */
+		OverridedVideoConversionConfig getOverridedVideoConversionConfig();
 		/*! Get the display label */
 		QString getDisplayLabel();
 		/*! Get the display size */

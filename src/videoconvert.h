@@ -28,49 +28,8 @@
 
 #include <QtGui>
 //
+#include "videoconverttypes.h"
 #include "videoitem.h"
-
-/*! Output format conversion (DivX, MPEG1... ) */
-enum OutputFormat
-{
-	ofAVI, ofWMV, ofMPEG1, ofMPEG2, ofMP4, ofAppleiPod, ofSonyPSP, of3GP, ofMP3
-};
-
-/*! Video resolution */
-enum VideoResolution
-{
-	vrOriginal, vr96x72, vr128x96, vr160x120, vr176x120, vr176x144,
-	vr192x144, vr240x180, vr320x200, vr320x240, vr352x240, vr352x288, vr480x272,
-	vr480x360, vr480x480, vr624x352, vr640x480, vr720x480, vr720x576
-};
-
-/*! Audio Sample Ratio */
-enum AudioSampleRatio
-{
-	asrOriginal, asr22050, asr44100
-};
-
-/*! Video Frame Rate */
-enum VideoFrameRate
-{
-	vfrOriginal, vfr15, vfr24, vfr25, vfr29_97, vfr30
-};
-
-/*! Output Quality */
-enum OutputQuality 
-{
-	oqLower_quality, oqLow_quality, oqNormal_quality,
-	oqMedium_quality, oqGood_quality, oqSuperb_quality, oqSame_quality
-};
-
-struct VideoConversionConfig
-{
-	OutputFormat outputFormat;
-	VideoResolution videoResolution;
-	AudioSampleRatio audioSampleRatio;
-	VideoFrameRate videoFrameRate;
-	OutputQuality outputQuality;
-};
 
 class VideoConverter : public QObject
 {
@@ -79,7 +38,8 @@ Q_OBJECT
 		QProcess *ffmpegProcess;	//!< ffmpeg process
 		QString ffmpegApp;			//!< ffmpeg path (including the app)
 		QString workingDir;			//!< where to save converted videos
-		VideoConversionConfig convConf;	//!< conversion config
+		VideoConversionConfig convConf;			//!< conversion config stored (configured in options)
+		VideoConversionConfig convConfToUse;	//!< conversion config used at the moment to convert (it can be overrided)
 		VideoItem *videoItem;		//!< current video item
 		float videoLength;			//!< video time duration (seconds)
 		bool deleteOriginalVideo;	//!< delete the input video on finish?
@@ -133,6 +93,16 @@ Q_OBJECT
 		void setConversionConfig(VideoConversionConfig convConf);
 		/*! Set the flag for delete original videos on finish the conversion */
 		void setDeleteOriginalVideo(bool deleteOriginalVideo);
+		/*! Get the output format as redeable strings */
+		static QStringList getOutputFormatAsStrings();
+		/*! Get the video resolution as redeable strings */
+		static QStringList getVideoResolutionAsStrings();
+		/*! Get the audio sample ratio as redeable strings */
+		static QStringList getAudioSampleRatioAsStrings();
+		/*! Get the video frame rate as redeable strings */
+		static QStringList getVideoFrameRateAsStrings();
+		/*! Get the output quality as redeable strings */
+		static QStringList getOutputQualityAsStrings();
 	private slots:
 		/*! ffmpeg started */
 		void started();

@@ -392,7 +392,7 @@ void MainFormImpl::updatesClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 	
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true);
 	checkUpdatesForm.exec();
 	
 	spbUpdates->setEnabled(true);
@@ -412,7 +412,7 @@ void MainFormImpl::informationClicked()
 	spbInformation->setEnabled(false);
 	actInformation->setEnabled(false);
 
-	InformationImpl informationForm(programOptions, this);
+	InformationImpl informationForm(programOptions);
 	informationForm.exec();
 
 	spbInformation->setEnabled(true);
@@ -455,9 +455,15 @@ void MainFormImpl::addVideoClicked()
 
 	if (!isVisible()) restoreAppClicked();
 
-	AddVideoImpl addVideoForm(videoList->getVideoInformation(), this);
+	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation());
 	if (addVideoForm.exec() == QDialog::Accepted)
-		videoList->addVideo(addVideoForm.edtURL->text());
+	{
+		// user want override the current conversion config
+		if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())
+			videoList->addVideo(addVideoForm.edtURL->text(), addVideoForm.getOverridedConversionConfig());
+		else // user DON'T want override the current conversion config
+			videoList->addVideo(addVideoForm.edtURL->text());
+	}
 
 	actAddVideo->setEnabled(true);
 	btnAddVideo->setEnabled(true);
@@ -490,7 +496,7 @@ void MainFormImpl::startDownloadVideoClicked()
 
 void MainFormImpl::pauseResumeDownloadVideoClicked()
 {
-	VideoItem *videoItem;
+	VideoItem *videoItem = NULL;
 
 	if (lsvDownloadList->currentItem() != NULL)
 		if (!getSelectedVideoItem()->isDownloaded())
@@ -506,7 +512,7 @@ void MainFormImpl::pauseResumeDownloadVideoClicked()
 
 void MainFormImpl::cancelDownloadVideoClicked()
 {
-	VideoItem *videoItem;
+	VideoItem *videoItem = NULL;
 
 	if (lsvDownloadList->currentItem() != NULL)
 		if (getSelectedVideoItem()->isDownloading())
@@ -533,7 +539,7 @@ void MainFormImpl::moreOptionsClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 
-	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage, this);
+	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage);
 	if (optionsForm.exec() == QDialog::Accepted)
 	{
 		updateVisualOptions();
@@ -739,7 +745,7 @@ void MainFormImpl::videoError(VideoItem *videoItem)
 			lastTrayIconStr = trayIconStr;
 		
 			// display error report form
-			BugReportImpl errorReport(programOptions, this);
+			BugReportImpl errorReport(programOptions);
 			errorReport.fillErrorInfo(videoItem, videoList->getVideoInformation());
 			errorReport.exec();
 		}
@@ -880,7 +886,7 @@ void MainFormImpl::checkUpdates()
 		spbUpdates->setEnabled(false);
 		actUpdates->setEnabled(false);
 		
-		CheckUpdatesImpl checkUpdatesForm(programOptions, false, this);
+		CheckUpdatesImpl checkUpdatesForm(programOptions, false);
 		noUpdates = checkUpdatesForm.exec() != QDialog::Accepted;
 		
 		spbUpdates->setEnabled(true);
@@ -999,12 +1005,12 @@ void MainFormImpl::updateVisualControls()
 }
 
 // lsvDownloadList signals
-void MainFormImpl::videoItemDoubleClicked(QTreeWidgetItem *item, int column)
+void MainFormImpl::videoItemDoubleClicked(QTreeWidgetItem *, int)
 {
 	playVideoClicked();
 }
 
-void MainFormImpl::videoItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous)
+void MainFormImpl::videoItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *)
 {
 	if (current != NULL)
 		updateVisualControls();

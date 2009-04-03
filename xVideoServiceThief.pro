@@ -58,7 +58,8 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/newlanguagesimpl.h \
     src/newlanguages.h \
     src/toolsscriptclass.h \
-    src/httpscriptclass.h
+    src/httpscriptclass.h \
+    src/videoconverttypes.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \

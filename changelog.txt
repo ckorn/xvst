@@ -10,6 +10,7 @@
 - Added German (DE) language
 - Added Romanian (RO) language
 - Added URL for each video service in "Information" form
+- Added the possibility to set a custom conversion configuration on add a new video
 - Added sorting for "Downloads log" list (now is sorted from old to new downloads)
 - Added two new formats to convert:
 	- MP4 (*.mp4) format

@@ -145,9 +145,9 @@ VideoItem* VideoListController::addVideo(const QString URL)
 	return videoList->last();
 }
 
-VideoItem* VideoListController::addVideo(const QString URL, const VideoConversionConfig videoConversionConfig)
+VideoItem* VideoListController::addVideo(const QString URL, const OverridedVideoConversionConfig overridedConversionConfig)
 {
-	videoList->append(new VideoItem(URL, videoConversionConfig));
+	videoList->append(new VideoItem(URL, overridedConversionConfig));
 	emit videoAdded(videoList->last());
 	return videoList->last();
 }

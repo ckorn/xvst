@@ -24,7 +24,6 @@
 */
 
 #include "videoitem.h"
-#include "videoconvert.h"
 
 int VideoItem::internalID = 0;
 
@@ -46,7 +45,7 @@ VideoItem::VideoItem(const QString URL)
 	this->URL = URL;
 }
 
-VideoItem::VideoItem(const QString URL, const VideoConversionConfig videoConversionConfig)
+VideoItem::VideoItem(const QString URL, const OverridedVideoConversionConfig overridedConversionConfig)
 {
 	locker = NULL;
 	assignID();
@@ -54,6 +53,8 @@ VideoItem::VideoItem(const QString URL, const VideoConversionConfig videoConvers
 	initData();
 	// set initial data
 	this->URL = URL;
+	overrideConversionConfig = true;
+	overridedConvConf = overridedConversionConfig;
 }
 
 void VideoItem::assign(VideoItem *videoItem)
@@ -73,6 +74,8 @@ void VideoItem::assign(VideoItem *videoItem)
 	videoInfo.isAudioFile = videoItem->getVideoInformation().isAudioFile;
 	reported = videoItem->isReported();
 	errorCode = videoItem->getErrorCode();
+	overrideConversionConfig = videoItem->overrideConversionConfig;
+	overridedConvConf = videoItem->overridedConvConf;
 }
 
 void VideoItem::initData()
@@ -90,6 +93,7 @@ void VideoItem::initData()
 	reported = false;
 	errorCode = 0;
 	audioFile = false;
+	overrideConversionConfig = false;
 }
 
 void VideoItem::assignID()
@@ -98,7 +102,7 @@ void VideoItem::assignID()
 	ID = internalID;
 }
 
-bool VideoItem::lock (QObject *locker)
+bool VideoItem::lock(QObject *locker)
 {
 	if (!isLocked())
 	{
@@ -275,6 +279,16 @@ bool VideoItem::needLogin()
 int VideoItem::getID()
 {
 	return ID;
+}
+
+bool VideoItem::hasOverridedConversion()
+{
+	return overrideConversionConfig;
+}
+
+OverridedVideoConversionConfig VideoItem::getOverridedVideoConversionConfig()
+{
+	return overridedConvConf;
 }
 
 QString VideoItem::getDisplayLabel()

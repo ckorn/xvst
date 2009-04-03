@@ -28,6 +28,7 @@
 //
 #include "ui_addvideo.h"
 //
+#include "../options.h"
 #include "../videoinformation.h"
 //
 class AddVideoImpl : public QDialog, public Ui::AddVideo
@@ -36,9 +37,12 @@ Q_OBJECT
 	private:
 		QSize originalSize;
 		VideoInformation *videoInformation;
+		ProgramOptions *programOptions;
 		void fillConversionOptions();
 	public:
-		AddVideoImpl(VideoInformation *videoInformation, QWidget * parent = 0, Qt::WFlags f = 0 );
+		AddVideoImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,
+					 QWidget * parent = 0, Qt::WFlags f = 0 );
+		OverridedVideoConversionConfig getOverridedConversionConfig();
 	private slots:
 		void btnOkClicked();
 		void edtURLChanged(const QString &text);

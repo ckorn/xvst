@@ -60,7 +60,7 @@ QStringList VideoConverter::getCommandLine()
 
 	parameters << "-i" << videoItem->getVideoFile();
 
-	switch (convConf.outputFormat)
+	switch (convConfToUse.outputFormat)
 	{
 		case ofAVI:
 			parameters << "-f" << "avi" << "-vcodec" << "mpeg4";
@@ -106,9 +106,9 @@ QStringList VideoConverter::getCommandLine()
 	}
 
 	// this is used only for NON Apple iPod videos
-	if (convConf.outputFormat != ofAppleiPod)
+	if (convConfToUse.outputFormat != ofAppleiPod)
 	{
-		switch (convConf.videoResolution)
+		switch (convConfToUse.videoResolution)
 		{
 			case vrOriginal:
 				break;
@@ -168,18 +168,18 @@ QStringList VideoConverter::getCommandLine()
 				break;
 		}
 
-		if (convConf.videoFrameRate == vfr15)
+		if (convConfToUse.videoFrameRate == vfr15)
 			parameters << "-r" << "15";
-		else if (convConf.videoFrameRate == vfr24)
+		else if (convConfToUse.videoFrameRate == vfr24)
 			parameters << "-r" << "24";
-		else if (convConf.videoFrameRate == vfr25)
+		else if (convConfToUse.videoFrameRate == vfr25)
 			parameters << "-r" << "25";
-		else if (convConf.videoFrameRate == vfr29_97)
+		else if (convConfToUse.videoFrameRate == vfr29_97)
 			parameters << "-r" << "29.97";
-		else if (convConf.videoFrameRate == vfr30)
+		else if (convConfToUse.videoFrameRate == vfr30)
 			parameters << "-r" << "30";
 
-		switch (convConf.audioSampleRatio)
+		switch (convConfToUse.audioSampleRatio)
 		{
 			case asrOriginal:
 				break;
@@ -191,7 +191,7 @@ QStringList VideoConverter::getCommandLine()
 				break;
 		}
 
-		switch (convConf.outputQuality)
+		switch (convConfToUse.outputQuality)
 		{
 			case oqLower_quality:
 				parameters << "-b" << "384k" << "-ab" << "64k";
@@ -298,6 +298,27 @@ void VideoConverter::timerEvent(QTimerEvent *event)
 void VideoConverter::startConversionVideo(VideoItem *videoItem)
 {
 	if (videoItem == NULL || !canStartConversion() || !ffmpegInstalled()) return;
+	// check if this videoItem has an overrided conversion config
+	if (videoItem->hasOverridedConversion())
+	{
+		// the user don't want convert it
+		if (!videoItem->getOverridedVideoConversionConfig().convertVideo)
+		{
+			// mark as "converted"
+			videoItem->setAsConverted(NULL);
+			// emit the conversion finished
+			emit conversionFinished(videoItem);
+			return;
+		}
+		else // set the "overrided" conversion config
+		{
+			convConfToUse = videoItem->getOverridedVideoConversionConfig().videoConversionConfig;
+		}
+	}
+	else // set the conversion config stored in options (standard user options)
+	{
+		convConfToUse = convConf;
+	}
 	// assign data
 	this->videoItem = videoItem;
 	videoItem->lock(this);
@@ -386,6 +407,64 @@ void VideoConverter::setConversionConfig(VideoConversionConfig convConf)
 void VideoConverter::setDeleteOriginalVideo(bool deleteOriginalVideo)
 {
 	this->deleteOriginalVideo = deleteOriginalVideo;
+}
+
+QStringList VideoConverter::getOutputFormatAsStrings()
+{
+	QStringList itemsToAdd;
+	// set items to outputFormat
+	itemsToAdd	<< tr("AVI Format (*.avi)") << tr("WMV Format ( *.wmv)")
+	<< tr("MPEG1 Format ( *.mpg)") << tr("MPEG2 Format ( *.mpg)")
+	<< tr("MP4 Format (*.mp4)") << tr("Apple iPod (*.mp4)") << tr("Sony PSP (*.mp4)")
+	<< tr("3GP Format (*.3gp)") << tr("MP3 Format (*.mp3)");
+	// return values
+	return itemsToAdd;
+}
+
+QStringList VideoConverter::getVideoResolutionAsStrings()
+{
+	QStringList itemsToAdd;
+	// set items to videoResolution
+	itemsToAdd	<< tr("Original") << "96 x 72" << "128 x 96" << "160 x 120"
+	<< "176 x 120" << "176 x 144" << "192 x 144" << "240 x 180"
+	<< "320 x 200" << "320 x 240" << "352 x 240" << "352 x 288"
+	<< "480 x 272" << "480 x 360" << "480 x 480" << "624 x 352"
+	<< "640 x 480" << "720 x 480" << "720 x 576";
+	// return values
+	return itemsToAdd;
+}
+
+QStringList VideoConverter::getAudioSampleRatioAsStrings()
+{
+	QStringList itemsToAdd;
+	// set items to audioSampleRatio
+	itemsToAdd	<< tr("Original") << "22050" << "44100";
+	// return values
+	return itemsToAdd;
+}
+
+QStringList VideoConverter::getVideoFrameRateAsStrings()
+{
+	QStringList itemsToAdd;
+	// set items to videoFrameRate
+	itemsToAdd	<< tr("Original") << "15" << "24" << "25" << "29.97" << "30";
+	// return values
+	return itemsToAdd;
+}
+
+QStringList VideoConverter::getOutputQualityAsStrings()
+{
+	QStringList itemsToAdd;
+	// set items to outputQuality
+	itemsToAdd	<< tr("Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)")
+	<< tr("Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)")
+	<< tr("Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)")
+	<< tr("Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)")
+	<< tr("Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)")
+	<< tr("Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)")
+	<< tr("The Same quality as the original Video");
+	// return values
+	return itemsToAdd;
 }
 
 void VideoConverter::started()
