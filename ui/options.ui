@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>775</width>
-    <height>455</height>
+    <width>779</width>
+    <height>476</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -81,7 +81,7 @@
    <item row="0" column="1">
     <widget class="QStackedWidget" name="pgOptions">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="pgBasic">
       <layout class="QGridLayout">
@@ -188,11 +188,24 @@
          <property name="title">
           <string>FFmpeg Lib</string>
          </property>
-         <layout class="QGridLayout">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <property name="margin">
            <number>12</number>
           </property>
-          <item row="0" column="0">
+          <item>
+           <widget class="QCheckBox" name="chbInternalFFmpeg">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>Internal FFmpeg</string>
+            </property>
+            <property name="tristate">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLineEdit" name="edtFFmpegLib">
             <property name="minimumSize">
              <size>
@@ -211,7 +224,7 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
+          <item>
            <widget class="QToolButton" name="spbSelectFFmpegLib">
             <property name="toolTip">
              <string>Select the ffmpeg directory</string>
@@ -244,13 +257,13 @@
          <property name="accessibleDescription">
           <string>Enable/disable the video conversions</string>
          </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
          <property name="title">
           <string>Convert videos to Mpeg/DivX/etc...</string>
          </property>
          <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
           <bool>true</bool>
          </property>
          <layout class="QGridLayout">
@@ -399,6 +412,61 @@
             </property>
            </widget>
           </item>
+          <item row="1" column="0">
+           <widget class="QTreeWidget" name="lsvLanguages">
+            <property name="maximumSize">
+             <size>
+              <width>180</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="whatsThis">
+             <string>List with all installed languages</string>
+            </property>
+            <property name="accessibleName">
+             <string>Languages list</string>
+            </property>
+            <property name="accessibleDescription">
+             <string>List with all installed languages</string>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>18</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>false</bool>
+            </property>
+            <property name="uniformRowHeights">
+             <bool>true</bool>
+            </property>
+            <property name="itemsExpandable">
+             <bool>false</bool>
+            </property>
+            <property name="allColumnsShowFocus">
+             <bool>true</bool>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="btnAddNewLanguages">
+            <property name="text">
+             <string>Add new languages</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="1" rowspan="3">
            <widget class="QGroupBox" name="gpbLanguageInfo">
             <property name="sizePolicy">
@@ -410,10 +478,7 @@
             <property name="title">
              <string>Language information</string>
             </property>
-            <layout class="QGridLayout">
-             <property name="margin">
-              <number>12</number>
-             </property>
+            <layout class="QGridLayout" name="gridLayout_2">
              <item row="0" column="0">
               <widget class="QLabel" name="lblLanguageTitle">
                <property name="sizePolicy">
@@ -512,88 +577,12 @@
                <property name="enabled">
                 <bool>false</bool>
                </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="whatsThis">
-                <string>Use the selected language file</string>
-               </property>
-               <property name="accessibleName">
-                <string>Use language selected</string>
-               </property>
-               <property name="accessibleDescription">
-                <string>Use the selected language file</string>
-               </property>
                <property name="text">
                 <string>Use this language</string>
                </property>
               </widget>
              </item>
             </layout>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QTreeWidget" name="lsvLanguages">
-            <property name="maximumSize">
-             <size>
-              <width>180</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="whatsThis">
-             <string>List with all installed languages</string>
-            </property>
-            <property name="accessibleName">
-             <string>Languages list</string>
-            </property>
-            <property name="accessibleDescription">
-             <string>List with all installed languages</string>
-            </property>
-            <property name="selectionBehavior">
-             <enum>QAbstractItemView::SelectRows</enum>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>18</width>
-              <height>18</height>
-             </size>
-            </property>
-            <property name="rootIsDecorated">
-             <bool>false</bool>
-            </property>
-            <property name="uniformRowHeights">
-             <bool>true</bool>
-            </property>
-            <property name="itemsExpandable">
-             <bool>false</bool>
-            </property>
-            <property name="allColumnsShowFocus">
-             <bool>true</bool>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-            <column>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="btnAddNewLanguages">
-            <property name="text">
-             <string>Add new languages</string>
-            </property>
            </widget>
           </item>
          </layout>
@@ -1358,13 +1347,13 @@
          <property name="accessibleDescription">
           <string>Enable/disable proxy support</string>
          </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
          <property name="title">
           <string>Use proxy server</string>
          </property>
          <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
           <bool>true</bool>
          </property>
          <layout class="QGridLayout">
@@ -1462,14 +1451,14 @@
               <property name="accessibleDescription">
                <string>Port of your proxy configuration</string>
               </property>
-              <property name="value">
-               <number>1</number>
-              </property>
               <property name="minimum">
                <number>1</number>
               </property>
               <property name="maximum">
                <number>9999</number>
+              </property>
+              <property name="value">
+               <number>1</number>
               </property>
              </widget>
             </item>
@@ -1665,11 +1654,11 @@
        <property name="accessibleDescription">
         <string>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</string>
        </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
        <property name="text">
         <string>Remember last viewed options page (only for this session)</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -1754,7 +1743,6 @@
   <tabstop>chbDeleteOriginalVideo</tabstop>
   <tabstop>lsvLanguages</tabstop>
   <tabstop>rchDescription</tabstop>
-  <tabstop>btnUseThis</tabstop>
   <tabstop>chbSaveRestore</tabstop>
   <tabstop>chbDontrestoreDownloads</tabstop>
   <tabstop>chbSaveLog</tabstop>
