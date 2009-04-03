@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -26,8 +26,8 @@
 #include "optionsimpl.h"
 //
 OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *sessionManager,
-                         VideoListController *videoList, int lastOptionsPage,
-                         QWidget * parent, Qt::WFlags f)
+			 VideoListController *videoList, int lastOptionsPage,
+			 QWidget * parent, Qt::WFlags f)
 		: QDialog(parent, f)
 {
 	setupUi(this);
@@ -56,6 +56,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	connect(lsvLanguages, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), this, SLOT(langItemDoubleClicked(QTreeWidgetItem *, int)));
 	connect(btnCheckNow, SIGNAL(clicked()), this, SLOT(btnCheckNowClicked()));
 	connect(btnAddNewLanguages, SIGNAL(clicked()), this, SLOT(btnAddNewLanguagesClicked()));
+	connect(chbInternalFFmpeg, SIGNAL(stateChanged(int)), this, SLOT(internalFFmpegStateChanged(int)));
 	// create menu
 	createMenu();
 	// add info
@@ -66,6 +67,24 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	setInitialOptionsValues();
 	// can update?
 	btnCheckNow->setEnabled(Updates::canUpdate());
+	// internal FFmpeg...
+#ifdef Q_WS_MAC
+	// check if internal ffmpeg is installed
+	if (!programOptions->getIfInternalFFmpegIsInstalled())
+	{
+		chbInternalFFmpeg->hide();
+		edtFFmpegLib->setVisible(true);
+		spbSelectFFmpegLib->setVisible(true);
+	}
+	else// update ffmpeg path and select button
+	{
+		edtFFmpegLib->setVisible(!chbInternalFFmpeg->isChecked() && chbInternalFFmpeg->isVisible());
+		spbSelectFFmpegLib->setVisible(!chbInternalFFmpeg->isChecked() && chbInternalFFmpeg->isVisible());
+	}
+#else
+	// hide "chbInternalFFmpeg"
+	chbInternalFFmpeg->hide();
+#endif
 }
 
 OptionsImpl::~OptionsImpl()
@@ -118,7 +137,7 @@ void OptionsImpl::createMenu()
 	newItem = new QTreeWidgetItem(trvMenu);
 	newItem->setText(0, tr("Proxy"));
 	newItem->setIcon(0, QIcon(":/options/images/proxy.png"));
-	
+
 	// Errors
 	newItem = new QTreeWidgetItem(trvMenu);
 	newItem->setText(0, tr("Tracker"));
@@ -134,13 +153,21 @@ void OptionsImpl::createMenu()
 
 void OptionsImpl::fillInitialData()
 {
+	// fill conversion options
+	cmbOutputFormat->addItems(VideoConverter::getOutputFormatAsStrings());
+	cmbVideoResolution->addItems(VideoConverter::getVideoResolutionAsStrings());
+	cmbAudioSampling->addItems(VideoConverter::getAudioSampleRatioAsStrings());
+	cmbVideoFrameRate->addItems(VideoConverter::getVideoFrameRateAsStrings());
+	cmbOutputQuality->addItems(VideoConverter::getOutputQualityAsStrings());
+
+/*
 	// string list of items
 	QStringList itemsToAdd;
 	// set items to outputFormat
 	itemsToAdd	<< tr("AVI Format (*.avi)") << tr("WMV Format ( *.wmv)")
 	<< tr("MPEG1 Format ( *.mpg)") << tr("MPEG2 Format ( *.mpg)")
-	<< tr("Apple iPod (*.mp4)") << tr("3GP Format (*.3gp)")
-	<< tr("MP3 Format (*.mp3)");
+	<< tr("MP4 Format (*.mp4)") << tr("Apple iPod (*.mp4)") << tr("Sony PSP (*.mp4)")
+	<< tr("3GP Format (*.3gp)") << tr("MP3 Format (*.mp3)");
 	cmbOutputFormat->addItems(itemsToAdd);
 
 	// set items to video resolution
@@ -172,7 +199,9 @@ void OptionsImpl::fillInitialData()
 	<< tr("Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)")
 	<< tr("The Same quality as the original Video");
 	cmbOutputQuality->addItems(itemsToAdd);
+*/
 
+	QStringList itemsToAdd;
 	// set items to update every
 	itemsToAdd.clear();
 	itemsToAdd	<< tr("Day") << tr("2 Days") << tr("3 Days") << tr("4 Days")
@@ -206,8 +235,8 @@ void OptionsImpl::fillLanguages()
 {
 	lsvLanguages->clear();
 
-    	tmpLangFile = programOptions->getLanguageFile(false);
-	languageManager->loadLangFiles(programOptions->getApplicationPath() + "/languages");
+	tmpLangFile = programOptions->getLanguageFile(false);
+	languageManager->loadLangFiles(programOptions->getLanguagesPath());
 	lsvLanguages->header()->hide();
 
 	for (int n = 0; n < languageManager->getLanguagesCount(); n++)
@@ -273,12 +302,14 @@ void OptionsImpl::setInitialOptionsValues()
 		cmbProxyType->setCurrentIndex(0);
 	else
 		cmbProxyType->setCurrentIndex(programOptions->getProxyType());
-		
+
 	chbCheckOnStartup->setChecked(programOptions->getCheckForUpdatesOnStartup());
 	cmbUpdateEvery->setCurrentIndex(programOptions->getCheckForUpdatesEvery() - 1);
 	chbInstallAutomatically->setChecked(programOptions->getInstallAutomaticallyUpdates());
-	
+
 	gpbDisplayErrorReport->setChecked(programOptions->getDisplayBugReport());
+
+	chbInternalFFmpeg->setChecked(programOptions->getUseInternalFFmpeg());
 }
 
 void OptionsImpl::setOptionsValues()
@@ -328,16 +359,18 @@ void OptionsImpl::setOptionsValues()
 	programOptions->setInstallAutomaticallyUpdates(chbInstallAutomatically->isChecked());
 
 	lastPageViewed = chbRememberView->isChecked() ? pgOptions->currentIndex() : -1;
-	
+
 	programOptions->setDisplayBugReport(gpbDisplayErrorReport->isChecked());
+
+	programOptions->setUseInternalFFmpeg(chbInternalFFmpeg->isChecked());
 }
 
-void OptionsImpl::dragEnterEvent(QDragEnterEvent *event)
+void OptionsImpl::dragEnterEvent(QDragEnterEvent */*event*/)
 {
 	qDebug() << "dragEnterEvent";
 }
 
-void OptionsImpl::dropEvent(QDropEvent *event)
+void OptionsImpl::dropEvent(QDropEvent */*event*/)
 {
 	qDebug() << "dropEvent";
 }
@@ -366,7 +399,7 @@ void OptionsImpl::menuCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetI
 	}
 }
 
-void OptionsImpl::langCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous)
+void OptionsImpl::langCurrentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem */*previous*/)
 {
 	if (current != NULL)
 	{
@@ -404,11 +437,11 @@ void OptionsImpl::btnUseThisClicked()
 	}
 	// disply update message
 	QMessageBox::information(this, tr("Language Setup"),
-	                         tr("In order to apply the new selected language, the program must be restarted."),
-	                         tr("Ok"), QString(), 0, 1);
+				 tr("In order to apply the new selected language, the program must be restarted."),
+				 tr("Ok"), QString(), 0, 1);
 }
 
-void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem *item, int column)
+void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem */*item*/, int /*column*/)
 {
 	if (btnUseThis->isEnabled())
 		btnUseThisClicked();
@@ -419,26 +452,39 @@ void OptionsImpl::btnCheckNowClicked()
 	if (videoList->isWorking())
 	{
 		QMessageBox::information(this, tr("Updates"),
-		                               tr("Another process is currently working, please stop it or wait until the end of process."),
-		                               tr("Ok"));
+					       tr("Another process is currently working, please stop it or wait until the end of process."),
+					       tr("Ok"));
 		return;
 	}
-	
+
 	btnCheckNow->setEnabled(false);
-	
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
+
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true);
 	checkUpdatesForm.exec();
-	
+
 	btnCheckNow->setEnabled(true);
 }
 
 void OptionsImpl::btnAddNewLanguagesClicked()
 {
-	NewLanguagesImpl newLanguagesForm(this);
+	NewLanguagesImpl newLanguagesForm;
 	newLanguagesForm.exec();
 
 	// reload languages
 	fillLanguages();
+}
+
+void OptionsImpl::internalFFmpegStateChanged(int state)
+{
+	if (!chbInternalFFmpeg->isVisible()) return;
+
+	// disable ffmpeg controls
+	edtFFmpegLib->setVisible(state == Qt::Unchecked);
+	spbSelectFFmpegLib->setVisible(state == Qt::Unchecked);
+
+	// auto-set ffmpeg path if its checked
+	if (chbInternalFFmpeg->isChecked())
+		edtFFmpegLib->setText(programOptions->getFfmpegLibLocation());
 }
 
 void OptionsImpl::btnOkClicked()
@@ -450,7 +496,7 @@ void OptionsImpl::btnOkClicked()
 void OptionsImpl::spbSelectDownloadDirPressed()
 {
 	QString s = QFileDialog::getExistingDirectory(this, tr("Select the download directory:"),
-	            edtDownloadsDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+		    edtDownloadsDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	// if is emtpy, cancel the proces
 	if (s.isEmpty()) return;
 	edtDownloadsDir->setText(QDir::toNativeSeparators(s));
@@ -459,11 +505,11 @@ void OptionsImpl::spbSelectDownloadDirPressed()
 void OptionsImpl::spbSelectFFmpegLibPressed()
 {
 	QString s = QFileDialog::getOpenFileName(this, tr("Select the ffmpeg lib:"),
-	            edtFFmpegLib->text(),
+		    edtFFmpegLib->text(),
 #ifdef Q_OS_WIN32
-	            "ffmpeg lib (ffmpeg.exe)");
+		    "ffmpeg lib (ffmpeg.exe)");
 #else
-	            "ffmpeg lib (ffmpeg)");
+		    "ffmpeg lib (ffmpeg)");
 #endif
 	// if is emtpy, cancel the proces
 	if (s.isEmpty()) return;
@@ -482,7 +528,7 @@ void OptionsImpl::ffmpegTextChanged(const QString &text)
 
 void OptionsImpl::btnViewLogClicked()
 {
-	DownloadLogImpl downloadLog(this);
+	DownloadLogImpl downloadLog;
 	downloadLog.buildLog(sessionManager->getLogEntries(), videoInformation);
 	downloadLog.exec();
 }
@@ -490,8 +536,8 @@ void OptionsImpl::btnViewLogClicked()
 void OptionsImpl::btnClearLogClicked()
 {
 	if (QMessageBox::question(this, tr("Clear Log"),
-	                          tr("Are you sure to clear the downloads/conversions historic file?"),
-	                          tr("Yes"), tr("No"), QString(), 0, 1) == 0)
+				  tr("Are you sure to clear the downloads/conversions historic file?"),
+				  tr("Yes"), tr("No"), QString(), 0, 1) == 0)
 		sessionManager->clearLog();
 }
 

@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -60,7 +60,7 @@ Q_OBJECT
 		void dropEvent(QDropEvent *event);
 	public:
 		OptionsImpl(ProgramOptions *programOptions, SessionManager *sessionManager,
-			VideoListController *videoList, int lastOptionsPage, 
+			VideoListController *videoList, int lastOptionsPage,
 			QWidget * parent = 0, Qt::WFlags f = 0);
 		~OptionsImpl();
 		int getLastPageViewed();
@@ -83,5 +83,6 @@ Q_OBJECT
 		void langItemDoubleClicked(QTreeWidgetItem *item, int column);
 		void btnCheckNowClicked();
 		void btnAddNewLanguagesClicked();
+		void internalFFmpegStateChanged(int state);
 };
 #endif
