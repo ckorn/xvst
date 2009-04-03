@@ -63,6 +63,8 @@ struct VideoDefinition
 	}
 };
 
+struct VideoConversionConfig;
+
 class VideoItem : public QObject
 {
 Q_OBJECT
@@ -91,6 +93,8 @@ Q_OBJECT
 		VideoItem();
 		/*! Class constructor */
 		VideoItem(const QString URL);
+		/*! Class constructor */
+		VideoItem(const QString URL, const VideoConversionConfig videoConversionConfig);
 		/*! Assign video info */
 		void assign(VideoItem *videoItem);
 		/*! Lock item */

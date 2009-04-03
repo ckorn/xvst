@@ -34,6 +34,7 @@ class AddVideoImpl : public QDialog, public Ui::AddVideo
 {
 Q_OBJECT
 	private:
+		QSize originalSize;
 		VideoInformation *videoInformation;
 		void fillConversionOptions();
 	public:

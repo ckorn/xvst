@@ -24,6 +24,7 @@
 */
 
 #include "videoitem.h"
+#include "videoconvert.h"
 
 int VideoItem::internalID = 0;
 
@@ -36,6 +37,16 @@ VideoItem::VideoItem()
 }
 
 VideoItem::VideoItem(const QString URL)
+{
+	locker = NULL;
+	assignID();
+	// init data
+	initData();
+	// set initial data
+	this->URL = URL;
+}
+
+VideoItem::VideoItem(const QString URL, const VideoConversionConfig videoConversionConfig)
 {
 	locker = NULL;
 	assignID();

@@ -31,6 +31,7 @@ AddVideoImpl::AddVideoImpl(VideoInformation *videoInformation, QWidget * parent,
 	setupUi(this);
 	this->videoInformation = videoInformation;
 	// hide the conversion options
+	originalSize = size();
 	gpbVideoConversion->setVisible(false);
 	resize(width(), 50);
 	// prepare conversion options
@@ -127,9 +128,17 @@ void AddVideoImpl::spbPasteURLClicked()
 
 void AddVideoImpl::chbOverrideConversionClicked()
 {
-	gpbVideoConversion->setVisible(!gpbVideoConversion->isVisible());
-	// resize form
-	if (!gpbVideoConversion->isVisible()) resize(width(), 50);
+	if (!gpbVideoConversion->isVisible())
+	{
+		gpbVideoConversion->setVisible(true);
+		// calcule size diference
+		int preWidth = (width() > originalSize.width() ? width() - originalSize.width() : originalSize.width() - width())/2;
+		int preHeight = (height() > originalSize.height() ? height() - originalSize.height() : originalSize.height() - height())/2;
+		// move the form to update the new size
+		move(x() - preWidth, y() - preHeight);
+	}
+	// enable or disable the groupbox
+	gpbVideoConversion->setEnabled(chbOverrideConversion->isChecked());
 }
 
 //

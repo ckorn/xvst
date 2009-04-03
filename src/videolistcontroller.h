@@ -65,6 +65,8 @@ Q_OBJECT
 		void stop();
 		/*! Add a new TDownloadVideoItem */
 		VideoItem* addVideo(const QString URL);
+		/*! Add a new TDownloadVideoItem with an overrided Conversion configuration */
+		VideoItem* addVideo(const QString URL, const VideoConversionConfig videoConversionConfig);
 		/*! Add a Stored TDownloadVideoItem */
 		VideoItem* addVideo(VideoItem *videoItem);
 		/*! Delete by Index an existent TDownloadVideoItem */
