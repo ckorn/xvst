@@ -40,10 +40,17 @@ VideoInformation::VideoInformation(QString pluginsDir)
 
 VideoInformation::~VideoInformation()
 {
+	// abort any current plugin execution
+	abortExecution();
+	// wait until thread end
+	while (isRunning()) { /* do nothing, just wait... */ };
+/*
 	if (isRunning())
 		quit();
-
+*/
+	// remove loaded plugins
 	clearPlugins();
+	// destroy plugins container
 	delete plugins;
 }
 
@@ -172,6 +179,20 @@ void VideoInformation::getVideoInformation(VideoItem *videoItem)
 	this->start();
 }
 
+void VideoInformation::abortExecution()
+{
+	if (videoItem != NULL && isGettingInfo())
+	{
+		VideoInformationPlugin *service = getPluginByHost(QUrl(videoItem->getURL()));
+		if (service != NULL)
+		{
+			service->abortExecution();
+			videoItem->setAsGettedURL(this);
+			videoItem->unlock(this);
+		}
+	}
+}
+
 void VideoInformation::cancel()
 {
 	videoItem = NULL;
@@ -294,34 +315,34 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 	QFile scriptFile(videoServicePath);
 	if (scriptFile.exists())
 	{
-		QScriptEngine engine;
+		engine = new QScriptEngine();
 		// load code
 		scriptFile.open(QIODevice::ReadOnly);
 		scriptCode = scriptFile.readAll();
 		scriptFile.close();
 		// execute plugin script
-		engine.evaluate(scriptCode);
+		engine->evaluate(scriptCode);
 		// execute regist code if no errors found
-		if (!engine.hasUncaughtException())
+		if (!engine->hasUncaughtException())
 		{
-			QScriptValue func_regist = engine.evaluate("RegistVideoService");
+			QScriptValue func_regist = engine->evaluate("RegistVideoService");
 			// check if RegistVideoService function has been loaded
 			if (func_regist.isFunction())
 			{
 				func_regist.call();
 				// capture register result
-				version = engine.globalObject().property("version").toString();
-				minVersion = engine.globalObject().property("minVersion").toString();
-				author = engine.globalObject().property("author").toString();
-				ID = engine.globalObject().property("ID").toString();
-				caption = engine.globalObject().property("caption").toString();
-				adultContent = engine.globalObject().property("adultContent").toBool();
+				version = engine->globalObject().property("version").toString();
+				minVersion = engine->globalObject().property("minVersion").toString();
+				author = engine->globalObject().property("author").toString();
+				ID = engine->globalObject().property("ID").toString();
+				caption = engine->globalObject().property("caption").toString();
+				adultContent = engine->globalObject().property("adultContent").toBool();
 				// validate if all main information is assigned
 				loaded = !version.isEmpty() && !minVersion.isEmpty() && !ID.isEmpty() && !caption.isEmpty();
 				// if this plugin has been loaded, then try to load the service icon
 				if (loaded)
 				{
-					QScriptValue func_getIcon = engine.evaluate("getVideoServiceIcon");
+					QScriptValue func_getIcon = engine->evaluate("getVideoServiceIcon");
 					// check if getVideoServiceIcon function has been loaded
 					if (func_getIcon.isFunction())
 					{
@@ -345,6 +366,9 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 			else // if RegistVideoService function has not been loaded then add a warning
 				qWarning() << "Plugin error: RegistVideoService() function is missing";
 		}
+		// detach global engine
+		delete engine;
+		engine = NULL;
 	}
 	// regist this plugin
 	if (videoInformation != NULL && loaded)
@@ -394,31 +418,31 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	if (!isLoaded()) return result;
 
 	// plugin script engine
-	QScriptEngine engine;
+	engine = new QScriptEngine();
 
 	// create and regist VideoDefinition
-	qScriptRegisterMetaType(&engine, toScriptValue_VideoDefinition, fromScriptValue_VideoDefinition);
-	QScriptValue ctor_VidDef = engine.newFunction(create_VideoDefinition);
-	engine.globalObject().setProperty("VideoDefinition", ctor_VidDef);
+	qScriptRegisterMetaType(engine, toScriptValue_VideoDefinition, fromScriptValue_VideoDefinition);
+	QScriptValue ctor_VidDef = engine->newFunction(create_VideoDefinition);
+	engine->globalObject().setProperty("VideoDefinition", ctor_VidDef);
 
 	// create and regist the script tools class
-	ToolsScriptClass *toolsClass = new ToolsScriptClass(&engine);
+	ToolsScriptClass *toolsClass = new ToolsScriptClass(engine);
 
 	// create and regist the Http class
-	HttpScriptClass *httpClass = new HttpScriptClass(&engine);
-	engine.globalObject().setProperty("Http", httpClass->constructor());
+	HttpScriptClass *httpClass = new HttpScriptClass(engine);
+	engine->globalObject().setProperty("Http", httpClass->constructor());
 
 	// evaluate plugin code
-	engine.evaluate(scriptCode);
+	engine->evaluate(scriptCode);
 	// execute regist code if no errors found
-	if (!engine.hasUncaughtException())
+	if (!engine->hasUncaughtException())
 	{
-		QScriptValue func_getVideoInfo = engine.evaluate("getVideoInformation");
+		QScriptValue func_getVideoInfo = engine->evaluate("getVideoInformation");
 		// check if getVideoInformation function has been loaded
 		if (func_getVideoInfo.isFunction())
 		{
 			QScriptValueList args;
-			args << QScriptValue(&engine, URL);
+			args << QScriptValue(engine, URL);
 			// execute plugin
 			QScriptValue videoDefinition = func_getVideoInfo.call(QScriptValue(), args);
 			result = qscriptvalue_cast<VideoDefinition>(videoDefinition);
@@ -429,12 +453,21 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 		}
 	}
 	else // error found
-		qWarning() << "Plugin error : " << engine.uncaughtException().toString();
+		qWarning() << "Plugin error : " << engine->uncaughtException().toString();
 	// destroy auxiliar classes
 	delete toolsClass;
 	delete httpClass;
+	// detach global engine
+	delete engine;
+	engine = NULL;
 	// return the video definition returned
 	return result;
+}
+
+void VideoInformationPlugin::abortExecution()
+{
+	if (engine != NULL)
+		engine->abortEvaluation();
 }
 
 QString VideoInformationPlugin::getVersion() const

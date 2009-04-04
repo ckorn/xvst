@@ -57,6 +57,7 @@ class VideoInformationPlugin : public QObject
 		QPixmap *icon;				//<! Plugin public icon (acts as a proxy)
 		bool adultContent;			//<! Flag for know if this webservice has adult contents
 		bool loaded;				//<! Flag for know if this plugin has been loaded
+		QScriptEngine *engine;		//<! Pointer to script engine
 	private:
 		/* VideoDefinition struct script definition */
 		static QScriptValue create_VideoDefinition(QScriptContext *context, QScriptEngine *engine);
@@ -71,6 +72,8 @@ class VideoInformationPlugin : public QObject
 		bool isLikeMyId(QString ID);
 		/*! Get the video information from URL (this function executes the JS plugin) */
 		VideoDefinition getVideoInformation(const QString URL);
+		/*! Abot current work (only if is running) */
+		void abortExecution();
 		/*! Get the plugin version */
 		QString getVersion() const;
 		/*! Get the min xVST version to run */
@@ -127,6 +130,8 @@ Q_OBJECT
 		QStringList getPluginsCompleteList(const QString separator = "|");
 		/*! Get the video URL */
 		void getVideoInformation(VideoItem *videoItem);
+		/*! Abot current work (only if is running) */
+		void abortExecution();
 		/*! Cancel the current work */
 		void cancel();
 		/*! Get block adult content flag */
