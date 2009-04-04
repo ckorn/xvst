@@ -880,16 +880,6 @@ void Http::restartDownloadSignal()
 
 void Http::timeOutCheckout()
 {
-/*
-	if (stepID != 0 && launchedStepID != 0)
-		// if are the same id, then TIME OUT should enter in action
-		if (stepID == launchedStepID)
-		{
-			stopReason = TIME_OUT;
-			http->abort();
-		}
-*/
-	qDebug() << "TIMEOUT";
 	stopReason = TIME_OUT;
 	http->abort();
 }
