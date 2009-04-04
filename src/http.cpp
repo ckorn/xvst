@@ -257,9 +257,9 @@ void Http::initClass(bool useInternalTimer)
 	internalTimer = 0;
 	this->useInternalTimer = useInternalTimer;
 	// default max retries
-	maxRetries = 5;
+	maxRetries = 1;//5;
 	initRetriesData();
-	setTimeOut(8);	// 8 seconds
+	setTimeOut(20);	// 8 seconds
 	// destination file
 	file = NULL;
 	// cancel or pause on finish?
@@ -274,6 +274,7 @@ void Http::initClass(bool useInternalTimer)
 	connect(http, SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)), this,
 			SLOT(responseHeaderReceived(const QHttpResponseHeader &)));
 	connect(http, SIGNAL(stateChanged(int)), this, SLOT(stateChanged(int)));
+	connect(&tmrTimeOut, SIGNAL(timeout()), this, SLOT(timeOutCheckout()));
 }
 
 void Http::initData()
@@ -306,9 +307,6 @@ void Http::initData()
 	parameters = "";
 
 	startedDownload = false;
-
-	stepID = 0;
-	launchedStepID = 0;
 }
 
 void Http::initRetriesData()
@@ -407,9 +405,6 @@ void Http::jumpToURL(QUrl url)
 	if (resuming && file != NULL)
 		header.setValue("Range", QString("bytes=%1-").arg(file->size()));
 
-	stepID++;
-	launchedStepID = stepID;
-
 	// add custom header parameters
 	for (int n = 0; n < customHeaders->count(); n++)
 	{
@@ -419,11 +414,15 @@ void Http::jumpToURL(QUrl url)
 		header.setValue(key, value);
 	}
 
+	// stop timer (no time out)
+	tmrTimeOut.stop();
+
 	// send the request header
 	httpGetId = http->request(header, paramsStr, file);
 
 	// time out controller
-	//QTimer::singleShot(timeOut, this, SLOT(timeOutCheckout()));
+	// prepare the timer for possible timeout
+	tmrTimeOut.start(timeOut);
 
 	// post method off
 	postMethodFlag = false;
@@ -713,15 +712,24 @@ void Http::dataReadProgress(int done, int total)
 {
 	if (!startedDownload) return;
 
+	// if we are there, then reset the timeOut counter
+	tmrTimeOut.stop();
+
 	totalDownload = realTotalSize != 0 ? realTotalSize : total;
 	currDownload = total != 0 ? realStartSize + done : 0;
 
 	emit downloadEvent(currDownload, totalDownload);
+
+	// start again the timeOut timer
+	tmrTimeOut.start(timeOut);
 }
 
 void Http::requestFinished(int id, bool error)
 {
 	if (httpGetId != id) return;
+
+	// stop timeout timer
+	tmrTimeOut.stop();
 
 	if (file != NULL)
 	{
@@ -872,6 +880,7 @@ void Http::restartDownloadSignal()
 
 void Http::timeOutCheckout()
 {
+/*
 	if (stepID != 0 && launchedStepID != 0)
 		// if are the same id, then TIME OUT should enter in action
 		if (stepID == launchedStepID)
@@ -879,6 +888,10 @@ void Http::timeOutCheckout()
 			stopReason = TIME_OUT;
 			http->abort();
 		}
+*/
+	qDebug() << "TIMEOUT";
+	stopReason = TIME_OUT;
+	http->abort();
 }
 
 void Http::timerEvent(QTimerEvent *event)

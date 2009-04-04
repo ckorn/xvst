@@ -148,8 +148,7 @@ Q_OBJECT
 		int maxRetries;				//!< maximum retries for session (each download is a session)
 		int retriesCount;			//!< current retries in this session (each download is a session)
 		bool startedDownload;		//!< flag for know if is downloading (or just redirecting...
-		int stepID;					//!< this number is to know if we are doing the same work (usefull for the time out)
-		int launchedStepID;			//!< the launche step id (used for compare with stepID)
+		QTimer tmrTimeOut;			//!< time out timer
 		int timeOut;				//!< when the connection is considered "time out" in miliseconds (we will ot wait infinite...)
 		QStringList *customHeaders;	//!< list with custom header parameters
 		/*! Init Http class */
