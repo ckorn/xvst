@@ -61,7 +61,10 @@ VideoListController::~VideoListController()
 {
 	stop();
 
+	videoInformation->abortExecution();
+
 	clear();
+
 	delete videoList;
 
 	delete videoConverter;
@@ -169,7 +172,7 @@ void VideoListController::deleteVideo(const int index, bool removePausedFile)
 		if (!videoItem->isRemovable()) return;
 
 		// remove the "incompleted" video
-		if (videoItem->isPaused() && removePausedFile) 
+		if (videoItem->isPaused() && removePausedFile)
 			if (QFile::exists(videoItem->getVideoFile()))
 				QFile::remove(videoItem->getVideoFile());
 
