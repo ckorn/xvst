@@ -59,6 +59,16 @@ void HttpScriptPrototype::setTimeOut(int value)
 	thisHttp()->setTimeOut(value);
 }
 
+int HttpScriptPrototype::getLastError()
+{
+	return thisHttp()->getLastError();
+}
+
+int HttpScriptPrototype::getLastStopReason()
+{
+	return thisHttp()->getLastStopReason();
+}
+
 /* Http script class */
 
 HttpScriptClass::HttpScriptClass(QScriptEngine *engine)

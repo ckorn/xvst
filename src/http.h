@@ -149,6 +149,7 @@ Q_OBJECT
 		int retriesCount;			//!< current retries in this session (each download is a session)
 		bool startedDownload;		//!< flag for know if is downloading (or just redirecting...
 		QTimer tmrTimeOut;			//!< time out timer
+		int timeOutIntervalCehck;	//!< time out interval checker
 		int timeOut;				//!< when the connection is considered "time out" in miliseconds (we will ot wait infinite...)
 		QStringList *customHeaders;	//!< list with custom header parameters
 		/*! Init Http class */
@@ -215,6 +216,10 @@ Q_OBJECT
 		void setMaxRetries(int value);
 		/*! Set the time out in seconds */
 		void setTimeOut(int value);
+		/*! Get the last error generated (on start a new download, this value is reset) */
+		int getLastError();
+		/*! Get the last stop reason (on start a new download, this value is reset) */
+		int getLastStopReason();
 	private slots:
 		/*! when the http protocol read data */
 		void dataReadProgress(int done, int total);

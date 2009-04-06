@@ -257,9 +257,9 @@ void Http::initClass(bool useInternalTimer)
 	internalTimer = 0;
 	this->useInternalTimer = useInternalTimer;
 	// default max retries
-	maxRetries = 1;//5;
+	maxRetries = 3;//5;
 	initRetriesData();
-	setTimeOut(20);	// 8 seconds
+	setTimeOut(10);	// 8 seconds
 	// destination file
 	file = NULL;
 	// cancel or pause on finish?
@@ -307,6 +307,8 @@ void Http::initData()
 	parameters = "";
 
 	startedDownload = false;
+
+	timeOutIntervalCehck = 0;
 }
 
 void Http::initRetriesData()
@@ -708,12 +710,25 @@ void Http::setTimeOut(int value)
 	timeOut = value * 1000;
 }
 
+int Http::getLastError()
+{
+	return http->error();
+}
+
+int Http::getLastStopReason()
+{
+	return stopReason;
+}
+
 void Http::dataReadProgress(int done, int total)
 {
 	if (!startedDownload) return;
 
 	// if we are there, then reset the timeOut counter
-	tmrTimeOut.stop();
+	timeOutIntervalCehck++;
+
+	if (timeOutIntervalCehck > 20)
+		tmrTimeOut.stop();
 
 	totalDownload = realTotalSize != 0 ? realTotalSize : total;
 	currDownload = total != 0 ? realStartSize + done : 0;
@@ -721,7 +736,11 @@ void Http::dataReadProgress(int done, int total)
 	emit downloadEvent(currDownload, totalDownload);
 
 	// start again the timeOut timer
-	tmrTimeOut.start(timeOut);
+	if (timeOutIntervalCehck > 20)
+	{
+		tmrTimeOut.start(timeOut);
+		timeOutIntervalCehck = 0;
+	}
 }
 
 void Http::requestFinished(int id, bool error)

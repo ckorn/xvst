@@ -23,6 +23,8 @@ Q_OBJECT
 		void clearHeaderParameters();
 		void setMaxRetries(int value);
 		void setTimeOut(int value);
+		int getLastError();
+		int getLastStopReason();
 };
 
 class HttpScriptClass : public QObject, public QScriptClass
