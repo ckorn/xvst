@@ -28,6 +28,10 @@
 CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent, Qt::WFlags f)
 {
 	setupUi(this);
+	// resize form if is needed
+#ifdef Q_WS_MAC
+	resize(width(), 132);
+#endif
 	//
 	closedByButton = false;
 	// init check updates worker

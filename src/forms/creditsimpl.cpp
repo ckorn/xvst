@@ -29,6 +29,10 @@ CreditsImpl::CreditsImpl( QWidget * parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {
 	setupUi(this);
+	// resize form if is needed
+#ifdef Q_WS_MAC
+	resize(width(), 500);
+#endif
 }
 //
 
