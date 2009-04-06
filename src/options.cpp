@@ -299,7 +299,7 @@ QString ProgramOptions::getOptionsPath()
 QString ProgramOptions::getLanguagesPath()
 {
 #ifdef Q_WS_MAC
-	return getApplicationPath() + "/../Resources/Languages";
+	return getApplicationPath() + "/../Resources/languages";
 #else
 	return getApplicationPath() + "/languages";
 #endif
@@ -308,7 +308,7 @@ QString ProgramOptions::getLanguagesPath()
 QString ProgramOptions::getPluginsDir()
 {
 #ifdef Q_WS_MAC
-	return getApplicationPath() + "/../Resources/Plugins";
+	return getApplicationPath() + "/../Resources/plugins";
 #else
 	return getApplicationPath() + "/plugins";
 #endif
@@ -331,7 +331,7 @@ bool ProgramOptions::getIfInternalFFmpegIsInstalled()
 
 QString ProgramOptions::getInternalFFmpegPath()
 {
-	return appDir.absolutePath() + "/../Resources/Tools/ffmpeg";
+	return appDir.absolutePath() + "/../Resources/tools/ffmpeg";
 }
 #endif
 
