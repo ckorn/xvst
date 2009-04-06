@@ -94,7 +94,7 @@ Q_OBJECT
 		QList<DownloadItem *> *downloads;		//!< active downloads
 		QString downloadDir;					//!< where to download videos
 		int maxActiveDownloads;					//!< maximum active downloads
-		QList<DownloadItem *> *garbageCollecotrCue;	//!< cue of downloads to destroy
+		QList<DownloadItem *> *garbageCollecotrQueue;	//!< queue of downloads to destroy
 		/*! Find a download item by a video item*/
 		DownloadItem* findDownloadItemByVideoItem(VideoItem *videoItem);
 		/*! Stop all downloads */

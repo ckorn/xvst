@@ -163,7 +163,7 @@ VideoDownload::VideoDownload(QString saveTo, int maxActiveDownloads)
 	// init downloads list
 	downloads = new QList<DownloadItem *>;
 	// init garbage collector cue
-	garbageCollecotrCue = new QList<DownloadItem *>;
+	garbageCollecotrQueue = new QList<DownloadItem *>;
 }
 
 VideoDownload::~VideoDownload()
@@ -173,7 +173,7 @@ VideoDownload::~VideoDownload()
 	// force to execute the garbage collector
 	destroyDownload();
 
-	delete garbageCollecotrCue;
+	delete garbageCollecotrQueue;
 	delete downloads;
 }
 
@@ -314,7 +314,7 @@ void VideoDownload::downloadFinished_child(VideoItem *videoItem)
 void VideoDownload::downloadDestroyable()
 {
 	// add this object to garbage collector cue (to be destroyed and removed from list safely)
-	garbageCollecotrCue->append(static_cast<DownloadItem *>(sender()));
+	garbageCollecotrQueue->append(static_cast<DownloadItem *>(sender()));
 	// execute garbage collector
 	QTimer::singleShot(0, this, SLOT(destroyDownload()));
 }
@@ -322,11 +322,11 @@ void VideoDownload::downloadDestroyable()
 void VideoDownload::destroyDownload()
 {
 	// remove all items which are in garbage collector cue
-	while (!garbageCollecotrCue->isEmpty())
+	while (!garbageCollecotrQueue->isEmpty())
 	{
-		DownloadItem *toDestroy = garbageCollecotrCue->first();
+		DownloadItem *toDestroy = garbageCollecotrQueue->first();
 		// delete from garbage collector cue
-		garbageCollecotrCue->removeFirst();
+		garbageCollecotrQueue->removeFirst();
 		// disconnect signals
 		toDestroy->disconnect();
 		// delete DownloadItem from list of active downloads
