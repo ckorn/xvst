@@ -29,6 +29,9 @@ BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Q
 	: QDialog(parent, f)
 {
 	setupUi(this);
+#ifdef Q_WS_MAC
+	resize(512, 560);
+#endif
 	// program options
 	this->programOptions = programOptions;
 	// hide "send group"
@@ -80,7 +83,7 @@ void BugReportImpl::fillErrorInfo(VideoItem *videoItem, VideoInformation *videoI
 void BugReportImpl::viewInfoClicked()
 {
 	InfoViewImpl infoView(videoItem, edtName->text(), edtEmail->text(), 
-		rchComments->toPlainText(), this);
+		rchComments->toPlainText(), NULL);
 	infoView.exec();
 }
 

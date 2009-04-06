@@ -38,6 +38,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// resize add button to an optimum visualization on macosx
 #ifdef Q_WS_MAC
 	btnAddVideo->setMinimumWidth(158);
+	frame->layout()->setContentsMargins(4, 4, 6, 4);
 #endif
 	// init program options
 	lastOptionsPage = 0;

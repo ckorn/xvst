@@ -29,6 +29,9 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 		: QDialog(parent, f)
 {
 	setupUi(this);
+#ifdef Q_WS_MAC
+	resize(518, 550);
+#endif
 	// signals
 	connect(btnCredits, SIGNAL(clicked()), this, SLOT(btnCreditsClicked()));
 	// set the program version
