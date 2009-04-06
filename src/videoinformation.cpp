@@ -179,6 +179,11 @@ void VideoInformation::getVideoInformation(VideoItem *videoItem)
 	this->start();
 }
 
+int VideoInformation::pluginsCount()
+{
+	return plugins->count();
+}
+
 void VideoInformation::abortExecution()
 {
 	if (videoItem != NULL && isGettingInfo())
@@ -334,6 +339,7 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 				version = engine->globalObject().property("version").toString();
 				minVersion = engine->globalObject().property("minVersion").toString();
 				author = engine->globalObject().property("author").toString();
+				website = engine->globalObject().property("website").toString();
 				ID = engine->globalObject().property("ID").toString();
 				caption = engine->globalObject().property("caption").toString();
 				adultContent = engine->globalObject().property("adultContent").toBool();
@@ -483,6 +489,11 @@ QString VideoInformationPlugin::getMinVersion() const
 QString VideoInformationPlugin::getAuthor() const
 {
 	return author;
+}
+
+QString VideoInformationPlugin::getWebsite() const
+{
+	return website;
 }
 
 QString VideoInformationPlugin::getID() const

@@ -53,6 +53,7 @@ class VideoInformationPlugin : public QObject
 		QString minVersion;			//<! Min xVST version to run
 		QString author;				//<! Plugin author
 		QString videoServicePath;	//<! Where the plugin is stored
+		QString website;			//<! Plugin service website (i.e.: http://www.youtube.com/)
 		QString ID;					//<! Plugin ID (used by the engine to determine if this plugin knows how to resolve an url)
 		QString caption;			//<! Plugin public caption
 		QPixmap *icon;				//<! Plugin public icon (acts as a proxy)
@@ -81,6 +82,8 @@ class VideoInformationPlugin : public QObject
 		QString getMinVersion() const;
 		/*! Get the plugin author */
 		QString getAuthor() const;
+		/*! Get the plugin ID */
+		QString getWebsite() const;
 		/*! Get the plugin ID */
 		QString getID() const;
 		/*! Get the plugin caption */
@@ -131,6 +134,8 @@ Q_OBJECT
 		QStringList getPluginsCompleteList(const QString separator = "|");
 		/*! Get the video URL */
 		void getVideoInformation(VideoItem *videoItem);
+		/*! Get plugins count */
+		int pluginsCount();
 		/*! Abot current work (only if is running) */
 		void abortExecution();
 		/*! Cancel the current work */
