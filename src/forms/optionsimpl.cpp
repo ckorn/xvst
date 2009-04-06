@@ -37,6 +37,10 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	this->videoInformation = videoList->getVideoInformation();
 	this->lastPageViewed = lastOptionsPage;
 	languageManager = new LanguageManager;
+	// resize form if is needed
+#ifdef Q_WS_MAC
+	resize(835, 475);
+#endif
 	//signals
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
 	connect(spbSelectDownloadDir, SIGNAL(pressed()), this, SLOT(spbSelectDownloadDirPressed()));
