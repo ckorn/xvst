@@ -59,7 +59,8 @@ HEADERS = src/forms/addvideoimpl.h \
     src/newlanguages.h \
     src/toolsscriptclass.h \
     src/httpscriptclass.h \
-    src/videoconverttypes.h
+    src/videoconverttypes.h \
+    src/checkupdatesworker.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \
@@ -93,7 +94,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/newlanguagesimpl.cpp \
     src/newlanguages.cpp \
     src/toolsscriptclass.cpp \
-    src/httpscriptclass.cpp
+    src/httpscriptclass.cpp \
+    src/checkupdatesworker.cpp
 TRANSLATIONS = resources/translations/xVST_ca.ts \
     resources/translations/xVST_es.ts \
     resources/translations/xVST_pl.ts \
