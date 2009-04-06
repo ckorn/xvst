@@ -33,6 +33,7 @@
 #include "http.h"
 #include "httpscriptclass.h"
 #include "toolsscriptclass.h"
+#include "programversion.h"
 
 enum BlockedState
 {
@@ -146,8 +147,6 @@ Q_OBJECT
 		bool isGettingInfo();
 		/*! Get if can start to get information */
 		bool canGetInformation();
-		/*! Get the host icon */
-		//QString getHostImage(QString URL, bool checkURL = false);
 		/*! Get the host icon */
 		QPixmap getHostImage(QString URL, bool checkURL = false);
 		/*! Get the caption of this host */

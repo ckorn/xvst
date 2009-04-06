@@ -25,7 +25,7 @@
 
 #include "videoinformation.h"
 
- Q_DECLARE_METATYPE(VideoDefinition)
+Q_DECLARE_METATYPE(VideoDefinition)
 
 VideoInformation::VideoInformation(QString pluginsDir)
 {
@@ -340,7 +340,7 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 				// validate if all main information is assigned
 				loaded = !version.isEmpty() && !minVersion.isEmpty() && !ID.isEmpty() && !caption.isEmpty();
 				// if this plugin has been loaded, then try to load the service icon
-				if (loaded)
+				if (loaded && compareVersions(minVersion, PROGRAM_VERSION_SHORT) <= 0)
 				{
 					QScriptValue func_getIcon = engine->evaluate("getVideoServiceIcon");
 					// check if getVideoServiceIcon function has been loaded
@@ -362,9 +362,9 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 						}
 					}
 				}
+				else // this plugin, is not loaded
+					loaded = false;
 			}
-			else // if RegistVideoService function has not been loaded then add a warning
-				qWarning() << "Plugin error: RegistVideoService() function is missing";
 		}
 		// detach global engine
 		delete engine;
