@@ -3,7 +3,8 @@
 
 - Upgraded to Qt 4.5.0
 
-- Recoded all the internal xVST core (now is based on Plugins)
+- Changed the internal xVST monolithic core to a dynamic core (based on Plugins)
+- Changed: After a new update, on restart the program will check again for updates
 
 - Added Danish (DA) language
 - Added Portugese - Brasil (BR) language
@@ -38,6 +39,11 @@ Linux:
 - Configuration file for linux os is now : ~/.xVideoServiceThief (thanks to AzalSup)
 - Default download directory for linux os is now ~/xVideoServiceThief_downloads (thanks to AzalSup)
 
+Windows:
+--------
+
+- Compiled with last VC++ version (VC++ 2008 express edition)
+
 Windows Vista:
 --------------
 
@@ -48,6 +54,7 @@ MacOS X:
 
 - Added ffmpeg internal detection
 - Configuration file for MacOS X is now: /Users/{User}/Preferences
+- All configuration files are now PLIST's
 
 
 1.8.2a:
