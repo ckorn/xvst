@@ -29,6 +29,7 @@ function RegistVideoService()
 	this.version = "1.0";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
+	this.website = "http://www.youtube.com/";
 	this.ID = "youtube.com";
 	this.caption = "Youtube";
 	this.adultContent = false;
