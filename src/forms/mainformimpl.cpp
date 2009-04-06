@@ -31,6 +31,10 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	setupUi(this);
 	// set caption
 	setWindowTitle(QString(windowTitle()).arg(PROGRAM_VERSION));
+	// hide embeded check updates
+	lblCheckForUpdatesLabel->hide();
+	pbrCheckingForUpdates->hide();
+	spbCancelCheckForUpdates->hide();
 	// init program options
 	lastOptionsPage = 0;
 	// load options (each OS has hes own options record)
@@ -315,7 +319,8 @@ void MainFormImpl::closeEvent(QCloseEvent *event)
 {
 	if (videoList->isWorking())
 	{
-		if (QMessageBox::question(this, tr("Closing..."),
+		if (QMessageBox::question(NULL,
+								  tr("Closing..."),
 		                          tr("xVideoServiceThief is working, do you wish Pause the current work?"),
 		                          tr("Yes"), tr("No"), QString(), 0, 1) == 0)
 		{
@@ -381,9 +386,10 @@ void MainFormImpl::updatesClicked()
 {
 	if (videoList->isWorking())
 	{
-		QMessageBox::information(this, tr("Updates"),
-		                               tr("Another process is currently working, please stop it or wait until the end of process."),
-		                               tr("Ok"));
+		QMessageBox::information(NULL,
+								 tr("Updates"),
+								 tr("Another process is currently working, please stop it or wait until the end of process."),
+								 tr("Ok"));
 		return;
 	}
 
@@ -804,7 +810,11 @@ void MainFormImpl::pasteURLfromClipboardClicked()
 // updates
 void MainFormImpl::checkForUpdates()
 {
-	if (programOptions->getCheckForUpdatesOnStartup())
+	bool forceCheckUpdates = false;
+	if (qApp->arguments().count() > 1)
+		forceCheckUpdates = qApp->arguments().at(1) == "forceCheckUpdates";
+
+	if (programOptions->getCheckForUpdatesOnStartup() || forceCheckUpdates)
 		// check if the xUpdater is installed (can install updates?)
 		if (!Updates::canUpdate())
 		{
@@ -812,18 +822,40 @@ void MainFormImpl::checkForUpdates()
 			spbUpdates->setEnabled(false);
 			// running the app for 1st time? then display this warning message
 			if (programOptions->getFirstTime())
-				QMessageBox::information(this, tr("Updates"),
-				                               tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
-				                               tr("Ok"));
+				QMessageBox::information(NULL,
+										 tr("Updates"),
+										 tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
+										 tr("Ok"));
 			// start the download list
 			videoList->start();
 			// ok, no more first time
 			programOptions->setFirstTime(false);
 		}
 		else // can check for updates
-			checkUpdates();
+			checkUpdates(forceCheckUpdates);
 	else // start the download list, and do not check for updates
 		videoList->start();
+}
+
+void MainFormImpl::checkUpdatesWorkerFinished(bool hasUpdates, bool closedByButton)
+{
+	spbUpdates->setEnabled(true);
+	actUpdates->setEnabled(true);
+
+	lblCheckForUpdatesLabel->hide();
+	pbrCheckingForUpdates->hide();
+	spbCancelCheckForUpdates->hide();
+
+	// if no updates are ready then, start the main loop of video List
+	if (!hasUpdates)
+		videoList->start();
+
+	delete checkUpdatesWorker;
+}
+
+void MainFormImpl::beforeDisplayUpdateCenter()
+{
+	if (!isVisible()) restoreAppClicked();
 }
 
 // lsvDownloadList functions
@@ -876,24 +908,27 @@ void MainFormImpl::updateVisualOptions()
 	edtDownloadDir->setText(programOptions->getDownloadDir());
 }
 
-void MainFormImpl::checkUpdates()
+void MainFormImpl::checkUpdates(bool forceCheckUpdates)
 {
 	bool noUpdates = true;
 	QDate nextUpdate = programOptions->getLastUpdate().addDays(programOptions->getCheckForUpdatesEvery());
-	
-	if (nextUpdate <= QDate::currentDate())
+
+	if (nextUpdate <= QDate::currentDate() || forceCheckUpdates)
 	{
 		spbUpdates->setEnabled(false);
 		actUpdates->setEnabled(false);
 		
-		CheckUpdatesImpl checkUpdatesForm(programOptions, false);
-		noUpdates = checkUpdatesForm.exec() != QDialog::Accepted;
-		
-		spbUpdates->setEnabled(true);
-		actUpdates->setEnabled(true);
+		lblCheckForUpdatesLabel->show();
+		pbrCheckingForUpdates->show();
+		spbCancelCheckForUpdates->show();
+
+		checkUpdatesWorker = new CheckUpdatesWorker(programOptions, this, lblCheckForUpdatesLabel, pbrCheckingForUpdates,
+													spbCancelCheckForUpdates, false);
+		connect(checkUpdatesWorker, SIGNAL(finished(bool, bool)), this, SLOT(checkUpdatesWorkerFinished(bool, bool)));
+		connect(checkUpdatesWorker, SIGNAL(beforeDisplayUpdateCenter()), this, SLOT(beforeDisplayUpdateCenter()));
+		checkUpdatesWorker->checkUpdates();
 	}
-	// if no updates are ready then, start the main loop of video List
-	if (noUpdates)
+	else // no updates, start the main loop of video List
 		videoList->start();
 }
 

@@ -45,6 +45,7 @@
 #include "../videoinformation.h"
 #include "../sessionmanager.h"
 #include "../programversion.h"
+#include "../checkupdatesworker.h"
 //
 class MainFormImpl : public QMainWindow, public Ui::MainForm
 {
@@ -83,12 +84,13 @@ Q_OBJECT
 		// paste shortcut
 		QShortcut *shortCutPasteURL;	//!< Paste from clipboard Shortcut
 		QShortcut *shortCutDeleteVideo;	//!< Delete the selected video from list
-		// updates
-		void checkUpdates();
 		// set stay on top flag
 		void setStayOnTopFlag();
 		// extra information
 		void updateListInformation();
+		// embeded updates
+		CheckUpdatesWorker *checkUpdatesWorker;
+		void checkUpdates(bool forceCheckUpdates);
 	protected:
 		void changeEvent(QEvent *event);
 		void closeEvent(QCloseEvent *event);
@@ -142,5 +144,7 @@ Q_OBJECT
 		void pasteURLfromClipboardClicked();
 		// first program executation
 		void checkForUpdates();
+		void checkUpdatesWorkerFinished(bool hasUpdates, bool closedByButton);
+		void beforeDisplayUpdateCenter();
 };
 #endif

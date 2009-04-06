@@ -32,7 +32,7 @@ Updates::Updates(QString appPath)
 	updateState = usWaiting;
 	cancelled = false;
 #ifdef Q_WS_MAC
-	this->appPath = appPath + "/..";
+	this->appPath = appPath + "/../Resources";
 #else
 	this->appPath = appPath;
 #endif
@@ -78,6 +78,7 @@ void Updates::parseBlock(QString block)
 				update->setInstallTo(copyBetween(fileBlock, "installTo=\"", "\""));
 				update->setUrl(copyBetween(fileBlock, "url=\"", "\""));
 				update->setPacked(copyBetween(fileBlock, "packed=\"", "\"").toLower() == "true");
+				update->setObligatory(copyBetween(fileBlock, "obligatory=\"", "\"").toLower() == "true");
 				update->setChecked(true);
 			}
 			// next update file
@@ -152,7 +153,7 @@ void Updates::buildInstalScript()
 		QStringList updateScript;
 		// write the info vars
 		updateScript << "#MAIN_APP=" + QCoreApplication::applicationFilePath()
-					 << "#PARAMETERS="
+					 << "#PARAMETERS=forceCheckUpdates"
 					 << "#RESTART=true";
 		// add updates
 		for (int n = 0; n < getUpdatesCount(); n++)
@@ -165,8 +166,8 @@ void Updates::buildInstalScript()
 				update->setInstallTo("/" + appExe.fileName());
 			}
 			// is checked?
-			if (update->getChecked())
-				if (!update->getPacked())
+			if (update->isChecked())
+				if (!update->isPacked())
 					// block id
 					updateScript << QString(":install_file_%1").arg(n)
 					// copy the downloaded file
@@ -249,7 +250,7 @@ void Updates::getTotalSizeToDownload()
 	{
 		Update *update = updateList->at(n);
 		// is checked?
-		if (update->getChecked())
+		if (update->isChecked())
 			totalToDownload += update->getSize();
 	}
 }
@@ -378,7 +379,7 @@ int Updates::getTotalToDownload()
 int Updates::getFirstUpdateToDownload()
 {
 	for (int n = 0; n < getUpdatesCount(); n++)
-		if (updateList->at(n)->getChecked())
+		if (updateList->at(n)->isChecked())
 			return n;
 
 	return -1;
@@ -420,7 +421,7 @@ void Updates::downloadFinished(const QFileInfo /*destFile*/)
 		// get next file to download
 		while (currentItem < getUpdatesCount())
 		{
-			if (updateList->at(currentItem)->getChecked())
+			if (updateList->at(currentItem)->isChecked())
 				return;
 			//next
 			currentItem++;
@@ -464,6 +465,11 @@ void Update::setPacked(bool value)
 	packed = value;
 }
 
+ void Update::setObligatory(bool value)
+{
+	obligatory = value;
+}
+
 void Update::setChecked(bool value)
 {
 	checked = value;
@@ -494,12 +500,17 @@ QString Update::getUrl()
 	return url;
 }
 
-bool Update::getPacked()
+bool Update::isPacked()
 {
 	return packed;
 }
 
-bool Update::getChecked()
+bool Update::isObligatory()
+{
+	return obligatory;
+}
+
+bool Update::isChecked()
 {
 	return checked;
 }

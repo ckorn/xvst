@@ -24,146 +24,44 @@
 */
 
 #include "checkupdatesimpl.h"
-// windows vista detection
-#ifdef Q_WS_WIN
-	#include <windows.h>
-#endif
-//
+
 CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent, Qt::WFlags f)
-	: QDialog(parent, f)
 {
 	setupUi(this);
-	this->programOptions = programOptions;
-	this->isUser = isUser;
-	closedByButton = false;
-	// init update class
-	updates = new Updates(programOptions->getApplicationPath());
-	// signals
-	connect(updates, SIGNAL(progressCheckUpdate(int)), this, SLOT(progressCheckUpdate(int)));
-	connect(updates, SIGNAL(updatesChecked(bool)), this, SLOT(updatesChecked(bool)));
-	connect(updates, SIGNAL(updatesCancelled()), this, SLOT(updatesCancelled()));
 	//
-	connect(btnCancel, SIGNAL(clicked()), this, SLOT(btnCancelClicked()));
-	// check for updates
-	checkUpdates();
+	closedByButton = false;
+	// init check updates worker
+	checkUpdatesWorker = new CheckUpdatesWorker(programOptions, this, lblUpdating, pbrUpdate, btnCancel, true);
+	connect(checkUpdatesWorker, SIGNAL(finished(bool, bool)), this, SLOT(checkUpdatesWorkerFinished(bool, bool)));
+	connect(checkUpdatesWorker, SIGNAL(beforeDisplayUpdateCenter()), this, SLOT(beforeDisplayUpdateCenter()));
+	checkUpdatesWorker->checkUpdates();
 }
 
 CheckUpdatesImpl::~CheckUpdatesImpl()
 {
-	delete updates;
+	delete checkUpdatesWorker;
 }
 
 void CheckUpdatesImpl::closeEvent(QCloseEvent *event)
 {
+/*
 	if (!closedByButton)
 	{
 		event->ignore();
-		btnCancelClicked();
+		btnCancel->click();
 	}
+*/
 }
 
-void CheckUpdatesImpl::checkUpdates()
+void CheckUpdatesImpl::checkUpdatesWorkerFinished(bool hasUpdates, bool closedByButton)
 {
-	programOptions->setLastUpdate(QDate::currentDate());
-	programOptions->save();
-	
-	updates->checkForUpdates(URL_UPDATE_FILE);
+	this->closedByButton = closedByButton;
+	this->done(hasUpdates ? QDialog::Accepted : QDialog::Rejected);
 }
 
-void CheckUpdatesImpl::waitThread()
+void CheckUpdatesImpl::beforeDisplayUpdateCenter()
 {
-	while (updates->isRunning())
-		qApp->processEvents();
+	this->setVisible(false);
 }
 
-bool CheckUpdatesImpl::isWindowsVista()
-{
-#ifdef Q_WS_WIN
-	OSVERSIONINFO osvi;
-	ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
-	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-	GetVersionEx(&osvi);
-	// return if we are running the windows vista OS
-	return((osvi.dwMajorVersion == 6) && (osvi.dwMinorVersion == 0));
-#else
-	return false;
-#endif
-}
-
-void CheckUpdatesImpl::btnCancelClicked()
-{
-	btnCancel->setEnabled(false);
-	updates->cancel();
-}
-
-void CheckUpdatesImpl::updatesChecked(bool hasUpdates)
-{
-	// if has updates, then display the update center
-	if (hasUpdates)
-	{
-		this->setVisible(false);
-		// result checker
-		int result = QDialog::Accepted;
-		// check if we are running windwos vista
-		if (isWindowsVista() && !programOptions->getVistaUpdatesMessage())
-		{
-			WindowsVistaDetectedImpl windowsVistaDetectedForm(this);
-			result = windowsVistaDetectedForm.exec();
-			// update the option "don't display this message"
-			programOptions->setVistaUpdatesMessage(windowsVistaDetectedForm.chbDontDisplay->isChecked());
-		}
-		// open update center (this condition works only on windows vista)
-		if (result == QDialog::Accepted) 
-		{		
-			// dispaly
-			UpdateCenterImpl updateCenterForm(updates, programOptions->getInstallAutomaticallyUpdates(), this);
-			result = updateCenterForm.exec();
-		}
-		// wait until "thread end"
-		waitThread();
-		// updates downloaded??? yes? then install them
-		if (result == QDialog::Accepted)
-		{
-			updates->installUpdates();
-			QApplication::closeAllWindows();
-		}
-		else // update center has been cancelled
-		{
-			closedByButton = true;
-			done(QDialog::Rejected);
-		}
-	}
-	else
-	{
-		waitThread();
-		
-		if (isUser)
-			QMessageBox::information(this, tr("Updates"),
-			                               tr("You are using the most recent version of this program."),
-			                               tr("Ok"));
-		closedByButton = true;
-		done(QDialog::Rejected);
-	}
-}
-
-void CheckUpdatesImpl::updatesCancelled()
-{
-	lblUpdating->setText(tr("Cancelling... please wait..."));
-	
-	waitThread();
-
-	closedByButton = true;
-	done(QDialog::Rejected);
-}
-
-void CheckUpdatesImpl::progressCheckUpdate(int progress)
-{
-	lblUpdating->setText(tr("Checking for updates..."));
-	pbrUpdate->setMaximum(100);
-	pbrUpdate->setValue(progress);
-	
-	// imposible cancel it
-	if (progress == 100)
-		btnCancel->setEnabled(false);
-}
 //

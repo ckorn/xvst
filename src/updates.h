@@ -65,6 +65,7 @@ Q_OBJECT
 		QString installTo;	//!< Where to find and install the new update
 		QString url;		//!< Where to download this update
 		bool packed;		//!< Flag for know if this update is packed
+		bool obligatory;	//!< Flag for know if this update must be downloaed (if don't exists, it is downloaded anyway)
 		bool checked;		//!< Selected to update
 	public:
 		/*! Set the update caption */
@@ -79,6 +80,8 @@ Q_OBJECT
 		void setUrl(QString value);
 		/*! Set if is update is packed */
 		void setPacked(bool value);
+		/*! Set if this update is obligatory */
+		void setObligatory(bool value);
 		/*! Set as selected */
 		void setChecked(bool value);
 		/* Get the update caption */
@@ -92,9 +95,11 @@ Q_OBJECT
 		/*! Get the update url */
 		QString getUrl();
 		/*! Get if this update is packed */
-		bool getPacked();
+		bool isPacked();
+		/*! Get if this update is obligatory */
+		bool isObligatory();
 		/*! Get if is selected */
-		bool getChecked();
+		bool isChecked();
 };
 
 /*! Check and download program updates */
