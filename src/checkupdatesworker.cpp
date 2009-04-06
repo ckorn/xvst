@@ -1,5 +1,10 @@
 #include "checkupdatesworker.h"
 
+// windows vista detection
+#ifdef Q_WS_WIN
+	#include <windows.h>
+#endif
+
 CheckUpdatesWorker::CheckUpdatesWorker(ProgramOptions *programOptions, QWidget *parentForm, QLabel *caption,
 									   QProgressBar *progressBar, QAbstractButton *cancelButton, bool isUser)
 	: QObject()
