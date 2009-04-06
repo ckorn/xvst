@@ -148,7 +148,7 @@ void DragDropImpl::dropEvent(QDropEvent *event)
 	event->acceptProposedAction();
 }
 
-void DragDropImpl::closeEvent(QCloseEvent *event)
+void DragDropImpl::closeEvent(QCloseEvent */*event*/)
 {
 	if (!parent->isMinimized())
 		parent->show();

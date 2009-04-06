@@ -25,7 +25,7 @@
 
 #include "newlanguagesimpl.h"
 
-NewLanguagesImpl::NewLanguagesImpl(QWidget * parent, Qt::WFlags f)
+NewLanguagesImpl::NewLanguagesImpl(QWidget *parent, Qt::WFlags f)
 {
 	setupUi(this);
 	// create list columns
@@ -34,10 +34,13 @@ NewLanguagesImpl::NewLanguagesImpl(QWidget * parent, Qt::WFlags f)
 	// add the headers
 	lsvLanguages->setHeaderLabels(headers);
 	// configure resize mode
+	QFontMetrics fm = fontMetrics();
 	QHeaderView *header = lsvLanguages->header();
 	header->setHighlightSections(false);
 	header->setStretchLastSection(false);
 	header->setResizeMode(0, QHeaderView::Stretch);
+	// resize headers
+	header->resizeSection(2, fm.width(headers.at(2) + "Xesc & Technology"));
 	// set header text aligment
 	QTreeWidgetItem * headerItem = lsvLanguages->headerItem();
 	headerItem->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);

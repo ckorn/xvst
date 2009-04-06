@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -43,14 +43,12 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 	// load the service list
 	rchServices->setSource(QUrl("qrc:/service_list/service_list.html"));
 	// set the support project link
-	//imgSupport->setText("<a href=\"http://sourceforge.net/project/project_donations.php?group_id=205061\"><img src=\":/buttons/images/support_button.png\" /></a>");
-	//imgSupport->setText("<a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=xeskuu%2epaypal%40gmail%2ecom&item_name=xVideoServiceThief&no_shipping=1&return=http%3a%2f%2fxviservicethief%2esourceforge%2enet%2findex%2ephp%3faction%3ddonation&cancel_return=http%3a%2f%2fxviservicethief%2esourceforge%2enet%2f&cn=Comment%3a&tax=0&currency_code=EUR&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8w.paypal.com/cgi-bin/webscr?cmd=_donations&business=xeskuu%2epaypal%40gmail%2ecom&item_name=xVideoServiceThief&no_shipping=1&return=http%3a%2f%2fxviservicethief%2esourceforge%2enet%2findex%2ephp%3faction%3ddonation&cancel_return=http%3a%2f%2fxviservicethief%2esourceforge%2enet%2f&cn=Comment%3a&tax=0&currency_code=EUR&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8\"><img src=\":/buttons/images/support_button.png\" /></a>");
 	imgSupport->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button.png\" /></a>");
 }
 
 void InformationImpl::btnCreditsClicked()
 {
-	CreditsImpl creditsForm(this);
+	CreditsImpl creditsForm;
 	creditsForm.exec();
 }
 //

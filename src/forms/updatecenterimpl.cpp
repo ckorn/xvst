@@ -100,7 +100,7 @@ void UpdateCenterImpl::fillUpdates()
 	}
 }
 
-void UpdateCenterImpl::itemChanged(QTreeWidgetItem * item, int column)
+void UpdateCenterImpl::itemChanged(QTreeWidgetItem* /*item*/, int /*column*/)
 {
 	if (lsvUpdates->isEnabled())
 	{

@@ -35,6 +35,10 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	lblCheckForUpdatesLabel->hide();
 	pbrCheckingForUpdates->hide();
 	spbCancelCheckForUpdates->hide();
+	// resize add button to an optimum visualization on macosx
+#ifdef Q_WS_MAC
+	btnAddVideo->setMinimumWidth(158);
+#endif
 	// init program options
 	lastOptionsPage = 0;
 	// load options (each OS has hes own options record)
@@ -69,7 +73,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	header->resizeSection(1, fm.width(headers.at(1) + "11.11 MB"));
 	header->resizeSection(2, fm.width(headers.at(2) + "  100.00%  "));
 	header->resizeSection(3, qMax(fm.width(headers.at(3) + "  "), fm.width(" 24h 59m 59s ")));
-	header->resizeSection(4, qMax(fm.width(headers.at(4) + "  "), fm.width("999 KB/s")));
+	header->resizeSection(4, qMax(fm.width(headers.at(4) + "  "), fm.width(" 999,99 KB/sec ")));
 	// configure resize mode
 	header->setHighlightSections(false);
 	header->setStretchLastSection(false);
@@ -116,6 +120,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actStayOnTop, SIGNAL(triggered()), this, SLOT(stayOnTopClicked())); // actStayOnTop (clicked)
 	connect(actMinimizeToSystemTray, SIGNAL(triggered()), this, SLOT(minimizeToSystemTrayClicked())); // actMinimizeToSystemTray (clicked)
 	connect(actViewErrorMessage, SIGNAL(triggered()), this, SLOT(viewErrorMessageClicked())); // actViewErrorMessage (clicked)
+	connect(actOpenDownloadDir, SIGNAL(triggered()), this, SLOT(openDownloadDirClicked())); //actOpenDownloadDir (clicked)
 	// edtDownloadDir
 	connect(edtDownloadDir, SIGNAL(editingFinished()), this, SLOT(edtDownloadDirChanged()));
 	// connect buttons
@@ -526,7 +531,7 @@ void MainFormImpl::cancelDownloadVideoClicked()
 
 	// we have a video to cancel?
 	if (videoItem != NULL)
-		if (QMessageBox::question(this, tr("Cancel download"),
+		if (QMessageBox::question(NULL, tr("Cancel download"),
 			tr("Wish you Cancel the download of <b>%1</b>?").arg(videoItem->getDisplayLabel()),
 			tr("Yes"), tr("No"), QString(), 0, 1) == 0)
 		{
