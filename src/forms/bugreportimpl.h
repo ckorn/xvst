@@ -47,6 +47,8 @@ Q_OBJECT
 		VideoItem *videoItem; 				//<! VideoItem with the error
 		TrackerReport *trackerReport;		//<! Tracker report class
 		VideoInformation *videoInformation;	//<! Video service info
+		// parent bug fix for macosx
+		QWidget *self;						//<! For macosx this value is NULL, in Win and Linux is "this"
 	public:
 		/*! Class constructor */
 		BugReportImpl(ProgramOptions *programOptions, QWidget * parent = 0, Qt::WFlags f = 0);

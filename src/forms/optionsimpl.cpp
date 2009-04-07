@@ -89,6 +89,12 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	// hide "chbInternalFFmpeg"
 	chbInternalFFmpeg->hide();
 #endif
+	// fix a bug with macosx and new forms
+#ifdef Q_WS_MAC
+	self = NULL;
+#else
+	self = this;
+#endif
 }
 
 OptionsImpl::~OptionsImpl()
@@ -440,9 +446,11 @@ void OptionsImpl::btnUseThisClicked()
 		item->setFont(0, oriFont);
 	}
 	// disply update message
-	QMessageBox::information(this, tr("Language Setup"),
-				 tr("In order to apply the new selected language, the program must be restarted."),
-				 tr("Ok"), QString(), 0, 1);
+	QMessageBox::information(self,
+							 tr("Language Setup"),
+							 tr("In order to apply the new selected language, the program must be restarted."),
+							 tr("Ok"),
+							 QString(), 0, 1);
 }
 
 void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem */*item*/, int /*column*/)
@@ -455,15 +463,16 @@ void OptionsImpl::btnCheckNowClicked()
 {
 	if (videoList->isWorking())
 	{
-		QMessageBox::information(this, tr("Updates"),
-					       tr("Another process is currently working, please stop it or wait until the end of process."),
-					       tr("Ok"));
+		QMessageBox::information(self,
+								 tr("Updates"),
+								 tr("Another process is currently working, please stop it or wait until the end of process."),
+								 tr("Ok"));
 		return;
 	}
 
 	btnCheckNow->setEnabled(false);
 
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true);
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true, self);
 	checkUpdatesForm.exec();
 
 	btnCheckNow->setEnabled(true);
@@ -471,7 +480,7 @@ void OptionsImpl::btnCheckNowClicked()
 
 void OptionsImpl::btnAddNewLanguagesClicked()
 {
-	NewLanguagesImpl newLanguagesForm;
+	NewLanguagesImpl newLanguagesForm(self);
 	newLanguagesForm.exec();
 
 	// reload languages
@@ -499,8 +508,10 @@ void OptionsImpl::btnOkClicked()
 
 void OptionsImpl::spbSelectDownloadDirPressed()
 {
-	QString s = QFileDialog::getExistingDirectory(this, tr("Select the download directory:"),
-		    edtDownloadsDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+	QString s = QFileDialog::getExistingDirectory(this,
+												  tr("Select the download directory:"),
+												  edtDownloadsDir->text(),
+												  QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	// if is emtpy, cancel the proces
 	if (s.isEmpty()) return;
 	edtDownloadsDir->setText(QDir::toNativeSeparators(s));
@@ -532,16 +543,19 @@ void OptionsImpl::ffmpegTextChanged(const QString &text)
 
 void OptionsImpl::btnViewLogClicked()
 {
-	DownloadLogImpl downloadLog;
+	DownloadLogImpl downloadLog(self);
 	downloadLog.buildLog(sessionManager->getLogEntries(), videoInformation);
 	downloadLog.exec();
 }
 
 void OptionsImpl::btnClearLogClicked()
 {
-	if (QMessageBox::question(this, tr("Clear Log"),
-				  tr("Are you sure to clear the downloads/conversions historic file?"),
-				  tr("Yes"), tr("No"), QString(), 0, 1) == 0)
+	if (QMessageBox::question(self,
+							  tr("Clear Log"),
+							  tr("Are you sure to clear the downloads/conversions historic file?"),
+							  tr("Yes"),
+							  tr("No"),
+							  QString(), 0, 1) == 0)
 		sessionManager->clearLog();
 }
 

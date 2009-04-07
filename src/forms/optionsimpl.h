@@ -58,6 +58,8 @@ Q_OBJECT
 		void setOptionsValues();
 		void dragEnterEvent(QDragEnterEvent *event);
 		void dropEvent(QDropEvent *event);
+		// parent bug fix for macosx
+		QWidget *self;
 	public:
 		OptionsImpl(ProgramOptions *programOptions, SessionManager *sessionManager,
 			VideoListController *videoList, int lastOptionsPage,

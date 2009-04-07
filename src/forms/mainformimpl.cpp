@@ -180,7 +180,12 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
 	// update information
 	updateListInformation();
-
+	// fix a bug with macosx and new forms
+#ifdef Q_WS_MAC
+	self = NULL;
+#else
+	self = this;
+#endif
 	// videos examples
 /*
 	videoList->addVideo("http://es.youtube.com/watch?v=0z-hdo3-UEU");
@@ -325,7 +330,7 @@ void MainFormImpl::closeEvent(QCloseEvent *event)
 {
 	if (videoList->isWorking())
 	{
-		if (QMessageBox::question(NULL,
+		if (QMessageBox::question(self,
 								  tr("Closing..."),
 		                          tr("xVideoServiceThief is working, do you wish Pause the current work?"),
 		                          tr("Yes"), tr("No"), QString(), 0, 1) == 0)
@@ -392,7 +397,7 @@ void MainFormImpl::updatesClicked()
 {
 	if (videoList->isWorking())
 	{
-		QMessageBox::information(NULL,
+		QMessageBox::information(self,
 								 tr("Updates"),
 								 tr("Another process is currently working, please stop it or wait until the end of process."),
 								 tr("Ok"));
@@ -404,7 +409,7 @@ void MainFormImpl::updatesClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 	
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true);
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true, self);
 	checkUpdatesForm.exec();
 	
 	spbUpdates->setEnabled(true);
@@ -424,7 +429,7 @@ void MainFormImpl::informationClicked()
 	spbInformation->setEnabled(false);
 	actInformation->setEnabled(false);
 
-	InformationImpl informationForm(programOptions);
+	InformationImpl informationForm(programOptions, self);
 	informationForm.exec();
 
 	spbInformation->setEnabled(true);
@@ -467,7 +472,7 @@ void MainFormImpl::addVideoClicked()
 
 	if (!isVisible()) restoreAppClicked();
 
-	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation());
+	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation(), self);
 	if (addVideoForm.exec() == QDialog::Accepted)
 	{
 		// user want override the current conversion config
@@ -532,9 +537,12 @@ void MainFormImpl::cancelDownloadVideoClicked()
 
 	// we have a video to cancel?
 	if (videoItem != NULL)
-		if (QMessageBox::question(NULL, tr("Cancel download"),
-			tr("Wish you Cancel the download of <b>%1</b>?").arg(videoItem->getDisplayLabel()),
-			tr("Yes"), tr("No"), QString(), 0, 1) == 0)
+		if (QMessageBox::question(self,
+								  tr("Cancel download"),
+								  tr("Wish you Cancel the download of <b>%1</b>?").arg(videoItem->getDisplayLabel()),
+								  tr("Yes"),
+								  tr("No"),
+								  QString(), 0, 1) == 0)
 		{
 			videoList->cancelDownload(videoItem);
 			btnCancelDownload->setEnabled(false);
@@ -551,7 +559,7 @@ void MainFormImpl::moreOptionsClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 
-	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage);
+	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage, self);
 	if (optionsForm.exec() == QDialog::Accepted)
 	{
 		updateVisualOptions();
@@ -828,7 +836,7 @@ void MainFormImpl::checkForUpdates()
 			spbUpdates->setEnabled(false);
 			// running the app for 1st time? then display this warning message
 			if (programOptions->getFirstTime())
-				QMessageBox::information(NULL,
+				QMessageBox::information(self,
 										 tr("Updates"),
 										 tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
 										 tr("Ok"));

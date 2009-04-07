@@ -54,6 +54,8 @@ Q_OBJECT
 		void closeEvent (QCloseEvent *event);
 		void contextMenuEvent(QContextMenuEvent * event);
 		void addVideo(QString URL);
+		// parent bug fix for macosx
+		QWidget *self;
 	public:
 		DragDropImpl(ProgramOptions *programOptions, VideoListController *videoList, 
 					QWidget * parent = 0, Qt::WFlags f = 0);

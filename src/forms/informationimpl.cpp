@@ -47,11 +47,17 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 	rchServices->setSource(QUrl("qrc:/service_list/service_list.html"));
 	// set the support project link
 	imgSupport->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button.png\" /></a>");
+	// fix a bug with macosx and new forms
+#ifdef Q_WS_MAC
+	self = NULL;
+#else
+	self = this;
+#endif
 }
 
 void InformationImpl::btnCreditsClicked()
 {
-	CreditsImpl creditsForm;
+	CreditsImpl creditsForm(self);
 	creditsForm.exec();
 }
 //

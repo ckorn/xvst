@@ -46,6 +46,7 @@ Q_OBJECT
 	private:
 		CheckUpdatesWorker *checkUpdatesWorker;
 		bool closedByButton;
+		QWidget *self;
 	protected:
 		void closeEvent(QCloseEvent *event);
 	public:

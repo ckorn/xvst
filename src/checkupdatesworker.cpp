@@ -60,7 +60,7 @@ void CheckUpdatesWorker::updatesChecked(bool hasUpdates)
 		{
 			emit beforeDisplayUpdateCenter();
 			// dispaly
-			UpdateCenterImpl updateCenterForm(updates, programOptions->getInstallAutomaticallyUpdates(), NULL);
+			UpdateCenterImpl updateCenterForm(updates, programOptions->getInstallAutomaticallyUpdates(), parentForm);
 			result = updateCenterForm.exec();
 		}
 		// wait until "thread end"
@@ -83,7 +83,7 @@ void CheckUpdatesWorker::updatesChecked(bool hasUpdates)
 		waitThread();
 
 		if (isUser)
-			QMessageBox::information(NULL,
+			QMessageBox::information(parentForm,
 									 tr("Updates"),
 									 tr("You are using the most recent version of this program."),
 									 tr("Ok"));

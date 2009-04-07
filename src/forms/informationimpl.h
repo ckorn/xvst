@@ -37,6 +37,8 @@
 class InformationImpl : public QDialog, public Ui::Information
 {
 Q_OBJECT
+	private:
+		QWidget *self;	//!< parent bug fix for macosx
 	public:
 		InformationImpl(ProgramOptions *programOptions, QWidget * parent = 0, Qt::WFlags f = 0);
 	private slots:

@@ -60,6 +60,12 @@ DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *
 	// shortucut config
 	shortCurtPasteURL = new QShortcut(QKeySequence(QKeySequence::Paste), this);
 	connect(shortCurtPasteURL, SIGNAL(activated()), this, SLOT(pasteURLfromClipboardClicked()));
+	// fix a bug with macosx and new forms
+#ifdef Q_WS_MAC
+	self = NULL;
+#else
+	self = this;
+#endif
 }
 
 DragDropImpl::~DragDropImpl()
@@ -200,7 +206,7 @@ void DragDropImpl::alphaBlendValueClicked()
 		setAlphaBlend(1.0);
 	else if (sender() == actAlphaCustom)
 	{
-		CustomAlphaBlendImpl customAlphaBlendForm(this);
+		CustomAlphaBlendImpl customAlphaBlendForm(self);
 		customAlphaBlendForm.setInitialAlphaBlend(windowOpacity());
 		if (customAlphaBlendForm.exec() == QDialog::Accepted)
 			setAlphaBlend(customAlphaBlendForm.getAlphaBlend());
