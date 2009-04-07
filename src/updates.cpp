@@ -25,6 +25,11 @@
 
 #include "updates.h"
 
+#ifdef Q_WS_WIN
+	#include <windows.h>
+#endif
+
+
 // Updates class
 
 Updates::Updates(QString appPath)
@@ -341,9 +346,41 @@ void Updates::downloadUpdates()
 	this->start();
 }
 
+#ifdef Q_WS_WIN
+// special function used to execute the updater with administrator rights
+BOOL RunElevated(HWND hwnd, LPCTSTR pszPath, LPCTSTR pszParameters = NULL, LPCTSTR pszDirectory = NULL)
+{
+	QString sVerb = isWindowsVista() ? "runas" : "";
+
+	SHELLEXECUTEINFO shex;
+
+    memset(&shex, 0, sizeof(shex));
+
+    shex.cbSize       = sizeof(SHELLEXECUTEINFO);
+    shex.fMask        = 0;
+    shex.hwnd         = hwnd;
+    shex.lpVerb       = LPWSTR(sVerb.utf16());
+    shex.lpFile       = pszPath;
+    shex.lpParameters = pszParameters;
+    shex.lpDirectory  = pszDirectory;
+    shex.nShow        = SW_HIDE;
+
+    return ::ShellExecuteEx(&shex);
+}
+#endif
+
 void Updates::installUpdates()
 {
+#ifdef Q_WS_WIN
+	// init wchar_t vars
+	QString sApp = QDir::toNativeSeparators(appPath + XUPDATER_PATH);
+	QString sParams = QDir::toNativeSeparators(QDir::tempPath() + XUPDATER_FILE);
+	QString sPath = QDir::toNativeSeparators(appPath);
+	// execute with admin rights
+	RunElevated(NULL, LPWSTR(sApp.utf16()), LPWSTR(sParams.utf16()), LPWSTR(sPath.utf16()));
+#else
 	QProcess::startDetached(appPath + XUPDATER_PATH, QStringList() << QDir::toNativeSeparators(QDir::tempPath() + XUPDATER_FILE));
+#endif
 }
 
 void Updates::cancel()

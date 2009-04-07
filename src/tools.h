@@ -61,6 +61,9 @@
 	/*! Float to String (using locale config) */
 	QString floatToStr(const float value, const int precision = 2);
 	
+	/*! Get if we are running a Windows Vista*/
+	bool isWindowsVista();
+
 	/*! Compare versions */
 	int compareVersions(QString version1, QString version2);
 	

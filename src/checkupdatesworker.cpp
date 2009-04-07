@@ -1,10 +1,5 @@
 #include "checkupdatesworker.h"
 
-// windows vista detection
-#ifdef Q_WS_WIN
-	#include <windows.h>
-#endif
-
 CheckUpdatesWorker::CheckUpdatesWorker(ProgramOptions *programOptions, QWidget *parentForm, QLabel *caption,
 									   QProgressBar *progressBar, QAbstractButton *cancelButton, bool isUser)
 	: QObject()
@@ -42,20 +37,6 @@ void CheckUpdatesWorker::waitThread()
 {
 	while (updates->isRunning())
 		qApp->processEvents();
-}
-
-bool CheckUpdatesWorker::isWindowsVista()
-{
-#ifdef Q_WS_WIN
-	OSVERSIONINFO osvi;
-	ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
-	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-	GetVersionEx(&osvi);
-	// return if we are running the windows vista OS
-	return((osvi.dwMajorVersion == 6) && (osvi.dwMinorVersion == 0));
-#else
-	return false;
-#endif
 }
 
 void CheckUpdatesWorker::updatesChecked(bool hasUpdates)

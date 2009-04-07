@@ -25,6 +25,10 @@
 
 #include "tools.h"
 
+#ifdef Q_WS_WIN
+	#include <windows.h>
+#endif
+
 QString copy(QString str, int start, int end)
 {
 	end = end > str.length() ? str.length() : end;
@@ -169,6 +173,20 @@ QString floatToStr(const float value, const int precision)
 {
 	QLocale locale;
 	return locale.toString(value, 'f', precision);
+}
+
+bool isWindowsVista()
+{
+#ifdef Q_WS_WIN
+	OSVERSIONINFO osvi;
+	ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
+	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+	GetVersionEx(&osvi);
+	// return if we are running the windows vista OS
+	return((osvi.dwMajorVersion == 6) && (osvi.dwMinorVersion == 0));
+#else
+	return false;
+#endif
 }
 
 int subVersionToInt(QString subVersion)

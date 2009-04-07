@@ -6,6 +6,7 @@
 #include "forms/updatecenterimpl.h"
 #include "forms/windowsvistadetectedimpl.h"
 
+#include "tools.h"
 #include "options.h"
 #include "updates.h"
 
@@ -25,8 +26,6 @@ Q_OBJECT
 		bool isUser;					//!< Flag for know if this class has been called automatically or not
 		/*! Wait while the updater is running */
 		void waitThread();
-		/*! Return if we are running the program under Windows VISTA */
-		bool isWindowsVista();
 	public:
 		/*! Class constructor */
 		CheckUpdatesWorker(ProgramOptions *programOptions, QWidget *parentForm, QLabel *caption,
