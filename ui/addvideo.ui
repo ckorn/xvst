@@ -342,7 +342,7 @@
    <item row="3" column="0">
     <widget class="QCheckBox" name="chbOverrideConversion">
      <property name="text">
-      <string>Override conversion options for this video</string>
+      <string>Override original conversion options for this video</string>
      </property>
     </widget>
    </item>

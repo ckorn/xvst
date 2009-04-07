@@ -25,32 +25,156 @@
 
 #include "newlanguagesimpl.h"
 
-NewLanguagesImpl::NewLanguagesImpl(QWidget *parent, Qt::WFlags f)
+NewLanguagesImpl::NewLanguagesImpl(ProgramOptions *programOptions, QWidget *parent, Qt::WFlags f)
 {
 	setupUi(this);
-	// create list columns
-	QStringList headers;
-	headers << tr(" Language ") << tr(" Version ") << tr(" Author ") << tr(" Progress ");
-	// add the headers
-	lsvLanguages->setHeaderLabels(headers);
-	// configure resize mode
-	QFontMetrics fm = fontMetrics();
-	QHeaderView *header = lsvLanguages->header();
-	header->setHighlightSections(false);
-	header->setStretchLastSection(false);
-	header->setResizeMode(0, QHeaderView::Stretch);
-	// resize headers
-	header->resizeSection(2, fm.width(headers.at(2) + "Xesc & Technology"));
-	// set header text aligment
-	QTreeWidgetItem * headerItem = lsvLanguages->headerItem();
-	headerItem->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
-	headerItem->setTextAlignment(2, Qt::AlignHCenter | Qt::AlignVCenter);
-	headerItem->setTextAlignment(3, Qt::AlignHCenter | Qt::AlignVCenter);
+	//
+	lsvInstalled->header()->hide();
+	lsvToInstall->header()->hide();
 	// create new languages controller
-	newLanguages = new NewLanguages();
+	newLanguages = new NewLanguagesController(programOptions);
+	// connect signals
+	connect(newLanguages, SIGNAL(installedLanguagesClear()), this, SLOT(installedLanguagesClear()));
+	connect(newLanguages, SIGNAL(toInstallLanguagesClear()), this, SLOT(toInstallLanguagesClear()));
+	connect(newLanguages, SIGNAL(installedLanaguageAdded(Language*)), this, SLOT(installedLanaguageAdded(Language*)));
+	connect(newLanguages, SIGNAL(installedLanguageRemoved(Language*, bool)), this, SLOT(installedLanguageRemoved(Language*, bool)));
+	connect(newLanguages, SIGNAL(afterCheckNewLanguages()), this, SLOT(afterCheckNewLanguages()));
+	connect(newLanguages, SIGNAL(toInstallLanguageAdded(Update*)), this, SLOT(toInstallLanguageAdded(Update*)));
+	connect(newLanguages, SIGNAL(beforeInstallNewLanguage()), this, SLOT(beforeInstallNewLanguage()));
+	connect(newLanguages, SIGNAL(afterInstallNewLanguage()), this, SLOT(afterInstallNewLanguage()));
+	connect(newLanguages, SIGNAL(beforeUpdateNewLanguages()), this, SLOT(beforeUpdateNewLanguages()));
+	connect(newLanguages, SIGNAL(downloadProgress(int,int)), this, SLOT(downloadProgress(int,int)));
+	//
+	connect(btnInstall, SIGNAL(clicked()), this, SLOT(btnInstallClicked()));
+	connect(btnUninstall, SIGNAL(clicked()), this, SLOT(btnUninstallClicked()));
+	connect(lsvInstalled, SIGNAL(itemSelectionChanged()), this, SLOT(lsvInstalledItemSelectionChanged()));
+	connect(lsvToInstall, SIGNAL(itemSelectionChanged()), this, SLOT(lsvToInstallItemSelectionChanged()));
+	// start
+	newLanguages->initialize();
+	// fix an error with macosx
+#ifdef Q_WS_MAC
+	self = NULL;
+#else
+	self = this;
+#endif
 }
 
 NewLanguagesImpl::~NewLanguagesImpl()
 {
     delete newLanguages;
+}
+
+void NewLanguagesImpl::lsvInstalledItemSelectionChanged()
+{
+	btnUninstall->setEnabled(lsvInstalled->selectedItems().count() > 0 && !newLanguages->isInstalling());
+}
+
+void NewLanguagesImpl::lsvToInstallItemSelectionChanged()
+{
+	btnInstall->setEnabled(lsvToInstall->selectedItems().count() > 0 && !newLanguages->isInstalling());
+}
+
+void NewLanguagesImpl::btnUninstallClicked()
+{
+	if (QMessageBox::question(self,
+							  tr("Uninstall language"),
+							  tr("Wish you uninstall the lanuage?"),
+							  tr("Yes"),
+							  tr("No"),
+							  QString(), 0, 1) == 0)
+		newLanguages->uninstallLanguage(lsvInstalled->currentIndex().row());
+}
+
+void NewLanguagesImpl::btnInstallClicked()
+{
+	if (QMessageBox::question(self,
+							  tr("Install language"),
+							  tr("Wish you install this new lanuage?"),
+							  tr("Yes"),
+							  tr("No"),
+							  QString(), 0, 1) == 0)
+		newLanguages->installLanguage(lsvToInstall->currentIndex().row());
+}
+
+void NewLanguagesImpl::installedLanguagesClear()
+{
+	lsvInstalled->clear();
+}
+
+void NewLanguagesImpl::toInstallLanguagesClear()
+{
+	lsvToInstall->clear();
+}
+
+void NewLanguagesImpl::installedLanaguageAdded(Language *language)
+{
+	QTreeWidgetItem *newItem = new QTreeWidgetItem(lsvInstalled);
+	newItem->setText(0, language->getId());
+	newItem->setSizeHint(0, QSize(18,18));
+	newItem->setIcon(0, QIcon(":/buttons/images/script.png"));
+}
+
+void NewLanguagesImpl::installedLanguageRemoved(Language *language, bool removed)
+{
+	if (!removed)
+		if (isWindowsVista())
+			QMessageBox::critical(self,
+								 tr("Language uninstall error"),
+								 tr("Some errors has ocurred on try uninstall de selected <b>%1</b> language.<br>On Windows Vista you should execute the xVST as administrator.").arg(language->getId()),
+								 tr("Ok"));
+		else
+			QMessageBox::critical(self,
+								 tr("Language uninstall error"),
+								 tr("Some errors has ocurred on try uninstall de selected <b>%1</b> language.").arg(language->getId()),
+								 tr("Ok"));
+	else
+		QMessageBox::information(self,
+								 tr("Language uninstall"),
+								 tr("Language <b>%1</b> uninstalled.").arg(language->getId()),
+								 tr("Ok"));
+	// disable unnstall button
+	btnUninstall->setEnabled(false);
+}
+
+void NewLanguagesImpl::afterCheckNewLanguages()
+{
+	lblAction->hide();
+	pgbAction->hide();
+}
+
+void NewLanguagesImpl::toInstallLanguageAdded(Update *language)
+{
+	QTreeWidgetItem *newItem = new QTreeWidgetItem(lsvToInstall);
+	newItem->setText(0, language->getCaption());
+	newItem->setSizeHint(0, QSize(18,18));
+	newItem->setIcon(0, QIcon(":/buttons/images/script.png"));
+}
+
+void NewLanguagesImpl::beforeInstallNewLanguage()
+{
+	lblAction->setText(tr("Installing new language..."));
+	lblAction->show();
+	pgbAction->setValue(0);
+	pgbAction->setMaximum(0);
+	pgbAction->show();
+	// disable button
+	btnInstall->setEnabled(false);
+	btnUninstall->setEnabled(false);
+}
+
+void NewLanguagesImpl::afterInstallNewLanguage()
+{
+	lblAction->hide();
+	pgbAction->hide();
+}
+
+void NewLanguagesImpl::beforeUpdateNewLanguages()
+{
+	btnInstall->setEnabled(false);
+}
+
+void NewLanguagesImpl::downloadProgress(int pos, int max)
+{
+	pgbAction->setMaximum(max);
+	pgbAction->setValue(pos);
 }

@@ -80,6 +80,8 @@ Q_OBJECT
 		int getLanguagesCount();
 		/*! Detect all installed languages */
 		void loadLangFiles(QString langDir);
+		/*! Get if this language id exsits (is installed) */
+		bool isLanguageInstalled(QString languageId);
 		/*! Install a language */
 		static QString get_qm_languageFile(QString langFile);
 		/*! Return a Langage item info */

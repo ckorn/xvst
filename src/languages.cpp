@@ -82,6 +82,8 @@ int LanguageManager::getLanguagesCount()
 
 void LanguageManager::loadLangFiles(QString langDir)
 {
+	languagesList->clear();
+
 	QStringList languageFiles;
 	QDir languagesDir(langDir);
 	
@@ -91,6 +93,15 @@ void LanguageManager::loadLangFiles(QString langDir)
 	foreach (QString langFile, languageFiles)
 		if (langFile.endsWith(".language"))
 			loadLangFile(QDir::toNativeSeparators(langDir + "/" + langFile));
+}
+
+bool LanguageManager::isLanguageInstalled(QString languageId)
+{
+	for (int n = 0; n < getLanguagesCount(); n++)
+		if (getLanguage(n)->getId() == languageId)
+			return true;
+	// not installed
+	return false;
 }
 
 QString LanguageManager::get_qm_languageFile(QString langFile)

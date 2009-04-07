@@ -480,7 +480,7 @@ void OptionsImpl::btnCheckNowClicked()
 
 void OptionsImpl::btnAddNewLanguagesClicked()
 {
-	NewLanguagesImpl newLanguagesForm(self);
+	NewLanguagesImpl newLanguagesForm(programOptions, self);
 	newLanguagesForm.exec();
 
 	// reload languages

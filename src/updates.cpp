@@ -29,7 +29,6 @@
 	#include <windows.h>
 #endif
 
-
 // Updates class
 
 Updates::Updates(QString appPath)

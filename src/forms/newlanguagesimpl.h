@@ -30,16 +30,36 @@
 //
 #include "ui_newlanguages.h"
 //
+#include "../options.h"
+#include "../languages.h"
 #include "../newlanguages.h"
+#include "../tools.h"
+#include "../updates.h"
 
 class NewLanguagesImpl : public QDialog, public Ui::NewLanguages
 {
 Q_OBJECT
 	private:
-		NewLanguages *newLanguages;	//! Responsable of check, download and install new languages
+		NewLanguagesController *newLanguages;	//! Responsable of check, download and install new languages
+		QWidget *self;
 	public:
-		NewLanguagesImpl(QWidget * parent = 0, Qt::WFlags f = 0 );
+		NewLanguagesImpl(ProgramOptions *programOptions, QWidget * parent = 0, Qt::WFlags f = 0 );
 		~NewLanguagesImpl();
+	private slots:
+		void lsvInstalledItemSelectionChanged();
+		void lsvToInstallItemSelectionChanged();
+		void btnUninstallClicked();
+		void btnInstallClicked();
+		void installedLanguagesClear();
+		void toInstallLanguagesClear();
+		void installedLanaguageAdded(Language *language);
+		void installedLanguageRemoved(Language *language, bool removed);
+		void afterCheckNewLanguages();
+		void toInstallLanguageAdded(Update *language);
+		void beforeInstallNewLanguage();
+		void afterInstallNewLanguage();
+		void beforeUpdateNewLanguages();
+		void downloadProgress(int pos, int max);
 };
 
 #endif // NEWLANGUAGESIMPL_H
