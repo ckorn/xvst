@@ -180,6 +180,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
 	// update information
 	updateListInformation();
+	// set the support project link
+	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button_main.png\" /></a>");
 	// fix a bug with macosx and new forms
 #ifdef Q_WS_MAC
 	self = NULL;

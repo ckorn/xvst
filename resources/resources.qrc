@@ -24,6 +24,7 @@
         <file>images/script.png</file>
         <file>images/script_go.png</file>
         <file>images/support_button.png</file>
+	<file>images/support_button_main.png</file>
         <file>images/transmit_blue.png</file>
     </qresource>
     <qresource prefix="/error" >
