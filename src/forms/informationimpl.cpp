@@ -47,7 +47,7 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 	// load the service list
 	buildVideoServicesList(videoInformation);
 	// set the support project link
-	imgSupport->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button.png\" /></a>");
+	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button.png\" /></a>");
 	// fix a bug with macosx and new forms
 #ifdef Q_WS_MAC
 	self = NULL;
