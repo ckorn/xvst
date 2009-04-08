@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>language manager</string>
+   <string>languages manager</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">
@@ -73,6 +73,15 @@
           <height>25</height>
          </size>
         </property>
+        <property name="whatsThis">
+         <string>Uninstall the selected language</string>
+        </property>
+        <property name="accessibleName">
+         <string>Uninstall language button</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Uninstall the selected language</string>
+        </property>
         <property name="text">
          <string>Uninstall selected</string>
         </property>
@@ -90,13 +99,13 @@
       <item row="0" column="0">
        <widget class="QTreeWidget" name="lsvToInstall">
         <property name="whatsThis">
-         <string>List with all installed languages</string>
+         <string>List with all languages which you can install</string>
         </property>
         <property name="accessibleName">
-         <string>Languages list</string>
+         <string>Languages to install list</string>
         </property>
         <property name="accessibleDescription">
-         <string>List with all installed languages</string>
+         <string>List with all languages which you can install</string>
         </property>
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
@@ -157,6 +166,15 @@
           <height>25</height>
          </size>
         </property>
+        <property name="whatsThis">
+         <string>Install the selected language</string>
+        </property>
+        <property name="accessibleName">
+         <string>Install language button</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Install the selected language</string>
+        </property>
         <property name="text">
          <string>Install selected</string>
         </property>
@@ -187,6 +205,15 @@
          <width>100</width>
          <height>25</height>
         </size>
+       </property>
+       <property name="whatsThis">
+        <string>Close the Languages manager</string>
+       </property>
+       <property name="accessibleName">
+        <string>Close button</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Close the Languages manager</string>
        </property>
        <property name="text">
         <string>Close</string>

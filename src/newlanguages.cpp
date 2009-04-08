@@ -5,7 +5,7 @@ NewLanguagesController::NewLanguagesController(ProgramOptions *programOptions)
 	this->programOptions = programOptions;
 	newLanguages = new QList<Update *>;
 	languageManager = new LanguageManager;
-	installing = false;
+	currentUpdate = NULL;
 	// http class
 	http = new Http();
 	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
@@ -134,15 +134,13 @@ void NewLanguagesController::installLanguage(int index)
 {
 	emit beforeInstallNewLanguage();
 
-	installing = true;
-
-	Update *update = newLanguages->at(index);
-	http->download(QUrl(update->getUrl()), QDir::tempPath(), QString("xVST.language"), true);
+	currentUpdate = newLanguages->at(index);
+	http->download(QUrl(currentUpdate->getUrl()), QDir::tempPath(), QString("xVST.language"), false);
 }
 
 bool NewLanguagesController::isInstalling() const
 {
-	return installing;
+	return currentUpdate != NULL;
 }
 
 void NewLanguagesController::downloadFinished(const QFileInfo destFile)
@@ -156,13 +154,32 @@ void NewLanguagesController::downloadFinished(const QFileInfo destFile)
 	unpacker->extractPackage(destFile.filePath().toStdString(),
 							 QString(programOptions->getLanguagesPath() + "/").toStdString(),
 							 true);
+	// check if we installed this language
+	bool error = false;
+	// check if all files has been extracted
+	for (int n = 0; n < unpacker->getExtractedFilesCount(); n++)
+		if (!error)	// check if the extracted file exists
+			error = !QFile::exists(QString(programOptions->getLanguagesPath() + "/" +
+										   QString().fromStdString(unpacker->getExtractedFileName(n, true))));
+	// destroy unpacker
 	delete unpacker;
 	// remove temporal fil
 	QFile::remove(destFile.filePath());
-	//
-	installing = false;
 	// finish event
-	emit afterInstallNewLanguage();
+	emit afterInstallNewLanguage(currentUpdate, error);
+	// reset flags
+	currentUpdate = NULL;
+	// reload all info
+	fillInstalledLanguages();
+	updateNewLanguages();
+}
+
+void NewLanguagesController::downloadError(int error)
+{
+	// finish event
+	emit afterInstallNewLanguage(currentUpdate, true);
+	// reset flags
+	currentUpdate = NULL;
 	// reload all info
 	fillInstalledLanguages();
 	updateNewLanguages();

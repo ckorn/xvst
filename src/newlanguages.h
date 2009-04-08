@@ -16,12 +16,12 @@ class NewLanguagesController : public QThread
 {
 Q_OBJECT
 	private:
-		ProgramOptions *programOptions;
-		LanguageManager *languageManager;
-		QList<Update *> *newLanguages;
-		QString newLanguagesFile;
-		Http *http;
-		bool installing;
+		ProgramOptions *programOptions;		//!< Instance of program options
+		LanguageManager *languageManager;	//!< Language manager, used for local installed languages
+		QList<Update *> *newLanguages;		//!< List with all aviable languages to install
+		QString newLanguagesFile;			//!< Update file used to fill the updates array
+		Http *http;							//!< Http instance
+		Update *currentUpdate;				//!< Current update (new language) which we are installing
 		/*! Thread executation */
 		void run();
 		/*! Fill installed languages list */
@@ -50,6 +50,8 @@ Q_OBJECT
 	private slots:
 		/*! On finish a download */
 		void downloadFinished(const QFileInfo destFile);
+		/*! On download error */
+		void downloadError(int error);
 		/*! Private Download progress */
 		void privateDownloadProgress(int pos, int max);
 	signals:
@@ -70,7 +72,7 @@ Q_OBJECT
 		/*! Before start a install */
 		void beforeInstallNewLanguage();
 		/*! After install a language */
-		void afterInstallNewLanguage();
+		void afterInstallNewLanguage(Update *update, bool error);
 		/*! Download progress */
 		void downloadProgress(int pos, int max);
 };

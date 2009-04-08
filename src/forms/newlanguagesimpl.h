@@ -57,8 +57,8 @@ Q_OBJECT
 		void afterCheckNewLanguages();
 		void toInstallLanguageAdded(Update *language);
 		void beforeInstallNewLanguage();
-		void afterInstallNewLanguage();
 		void beforeUpdateNewLanguages();
+		void afterInstallNewLanguage(Update *update, bool error);
 		void downloadProgress(int pos, int max);
 };
 

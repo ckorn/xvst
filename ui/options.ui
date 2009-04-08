@@ -463,7 +463,7 @@
           <item row="2" column="0">
            <widget class="QPushButton" name="btnAddNewLanguages">
             <property name="text">
-             <string>Language manager</string>
+             <string>Languages manager</string>
             </property>
            </widget>
           </item>

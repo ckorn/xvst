@@ -41,8 +41,8 @@ NewLanguagesImpl::NewLanguagesImpl(ProgramOptions *programOptions, QWidget *pare
 	connect(newLanguages, SIGNAL(afterCheckNewLanguages()), this, SLOT(afterCheckNewLanguages()));
 	connect(newLanguages, SIGNAL(toInstallLanguageAdded(Update*)), this, SLOT(toInstallLanguageAdded(Update*)));
 	connect(newLanguages, SIGNAL(beforeInstallNewLanguage()), this, SLOT(beforeInstallNewLanguage()));
-	connect(newLanguages, SIGNAL(afterInstallNewLanguage()), this, SLOT(afterInstallNewLanguage()));
 	connect(newLanguages, SIGNAL(beforeUpdateNewLanguages()), this, SLOT(beforeUpdateNewLanguages()));
+	connect(newLanguages, SIGNAL(afterInstallNewLanguage(Update*,bool)), this, SLOT(afterInstallNewLanguage(Update*,bool)));
 	connect(newLanguages, SIGNAL(downloadProgress(int,int)), this, SLOT(downloadProgress(int,int)));
 	//
 	connect(btnInstall, SIGNAL(clicked()), this, SLOT(btnInstallClicked()));
@@ -120,12 +120,12 @@ void NewLanguagesImpl::installedLanguageRemoved(Language *language, bool removed
 		if (isWindowsVista())
 			QMessageBox::critical(self,
 								 tr("Language uninstall error"),
-								 tr("Some errors has ocurred on try uninstall de selected <b>%1</b> language.<br>On Windows Vista you should execute the xVST as administrator.").arg(language->getId()),
+								 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.<br><br><b>Note:</b> On Windows Vista you should execute the xVST as administrator before unistall new languages.").arg(language->getId()),
 								 tr("Ok"));
 		else
 			QMessageBox::critical(self,
 								 tr("Language uninstall error"),
-								 tr("Some errors has ocurred on try uninstall de selected <b>%1</b> language.").arg(language->getId()),
+								 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.").arg(language->getId()),
 								 tr("Ok"));
 	else
 		QMessageBox::information(self,
@@ -162,8 +162,24 @@ void NewLanguagesImpl::beforeInstallNewLanguage()
 	btnUninstall->setEnabled(false);
 }
 
-void NewLanguagesImpl::afterInstallNewLanguage()
+void NewLanguagesImpl::afterInstallNewLanguage(Update *update, bool error)
 {
+	if (error)
+		if (isWindowsVista())
+			QMessageBox::critical(self,
+								 tr("Language install error"),
+								 tr("Some errors has ocurred on try install the selected <b>%1</b> language.<br><br><b>Note:</b> On Windows Vista you should execute the xVST as administrator before install new languages.").arg(update->getCaption()),
+								 tr("Ok"));
+		else
+			QMessageBox::critical(self,
+								 tr("Language install error"),
+								 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.").arg(update->getCaption()),
+								 tr("Ok"));
+	else // no error
+		QMessageBox::information(self,
+								 tr("Language install"),
+								 tr("New language <b>%1</b> installed.").arg(update->getCaption()),
+								 tr("Ok"));
 	lblAction->hide();
 	pgbAction->hide();
 }
