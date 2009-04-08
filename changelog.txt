@@ -14,6 +14,7 @@
 - Added embeded checking for updates at startup
 - Added the possibility to set a custom conversion configuration on add a new video
 - Added sorting for "Downloads log" list (now is sorted from old to new downloads)
+- Added Paypal donate button in main window
 - Added two new formats to convert:
 	- MP4 (*.mp4) format
 	- Sony PSP (*.mp4) format
