@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>387</width>
-    <height>449</height>
+    <width>424</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,7 +53,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</string>
+          <string notr="true">Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -79,7 +79,7 @@
        <item>
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</string>
+          <string notr="true">This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -125,7 +125,7 @@
    <item row="2" column="0" colspan="3">
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X coresponsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt;  &amp;amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Franck (HackenatoN)&lt;/b&gt;  &amp;amp; &lt;b&gt;DODICH&lt;/b&gt;: French language authors&lt;br&gt;&lt;b&gt;Jens Chr. True&lt;/b&gt;: Danish language author&lt;br&gt;&lt;b&gt;Mateus Tuler&lt;/b&gt;: Portugese - Brasil language author&lt;br&gt;&lt;b&gt;Lee Evan&lt;/b&gt;: Korean language author&lt;br&gt;&lt;b&gt;Zoltán Magyar (ZitySoft)&lt;/b&gt;: Hungrian language author&lt;br&gt;&lt;b&gt;Marcos Díaz&lt;/b&gt;: Galician language author&lt;br&gt;&lt;b&gt;Iulian Temelie&lt;/b&gt;: Romanian language author&lt;br&gt;&lt;b&gt;Christian Kieschnick&lt;/b&gt;: German language&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I'm not a Patriot&quot; icons author</string>
+      <string notr="true">&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X coresponsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt;  &amp;amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Franck (HackenatoN)&lt;/b&gt;  &amp;amp; &lt;b&gt;DODICH&lt;/b&gt;: French language authors&lt;br&gt;&lt;b&gt;Jens Chr. True&lt;/b&gt;: Danish language author&lt;br&gt;&lt;b&gt;Mateus Tuler&lt;/b&gt;: Portugese - Brasil language author&lt;br&gt;&lt;b&gt;Lee Evan&lt;/b&gt;: Korean language author&lt;br&gt;&lt;b&gt;Zoltán Magyar (ZitySoft)&lt;/b&gt;: Hungrian language author&lt;br&gt;&lt;b&gt;Marcos Díaz&lt;/b&gt;: Galician language author&lt;br&gt;&lt;b&gt;Iulian Temelie&lt;/b&gt;: Romanian language author&lt;br&gt;&lt;b&gt;Christian Kieschnick&lt;/b&gt;: German language&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I'm not a Patriot&quot; icons author</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -211,7 +211,6 @@
   </layout>
  </widget>
  <resources>
-  <include location="../resources/resources.qrc"/>
   <include location="../resources/resources.qrc"/>
  </resources>
  <connections>
