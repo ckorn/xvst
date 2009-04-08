@@ -25,7 +25,8 @@
 
 #include "informationimpl.h"
 //
-InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * parent, Qt::WFlags f)
+InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,
+								 QWidget * parent, Qt::WFlags f)
 		: QDialog(parent, f)
 {
 	setupUi(this);
@@ -44,7 +45,7 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 		lblURL->setText(QString("<a href=\"%1\">%2</href>").arg(language->getContact()).arg(language->getContact()));
 	}
 	// load the service list
-	rchServices->setSource(QUrl("qrc:/service_list/service_list.html"));
+	buildVideoServicesList(videoInformation);
 	// set the support project link
 	imgSupport->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button.png\" /></a>");
 	// fix a bug with macosx and new forms
@@ -53,6 +54,39 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, QWidget * paren
 #else
 	self = this;
 #endif
+}
+
+QString getPluginsAsHtml(QString title, QList<VideoInformationPlugin*> plugins)
+{
+	QString html;
+
+	if (plugins.count() > 0)
+	{
+		html += title;
+		html += "<ul>";
+		for (int n = 0; n < plugins.count(); n++)
+			html += QString("<li><a href='%1' target='_blank'>%2</a></li>").
+					arg(plugins.at(n)->getWebsite()).
+					arg(plugins.at(n)->getCaption());
+		html += "</ul>";
+	}
+
+	return html;
+}
+
+void InformationImpl::buildVideoServicesList(VideoInformation *videoInformation)
+{
+	QList<VideoInformationPlugin*> standardPlugins = videoInformation->getAllStandardPlugins();
+	QList<VideoInformationPlugin*> adultPlugins = videoInformation->getAllAdultPlugins();
+	QList<VideoInformationPlugin*> musicPlugins = videoInformation->getAllMusicPlugins();
+	// generate html
+	QString html;
+	html += tr("<p>Total websites supported (plugins installed): <strong>%1</strong></p>").arg(videoInformation->getPluginsCount());
+	html += getPluginsAsHtml(tr(""), standardPlugins);
+	html += getPluginsAsHtml(tr("Adult web sites:"), adultPlugins);
+	html += getPluginsAsHtml(tr("Music web sites:"), musicPlugins);
+	// display html
+	rchServices->setHtml(html);
 }
 
 void InformationImpl::btnCreditsClicked()

@@ -166,6 +166,45 @@ QStringList VideoInformation::getPluginsCompleteList(const QString separator)
 	return results;
 }
 
+QList<VideoInformationPlugin*> VideoInformation::getAllStandardPlugins() const
+{
+	QList<VideoInformationPlugin*> result;
+
+	for(int n = 0; n < plugins->count(); n++)
+	{
+		if (!plugins->at(n)->hasAdultContent() && !plugins->at(n)->isMusicSite())
+			result.append(plugins->at(n));
+	}
+
+	return result;
+}
+
+QList<VideoInformationPlugin*> VideoInformation::getAllAdultPlugins() const
+{
+	QList<VideoInformationPlugin*> result;
+
+	for(int n = 0; n < plugins->count(); n++)
+	{
+		if (plugins->at(n)->hasAdultContent())
+			result.append(plugins->at(n));
+	}
+
+	return result;
+}
+
+QList<VideoInformationPlugin*> VideoInformation::getAllMusicPlugins() const
+{
+	QList<VideoInformationPlugin*> result;
+
+	for(int n = 0; n < plugins->count(); n++)
+	{
+		if (plugins->at(n)->isMusicSite())
+			result.append(plugins->at(n));
+	}
+
+	return result;
+}
+
 int VideoInformation::getPluginsCount()
 {
 	return plugins->count();
@@ -343,6 +382,7 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 				ID = engine->globalObject().property("ID").toString();
 				caption = engine->globalObject().property("caption").toString();
 				adultContent = engine->globalObject().property("adultContent").toBool();
+				musicSite = engine->globalObject().property("isMusicSite").toBool();
 				// validate if all main information is assigned
 				loaded = !version.isEmpty() && !minVersion.isEmpty() && !ID.isEmpty() && !caption.isEmpty();
 				// if this plugin has been loaded, then try to load the service icon
@@ -509,6 +549,11 @@ QString VideoInformationPlugin::getCaption() const
 bool VideoInformationPlugin::hasAdultContent() const
 {
 	return adultContent;
+}
+
+bool VideoInformationPlugin::isMusicSite() const
+{
+	return musicSite;
 }
 
 QPixmap *VideoInformationPlugin::getIcon() const

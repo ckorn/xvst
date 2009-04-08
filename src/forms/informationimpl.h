@@ -33,14 +33,17 @@
 #include "../programversion.h"
 #include "../options.h"
 #include "../languages.h"
+#include "../videoinformation.h"
 //
 class InformationImpl : public QDialog, public Ui::Information
 {
 Q_OBJECT
 	private:
 		QWidget *self;	//!< parent bug fix for macosx
+		void buildVideoServicesList(VideoInformation *videoInformation);
 	public:
-		InformationImpl(ProgramOptions *programOptions, QWidget * parent = 0, Qt::WFlags f = 0);
+		InformationImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,
+						QWidget * parent = 0, Qt::WFlags f = 0);
 	private slots:
 		void btnCreditsClicked();
 };

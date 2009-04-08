@@ -58,6 +58,7 @@ class VideoInformationPlugin : public QObject
 		QString caption;			//<! Plugin public caption
 		QPixmap *icon;				//<! Plugin public icon (acts as a proxy)
 		bool adultContent;			//<! Flag for know if this webservice has adult contents
+		bool musicSite;				//<! Flag for know if this webservice is a music site (i.e: mp3tube)
 		bool loaded;				//<! Flag for know if this plugin has been loaded
 		QScriptEngine *engine;		//<! Pointer to script engine
 	private:
@@ -90,6 +91,8 @@ class VideoInformationPlugin : public QObject
 		QString getCaption() const;
 		/*! Get if this service has adult content (+18) */
 		bool hasAdultContent() const;
+		/*! Get if this service is a music site */
+		bool isMusicSite() const;
 		/*! Get the plugin icon */
 		QPixmap *getIcon() const;
 		/*! Get if has been loaded */
@@ -132,6 +135,12 @@ Q_OBJECT
 		QStringList getPluginsList(bool asCaptions = true);
 		/*! Get the list of all registered plugins (host + caption) */
 		QStringList getPluginsCompleteList(const QString separator = "|");
+		/*! Get the list of all standard sites */
+		QList<VideoInformationPlugin*> getAllStandardPlugins() const;
+		/*! Get the list of all adult sites */
+		QList<VideoInformationPlugin*> getAllAdultPlugins() const;
+		/*! Get the list of all music sites */
+		QList<VideoInformationPlugin*> getAllMusicPlugins() const;
 		/*! Get the video URL */
 		void getVideoInformation(VideoItem *videoItem);
 		/*! Get plugins count */

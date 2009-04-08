@@ -50,9 +50,6 @@
         <file>images/updates.png</file>
         <file>images/ups.png</file>
     </qresource>
-    <qresource prefix="/service_list" >
-        <file>service_list.html</file>
-    </qresource>
     <qresource prefix="/services" >
 	<file>images/services/no_icon.png</file>
         <file>images/services/invalid.png</file>

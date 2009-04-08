@@ -33,6 +33,7 @@ function RegistVideoService()
 	this.ID = "youtube.com";
 	this.caption = "Youtube";
 	this.adultContent = false;
+	this.musicSite = false;
 }
 
 /* Function called when the xVST will need to resolve the video URL */

@@ -429,7 +429,7 @@ void MainFormImpl::informationClicked()
 	spbInformation->setEnabled(false);
 	actInformation->setEnabled(false);
 
-	InformationImpl informationForm(programOptions, self);
+	InformationImpl informationForm(programOptions, videoList->getVideoInformation(), self);
 	informationForm.exec();
 
 	spbInformation->setEnabled(true);
