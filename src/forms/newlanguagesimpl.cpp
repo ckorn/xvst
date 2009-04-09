@@ -51,6 +51,10 @@ NewLanguagesImpl::NewLanguagesImpl(ProgramOptions *programOptions, QWidget *pare
 	connect(lsvToInstall, SIGNAL(itemSelectionChanged()), this, SLOT(lsvToInstallItemSelectionChanged()));
 	// start
 	newLanguages->initialize();
+	// resize form if is needed
+#ifdef Q_WS_MAC
+	resize(566, 402);
+#endif
 	// fix an error with macosx
 #ifdef Q_WS_MAC
 	self = NULL;
