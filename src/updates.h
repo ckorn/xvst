@@ -31,6 +31,7 @@
 #include "pakunpak/pakunpak.h"
 #include "programversion.h"
 #include "languages.h"
+#include "videoinformation.h"
 #include "http.h"
 #include "tools.h"
 
@@ -38,12 +39,12 @@
 static const QString XUPDATER_PATH = "/bin/xUpdater.exe";	//<! xUpdater app (win32)
 #else
 #ifdef Q_WS_MAC
-static const QString XUPDATER_PATH = "/Tools/xUpdater";		//<! xUpdater app (MacOSX)
+static const QString XUPDATER_PATH = "/tools/xUpdater";		//<! xUpdater app (MacOSX)
 #else
 static const QString XUPDATER_PATH = "/bin/xUpdater";		//<! xUpdater app (unix)
 #endif
 #endif
-static const QString XUPDATER_FILE 	= "/xVST.update";	//!< update script file
+static const QString XUPDATER_FILE 	= "/xVST.update";			//!< update script file
 static const QString XUPDATER_DWN_FILE 	= "/xVST.update.%1";	//!< downloaded update file
 
 enum UpdateState
@@ -61,12 +62,13 @@ Q_OBJECT
 	private:
 		QString caption;	//!< Update caption
 		QString version;	//!< Update version
-		int size;		//!< Update file size
+		int size;			//!< Update file size
 		QString installTo;	//!< Where to find and install the new update
 		QString url;		//!< Where to download this update
 		bool packed;		//!< Flag for know if this update is packed
 		bool obligatory;	//!< Flag for know if this update must be downloaed (if don't exists, it is downloaded anyway)
 		bool checked;		//!< Selected to update
+		bool error;			//!< An error ocurred during download process
 	public:
 		/*! Set the update caption */
 		void setCaption(QString value);
@@ -84,6 +86,8 @@ Q_OBJECT
 		void setObligatory(bool value);
 		/*! Set as selected */
 		void setChecked(bool value);
+		/*! Set it as error */
+		void setError(bool value);
 		/* Get the update caption */
 		QString getCaption();
 		/*! Get the update version */
@@ -100,6 +104,8 @@ Q_OBJECT
 		bool isObligatory();
 		/*! Get if is selected */
 		bool isChecked();
+		/*! Get if has an error */
+		bool hasErrors();
 };
 
 /*! Check and download program updates */
@@ -131,6 +137,8 @@ Q_OBJECT
 		void getTotalSizeToDownload();
 		/*! Get the first update file to download */
 		int getFirstUpdateToDownload();
+		/*! Get next update to download */
+		void getNextUpdateToDownload();
 		/*! Thread executation */
 		void run();
 	public:
@@ -161,6 +169,8 @@ Q_OBJECT
 		void downloadEvent(int pos, int max);
 		/*! When the http finish a download */
 		void downloadFinished(const QFileInfo destFile);
+		/*! When the http raise an error */
+		void downloadError(int error);
 	signals:
 		/*! After check for updates */
 		void updatesChecked(bool hasUpdates);
@@ -171,11 +181,15 @@ Q_OBJECT
 		/*! Downloading update */
 		void downloadingUpdate(int updateIndex, int pogress, int totalProgress);
 		/*! Update item Download finished */
-		void downloadFinished(int updateIndex);
+		void downloadUpdateFinished(int updateIndex);
+		/*! Update item Download error  */
+		void downloadUpdateError(int updateIndex);
 		/*! Downloads finished */
 		void downloadsFinished();
 		/*! When its ready to install updates */
 		void readyToInstallUpdates();
+		/*! When updates finished but it can't install anything... */
+		void failedToInstallUpdates();
 };
 
 #endif // __UPDATES_H__

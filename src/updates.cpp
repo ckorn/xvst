@@ -49,6 +49,7 @@ Updates::Updates(QString appPath)
 	// signals
 	connect(http, SIGNAL(downloadEvent(int, int)), this, SLOT(downloadEvent(int, int)));
 	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
+	connect(http, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
 }
 
 Updates::~Updates()
@@ -84,6 +85,7 @@ void Updates::parseBlock(QString block)
 				update->setPacked(copyBetween(fileBlock, "packed=\"", "\"").toLower() == "true");
 				update->setObligatory(copyBetween(fileBlock, "obligatory=\"", "\"").toLower() == "true");
 				update->setChecked(true);
+				update->setError(false);
 			}
 			// next update file
 			n++;
@@ -115,7 +117,7 @@ bool Updates::hasUpdates()
 			deleteUpdate = compareVersions(PROGRAM_VERSION, update->getVersion()) != 1;
 		else
 		{
-			if (QFile::exists(appPath + update->getInstallTo()))
+			if (QFile::exists(appPath + update->getInstallTo()) || update->isObligatory())
 			{
 				QFileInfo fileInf(update->getInstallTo());
 				// language files
@@ -125,6 +127,13 @@ bool Updates::hasUpdates()
 					// have info?
 					if (language != NULL)
 						deleteUpdate = compareVersions(language->getVersion(), update->getVersion()) != 1;
+				}
+				else if (fileInf.completeSuffix() == "js")
+				{
+					VideoInformationPlugin *plugin = VideoInformation::getLastVideoInformationInstance()->getRegisteredPlugin(fileInf.fileName(), true);
+					// have info?
+					if (plugin != NULL)
+						deleteUpdate = compareVersions(plugin->getVersion(), update->getVersion()) != 1;
 				}
 				else // "unknonw file"
 					deleteUpdate = true;
@@ -158,7 +167,7 @@ void Updates::buildInstalScript()
 		// write the info vars
 		updateScript << "#MAIN_APP=" + QCoreApplication::applicationFilePath()
 					 << "#PARAMETERS=forceCheckUpdates"
-					 << "#RESTART=true";
+					 << "#RESTART=true";	
 		// add updates
 		for (int n = 0; n < getUpdatesCount(); n++)
 		{
@@ -170,10 +179,17 @@ void Updates::buildInstalScript()
 				update->setInstallTo("/" + appExe.fileName());
 			}
 			// is checked?
-			if (update->isChecked())
+			if (update->isChecked() && !update->hasErrors())
 				if (!update->isPacked())
 					// block id
 					updateScript << QString(":install_file_%1").arg(n)
+					// create dirs if is needed
+								 << QString("if exists \"%1\"")
+										.arg(extractFilePath(appPath + update->getInstallTo()))
+								 << "else"
+								 << QString("mkdirs \"%1\"")
+										.arg(extractFilePath(appPath + update->getInstallTo()))
+								 << "end"
 					// copy the downloaded file
 								 << QString("if copy \"%1\" \"%2\"")
 										.arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))	// downloaded file
@@ -324,10 +340,22 @@ void Updates::run()
 		}
 
 		case usInstalling:
-			// make the install file
-			buildInstalScript();
-			// send the ok signal
-			emit readyToInstallUpdates();
+			// init install flags
+			int readyToInstall = 0;
+			// check if we have something to update (may be are all errors)
+			for (int n = 0; n < updateList->count(); n++)
+				if (updateList->at(n)->isChecked() && !updateList->at(n)->hasErrors())
+					readyToInstall++;
+			// check ready to install count
+			if (readyToInstall > 0)
+			{
+				// make the install file
+				buildInstalScript();
+				// send the ok signal
+				emit readyToInstallUpdates();
+			}
+			else // ops, failed
+				emit failedToInstallUpdates();
 			break;
 	}
 }
@@ -421,6 +449,24 @@ int Updates::getFirstUpdateToDownload()
 	return -1;
 }
 
+void Updates::getNextUpdateToDownload()
+{
+	// next
+	currentItem++;
+	// get next file to download
+	while (currentItem < getUpdatesCount())
+	{
+		if (updateList->at(currentItem)->isChecked())
+			return;
+		//next
+		currentItem++;
+	}
+	// if we are here, then send the "END" signal
+	emit downloadsFinished();
+	// set as installing state
+	updateState = usInstalling;
+}
+
 bool Updates::canUpdate()
 {
 #ifdef Q_WS_MAC
@@ -451,21 +497,24 @@ void Updates::downloadFinished(const QFileInfo /*destFile*/)
 		// update total downloaded
 		totalDownloaded += updateList->at(currentItem)->getSize();
 		// emit the signle end singal
-		emit downloadFinished(currentItem);
-		// next
-		currentItem++;
-		// get next file to download
-		while (currentItem < getUpdatesCount())
-		{
-			if (updateList->at(currentItem)->isChecked())
-				return;
-			//next
-			currentItem++;
-		}
-		// if we are here, then send the "END" signal
-		emit downloadsFinished();
-		// set as installing state
-		updateState = usInstalling;
+		emit downloadUpdateFinished(currentItem);
+		// get the next update to download (if return true = more items found
+		getNextUpdateToDownload();
+	}
+}
+
+void Updates::downloadError(int error)
+{
+	if (updateState == usDownloading)
+	{
+		// update total downloaded
+		totalDownloaded += updateList->at(currentItem)->getSize();
+		// mark this current item as error
+		updateList->at(currentItem)->setError(true);
+		// advertise about this error
+		emit downloadUpdateError(currentItem);
+		// get the next update to download (if return true = more items found
+		getNextUpdateToDownload();
 	}
 }
 
@@ -511,6 +560,11 @@ void Update::setChecked(bool value)
 	checked = value;
 }
 
+void Update::setError(bool value)
+{
+	error = value;
+}
+
 QString Update::getCaption()
 {
 	return caption;
@@ -549,4 +603,9 @@ bool Update::isObligatory()
 bool Update::isChecked()
 {
 	return checked;
+}
+
+bool Update::hasErrors()
+{
+	return error;
 }

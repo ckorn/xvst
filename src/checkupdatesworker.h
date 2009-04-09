@@ -10,7 +10,7 @@
 #include "options.h"
 #include "updates.h"
 
-static const QString URL_UPDATE_FILE = "http://xviservicethief.sourceforge.net/updates/xVST.update";
+static const QString URL_UPDATE_FILE = "http://xviservicethief.sourceforge.net/updates/xVST2.update";
 
 class CheckUpdatesWorker : public QObject
 {

@@ -36,6 +36,8 @@ VideoInformation::VideoInformation(QString pluginsDir)
 	// init data
 	videoItem = NULL;
 	blockAdultContent = false;
+	// update lastThis reference
+	lastVideoInformationInstance = this;
 }
 
 VideoInformation::~VideoInformation()
@@ -43,11 +45,9 @@ VideoInformation::~VideoInformation()
 	// abort any current plugin execution
 	abortExecution();
 	// wait until thread end
-	while (isRunning()) { /* do nothing, just wait... */ };
-/*
+//	while (isRunning()) { /* do nothing, just wait... */ };
 	if (isRunning())
 		quit();
-*/
 	// remove loaded plugins
 	clearPlugins();
 	// destroy plugins container
@@ -144,6 +144,19 @@ VideoInformationPlugin *VideoInformation::getRegisteredPlugin(const int index)
 		return plugins->at(index);
 	else
 		return NULL;
+}
+
+VideoInformationPlugin* VideoInformation::getRegisteredPlugin(const QString fileName, const bool onlyFileName)
+{
+	for (int n = 0; n < plugins->count(); n++)
+	{
+		VideoInformationPlugin *plugin = plugins->at(n);
+		// compare names
+		if (plugin->getScriptFile(onlyFileName) == fileName)
+			return plugin;
+	}
+	// not found
+	return NULL;
 }
 
 QStringList VideoInformation::getPluginsList(bool asCaptions)
@@ -346,6 +359,11 @@ bool VideoInformation::isBlockedHost(QString URL)
 	return isBlockedHost(URL, bs);
 }
 
+VideoInformation* VideoInformation::getLastVideoInformationInstance()
+{
+	return lastVideoInformationInstance;
+}
+
 // VideoInformationPlugin class
 
 VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformation, QString videoServicePath)
@@ -369,6 +387,7 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 		// execute regist code if no errors found
 		if (!engine->hasUncaughtException())
 		{
+			// get the regist func
 			QScriptValue func_regist = engine->evaluate("RegistVideoService");
 			// check if RegistVideoService function has been loaded
 			if (func_regist.isFunction())
@@ -514,6 +533,17 @@ void VideoInformationPlugin::abortExecution()
 {
 	if (engine != NULL)
 		engine->abortEvaluation();
+}
+
+QString VideoInformationPlugin::getScriptFile(const bool onlyName) const
+{
+	if (!onlyName)
+		return videoServicePath;
+	else
+	{
+		QFileInfo fileInf(videoServicePath);
+		return fileInf.fileName();
+	}
 }
 
 QString VideoInformationPlugin::getVersion() const

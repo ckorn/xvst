@@ -52,6 +52,9 @@
 	/*! Return a valid File Name */
 	QString cleanFileName(const QString fileName, QString replaceFor = " ");
 
+	/* Return the file path */
+	QString extractFilePath(const QString fileName);
+
 	/*! Convert seconds to Hours minutes seconds */
 	QString secondsToHMS(const int seconds, const bool compact, const bool allowNegative = false);
 
@@ -81,7 +84,7 @@
 	
 	/*! Open the directory into the defined explorer */
 	bool openDirectory(QString directoryPath);
-	
+
 	/*! Convert a Decimal HTML Char into the respective HTML Code */
 	QString htmlCharToHtmlCode(QString html);
 	

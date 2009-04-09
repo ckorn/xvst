@@ -755,7 +755,7 @@ void Http::requestFinished(int id, bool error)
 		if (error)
 		{
 			bool canRemove = true;
-			
+
 			if (http->error() == QHttp::Aborted && 
 				(stopReason == USER_CANCELLED || stopReason == USER_PAUSED))
 				switch (stopReason)

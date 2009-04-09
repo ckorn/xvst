@@ -9,7 +9,7 @@
 #include "options.h"
 #include "updates.h"
 
-static const QString URL_LANGUAGES_FILE = "http://xviservicethief.sourceforge.net/updates/xVST.languages";
+static const QString URL_LANGUAGES_FILE = "http://xviservicethief.sourceforge.net/updates/xVST2.languages";
 
 /*! Get new languages and install them */
 class NewLanguagesController : public QThread

@@ -47,6 +47,7 @@ class VideoInformation;
 /*! Plugin information class */
 class VideoInformationPlugin : public QObject
 {
+Q_OBJECT
 	private:
 		QString scriptCode;			//<! Plugin source code
 		QString version;			//<! Plugin version
@@ -77,6 +78,8 @@ class VideoInformationPlugin : public QObject
 		VideoDefinition getVideoInformation(const QString URL);
 		/*! Abot current work (only if is running) */
 		void abortExecution();
+		/*! Get the plugin file path or only name */
+		QString getScriptFile(const bool onlyName) const;
 		/*! Get the plugin version */
 		QString getVersion() const;
 		/*! Get the min xVST version to run */
@@ -99,6 +102,8 @@ class VideoInformationPlugin : public QObject
 		bool isLoaded() const;
 };
 
+static VideoInformation *lastVideoInformationInstance; //!< Used as semi-singleton (remember the last instance created)
+
 /*! Main video information class */
 class VideoInformation : public QThread
 {
@@ -119,7 +124,7 @@ Q_OBJECT
 		/*! Load all plugins from /plugins/.js */
 		void loadPlugins(QString pluginsDir);
 		/*! Load a plugin and regist it */
-		void loadPluginFile(QString scriptFile);
+		void loadPluginFile(QString scriptFile);		
 	public:
 		/*! Class constructor */
 		VideoInformation(QString pluginsDir);
@@ -127,8 +132,10 @@ Q_OBJECT
 		~VideoInformation();
 		/* Register a new VideoDownload Plugin */
 		void registerPlugin(VideoInformationPlugin *videoInformationPlugin);
-		/*! Get a registered VideoDownload Plugin */
+		/*! Get a registered VideoInformationPlugin */
 		VideoInformationPlugin* getRegisteredPlugin(const int index);
+		/*! Get a registered VideoInformationPlugin by file name (*.js) */
+		VideoInformationPlugin* getRegisteredPlugin(const QString fileName, const bool onlyFileName = true);
 		/*! Get registered plugins count */
 		int getPluginsCount();
 		/*! Get the list of all registered plugins */
@@ -171,6 +178,8 @@ Q_OBJECT
 		bool isBlockedHost(QString URL, BlockedState &result);
 		/*! Get if is a blocked host */
 		bool isBlockedHost(QString URL);
+		/*! Get the last VideoInformation reference */
+		static VideoInformation* getLastVideoInformationInstance();
 	signals:
 		/*! A Video item download started */
 		void informationStarted(VideoItem *videoItem);

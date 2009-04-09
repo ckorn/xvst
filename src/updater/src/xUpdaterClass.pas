@@ -95,6 +95,7 @@ implementation
 
     Config Vars:
       #MAIN_APP=path+exe
+      #PARAMS={extra application params to execute}
       #RESTART=true {true / false}
 
     Basic functions:

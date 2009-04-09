@@ -44,6 +44,7 @@ Q_OBJECT
 		bool closedByButton;
 		void fillUpdates();
 		bool isWindowsVista();
+		QWidget *self;
 	protected:
 		void closeEvent(QCloseEvent *event);
 	public:
@@ -54,8 +55,10 @@ Q_OBJECT
 		void btnUpdateClicked();
 		// updater
 		void downloadingUpdate(int updateIndex, int pogress, int totalProgress);
-		void downloadFinished(int updateIndex);
+		void downloadUpdateFinished(int updateIndex);
+		void downloadUpdateError(int updateIndex);
 		void downloadsFinished();
 		void readyToInstallUpdates();
+		void failedToInstallUpdates();
 };
 #endif

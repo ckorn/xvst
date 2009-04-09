@@ -29,6 +29,10 @@ UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall
 		: QDialog(parent, f)
 {
 	setupUi(this);
+	// resize for macosx
+#ifdef Q_WS_MAC
+	resize(630, 366);
+#endif
 	closedByButton = false;
 	// version
 	lblxVSTVersion->setText(QString(lblxVSTVersion->text()).arg(PROGRAM_VERSION));
@@ -62,12 +66,20 @@ UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall
 	connect(btnUpdate, SIGNAL(clicked()), this, SLOT(btnUpdateClicked()));
 	// updater
 	connect(updates, SIGNAL(downloadingUpdate(int, int, int)), this, SLOT(downloadingUpdate(int, int, int)));
-	connect(updates, SIGNAL(downloadFinished(int)), this, SLOT(downloadFinished(int)));
+	connect(updates, SIGNAL(downloadUpdateFinished(int)), this, SLOT(downloadUpdateFinished(int)));
+	connect(updates, SIGNAL(downloadUpdateError(int)), this, SLOT(downloadUpdateError(int)));
 	connect(updates, SIGNAL(downloadsFinished()), this, SLOT(downloadsFinished()));
 	connect(updates, SIGNAL(readyToInstallUpdates()), this, SLOT(readyToInstallUpdates()));
+	connect(updates, SIGNAL(failedToInstallUpdates()), this, SLOT(failedToInstallUpdates()));
 	// if auto download & install updates, then...
 	if (autoDownloadAndInstall)
 		btnUpdateClicked();
+	// fix an error with macosx
+#ifdef Q_WS_MAC
+	self = NULL;
+#else
+	self = this;
+#endif
 }
 
 void UpdateCenterImpl::closeEvent(QCloseEvent *event)
@@ -143,9 +155,14 @@ void UpdateCenterImpl::downloadingUpdate(int updateIndex, int pogress, int total
 								.arg(fileSizeToString(updates->getTotalToDownload())));
 }
 
-void UpdateCenterImpl::downloadFinished(int updateIndex)
+void UpdateCenterImpl::downloadUpdateFinished(int updateIndex)
 {
 	lsvUpdates->topLevelItem(updateIndex)->setText(3, tr("Done"));
+}
+
+void UpdateCenterImpl::downloadUpdateError(int updateIndex)
+{
+	lsvUpdates->topLevelItem(updateIndex)->setText(3, tr("Error"));
 }
 
 void UpdateCenterImpl::downloadsFinished()
@@ -157,5 +174,17 @@ void UpdateCenterImpl::readyToInstallUpdates()
 {
 	closedByButton = true;
 	done(QDialog::Accepted);
+}
+
+void UpdateCenterImpl::failedToInstallUpdates()
+{
+	QMessageBox::critical(self,
+						 tr("Updates center error"),
+						 tr("Some errors has ocurred on try download the new update(s)."),
+						 tr("Ok"));
+	// enable clancel button
+	btnCancel->setEnabled(true);
+	btnCancel->setDefault(true);
+	btnCancel->setText(tr("Close"));
 }
 //
