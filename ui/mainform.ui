@@ -43,6 +43,9 @@
        <enum>QFrame::Sunken</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>5</number>
+       </property>
        <item row="0" column="0" rowspan="3">
         <widget class="QLabel" name="imgHeader">
          <property name="text">
@@ -260,7 +263,7 @@
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeType">
-            <enum>QSizePolicy::Fixed</enum>
+            <enum>QSizePolicy::Maximum</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
@@ -1176,6 +1179,7 @@
   <tabstop>lsvDownloadList</tabstop>
  </tabstops>
  <resources>
+  <include location="../resources/resources.qrc"/>
   <include location="../resources/resources.qrc"/>
  </resources>
  <connections/>
