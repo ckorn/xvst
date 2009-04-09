@@ -152,6 +152,8 @@ Q_OBJECT
 		void getVideoInformation(VideoItem *videoItem);
 		/*! Get plugins count */
 		int pluginsCount();
+		/*! Get if has plugins loaded */
+		bool hasPlugins();
 		/*! Abot current work (only if is running) */
 		void abortExecution();
 		/*! Cancel the current work */

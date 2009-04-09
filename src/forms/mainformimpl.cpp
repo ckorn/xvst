@@ -826,8 +826,9 @@ void MainFormImpl::pasteURLfromClipboardClicked()
 // updates
 void MainFormImpl::checkForUpdates()
 {
-	bool forceCheckUpdates = false;
-	if (qApp->arguments().count() > 1)
+	bool forceCheckUpdates = !videoList->getVideoInformation()->hasPlugins();
+	// cehck parameters
+	if (qApp->arguments().count() > 1 && !forceCheckUpdates)
 		forceCheckUpdates = qApp->arguments().at(1) == "forceCheckUpdates";
 
 	if (programOptions->getCheckForUpdatesOnStartup() || forceCheckUpdates)
@@ -938,7 +939,7 @@ void MainFormImpl::checkUpdates(bool forceCheckUpdates)
 		pbrCheckingForUpdates->show();
 		spbCancelCheckForUpdates->show();
 
-		checkUpdatesWorker = new CheckUpdatesWorker(programOptions, this, lblCheckForUpdatesLabel, pbrCheckingForUpdates,
+		checkUpdatesWorker = new CheckUpdatesWorker(programOptions, self, lblCheckForUpdatesLabel, pbrCheckingForUpdates,
 													spbCancelCheckForUpdates, false);
 		connect(checkUpdatesWorker, SIGNAL(finished(bool, bool)), this, SLOT(checkUpdatesWorkerFinished(bool, bool)));
 		connect(checkUpdatesWorker, SIGNAL(beforeDisplayUpdateCenter()), this, SLOT(beforeDisplayUpdateCenter()));

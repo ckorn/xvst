@@ -184,13 +184,8 @@ void Updates::buildInstalScript()
 					// block id
 					updateScript << QString(":install_file_%1").arg(n)
 					// create dirs if is needed
-								 << QString("if exists \"%1\"")
-										.arg(extractFilePath(appPath + update->getInstallTo()))
-								 << "else"
 								 << QString("mkdirs \"%1\"")
 										.arg(extractFilePath(appPath + update->getInstallTo()))
-								 << "end"
-					// copy the downloaded file
 								 << QString("if copy \"%1\" \"%2\"")
 										.arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))	// downloaded file
 										.arg(appPath + update->getInstallTo())						// destination file

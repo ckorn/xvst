@@ -236,6 +236,11 @@ int VideoInformation::pluginsCount()
 	return plugins->count();
 }
 
+bool VideoInformation::hasPlugins()
+{
+	return pluginsCount() > 0;
+}
+
 void VideoInformation::abortExecution()
 {
 	if (videoItem != NULL && isGettingInfo())

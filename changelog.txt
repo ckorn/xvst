@@ -27,10 +27,14 @@
 - Fixed bug (Error: Paypal link was corrupt, now the Paypal button links to xVST website donation page)
 - Fixed bug (Error: Open downloads directory in tray icon were not opened)
 
+- Updated English language
+- Updated Spanish language
+- Updated Catalan language
 - Updated french language
 - Updated ffmpeg lib to last version (0.5)
 
 - Improved internal HTTP class (added connection timeout)
+- Improved update center (added download error detection)
 
 - Revised all services:
 	- Added HD videos for Youtube
@@ -50,6 +54,7 @@ Windows Vista:
 --------------
 
 - Added detection of Windows Vista for advertise about "administrator permission"
+- Added administrator permission before execute xUpdater
 
 MacOS X:
 --------
