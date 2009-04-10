@@ -626,7 +626,7 @@ void MainFormImpl::viewErrorMessageClicked()
 	VideoItem *videoItem = getSelectedVideoItem();
 
 	if (videoItem != NULL)
-		QMessageBox::information(this, 
+		QMessageBox::information(self,
 		tr("Error message"),
 		tr("This video has the following error:<br><br><b>%1</b>").arg(videoItem->getErrorMessage()), 
 		tr("Ok"));

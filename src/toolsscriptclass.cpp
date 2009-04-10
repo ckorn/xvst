@@ -12,9 +12,21 @@ ToolsScriptClass::ToolsScriptClass(QScriptEngine *engine)
 	QScriptValue _getUrlParam = engine->newFunction(func_getUrlParam);
 	engine->globalObject().setProperty("getUrlParam", _getUrlParam);
 
+	// regist getUrlParam(url,param) function
+	QScriptValue _cleanUrl = engine->newFunction(func_cleanUrl);
+	engine->globalObject().setProperty("cleanUrl", _cleanUrl);
+
 	// regist copyBetween(str,from,to) function
 	QScriptValue _copyBetween = engine->newFunction(func_copyBetween);
 	engine->globalObject().setProperty("copyBetween", _copyBetween);
+
+	// regist getToken(str,separator,token) function
+	QScriptValue _getToken = engine->newFunction(func_getToken);
+	engine->globalObject().setProperty("getToken", _getToken);
+
+	// regist getTokenCount(str,separator) function
+	QScriptValue _getTokenCount = engine->newFunction(func_getTokenCount);
+	engine->globalObject().setProperty("getTokenCount", _getTokenCount);
 
 	// regist strRemove(str,pos,len) function
 	QScriptValue _strRemove = engine->newFunction(func_strRemove);
@@ -39,7 +51,7 @@ QScriptValue ToolsScriptClass::func_getUrlHost(QScriptContext *context, QScriptE
 	{
 		// get params
 		QString url = context->argument(0).toString();
-		// return the asket item from url
+		// return the asked item from url
 		return engine->newVariant(QVariant(QUrl(url).host()));
 	}
 	else // invalid arguments count
@@ -53,8 +65,21 @@ QScriptValue ToolsScriptClass::func_getUrlParam(QScriptContext *context, QScript
 		// get params
 		QString url = context->argument(0).toString();
 		QString item = context->argument(1).toString();
-		// return the asket item from url
+		// return the asked item from url
 		return engine->newVariant(QVariant(QUrl(url).queryItemValue(item)));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_cleanUrl(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 1)
+	{
+		// get params
+		QString url = context->argument(0).toString();
+		// return the asked item from url
+		return engine->newVariant(QVariant(cleanURL(url)));
 	}
 	else // invalid arguments count
 		return QScriptValue();
@@ -68,8 +93,37 @@ QScriptValue ToolsScriptClass::func_copyBetween(QScriptContext *context, QScript
 		QString str = context->argument(0).toString();
 		QString from = context->argument(1).toString();
 		QString to = context->argument(2).toString();
-		// return the asket item from url
+		// return the asked item from url
 		return engine->newVariant(QVariant(copyBetween(str, from, to)));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_getToken(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 3)
+	{
+		// get params
+		QString str = context->argument(0).toString();
+		QString separator = context->argument(1).toString();
+		int token = context->argument(2).toInteger();
+		// return the asked item from url
+		return engine->newVariant(QVariant(getToken(str, separator, token)));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_getTokenCount(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 3)
+	{
+		// get params
+		QString str = context->argument(0).toString();
+		QString separator = context->argument(1).toString();
+		// return the asked item from url
+		return engine->newVariant(QVariant(getTokenCount(str, separator)));
 	}
 	else // invalid arguments count
 		return QScriptValue();
@@ -83,7 +137,7 @@ QScriptValue ToolsScriptClass::func_strRemove(QScriptContext *context, QScriptEn
 		QString str = context->argument(0).toString();
 		int pos = context->argument(1).toInteger();
 		int len = context->argument(2).toInteger();
-		// return the asket item from url
+		// return the asked item from url
 		return engine->newVariant(QVariant(str.remove(pos, len)));
 	}
 	else // invalid arguments count
@@ -98,7 +152,7 @@ QScriptValue ToolsScriptClass::func_strCopy(QScriptContext *context, QScriptEngi
 		QString str = context->argument(0).toString();
 		int pos = context->argument(1).toInteger();
 		int len = context->argument(2).toInteger();
-		// return the asket item from url
+		// return the asked item from url
 		return engine->newVariant(QVariant(copy(str, pos, len)));
 	}
 	else // invalid arguments count

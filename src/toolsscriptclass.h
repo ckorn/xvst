@@ -9,7 +9,10 @@ class ToolsScriptClass : public QObject
 	private:
 		static QScriptValue func_getUrlHost(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_getUrlParam(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_cleanUrl(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_copyBetween(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_getToken(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_getTokenCount(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_strRemove(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_strCopy(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_strFormat(QScriptContext *context, QScriptEngine *engine);
