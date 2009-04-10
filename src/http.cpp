@@ -86,6 +86,7 @@ Cookie::Cookie(QString cookieInf)
 Cookie::Cookie(const Cookie &other): QObject()
 {
 	// copy internal cookie data from other cookie
+	cookieInf = other.cookieInf;
 	cookieBoddy = other.cookieBoddy;
 	expires = other.expires;
 	domain = other.domain;
