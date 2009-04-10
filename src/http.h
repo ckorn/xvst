@@ -73,6 +73,7 @@ class ArrayAvg : public QObject
 class Cookie : public QObject
 {
 	private:
+		QString cookieInf;		//!< Cookie original information
 		QString cookieBoddy;	//!< Cookie boddy
 		QString expires;		//!< Cookie expiration date
 		QString domain;			//!< Cookie working domain
@@ -82,6 +83,8 @@ class Cookie : public QObject
 		Cookie(QString cookieInf);
 		/*! Copy class constructor */
 		Cookie(const Cookie&);
+		/*! Get the original cookie */
+		QString getCookieInf();
 		/*! Get the cookie boddy */
 		QString getCookieBoddy();
 		/*! Get the cookie expiration date */
@@ -111,6 +114,8 @@ class CookieController : public QObject
 		void clear();
 		/*! Get host cookies */
 		QString getCookies(QUrl URL);
+		/*! Get all cookies (if complete = true, return all information: host, expires...) */
+		QString getCookies(bool complete, const QString separator = "|");
 };
 
 class Http : public QObject
@@ -194,6 +199,10 @@ Q_OBJECT
 		QHttpResponseHeader head(const QUrl URL, bool autoJump = false);
 		/*! Add custom cookie */
 		void addCookie(QString cookie);
+		/*! Add custom cookies */
+		void addCookies(QString cookies, const QString separator = "|");
+		/*! Get all stored cookies as String */
+		QString getCookies(const QString separator = "|");
 		/*! Clear the stored cookies */
 		void clearCookies();
 		/*! Add custom header parameter */

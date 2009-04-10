@@ -34,6 +34,16 @@ void HttpScriptPrototype::addCookie(QString cookie)
 	thisHttp()->addCookie(cookie);
 }
 
+void HttpScriptPrototype::addCookies(QString cookies, QString separator)
+{
+	thisHttp()->addCookie(cookies, separator);
+}
+
+QString HttpScriptPrototype::getCookies(QString separator)
+{
+	return thisHttp()->getCookies(separator);
+}
+
 void HttpScriptPrototype::clearCookies()
 {
 	thisHttp()->clearCookies();

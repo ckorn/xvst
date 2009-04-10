@@ -70,6 +70,7 @@ void ArrayAvg::reset()
 
 Cookie::Cookie(QString cookieInf)
 {
+	this->cookieInf = cookieInf;
 	// parese the cookie info
 	cookieInf += ";";
 	// the first token is the cookie boddy
@@ -89,6 +90,11 @@ Cookie::Cookie(const Cookie &other): QObject()
 	expires = other.expires;
 	domain = other.domain;
 	path = other.path;
+}
+
+QString Cookie::getCookieInf()
+{
+	return cookieInf;
 }
 
 QString Cookie::getCookieBoddy()
@@ -177,6 +183,24 @@ QString CookieController::getCookies(QUrl URL)
 				result += cookie->getCookieBoddy() + ";";
 	}
 	// return cookies assigned to this URL
+	return result;
+}
+
+QString CookieController::getCookies(bool complete, const QString separator)
+{
+	QString result = "";
+	// get all stored cookies
+	for (int n = 0; n < cookies->count(); n++)
+	{
+		if (complete) // add the original cookie
+			result += cookies->at(n)->getCookieInf() + separator;
+		else // only cookie boddy
+			result += cookies->at(n)->getCookieBoddy() + separator;
+	}
+	// remove last separator
+	if (!result.isEmpty())
+		result = result.remove(result.length() - 1, 1);
+	// return cookies
 	return result;
 }
 
@@ -651,6 +675,20 @@ QHttpResponseHeader Http::head(const QUrl URL, bool autoJump)
 void Http::addCookie(QString cookie)
 {
 	cookies->addCookie(cookie);
+}
+
+void Http::addCookies(QString cookies, const QString separator)
+{
+	// split cookies
+	QStringList cookiesList = cookies.split(separator);
+	// add all cookies
+	foreach (QString cookie, cookiesList)
+		addCookie(cookie);
+}
+
+QString Http::getCookies(const QString separator)
+{
+	return cookies->getCookies(true, separator);
 }
 
 void Http::clearCookies()

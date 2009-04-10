@@ -36,6 +36,10 @@ ToolsScriptClass::ToolsScriptClass(QScriptEngine *engine)
 	QScriptValue _strCopy = engine->newFunction(func_strCopy);
 	engine->globalObject().setProperty("strCopy", _strCopy);
 
+	// regist strReplace(str,before,after,[caseSensitive]) function
+	QScriptValue _strReplace = engine->newFunction(func_strReplace);
+	engine->globalObject().setProperty("strReplace", _strReplace);
+
 	// regist strFormat(str,...) function
 	QScriptValue _strFormat = engine->newFunction(func_strFormat);
 	engine->globalObject().setProperty("strFormat", _strFormat);
@@ -154,6 +158,25 @@ QScriptValue ToolsScriptClass::func_strCopy(QScriptContext *context, QScriptEngi
 		int len = context->argument(2).toInteger();
 		// return the asked item from url
 		return engine->newVariant(QVariant(copy(str, pos, len)));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_strReplace(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() >= 3)
+	{
+		// get params
+		QString str = context->argument(0).toString();
+		QString before = context->argument(1).toString();
+		QString after = context->argument(2).toString();
+		// is casesensitive by default
+		Qt::CaseSensitivity sensitive = Qt::CaseSensitive;
+		if (context->argumentCount() == 4)
+			sensitive = context->argument(3).toBool() ? Qt::CaseSensitive : Qt::CaseInsensitive;
+		// return the asked item from url
+		return engine->newVariant(QVariant(QString(str).replace(before, after, sensitive)));
 	}
 	else // invalid arguments count
 		return QScriptValue();

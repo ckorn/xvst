@@ -416,6 +416,8 @@ void VideoItem::setVideoInformation(VideoDefinition videoInformation, QObject *w
 	this->videoInfo.needLogin = videoInformation.needLogin;
 	// set if is an audio file
 	this->videoInfo.isAudioFile = videoInformation.isAudioFile;
+	// set the stored cookies for this video
+	this->videoInfo.cookies = videoInformation.cookies;
 }
 
 void VideoItem::setVideoFile(QString videoFile, QObject *who)

@@ -18,6 +18,8 @@ Q_OBJECT
 		QString downloadWebpage(const QString URL, bool isUtf8 = true);
 		QString downloadWebpagePost(const QString URL, QString parameters, bool isUtf8 = true);
 		void addCookie(QString cookie);
+		void addCookies(QString cookies, QString separator);
+		QString getCookies(QString separator);
 		void clearCookies();
 		void addHeaderParameter(QString key, QString value);
 		void clearHeaderParameters();

@@ -59,6 +59,9 @@ void DownloadItem::startDownload()
 	videoItem->lock (this);
 	videoItem->setAsDownloading(this);
 	videoItem->setProgress(0, this);
+	// if this video has special cookies, then assing them
+	if (!videoItem->getVideoInformation().cookies.isEmpty())
+		http->addCookies(videoItem->getVideoInformation().cookies);
 	// start download
 	int er = http->download(QUrl(videoItem->getVideoInformation().URL), 
 		parent->getDownloadDir(), videoItem->getVideoFile());
