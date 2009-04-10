@@ -65,7 +65,7 @@ QString getPluginsAsHtml(QString title, QList<VideoInformationPlugin*> plugins)
 		html += title;
 		html += "<ul>";
 		for (int n = 0; n < plugins.count(); n++)
-			html += QString("<li><a href='%1' target='_blank'>%2</a> <i>(%3)</i></li>").
+			html += QString("<li><a href='%1' target='_blank'>%2</a> <i><font color=#909090>(%3)</font></i></li>").
 					arg(plugins.at(n)->getWebsite()).
 					arg(plugins.at(n)->getCaption()).
 					arg(plugins.at(n)->getVersion());
