@@ -38,6 +38,12 @@
 
 - Revised all services:
 	- Added HD videos for Youtube
+	- Added HD videos for GameSpot
+	- Removed Sclipo: Videos are not publics
+	- Removed Stage6: Website closed
+	- Removed Lulu.tv: Website closed (now is lulu.com and its a shopping site)
+	- Removed ZanyVideos: Videos are not publics
+	- Removed Zaable: Now is a strange website (videos seems to be privates)
 
 Linux:
 ------
