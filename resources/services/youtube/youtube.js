@@ -57,7 +57,6 @@ function getVideoInformation(url)
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(youTubeURL);
-	delete http;
 	// get the video ID and the video HASH
 	var vidID =  getUrlParam(youTubeURL, "v");
 	var vidHash = copyBetween(html, "\"t\": \"", "\"");
