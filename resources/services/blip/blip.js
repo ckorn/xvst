@@ -37,7 +37,6 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_FLV = "http://films.cinemavip.com/contenidos/cinemavip/%1";
 	// video information
 	var result = new VideoDefinition();
 	// download webpage
