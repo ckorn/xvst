@@ -16,6 +16,8 @@ class ToolsScriptClass : public QObject
 		static QScriptValue func_strRemove(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_strCopy(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_strReplace(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_strIndexOf(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_strLastIndexOf(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_strFormat(QScriptContext *context, QScriptEngine *engine);
 	public:
 		ToolsScriptClass(QScriptEngine *engine);

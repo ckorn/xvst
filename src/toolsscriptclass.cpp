@@ -40,6 +40,14 @@ ToolsScriptClass::ToolsScriptClass(QScriptEngine *engine)
 	QScriptValue _strReplace = engine->newFunction(func_strReplace);
 	engine->globalObject().setProperty("strReplace", _strReplace);
 
+	// regist strIndexOf(str,subStr,[from],[caseSensitive]) function
+	QScriptValue _strIndexOf = engine->newFunction(func_strIndexOf);
+	engine->globalObject().setProperty("strIndexOf", _strIndexOf);
+
+	// regist strLastIndexOf(str,subStr,[from],[caseSensitive]) function
+	QScriptValue _strLastIndexOf = engine->newFunction(func_strLastIndexOf);
+	engine->globalObject().setProperty("strLastIndexOf", _strLastIndexOf);
+
 	// regist strFormat(str,...) function
 	QScriptValue _strFormat = engine->newFunction(func_strFormat);
 	engine->globalObject().setProperty("strFormat", _strFormat);
@@ -177,6 +185,50 @@ QScriptValue ToolsScriptClass::func_strReplace(QScriptContext *context, QScriptE
 			sensitive = context->argument(3).toBool() ? Qt::CaseSensitive : Qt::CaseInsensitive;
 		// return the asked item from url
 		return engine->newVariant(QVariant(QString(str).replace(before, after, sensitive)));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_strIndexOf(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() >=2)
+	{
+		// get params
+		QString str = context->argument(0).toString();
+		QString subStr = context->argument(1).toString();
+		// default index is 0
+		int from = 0;
+		if (context->argumentCount() >= 3)
+			from = context->argument(2).toInteger();
+		// is casesensitive by default
+		Qt::CaseSensitivity sensitive = Qt::CaseSensitive;
+		if (context->argumentCount() >= 4)
+			sensitive = context->argument(3).toBool() ? Qt::CaseSensitive : Qt::CaseInsensitive;
+		// return the asked item from url
+		return engine->newVariant(QVariant(QString(str).indexOf(subStr, from, sensitive)));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_strLastIndexOf(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() >=2)
+	{
+		// get params
+		QString str = context->argument(0).toString();
+		QString subStr = context->argument(1).toString();
+		// default index is 0
+		int from = 0;
+		if (context->argumentCount() >= 3)
+			from = context->argument(2).toInteger();
+		// is casesensitive by default
+		Qt::CaseSensitivity sensitive = Qt::CaseSensitive;
+		if (context->argumentCount() >= 4)
+			sensitive = context->argument(3).toBool() ? Qt::CaseSensitive : Qt::CaseInsensitive;
+		// return the asked item from url
+		return engine->newVariant(QVariant(QString(str).lastIndexOf(subStr, from, sensitive)));
 	}
 	else // invalid arguments count
 		return QScriptValue();
