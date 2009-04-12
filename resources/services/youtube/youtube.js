@@ -23,7 +23,6 @@
 *
 */
 
-/* Function called on load plugin */
 function RegistVideoService()
 {
 	this.version = "1.0.0";
@@ -36,13 +35,11 @@ function RegistVideoService()
 	this.musicSite = false;
 }
 
-/* Function called when the xVST will need to resolve the video URL */
 function getVideoInformation(url)
 {
-	const URL_YOUTBE  = "http://youtube.com/watch?v=%1";
+	const URL_YOUTBE  = "http://www.youtube.com/watch?v=%1";
 	const URL_GET_FLV = "http://%1/get_video?video_id=%2&t=%3&fmt=%4";
-	const STD_VIDEO_RES = 34;
-	const HD_VIDEO_RES  = 22;
+	const HD_VIDEO_RES  = "22";
 	// init result
 	var result = new VideoDefinition();
 	// default URL
@@ -61,13 +58,11 @@ function getVideoInformation(url)
 	var vidID =  getUrlParam(youTubeURL, "v");
 	var vidHash = copyBetween(html, "\"t\": \"", "\"");
 	// check if a HD version is aviable
-	var vidRes = STD_VIDEO_RES;
-	if (html.indexOf("var isHDAvailable = true;") != -1)
-	{
-		vidRes = HD_VIDEO_RES;
-		// for HD videos the extension is mp4
+	//var vidRes = STD_VIDEO_RES;
+	vidRes = copyBetween(html, "\"fmt_map\": \"", "/");
+	// check if is a HD_VIDEO_RES
+	if (vidRes == HD_VIDEO_RES) // for HD videos the extension is mp4
 		result.extension = ".mp4";
-	}
 	// get the video title
 	result.title = copyBetween(html, "<title>YouTube - ", "</title>");
 	// build the video url
@@ -78,7 +73,6 @@ function getVideoInformation(url)
 	return result;
 }
 
-/* Function called when the xVST will need to get the video service icon */
 function getVideoServiceIcon()
 {
 	return new Array(

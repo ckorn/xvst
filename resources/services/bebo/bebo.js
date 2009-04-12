@@ -37,24 +37,42 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_PREXML = "http://www.motionbox.com/external/hd_player/type=hd,video_uid=%1,autoPlay=true";
-	const URL_GET_XML = "http://www.motionbox.com/v1/videos/%1/player_manifest.xml?api_privacy_token=%2&country%5Fcode=US&referrer=%3";
-	// init result
-	var result = new VideoDefinition();
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// check if is a embeded youtube video
+	if (strIndexOf(html, "http://www.youtube.com/") != -1)
+		return getVideoFromYoutube(html);
+	else if (strIndexOf(html, "http://www.motionbox.com/") != -1) // check if is a embeded motionbox video
+		return getVideoFromMotionbox(html);
+	else // unknown video source
+		return new VideoDefinition();
+}
+
+function getVideoFromYoutube(html)
+{
+	// check if youtube plugin is installed
 	if (isPluginInstalled("youtube") == true)
 	{
 		var youtubeUrl = copyBetween(html, "http://www.youtube.com/", "&quot;");
 		return executePlugin("youtube", "http://www.youtube.com/" + youtubeUrl);
 	}
+	else // youtube plugin not installed
+		return new VideoDefinition();
+}
+
+function getVideoFromMotionbox(html)
+{
+	const URL_GET_PREXML = "http://www.motionbox.com/external/hd_player/type=hd,video_uid=%1,autoPlay=true";
+	const URL_GET_XML = "http://www.motionbox.com/v1/videos/%1/player_manifest.xml?api_privacy_token=%2&country%5Fcode=US&referrer=%3";
+	// init result
+	var result = new VideoDefinition();
 	// get the video title
 	result.title = copyBetween(html, "<h3>", "</h3>");
 	// get video_uid
 	var video_uid = copyBetween(html, "mbox_player_", "&");
-	// download xml
+	// download pre-xml
+	var http = new Http();
 	var preXml = http.downloadWebpage(strFormat(URL_GET_PREXML, video_uid));
 	// get api_privacy_token
 	var api_privacy_token = copyBetween(preXml, "api_privacy_token%3D", "\"");

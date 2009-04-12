@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+this.version = "1.0.0";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.aniboom.com/";
@@ -37,7 +37,7 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-    const URL_GET_FLV = "http://media.aniboom.com/http/%1.flv";
+	const URL_GET_FLV = "http://media.aniboom.com/http/%1.flv";
 	// init result
 	var result = new VideoDefinition();
 	// download webpage
@@ -45,7 +45,7 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(url);
 	// get the video ID
 	var vidID = copyBetween(html,"playerAnimationID = \"","\"");
-    // get the video title
+	// get the video title
 	result.title = copyBetween(html, "class=\"aboveTitle\"><b>", "</b>");
 	// build the video url
 	result.URL = strFormat(URL_GET_FLV, vidID);
