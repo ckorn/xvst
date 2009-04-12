@@ -374,6 +374,8 @@ VideoInformation* VideoInformation::getLastVideoInformationInstance()
 VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformation, QString videoServicePath)
 {
 	setObjectName("VideoInformationPlugin");
+	// set the plugin owner
+	this->owner = videoInformation;
 	// inits
 	loaded = false;
 	icon = new QPixmap();
@@ -482,6 +484,40 @@ void VideoInformationPlugin::fromScriptValue_VideoDefinition(const QScriptValue 
 	vd.cookies = obj.property("cookies").toString();
 }
 
+QScriptValue VideoInformationPlugin::func_isPluginInstalled(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 1)
+	{
+		// get params
+		QString id = context->argument(0).toString();
+		// get this plugin is installed
+		bool installed = VideoInformation::getLastVideoInformationInstance()->getRegisteredPlugin(id + ".js", true) != NULL;
+		// return the asked item from url
+		return engine->newVariant(QVariant(installed));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue VideoInformationPlugin::func_executePlugin(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 2)
+	{
+		// get params
+		QString id = context->argument(0).toString();
+		QString url = context->argument(1).toString();
+		// create a temporal VideoItem
+		VideoInformationPlugin *plugin = VideoInformation::getLastVideoInformationInstance()->getRegisteredPlugin(id + ".js", true);
+		// is it registered?
+		if (plugin != NULL)
+			return engine->toScriptValue(plugin->getVideoInformation(url));
+		else // plugin is not installed
+			return QScriptValue();
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
 VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 {
 	VideoDefinition result;
@@ -496,6 +532,14 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	qScriptRegisterMetaType(engine, toScriptValue_VideoDefinition, fromScriptValue_VideoDefinition);
 	QScriptValue ctor_VidDef = engine->newFunction(create_VideoDefinition);
 	engine->globalObject().setProperty("VideoDefinition", ctor_VidDef);
+
+	// regist isPluginInstalled(id) function
+	QScriptValue _isPluginInstalled = engine->newFunction(func_isPluginInstalled);
+	engine->globalObject().setProperty("isPluginInstalled", _isPluginInstalled);
+
+	// regist executePlugin(id,url) function
+	QScriptValue _executePlugin = engine->newFunction(func_executePlugin);
+	engine->globalObject().setProperty("executePlugin", _executePlugin);
 
 	// create and regist the script tools class
 	ToolsScriptClass *toolsClass = new ToolsScriptClass(engine);

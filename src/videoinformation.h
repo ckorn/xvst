@@ -49,6 +49,7 @@ class VideoInformationPlugin : public QObject
 {
 Q_OBJECT
 	private:
+		VideoInformation *owner;	//<! Plugin owner
 		QString scriptCode;			//<! Plugin source code
 		QString version;			//<! Plugin version
 		QString minVersion;			//<! Min xVST version to run
@@ -67,6 +68,9 @@ Q_OBJECT
 		static QScriptValue create_VideoDefinition(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue toScriptValue_VideoDefinition(QScriptEngine *engine, const VideoDefinition &vd);
 		static void fromScriptValue_VideoDefinition(const QScriptValue &obj, VideoDefinition &vd);
+		/* Plugins executer */
+		static QScriptValue func_isPluginInstalled(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_executePlugin(QScriptContext *context, QScriptEngine *engine);
 	public:
 		/*! Class constructor */
 		VideoInformationPlugin(VideoInformation *videoInformation, QString videoServicePath);
