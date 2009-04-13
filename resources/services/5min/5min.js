@@ -23,7 +23,6 @@
 *
 */
 
-/* Function called on load plugin */
 function RegistVideoService()
 {
 	this.version = "1.0.0";
@@ -36,7 +35,6 @@ function RegistVideoService()
 	this.musicSite = false;
 }
 
-/* Function called when the xVST will need to resolve the video URL */
 function getVideoInformation(url)
 {
 	const URL_GET_XML = "http://www.5min.com/handlers/smartplayerhandler.ashx?autoStart=None&sid=0&isEmbed=false&videoID=%1&overlay=None&func=InitializePlayer&referrerURL=none";
@@ -59,7 +57,6 @@ function getVideoInformation(url)
 	return result;
 }
 
-/* Function called when the xVST will need to get the video service icon */
 function getVideoServiceIcon()
 {
 	return new Array(
