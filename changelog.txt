@@ -44,6 +44,7 @@
 	- Removed Lulu.tv: Website closed (now is lulu.com and its a shopping site)
 	- Removed ZanyVideos: Videos are not publics
 	- Removed Zaable: Now is a strange website (videos seems to be privates)
+	- Removed Broadcaster: Website closed
 
 Linux:
 ------
