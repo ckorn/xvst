@@ -51,7 +51,7 @@ function getVideoInformation(url)
 	result.title = strReplace(result.title, "- Channel", "");
 	// get video ID (from the URL)
 	var cid = getToken(url, "/", getTokenCount(url, "/") - 2);
-	// ge T parameter
+	// get T parameter
 	var T = copyBetween(html, "rel=\"videothumbnail\"", "/>");
 	T = copyBetween(T, "livevideo.com", "\"");
 	// get path parameter
