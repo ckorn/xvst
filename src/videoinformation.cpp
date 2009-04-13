@@ -408,7 +408,7 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 				ID = engine->globalObject().property("ID").toString();
 				caption = engine->globalObject().property("caption").toString();
 				adultContent = engine->globalObject().property("adultContent").toBool();
-				musicSite = engine->globalObject().property("isMusicSite").toBool();
+				musicSite = engine->globalObject().property("musicSite").toBool();
 				// validate if all main information is assigned
 				loaded = !version.isEmpty() && !minVersion.isEmpty() && !ID.isEmpty() && !caption.isEmpty();
 				// if this plugin has been loaded, then try to load the service icon
