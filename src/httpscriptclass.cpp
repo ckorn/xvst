@@ -24,9 +24,19 @@ QString HttpScriptPrototype::downloadWebpage(const QString URL, bool isUtf8)
 	return thisHttp()->downloadWebpage(QUrl(URL), isUtf8);
 }
 
+QString HttpScriptPrototype::downloadWebpageEx(const QString URL, bool url_tolerantMode, bool isUtf8)
+{
+	return thisHttp()->downloadWebpage(QUrl(URL, url_tolerantMode ? QUrl::TolerantMode : QUrl::StrictMode), isUtf8);
+}
+
 QString HttpScriptPrototype::downloadWebpagePost(const QString URL, QString parameters, bool isUtf8)
 {
 	return thisHttp()->downloadWebpagePost(QUrl(URL), parameters, isUtf8);
+}
+
+QString HttpScriptPrototype::downloadWebpagePostEx(const QString URL, QString parameters, bool url_tolerantMode, bool isUtf8)
+{
+	return thisHttp()->downloadWebpagePost(QUrl(URL, url_tolerantMode ? QUrl::TolerantMode : QUrl::StrictMode), parameters, isUtf8);
 }
 
 void HttpScriptPrototype::addCookie(QString cookie)

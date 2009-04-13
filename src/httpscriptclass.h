@@ -11,12 +11,15 @@ class HttpScriptPrototype : public QObject, public QScriptable
 Q_OBJECT
 	private:
 		Http *thisHttp() const;
+		bool url_tolerantMode;
 	public:
 		HttpScriptPrototype(QObject *parent = 0);
 		~HttpScriptPrototype();
 	public slots:
 		QString downloadWebpage(const QString URL, bool isUtf8 = true);
+		QString downloadWebpageEx(const QString URL, bool url_tolerantMode, bool isUtf8 = true);
 		QString downloadWebpagePost(const QString URL, QString parameters, bool isUtf8 = true);
+		QString downloadWebpagePostEx(const QString URL, QString parameters, bool url_tolerantMode, bool isUtf8 = true);
 		void addCookie(QString cookie);
 		void addCookies(QString cookies, QString separator);
 		QString getCookies(QString separator);
