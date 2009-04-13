@@ -252,7 +252,7 @@ QScriptValue ToolsScriptClass::func_strFormat(QScriptContext *context, QScriptEn
 	{
 		QString str = context->argument(0).toString();
 		// replace occurrences
-		for (int n = 1; n < context->argumentCount(); n++)
+		for (int n = context->argumentCount() - 1; n > 0; n--)
 			str.replace("%" + QString("%1").arg(n) , context->argument(n).toString());
 		// return final string
 		return engine->newVariant(QVariant(str));
