@@ -51,6 +51,18 @@ ToolsScriptClass::ToolsScriptClass(QScriptEngine *engine)
 	// regist strFormat(str,...) function
 	QScriptValue _strFormat = engine->newFunction(func_strFormat);
 	engine->globalObject().setProperty("strFormat", _strFormat);
+
+	// regist getMd4(str) function
+	QScriptValue _getMd4 = engine->newFunction(func_getMd4);
+	engine->globalObject().setProperty("getMd4", _getMd4);
+
+	// regist getMd5(str) function
+	QScriptValue _getMd5 = engine->newFunction(func_getMd5);
+	engine->globalObject().setProperty("getMd5", _getMd5);
+
+	// regist getMd5(str) function
+	QScriptValue _getSha1 = engine->newFunction(func_getSha1);
+	engine->globalObject().setProperty("getSha1", _getSha1);
 }
 
 ToolsScriptClass::~ToolsScriptClass()
@@ -129,7 +141,7 @@ QScriptValue ToolsScriptClass::func_getToken(QScriptContext *context, QScriptEng
 
 QScriptValue ToolsScriptClass::func_getTokenCount(QScriptContext *context, QScriptEngine *engine)
 {
-	if (context->argumentCount() == 3)
+	if (context->argumentCount() == 2)
 	{
 		// get params
 		QString str = context->argument(0).toString();
@@ -244,6 +256,48 @@ QScriptValue ToolsScriptClass::func_strFormat(QScriptContext *context, QScriptEn
 			str.replace("%" + QString("%1").arg(n) , context->argument(n).toString());
 		// return final string
 		return engine->newVariant(QVariant(str));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_getMd4(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 1)
+	{
+		QString str = context->argument(0).toString();
+		// create crypto class
+		QString md4 = QCryptographicHash::hash(str.toAscii(), QCryptographicHash::Md4).toHex();
+		// return calculated hash
+		return engine->newVariant(QVariant(md4));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_getMd5(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 1)
+	{
+		QString str = context->argument(0).toString();
+		// create crypto class
+		QString md5 = QCryptographicHash::hash(str.toAscii(), QCryptographicHash::Md5).toHex();
+		// return calculated hash
+		return engine->newVariant(QVariant(md5));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_getSha1(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 1)
+	{
+		QString str = context->argument(0).toString();
+		// create crypto class
+		QString sha1 = QCryptographicHash::hash(str.toAscii(), QCryptographicHash::Sha1).toHex();
+		// return calculated hash
+		return engine->newVariant(QVariant(sha1));
 	}
 	else // invalid arguments count
 		return QScriptValue();
