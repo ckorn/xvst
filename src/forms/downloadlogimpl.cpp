@@ -29,7 +29,9 @@ DownloadLogImpl::DownloadLogImpl(QWidget * parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {
 	setupUi(this);
-
+#ifdef Q_WS_MAC
+	resize(900, 450);
+#endif
 	// add the headers
 	QStringList headers;
 	headers << tr("Date/Time") << tr("Video Title") << tr("URL");
@@ -38,6 +40,8 @@ DownloadLogImpl::DownloadLogImpl(QWidget * parent, Qt::WFlags f)
 	QHeaderView *header = lsvLog->header();
 	header->resizeSection(0, 150);
 	header->resizeSection(1, 250);
+	// connect signals
+	connect(lsvLog, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(itemDoubleClicked(QTreeWidgetItem*, int)));
 }
 
 void DownloadLogImpl::buildLog(QList<LogEntry> logEntries, VideoInformation *videoInformation)
@@ -58,6 +62,11 @@ void DownloadLogImpl::buildLog(QList<LogEntry> logEntries, VideoInformation *vid
 	}
 	// sort list
 	lsvLog->sortItems(0, Qt::AscendingOrder);
+}
+
+void DownloadLogImpl::itemDoubleClicked(QTreeWidgetItem *item, int column)
+{
+	QDesktopServices::openUrl(item->text(2));
 }
 //
 

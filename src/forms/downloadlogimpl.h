@@ -32,6 +32,7 @@
 //
 #include "../sessionmanager.h"
 #include "../videoinformation.h"
+#include "../tools.h"
 //
 class LogTreeWidgetItem : public QTreeWidgetItem
 {
@@ -55,6 +56,8 @@ Q_OBJECT
 		DownloadLogImpl( QWidget * parent = 0, Qt::WFlags f = Qt::WindowMaximizeButtonHint );
 		/*! Display the downloads log */
 		void buildLog(QList<LogEntry> logEntries, VideoInformation *videoInformation);
+	private slots:
+		void itemDoubleClicked(QTreeWidgetItem *item, int column);
 };
 #endif
 

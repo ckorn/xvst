@@ -14,6 +14,7 @@
 - Added embeded checking for updates at startup
 - Added the possibility to set a custom conversion configuration on add a new video
 - Added sorting for "Downloads log" list (now is sorted from old to new downloads)
+- Added possibility to open urls (double click) in "Downloads log" list
 - Added Paypal donate button in main window
 - Added two new formats to convert:
 	- MP4 (*.mp4) format
@@ -39,12 +40,14 @@
 - Revised all services:
 	- Added HD videos for Youtube
 	- Added HD videos for GameSpot
+	- Added Tangle.com (before GodTube)
 	- Removed Sclipo: Videos are not publics
 	- Removed Stage6: Website closed
 	- Removed Lulu.tv: Website closed (now is lulu.com and its a shopping site)
 	- Removed ZanyVideos: Videos are not publics
 	- Removed Zaable: Now is a strange website (videos seems to be privates)
 	- Removed Broadcaster: Website closed
+	- Removed GodTube: Website changed to Tangle
 
 Linux:
 ------
@@ -67,6 +70,7 @@ MacOS X:
 --------
 
 - Added ffmpeg internal detection
+- Resized all windows for better user experience
 - Configuration file for MacOS X is now: /Users/{User}/Preferences
 - All configuration files are now PLIST's
 
