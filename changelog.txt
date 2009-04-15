@@ -48,6 +48,7 @@
 	- Removed Zaable: Now is a strange website (videos seems to be privates)
 	- Removed Broadcaster: Website closed
 	- Removed GodTube: Website changed to Tangle
+	- Removed ZippyVideos: Website seems to be down
 
 Linux:
 ------
