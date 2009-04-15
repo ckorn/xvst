@@ -38,6 +38,9 @@ VideoInformation::VideoInformation(QString pluginsDir)
 	blockAdultContent = false;
 	// update lastThis reference
 	lastVideoInformationInstance = this;
+	// create plugins catcher
+	faviconsCatcher = new VideoInformationPluginIconsCatcher(this);
+	faviconsCatcher->downloadFavicons();
 }
 
 VideoInformation::~VideoInformation()
@@ -48,6 +51,8 @@ VideoInformation::~VideoInformation()
 //	while (isRunning()) { /* do nothing, just wait... */ };
 	if (isRunning())
 		quit();
+	// abort plugins image catcher
+	delete faviconsCatcher;
 	// remove loaded plugins
 	clearPlugins();
 	// destroy plugins container
@@ -56,7 +61,7 @@ VideoInformation::~VideoInformation()
 
 bool VideoInformation::validItemIndex(const int index)
 {
-	return (index >= 0 && index < getPluginsCount());
+	return (index >= 0 && index < pluginsCount());
 }
 
 void VideoInformation::clearPlugins()
@@ -68,7 +73,7 @@ void VideoInformation::clearPlugins()
 VideoInformationPlugin *VideoInformation::getPluginByHost(QUrl URL)
 {
 	QString host = URL.host().isEmpty() ? URL.toString() : URL.host();
-	for (int n = 0; n < getPluginsCount(); n++)
+	for (int n = 0; n < pluginsCount(); n++)
 		if (plugins->at(n)->isLikeMyId(host))
 			return plugins->at(n);
 	// not found
@@ -163,7 +168,7 @@ QStringList VideoInformation::getPluginsList(bool asCaptions)
 {
 	QStringList results;
 
-	for (int n = 0; n < getPluginsCount(); n++)
+	for (int n = 0; n < pluginsCount(); n++)
 		results << (asCaptions ? plugins->at(n)->getCaption() : plugins->at(n)->getID());
 
 	return results;
@@ -173,7 +178,7 @@ QStringList VideoInformation::getPluginsCompleteList(const QString separator)
 {
 	QStringList results;
 
-	for (int n = 0; n < getPluginsCount(); n++)
+	for (int n = 0; n < pluginsCount(); n++)
 		results << plugins->at(n)->getID() + separator + plugins->at(n)->getCaption();
 
 	return results;
@@ -218,11 +223,6 @@ QList<VideoInformationPlugin*> VideoInformation::getAllMusicPlugins() const
 	return result;
 }
 
-int VideoInformation::getPluginsCount()
-{
-	return plugins->count();
-}
-
 void VideoInformation::getVideoInformation(VideoItem *videoItem)
 {
 	if (videoItem == NULL || isGettingInfo()) return;
@@ -231,9 +231,9 @@ void VideoInformation::getVideoInformation(VideoItem *videoItem)
 	this->start();
 }
 
-int VideoInformation::pluginsCount()
+int VideoInformation::pluginsCount() const
 {
-	return plugins->count();
+	return plugins->size();
 }
 
 bool VideoInformation::hasPlugins()
@@ -369,6 +369,59 @@ VideoInformation* VideoInformation::getLastVideoInformationInstance()
 	return lastVideoInformationInstance;
 }
 
+// VideoInformationPluginIconsCatcher class
+
+VideoInformationPluginIconsCatcher::VideoInformationPluginIconsCatcher(VideoInformation *videoInformation)
+{
+	this->videoInformation = videoInformation;
+	plugins = new QList<VideoInformationPlugin *>;
+	http = new Http();
+	// connect signals
+	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
+	connect(http, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
+}
+
+VideoInformationPluginIconsCatcher::~VideoInformationPluginIconsCatcher()
+{
+	delete http;
+	delete plugins;
+}
+
+void VideoInformationPluginIconsCatcher::downloadFavicons()
+{
+	plugins->clear();
+	// fill plugins
+	for (int n = 0; n < videoInformation->pluginsCount(); n++)
+		if (videoInformation->getRegisteredPlugin(n)->getIcon()->isNull() && videoInformation->getRegisteredPlugin(n)->useOnlineFavicon())
+			plugins->append(videoInformation->getRegisteredPlugin(n));
+	// start to download favicons
+	QTimer::singleShot(50, this, SLOT(downloadNextFavicon()));
+}
+
+void VideoInformationPluginIconsCatcher::downloadNextFavicon()
+{
+	// has plguins to download his favicon?
+	if (!plugins->isEmpty())
+	{
+		QFileInfo fileInfo(plugins->first()->getScriptFile(false));
+		http->download(plugins->first()->getFaviconUrl(), fileInfo.absolutePath() + PLUGINS_IMAGE_DIR, fileInfo.baseName(), false);
+	}
+}
+
+void VideoInformationPluginIconsCatcher::downloadFinished(const QFileInfo)
+{
+	plugins->takeFirst()->reloadIcon();
+	// download next favicon
+	QTimer::singleShot(50, this, SLOT(downloadNextFavicon()));
+}
+
+void VideoInformationPluginIconsCatcher::downloadError(int)
+{
+	plugins->removeFirst();
+	// download next favicon
+	QTimer::singleShot(50, this, SLOT(downloadNextFavicon()));
+}
+
 // VideoInformationPlugin class
 
 VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformation, QString videoServicePath)
@@ -379,7 +432,8 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 	// inits
 	loaded = false;
 	icon = new QPixmap();
-	this->videoServicePath = videoServicePath;
+	onlineFaviconUrl = "";
+	pluginFilePath = videoServicePath;
 	// load js code
 	QFile scriptFile(videoServicePath);
 	if (scriptFile.exists())
@@ -431,6 +485,12 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 							for (int n = 0; n < intData.size(); n++) byteArray.append(intData.at(n));
 							// load the serivce icon from the QByteArray
 							icon->loadFromData(byteArray);
+						}
+						else if (hexData.isString()) // check if is an string (favicon url)
+						{
+							onlineFaviconUrl = hexData.toString();
+							// try to load icon plugin
+							reloadIcon();
 						}
 					}
 				}
@@ -589,10 +649,10 @@ void VideoInformationPlugin::abortExecution()
 QString VideoInformationPlugin::getScriptFile(const bool onlyName) const
 {
 	if (!onlyName)
-		return videoServicePath;
+		return pluginFilePath;
 	else
 	{
-		QFileInfo fileInf(videoServicePath);
+		QFileInfo fileInf(pluginFilePath);
 		return fileInf.fileName();
 	}
 }
@@ -640,6 +700,28 @@ bool VideoInformationPlugin::isMusicSite() const
 QPixmap *VideoInformationPlugin::getIcon() const
 {
 	return icon;
+}
+
+bool VideoInformationPlugin::useOnlineFavicon() const
+{
+	return !onlineFaviconUrl.isEmpty();
+}
+
+QString VideoInformationPlugin::getFaviconUrl() const
+{
+	return onlineFaviconUrl;
+}
+
+void VideoInformationPlugin::reloadIcon()
+{
+	if (icon->isNull())
+	{
+		if (useOnlineFavicon())
+		{
+			QFileInfo fileInfo(pluginFilePath);
+			icon->load(fileInfo.absolutePath() + PLUGINS_IMAGE_DIR + fileInfo.baseName());
+		}
+	}
 }
 
 bool VideoInformationPlugin::isLoaded() const
