@@ -1,0 +1,77 @@
+/*
+*
+* This file is part of xVideoServiceThief,
+* an open-source cross-platform Video service download
+*
+* Copyright (C) 2007 - 2009 Xesc & Technology
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with xVideoServiceThief. If not, see <http://www.gnu.org/licenses/>.
+*
+* Contact e-mail: Xesc <xeskuu.xvst@gmail.com>
+* Program URL   : http://xviservicethief.sourceforge.net/
+*
+*/
+
+function RegistVideoService()
+{
+	this.version = "1.0.0";
+	this.minVersion = "2.0.0a";
+	this.author = "Xesc & Technology 2009";
+	this.website = "http://video.yahoo.com/";
+	this.ID = "video.yahoo.com";
+	this.caption = "Yahoo Video";
+	this.adultContent = false;
+	this.musicSite = false;
+}
+
+function getVideoInformation(url)
+{
+	const URL_GET_XML = "http://cosmos.bcst.yahoo.com/up/yep/process/getPlaylistFOP.php?node_id=%1&tech=flash&mode=playlist&bitrate=300&null&rd=video.yahoo.com&tk=null";
+	// init result
+	var result = new VideoDefinition();
+	// download webpage
+	var http = new Http();
+	var html = http.downloadWebpage(url);
+	// get video title
+	result.title = copyBetween(html, "<meta name=\"title\" content=\"", "\"");
+	// if we didn't get a title, try to get the channel video title
+	if (result.title == "")
+		result.title = copyBetween(html, "<h2 id=\"nvi_title\">", "</h2>");
+	// get the node_id
+	var node_id = copyBetween(html, "so.addVariable(\"id\", \"", "\"");
+	// download xml
+	var xml = http.downloadWebpage(strFormat(URL_GET_XML, node_id));
+	// get video host and path
+	var host = copyBetween(xml, "<STREAM APP=\"", "\"");
+	var path = copyBetween(xml, "FULLPATH=\"", "\"");
+	// set video URL
+	result.URL = strReplace(host + path, "&amp;", "&");
+	// return the video information
+	return result;
+}
+
+function getVideoServiceIcon()
+{
+	return new Array(
+		0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a,0x00,0x00,0x00,0x0d,0x49,0x48,0x44,0x52,
+		0x00,0x00,0x00,0x10,0x00,0x00,0x00,0x10,0x08,0x06,0x00,0x00,0x00,0x1f,0xf3,0xff,
+		0x61,0x00,0x00,0x00,0x61,0x49,0x44,0x41,0x54,0x78,0x9c,0xed,0x52,0x41,0x0e,0xc0,
+		0x30,0x08,0x82,0xfd,0xff,0xcf,0xee,0xb2,0x36,0x8c,0xe1,0x3c,0x2f,0x19,0x97,0x26,
+		0x8a,0x80,0xa6,0xc0,0x0f,0x16,0x50,0x6d,0x13,0xe0,0x28,0x70,0xbd,0x55,0xa1,0x38,
+		0x19,0x18,0x17,0x50,0xb2,0xba,0xaf,0x3a,0x83,0xe8,0xd1,0x45,0x5e,0x24,0x1f,0x76,
+		0xf7,0xb8,0xa3,0xc7,0xd6,0x61,0x4b,0x79,0x4f,0x90,0x92,0x24,0x67,0xad,0x47,0x81,
+		0x37,0x10,0xa0,0x8a,0x3e,0x94,0xbb,0xab,0x53,0x8e,0x17,0x12,0xba,0x46,0x67,0xbe,
+		0xfb,0xe3,0xff,0xf8,0x10,0x4e,0xfb,0x36,0x1a,0x13,0xe7,0x2d,0x61,0x58,0x00,0x00,
+		0x00,0x00,0x49,0x45,0x4e,0x44,0xae,0x42,0x60,0x82);
+}
