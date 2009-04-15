@@ -82,7 +82,7 @@ void InformationImpl::buildVideoServicesList(VideoInformation *videoInformation)
 	QList<VideoInformationPlugin*> musicPlugins = videoInformation->getAllMusicPlugins();
 	// generate html
 	QString html;
-	html += tr("<p>Total websites supported (plugins installed): <strong>%1</strong></p>").arg(videoInformation->getPluginsCount());
+	html += tr("<p>Total websites supported (plugins installed): <strong>%1</strong></p>").arg(videoInformation->pluginsCount());
 	html += getPluginsAsHtml(tr(""), standardPlugins);
 	html += getPluginsAsHtml(tr("Adult web sites:"), adultPlugins);
 	html += getPluginsAsHtml(tr("Music web sites:"), musicPlugins);
