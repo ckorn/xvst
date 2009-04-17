@@ -124,7 +124,4 @@ win32 {
     RC_FILE += resources/xVST.rc
     OBJECTS_DIR += build/o/win32
 }
-
-eval($$[build_mode] = static_build) {
-     DEFINES += STATIC_BUILD
-}
+eval($$[build_mode] = static_build):DEFINES += STATIC_BUILD
