@@ -51,7 +51,13 @@ type
     Line: Integer; //< Start line
   end;
 
+  { List of string parameters }
+  TParams = Array of String;
+
   { Run scripts class }
+
+  { TxUpdater }
+
   TxUpdater = class
     private
       FUpdateFilePath: String;   //< file with update instructions
@@ -70,11 +76,13 @@ type
       { Execute the Script }
       procedure ExecuteUpdateScript;
       { Execute Order }
-      function ExecuteOrder(Order, Pararms: String): Boolean;
+      function ExecuteOrder(Order, Params: String): Boolean;
       { Go to the next "End" or "Else" }
       procedure GetEndOrElse;
       { Get the Block record by Block Id }
       function GetBlockByName(Name: String; var BlockID: TBlockID): Boolean;
+      { Get an array of params }
+      function GetParams(Params: String): TParams;
     public
       { TxUpdater Class constructor }
       constructor Create(UpdateFile: String);
@@ -102,7 +110,7 @@ implementation
       del "file"
       copy "file"
       rename "file"
-      exec "application"
+      exec "application" wait { the wait command is optional }
       run "update script" { run another update script }
       install "file" "destination"
       wait MILISECONDS
@@ -111,6 +119,7 @@ implementation
       rmdir "dir"
       mkdir "dir"
       mkdirs "dir"
+      echo "message"
 
       if ORDER "file"
         ORDER
@@ -149,20 +158,36 @@ begin
   inherited Destroy;
 end;
 
-function TxUpdater.ExecuteOrder(Order, Pararms: String): Boolean;
+function TxUpdater.ExecuteOrder(Order, Params: String): Boolean;
 var
-  Pararm01, Pararm02: String;
+  Param01, Param02: String;
+  Parameters: TParams;
   BlockID: TBlockID;
   Value: Integer;
   SubUpdaterScript: TxUpdater;
 
+  { Get a parameter value }
+  function GetParam(Index: Integer): String;
+  begin
+    if Parameters <> nil then
+      if Index in [0..Length(Parameters)] then  // get parameter
+        Result:=Parameters[Index]
+      else // empty param
+        Result:=''
+    else // empty param
+      Result:='';
+  end;
+
 begin
   Result:=False;
+  // get function params
+  Parameters:=GetParams(Params);
+  // get order
   case isReservedWord(Order) of
     {goto}
     1:  begin
-          Pararm01:=GetToken(Pararms, ' ', 2);
-          if GetBlockByName(Pararm01, BlockID) then
+          Param01:=GetToken(Params, ' ', 2);
+          if GetBlockByName(Param01, BlockID) then
             begin
               Fline:=BlockID.Line;
               FIsInIf:=False;
@@ -170,36 +195,31 @@ begin
             end;
         end;
     {del}
-    2:  begin
-          Pararm01:=GetToken(Pararms, '"', 2);
-          Result:=DeleteFile(Pararm01);
-        end;
+    2: Result:=DeleteFile(GetParam(0));
     {copy}
     3:  begin
-          Pararm01:=GetToken(Pararms, '"', 2);
-          Pararm02:=GetToken(Pararms, '"', 4);
 {$IFNDEF FPC}
-          Result:=CopyFile(PChar(Pararm01), PChar(Pararm02), False);
+          Result:=CopyFile(PChar(GetParam(0)), PChar(GetParam(1)), False);
 {$ELSE}
-          Result:=CopyFile(Pararm01, Pararm02);
+          Result:=CopyFile(GetParam(0), GetParam(1));
 {$ENDIF}
         end;
     {rename}
-    4:  begin
-          Pararm01:=GetToken(Pararms, '"', 2);
-          Pararm02:=GetToken(Pararms, '"', 4);
-          Result:=RenameFile(Pararm01, Pararm02);
-        end;
+    4: Result:=RenameFile(GetParam(0), GetParam(1));
     {exec}
     5:  begin
-          Pararm01:=GetToken(Pararms, '"', 2);
+          // check if has the "wait" command
+          Param01:=GetToken(Params, ' ', GetTokenCount(Params, ' '));
 {$IFNDEF FPC}
-          Result:=WinExec(PChar(Pararm01), SW_NORMAL) >= 31;
+          if Param01 = 'wait' then
+            Result:=WinExecAndWait32(PChar(GetParam(0)), SW_NORMAL) >= 31
+          else // don't wait
+            Result:=WinExec(PChar(GetParam(0)), SW_NORMAL) >= 31;
 {$ELSE}
           with TProcess.Create(nil) do
             try
-              CommandLine:=Pararm01;
-              Options:=[];
+              CommandLine:=GetParam(0);
+              if Param01 = 'wait' then Options:=[poWaitOnExit] else Options:=[];
               Execute;
             finally
               Free;
@@ -208,10 +228,9 @@ begin
         end;
     {run}
     6:  begin
-          Pararm01:=GetToken(Pararms, '"', 2);
-          if FileExists(Pararm01) then
+          if FileExists(GetParam(0)) then
             begin
-              SubUpdaterScript:=TxUpdater.Create(Pararm01);
+              SubUpdaterScript:=TxUpdater.Create(GetParam(0));
               SubUpdaterScript.Start;
               SubUpdaterScript.Free;
             end;
@@ -219,14 +238,14 @@ begin
     {install}
     7:  begin
 (*
-          Pararm01:=GetToken(Pararms, '"', 2);
-          Pararm02:=GetToken(Pararms, '"', 4);
-          if FileExists(Pararm01) then
+          Param01:=GetToken(Params, '"', 2);
+          Param02:=GetToken(Params, '"', 4);
+          if FileExists(Param01) then
             begin
               Installer:=TPackUnCompress.Create;
               try
-                Installer.OpenPackage(Pararm01);
-                Installer.ExtractAll(Pararm02);
+                Installer.OpenPackage(Param01);
+                Installer.ExtractAll(Param02);
               finally
                 Installer.Free;
               end;
@@ -237,8 +256,8 @@ begin
     8: Fline:=FUpdateFile.Count;
     {wait}
     9:  begin
-          Pararm01:=GetToken(FUpdateFile[FLine], ' ', 2);
-          if TryStrToInt(Pararm01, Value) then
+          Param01:=GetToken(FUpdateFile[FLine], ' ', 2);
+          if TryStrToInt(Param01, Value) then
             begin
               Sleep(Value);
               Result:=True;
@@ -246,17 +265,15 @@ begin
         end;
     {exists}
     10: begin
-          Pararm01:=GetToken(FUpdateFile[FLine], '"', 2);
-          Result:=FileExists(Pararm01); // try file
+          Result:=FileExists(GetParam(0)); // try file
           if not Result then // try folder
-            Result:=DirectoryExists(Pararm01);
+            Result:=DirectoryExists(GetParam(0));
         end;
     {chdir}
     11: begin
-          Pararm01:=GetToken(FUpdateFile[FLine], '"', 2);
-          if DirectoryExists(Pararm01) then
+          if DirectoryExists(GetParam(0)) then
             begin
-              ChDir(Pararm01);
+              ChDir(GetParam(0));
               Result:=True;
             end
           else
@@ -264,10 +281,9 @@ begin
         end;
     {rmdir}
     12: begin
-          Pararm01:=GetToken(FUpdateFile[FLine], '"', 2);
-          if DirectoryExists(Pararm01) then
+          if DirectoryExists(GetParam(0)) then
             begin
-              RmDir(Pararm01);
+              RmDir(GetParam(0));
               Result:=True;
             end
           else
@@ -275,10 +291,9 @@ begin
         end;
     {mkdir}
     13: begin
-          Pararm01:=GetToken(FUpdateFile[FLine], '"', 2);
-          if not DirectoryExists(Pararm01) then
+          if not DirectoryExists(GetParam(0)) then
             begin
-              MkDir(Pararm01);
+              MkDir(GetParam(0));
               Result:=True;
             end
           else
@@ -286,15 +301,16 @@ begin
         end;
     {mkdirs}
     14: begin
-          Pararm01:=GetToken(FUpdateFile[FLine], '"', 2);
-          if not DirectoryExists(Pararm01) then
+          if not DirectoryExists(GetParam(0)) then
             begin
-              ForceDirectories(Pararm01);
+              ForceDirectories(GetParam(0));
               Result:=True;
             end
           else
             Result:=False;
         end;
+    {echo}
+    15: WriteLn(GetParam(0));
   end;
 end;
 
@@ -302,7 +318,7 @@ procedure TxUpdater.ExecuteUpdateScript;
 var
   Count: Integer;
   isEnd: Boolean;
-  KeyWord, Order, Pararms: String;
+  KeyWord, Order, Params: String;
 
 begin
   Count:=FUpdateFile.Count;
@@ -337,10 +353,10 @@ begin
                       if KeyWord = 'if' then  // is if
                         begin
                           FIsInIf:=True;
-                          Pararms:=FUpdateFile[Fline];
-                          Delete(Pararms, 1, Pos(' ', Pararms));
-                          Order:=GetToken(Pararms, ' ', 1);
-                          if not ExecuteOrder(Order, Pararms) then // if = false
+                          Params:=FUpdateFile[Fline];
+                          Delete(Params, 1, Pos(' ', Params));
+                          Order:=GetToken(Params, ' ', 1);
+                          if not ExecuteOrder(Order, Params) then // if = false
                             begin
                               GetEndOrElse;
                               if Fline < Count then // isnt out of file
@@ -392,6 +408,49 @@ begin
         Exit;
       end;
   Result:=False;
+end;
+
+function TxUpdater.GetParams(Params: String): TParams;
+var
+  n: Integer;
+  str: String;
+  preChar: Char;
+  opened: Boolean;
+
+begin
+  Result:=nil;
+  str:='';
+  preChar:=#0;
+  opened:=false;
+  Params:=Trim(Params);
+  // get params
+  for n:=1 to Length(Params) do
+    begin
+      if (Params[n] <> '"') and opened then
+        begin
+          str:=str + Params[n];
+          if Params[n] <> '\' then preChar:=#0 else preChar:='\';
+        end
+      else // is a " char
+        if opened then
+          begin
+            if preChar = '\' then // is not a close token
+              begin
+                Delete(str, Length(str), 1); // delete the last char \
+                str:=str + '"';
+              end
+            else // is a close token, so add this new param
+              begin
+                SetLength(Result, Length(Result) + 1);
+                Result[Length(Result) - 1]:=str;
+                str:='';
+                opened:=False;
+              end;
+            preChar:=#0;
+          end
+        else // open new param
+          opened:=Params[n] = '"';
+    end;
 end;
 
 procedure TxUpdater.GetBlocksId;
@@ -447,11 +506,15 @@ begin
   else if KeyWord = 'rmdir'   then Result:=12
   else if KeyWord = 'mkdir'   then Result:=13
   else if KeyWord = 'mkdirs'  then Result:=14
+  else if KeyWord = 'echo'    then Result:=15
   else Result:=0;
 end;
 
 procedure TxUpdater.Start;
 begin
+
+GetParams('"jojo\"pepe\"" "param 2" "\1\\2\\\3\""');
+
   GetBlocksId;
   // Start procces
   ExecuteUpdateScript;      

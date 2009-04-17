@@ -14,7 +14,7 @@ uses
 
 begin
   // about...
-  WriteLn('Xesc & Technology (R) Updater Utility Version 1.0.0.5');
+  WriteLn('Xesc & Technology (R) Updater Utility Version 1.0.0.6');
   WriteLn('Copyright (C) Xesc & Technology Corporation. All rights reserved.');
   // start updater
   if FileExists(ParamStr(1)) then

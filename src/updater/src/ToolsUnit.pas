@@ -92,6 +92,10 @@ uses
   function ApplicationPath: String;
   { Universal Path (fix paths to make it cross-platform) }
   function UniversalPath(const Path: String): String;
+{$IFNDEF FPC}
+  { Execute application and wait to finish }
+  function WinExecAndWait32(Path: PChar; Visibility: Cardinal): Cardinal;
+{$ENDIF}
 
 const
   HTML_Char_Conversion_Table: Array [1..100] of String =
@@ -629,5 +633,31 @@ begin
   // convert windows path delimeters to current path delimiter
   {$IFDEF FPC}AnsiReplaceStr{$ELSE}ReplaceStr{$ENDIF}(Result, '/', PathDelim);
 end;
+
+{$IFNDEF FPC}
+function WinExecAndWait32(Path: PChar; Visibility: Cardinal): Cardinal;
+var
+  WaitResult: Integer;
+  StartupInfo: TStartupInfo;
+  ProcessInfo: TProcessInformation;
+  
+begin
+  FillChar(StartupInfo, SizeOf(TStartupInfo), 0);
+  with StartupInfo do
+    begin
+      cb:=SizeOf(TStartupInfo);
+      dwFlags:=STARTF_USESHOWWINDOW or STARTF_FORCEONFEEDBACK;
+      wShowWindow:=visibility;
+    end;
+    if CreateProcess(nil,path,nil, nil, False, NORMAL_PRIORITY_CLASS, nil, nil,
+		  StartupInfo, ProcessInfo) then
+      begin
+        WaitResult:=WaitForSingleObject(ProcessInfo.hProcess, INFINITE);
+        Result:=WaitResult;
+      end
+    else
+      Result:=GetLastError;
+end;
+{$ENDIF}
 
 end.
