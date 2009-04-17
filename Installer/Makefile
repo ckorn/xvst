@@ -19,12 +19,12 @@
 ################################################################################
 
 NAME=xVideoServiceThief
-VERSION=1-8-3a
+VERSION=2_0_0a
 
-SOURCE_DIR=../bin/
+SOURCE_DIR=../bin/xVST_2_0_0a-release-intel
 SOURCE_FILES=xVideoServiceThief.app
 
-DMG_SIZE=20m
+DMG_SIZE=40m
 
 TEMPLATE_DMG=template.dmg
 
