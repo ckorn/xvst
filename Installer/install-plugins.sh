@@ -4,9 +4,8 @@ PLUGINS_SRC='../resources/services'
 PLUGINS_PRE='../bin/plugins'
 PLUGINS_END='../bin/xVideoServiceThief.app/Contents/Resources/plugins'
 
-echo "$PLUGINS_SRC"
-echo "$PLUGINS_PRE"
-echo "$PLUGINS_END"
+# change to script directory
+cd `dirname "$0"`
 
 # remove plugins cache directory
 if [ -d $PLUGINS_PRE ]; then
