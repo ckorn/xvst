@@ -3,14 +3,18 @@
 # configure DMG
 DMG_NAME='xVST_2_0_0a-intel.dmg'
 DMG_TITLE='xVideoServiceThief'
-DMG_SIZE='30m'
+DMG_SIZE='40m'
+
+# DMG template
+DMG_TEMPLATE='xVST-template.dmg'
+DMG_TEMPLATE_BZ2='xVST-template.dmg.bz2'
 
 # files to copy
-FILES=( 'xVideoServiceThief.app' 'GPL.txt' )
+FILES=( 'xVideoServiceThief.app' )
 
 # configure dirs
 APP_DIR='../bin'
-TMP_DIR='../bin/TMP'
+TMP_DIR='TMP'
 
 # change to script directory
 cd `dirname "$0"`
@@ -30,15 +34,36 @@ remove_temporal_dir
 echo "Creating directory: $TMP_DIR"
 mkdir $TMP_DIR
 
-# copy DMG files to temporal dir
-echo "Copying files to $TMP_DIR"
+# copy DMG compressed templete
+echo "Copying compressed template to: $TMP_DIR"
+cp -v $DMG_TEMPLATE_BZ2 $TMP_DIR
+
+# uncompressing DMG template
+echo "Decompressing DMG template"
+bzip2 -d "$TMP_DIR/$DMG_TEMPLATE_BZ2" -v
+
+# mount DMG template
+echo "Attaching DMG..."
+hdiutil attach "$TMP_DIR/$DMG_TEMPLATE" -noautoopen -mountroot "$TMP_DIR"
+
+# copy files into DMG
+echo "Copying files to $TMP_DIR/$DMG_TITLE"
 for FILE in ${FILES[@]}; do
-	cp -vR $APP_DIR/$FILE $TMP_DIR/$FILE
+	cp -vR $APP_DIR/$FILE $TMP_DIR/$DMG_TITLE
 done
 
-# build DMG
-echo "Creating DMG file"
-hdiutil create -size $DMG_SIZE "$DMG_NAME" -srcfolder "$TMP_DIR" -volname "$DMG_TITLE" -format UDZO -imagekey zlib-level=9
+# unmount DMG
+echo "Detaching DMG..."
+hdiutil detach "$TMP_DIR/$DMG_TITLE" -force
+
+# check if final DMG already exsits
+if [ -a $DMG_NAME ]; then
+	echo "Removing DMG: $DMG_NAME"
+	rm -v $DMG_NAME
+fi
+
+# compress DMG
+hdiutil convert "$TMP_DIR/$DMG_TEMPLATE" -format UDZO -imagekey zlib-level=9 -o "$DMG_NAME"
 
 # remove temporal dir
 remove_temporal_dir
