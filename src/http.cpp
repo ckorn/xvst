@@ -411,8 +411,8 @@ void Http::jumpToURL(QUrl url)
 
 		// set the content type and length
 		header.setContentType("application/x-www-form-urlencoded"); // ** important **
-		header.setContentLength(paramsStr.length());
-	}
+		header.setValue("Content-Length", QString("%1").arg(paramsStr.length()));
+	}	
 
 	// set connection: "keep alive"
 	header.setValue("Connection", "Keep-Alive");
@@ -445,7 +445,10 @@ void Http::jumpToURL(QUrl url)
 	tmrTimeOut.stop();
 
 	// send the request header
-	httpGetId = http->request(header, paramsStr, file);
+	if (postMethodFlag) // post
+		httpGetId = http->request(header, paramsStr, file);
+	else // get
+		httpGetId = http->request(header, NULL, file);
 
 	// time out controller
 	// prepare the timer for possible timeout
