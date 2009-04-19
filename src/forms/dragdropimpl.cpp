@@ -1,33 +1,32 @@
 /*
-*
-* This file is part of xVideoServiceThief, 
-* an open-source cross-platform Video service download
-*
-* Copyright (C) 2007 - 2008 Xesc & Technology
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with xVideoServiceThief. If not, see <http://www.gnu.org/licenses/>.
-*
-* Contact e-mail: Xesc <xeskuu.xvst@gmail.com>
-* Program URL   : http://xviservicethief.sourceforge.net/
-*
-*/
-
+ *
+ * This file is part of xVideoServiceThief,
+ * an open-source cross-platform Video service download
+ *
+ * Copyright (C) 2007 - 2008 Xesc & Technology
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with xVideoServiceThief. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Contact e-mail: Xesc <xeskuu.xvst@gmail.com>
+ * Program URL : http://xviservicethief.sourceforge.net/
+ *
+ */
 #include "dragdropimpl.h"
 //
 DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *videoList,
-                           QWidget * parent, Qt::WFlags f)
-		: QWidget(parent, f)
+						   QWidget * parent, Qt::WFlags f)
+: QWidget(parent, f)
 {
 	setupUi(this);
 	// save the parent window
@@ -60,6 +59,7 @@ DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *
 	// shortucut config
 	shortCurtPasteURL = new QShortcut(QKeySequence(QKeySequence::Paste), this);
 	connect(shortCurtPasteURL, SIGNAL(activated()), this, SLOT(pasteURLfromClipboardClicked()));
+	connect(imgDragDrop, SIGNAL(clicked()), this, SLOT(alphaBlendValueClicked())); // open
 	// fix a bug with macosx and new forms
 #ifdef Q_WS_MAC
 	self = NULL;
@@ -67,7 +67,6 @@ DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *
 	self = this;
 #endif
 }
-
 DragDropImpl::~DragDropImpl()
 {
 	// save options
@@ -77,37 +76,28 @@ DragDropImpl::~DragDropImpl()
 	programOptions->setDragDropLeft(this->x());
 	programOptions->setDragDropTop(this->y());
 	programOptions->blockSignals(false);
-		
 	delete shortCurtPasteURL;
 }
-
 void DragDropImpl::addVideoURL(QString URL)
 {
 	addVideo(URL);
 }
-
 void DragDropImpl::setInitialPos()
 {
 	QDesktopWidget *desktop = QApplication::desktop();
-
 	int screenWidth, width;
 	int screenHeight, height;
 	int x, y;
 	QSize windowSize;
-
 	screenWidth = desktop->width();
 	screenHeight = desktop->height();
-
 	windowSize = size();
 	width = windowSize.width();
 	height = windowSize.height();
-
 	x = programOptions->getDragDropLeft() < 0 ? (screenWidth - width) / 2 : programOptions->getDragDropLeft();
 	y = programOptions->getDragDropTop() < 0 ? ((screenHeight - height) / 2) - 50: programOptions->getDragDropTop();
-
 	move(x, y);
 }
-
 void DragDropImpl::createDragDropMenu()
 {
 	dragDropMenu = new QMenu(this);
@@ -125,24 +115,23 @@ void DragDropImpl::createDragDropMenu()
 	alphaBlendMenu->addAction(actAlpha70);
 	alphaBlendMenu->addAction(actAlpha80);
 	alphaBlendMenu->addAction(actAlpha90);
-	alphaBlendMenu->addSeparator();
-	alphaBlendMenu->addAction(actAlphaCustom);
+	#ifdef Q_OS_LINUX || Q_OS_WIN32
+		alphaBlendMenu->addSeparator();
+		alphaBlendMenu->addAction(actAlphaCustom);
+	#endif
 	dragDropMenu->addSeparator();
 	dragDropMenu->addAction(actDisplayMainWindo);
 }
-
 void DragDropImpl::setAlphaBlend(float alphaBlend)
 {
 	if (alphaBlend > 0 && alphaBlend <= 1)
 		setWindowOpacity(alphaBlend);
 }
-
 void DragDropImpl::dragEnterEvent(QDragEnterEvent *event)
 {
 	if (event->mimeData()->hasFormat("text/plain"))
 		event->acceptProposedAction();
 }
-
 void DragDropImpl::dropEvent(QDropEvent *event)
 {
 	// get the url
@@ -153,76 +142,65 @@ void DragDropImpl::dropEvent(QDropEvent *event)
 	addVideo(url);
 	event->acceptProposedAction();
 }
-
 void DragDropImpl::closeEvent(QCloseEvent */*event*/)
 {
 	if (!parent->isMinimized())
 		parent->show();
 }
-
 void DragDropImpl::contextMenuEvent(QContextMenuEvent * event)
 {
 	dragDropMenu->exec(event->globalPos());
 }
-
 void DragDropImpl::addVideo(QString URL)
 {
 	bool ok = videoList->getVideoInformation()->isValidHost(URL);
 	QString blockMsg = "";
-
 	if (ok)
-	{
-		BlockedState bs = bsNotBlocked;
-		ok = !videoList->getVideoInformation()->isBlockedHost(URL, bs);
-
-		if (bs == bsBlocked)
-			blockMsg = tr(" - Blocked site");
-		else if (bs == bsAdultContent)
-			blockMsg = tr(" - Adult content is not allowed");
-	}
-
+	  {
+		  BlockedState bs = bsNotBlocked;
+		  ok = !videoList->getVideoInformation()->isBlockedHost(URL, bs);
+		  if (bs == bsBlocked)
+			  blockMsg = tr(" - Blocked site");
+		  else if (bs == bsAdultContent)
+			  blockMsg = tr(" - Adult content is not allowed");
+	  }
 	imgVideoService->setPixmap(QPixmap(videoList->getVideoInformation()->getHostImage(URL)));
 	imgVideoService->setToolTip(videoList->getVideoInformation()->getHostCaption(URL) + blockMsg);
-
 	if (ok)
 		videoList->addVideo(URL);
-
 	QTimer::singleShot(5000, this, SLOT(removeServiceIcon()));
 }
-
 void DragDropImpl::pasteURLfromClipboardClicked()
 {
 	addVideo(QApplication::clipboard()->text());
 }
-
 void DragDropImpl::displayMainWindowClicked()
 {
 	close();
 }
-
 void DragDropImpl::alphaBlendValueClicked()
 {
 	if (sender() == actAlphaOFF)
 		setAlphaBlend(1.0);
 	else if (sender() == actAlphaCustom)
-	{
-		CustomAlphaBlendImpl customAlphaBlendForm(self);
-		customAlphaBlendForm.setInitialAlphaBlend(windowOpacity());
-		if (customAlphaBlendForm.exec() == QDialog::Accepted)
-			setAlphaBlend(customAlphaBlendForm.getAlphaBlend());
-	}
+	  {
+		  CustomAlphaBlendImpl customAlphaBlendForm(self);
+		  customAlphaBlendForm.setInitialAlphaBlend(windowOpacity());
+		  if (customAlphaBlendForm.exec() == QDialog::Accepted)
+			  //setAlphaBlend(customAlphaBlendForm.getAlphaBlend());
+			  setAlphaBlend(2.0);
+	  }
 	else
-	{
-		QString senderName = sender()->objectName();
-		senderName.remove(0, 8); // delete the object name and get the alpha value
-		bool converted;
-		float alphaValue = senderName.toFloat(&converted);
-		// set the alpha value
-		if (converted)
-			setAlphaBlend(alphaValue / 100);
-	}
+	  {
+		  QString senderName = sender()->objectName();
+		  senderName.remove(0, 8); // delete the object name and get the alpha value
+		  bool converted;
+		  float alphaValue = senderName.toFloat(&converted);
+		  // set the alpha value
+		  if (converted)
+			  setAlphaBlend(alphaValue / 100);
+	  }
 }
-
 void DragDropImpl::removeServiceIcon()
 {
 	imgVideoService->setPixmap(NULL);
