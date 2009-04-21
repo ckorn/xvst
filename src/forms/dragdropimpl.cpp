@@ -22,6 +22,7 @@
  * Program URL : http://xviservicethief.sourceforge.net/
  *
  */
+
 #include "dragdropimpl.h"
 //
 DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *videoList,
@@ -115,23 +116,26 @@ void DragDropImpl::createDragDropMenu()
 	alphaBlendMenu->addAction(actAlpha70);
 	alphaBlendMenu->addAction(actAlpha80);
 	alphaBlendMenu->addAction(actAlpha90);
-	#ifdef Q_OS_LINUX || Q_OS_WIN32
-		alphaBlendMenu->addSeparator();
-		alphaBlendMenu->addAction(actAlphaCustom);
-	#endif
+#ifdef Q_OS_LINUX || Q_OS_WIN32
+	alphaBlendMenu->addSeparator();
+	alphaBlendMenu->addAction(actAlphaCustom);
+#endif
 	dragDropMenu->addSeparator();
 	dragDropMenu->addAction(actDisplayMainWindo);
 }
+
 void DragDropImpl::setAlphaBlend(float alphaBlend)
 {
 	if (alphaBlend > 0 && alphaBlend <= 1)
 		setWindowOpacity(alphaBlend);
 }
+
 void DragDropImpl::dragEnterEvent(QDragEnterEvent *event)
 {
 	if (event->mimeData()->hasFormat("text/plain"))
 		event->acceptProposedAction();
 }
+
 void DragDropImpl::dropEvent(QDropEvent *event)
 {
 	// get the url
@@ -142,15 +146,18 @@ void DragDropImpl::dropEvent(QDropEvent *event)
 	addVideo(url);
 	event->acceptProposedAction();
 }
+
 void DragDropImpl::closeEvent(QCloseEvent */*event*/)
 {
 	if (!parent->isMinimized())
 		parent->show();
 }
+
 void DragDropImpl::contextMenuEvent(QContextMenuEvent * event)
 {
 	dragDropMenu->exec(event->globalPos());
 }
+
 void DragDropImpl::addVideo(QString URL)
 {
 	bool ok = videoList->getVideoInformation()->isValidHost(URL);
@@ -170,14 +177,17 @@ void DragDropImpl::addVideo(QString URL)
 		videoList->addVideo(URL);
 	QTimer::singleShot(5000, this, SLOT(removeServiceIcon()));
 }
+
 void DragDropImpl::pasteURLfromClipboardClicked()
 {
 	addVideo(QApplication::clipboard()->text());
 }
+
 void DragDropImpl::displayMainWindowClicked()
 {
 	close();
 }
+
 void DragDropImpl::alphaBlendValueClicked()
 {
 	if (sender() == actAlphaOFF)
@@ -201,6 +211,7 @@ void DragDropImpl::alphaBlendValueClicked()
 			  setAlphaBlend(alphaValue / 100);
 	  }
 }
+
 void DragDropImpl::removeServiceIcon()
 {
 	imgVideoService->setPixmap(NULL);
