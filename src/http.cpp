@@ -410,9 +410,9 @@ void Http::jumpToURL(QUrl url)
 		paramsStr.append(parameters);
 
 		// set the content type and length
-		header.setContentType("application/x-www-form-urlencoded"); // ** important **
+		header.setValue("Content-Type", "application/x-www-form-urlencoded"); // ** important **
 		header.setValue("Content-Length", QString("%1").arg(paramsStr.length()));
-	}	
+	}
 
 	// set connection: "keep alive"
 	header.setValue("Connection", "Keep-Alive");
