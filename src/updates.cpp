@@ -85,7 +85,7 @@ void Updates::parseBlock(QString block)
 				update->setPacked(copyBetween(fileBlock, "packed=\"", "\"").toLower() == "true");
 				update->setObligatory(copyBetween(fileBlock, "obligatory=\"", "\"").toLower() == "true");
 				update->setMinVersion(copyBetween(fileBlock, "minVersion=\"", "\""));
-				update->setMinVersionMsg(copyBetween(fileBlock, "minVersionMsg=\"", "\""));
+				update->setMinVersionUrl(copyBetween(fileBlock, "minVersionUrl=\"", "\""));
 				update->setChecked(true);
 				update->setError(false);
 			}
@@ -302,9 +302,9 @@ void Updates::run()
 					for (int n = 0; n < updateList->count(); n++)
 						if (!updateList->at(n)->getMinVersion().isEmpty())
 							if (compareVersions(PROGRAM_VERSION_SHORT, updateList->at(n)->getMinVersion()) == 1)
-								if (!updateList->at(n)->getMinVersionMsg().isEmpty())
+								if (!updateList->at(n)->getMinVersionUrl().isEmpty())
 								{
-									emit updateMessage(updateList->at(n)->getMinVersionMsg());
+									emit updateMessage(updateList->at(n)->getVersion(), updateList->at(n)->getMinVersionUrl());
 									return;
 								}
 					// if we are there, then no custom messages found
@@ -578,9 +578,9 @@ void Update::setMinVersion(QString value)
 	minVersion = value;
 }
 
-void Update::setMinVersionMsg(QString value)
+void Update::setMinVersionUrl(QString value)
 {
-	minVersionMsg = value;
+	minVersionUrl = value;
 }
 
 void Update::setChecked(bool value)
@@ -633,9 +633,9 @@ QString Update::getMinVersion()
 	return minVersion;
 }
 
-QString Update::getMinVersionMsg()
+QString Update::getMinVersionUrl()
 {
-	return minVersionMsg;
+	return minVersionUrl;
 }
 
 bool Update::isChecked()

@@ -44,7 +44,7 @@ Q_OBJECT
 		/*! On progress update */
 		void progressCheckUpdate(int progress);
 		/*! On update message */
-		void updateMessage(QString message);
+		void updateMessage(QString version, QString url);
 	signals:
 		/*! On finish */
 		void finished(bool done, bool closedByButton);

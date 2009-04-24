@@ -16,7 +16,7 @@ CheckUpdatesWorker::CheckUpdatesWorker(ProgramOptions *programOptions, QWidget *
 	connect(updates, SIGNAL(progressCheckUpdate(int)), this, SLOT(progressCheckUpdate(int)));
 	connect(updates, SIGNAL(updatesChecked(bool)), this, SLOT(updatesChecked(bool)));
 	connect(updates, SIGNAL(updatesCancelled()), this, SLOT(updatesCancelled()));
-	connect(updates, SIGNAL(updateMessage(QString)), this, SLOT(updateMessage(QString)));
+	connect(updates, SIGNAL(updateMessage(QString, QString)), this, SLOT(updateMessage(QString, QString)));
 	//
 	connect(cancelButton, SIGNAL(clicked()), this, SLOT(cancelButtonClicked()));
 }
@@ -96,14 +96,15 @@ void CheckUpdatesWorker::updatesChecked(bool hasUpdates)
 	}
 }
 
-void CheckUpdatesWorker::updateMessage(QString message)
+void CheckUpdatesWorker::updateMessage(QString version, QString url)
 {
 	// wait thread end
 	waitThread();
 	// display special updates message
 	QMessageBox::information(parentForm,
 							tr("Update Center"),
-							message,
+							tr("Please, download the new version of <b>xVideoServiceThief (%1)</b> from <a href='%2'>here.</a>")
+							.arg(version).arg(url), //message,
 							tr("Ok"),
 							QString(), 0, 1);
 	// set as closed by button

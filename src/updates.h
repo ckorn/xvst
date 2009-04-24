@@ -66,7 +66,7 @@ Q_OBJECT
 		QString installTo;		//!< Where to find and install the new update
 		QString url;			//!< Where to download this update
 		QString minVersion;		//!< Min version needed to install this update
-		QString minVersionMsg;	//!< Min version meessage
+		QString minVersionUrl;	//!< Min version url
 		bool packed;			//!< Flag for know if this update is packed
 		bool obligatory;		//!< Flag for know if this update must be downloaed (if don't exists, it is downloaded anyway)
 		bool checked;			//!< Selected to update
@@ -88,8 +88,8 @@ Q_OBJECT
 		void setObligatory(bool value);
 		/*! Set the min version needed to install this update */
 		void setMinVersion(QString value);
-		/*! Set the min version message */
-		void setMinVersionMsg(QString value);
+		/*! Set the min version url */
+		void setMinVersionUrl(QString value);
 		/*! Set as selected */
 		void setChecked(bool value);
 		/*! Set it as error */
@@ -111,7 +111,7 @@ Q_OBJECT
 		/*! Get the min version needed to install this update */
 		QString getMinVersion();
 		/*! Get the min version message */
-		QString getMinVersionMsg();
+		QString getMinVersionUrl();
 		/*! Get if is selected */
 		bool isChecked();
 		/*! Get if has an error */
@@ -185,7 +185,7 @@ Q_OBJECT
 		/*! After check for updates */
 		void updatesChecked(bool hasUpdates);
 		/*! When updates need to display a "special message" */
-		void updateMessage(QString message);
+		void updateMessage(QString version, QString url);
 		/*! Update proces cancelled */
 		void updatesCancelled();
 		/*! On progress update */
