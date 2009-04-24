@@ -17,6 +17,7 @@
 - Added possibility to open urls (double click) in "Downloads log" list
 - Added Paypal donate button in main window
 - Added conditional updates (for future possible complicated updates)
+- Added double click detection on Drag&Drop window (displaying the main window)
 - Added two new formats to convert:
 	- MP4 (*.mp4) format
 	- Sony PSP (*.mp4) format
