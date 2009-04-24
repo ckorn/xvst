@@ -48,12 +48,6 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 	buildVideoServicesList(videoInformation);
 	// set the support project link
 	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button.png\" /></a>");
-	// fix a bug with macosx and new forms
-#ifdef Q_WS_MAC
-	self = NULL;
-#else
-	self = this;
-#endif
 }
 
 QString getPluginsAsHtml(QString title, QList<VideoInformationPlugin*> plugins)
@@ -92,7 +86,7 @@ void InformationImpl::buildVideoServicesList(VideoInformation *videoInformation)
 
 void InformationImpl::btnCreditsClicked()
 {
-	CreditsImpl creditsForm(self);
+	CreditsImpl creditsForm(this);
 	creditsForm.exec();
 }
 //

@@ -182,12 +182,6 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	updateListInformation();
 	// set the support project link
 	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button_main.png\" /></a>");
-	// fix a bug with macosx and new forms
-#ifdef Q_WS_MAC
-	self = NULL;
-#else
-	self = this;
-#endif
 	// videos examples
 /*
 	videoList->addVideo("http://es.youtube.com/watch?v=0z-hdo3-UEU");
@@ -332,7 +326,7 @@ void MainFormImpl::closeEvent(QCloseEvent *event)
 {
 	if (videoList->isWorking())
 	{
-		if (QMessageBox::question(self,
+		if (QMessageBox::question(this,
 								  tr("Closing..."),
 		                          tr("xVideoServiceThief is working, do you wish Pause the current work?"),
 		                          tr("Yes"), tr("No"), QString(), 0, 1) == 0)
@@ -399,7 +393,7 @@ void MainFormImpl::updatesClicked()
 {
 	if (videoList->isWorking())
 	{
-		QMessageBox::information(self,
+		QMessageBox::information(this,
 								 tr("Updates"),
 								 tr("Another process is currently working, please stop it or wait until the end of process."),
 								 tr("Ok"));
@@ -411,7 +405,7 @@ void MainFormImpl::updatesClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 	
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true, self);
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
 	checkUpdatesForm.exec();
 	
 	spbUpdates->setEnabled(true);
@@ -431,7 +425,7 @@ void MainFormImpl::informationClicked()
 	spbInformation->setEnabled(false);
 	actInformation->setEnabled(false);
 
-	InformationImpl informationForm(programOptions, videoList->getVideoInformation(), self);
+	InformationImpl informationForm(programOptions, videoList->getVideoInformation(), this);
 	informationForm.exec();
 
 	spbInformation->setEnabled(true);
@@ -474,7 +468,7 @@ void MainFormImpl::addVideoClicked()
 
 	if (!isVisible()) restoreAppClicked();
 
-	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation(), self);
+	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation(), this);
 	if (addVideoForm.exec() == QDialog::Accepted)
 	{
 		// user want override the current conversion config
@@ -539,7 +533,7 @@ void MainFormImpl::cancelDownloadVideoClicked()
 
 	// we have a video to cancel?
 	if (videoItem != NULL)
-		if (QMessageBox::question(self,
+		if (QMessageBox::question(this,
 								  tr("Cancel download"),
 								  tr("Wish you Cancel the download of <b>%1</b>?").arg(videoItem->getDisplayLabel()),
 								  tr("Yes"),
@@ -561,7 +555,7 @@ void MainFormImpl::moreOptionsClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 
-	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage, self);
+	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage, this);
 	if (optionsForm.exec() == QDialog::Accepted)
 	{
 		updateVisualOptions();
@@ -626,7 +620,7 @@ void MainFormImpl::viewErrorMessageClicked()
 	VideoItem *videoItem = getSelectedVideoItem();
 
 	if (videoItem != NULL)
-		QMessageBox::information(self,
+		QMessageBox::information(this,
 		tr("Error message"),
 		tr("This video has the following error:<br><br><b>%1</b>").arg(videoItem->getErrorMessage()), 
 		tr("Ok"));
@@ -839,7 +833,7 @@ void MainFormImpl::checkForUpdates()
 			spbUpdates->setEnabled(false);
 			// running the app for 1st time? then display this warning message
 			if (programOptions->getFirstTime())
-				QMessageBox::information(self,
+				QMessageBox::information(this,
 										 tr("Updates"),
 										 tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
 										 tr("Ok"));
@@ -927,7 +921,6 @@ void MainFormImpl::updateVisualOptions()
 
 void MainFormImpl::checkUpdates(bool forceCheckUpdates)
 {
-	bool noUpdates = true;
 	QDate nextUpdate = programOptions->getLastUpdate().addDays(programOptions->getCheckForUpdatesEvery());
 
 	if (nextUpdate <= QDate::currentDate() || forceCheckUpdates)
@@ -939,7 +932,7 @@ void MainFormImpl::checkUpdates(bool forceCheckUpdates)
 		pbrCheckingForUpdates->show();
 		spbCancelCheckForUpdates->show();
 
-		checkUpdatesWorker = new CheckUpdatesWorker(programOptions, self, lblCheckForUpdatesLabel, pbrCheckingForUpdates,
+		checkUpdatesWorker = new CheckUpdatesWorker(programOptions, this, lblCheckForUpdatesLabel, pbrCheckingForUpdates,
 													spbCancelCheckForUpdates, false);
 		connect(checkUpdatesWorker, SIGNAL(finished(bool, bool)), this, SLOT(checkUpdatesWorkerFinished(bool, bool)));
 		connect(checkUpdatesWorker, SIGNAL(beforeDisplayUpdateCenter()), this, SLOT(beforeDisplayUpdateCenter()));

@@ -74,12 +74,6 @@ UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall
 	// if auto download & install updates, then...
 	if (autoDownloadAndInstall)
 		btnUpdateClicked();
-	// fix an error with macosx
-#ifdef Q_WS_MAC
-	self = NULL;
-#else
-	self = this;
-#endif
 }
 
 void UpdateCenterImpl::closeEvent(QCloseEvent *event)
@@ -178,7 +172,7 @@ void UpdateCenterImpl::readyToInstallUpdates()
 
 void UpdateCenterImpl::failedToInstallUpdates()
 {
-	QMessageBox::critical(self,
+	QMessageBox::critical(this,
 						 tr("Updates center error"),
 						 tr("Some errors has ocurred on try download the new update(s)."),
 						 tr("Ok"));

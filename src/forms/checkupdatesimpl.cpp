@@ -32,16 +32,10 @@ CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, 
 #ifdef Q_WS_MAC
 	resize(width(), 132);
 #endif
-	// fix a bug with macosx and new forms
-#ifdef Q_WS_MAC
-	self = NULL;
-#else
-	self = this;
-#endif
 	//
 	closedByButton = false;
 	// init check updates worker
-	checkUpdatesWorker = new CheckUpdatesWorker(programOptions, self, lblUpdating, pbrUpdate, btnCancel, true);
+	checkUpdatesWorker = new CheckUpdatesWorker(programOptions, this, lblUpdating, pbrUpdate, btnCancel, true);
 	connect(checkUpdatesWorker, SIGNAL(finished(bool, bool)), this, SLOT(checkUpdatesWorkerFinished(bool, bool)));
 	connect(checkUpdatesWorker, SIGNAL(beforeDisplayUpdateCenter()), this, SLOT(beforeDisplayUpdateCenter()));
 	checkUpdatesWorker->checkUpdates();
@@ -73,5 +67,4 @@ void CheckUpdatesImpl::beforeDisplayUpdateCenter()
 {
 	this->setVisible(false);
 }
-
 //

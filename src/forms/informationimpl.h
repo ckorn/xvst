@@ -39,7 +39,6 @@ class InformationImpl : public QDialog, public Ui::Information
 {
 Q_OBJECT
 	private:
-		QWidget *self;	//!< parent bug fix for macosx
 		void buildVideoServicesList(VideoInformation *videoInformation);
 	public:
 		InformationImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,

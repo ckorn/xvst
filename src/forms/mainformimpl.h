@@ -91,8 +91,6 @@ Q_OBJECT
 		// embeded updates
 		CheckUpdatesWorker *checkUpdatesWorker;
 		void checkUpdates(bool forceCheckUpdates);
-		// parent bug fix for macosx
-		QWidget *self;
 	protected:
 		void changeEvent(QEvent *event);
 		void closeEvent(QCloseEvent *event);

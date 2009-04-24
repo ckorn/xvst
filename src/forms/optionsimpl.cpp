@@ -39,7 +39,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	languageManager = new LanguageManager;
 	// resize form if is needed
 #ifdef Q_WS_MAC
-	resize(835, 475);
+	resize(835, 480);
 #endif
 	//signals
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
@@ -88,12 +88,6 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 #else
 	// hide "chbInternalFFmpeg"
 	chbInternalFFmpeg->hide();
-#endif
-	// fix a bug with macosx and new forms
-#ifdef Q_WS_MAC
-	self = NULL;
-#else
-	self = this;
 #endif
 }
 
@@ -446,7 +440,7 @@ void OptionsImpl::btnUseThisClicked()
 		item->setFont(0, oriFont);
 	}
 	// disply update message
-	QMessageBox::information(self,
+	QMessageBox::information(this,
 							 tr("Language Setup"),
 							 tr("In order to apply the new selected language, the program must be restarted."),
 							 tr("Ok"),
@@ -463,7 +457,7 @@ void OptionsImpl::btnCheckNowClicked()
 {
 	if (videoList->isWorking())
 	{
-		QMessageBox::information(self,
+		QMessageBox::information(this,
 								 tr("Updates"),
 								 tr("Another process is currently working, please stop it or wait until the end of process."),
 								 tr("Ok"));
@@ -472,7 +466,7 @@ void OptionsImpl::btnCheckNowClicked()
 
 	btnCheckNow->setEnabled(false);
 
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true, self);
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
 	checkUpdatesForm.exec();
 
 	btnCheckNow->setEnabled(true);
@@ -480,7 +474,7 @@ void OptionsImpl::btnCheckNowClicked()
 
 void OptionsImpl::btnAddNewLanguagesClicked()
 {
-	NewLanguagesImpl newLanguagesForm(programOptions, self);
+	NewLanguagesImpl newLanguagesForm(programOptions, this);
 	newLanguagesForm.exec();
 
 	// reload languages
@@ -543,14 +537,14 @@ void OptionsImpl::ffmpegTextChanged(const QString &text)
 
 void OptionsImpl::btnViewLogClicked()
 {
-	DownloadLogImpl downloadLog(self);
+	DownloadLogImpl downloadLog(this);
 	downloadLog.buildLog(sessionManager->getLogEntries(), videoInformation);
 	downloadLog.exec();
 }
 
 void OptionsImpl::btnClearLogClicked()
 {
-	if (QMessageBox::question(self,
+	if (QMessageBox::question(this,
 							  tr("Clear Log"),
 							  tr("Are you sure to clear the downloads/conversions historic file?"),
 							  tr("Yes"),

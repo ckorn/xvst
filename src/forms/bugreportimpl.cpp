@@ -63,12 +63,6 @@ BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Q
 	connect(btnSend, SIGNAL(clicked()), this, SLOT(sendReportClicked()));
 	connect(btnCancel, SIGNAL(clicked()), this, SLOT(cancelClicked()));
 	connect(trackerReport, SIGNAL(trackerReportSent(QString)), this, SLOT(trackerReportSent(QString)));
-	// fix a bug with macosx and new forms
-#ifdef Q_WS_MAC
-	self = NULL;
-#else
-	self = this;
-#endif
 }
 
 BugReportImpl::~BugReportImpl()
@@ -89,7 +83,7 @@ void BugReportImpl::fillErrorInfo(VideoItem *videoItem, VideoInformation *videoI
 void BugReportImpl::viewInfoClicked()
 {
 	InfoViewImpl infoView(videoItem, edtName->text(), edtEmail->text(), 
-		rchComments->toPlainText(), self);
+		rchComments->toPlainText(), this);
 	infoView.exec();
 }
 

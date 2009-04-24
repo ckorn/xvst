@@ -44,7 +44,6 @@ Q_OBJECT
 		bool closedByButton;
 		void fillUpdates();
 		bool isWindowsVista();
-		QWidget *self;
 	protected:
 		void closeEvent(QCloseEvent *event);
 	public:

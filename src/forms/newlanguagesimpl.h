@@ -41,7 +41,6 @@ class NewLanguagesImpl : public QDialog, public Ui::NewLanguages
 Q_OBJECT
 	private:
 		NewLanguagesController *newLanguages;	//! Responsable of check, download and install new languages
-		QWidget *self;
 	public:
 		NewLanguagesImpl(ProgramOptions *programOptions, QWidget * parent = 0, Qt::WFlags f = 0 );
 		~NewLanguagesImpl();
