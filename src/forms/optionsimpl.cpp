@@ -77,13 +77,15 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	if (!programOptions->getIfInternalFFmpegIsInstalled())
 	{
 		chbInternalFFmpeg->hide();
-		edtFFmpegLib->setVisible(true);
-		spbSelectFFmpegLib->setVisible(true);
 	}
 	else// update ffmpeg path and select button
 	{
-		edtFFmpegLib->setVisible(!chbInternalFFmpeg->isChecked() && chbInternalFFmpeg->isVisible());
-		spbSelectFFmpegLib->setVisible(!chbInternalFFmpeg->isChecked() && chbInternalFFmpeg->isVisible());
+		// if use internal ffmpeg then, hide path and button
+		if (programOptions->getUseInternalFFmpeg())
+		{
+			edtFFmpegLib->hide();
+			spbSelectFFmpegLib->hide();
+		}
 	}
 #else
 	// hide "chbInternalFFmpeg"
