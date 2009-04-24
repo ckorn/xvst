@@ -37,6 +37,7 @@
 #include "optionsimpl.h"
 #include "checkupdatesimpl.h"
 #include "bugreportimpl.h"
+#include "welcomedonate.h"
 //
 #include "../tools.h"
 #include "../options.h"
@@ -91,6 +92,8 @@ Q_OBJECT
 		// embeded updates
 		CheckUpdatesWorker *checkUpdatesWorker;
 		void checkUpdates(bool forceCheckUpdates);
+		// welcome message
+		void displayWelcomeMessage();
 	protected:
 		void changeEvent(QEvent *event);
 		void closeEvent(QCloseEvent *event);

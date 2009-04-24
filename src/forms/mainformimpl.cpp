@@ -182,6 +182,9 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	updateListInformation();
 	// set the support project link
 	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button_main.png\" /></a>");
+	// display welcome donate
+	displayWelcomeMessage();
+
 	// videos examples
 /*
 	videoList->addVideo("http://es.youtube.com/watch?v=0z-hdo3-UEU");
@@ -940,6 +943,18 @@ void MainFormImpl::checkUpdates(bool forceCheckUpdates)
 	}
 	else // no updates, start the main loop of video List
 		videoList->start();
+}
+
+void MainFormImpl::displayWelcomeMessage()
+{
+	// check if is possible display the welcome message
+	if (programOptions->getDisplayWelcomeMessage())
+	{
+		WelcomeDonate welcome(this);
+		welcome.exec();
+		// continue displaying this message?
+		programOptions->setDisplayWelcomeMessage(!welcome.getDisplayAgain());
+	}
 }
 
 // stay on top control
