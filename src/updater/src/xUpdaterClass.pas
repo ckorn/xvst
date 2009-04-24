@@ -160,7 +160,7 @@ end;
 
 function TxUpdater.ExecuteOrder(Order, Params: String): Boolean;
 var
-  Param01, Param02: String;
+  Param01: String;
   Parameters: TParams;
   BlockID: TBlockID;
   Value: Integer;
