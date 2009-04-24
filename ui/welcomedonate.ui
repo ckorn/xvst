@@ -57,7 +57,7 @@
         <string>&lt;p&gt;This software is totally free of charge, but you can consider to donate if you like this tool or if you use it in a commercial environment.&lt;/p&gt;
 &lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
 &lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
-&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for this application, you has been scamed!&lt;/font&gt;&lt;/p&gt;</string>
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -197,7 +197,6 @@
   <tabstop>chbDontDisplay</tabstop>
  </tabstops>
  <resources>
-  <include location="../resources/resources.qrc"/>
   <include location="../resources/resources.qrc"/>
  </resources>
  <connections>
