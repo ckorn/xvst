@@ -84,6 +84,8 @@ void Updates::parseBlock(QString block)
 				update->setUrl(copyBetween(fileBlock, "url=\"", "\""));
 				update->setPacked(copyBetween(fileBlock, "packed=\"", "\"").toLower() == "true");
 				update->setObligatory(copyBetween(fileBlock, "obligatory=\"", "\"").toLower() == "true");
+				update->setMinVersion(copyBetween(fileBlock, "minVersion=\"", "\""));
+				update->setMinVersionMsg(copyBetween(fileBlock, "minVersionMsg=\"", "\""));
 				update->setChecked(true);
 				update->setError(false);
 			}
@@ -114,7 +116,9 @@ bool Updates::hasUpdates()
 		Update *update = updateList->at(n);
 		// what type of file is?
 		if (update->getInstallTo().toLower() == "this")
+		{
 			deleteUpdate = compareVersions(PROGRAM_VERSION, update->getVersion()) != 1;
+		}
 		else
 		{
 			if (QFile::exists(appPath + update->getInstallTo()) || update->isObligatory())
@@ -128,9 +132,11 @@ bool Updates::hasUpdates()
 					if (language != NULL)
 						deleteUpdate = compareVersions(language->getVersion(), update->getVersion()) != 1;
 				}
+				// plugin files
 				else if (fileInf.completeSuffix() == "js")
 				{
-					VideoInformationPlugin *plugin = VideoInformation::getLastVideoInformationInstance()->getRegisteredPlugin(fileInf.fileName(), true);
+					VideoInformation *vidInf = VideoInformation::getLastVideoInformationInstance();
+					VideoInformationPlugin *plugin = vidInf->getRegisteredPlugin(fileInf.fileName(), true);
 					// have info?
 					if (plugin != NULL)
 						deleteUpdate = compareVersions(plugin->getVersion(), update->getVersion()) != 1;
@@ -288,7 +294,24 @@ void Updates::run()
 				// wait 650 miliseconds
 				msleep(650);
 				// check versions
-				emit updatesChecked(hasUpdates());
+				bool hasUpdates = this->hasUpdates();
+				// if has updates, then check if has an special update message
+				if (hasUpdates)
+				{
+					// find if for special updates (where the minVersion > programVersion)
+					for (int n = 0; n < updateList->count(); n++)
+						if (!updateList->at(n)->getMinVersion().isEmpty())
+							if (compareVersions(PROGRAM_VERSION_SHORT, updateList->at(n)->getMinVersion()) == 1)
+								if (!updateList->at(n)->getMinVersionMsg().isEmpty())
+								{
+									emit updateMessage(updateList->at(n)->getMinVersionMsg());
+									return;
+								}
+					// if we are there, then no custom messages found
+					emit updatesChecked(true);
+				}
+				else // no updates
+					emit updatesChecked(false);
 			}
 			else // yes, cancelled
 				emit updatesCancelled();
@@ -498,7 +521,7 @@ void Updates::downloadFinished(const QFileInfo /*destFile*/)
 	}
 }
 
-void Updates::downloadError(int error)
+void Updates::downloadError(int /*error*/)
 {
 	if (updateState == usDownloading)
 	{
@@ -550,6 +573,16 @@ void Update::setPacked(bool value)
 	obligatory = value;
 }
 
+void Update::setMinVersion(QString value)
+{
+	minVersion = value;
+}
+
+void Update::setMinVersionMsg(QString value)
+{
+	minVersionMsg = value;
+}
+
 void Update::setChecked(bool value)
 {
 	checked = value;
@@ -593,6 +626,16 @@ bool Update::isPacked()
 bool Update::isObligatory()
 {
 	return obligatory;
+}
+
+QString Update::getMinVersion()
+{
+	return minVersion;
+}
+
+QString Update::getMinVersionMsg()
+{
+	return minVersionMsg;
 }
 
 bool Update::isChecked()

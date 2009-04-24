@@ -43,6 +43,8 @@ Q_OBJECT
 		void updatesCancelled();
 		/*! On progress update */
 		void progressCheckUpdate(int progress);
+		/*! On update message */
+		void updateMessage(QString message);
 	signals:
 		/*! On finish */
 		void finished(bool done, bool closedByButton);

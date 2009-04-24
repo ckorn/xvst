@@ -60,15 +60,17 @@ class Update : public QObject
 {
 Q_OBJECT
 	private:
-		QString caption;	//!< Update caption
-		QString version;	//!< Update version
-		int size;			//!< Update file size
-		QString installTo;	//!< Where to find and install the new update
-		QString url;		//!< Where to download this update
-		bool packed;		//!< Flag for know if this update is packed
-		bool obligatory;	//!< Flag for know if this update must be downloaed (if don't exists, it is downloaded anyway)
-		bool checked;		//!< Selected to update
-		bool error;			//!< An error ocurred during download process
+		QString caption;		//!< Update caption
+		QString version;		//!< Update version
+		int size;				//!< Update file size
+		QString installTo;		//!< Where to find and install the new update
+		QString url;			//!< Where to download this update
+		QString minVersion;		//!< Min version needed to install this update
+		QString minVersionMsg;	//!< Min version meessage
+		bool packed;			//!< Flag for know if this update is packed
+		bool obligatory;		//!< Flag for know if this update must be downloaed (if don't exists, it is downloaded anyway)
+		bool checked;			//!< Selected to update
+		bool error;				//!< An error ocurred during download process
 	public:
 		/*! Set the update caption */
 		void setCaption(QString value);
@@ -84,6 +86,10 @@ Q_OBJECT
 		void setPacked(bool value);
 		/*! Set if this update is obligatory */
 		void setObligatory(bool value);
+		/*! Set the min version needed to install this update */
+		void setMinVersion(QString value);
+		/*! Set the min version message */
+		void setMinVersionMsg(QString value);
 		/*! Set as selected */
 		void setChecked(bool value);
 		/*! Set it as error */
@@ -102,6 +108,10 @@ Q_OBJECT
 		bool isPacked();
 		/*! Get if this update is obligatory */
 		bool isObligatory();
+		/*! Get the min version needed to install this update */
+		QString getMinVersion();
+		/*! Get the min version message */
+		QString getMinVersionMsg();
 		/*! Get if is selected */
 		bool isChecked();
 		/*! Get if has an error */
@@ -174,6 +184,8 @@ Q_OBJECT
 	signals:
 		/*! After check for updates */
 		void updatesChecked(bool hasUpdates);
+		/*! When updates need to display a "special message" */
+		void updateMessage(QString message);
 		/*! Update proces cancelled */
 		void updatesCancelled();
 		/*! On progress update */

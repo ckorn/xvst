@@ -16,6 +16,7 @@
 - Added sorting for "Downloads log" list (now is sorted from old to new downloads)
 - Added possibility to open urls (double click) in "Downloads log" list
 - Added Paypal donate button in main window
+- Added conditional updates (for future possible complicated updates)
 - Added two new formats to convert:
 	- MP4 (*.mp4) format
 	- Sony PSP (*.mp4) format
@@ -27,6 +28,7 @@
 - Fixed bug (Error: Invlaid file names when the video title contains '/' or '\')
 - Fixed bug (Error: Paypal link was corrupt, now the Paypal button links to xVST website donation page)
 - Fixed bug (Error: Open downloads directory in tray icon were not opened)
+- Fixed bug (Error: unneeded "content-length" header was added causing "400 bad request" error in some servers)
 
 - Updated English language
 - Updated Spanish language

@@ -16,6 +16,7 @@ CheckUpdatesWorker::CheckUpdatesWorker(ProgramOptions *programOptions, QWidget *
 	connect(updates, SIGNAL(progressCheckUpdate(int)), this, SLOT(progressCheckUpdate(int)));
 	connect(updates, SIGNAL(updatesChecked(bool)), this, SLOT(updatesChecked(bool)));
 	connect(updates, SIGNAL(updatesCancelled()), this, SLOT(updatesCancelled()));
+	connect(updates, SIGNAL(updateMessage(QString)), this, SLOT(updateMessage(QString)));
 	//
 	connect(cancelButton, SIGNAL(clicked()), this, SLOT(cancelButtonClicked()));
 }
@@ -80,18 +81,35 @@ void CheckUpdatesWorker::updatesChecked(bool hasUpdates)
 	}
 	else
 	{
+		// wait thread end
 		waitThread();
-
+		// display no updates message (only if is an user request)
 		if (isUser)
 			QMessageBox::information(parentForm,
 									 tr("Updates"),
 									 tr("You are using the most recent version of this program."),
 									 tr("Ok"));
+		// set as closed by button
 		closedByButton = true;
-
-		//done(QDialog::Rejected);
+		// close
 		emit finished(false, closedByButton);
 	}
+}
+
+void CheckUpdatesWorker::updateMessage(QString message)
+{
+	// wait thread end
+	waitThread();
+	// display special updates message
+	QMessageBox::information(parentForm,
+							tr("Update Center"),
+							message,
+							tr("Ok"),
+							QString(), 0, 1);
+	// set as closed by button
+	closedByButton = true;
+	// close
+	emit finished(false, closedByButton);
 }
 
 void CheckUpdatesWorker::cancelButtonClicked()
