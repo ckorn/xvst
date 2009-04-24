@@ -176,14 +176,14 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// shortcut delete
 	shortCutDeleteVideo = new QShortcut(QKeySequence(QKeySequence::Delete), this);
 	connect(shortCutDeleteVideo, SIGNAL(activated()), this, SLOT(deleteVideoClicked()));
-	// updater timer
-	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
 	// update information
 	updateListInformation();
 	// set the support project link
 	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button_main.png\" /></a>");
 	// display welcome donate
 	displayWelcomeMessage();
+	// updater timer
+	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
 
 	// videos examples
 /*
