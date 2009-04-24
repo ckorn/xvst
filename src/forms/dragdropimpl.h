@@ -36,11 +36,26 @@
 #include "../options.h"
 #include "../videolistcontroller.h"
 
+class QLabelClickeable : public QLabel
+{
+Q_OBJECT
+	protected:
+		/*! Override double click event */
+		void mouseDoubleClickEvent(QMouseEvent * event);
+	public:
+		/*! Class constructor */
+		QLabelClickeable(QWidget* parent = 0, Qt::WindowFlags f = 0) : QLabel(parent, f) {}
+	signals:
+		/*! On doublecick event */
+		void doubleClicked();
+};
+
 class DragDropImpl : public QWidget, public Ui::DragDrop
 {
 Q_OBJECT
 	private:
 		QWidget *parent;				//!< Parent form
+		QLabelClickeable *imgDragDrop;	//!< Drag and drop image
 		QMenu *dragDropMenu;			//!< Drag and drop menu
 		QMenu *alphaBlendMenu;			//!< Alpha blend menu
 		ProgramOptions *programOptions;	//!< Program Options reference

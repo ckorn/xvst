@@ -30,6 +30,15 @@ DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *
 : QWidget(parent, f)
 {
 	setupUi(this);
+	// create drag and drop image
+	imgDragDrop = new QLabelClickeable(this);
+	imgDragDrop->setObjectName(QString::fromUtf8("imgDragDrop"));
+	imgDragDrop->setGeometry(QRect(0, 0, 90, 60));
+	imgDragDrop->setAcceptDrops(true);
+	imgDragDrop->setPixmap(QPixmap(QString::fromUtf8(":/header/images/DragDropWindow.png")));
+	imgDragDrop->setAlignment(Qt::AlignCenter);
+	// connect doubleClick signal
+	connect(imgDragDrop, SIGNAL(doubleClicked()), this, SLOT(displayMainWindowClicked())); // on double click, display main window
 	// save the parent window
 	this->parent = parent;
 	this->programOptions = programOptions;
@@ -60,10 +69,10 @@ DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *
 	// shortucut config
 	shortCurtPasteURL = new QShortcut(QKeySequence(QKeySequence::Paste), this);
 	connect(shortCurtPasteURL, SIGNAL(activated()), this, SLOT(pasteURLfromClipboardClicked()));
-	connect(imgDragDrop, SIGNAL(clicked()), this, SLOT(alphaBlendValueClicked())); // open
 }
 DragDropImpl::~DragDropImpl()
 {
+	delete imgDragDrop;
 	// save options
 	programOptions->blockSignals(true);
 	programOptions->setDragDropAlphaBlend(this->windowOpacity() != 1.0);
@@ -210,5 +219,12 @@ void DragDropImpl::removeServiceIcon()
 {
 	imgVideoService->setPixmap(NULL);
 	imgVideoService->setToolTip("");
+}
+
+// QLabelClickeable
+
+void QLabelClickeable::mouseDoubleClickEvent(QMouseEvent *event)
+{
+	emit doubleClicked();
 }
 //
