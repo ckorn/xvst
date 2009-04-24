@@ -27,7 +27,6 @@
 
 ProgramOptions::ProgramOptions(QString optionsPath)
 {
-
 #ifdef Q_WS_MAC
 	appDir.setPath(QCoreApplication::applicationDirPath());
 	optionsFile = QString(optionsPath + "/com.xVideoServiceThief.config.plist");
