@@ -27,6 +27,8 @@
 
 Q_DECLARE_METATYPE(VideoDefinition)
 
+static VideoInformation *lastVideoInformationInstance; //!< Used as semi-singleton (remember the last instance created)
+
 VideoInformation::VideoInformation(QString pluginsDir)
 {
 	setObjectName("VideoInformation");
@@ -551,7 +553,8 @@ QScriptValue VideoInformationPlugin::func_isPluginInstalled(QScriptContext *cont
 		// get params
 		QString id = context->argument(0).toString();
 		// get this plugin is installed
-		bool installed = VideoInformation::getLastVideoInformationInstance()->getRegisteredPlugin(id + ".js", true) != NULL;
+		VideoInformation *vidInf = VideoInformation::getLastVideoInformationInstance();
+		bool installed = vidInf->getRegisteredPlugin(id + ".js", true) != NULL;
 		// return the asked item from url
 		return engine->newVariant(QVariant(installed));
 	}
@@ -567,7 +570,8 @@ QScriptValue VideoInformationPlugin::func_executePlugin(QScriptContext *context,
 		QString id = context->argument(0).toString();
 		QString url = context->argument(1).toString();
 		// create a temporal VideoItem
-		VideoInformationPlugin *plugin = VideoInformation::getLastVideoInformationInstance()->getRegisteredPlugin(id + ".js", true);
+		VideoInformation *vidInf = VideoInformation::getLastVideoInformationInstance();
+		VideoInformationPlugin *plugin = vidInf->getRegisteredPlugin(id + ".js", true);
 		// is it registered?
 		if (plugin != NULL)
 			return engine->toScriptValue(plugin->getVideoInformation(url));

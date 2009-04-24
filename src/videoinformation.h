@@ -115,7 +115,7 @@ Q_OBJECT
 		bool isLoaded() const;
 };
 
-static VideoInformation *lastVideoInformationInstance; //!< Used as semi-singleton (remember the last instance created)
+//static VideoInformation *lastVideoInformationInstance; //!< Used as semi-singleton (remember the last instance created)
 
 /*! Download plugins icons and save them into a cache */
 class VideoInformationPluginIconsCatcher : public QObject
