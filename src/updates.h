@@ -149,6 +149,8 @@ Q_OBJECT
 		int getFirstUpdateToDownload();
 		/*! Get next update to download */
 		void getNextUpdateToDownload();
+		/*! Build the DMG script installer (MacOSX only) */
+		QStringList buildDMGScript(int n);
 		/*! Thread executation */
 		void run();
 	public:

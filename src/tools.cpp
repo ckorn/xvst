@@ -138,6 +138,12 @@ QString extractFilePath(const QString fileName)
 	return file.absolutePath();
 }
 
+QString extractFileName(const QString fileName)
+{
+	QFileInfo file(fileName);
+	return file.fileName();
+}
+
 QString secondsToHMS(const int seconds, const bool compact, const bool allowNegative)
 {
 	int sec = seconds;

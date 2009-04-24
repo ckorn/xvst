@@ -183,6 +183,16 @@ void Updates::buildInstalScript()
 			{
 				QFileInfo appExe(QCoreApplication::applicationFilePath());
 				update->setInstallTo("/" + appExe.fileName());
+#ifdef Q_WS_MAC
+				// special MacOSX update (DMG)
+				if (update->isChecked() && update->isPacked())
+				{
+					// build DMG script installer
+					updateScript.append(buildDMGScript(n));
+					// next update item
+					continue;
+				}
+#endif
 			}
 			// is checked?
 			if (update->isChecked() && !update->hasErrors())
@@ -253,6 +263,7 @@ void Updates::buildInstalScript()
 		updateScript.replaceInStrings("/", "\\");
 #else
 		updateScript.replaceInStrings("\\", "/");
+		updateScript.replaceInStrings("/\"", "\\\"");
 #endif
 		// save to disc
 		QTextStream updateScriptOut(&updateScriptFile);
@@ -483,6 +494,33 @@ void Updates::getNextUpdateToDownload()
 	emit downloadsFinished();
 	// set as installing state
 	updateState = usInstalling;
+}
+
+QStringList Updates::buildDMGScript(int n)
+{
+	QStringList result;
+	// get bundle path
+	QString bundlePath = QString("/%1.app").arg(copyBetween(QCoreApplication::applicationFilePath(), "/", ".app"));
+	QString DMG = QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n);
+	QString mountPath = QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n) + ".mount";
+	// mount DMG image
+	result << QString("exec \"hdiutil mount \\\"%1\\\" -mountpoint \\\"%2\\\" -noverify -noautoopen\" wait")
+			.arg(DMG)
+			.arg(mountPath);
+	// copy from DMG to app bundle
+	result << QString("exec \"cp -R \\\"%1\\\" \\\"%2\\\"\" wait")
+			.arg(mountPath + "/xVideoServiceThief.app/")
+			.arg(bundlePath + "/");
+	// unmount DMG image
+	result << QString("exec \"hdiutil unmount \\\"%1\\\" -force\" wait")
+			.arg(mountPath);
+	// delete the downloaded DMG
+	result << QString("del \"%1\"")
+			.arg(DMG);
+	// if isn't the last file, go to next update file
+	result << (n < getUpdatesCount() - 1 ? QString("goto install_file_%1").arg(n + 1) : "goto finish_update");
+	// return the dmg install script
+	return result;
 }
 
 bool Updates::canUpdate()
