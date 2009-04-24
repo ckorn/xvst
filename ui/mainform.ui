@@ -26,6 +26,9 @@
    <iconset resource="../resources/resources.qrc">
     <normaloff>:/icons/images/film_go.png</normaloff>:/icons/images/film_go.png</iconset>
   </property>
+  <property name="accessibleDescription">
+   <string notr="true"/>
+  </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
   </property>
@@ -74,8 +77,11 @@
          <property name="whatsThis">
           <string notr="true"/>
          </property>
+         <property name="accessibleDescription">
+          <string notr="true"/>
+         </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
+          <string notr="true">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
@@ -115,6 +121,9 @@
          </property>
          <property name="accessibleDescription">
           <string>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It's easy and fast! :)</string>
+         </property>
+         <property name="text">
+          <string notr="true"/>
          </property>
          <property name="pixmap">
           <pixmap resource="../resources/resources.qrc">:/buttons/images/support_button_main.png</pixmap>
@@ -246,7 +255,7 @@
             <enum>Qt::NoFocus</enum>
            </property>
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -300,7 +309,7 @@
             <string>Open Drag &amp; Drop window</string>
            </property>
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -335,7 +344,7 @@
             <string>Check for updates</string>
            </property>
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -370,7 +379,7 @@
             <string>Online help</string>
            </property>
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -405,7 +414,7 @@
             <string>Program information</string>
            </property>
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="icon">
             <iconset resource="../resources/resources.qrc">
@@ -901,7 +910,7 @@
          <string>Open the Select directory dialog for select the downloads directory</string>
         </property>
         <property name="text">
-         <string>...</string>
+         <string notr="true">...</string>
         </property>
        </widget>
       </item>
@@ -929,7 +938,7 @@
          <string>Open the downloads directory</string>
         </property>
         <property name="text">
-         <string/>
+         <string notr="true"/>
         </property>
         <property name="icon">
          <iconset resource="../resources/resources.qrc">
@@ -1179,7 +1188,6 @@
   <tabstop>lsvDownloadList</tabstop>
  </tabstops>
  <resources>
-  <include location="../resources/resources.qrc"/>
   <include location="../resources/resources.qrc"/>
  </resources>
  <connections/>
