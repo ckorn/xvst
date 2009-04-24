@@ -1,6 +1,6 @@
 CONFIG += qt \
     warn_on \
-    release
+	debug_and_release
 QT = core \
     gui \
     network \
