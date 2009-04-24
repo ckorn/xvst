@@ -174,7 +174,7 @@ void NewLanguagesController::downloadFinished(const QFileInfo destFile)
 	updateNewLanguages();
 }
 
-void NewLanguagesController::downloadError(int error)
+void NewLanguagesController::downloadError(int /*error*/)
 {
 	// finish event
 	emit afterInstallNewLanguage(currentUpdate, true);
