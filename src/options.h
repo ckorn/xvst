@@ -87,6 +87,7 @@ Q_OBJECT
 		bool mainWinowMaximized;		//!< Flag for know if the main window should be maximized
 		bool vistaUpdatesMessage;		//!< Flag for know if we won't see the attention message of vista (updates)
 		bool useInternalFFmpeg;			//!< Flag for know if the ffmpeg lib is into the app bundle
+		bool displayWelcomeMessage;		//!< Flag for know if can display the welcome message
 
 		QDir appDir;		//!< Initial program path
 		QString appExecutable;	//!< Executable program path
@@ -199,6 +200,8 @@ Q_OBJECT
 		bool getVistaUpdatesMessage();
 		void setUseInternalFFmpeg(bool value);
 		bool getUseInternalFFmpeg();
+		void setDisplayWelcomeMessage(bool value);
+		bool getDisplayWelcomeMessage();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();

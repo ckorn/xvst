@@ -112,10 +112,12 @@ void ProgramOptions::load()
 
 	vistaUpdatesMessage = settings.value("configuration/vistaUpdatesMessage", vistaUpdatesMessage).toBool();
 
-	useInternalFFmpeg = settings.value("useInternalFFmpeg", useInternalFFmpeg).toBool();
+	useInternalFFmpeg = settings.value("configuration/useInternalFFmpeg", useInternalFFmpeg).toBool();
 #ifdef Q_WS_MAC
 	if (useInternalFFmpeg) ffmpegLibLocation = getInternalFFmpegPath();
 #endif
+
+	displayWelcomeMessage = settings.value("configuration/displayWelcomeMessage", displayWelcomeMessage).toBool();
 
 	emit optionsLoadAfter();
 }
@@ -187,6 +189,8 @@ void ProgramOptions::save()
 	settings.setValue("vistaUpdatesMessage", vistaUpdatesMessage);
 
 	settings.setValue("useInternalFFmpeg", useInternalFFmpeg);
+
+	settings.setValue("displayWelcomeMessage", displayWelcomeMessage);
 
 	settings.endGroup();
 
@@ -274,6 +278,8 @@ void ProgramOptions::setDefault()
 	vistaUpdatesMessage = false;
 
 	useInternalFFmpeg = true;
+
+	displayWelcomeMessage = true;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -727,3 +733,14 @@ bool ProgramOptions::getUseInternalFFmpeg()
 {
 	return useInternalFFmpeg;
 }
+
+void ProgramOptions::setDisplayWelcomeMessage(bool value)
+{
+	displayWelcomeMessage = value;
+}
+
+bool ProgramOptions::getDisplayWelcomeMessage()
+{
+	return displayWelcomeMessage;
+}
+
