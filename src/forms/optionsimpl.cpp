@@ -43,16 +43,16 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 #endif
 	//signals
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
-	connect(spbSelectDownloadDir, SIGNAL(pressed()), this, SLOT(spbSelectDownloadDirPressed()));
-	connect(spbSelectFFmpegLib, SIGNAL(pressed()), this, SLOT(spbSelectFFmpegLibPressed()));
+	connect(spbSelectDownloadDir, SIGNAL(clicked()), this, SLOT(spbSelectDownloadDirPressed()));
+	connect(spbSelectFFmpegLib, SIGNAL(clicked()), this, SLOT(spbSelectFFmpegLibPressed()));
 	connect(edtFFmpegLib, SIGNAL(textChanged(const QString &)), this, SLOT(ffmpegTextChanged(const QString &)));
 	connect(btnViewLog, SIGNAL(clicked()), this, SLOT(btnViewLogClicked()));
 	connect(btnClearLog, SIGNAL(clicked()), this, SLOT(btnClearLogClicked()));
 	connect(chbSaveRestore, SIGNAL(clicked(bool)), this, SLOT(chbSaveRestoreStateClicked(bool)));
-	connect(spbRemove, SIGNAL(pressed()), this, SLOT(spbRemovePressed()));
-	connect(spbRemoveAll, SIGNAL(pressed()), this, SLOT(spbRemoveAllPressed()));
-	connect(spbAddAll, SIGNAL(pressed()), this, SLOT(spbAddAllPressed()));
-	connect(spbAdd, SIGNAL(pressed()), this, SLOT(spbAddPressed()));
+	connect(spbRemove, SIGNAL(clicked()), this, SLOT(spbRemovePressed()));
+	connect(spbRemoveAll, SIGNAL(clicked()), this, SLOT(spbRemoveAllPressed()));
+	connect(spbAddAll, SIGNAL(clicked()), this, SLOT(spbAddAllPressed()));
+	connect(spbAdd, SIGNAL(clicked()), this, SLOT(spbAddPressed()));
 	connect(lsvServices1, SIGNAL(itemSelectionChanged()), this, SLOT(servicesItemSelectionChanged()));
 	connect(lsvServices2, SIGNAL(itemSelectionChanged()), this, SLOT(servicesItemSelectionChanged()));
 	connect(lsvLanguages, SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)), this, SLOT(langCurrentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)));

@@ -81,7 +81,7 @@
    <item row="0" column="1">
     <widget class="QStackedWidget" name="pgOptions">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="pgBasic">
       <layout class="QGridLayout">
@@ -112,6 +112,18 @@
           </item>
           <item row="0" column="2">
            <widget class="QToolButton" name="spbSelectDownloadDir">
+            <property name="minimumSize">
+             <size>
+              <width>23</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>23</width>
+              <height>23</height>
+             </size>
+            </property>
             <property name="toolTip">
              <string>Select the downloads directory</string>
             </property>
@@ -226,6 +238,18 @@
           </item>
           <item>
            <widget class="QToolButton" name="spbSelectFFmpegLib">
+            <property name="minimumSize">
+             <size>
+              <width>23</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>23</width>
+              <height>23</height>
+             </size>
+            </property>
             <property name="toolTip">
              <string>Select the ffmpeg directory</string>
             </property>
