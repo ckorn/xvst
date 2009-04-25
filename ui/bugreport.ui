@@ -203,14 +203,14 @@
          <widget class="QToolButton" name="spbViewInfo">
           <property name="minimumSize">
            <size>
-            <width>25</width>
-            <height>25</height>
+            <width>23</width>
+            <height>23</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>25</width>
-            <height>25</height>
+            <width>23</width>
+            <height>23</height>
            </size>
           </property>
           <property name="toolTip">
