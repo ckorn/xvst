@@ -29,6 +29,9 @@ InfoViewImpl::InfoViewImpl(VideoItem *videoItem, QString userName, QString email
 	QString comments, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
 	setupUi(this);
+#ifdef Q_WS_MAC
+	resize(500, 300);
+#endif
 	// fill text
 	QStringList info;
 	info 	<< "<p><b>Video Information:</b>\n"

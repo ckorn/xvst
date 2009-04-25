@@ -31,7 +31,8 @@ CreditsImpl::CreditsImpl( QWidget * parent, Qt::WFlags f)
 	setupUi(this);
 	// resize form if is needed
 #ifdef Q_WS_MAC
-	resize(428, 552);
+	resize(468, 530);
+	setMinimumSize(468, 530);
 #endif
 }
 //

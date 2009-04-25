@@ -32,6 +32,7 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 	setupUi(this);
 #ifdef Q_WS_MAC
 	resize(518, 550);
+	setMinimumSize(518, 550);
 #endif
 	// signals
 	connect(btnCredits, SIGNAL(clicked()), this, SLOT(btnCreditsClicked()));

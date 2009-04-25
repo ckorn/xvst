@@ -39,6 +39,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 #ifdef Q_WS_MAC
 	btnAddVideo->setMinimumWidth(158);
 	frame->layout()->setContentsMargins(4, 4, 6, 4);
+	setMinimumSize(780, 540);
 #endif
 	// init program options
 	lastOptionsPage = 0;
