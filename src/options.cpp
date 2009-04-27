@@ -593,7 +593,7 @@ void ProgramOptions::setDragDropAlphaBlendValue(int value)
 QString ProgramOptions::getLanguageFile(bool fullPath)
 {
 #ifdef Q_WS_MAC
-	return fullPath ? QDir::toNativeSeparators(appDir.absolutePath() + "/../languages/" + languageFile) : languageFile;
+	return fullPath ? QDir::toNativeSeparators(appDir.absolutePath() + "/../Resources/languages/" + languageFile) : languageFile;
 #else
 	return fullPath ? QDir::toNativeSeparators(appDir.absolutePath() + "/languages/" + languageFile) : languageFile;
 #endif

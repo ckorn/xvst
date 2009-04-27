@@ -66,7 +66,7 @@ int main(int argc, char ** argv)
 
 	MainFormImpl win;
 	win.show();
-	app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
+	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
 	return app.exec();
 }
 //
