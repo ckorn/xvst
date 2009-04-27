@@ -118,7 +118,7 @@ void NewLanguagesImpl::installedLanguageRemoved(Language *language, bool removed
 		if (isWindowsVista())
 			QMessageBox::critical(this,
 								 tr("Language uninstall error"),
-								 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.<br><br><b>Note:</b> On Windows Vista you should execute the xVST as administrator before unistall new languages.").arg(language->getId()),
+								 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.<br><br><b>Note:</b> On Windows Vista you should execute the xVST as administrator before unistall languages.").arg(language->getId()),
 								 tr("Ok"));
 		else
 			QMessageBox::critical(this,
