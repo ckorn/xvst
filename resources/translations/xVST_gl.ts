@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="gl">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="gl">
 <context>
     <name>AddVideo</name>
     <message>
@@ -42,7 +42,7 @@
     <message>
         <source>Close without adding the URL</source>
         <translation>Pechar sen engadir a URL
-<byte value="x9"/></translation>
+	</translation>
     </message>
     <message>
         <source>Cancel button</source>
@@ -51,6 +51,78 @@
     <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Enable/disable the video conversions</source>
+        <translation type="unfinished">Permitir/non permitir a conversión de video</translation>
+    </message>
+    <message>
+        <source>Convert videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Convert video to Mpeg/DivX/etc...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output format:</source>
+        <translation type="unfinished">Formato de saída:</translation>
+    </message>
+    <message>
+        <source>Video output format</source>
+        <translation type="unfinished">Formato de saída de video</translation>
+    </message>
+    <message>
+        <source>Video output format combobox</source>
+        <translation type="unfinished">Fomato de saida de video combobox</translation>
+    </message>
+    <message>
+        <source>Video resolution:</source>
+        <translation type="unfinished">Resolución de video:</translation>
+    </message>
+    <message>
+        <source>Video resolution</source>
+        <translation type="unfinished">Resolución de video</translation>
+    </message>
+    <message>
+        <source>Video resolution combobox</source>
+        <translation type="unfinished">Resolución de video combobox</translation>
+    </message>
+    <message>
+        <source>Audio sampling rate (Hz):</source>
+        <translation type="unfinished">Audio sampling rate (Hz):</translation>
+    </message>
+    <message>
+        <source>Video audio sampling rate (Hz)</source>
+        <translation type="unfinished">Video audio sampling rate (Hz)</translation>
+    </message>
+    <message>
+        <source>Video audio sampling rate combobox</source>
+        <translation type="unfinished">Video audio sampling rate combobox</translation>
+    </message>
+    <message>
+        <source>Video frame rate (Hz)</source>
+        <translation type="unfinished">Video frame rate (Hz)</translation>
+    </message>
+    <message>
+        <source>Video frame rate combobox</source>
+        <translation type="unfinished">Video frame rate combobox</translation>
+    </message>
+    <message>
+        <source>Output quality:</source>
+        <translation type="unfinished">Calidade de saida:</translation>
+    </message>
+    <message>
+        <source>General video output quality</source>
+        <translation type="unfinished">Calidade de salida xeral de video</translation>
+    </message>
+    <message>
+        <source>General video output quality combobox</source>
+        <translation type="unfinished">Calidade de salida xeral de bideo combobox</translation>
+    </message>
+    <message>
+        <source>Override original conversion options for this video</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -154,7 +226,7 @@
     </message>
     <message>
         <source>Do not display &quot;Bug Report&quot; the next time</source>
-        <translation>Non amosar o &quot;Reporte de erros&quot; a próxima vez</translation>
+        <translation type="obsolete">Non amosar o &quot;Reporte de erros&quot; a próxima vez</translation>
     </message>
     <message>
         <source>Send the &quot;Bug report&quot; and close this dialog</source>
@@ -179,6 +251,10 @@
     <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Don&apos;t display &quot;Bug Report&quot; the next time</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -215,23 +291,54 @@
     <name>CheckUpdatesImpl</name>
     <message>
         <source>Updates</source>
-        <translation>Actualizacións</translation>
+        <translation type="obsolete">Actualizacións</translation>
     </message>
     <message>
         <source>You are using the most recent version of this program.</source>
-        <translation>Estás a usar a versión máis recente do programa.</translation>
+        <translation type="obsolete">Estás a usar a versión máis recente do programa.</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Ok</translation>
+        <translation type="obsolete">Ok</translation>
     </message>
     <message>
         <source>Cancelling... please wait...</source>
-        <translation>Cancelando... agarde...</translation>
+        <translation type="obsolete">Cancelando... agarde...</translation>
     </message>
     <message>
         <source>Checking for updates...</source>
-        <translation>Procurando actualizacións...</translation>
+        <translation type="obsolete">Procurando actualizacións...</translation>
+    </message>
+</context>
+<context>
+    <name>CheckUpdatesWorker</name>
+    <message>
+        <source>Updates</source>
+        <translation type="unfinished">Actualizacións</translation>
+    </message>
+    <message>
+        <source>You are using the most recent version of this program.</source>
+        <translation type="unfinished">Estás a usar a versión máis recente do programa.</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancelling... please wait...</source>
+        <translation type="unfinished">Cancelando... agarde...</translation>
+    </message>
+    <message>
+        <source>Checking for updates...</source>
+        <translation type="unfinished">Procurando actualizacións...</translation>
+    </message>
+    <message>
+        <source>Update Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, download the new version of &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; from &lt;a href=&apos;%2&apos;&gt;here.&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -285,7 +392,7 @@
         <translation>...</translation>
     </message>
 </context>
-<context encoding="UTF-8">
+<context>
     <name>Credits</name>
     <message>
         <source>Credits</source>
@@ -293,15 +400,15 @@
     </message>
     <message>
         <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
-        <translation>Feito por &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
+        <translation type="obsolete">Feito por &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
     </message>
     <message>
         <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
-        <translation>Este programa é de código aberto e baixo licenza &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licenza (General Public Licence)</translation>
+        <translation type="obsolete">Este programa é de código aberto e baixo licenza &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licenza (General Public Licence)</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation>&lt;b&gt;Graciñas a:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: autor da linguaxe Polaco&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: autor da linguaxe Xaponesa&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: autores da linguaxa Checa&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
+        <translation type="obsolete">&lt;b&gt;Graciñas a:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: autor da linguaxe Polaco&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: autor da linguaxe Xaponesa&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: autores da linguaxa Checa&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
     </message>
     <message>
         <source>Close the Credits dialog</source>
@@ -368,7 +475,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Cancelar<byte value="x9"/></translation>
+        <translation>Cancelar	</translation>
     </message>
 </context>
 <context>
@@ -398,7 +505,11 @@
     </message>
     <message>
         <source>1</source>
-        <translation>1<byte value="x9"/></translation>
+        <translation>1	</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Pechar</translation>
     </message>
 </context>
 <context>
@@ -424,7 +535,7 @@
     </message>
     <message>
         <source>Drop the video link here</source>
-        <translation>Soltar o link do video aquí</translation>
+        <translation type="obsolete">Soltar o link do video aquí</translation>
     </message>
     <message>
         <source>Display main window</source>
@@ -549,7 +660,7 @@ background: white;(new line)
     </message>
     <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Program version:</source>
@@ -633,21 +744,40 @@ font-size:12px;(new line)
         <source>Close</source>
         <translation>Pechar</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>InformationImpl</name>
+    <message>
+        <source>&lt;p&gt;Total websites supported (plugins installed): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adult web sites:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music web sites:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainForm</name>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</source>
-        <translation>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</translation>
+        <translation type="obsolete">xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</translation>
     </message>
     <message>
         <source>QFrame{background: white;}</source>
-        <translation>QFrame{background: white;}</translation>
+        <translation type="obsolete">QFrame{background: white;}</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}(new line)
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}(new line)
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -764,7 +894,7 @@ font-size:12px;(new line)
     </message>
     <message>
         <source> QFrame{background: white;}</source>
-        <translation>QFrame{background: white;}</translation>
+        <translation type="obsolete">QFrame{background: white;}</translation>
     </message>
     <message>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</source>
@@ -776,7 +906,7 @@ font-size:12px;(new line)
     </message>
     <message>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 Kb/sec</source>
-        <translation>&lt;b&gt;Velocidade de descarga:&lt;/b&gt; 0,00 Kb/sec</translation>
+        <translation type="obsolete">&lt;b&gt;Velocidade de descarga:&lt;/b&gt; 0,00 Kb/sec</translation>
     </message>
     <message>
         <source>Download videos automatically checkbox</source>
@@ -820,7 +950,7 @@ font-size:12px;(new line)
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Open downloads directory</source>
@@ -881,6 +1011,26 @@ font-size:12px;(new line)
     <message>
         <source>View error message</source>
         <translation>Ver a mensaxe de erro</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Conectando...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 bytes/sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
+        <translation type="unfinished">Fai unha doazón a &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</translation>
+    </message>
+    <message>
+        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
+        <translation type="unfinished">Fai unha doazón a &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! É doado e rápido! :)</translation>
+    </message>
+    <message>
+        <source>Support button</source>
+        <translation type="unfinished">Botón de apoio</translation>
     </message>
 </context>
 <context>
@@ -992,6 +1142,152 @@ font-size:12px;(new line)
     <message>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertindo: %1 (%2)</translation>
+    </message>
+</context>
+<context>
+    <name>NewLanguages</name>
+    <message>
+        <source>Your installed languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List with all installed languages</source>
+        <translation type="unfinished">Lista con todas as linguaxes instaladas</translation>
+    </message>
+    <message>
+        <source>Languages list</source>
+        <translation type="unfinished">Lista de linguaxes</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uninstall the selected language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uninstall language button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uninstall selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available languages to install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List with all languages which you can install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages to install list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Updating languages list...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install the selected language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install language button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the Languages manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Pechar</translation>
+    </message>
+    <message>
+        <source>Languages manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewLanguagesImpl</name>
+    <message>
+        <source>Uninstall language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you uninstall the lanuage?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished">Si</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished">Non</translation>
+    </message>
+    <message>
+        <source>Install language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you install this new lanuage?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language uninstall error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language uninstall</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language &lt;b&gt;%1&lt;/b&gt; uninstalled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installing new language...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language install error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try install the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before install new languages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New language &lt;b&gt;%1&lt;/b&gt; installed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1202,11 +1498,11 @@ font-size:12px;(new line)
     </message>
     <message>
         <source>Use the selected language file</source>
-        <translation>Usar o arquivo de linguaxe escollido</translation>
+        <translation type="obsolete">Usar o arquivo de linguaxe escollido</translation>
     </message>
     <message>
         <source>Use language selected</source>
-        <translation>Usar a linguaxe escollida</translation>
+        <translation type="obsolete">Usar a linguaxe escollida</translation>
     </message>
     <message>
         <source>Use this language</source>
@@ -1505,6 +1801,14 @@ Procurar actualizacións sempre:</translation>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
+    <message>
+        <source>Internal FFmpeg</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages manager</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -1538,63 +1842,63 @@ Procurar actualizacións sempre:</translation>
     </message>
     <message>
         <source>AVI Format (*.avi)</source>
-        <translation>Formato AVI (*.avi)</translation>
+        <translation type="obsolete">Formato AVI (*.avi)</translation>
     </message>
     <message>
         <source>WMV Format ( *.wmv)</source>
-        <translation>Formato WMV ( *.wmv)</translation>
+        <translation type="obsolete">Formato WMV ( *.wmv)</translation>
     </message>
     <message>
         <source>MPEG1 Format ( *.mpg)</source>
-        <translation>Formato MPEG1 ( *.mpg)</translation>
+        <translation type="obsolete">Formato MPEG1 ( *.mpg)</translation>
     </message>
     <message>
         <source>MPEG2 Format ( *.mpg)</source>
-        <translation>Formato MPEG2 (*.mpg)</translation>
+        <translation type="obsolete">Formato MPEG2 (*.mpg)</translation>
     </message>
     <message>
         <source>Apple iPod (*.mp4)</source>
-        <translation>Apple iPod (*.mp4)</translation>
+        <translation type="obsolete">Apple iPod (*.mp4)</translation>
     </message>
     <message>
         <source>3GP Format (*.3gp)</source>
-        <translation>Formato 3GP (*.3gp)</translation>
+        <translation type="obsolete">Formato 3GP (*.3gp)</translation>
     </message>
     <message>
         <source>MP3 Format (*.mp3)</source>
-        <translation>Formato MP3 (*.mp3)</translation>
+        <translation type="obsolete">Formato MP3 (*.mp3)</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Orixinal</translation>
+        <translation type="obsolete">Orixinal</translation>
     </message>
     <message>
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation>Mais Baixa calidade (Video bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
+        <translation type="obsolete">Mais Baixa calidade (Video bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
     </message>
     <message>
         <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation>Baixa calidade (Video bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
+        <translation type="obsolete">Baixa calidade (Video bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
     </message>
     <message>
         <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation>Calidade normal (Video bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
+        <translation type="obsolete">Calidade normal (Video bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation>Calidade media (Video bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
+        <translation type="obsolete">Calidade media (Video bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
         <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation>Boa calidade (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
+        <translation type="obsolete">Boa calidade (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
         <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation>Moi boa calidade (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
+        <translation type="obsolete">Moi boa calidade (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
         <source>The Same quality as the original Video</source>
-        <translation>A mesma calidade que o orixinal</translation>
+        <translation type="obsolete">A mesma calidade que o orixinal</translation>
     </message>
     <message>
         <source>Day</source>
@@ -1759,6 +2063,97 @@ Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</t
         <source>Done</source>
         <translation>Feito</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Updates center error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try download the new update(s).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Pechar</translation>
+    </message>
+</context>
+<context>
+    <name>VideoConverter</name>
+    <message>
+        <source>AVI Format (*.avi)</source>
+        <translation type="unfinished">Formato AVI (*.avi)</translation>
+    </message>
+    <message>
+        <source>WMV Format ( *.wmv)</source>
+        <translation type="unfinished">Formato WMV ( *.wmv)</translation>
+    </message>
+    <message>
+        <source>MPEG1 Format ( *.mpg)</source>
+        <translation type="unfinished">Formato MPEG1 ( *.mpg)</translation>
+    </message>
+    <message>
+        <source>MPEG2 Format ( *.mpg)</source>
+        <translation type="unfinished">Formato MPEG2 (*.mpg)</translation>
+    </message>
+    <message>
+        <source>MP4 Format (*.mp4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apple iPod (*.mp4)</source>
+        <translation type="unfinished">Apple iPod (*.mp4)</translation>
+    </message>
+    <message>
+        <source>Sony PSP (*.mp4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3GP Format (*.3gp)</source>
+        <translation type="unfinished">Formato 3GP (*.3gp)</translation>
+    </message>
+    <message>
+        <source>MP3 Format (*.mp3)</source>
+        <translation type="unfinished">Formato MP3 (*.mp3)</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Orixinal</translation>
+    </message>
+    <message>
+        <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
+        <translation type="unfinished">Mais Baixa calidade (Video bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
+    </message>
+    <message>
+        <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
+        <translation type="unfinished">Baixa calidade (Video bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
+    </message>
+    <message>
+        <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
+        <translation type="unfinished">Calidade normal (Video bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
+    </message>
+    <message>
+        <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
+        <translation type="unfinished">Calidade media (Video bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
+    </message>
+    <message>
+        <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
+        <translation type="unfinished">Boa calidade (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
+    </message>
+    <message>
+        <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
+        <translation type="unfinished">Moi boa calidade (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
+    </message>
+    <message>
+        <source>The Same quality as the original Video</source>
+        <translation type="unfinished">A mesma calidade que o orixinal</translation>
+    </message>
 </context>
 <context>
     <name>VideoInformation</name>
@@ -1872,6 +2267,63 @@ Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</t
     <message>
         <source>Connection error: Unable to download the video</source>
         <translation>Erro de conexión: Non se pode descargar o video</translation>
+    </message>
+</context>
+<context>
+    <name>WelcomeDonate</name>
+    <message>
+        <source>Welcome to xVideoServiceThief</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;&lt;b&gt;Please donate!&lt;/b&gt;&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;This software is totally free of charge, but you can consider to donate if you like this tool or if you use it in a commercial environment.&lt;/p&gt;
+&lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
+&lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t display this message again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Pechar</translation>
+    </message>
+</context>
+<context>
+    <name>WindowsVistaDetected</name>
+    <message>
+        <source>Update center - Windows Vista detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t display this message again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
