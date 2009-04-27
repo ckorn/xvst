@@ -42,9 +42,9 @@ void displayHelp()
 
 int main(int argc, char ** argv)
 {
-	std::cout << "-----------------------------------------" << std::endl
-		  << "Pakunpaker v1.0 by Xesc & Technology 2008" << std::endl 
-		  << "-----------------------------------------" << std::endl << std::endl;
+	std::cout << "--------------------------------------------" << std::endl
+		      << "Pakunpaker v1.0 by Xesc & Technology 2008-09" << std::endl 
+		      << "--------------------------------------------" << std::endl << std::endl;
 	
 	if (argc > 2)
 	{
