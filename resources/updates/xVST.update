@@ -95,8 +95,17 @@
 		caption="Language: Korean (KR)"
 		version="1.3.0"
 		size="48620"
-		installTo="/languages/korean_kr.language"
+		installTo="/languages/korean.language"
 		url="http://xviservicethief.sourceforge.net/updates/special-files/korean_kr_lang.update"
 		packed="true"
 	#END:6
+	#FILE:7
+		caption="Plugin: Youtube"
+		version="1.0"
+		size="48620"
+		installTo="/plugins/youtube.js"
+		url="http://xviservicethief.sourceforge.net/updates/special-files/korean_kr_lang.update"
+		packed="false"
+		obligatory="true"
+	#END:7
 }

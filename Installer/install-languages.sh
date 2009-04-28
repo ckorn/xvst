@@ -30,6 +30,10 @@ mkdir $LANGUAGES_END
 echo "Copying languages (QM) to cache directory"
 find $LANGUAGES_SRC -name \*.qm -exec cp -v {} $LANGUAGES_PRE \;
 
+# delete the language template
+echo "Deleting QM template file"
+rm -v $LANGUAGES_PRE/template_for_new_translations.qm
+
 echo "Copying languages (Language) to cache directory"
 find $LANGUAGES_SRC -name \*.language -exec cp -v {} $LANGUAGES_PRE \;
 
