@@ -40,6 +40,9 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	btnAddVideo->setMinimumWidth(158);
 	frame->layout()->setContentsMargins(4, 4, 6, 4);
 	setMinimumSize(780, 540);
+	QFont updatesFont = lblCheckForUpdatesLabel->font();
+	updatesFont.setPointSize(10);
+	lblCheckForUpdatesLabel->setFont(updatesFont);
 #endif
 	// init program options
 	lastOptionsPage = 0;

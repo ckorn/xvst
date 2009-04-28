@@ -257,7 +257,7 @@ void ProgramOptions::setDefault()
 	dragDropAlphaBlendValue = 100;
 	dragDropAlphaBlend = false;
 
-	languageFile = "english_uk.language";
+	languageFile = LanguageManager::getDefaultUserLanguage(getLanguagesPath()); // "english_uk.language";
 
 	installAutomaticallyUpdates = true;
 	lastUpdate = QDate(2007, 01, 01);
@@ -592,11 +592,7 @@ void ProgramOptions::setDragDropAlphaBlendValue(int value)
 
 QString ProgramOptions::getLanguageFile(bool fullPath)
 {
-#ifdef Q_WS_MAC
-	return fullPath ? QDir::toNativeSeparators(appDir.absolutePath() + "/../Resources/languages/" + languageFile) : languageFile;
-#else
-	return fullPath ? QDir::toNativeSeparators(appDir.absolutePath() + "/languages/" + languageFile) : languageFile;
-#endif
+	return fullPath ? getLanguagesPath() + "/" + languageFile : languageFile;
 }
 
 void ProgramOptions::setLanguageFile(QString value)

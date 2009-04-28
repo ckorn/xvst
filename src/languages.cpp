@@ -104,6 +104,26 @@ bool LanguageManager::isLanguageInstalled(QString languageId)
 	return false;
 }
 
+Language* LanguageManager::getAutoLanguage()
+{
+	// get the user system configuration
+	QLocale locale;
+	QString systemQM = QString("xVST_%1.qm").arg(copy(locale.name(), 0, locale.name().indexOf("_")));
+	// find the
+	for (int n = 0; n < languagesList->count(); n++)
+		if (languagesList->at(n)->getLangFile() == systemQM)
+			return languagesList->at(n);
+	// return the default language
+	return NULL;
+}
+
+QString LanguageManager::getAutoLanguageFileName()
+{
+	Language *language = getAutoLanguage();
+	// return language definition file
+	return language != NULL ? language->getFile() : "english_uk.language";
+}
+
 QString LanguageManager::get_qm_languageFile(QString langFile)
 {
 	QFileInfo langFileInfo(langFile);
@@ -137,6 +157,13 @@ Language* LanguageManager::getLanguageInfo(QString langFile)
 	}
 	
 	return result;
+}
+
+QString LanguageManager::getDefaultUserLanguage(QString langDir)
+{
+	LanguageManager lm;
+	lm.loadLangFiles(langDir);
+	return lm.getAutoLanguageFileName();
 }
 
 // Language file description

@@ -28,6 +28,8 @@
 //
 #include <QtGui>
 //
+#include "tools.h"
+//
 /*! Language file description */
 class Language : public QObject
 {
@@ -82,9 +84,15 @@ Q_OBJECT
 		void loadLangFiles(QString langDir);
 		/*! Get if this language id exsits (is installed) */
 		bool isLanguageInstalled(QString languageId);
+		/*! Get the language which corresponds to current system configuration */
+		Language *getAutoLanguage();
+		/*! Get the language file name which corresponds to current system configuration */
+		QString getAutoLanguageFileName();
 		/*! Install a language */
 		static QString get_qm_languageFile(QString langFile);
 		/*! Return a Langage item info */
 		static Language* getLanguageInfo(QString langFile);
+		/*! Get the default user language */
+		static QString getDefaultUserLanguage(QString langDir);
 };
 #endif // __LANGUAGES_H__

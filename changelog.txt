@@ -10,6 +10,7 @@
 - Added Portugese - Brasil (BR) language
 - Added German (DE) language
 - Added Romanian (RO) language
+- Added automatic user language O.S detection
 - Added URL for each video service in "Information" form
 - Added embeded checking for updates at startup
 - Added the possibility to set a custom conversion configuration on add a new video

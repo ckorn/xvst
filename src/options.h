@@ -31,6 +31,7 @@
 //
 #include "tools.h"
 #include "videoconvert.h"
+#include "languages.h"
 
 #ifdef Q_OS_LINUX
 static const QString DEFAULT_DOWNLOADS = "/xVideoServiceThief_downloads";	//!< Default sub-directory for downloads
