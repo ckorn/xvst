@@ -6,12 +6,14 @@
 - Changed the internal xVST monolithic core to a dynamic core (based on Plugins)
 - Changed: After a new update, on restart the program will check again for updates
 
-- Added Danish (DA) language
-- Added Portugese - Brasil (BR) language
-- Added German (DE) language
-- Added Romanian (RO) language
-- Added Swedish (SV) language
-- Added Galician (GL) language
+- Added Danish (DA) translation (thanks to Jens Chr. True)
+- Added Portugese - Brasil (BR) translation (thanks to Mateus Tuler)
+- Added Korean (KR) translation (thanks to Lee Evan)
+- Added Hungarian (HU) translation (thanks to Zolt‡n Magyar (ZityiSoft))
+- Added Galician (GL) translation (thanks to Marcos D’az)
+- Added Romanian (RO) translation (thanks to Iulian Temelie)
+- Added German (DE) translation (thanks to Christian Kieschnick)
+- Added Swedish (SV) translation (thanks to Daniel Nylander)
 - Added automatic user language O.S detection
 - Added URL for each video service in "Information" form
 - Added embeded checking for updates at startup
