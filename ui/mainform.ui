@@ -197,13 +197,13 @@
           <widget class="QProgressBar" name="pbrCheckingForUpdates">
            <property name="minimumSize">
             <size>
-             <width>165</width>
+             <width>158</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>165</width>
+             <width>158</width>
              <height>20</height>
             </size>
            </property>
