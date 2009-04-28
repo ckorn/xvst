@@ -5,7 +5,7 @@ WelcomeDonate::WelcomeDonate(QWidget *parent) : QDialog(parent)
     setupUi(this);
 	//
 #ifdef Q_WS_MAC
-	resize(555, 305);
+	resize(555, 355);
 #endif
 	//
 	connect(btnDonate, SIGNAL(clicked()), this, SLOT(donateClicked()));
