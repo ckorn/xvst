@@ -1310,143 +1310,143 @@ font-size:12px;
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="66"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
         <source> Video </source>
         <translation> Video </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="66"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
         <source> Size </source>
         <translation>Taille</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="66"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
         <source> Progress </source>
         <translation>Progression</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="66"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
         <source> Time </source>
         <translation>Durée</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="66"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
         <source> Speed </source>
         <translation>Vitesse</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="334"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="337"/>
         <source>Closing...</source>
         <translation>Fermeture...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="335"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="338"/>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
         <translation>xVideoServiceThief est actif, voulez-vous mettre en pause le travail en cours?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="336"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="543"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="339"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="546"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="336"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="544"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="339"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="547"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="361"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="364"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="401"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="841"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="404"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="844"/>
         <source>Updates</source>
         <translation>Mises à jour</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="402"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="405"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un autre processus fonctionne actuellement, arrêtez-le ou attendez jusqu&apos;à la fin du processus.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="403"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="630"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="843"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="406"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="633"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="846"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="448"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="451"/>
         <source>Select the download directory:</source>
         <translation>Choisir le répertoire de téléchargement :</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="541"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="544"/>
         <source>Cancel download</source>
         <translation>Annuler le téléchargement</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="542"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="545"/>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Voulez-vous annuler le téléchargement de &lt;b&gt;%1&lt;/b&gt; ?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="628"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="631"/>
         <source>Error message</source>
         <translation>Message d&apos;erreur</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="629"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="632"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Cette vidéo a l&apos;erreur suivante : &lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="842"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="845"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;application xUpdater est manquante.&lt;br&gt;&lt;br&gt;Réinstallez xVideoServiceThief si vous voulez mettre à jour le programme automatiquement.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="977"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="980"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Compteur vidéo :&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 complet)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="981"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="984"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Téléchargement :&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="985"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="988"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Vitesse de téléchargement :&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="986"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="989"/>
         <source>/sec</source>
         <translation>/sec</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1001"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1016"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1004"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1019"/>
         <source>Pause download</source>
         <translation>Téléchargement en pause</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1014"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1017"/>
         <source>Resume download</source>
         <translation>Résumé du téléchargement</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1052"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1055"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Téléchargement : %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1060"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1063"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertion : %1 (%2)</translation>
     </message>
@@ -2925,17 +2925,17 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/welcomedonate.ui" line="128"/>
+        <location filename="../../ui/welcomedonate.ui" line="131"/>
         <source>Don&apos;t display this message again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/welcomedonate.ui" line="154"/>
+        <location filename="../../ui/welcomedonate.ui" line="157"/>
         <source>Donate!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/welcomedonate.ui" line="167"/>
+        <location filename="../../ui/welcomedonate.ui" line="170"/>
         <source>Close</source>
         <translation type="unfinished">Fermer</translation>
     </message>

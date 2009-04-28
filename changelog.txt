@@ -10,6 +10,8 @@
 - Added Portugese - Brasil (BR) language
 - Added German (DE) language
 - Added Romanian (RO) language
+- Added Swedish (SV) language
+- Added Galician (GL) language
 - Added automatic user language O.S detection
 - Added URL for each video service in "Information" form
 - Added embeded checking for updates at startup
