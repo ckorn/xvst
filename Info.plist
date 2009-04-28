@@ -7,13 +7,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Xesc &amp; Technology 2008</string>
+	<string>Xesc &amp; Technology 2009</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleExecutable</key>
 	<string>xVideoServiceThief</string>
 	<key>CFBundleVersion</key>
-	<string>2.0.0</string>
+	<string>2.0.0 Alpha</string>
 	<key>CFBundleDisplayName</key>
 	<string>xVideoServiceThief</string>
 	<key>NSHumanReadableCopyright</key>
