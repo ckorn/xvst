@@ -523,12 +523,12 @@ QStringList Updates::buildDMGScript(int n)
 	return result;
 }
 
-bool Updates::canUpdate()
+bool Updates::canUpdate(QString searchPath)
 {
 #ifdef Q_WS_MAC
 	return QFile::exists(QCoreApplication::applicationDirPath() + "/../Resources" + XUPDATER_PATH);
 #else
-	return QFile::exists(QCoreApplication::applicationDirPath() + XUPDATER_PATH);
+	return QFile::exists(searchPath + XUPDATER_PATH);
 #endif
 }
 

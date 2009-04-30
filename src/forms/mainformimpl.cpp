@@ -834,7 +834,7 @@ void MainFormImpl::checkForUpdates()
 
 	if (programOptions->getCheckForUpdatesOnStartup() || forceCheckUpdates)
 		// check if the xUpdater is installed (can install updates?)
-		if (!Updates::canUpdate())
+		if (!Updates::canUpdate(programOptions->getOptionsPath()))
 		{
 			actUpdates->setEnabled(false);
 			spbUpdates->setEnabled(false);

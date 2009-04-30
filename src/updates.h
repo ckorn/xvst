@@ -175,7 +175,7 @@ Q_OBJECT
 		/*! Get total to download */
 		int getTotalToDownload();
 		/*! Check if the xUpdater is installed */
-		static bool canUpdate();
+		static bool canUpdate(QString searchPath);
 	private slots:
 		/*! When the http read data */
 		void downloadEvent(int pos, int max);
