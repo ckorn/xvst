@@ -28,7 +28,7 @@
 #ifndef __PAKUNPAK_H__
 #define __PAKUNPAK_H__
 
-#include <string>
+#include <string.h>
 #include <vector>
 #include <fstream>
 

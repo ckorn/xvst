@@ -30,7 +30,7 @@ UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall
 {
 	setupUi(this);
 	// resize for macosx
-#ifdef Q_WS_MAC
+#ifndef Q_OS_WIN32
 	resize(630, 366);
 #endif
 	closedByButton = false;
@@ -73,7 +73,13 @@ UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall
 	connect(updates, SIGNAL(failedToInstallUpdates()), this, SLOT(failedToInstallUpdates()));
 	// if auto download & install updates, then...
 	if (autoDownloadAndInstall)
-		btnUpdateClicked();
+	{
+		// disable update button
+		lsvUpdates->setEnabled(false);
+		btnUpdate->setEnabled(false);
+		// start automatically to download updates (in 500ms)
+		QTimer::singleShot(500, this, SLOT(btnUpdateClicked()));
+	}
 }
 
 void UpdateCenterImpl::closeEvent(QCloseEvent *event)

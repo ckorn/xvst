@@ -4,7 +4,7 @@ WelcomeDonate::WelcomeDonate(QWidget *parent) : QDialog(parent)
 {
     setupUi(this);
 	//
-#ifdef Q_WS_MAC
+#ifndef Q_OS_WIN32
 	resize(555, 355);
 #endif
 	//
