@@ -1704,7 +1704,7 @@
        <property name="minimumSize">
         <size>
          <width>100</width>
-         <height>25</height>
+         <height>0</height>
         </size>
        </property>
        <property name="whatsThis">
@@ -1729,7 +1729,7 @@
        <property name="minimumSize">
         <size>
          <width>100</width>
-         <height>25</height>
+         <height>0</height>
         </size>
        </property>
        <property name="whatsThis">
