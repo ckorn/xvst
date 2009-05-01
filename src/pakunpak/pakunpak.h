@@ -28,7 +28,11 @@
 #ifndef __PAKUNPAK_H__
 #define __PAKUNPAK_H__
 
+#ifdef __linux__ || linux
 #include <string.h>
+#else
+#include <string>
+#endif
 #include <vector>
 #include <fstream>
 
