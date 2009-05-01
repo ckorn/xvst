@@ -402,7 +402,7 @@
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="90"/>
         <source>You are using the most recent version of this program.</source>
-        <translation>Usted esta usando la versión mas reciente del programa.</translation>
+        <translation>Usted está usando la versión más reciente del programa.</translation>
     </message>
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="91"/>

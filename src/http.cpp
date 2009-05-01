@@ -175,6 +175,7 @@ QString CookieController::getCookies(QUrl URL)
 
 		// is a valid cookie?
 		if (host.indexOf(cookie->getDomain()) != -1)
+		{
 			if (cookie->getPath() != "/")
 			{
 				if (cookie->getPath() == URL.path())
@@ -182,6 +183,7 @@ QString CookieController::getCookies(QUrl URL)
 			}
 			else
 				result += cookie->getCookieBoddy() + ";";
+		}
 	}
 	// return cookies assigned to this URL
 	return result;

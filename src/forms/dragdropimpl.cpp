@@ -119,7 +119,7 @@ void DragDropImpl::createDragDropMenu()
 	alphaBlendMenu->addAction(actAlpha70);
 	alphaBlendMenu->addAction(actAlpha80);
 	alphaBlendMenu->addAction(actAlpha90);
-#ifdef Q_OS_LINUX || Q_OS_WIN32
+#ifndef Q_WS_MAC
 	alphaBlendMenu->addSeparator();
 	alphaBlendMenu->addAction(actAlphaCustom);
 #endif
