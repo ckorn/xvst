@@ -28,7 +28,7 @@
 #ifndef __PAKUNPAK_H__
 #define __PAKUNPAK_H__
 
-#ifdef __linux__ || linux
+#ifdef __linux__
 #include <string.h>
 #else
 #include <string>

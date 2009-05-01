@@ -2907,10 +2907,10 @@ font-size:12px;
 &lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
 &lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
 &lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Esta aplicación es totalmente gratuita, pero usted puede considerar la posibilidad de realizar una donación si le gusta esta herramienta o si la está usando en un entorno comercial.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;Esta aplicación es totalmente gratuita, pero usted puede considerar la posibilidad de realizar una donación si le gusta esta herramienta o si la está usando en un entorno comercial.&lt;/p&gt;
 &lt;p&gt;!Gracias! !Lo vamos a apreciar mucho!&lt;/p&gt;
 &lt;p&gt;¿Por qué debería realizar una donación? Sus donaciones servirán para mejorar el xVideoServiceThief y ayudará a pagar nuestras facturas tecnológicas.&lt;/p&gt;
-&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Nota:&lt;/b&gt; Si usted ha pagado para bajar esta aplicación, entonces le han estafado.&lt;/font&gt;&lt;/p&gt;</translation>
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Nota:&lt;/b&gt; Si usted ha pagado por bajar esta aplicación, entonces le han estafado.&lt;/font&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/welcomedonate.ui" line="131"/>
