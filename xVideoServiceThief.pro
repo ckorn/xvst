@@ -1,6 +1,7 @@
 CONFIG += qt \
     warn_on \
-    debug_and_release
+	debug_and_release \
+	$$[build_mode]
 QT = core \
     gui \
     network \
@@ -128,4 +129,13 @@ win32 {
     RC_FILE += resources/xVST.rc
     OBJECTS_DIR += build/o/win32
 }
-eval($$[build_mode] = static_build):DEFINES += STATIC_BUILD
+frameworks_build {
+	DEFINES += FRAMEWORKS_BUILD
+	message(frameworks_build)
+}
+static_build {
+	DEFINES += STATIC_BUILD
+	message(static_build)
+}
+
+#eval($$[build_mode] = static_build):DEFINES += STATIC_BUILD

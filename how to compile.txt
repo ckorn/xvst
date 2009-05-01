@@ -17,3 +17,10 @@ A compiler directrive (STATIC_BUILD) must be defined if you want to get a "valid
 		> qmake -set build_mode dynamic_build
 		> qmake
 		> make
+
+- Frameworks mode (only MacOSX):
+
+	If you want compile the xVST in FRAMEWORKS version, you should do:
+		> qmake -set build_mode frameworks_build
+		> qmake
+		> make
