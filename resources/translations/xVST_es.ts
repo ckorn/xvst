@@ -2899,7 +2899,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/welcomedonate.ui" line="50"/>
         <source>&lt;h3&gt;&lt;b&gt;Please donate!&lt;/b&gt;&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;&lt;b&gt;Por favor haga una donación!&lt;/b&gt;&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;&lt;b&gt;¡Donaciones!&lt;/b&gt;&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/welcomedonate.ui" line="57"/>
@@ -2907,8 +2907,8 @@ font-size:12px;
 &lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
 &lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
 &lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;Esta aplicación es totalmente gratuita, pero usted puede considerar la posibilidad de realizar una donación si le gusta esta herramienta o si la está usando en un entorno comercial.&lt;/p&gt;
-&lt;p&gt;!Gracias! !Lo vamos a apreciar mucho!&lt;/p&gt;
+        <translation>&lt;p&gt;Esta aplicación es totalmente gratuita, pero usted puede considerar la posibilidad de realizar una donación si le gusta esta herramienta o si la está usando en un entorno comercial.&lt;/p&gt;
+&lt;p&gt;!Gracias!&lt;/p&gt;
 &lt;p&gt;¿Por qué debería realizar una donación? Sus donaciones servirán para mejorar el xVideoServiceThief y ayudará a pagar nuestras facturas tecnológicas.&lt;/p&gt;
 &lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Nota:&lt;/b&gt; Si usted ha pagado por bajar esta aplicación, entonces le han estafado.&lt;/font&gt;&lt;/p&gt;</translation>
     </message>
@@ -2938,7 +2938,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/winvistaupdatesmsg.ui" line="68"/>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Atención, el xVST ha detectado que usted está corriendo el Windows Vista y esto puede no ayudar a las actualizaciones.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Si usted tiene el &lt;b&gt;UAC&lt;/b&gt; (User Account Control) activado, las actualizaciones automáticas puede que no se instalen debido a un problema con los permisos.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Atención, el xVST ha detectado que usted está corriendo Windows Vista y esto puede ocasionar problemas con las actualizaciones.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Si usted tiene el &lt;b&gt;UAC&lt;/b&gt; (User Account Control) activado, las actualizaciones automáticas puede que no se instalen debido a un problema con los permisos.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/winvistaupdatesmsg.ui" line="81"/>
