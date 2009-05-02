@@ -100,7 +100,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/httpscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/forms/welcomedonate.cpp
-TRANSLATIONS = resources/translations/xVST_ca.ts \
+TRANSLATIONS = resources/translations/xVST_en.ts \
+    resources/translations/xVST_ca.ts \
     resources/translations/xVST_es.ts \
     resources/translations/xVST_pl.ts \
     resources/translations/xVST_it.ts \
