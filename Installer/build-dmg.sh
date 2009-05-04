@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # configure DMG
-DMG_NAME='xVST_2_0_0a-intel.dmg'
+DMG_NAME='xVST_2_0_1a-intel.dmg'
 DMG_TITLE='xVideoServiceThief'
 DMG_SIZE='40m'
 
