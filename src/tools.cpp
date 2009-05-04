@@ -144,6 +144,15 @@ QString extractFileName(const QString fileName)
 	return file.fileName();
 }
 
+QString validPath(QString path)
+{
+#ifdef Q_WS_WIN
+	return "\"" + path "\"";
+#else
+	return path.replace(" ", "\ ");
+#endif
+}
+
 QString secondsToHMS(const int seconds, const bool compact, const bool allowNegative)
 {
 	int sec = seconds;

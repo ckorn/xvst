@@ -58,6 +58,9 @@
 	/*! Return the file name  */
 	QString extractFileName(const QString fileName);
 
+	/*! Return a valid file path */
+	QString validPath(QString path);
+
 	/*! Convert seconds to Hours minutes seconds */
 	QString secondsToHMS(const int seconds, const bool compact, const bool allowNegative = false);
 
