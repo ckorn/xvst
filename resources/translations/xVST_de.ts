@@ -1579,19 +1579,19 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="90"/>
-        <source>Wish you install this new lanuage?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="120"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="125"/>
         <source>Language uninstall error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="90"/>
+        <source>Wish you install this new language?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="121"/>
-        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2632,42 +2632,42 @@ font-size:12px;
         <translation>Fortschritt</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="145"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="151"/>
         <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
         <translation>&lt;b&gt;Updatestatus:&lt;/b&gt; Lade %1 herrunter</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="147"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="153"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="154"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="160"/>
         <source>Done</source>
         <translation>Abgeschlossen</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="159"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="165"/>
         <source>Error</source>
         <translation type="unfinished">Fehler</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="176"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="182"/>
         <source>Updates center error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="177"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="183"/>
         <source>Some errors has ocurred on try download the new update(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="178"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="184"/>
         <source>Ok</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="182"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="188"/>
         <source>Close</source>
         <translation type="unfinished">Schließen</translation>
     </message>

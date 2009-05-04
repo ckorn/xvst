@@ -1223,10 +1223,6 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Wish you install this new lanuage?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Language uninstall error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1267,7 +1263,11 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
+        <source>Wish you install this new language?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

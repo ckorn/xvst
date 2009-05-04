@@ -72,98 +72,98 @@
         <location filename="../../ui/addvideo.ui" line="218"/>
         <location filename="../../ui/addvideo.ui" line="224"/>
         <source>Enable/disable the video conversions</source>
-        <translation type="unfinished">Habilitar/Desabilitar conversão de vídeo</translation>
+        <translation>Habilitar/Desabilitar conversão de vídeo</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="221"/>
         <source>Convert videos</source>
-        <translation type="unfinished">Converter vídeos</translation>
+        <translation>Converter vídeos</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="227"/>
         <source>Convert video to Mpeg/DivX/etc...</source>
-        <translation type="unfinished"></translation>
+        <translation>Converter vídeo para Mpeg/DivX/etc...</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="242"/>
         <source>Output format:</source>
-        <translation type="unfinished">Formato de saída:</translation>
+        <translation>Formato de saída:</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="249"/>
         <location filename="../../ui/addvideo.ui" line="255"/>
         <source>Video output format</source>
-        <translation type="unfinished">Formato de saida do vídeo</translation>
+        <translation>Formato de saida do vídeo</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="252"/>
         <source>Video output format combobox</source>
-        <translation type="unfinished">Caixa de combinação de formato de saída do vídeo </translation>
+        <translation>Caixa de combinação de formato de saída do vídeo </translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="262"/>
         <source>Video resolution:</source>
-        <translation type="unfinished">Resolução do vídeo:</translation>
+        <translation>Resolução do vídeo:</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="269"/>
         <location filename="../../ui/addvideo.ui" line="275"/>
         <source>Video resolution</source>
-        <translation type="unfinished">Resolução do vídeo</translation>
+        <translation>Resolução do vídeo</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="272"/>
         <source>Video resolution combobox</source>
-        <translation type="unfinished">Caixa de combinação de resolução de vídeo </translation>
+        <translation>Caixa de combinação de resolução de vídeo </translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="282"/>
         <source>Audio sampling rate (Hz):</source>
-        <translation type="unfinished">Taxa de audio (Hz):</translation>
+        <translation>Taxa de audio (Hz):</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="289"/>
         <location filename="../../ui/addvideo.ui" line="295"/>
         <source>Video audio sampling rate (Hz)</source>
-        <translation type="unfinished">Taxa de audio e vídeo (Hz)</translation>
+        <translation>Taxa de audio e vídeo (Hz)</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="292"/>
         <source>Video audio sampling rate combobox</source>
-        <translation type="unfinished">Caixa de combinação da taxa de video e audio </translation>
+        <translation>Caixa de combinação da taxa de video e audio </translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="302"/>
         <location filename="../../ui/addvideo.ui" line="309"/>
         <location filename="../../ui/addvideo.ui" line="315"/>
         <source>Video frame rate (Hz)</source>
-        <translation type="unfinished">Taxa de quadros do video (Hz)</translation>
+        <translation>Taxa de quadros do video (Hz)</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="312"/>
         <source>Video frame rate combobox</source>
-        <translation type="unfinished">Combinação de taxas de quadros do video</translation>
+        <translation>Combinação de taxas de quadros do video</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="322"/>
         <source>Output quality:</source>
-        <translation type="unfinished">Qualidade de saida:</translation>
+        <translation>Qualidade de saida:</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="329"/>
         <location filename="../../ui/addvideo.ui" line="335"/>
         <source>General video output quality</source>
-        <translation type="unfinished">Qualidade padrão da saida de vídeo</translation>
+        <translation>Qualidade padrão da saida de vídeo</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="332"/>
         <source>General video output quality combobox</source>
-        <translation type="unfinished">Caixa de opções de qualidades padrões de vídeo</translation>
+        <translation>Caixa de opções de qualidades padrões de vídeo</translation>
     </message>
     <message>
         <location filename="../../ui/addvideo.ui" line="345"/>
         <source>Override original conversion options for this video</source>
-        <translation type="unfinished"></translation>
+        <translation>Anular as opções originais para este vídeo</translation>
     </message>
 </context>
 <context>
@@ -294,7 +294,7 @@
     <message>
         <location filename="../../ui/bugreport.ui" line="326"/>
         <source>Don&apos;t display &quot;Bug Report&quot; the next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Não mostrar &quot;Relatório de Erros&quot; na próxima vez</translation>
     </message>
     <message>
         <source>Do not display &quot;Bug Report&quot; the next time</source>
@@ -398,38 +398,38 @@
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="89"/>
         <source>Updates</source>
-        <translation type="unfinished">Atualizações</translation>
+        <translation>Atualizações</translation>
     </message>
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="90"/>
         <source>You are using the most recent version of this program.</source>
-        <translation type="unfinished">Você está utilizando a versão mais recente deste programa.</translation>
+        <translation>Você está utilizando a versão mais recente deste programa.</translation>
     </message>
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="91"/>
         <location filename="../../src/checkupdatesworker.cpp" line="108"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="105"/>
         <source>Update Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro de Atualizações</translation>
     </message>
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="106"/>
         <source>Please, download the new version of &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; from &lt;a href=&apos;%2&apos;&gt;here.&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, faça o download da nova versao do&lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; de &lt;a href=&apos;%2&apos;&gt;aqui.&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="124"/>
         <source>Cancelling... please wait...</source>
-        <translation type="unfinished">Cancelando... por favor espere...</translation>
+        <translation>Cancelando... por favor espere...</translation>
     </message>
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="135"/>
         <source>Checking for updates...</source>
-        <translation type="unfinished">Checando por atualizações...</translation>
+        <translation>Checando por atualizações...</translation>
     </message>
 </context>
 <context>
@@ -641,7 +641,7 @@
     <message>
         <location filename="../../ui/downloadlog.ui" line="125"/>
         <source>Close</source>
-        <translation type="unfinished">Fechar</translation>
+        <translation>Fechar</translation>
     </message>
 </context>
 <context>
@@ -830,7 +830,7 @@ background: white;
     <message>
         <location filename="../../ui/information.ui" line="68"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="99"/>
@@ -941,17 +941,17 @@ font-size:12px;
     <message>
         <location filename="../../src/forms/informationimpl.cpp" line="80"/>
         <source>&lt;p&gt;Total websites supported (plugins installed): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Todos websites suportados (plugins instalados): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/forms/informationimpl.cpp" line="82"/>
         <source>Adult web sites:</source>
-        <translation type="unfinished"></translation>
+        <translation>Websites Adultos:</translation>
     </message>
     <message>
         <location filename="../../src/forms/informationimpl.cpp" line="83"/>
         <source>Music web sites:</source>
-        <translation type="unfinished"></translation>
+        <translation>Websites de Música:</translation>
     </message>
 </context>
 <context>
@@ -973,23 +973,23 @@ font-size:12px;
     <message>
         <location filename="../../ui/mainform.ui" line="114"/>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
-        <translation type="unfinished">Fazer doação para &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</translation>
+        <translation>Faça uma doação para &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="117"/>
         <location filename="../../ui/mainform.ui" line="123"/>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
-        <translation type="unfinished">Fazer doação para &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! É fácil e rápido! :)</translation>
+        <translation>Faça uma doação para &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! É fácil e rápido! :)</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="120"/>
         <source>Support button</source>
-        <translation type="unfinished">Suporte button</translation>
+        <translation>Suporte button</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="176"/>
         <source>Connecting...</source>
-        <translation type="unfinished">Conectando...</translation>
+        <translation>Conectando...</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="300"/>
@@ -1151,7 +1151,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/mainform.ui" line="777"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 bytes/sec</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Velocidade de Download:&lt;/b&gt; 0,00 bytes/seg</translation>
     </message>
     <message>
         <source> QFrame{background: white;}</source>
@@ -1456,98 +1456,98 @@ font-size:12px;
     <message>
         <location filename="../../ui/newlanguages.ui" line="14"/>
         <source>Languages manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerenciador de Idiomas</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="20"/>
         <source>Your installed languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Seus idiomas instalados</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="26"/>
         <location filename="../../ui/newlanguages.ui" line="32"/>
         <source>List with all installed languages</source>
-        <translation type="unfinished">Lista com todos os idiomas instalados</translation>
+        <translation>Lista com todos os idiomas instalados</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="29"/>
         <source>Languages list</source>
-        <translation type="unfinished">Lista de idiomas</translation>
+        <translation>Lista de idiomas</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="60"/>
         <location filename="../../ui/newlanguages.ui" line="136"/>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="77"/>
         <location filename="../../ui/newlanguages.ui" line="83"/>
         <source>Uninstall the selected language</source>
-        <translation type="unfinished"></translation>
+        <translation>Desinstalar o selecionado idioma</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="80"/>
         <source>Uninstall language button</source>
-        <translation type="unfinished"></translation>
+        <translation>Desinstalar idioma button</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="86"/>
         <source>Uninstall selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Desinstalar selecionado</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="96"/>
         <source>Available languages to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Idiomas disponíveis para instalar</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="102"/>
         <location filename="../../ui/newlanguages.ui" line="108"/>
         <source>List with all languages which you can install</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista com todas os idiomas que você pode instalar</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="105"/>
         <source>Languages to install list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de idiomas para instalar</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="144"/>
         <source>Updating languages list...</source>
-        <translation type="unfinished"></translation>
+        <translation>Atualizando lista de idiomas...</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="173"/>
         <location filename="../../ui/newlanguages.ui" line="179"/>
         <source>Install the selected language</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar o selecionado idioma</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="176"/>
         <source>Install language button</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar idioma button</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="182"/>
         <source>Install selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar selecionado</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="213"/>
         <location filename="../../ui/newlanguages.ui" line="219"/>
         <source>Close the Languages manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Fechar o gerenciador de idiomas</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="216"/>
         <source>Close button</source>
-        <translation type="unfinished">Fechar button</translation>
+        <translation>Fechar button</translation>
     </message>
     <message>
         <location filename="../../ui/newlanguages.ui" line="222"/>
         <source>Close</source>
-        <translation type="unfinished">Fechar</translation>
+        <translation>Fechar</translation>
     </message>
 </context>
 <context>
@@ -1555,45 +1555,53 @@ font-size:12px;
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="78"/>
         <source>Uninstall language</source>
-        <translation type="unfinished"></translation>
+        <translation>Desinstalar idioma</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="79"/>
         <source>Wish you uninstall the lanuage?</source>
-        <translation type="unfinished"></translation>
+        <translation>Você deseja desinstalar o idioma?</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="80"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="91"/>
         <source>Yes</source>
-        <translation type="unfinished">Sim</translation>
+        <translation>Sim</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="81"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="92"/>
         <source>No</source>
-        <translation type="unfinished">Não</translation>
+        <translation>Não</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="89"/>
         <source>Install language</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="90"/>
         <source>Wish you install this new lanuage?</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Você deseja instalar o novo idioma?</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="120"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="125"/>
         <source>Language uninstall error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro de desinstalação de idioma</translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
+        <translation type="obsolete">Alguns erros podem ocorrer tentando desinstalar o selecionado &lt;b&gt;%1&lt;/b&gt; idioma.&lt;br&gt;&lt;br&gt;&lt;b&gt;Obs:&lt;/b&gt; Com Windows Vista você deve executar o xVST como administrador antes de desinstalar os idiomas.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="90"/>
+        <source>Wish you install this new language?</source>
+        <translation>Você deseja instalar o novo idioma?</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="121"/>
-        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
-        <translation type="unfinished"></translation>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
+        <translation>Alguns erros podem ocorrer tentando desinstalar o selecionado &lt;b&gt;%1&lt;/b&gt; idioma.&lt;br&gt;&lt;br&gt;&lt;b&gt;Obs:&lt;/b&gt; Com Windows Vista você deve executar o xVST como administrador antes de desinstalar os idiomas.</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="122"/>
@@ -1603,49 +1611,49 @@ font-size:12px;
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="175"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="180"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="126"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="174"/>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alguns erros podem ocorrer tentando desinstalar o selecionado &lt;b&gt;%1&lt;/b&gt; idioma.</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="130"/>
         <source>Language uninstall</source>
-        <translation type="unfinished"></translation>
+        <translation>Desinstalar idioma</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="131"/>
         <source>Language &lt;b&gt;%1&lt;/b&gt; uninstalled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma &lt;b&gt;%1&lt;/b&gt; desinstalado.</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="153"/>
         <source>Installing new language...</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalando novo idioma...</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="168"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="173"/>
         <source>Language install error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro de instalação de idioma</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="169"/>
         <source>Some errors has ocurred on try install the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before install new languages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alguns erros podem ocorrer tentando instalar o selecionado &lt;b&gt;%1&lt;/b&gt; idioma.&lt;br&gt;&lt;br&gt;&lt;b&gt;Obs:&lt;/b&gt; Com Windows Vista você deve executar o xVST como administrador antes de instalar os idiomas.</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="178"/>
         <source>Language install</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar idioma</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="179"/>
         <source>New language &lt;b&gt;%1&lt;/b&gt; installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo: idioma &lt;b&gt;%1&lt;/b&gt; instalado.</translation>
     </message>
 </context>
 <context>
@@ -1950,7 +1958,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="213"/>
         <source>Internal FFmpeg</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg interno</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="451"/>
@@ -1960,7 +1968,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="490"/>
         <source>Languages manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerenciador de idiomas</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="648"/>
@@ -2633,44 +2641,44 @@ font-size:12px;
         <translation> Progresso </translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="145"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="151"/>
         <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
         <translation>&lt;b&gt;Estado de atualização:&lt;/b&gt; Baixando %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="147"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="153"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="154"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="160"/>
         <source>Done</source>
         <translation>Finalizado</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="159"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="165"/>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="176"/>
-        <source>Updates center error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="177"/>
-        <source>Some errors has ocurred on try download the new update(s).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="178"/>
-        <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../../src/forms/updatecenterimpl.cpp" line="182"/>
+        <source>Updates center error</source>
+        <translation>Erro no centro de atualizações</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="183"/>
+        <source>Some errors has ocurred on try download the new update(s).</source>
+        <translation>Alguns erros podem ocorrer tentando fazer o download de novas atualizações.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="184"/>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="188"/>
         <source>Close</source>
-        <translation type="unfinished">Fechar</translation>
+        <translation>Fechar</translation>
     </message>
 </context>
 <context>
@@ -2678,89 +2686,89 @@ font-size:12px;
     <message>
         <location filename="../../src/videoconvert.cpp" line="416"/>
         <source>AVI Format (*.avi)</source>
-        <translation type="unfinished">Formato AVI (*.avi)</translation>
+        <translation>Formato AVI (*.avi)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="416"/>
         <source>WMV Format ( *.wmv)</source>
-        <translation type="unfinished">Formato WMV ( *.wmv)</translation>
+        <translation>Formato WMV ( *.wmv)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="417"/>
         <source>MPEG1 Format ( *.mpg)</source>
-        <translation type="unfinished">Formato MPEG1 (*.mpg)</translation>
+        <translation>Formato MPEG1 (*.mpg)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="417"/>
         <source>MPEG2 Format ( *.mpg)</source>
-        <translation type="unfinished"> Formato MPEG2 ( *.mpg)</translation>
+        <translation> Formato MPEG2 ( *.mpg)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="418"/>
         <source>MP4 Format (*.mp4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato MP4 (*.mp4)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="418"/>
         <source>Apple iPod (*.mp4)</source>
-        <translation type="unfinished">Apple iPod (*.mp4)</translation>
+        <translation>Apple iPod (*.mp4)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="418"/>
         <source>Sony PSP (*.mp4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sony PSP (*.mp4)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="419"/>
         <source>3GP Format (*.3gp)</source>
-        <translation type="unfinished">Formato 3GP (*.3gp)</translation>
+        <translation>Formato 3GP (*.3gp)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="419"/>
         <source>MP3 Format (*.mp3)</source>
-        <translation type="unfinished">Formato MP3 (*.mp3)</translation>
+        <translation>Formato MP3 (*.mp3)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="428"/>
         <location filename="../../src/videoconvert.cpp" line="441"/>
         <location filename="../../src/videoconvert.cpp" line="450"/>
         <source>Original</source>
-        <translation type="unfinished">Original</translation>
+        <translation>Original</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="459"/>
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation type="unfinished">Mais baixa qualidade (Video bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
+        <translation>Mais baixa qualidade (Video bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="460"/>
         <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation type="unfinished">Baixa qualidade (Video bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
+        <translation>Baixa qualidade (Video bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="461"/>
         <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation type="unfinished">Qualidade normal (Video bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
+        <translation>Qualidade normal (Video bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="462"/>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation type="unfinished">Qualidade média (Video bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
+        <translation>Qualidade média (Video bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="463"/>
         <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation type="unfinished">Boa qualidade (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
+        <translation>Boa qualidade (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="464"/>
         <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation type="unfinished">Qualidade magnífica (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
+        <translation>Qualidade magnífica (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="465"/>
         <source>The Same quality as the original Video</source>
-        <translation type="unfinished">Mesma qualidade do video original</translation>
+        <translation>Mesma qualidade do video original</translation>
     </message>
 </context>
 <context>
@@ -2909,12 +2917,12 @@ font-size:12px;
     <message>
         <location filename="../../ui/welcomedonate.ui" line="14"/>
         <source>Welcome to xVideoServiceThief</source>
-        <translation type="unfinished"></translation>
+        <translation>Seja bem vindo ao xVideoServiceThief</translation>
     </message>
     <message>
         <location filename="../../ui/welcomedonate.ui" line="50"/>
         <source>&lt;h3&gt;&lt;b&gt;Please donate!&lt;/b&gt;&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;&lt;b&gt;Por favor faça uma doação!&lt;/b&gt;&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/welcomedonate.ui" line="57"/>
@@ -2922,22 +2930,25 @@ font-size:12px;
 &lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
 &lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
 &lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Este software é totalmente gratuito, mas você pode doar se gosta dessa ferramenta ou se usa em um ambiente comercial.&lt;/p&gt;
+&lt;p&gt;Obrigado! Nós apreciamos muito isto!&lt;/p&gt;
+&lt;p&gt;Por que eu devo doar? Suas doações ajudarão a melhorar o xVideoServiceThief  e para pagar os projetos e despesas.&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Obs:&lt;/b&gt; Se você pagou para fazer o download deste aplicativo, você foi fraudado!&lt;/font&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/welcomedonate.ui" line="131"/>
         <source>Don&apos;t display this message again</source>
-        <translation type="unfinished"></translation>
+        <translation>Não exibir esta mensagem novamente</translation>
     </message>
     <message>
         <location filename="../../ui/welcomedonate.ui" line="157"/>
         <source>Donate!</source>
-        <translation type="unfinished"></translation>
+        <translation>Faça uma Doação!</translation>
     </message>
     <message>
         <location filename="../../ui/welcomedonate.ui" line="170"/>
         <source>Close</source>
-        <translation type="unfinished">Fechar</translation>
+        <translation>Fechar</translation>
     </message>
 </context>
 <context>
@@ -2945,32 +2956,32 @@ font-size:12px;
     <message>
         <location filename="../../ui/winvistaupdatesmsg.ui" line="25"/>
         <source>Update center - Windows Vista detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro de atualizações - Windows Vista detectado</translation>
     </message>
     <message>
         <location filename="../../ui/winvistaupdatesmsg.ui" line="68"/>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Atenção, xVST detectou que você está usando o Windows VIsta e as atualizações automáticas podem não trabalhar corretamente.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Se você tem o &lt;b&gt;UAC&lt;/b&gt; (Controle de contas de usuário) habilitado, as atualizações automáticas, não instalarão as atualizações baixadas devido as permissoes de usuário.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/winvistaupdatesmsg.ui" line="81"/>
         <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para resolver este problema, é recomendado que você esteja executando o xVST como administrador (botão direito sobre o ícone xVST -&gt; Executar como administrador) somente quando você quiser instalar novas versões usando o: Centro de Atualizações.</translation>
     </message>
     <message>
         <location filename="../../ui/winvistaupdatesmsg.ui" line="125"/>
         <source>Don&apos;t display this message again</source>
-        <translation type="unfinished"></translation>
+        <translation>Não exibir esta mensagem novamente</translation>
     </message>
     <message>
         <location filename="../../ui/winvistaupdatesmsg.ui" line="151"/>
         <source>Continue...</source>
-        <translation type="unfinished"></translation>
+        <translation>Continue...</translation>
     </message>
     <message>
         <location filename="../../ui/winvistaupdatesmsg.ui" line="167"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 </TS>

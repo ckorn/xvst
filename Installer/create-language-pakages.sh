@@ -11,7 +11,7 @@ cd `dirname "$0"`
 mkdir $LANGUAGES_DIR/updates
 
 # english package
-$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/english_uk_lang.update" "$LANGUAGES_DIR/definitions/english_uk.language"
+$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/english_uk_lang.update" "$LANGUAGES_DIR/xVST_en.qm" "$LANGUAGES_DIR/definitions/english_uk.language"
 
 # spanish package
 $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/espanol_es_lang.update" "$LANGUAGES_DIR/xVST_es.qm" "$LANGUAGES_DIR/definitions/espanol.language"
@@ -41,7 +41,7 @@ $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/korean_kr_lang.update" "$LANGUAGES_DIR/
 $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/polish_pl_lang.update" "$LANGUAGES_DIR/xVST_pl.qm" "$LANGUAGES_DIR/definitions/polish.language"
 
 # portugese brazil package
-$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/portuguese_br_lang.update" "$LANGUAGES_DIR/xVST_br.qm" "$LANGUAGES_DIR/definitions/portuguese_br.language"
+$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/portugese_br_lang.update" "$LANGUAGES_DIR/xVST_br.qm" "$LANGUAGES_DIR/definitions/portugese_br.language"
 
 # danish package
 $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/danish_da_lang.update" "$LANGUAGES_DIR/xVST_da.qm" "$LANGUAGES_DIR/definitions/danish.language"

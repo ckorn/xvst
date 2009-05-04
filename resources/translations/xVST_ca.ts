@@ -1564,9 +1564,8 @@ font-size:12px;
         <translation>Instal·lar idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="90"/>
         <source>Wish you install this new lanuage?</source>
-        <translation>Vols instal·lar aquest nou idioma?</translation>
+        <translation type="obsolete">Vols instal·lar aquest nou idioma?</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="120"/>
@@ -1579,9 +1578,18 @@ font-size:12px;
         <translation type="obsolete">S&apos;han produït alguns errors al intentar desinstal·lar l&apos;idioma &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Amb Windows Vista hauries d&apos;executar l&apos;xVST com a administrador abans de desinstal·lar els idiomes.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="121"/>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
-        <translation>S&apos;han produït alguns errors al intentar desinstal·lar l&apos;idioma &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Amb Windows Vista hauries d&apos;executar l&apos;xVST com a administrador abans de desinstal·lar els idiomes.</translation>
+        <translation type="obsolete">S&apos;han produït alguns errors al intentar desinstal·lar l&apos;idioma &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Amb Windows Vista hauries d&apos;executar l&apos;xVST com a administrador abans de desinstal·lar els idiomes.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="90"/>
+        <source>Wish you install this new language?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="121"/>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="122"/>
@@ -2621,42 +2629,42 @@ font-size:12px;
         <translation> Progrés </translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="154"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="160"/>
         <source>Done</source>
         <translation>Fet</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="159"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="165"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="176"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="182"/>
         <source>Updates center error</source>
         <translation>Erro al centre d&apos;actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="177"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="183"/>
         <source>Some errors has ocurred on try download the new update(s).</source>
         <translation>S&apos;han produït alguns errors al baixar alguna de les noves actualitzacions.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="178"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="184"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="182"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="188"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="145"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="151"/>
         <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
         <translation>&lt;b&gt;Estat de l&apos;actualització:&lt;/b&gt; Descarregant %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="147"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="153"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
