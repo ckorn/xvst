@@ -41,10 +41,13 @@ $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/korean_kr_lang.update" "$LANGUAGES_DIR/
 $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/polish_pl_lang.update" "$LANGUAGES_DIR/xVST_pl.qm" "$LANGUAGES_DIR/definitions/polish.language"
 
 # portugese brazil package
-$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/portugese_br_lang.update" "$LANGUAGES_DIR/xVST_br.qm" "$LANGUAGES_DIR/definitions/portugese_br.language"
+$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/portuguese_br_lang.update" "$LANGUAGES_DIR/xVST_br.qm" "$LANGUAGES_DIR/definitions/portuguese_br.language"
 
 # danish package
 $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/danish_da_lang.update" "$LANGUAGES_DIR/xVST_da.qm" "$LANGUAGES_DIR/definitions/danish.language"
 
 # romanian package
 $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/romanian_ro_lang.update" "$LANGUAGES_DIR/xVST_ro.qm" "$LANGUAGES_DIR/definitions/romanian.language"
+
+# german package
+$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/german_de_lang.update" "$LANGUAGES_DIR/xVST_de.qm" "$LANGUAGES_DIR/definitions/german.language"

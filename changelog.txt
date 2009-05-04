@@ -1,6 +1,10 @@
 2.0.1a:
 -------
 
+- Updated German translation
+- Updated Portuguese translation
+- Updated Hungarian translation
+
 - Fixed bug (Error: Updates files were not parsed in UTF8)
 - Fixed bug (Error: Paths with spaces where not correctly processed)
 

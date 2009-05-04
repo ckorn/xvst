@@ -299,7 +299,7 @@
     </message>
     <message>
         <source>Cancelling... please wait...</source>
-        <translation>Megszakítás... kis türelmet...</translation>
+        <translation type="obsolete">Megszakítás... kis türelmet...</translation>
     </message>
     <message>
         <source>Checking for updates...</source>
@@ -1236,7 +1236,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Wish you install this new lanuage?</source>
-        <translation>Telepíted az új nyelvet?</translation>
+        <translation type="obsolete">Telepíted az új nyelvet?</translation>
     </message>
     <message>
         <source>Language uninstall error</source>
@@ -1280,6 +1280,14 @@ betűméret:12px;
     </message>
     <message>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
+        <translation type="obsolete">Néhány hiba történt a kiválasztott &lt;b&gt;%1&lt;/b&gt; nyelv eltávolításakor.&lt;br&gt;&lt;br&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt;A Windows Vista rendszeren rendszergazdaként kell futtatnod a xVST programot, mielött telepítenéd a nyelveket.</translation>
+    </message>
+    <message>
+        <source>Wish you install this new language?</source>
+        <translation>Telepíted az új nyelvet?</translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
         <translation>Néhány hiba történt a kiválasztott &lt;b&gt;%1&lt;/b&gt; nyelv eltávolításakor.&lt;br&gt;&lt;br&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt;A Windows Vista rendszeren rendszergazdaként kell futtatnod a xVST programot, mielött telepítenéd a nyelveket.</translation>
     </message>
 </context>

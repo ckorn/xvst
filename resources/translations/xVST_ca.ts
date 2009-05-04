@@ -1584,12 +1584,12 @@ font-size:12px;
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="90"/>
         <source>Wish you install this new language?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vols instal·lar aquest nou idioma?</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="121"/>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;han produït alguns errors al desinstal·lar l&apos;idioma seleccionat &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Amb Windows Vista hauries d&apos;executar l&apos;xVST com administrador abans de desinstal·lar els idiomes.</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="122"/>
@@ -2672,89 +2672,89 @@ font-size:12px;
 <context>
     <name>VideoConverter</name>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="416"/>
+        <location filename="../../src/videoconvert.cpp" line="414"/>
         <source>AVI Format (*.avi)</source>
         <translation>AVI Format (*.avi)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="416"/>
+        <location filename="../../src/videoconvert.cpp" line="414"/>
         <source>WMV Format ( *.wmv)</source>
         <translation>WMV Format ( *.wmv)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="417"/>
+        <location filename="../../src/videoconvert.cpp" line="415"/>
         <source>MPEG1 Format ( *.mpg)</source>
         <translation>MPEG1 Format ( *.mpg)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="417"/>
+        <location filename="../../src/videoconvert.cpp" line="415"/>
         <source>MPEG2 Format ( *.mpg)</source>
         <translation>MPEG2 Format ( *.mpg)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="418"/>
+        <location filename="../../src/videoconvert.cpp" line="416"/>
         <source>MP4 Format (*.mp4)</source>
         <translation>MP4 Format (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="418"/>
+        <location filename="../../src/videoconvert.cpp" line="416"/>
         <source>Apple iPod (*.mp4)</source>
         <translation>Apple iPod (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="418"/>
+        <location filename="../../src/videoconvert.cpp" line="416"/>
         <source>Sony PSP (*.mp4)</source>
         <translation>Sony PSP (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="419"/>
+        <location filename="../../src/videoconvert.cpp" line="417"/>
         <source>3GP Format (*.3gp)</source>
         <translation>3GP Format (*.3gp)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="419"/>
+        <location filename="../../src/videoconvert.cpp" line="417"/>
         <source>MP3 Format (*.mp3)</source>
         <translation>MP3 Format (*.mp3)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="428"/>
-        <location filename="../../src/videoconvert.cpp" line="441"/>
-        <location filename="../../src/videoconvert.cpp" line="450"/>
+        <location filename="../../src/videoconvert.cpp" line="426"/>
+        <location filename="../../src/videoconvert.cpp" line="439"/>
+        <location filename="../../src/videoconvert.cpp" line="448"/>
         <source>Original</source>
         <translation>Original</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="459"/>
+        <location filename="../../src/videoconvert.cpp" line="457"/>
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
         <translation>Molt baixa qualitat (Vídeo bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="460"/>
+        <location filename="../../src/videoconvert.cpp" line="458"/>
         <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
         <translation>Baixa qualitat (Vídeo bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="461"/>
+        <location filename="../../src/videoconvert.cpp" line="459"/>
         <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
         <translation>Qualitat normal (Vídeo bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="462"/>
+        <location filename="../../src/videoconvert.cpp" line="460"/>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
         <translation>Qualitat mitjana (Vídeo bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="463"/>
+        <location filename="../../src/videoconvert.cpp" line="461"/>
         <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
         <translation>Qualitat bona (Vídeo bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="464"/>
+        <location filename="../../src/videoconvert.cpp" line="462"/>
         <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
         <translation>Qualitat brutal (Vídeo bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="465"/>
+        <location filename="../../src/videoconvert.cpp" line="463"/>
         <source>The Same quality as the original Video</source>
         <translation>Mantenir la qualitat del vídeo original</translation>
     </message>
