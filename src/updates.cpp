@@ -297,7 +297,7 @@ void Updates::run()
 		case usChecking:
 		{
 			// analyze the update file
-			pareseUpdateFile(http->downloadWebpage(QUrl(updateURL), false));
+			pareseUpdateFile(http->downloadWebpage(QUrl(updateURL), true));
 
 			// cancelled?
 			if (!cancelled)

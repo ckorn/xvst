@@ -58,7 +58,7 @@ QStringList VideoConverter::getCommandLine()
 	QString extension;
 	QFileInfo videoFile;
 
-	parameters << "-i" << videoItem->getVideoFile();
+	parameters << "-i" << videoItem->getVideoFile().replace(" ", "\ ");
 
 	switch (convConfToUse.outputFormat)
 	{
@@ -218,7 +218,7 @@ QStringList VideoConverter::getCommandLine()
 
 	videoItem->setVideoFileSavedTo(uniqueFileName(changeFileExt(videoItem->getVideoFile(), extension))/*.absoluteFilePath()*/, this);
 
-	parameters << "-y" << videoItem->getVideoFileSavedTo();
+	parameters << "-y" << videoItem->getVideoFileSavedTo().replace(" ", "\ ");
 
 	qDebug() << parameters;
 
