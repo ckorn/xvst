@@ -146,7 +146,9 @@ QString extractFileName(const QString fileName)
 
 QString validPath(QString path)
 {
-	return path.replace(" ", "\ ");
+	path.replace("\\", "/");
+	path.replace(" ", "\ ");
+	return path;
 }
 
 QString secondsToHMS(const int seconds, const bool compact, const bool allowNegative)
@@ -430,7 +432,7 @@ QString strToHtml(QString str, bool htmlCodes)
 bool openFile(QString filePath)
 {
 #ifdef Q_WS_WIN
-	return QDesktopServices::openUrl(validPath(filePath));// filePath.replace("\\","/"));
+	return QDesktopServices::openUrl("file:///" + validPath(filePath)); //filePath);
 #else
 	return QDesktopServices::openUrl("file://" + validPath(filePath)); //filePath);
 #endif
