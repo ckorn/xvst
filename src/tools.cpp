@@ -147,7 +147,7 @@ QString extractFileName(const QString fileName)
 QString validPath(QString path)
 {
 	path.replace("\\", "/");
-	path.replace(" ", "\ ");
+	//path.replace(" ", "\ ");
 	return path;
 }
 
