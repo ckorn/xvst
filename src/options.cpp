@@ -86,7 +86,6 @@ ProgramOptions* ProgramOptions::getProgramOptionsInstance()
 		// load options
 		programOptionsInstance = new ProgramOptions(programFiles);//qApp->applicationDirPath());
 #endif
-
 	}
 	// return program instance
 	return programOptionsInstance;

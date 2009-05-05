@@ -35,36 +35,6 @@ int main(int argc, char ** argv)
 {
 	QApplication app(argc, argv);
 
-/*
-#ifdef Q_OS_LINUX // modification made by "AzalSup"
-	QString _homeDirectory  = getenv("HOME");
-	_homeDirectory += "/.xVideoServiceThief";
-	ProgramOptions *programOptions = new ProgramOptions(_homeDirectory);
-#endif
-#ifdef Q_WS_MAC
-	QString preferencesPath = QString(QDir::homePath() + "/Library/Preferences");
-	ProgramOptions *programOptions = new ProgramOptions(preferencesPath);
-#endif
-#ifdef Q_OS_WIN32
-	QString programFiles = QString(getenv("APPDATA")) + "/xVideoServiceThief";
-	// for old users, check if config.conf is present in xVST dir and copy it to new location
-	if (QFile::exists(qApp->applicationDirPath() + "/config.conf") && 
-		!QFile::exists(programFiles + "/config.conf"))
-	{
-		QDir().mkpath(programFiles);
-		QFile conf(qApp->applicationDirPath() + "/config.conf");
-		conf.copy(programFiles + "/config.conf");
-	}
-	// load options	
-	ProgramOptions *programOptions = new ProgramOptions(programFiles);//qApp->applicationDirPath());
-#endif
-
-	// get language file
-	programOptions->load();
-	QString qm = LanguageManager::get_qm_languageFile(programOptions->getLanguageFile(true));
-	delete programOptions;
-*/
-
 	// get language file
 	ProgramOptions *programOptions = ProgramOptions::getProgramOptionsInstance();
 	programOptions->load();

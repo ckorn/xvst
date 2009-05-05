@@ -46,21 +46,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 #endif
 	// init program options
 	lastOptionsPage = 0;
-	// load options (each OS has hes own options record)
-/*
-#ifdef Q_OS_LINUX // modification made by "AzalSup"
-	QString _homeDirectory  = getenv("HOME");
-	_homeDirectory += "/.xVideoServiceThief";
-	programOptions = new ProgramOptions(_homeDirectory);
-#endif
-#ifdef Q_WS_MAC
-	QString preferencesPath = QString(QDir::homePath() + "/Library/Preferences");
-	programOptions = new ProgramOptions(preferencesPath);
-#endif
-#ifdef Q_OS_WIN32
-	programOptions = new ProgramOptions(qApp->applicationDirPath());
-#endif 	
-*/
+	// load options
 	programOptions = ProgramOptions::getProgramOptionsInstance();
 	programOptions->load();
 	// setu-up the main form
