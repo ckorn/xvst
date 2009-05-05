@@ -117,7 +117,9 @@ Q_OBJECT
 		/*! Get the languages path */
 		QString getLanguagesPath();
 		/*! Get the plugins path */
-		QString getPluginsDir();
+		QString getPluginsPath();
+		/*! Get the tools path */
+		QString getToolsPath();
 		/*! Get the options format */
 		QSettings::Format getOptionsFormat();
 #ifdef Q_WS_MAC

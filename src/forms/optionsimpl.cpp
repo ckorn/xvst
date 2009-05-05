@@ -70,7 +70,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	// set values
 	setInitialOptionsValues();
 	// can update?
-	btnCheckNow->setEnabled(Updates::canUpdate(programOptions->getOptionsPath()));
+	btnCheckNow->setEnabled(Updates::canUpdate(programOptions->getToolsPath())); //getOptionsPath()));
 	// internal FFmpeg...
 #ifdef Q_WS_MAC
 	// check if internal ffmpeg is installed

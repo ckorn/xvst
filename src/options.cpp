@@ -310,11 +310,14 @@ QString ProgramOptions::getApplicationPath()
 
 QString ProgramOptions::getOptionsPath()
 {
+/*
 #ifdef Q_WS_MAC
 	return QString(QDir::homePath() + "/Library/Preferences");
 #else
 	return getApplicationPath();
 #endif
+*/
+	return extractFilePath(optionsFile);
 }
 
 QString ProgramOptions::getLanguagesPath()
@@ -326,12 +329,25 @@ QString ProgramOptions::getLanguagesPath()
 #endif
 }
 
-QString ProgramOptions::getPluginsDir()
+QString ProgramOptions::getPluginsPath()
 {
 #ifdef Q_WS_MAC
 	return getApplicationPath() + "/../Resources/plugins";
 #else
 	return getApplicationPath() + "/plugins";
+#endif
+}
+
+QString ProgramOptions::getToolsPath()
+{
+#ifdef Q_WS_MAC
+	return getApplicationPath() + "/../Resources/tools";
+#endif
+#ifdef Q_WS_WIN
+	return getApplicationPath() + "/bin";
+#endif
+#ifdef Q_OS_LINUX
+	return getOptionsPath() + "/bin";
 #endif
 }
 

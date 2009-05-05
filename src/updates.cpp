@@ -525,11 +525,14 @@ QStringList Updates::buildDMGScript(int n)
 
 bool Updates::canUpdate(QString searchPath)
 {
+/*
 #ifdef Q_WS_MAC
 	return QFile::exists(QCoreApplication::applicationDirPath() + "/../Resources" + XUPDATER_PATH);
 #else
 	return QFile::exists(searchPath + XUPDATER_PATH);
 #endif
+*/
+	return QFile::exists(searchPath + "/.." + XUPDATER_PATH);
 }
 
 void Updates::downloadEvent(int pos, int max)

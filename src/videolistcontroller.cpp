@@ -37,7 +37,7 @@ VideoListController::VideoListController(ProgramOptions *programOptions)
 
 	videoList = new QList<VideoItem *>;
 
-	videoInformation = new VideoInformation(programOptions->getPluginsDir());
+	videoInformation = new VideoInformation(programOptions->getPluginsPath());
 	videoDownload = new VideoDownload(programOptions->getDownloadDir(), programOptions->getMaxActiveDownloads());
 	videoConverter = new VideoConverter(programOptions->getFfmpegLibLocation(),
 	                                    programOptions->getDownloadDir(),
