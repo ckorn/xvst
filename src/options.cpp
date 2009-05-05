@@ -27,6 +27,7 @@
 
 ProgramOptions::ProgramOptions(QString optionsPath)
 {
+/*
 #ifdef Q_WS_MAC
 	appDir.setPath(QCoreApplication::applicationDirPath());
 	optionsFile = QString(optionsPath + "/com.xVideoServiceThief.config.plist");
@@ -34,6 +35,21 @@ ProgramOptions::ProgramOptions(QString optionsPath)
 	appDir.setPath(optionsPath);
 	optionsFile = QString(optionsPath + "/config.conf");
 #endif
+*/
+
+#ifdef Q_WS_MAC
+	appDir.setPath(QCoreApplication::applicationDirPath());
+	optionsFile = QString(optionsPath + "/com.xVideoServiceThief.config.plist");
+#endif
+#ifdef Q_WS_WIN
+	appDir.setPath(QCoreApplication::applicationDirPath());
+	optionsFile = QString(optionsPath + "/config.conf");
+#endif
+#ifdef Q_OS_LINUX
+	appDir.setPath(optionsPath);
+	optionsFile = QString(optionsPath + "/config.conf");
+#endif
+
 	canSendUpdateSignal = true;
 }
 
