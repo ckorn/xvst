@@ -11,6 +11,11 @@
 - Fixed bug (Error: Updates files were not parsed in UTF8)
 - Fixed bug (Error: Paths with spaces where not correctly processed)
 
+Windows:
+--------
+
+- Changed config.conf location (moved to "C:\Documents and Settings\{user}\Program files\xVideoServiceThief\"
+
 2.0.0a:
 -------
 
