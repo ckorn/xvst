@@ -47,6 +47,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// init program options
 	lastOptionsPage = 0;
 	// load options (each OS has hes own options record)
+/*
 #ifdef Q_OS_LINUX // modification made by "AzalSup"
 	QString _homeDirectory  = getenv("HOME");
 	_homeDirectory += "/.xVideoServiceThief";
@@ -59,6 +60,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 #ifdef Q_OS_WIN32
 	programOptions = new ProgramOptions(qApp->applicationDirPath());
 #endif 	
+*/
+	programOptions = ProgramOptions::getProgramOptionsInstance();
 	programOptions->load();
 	// setu-up the main form
 	centerWindow();
@@ -276,7 +279,8 @@ MainFormImpl::~MainFormImpl()
 	delete completedPopup;
 
 	// delete program options
-	delete programOptions;
+	//delete programOptions;
+	ProgramOptions::destroyProgramOptionsInstance();
 
 	// delete main objects
 	delete videoList;

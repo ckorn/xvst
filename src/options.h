@@ -102,6 +102,10 @@ Q_OBJECT
 		ProgramOptions(QString optionsPath);
 		/*! Class destructor */
 		~ProgramOptions();
+		/*! Get singleton instance of ProgramOptions */
+		static ProgramOptions* getProgramOptionsInstance();
+		/*! Destroy singleton instance of ProgramOptions */
+		static void destroyProgramOptionsInstance();
 		/*! Load the program options */
 		void load();
 		/*! Save the program options */

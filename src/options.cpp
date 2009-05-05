@@ -25,6 +25,8 @@
 
 #include "options.h"
 
+static ProgramOptions *programOptionsInstance = NULL;
+
 ProgramOptions::ProgramOptions(QString optionsPath)
 {
 /*
@@ -49,13 +51,54 @@ ProgramOptions::ProgramOptions(QString optionsPath)
 	appDir.setPath(optionsPath);
 	optionsFile = QString(optionsPath + "/config.conf");
 #endif
-
+	// other inits
 	canSendUpdateSignal = true;
 }
 
 ProgramOptions::~ProgramOptions()
 {
 	save();
+}
+
+ProgramOptions* ProgramOptions::getProgramOptionsInstance()
+{
+	if (programOptionsInstance == NULL)
+	{
+#ifdef Q_OS_LINUX // modification made by "AzalSup"
+		QString _homeDirectory  = getenv("HOME");
+		_homeDirectory += "/.xVideoServiceThief";
+		programOptionsInstance = new ProgramOptions(_homeDirectory);
+#endif
+#ifdef Q_WS_MAC
+		QString preferencesPath = QString(QDir::homePath() + "/Library/Preferences");
+		programOptionsInstance = new ProgramOptions(preferencesPath);
+#endif
+#ifdef Q_OS_WIN32
+		QString programFiles = QString(getenv("APPDATA")) + "/xVideoServiceThief";
+		// for old users, check if config.conf is present in xVST dir and copy it to new location
+		if (QFile::exists(qApp->applicationDirPath() + "/config.conf") &&
+			!QFile::exists(programFiles + "/config.conf"))
+		{
+			QDir().mkpath(programFiles);
+			QFile conf(qApp->applicationDirPath() + "/config.conf");
+			conf.copy(programFiles + "/config.conf");
+		}
+		// load options
+		programOptionsInstance = new ProgramOptions(programFiles);//qApp->applicationDirPath());
+#endif
+
+	}
+	// return program instance
+	return programOptionsInstance;
+}
+
+void ProgramOptions::destroyProgramOptionsInstance()
+{
+	if (programOptionsInstance != NULL)
+	{
+		delete programOptionsInstance;
+		programOptionsInstance = NULL;
+	}
 }
 
 void ProgramOptions::load()

@@ -35,6 +35,7 @@ int main(int argc, char ** argv)
 {
 	QApplication app(argc, argv);
 
+/*
 #ifdef Q_OS_LINUX // modification made by "AzalSup"
 	QString _homeDirectory  = getenv("HOME");
 	_homeDirectory += "/.xVideoServiceThief";
@@ -62,6 +63,12 @@ int main(int argc, char ** argv)
 	programOptions->load();
 	QString qm = LanguageManager::get_qm_languageFile(programOptions->getLanguageFile(true));
 	delete programOptions;
+*/
+
+	// get language file
+	ProgramOptions *programOptions = ProgramOptions::getProgramOptionsInstance();
+	programOptions->load();
+	QString qm = LanguageManager::get_qm_languageFile(programOptions->getLanguageFile(true));
 
 	// install translator
 	QTranslator translator;
