@@ -7,6 +7,7 @@
 - Updated Portuguese translation
 - Updated Hungarian translation
 
+- Fixed bug (Error: After send a bug report an empty message was displayed due to SF.net changes)
 - Fixed bug (Error: Updates files were not parsed in UTF8)
 - Fixed bug (Error: Paths with spaces where not correctly processed)
 

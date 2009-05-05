@@ -75,7 +75,7 @@ void TrackerReport::sendTrackerReport(QString categoryCaption, QString groupCapt
 						QString(parameters).arg(groupID).arg(atid)
 											.arg(category[categoryCaption]).arg(groups[groupCaption])
 											.arg(summary).arg(getUniqueID()).arg(description));
-											
-	emit trackerReportSent(copyBetween(html, "<h4 class=\"message\">", "</h4>"));
+
+	emit trackerReportSent(copyBetween(html, "<h4 class=\"message\" id=\"top_feedback\">", "</h4>"));
 }
 //
