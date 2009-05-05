@@ -279,7 +279,6 @@ MainFormImpl::~MainFormImpl()
 	delete completedPopup;
 
 	// delete program options
-	//delete programOptions;
 	ProgramOptions::destroyProgramOptionsInstance();
 
 	// delete main objects
