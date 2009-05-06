@@ -95,6 +95,7 @@
     <ROW File="pornotube.js" Component_="min.js" FileName="pornot~1.js|pornotube.js" Attributes="0" SourcePath="..\bin\plugins\pornotube.js" SelfReg="false" Sequence="38"/>
     <ROW File="portuguese_br.language" Component_="catala.language" FileName="portug~1.lan|portuguese_br.language" Attributes="0" SourcePath="..\bin\languages\portuguese_br.language" SelfReg="false" Sequence="62"/>
     <ROW File="pthreadGC2.dll" Component_="pthreadGC2.dll" FileName="pthrea~1.dll|pthreadGC2.dll" Attributes="0" SourcePath="..\bin\bin\pthreadGC2.dll" SelfReg="false" Sequence="2"/>
+    <ROW File="redtube.js" Component_="min.js" FileName="redtube.js" Attributes="0" SourcePath="..\bin\plugins\redtube.js" SelfReg="false" Sequence="79"/>
     <ROW File="romanian.language" Component_="catala.language" FileName="romani~1.lan|romanian.language" Attributes="0" SourcePath="..\bin\languages\romanian.language" SelfReg="false" Sequence="63"/>
     <ROW File="spike.js" Component_="min.js" FileName="spike.js" Attributes="0" SourcePath="..\bin\plugins\spike.js" SelfReg="false" Sequence="39"/>
     <ROW File="swedish.language" Component_="catala.language" FileName="swedis~1.lan|swedish.language" Attributes="0" SourcePath="..\bin\languages\swedish.language" SelfReg="false" Sequence="64"/>
