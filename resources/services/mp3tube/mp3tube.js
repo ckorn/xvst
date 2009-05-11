@@ -25,12 +25,12 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
-	this.website = "http://www.mp3tube.net/";
-	this.ID = "mp3tube.net";
-	this.caption = "Mp3Tube";
+	this.website = "http://www.yehplay.com/";
+	this.ID = "yehplay.com";
+	this.caption = "YehPlay";
 	this.adultContent = false;
 	this.musicSite = true;
 }
@@ -47,7 +47,7 @@ function getVideoInformation(url)
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// get mp3 title
-	result.title = copyBetween(html, "<TITLE>", "- Mp3Tube</TITLE>");
+	result.title = copyBetween(html, "<TITLE>", "- YehPlay</TITLE>");
 	// get mp3 id
 	var fileId = copyBetween(html, "swf?id=", "&");
 	// clear and get the final url
