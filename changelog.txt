@@ -1,3 +1,11 @@
+2.0.2a:
+-------
+
+- Updated completed download popup window 
+
+- Changed plugins:
+	- Mp3Tube is now YehPlay
+
 2.0.1a:
 -------
 
@@ -15,6 +23,11 @@ Windows:
 --------
 
 - Changed config.conf location (moved to "C:\Documents and Settings\{user}\Program files\xVideoServiceThief\"
+
+Windows (Static versions only):
+-------------------------------
+
+- Compiled with VC++ 9.0.2x version instead of VC++ 9.0.3x (wich caused alot of "This application has failed to start because the application configuration is incorrect. Reinstalling the application may fix this problem." messages.
 
 2.0.0a:
 -------
