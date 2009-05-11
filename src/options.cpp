@@ -29,16 +29,6 @@ static ProgramOptions *programOptionsInstance = NULL;
 
 ProgramOptions::ProgramOptions(QString optionsPath)
 {
-/*
-#ifdef Q_WS_MAC
-	appDir.setPath(QCoreApplication::applicationDirPath());
-	optionsFile = QString(optionsPath + "/com.xVideoServiceThief.config.plist");
-#else
-	appDir.setPath(optionsPath);
-	optionsFile = QString(optionsPath + "/config.conf");
-#endif
-*/
-
 #ifdef Q_WS_MAC
 	appDir.setPath(QCoreApplication::applicationDirPath());
 	optionsFile = QString(optionsPath + "/com.xVideoServiceThief.config.plist");
@@ -82,6 +72,10 @@ ProgramOptions* ProgramOptions::getProgramOptionsInstance()
 			QDir().mkpath(programFiles);
 			QFile conf(qApp->applicationDirPath() + "/config.conf");
 			conf.copy(programFiles + "/config.conf");
+			QFile historic(qApp->applicationDirPath() + "/historic.log");
+			historic.copy(programFiles + "/historic.log");
+			QFile session(qApp->applicationDirPath() + "/session.conf");
+			session.copy(programFiles + "/session.conf");
 		}
 		// load options
 		programOptionsInstance = new ProgramOptions(programFiles);//qApp->applicationDirPath());

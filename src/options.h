@@ -97,11 +97,12 @@ Q_OBJECT
 		bool canSendUpdateSignal;	//!< flag for know if is the update signal can be sended
 		/*! Send the update signal (only if is possible) */
 		void sendUpdateSignal();
-	public:
-		/*! Class constructor */
+
+		/*! Class constructor (private due to singleton) */
 		ProgramOptions(QString optionsPath);
-		/*! Class destructor */
+		/*! Class destructor (private due to singleton) */
 		~ProgramOptions();
+	public:
 		/*! Get singleton instance of ProgramOptions */
 		static ProgramOptions* getProgramOptionsInstance();
 		/*! Destroy singleton instance of ProgramOptions */
