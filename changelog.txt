@@ -1,6 +1,16 @@
 2.0.2a:
 -------
 
+- Added 8 new plugin:
+	- GodOfHumor
+	- Kontraband
+	- Pugorama
+	- OneHumor
+	- Wat.tv
+	- CollageHumor
+	- Vimeo (Standard + HD)
+	- Disclose.tv
+
 - Updated completed download popup window 
 
 - Changed plugins:
