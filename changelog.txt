@@ -1,7 +1,7 @@
 2.0.2a:
 -------
 
-- Added 8 new plugin:
+- Added 13 new plugin:
 	- GodOfHumor
 	- Kontraband
 	- Pugorama
@@ -10,11 +10,23 @@
 	- CollageHumor
 	- Vimeo (Standard + HD)
 	- Disclose.tv
+	- Yuvutu
+	- Youporn
+	- Pornhub
+	- KeezMovies
+	- Freecaster
 
 - Updated completed download popup window 
 
+- Improved internal Http class
+
 - Changed plugins:
 	- Mp3Tube is now YehPlay
+
+Plugins SDK:
+------------
+
+- Added new "headers" property to "VideoDefinition" structure
 
 2.0.1a:
 -------
