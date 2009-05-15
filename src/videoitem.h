@@ -54,6 +54,7 @@ struct VideoDefinition
 	bool needLogin;		//!< flag for know if this video need a login
 	bool isAudioFile;	//!< flag for know if is a audio file
 	QString cookies;	//!< special cookies for this video (only if is needed)
+	QString headers;	//!< special headers for this video (only if is needed)
 	/*! Struct initializer */
 	VideoDefinition()
 	{
@@ -63,6 +64,7 @@ struct VideoDefinition
 		needLogin = false;
 		isAudioFile = false;
 		cookies = "";
+		headers = "";
 	}
 };
 

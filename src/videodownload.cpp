@@ -62,6 +62,9 @@ void DownloadItem::startDownload()
 	// if this video has special cookies, then assing them
 	if (!videoItem->getVideoInformation().cookies.isEmpty())
 		http->addCookies(videoItem->getVideoInformation().cookies);
+	// if this video has special headers, then add them
+	if (!videoItem->getVideoInformation().headers.isEmpty())
+		http->addHeaderParameters(videoItem->getVideoInformation().headers);
 	// start download
 	int er = http->download(QUrl(videoItem->getVideoInformation().URL), 
 		parent->getDownloadDir(), videoItem->getVideoFile());

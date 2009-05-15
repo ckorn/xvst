@@ -533,6 +533,7 @@ QScriptValue VideoInformationPlugin::toScriptValue_VideoDefinition(QScriptEngine
 	obj.setProperty("isAudioFile", QScriptValue(engine, vd.isAudioFile));
 	obj.setProperty("needLogin", QScriptValue(engine, vd.needLogin));
 	obj.setProperty("cookies", QScriptValue(engine, vd.cookies));
+	obj.setProperty("headers", QScriptValue(engine, vd.headers));
 	return obj;
 }
 
@@ -544,6 +545,7 @@ void VideoInformationPlugin::fromScriptValue_VideoDefinition(const QScriptValue 
 	vd.isAudioFile = obj.property("isAudioFile").toBool();
 	vd.needLogin = obj.property("needLogin").toBool();
 	vd.cookies = obj.property("cookies").toString();
+	vd.headers = obj.property("headers").toString();
 }
 
 QScriptValue VideoInformationPlugin::func_isPluginInstalled(QScriptContext *context, QScriptEngine *engine)
