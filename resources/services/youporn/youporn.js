@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youporn.com/";
@@ -43,7 +43,7 @@ function getVideoInformation(url)
 	var http = new Http();
 	var html = http.downloadWebpage(url + "/?user_choice=Enter");
 	// get video title
-	result.title = copyBetween(html, "<h1>", "</h1>");
+	result.title = copyBetween(html, "<title>", "- Free Porn Videos");
 	// get the flv url
 	result.URL = copyBetween(html, "<div id=\"download\">", "</div");
 	result.URL = copyBetween(result.URL, "<a href=\"", "\"");

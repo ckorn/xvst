@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.vimeo.com/";
@@ -44,7 +44,11 @@ function getVideoInformation(url)
 	// get videoId
 	var videoId = getToken(url, ".com/", 1);
 	// is a HD video?
-	if (videoId.toString().indexOf("hd#") != -1) videoId = getToken(url, "hd#", 1);
+	if (videoId.toString().indexOf("hd#") != -1)
+	{
+		videoId = getToken(url, "hd#", 1);
+		result.extension = ".mp4";
+	}
 	// download webpage
 	var http = new Http();
 	var xml = http.downloadWebpage(strFormat(URL_GET_XML, videoId));

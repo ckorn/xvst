@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://tv.boingboing.net/";
@@ -37,7 +37,6 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_FLV = "http://video.boingboing.net%1";
 	// video information
 	var result = new VideoDefinition();
 	// download webpage
@@ -45,13 +44,12 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(url);
 	// get video title
 	result.title = copyBetween(html, "<title>", "</title>");
-	result.title = strReplace(result.title, "- Boing Boing", "");
-	// get flv url
-	result.URL = copyBetween(html, "<embed class=", "</embed>");
-	result.URL = copyBetween(result.URL, "src='", "'");
-	result.URL = strRemove(result.URL, 0, strIndexOf(result.URL, "/video/"));
-	// clear and get the final url
-	result.URL = cleanUrl(strFormat(URL_GET_FLV, result.URL));
+	result.title = strReplace(result.title, "- Boing Boing TV", "");
+	// get mp4 url
+	result.URL = copyBetween(html, "<li class=\"entry-videoplayer-meta-download\">", "</li>");
+	result.URL = copyBetween(result.URL, "href=\"", "\"");
+	// set extension
+	result.extension = ".mp4";
 	// return the video information
 	return result;
 }

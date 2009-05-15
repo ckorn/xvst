@@ -25,8 +25,8 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
-	this.minVersion = "2.0.0a";
+	this.version = "1.0.1";
+	this.minVersion = "2.0.2a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.123video.nl/";
 	this.ID = "123video.nl";
@@ -54,8 +54,8 @@ function getVideoInformation(url)
 	var hostIP = copyBetween(xml, "MediaIP=\"", "\"");
 	// get the FLV url
 	result.URL = strFormat("http://%1/%2/%3.flv", hostIP, strCopy(videoID, 0, 3), videoID);
-	// clear and get the final url
-	result.URL = cleanUrl(result.URL);
+	// add the referer header
+	result.headers = "Referer=" + url + "|Connection=keep-alive";
 	// return the video information
 	return result;
 }

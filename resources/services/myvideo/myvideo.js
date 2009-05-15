@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.myvideo.de/";
@@ -47,8 +47,7 @@ function getVideoInformation(url)
 	var path = copyBetween(html, "<link rel='image_src' href='", "/thumbs");
 	var vidId = copyBetween(html, path + "/thumbs/", "_");
 	// get the video title
-	result.title = copyBetween(html, "<title>", "</title>");
-	result.title = strReplace(result.title, "- MyVideo", "");
+	result.title = copyBetween(html, "entry-title'>", "</a>");
 	// build final url
 	result.URL = strFormat(URL_FLV, path, vidId);
 	// get cookies
