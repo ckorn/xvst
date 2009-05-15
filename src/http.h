@@ -118,6 +118,13 @@ class CookieController : public QObject
 		QString getCookies(bool complete, const QString separator = "|");
 };
 
+enum HttpMethod
+{
+	httpGet,
+	httpPost,
+	httpHead
+};
+
 class Http : public QObject
 {
 Q_OBJECT
@@ -147,7 +154,7 @@ Q_OBJECT
 		bool autoRestartOnFail;		//!< restart the download on fail?
 		bool restartDownload;		//!< flog for know if should restart again
 		bool syncFlag;				//!< sync. flag
-		bool postMethodFlag;		//!< post method flag
+		HttpMethod httpMethod;		//!< http request method: get, post or head
 		QString data;				//!< internal downloaded data
 		QString parameters;			//!< internal post parameters
 		int maxRetries;				//!< maximum retries for session (each download is a session)
@@ -207,6 +214,8 @@ Q_OBJECT
 		void clearCookies();
 		/*! Add custom header parameter */
 		void addHeaderParameter(QString key, QString value);
+		/*! Add custom header parameters */
+		void addHeaderParameters(QString headers, const QString separator = "|");
 		/*! Clear custom header parameters */
 		void clearHeaderParameters();
 		/*! Pause on destroy the Http class (only if is downloading) */

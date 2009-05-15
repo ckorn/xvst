@@ -328,7 +328,7 @@ void Http::initData()
 	autoRestartOnFail = false;
 	restartDownload = false;
 
-	postMethodFlag = false;
+	httpMethod = httpGet;
 	syncFlag = false;
 	data = "";
 	parameters = "";
@@ -392,9 +392,20 @@ void Http::jumpToURL(QUrl url)
 	if (!url.userName().isEmpty())
 		http->setUser(url.userName(), url.password());
 
-	// set the header method: POST or GET
-	QString headerMethod = "GET";
-	if (postMethodFlag) headerMethod = "POST";
+	// set the header method: GET, POST or HEAD
+	QString headerMethod;
+	switch (httpMethod)
+	{
+		case httpGet:
+			headerMethod = "GET";
+			break;
+		case httpPost:
+			headerMethod = "POST";
+			break;
+		case httpHead:
+			headerMethod = "HEAD";
+			break;
+	}
 
 	// build the request header
 	QHttpRequestHeader header(headerMethod, getPathAndQuery(url));
@@ -406,7 +417,7 @@ void Http::jumpToURL(QUrl url)
 	QByteArray paramsStr;
 
 	// if is a "POST" method then, add some extra info
-	if (postMethodFlag)
+	if (httpMethod == httpPost)
 	{
 		// add the parametes
 		paramsStr.append(parameters);
@@ -447,7 +458,7 @@ void Http::jumpToURL(QUrl url)
 	tmrTimeOut.stop();
 
 	// send the request header
-	if (postMethodFlag) // post
+	if (httpMethod == httpPost)
 		httpGetId = http->request(header, paramsStr, file);
 	else // get
 		httpGetId = http->request(header, NULL, file);
@@ -457,7 +468,7 @@ void Http::jumpToURL(QUrl url)
 	tmrTimeOut.start(timeOut);
 
 	// post method off
-	postMethodFlag = false;
+	if (httpMethod == httpPost) httpMethod = httpGet;
 }
 
 int Http::download(const QUrl URL, QString destination, QString fileName, bool autoName)
@@ -602,7 +613,7 @@ QString Http::downloadWebpage(const QUrl URL, bool isUtf8)
 			file = NULL;
 			// set the sync flag active
 			syncFlag = true;
-			postMethodFlag = false;
+			httpMethod = httpGet;
 			// do the first jump
 			oriURL = URL;
 			jumpToURL(URL);
@@ -631,7 +642,7 @@ QString Http::downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf
 			file = NULL;
 			// set the sync flag active
 			syncFlag = true;
-			postMethodFlag = true;
+			httpMethod = httpPost;
 			// set parameters
 			this->parameters = parameters;
 			// do the first jump
@@ -660,16 +671,13 @@ QHttpResponseHeader Http::head(const QUrl URL, bool autoJump)
 			// init http variables
 			initData();
 			file = NULL;
-			this->autoJump = autoJump;
-			oriURL = URL;
 			// set the sync flag active
 			syncFlag = true;
-			postMethodFlag = false;
-			// get the head
-			QHttp::ConnectionMode mode = QHttp::ConnectionModeHttp;
-			http->setHost(URL.host(), mode, URL.port() == -1 ? 0 : URL.port());
-			httpGetId = http->head(getPathAndQuery(URL)); //http->head(URL.toEncoded());
-			// wait while the header is recived
+			httpMethod = httpHead;
+			// do the first jump
+			oriURL = URL;
+			jumpToURL(URL);
+			// wait while the head is being downloaded
 			while (syncFlag)
 				qApp->processEvents();
 			// return the last response
@@ -705,6 +713,18 @@ void Http::clearCookies()
 void Http::addHeaderParameter(QString key, QString value)
 {
 	customHeaders->append(key + "|" + value);
+}
+
+void Http::addHeaderParameters(QString headers, const QString separator)
+{
+	QStringList headersList = headers.split(separator);
+	// add all headers
+	foreach(QString header, headersList)
+	{
+		QString key = copy(header, 0, header.indexOf("="));
+		QString value = header.remove(0, header.indexOf("=") + 1);
+		addHeaderParameter(key, value);
+	}
 }
 
 void Http::clearHeaderParameters()
