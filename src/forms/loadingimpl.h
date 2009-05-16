@@ -9,10 +9,12 @@ class LoadingImpl : public QWidget, private Ui::LoadingImpl
 {
     Q_OBJECT
     Q_DISABLE_COPY(LoadingImpl)
+private:
+	explicit LoadingImpl(QWidget *parent = 0);
 public:
-    explicit LoadingImpl(QWidget *parent = 0);
 	void finished();
-private slots:
+	static LoadingImpl* instance();
+public slots:
 	void closeLoading();
 };
 

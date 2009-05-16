@@ -1,5 +1,7 @@
 #include "loadingimpl.h"
 
+static LoadingImpl* loadingImplInstance = NULL;
+
 LoadingImpl::LoadingImpl(QWidget *parent) :
 	QWidget(parent)
 {
@@ -28,6 +30,12 @@ LoadingImpl::LoadingImpl(QWidget *parent) :
 	move(x, y);
 }
 
+LoadingImpl* LoadingImpl::instance()
+{
+	if (loadingImplInstance == NULL) loadingImplInstance = new LoadingImpl;
+	return loadingImplInstance;
+}
+
 void LoadingImpl::finished()
 {
 	lblMessage->setText(tr("Plugins loaded"));
@@ -37,4 +45,7 @@ void LoadingImpl::finished()
 void LoadingImpl::closeLoading()
 {
 	close();
+	// destroy instance
+	delete loadingImplInstance;
+	loadingImplInstance = NULL;
 }

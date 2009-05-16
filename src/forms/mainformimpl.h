@@ -30,6 +30,7 @@
 //
 #include "ui_mainform.h"
 //
+#include "loadingimpl.h"
 #include "dragdropimpl.h"
 #include "completedpopupimpl.h"
 #include "addvideoimpl.h"

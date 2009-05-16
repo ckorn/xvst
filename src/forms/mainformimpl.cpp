@@ -881,6 +881,8 @@ void MainFormImpl::displayWelcomeMessage()
 	// check if is possible display the welcome message
 	if (programOptions->getDisplayWelcomeMessage())
 	{
+		LoadingImpl::instance()->closeLoading();
+		// display welcome window
 		WelcomeDonate welcome(this);
 		welcome.exec();
 		// continue displaying this message?

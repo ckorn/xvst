@@ -47,8 +47,7 @@ int main(int argc, char ** argv)
 	app.installTranslator(&translator);
 
 	// create loading window
-	LoadingImpl loadingImpl(NULL);
-	loadingImpl.show();
+	LoadingImpl::instance()->show();
 	qApp->processEvents();
 
 	// create and display main window
@@ -56,7 +55,8 @@ int main(int argc, char ** argv)
 	win.show();
 
 	// hide loading window
-	loadingImpl.finished();
+	if (LoadingImpl::instance() != NULL)
+		LoadingImpl::instance()->finished();
 
 	// run program
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));

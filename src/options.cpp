@@ -346,13 +346,6 @@ QString ProgramOptions::getApplicationPath()
 
 QString ProgramOptions::getOptionsPath()
 {
-/*
-#ifdef Q_WS_MAC
-	return QString(QDir::homePath() + "/Library/Preferences");
-#else
-	return getApplicationPath();
-#endif
-*/
 	return extractFilePath(optionsFile);
 }
 
