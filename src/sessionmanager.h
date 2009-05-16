@@ -33,8 +33,8 @@
 //
 
 #ifdef Q_WS_MAC
-static const QString SESSION_FILE = "/com.xVideoServiceThief.session.plist";
-static const QString LOG_FILE = "/com.xVideoServiceThief.historic.plist";
+static const QString SESSION_FILE = "/../Application Support/xVideoServiceThief/session.plist";
+static const QString LOG_FILE = "/../Application Support/xVideoServiceThief/historic.plist";
 #else
 static const QString SESSION_FILE = "/session.conf";
 static const QString LOG_FILE = "/historic.log";

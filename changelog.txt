@@ -32,6 +32,8 @@ Plugins SDK:
 MacOSX:
 -------
 
+- Changed historic.plist and session.plist location to /{user}/Library/Applicacion Support/xVideoServiceThief/
+
 - Fixed bug (Error: the completed popup text were allways the same)
 
 2.0.1a:
