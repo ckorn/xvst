@@ -36,9 +36,6 @@ int main(int argc, char ** argv)
 {
 	QApplication app(argc, argv);
 
-	LoadingImpl loadingImpl(NULL);
-	loadingImpl.show();
-	qApp->processEvents();
 	// get language file
 	ProgramOptions *programOptions = ProgramOptions::getProgramOptionsInstance();
 	programOptions->load();
@@ -49,11 +46,19 @@ int main(int argc, char ** argv)
 	translator.load(qm);
 	app.installTranslator(&translator);
 
+	// create loading window
+	LoadingImpl loadingImpl(NULL);
+	loadingImpl.show();
+	qApp->processEvents();
+
+	// create and display main window
 	MainFormImpl win;
 	win.show();
 
+	// hide loading window
 	loadingImpl.finished();
 
+	// run program
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
 	return app.exec();
 }

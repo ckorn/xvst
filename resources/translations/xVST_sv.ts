@@ -341,7 +341,7 @@
     <name>CompletedPopup</name>
     <message>
         <source>QFrame{background-color:#ffecbf}</source>
-        <translation>QFrame{background-color:#ffecbf}</translation>
+        <translation type="obsolete">QFrame{background-color:#ffecbf}</translation>
     </message>
     <message>
         <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
@@ -361,11 +361,11 @@
     </message>
     <message>
         <source>X</source>
-        <translation>X</translation>
+        <translation type="obsolete">X</translation>
     </message>
     <message>
         <source>QFrame{background-color:#fff7dd}</source>
-        <translation>QFrame{background-color:#fff7dd}</translation>
+        <translation type="obsolete">QFrame{background-color:#fff7dd}</translation>
     </message>
     <message>
         <source>?</source>
@@ -385,7 +385,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
 </context>
 <context>
@@ -750,6 +750,21 @@ font-size:12px;
     </message>
     <message>
         <source>Music web sites:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LoadingImpl</name>
+    <message>
+        <source>Loading plugins... please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plugins loaded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

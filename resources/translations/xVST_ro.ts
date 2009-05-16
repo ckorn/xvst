@@ -340,10 +340,6 @@
 <context>
     <name>CompletedPopup</name>
     <message>
-        <source>QFrame{background-color:#ffecbf}</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
         <translation>&lt;b&gt;Descărcare terminată&lt;/b&gt;</translation>
     </message>
@@ -358,14 +354,6 @@
     <message>
         <source>Close the information dialog</source>
         <translation>Închide această fereastră</translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>QFrame{background-color:#fff7dd}</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>?</source>
@@ -385,7 +373,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
 </context>
 <context>
@@ -748,6 +736,21 @@ font-size:12px;
     </message>
     <message>
         <source>Music web sites:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LoadingImpl</name>
+    <message>
+        <source>Loading plugins... please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plugins loaded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

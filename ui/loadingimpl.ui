@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Loading</string>
   </property>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -26,7 +26,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/popup/images/loading.png</pixmap>
+    <pixmap resource="../resources/resources.qrc">:/popup/images/loading.png</pixmap>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -65,6 +65,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

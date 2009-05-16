@@ -334,7 +334,7 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="141"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="142"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -433,62 +433,58 @@
 <context>
     <name>CompletedPopup</name>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="263"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="155"/>
+        <location filename="../../ui/completedpopup.ui" line="44"/>
         <source>?</source>
         <translation>?</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="73"/>
+        <location filename="../../ui/completedpopup.ui" line="181"/>
         <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
         <translation>&lt;b&gt;Descàrrega completa&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="86"/>
+        <location filename="../../ui/completedpopup.ui" line="213"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="251"/>
+        <location filename="../../ui/completedpopup.ui" line="143"/>
         <source>Play video</source>
         <translation>Reprodueix el vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="55"/>
         <source>QFrame{background-color:#ffecbf}</source>
-        <translation>QFrame{background-color:#ffecbf}</translation>
+        <translation type="obsolete">QFrame{background-color:#ffecbf}</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="131"/>
         <source>QFrame{background-color:#fff7dd}</source>
-        <translation>QFrame{background-color:#fff7dd}</translation>
+        <translation type="obsolete">QFrame{background-color:#fff7dd}</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="95"/>
         <source>X</source>
-        <translation>X</translation>
+        <translation type="obsolete">X</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="89"/>
+        <location filename="../../ui/completedpopup.ui" line="216"/>
         <source>Close button</source>
         <translation>Botó de tancar</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="92"/>
+        <location filename="../../ui/completedpopup.ui" line="219"/>
         <source>Close the information dialog</source>
         <translation>Tanca la finestra d&apos;informació</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="257"/>
+        <location filename="../../ui/completedpopup.ui" line="149"/>
         <source>Play button</source>
         <translation>Botó de reproducció</translation>
     </message>
     <message>
-        <location filename="../../ui/completedpopup.ui" line="260"/>
+        <location filename="../../ui/completedpopup.ui" line="152"/>
         <source>Play the downloaded video</source>
         <translation>Reprodueix el vídeo baixat</translation>
     </message>
@@ -948,6 +944,24 @@ font-size:12px;
     </message>
 </context>
 <context>
+    <name>LoadingImpl</name>
+    <message>
+        <location filename="../../src/forms/loadingimpl.cpp" line="8"/>
+        <source>Loading plugins... please wait...</source>
+        <translation>Carregan&apos;t plugins... espera un moment...</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/loadingimpl.cpp" line="33"/>
+        <source>Plugins loaded</source>
+        <translation>Plugins carregats</translation>
+    </message>
+    <message>
+        <location filename="../../ui/loadingimpl.ui" line="14"/>
+        <source>Loading</source>
+        <translation>Carregan&apos;t</translation>
+    </message>
+</context>
+<context>
     <name>MainForm</name>
     <message>
         <source>...</source>
@@ -1294,143 +1308,143 @@ font-size:12px;
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
         <source> Progress </source>
         <translation> Progrés </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
         <source> Size </source>
         <translation> Volum </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
         <source> Speed </source>
         <translation> Velocitat </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
         <source> Time </source>
         <translation> Temps </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="69"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
         <source> Video </source>
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="337"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="264"/>
         <source>Closing...</source>
         <translation>Tancant...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="339"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="547"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="266"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="474"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="364"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="291"/>
         <source>Options</source>
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="451"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="378"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="339"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="546"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="266"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="473"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="404"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="844"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="331"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="771"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="845"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="772"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;aplicació xUpdater no s&apos;ha pogut trobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="406"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="633"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="846"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="333"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="560"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="773"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="405"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="332"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1055"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="982"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Descarregant: %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1063"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="990"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertint: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="980"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="907"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Vídeos afegits:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completats)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="984"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="911"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Descarregant:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="988"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="915"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Velocitat de baixada:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="989"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="916"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="338"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="265"/>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
         <translation>xVideoServiceThief està treballant, realment vols Pausar totes les descàrregues?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="544"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="471"/>
         <source>Cancel download</source>
         <translation>Cancel·la descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="545"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="472"/>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Desitges cancel·lar la descàrrega de &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="631"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="558"/>
         <source>Error message</source>
         <translation>Missatge d&apos;error</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="632"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="559"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Aquest vídeo té el següent error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1004"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1019"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="931"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="946"/>
         <source>Pause download</source>
         <translation>Pausa descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1017"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="944"/>
         <source>Resume download</source>
         <translation>Continua descàrrega</translation>
     </message>
