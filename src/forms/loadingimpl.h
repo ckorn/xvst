@@ -1,7 +1,7 @@
 #ifndef LOADINGIMPL_H
 #define LOADINGIMPL_H
 
-#include <QtCore>
+#include <QtGui>
 
 #include "ui_loadingimpl.h"
 

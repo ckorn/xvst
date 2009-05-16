@@ -177,68 +177,6 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	displayWelcomeMessage();
 	// updater timer
 	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
-
-	// videos examples
-/*
-	videoList->addVideo("http://es.youtube.com/watch?v=0z-hdo3-UEU");
-	videoList->addVideo("http://www.metacafe.com/watch/952453/fart_football_funny_tape_ep34/");
-	videoList->addVideo("http://video.google.es/videoplay?docid=-6002479527438850286");
-	videoList->addVideo("http://video.google.com/videoplay?docid=-2078061509679387625");
-	videoList->addVideo("http://www.zappinternet.com/video/tivWjuQyaP/Sabotaje-en-el-metro-de-Madrid");
-	videoList->addVideo("http://www.dailymotion.com/es/cluster/music/featured/video/x3vdt4_james-brown-dance-lessons_music");
-	videoList->addVideo("http://www.dumpalink.com/videos/No_whoppers-2jg2.html");
-	videoList->addVideo("http://www.glumbert.com/media/bushrailroad");
-	videoList->addVideo("http://sclipo.com/video/massage-videos-lower-back-wrap-around-massage");
-	videoList->addVideo("http://www.lulu.tv/?p=20611");
-	videoList->addVideo("http://www.livevideo.com/video/ShatnerVision/D65C961087944AC5AAA4C0BF2893591F/shatner-plans-for-the-future.aspx");
-	videoList->addVideo("http://www.yikers.com/video_woman_attacked_by_cheetah.html");
-	videoList->addVideo("http://www.123video.nl/playvideos.asp?MovieID=57709");
-	videoList->addVideo("http://www.5min.com/Video/7-knots-every-scout-should-know-12334");
-	videoList->addVideo("http://www.abum.com/62464/NASA-records-the-sounds-of-Jupiter.html");
-	videoList->addVideo("http://www.aniboom.com/Player.aspx?v=94346&CATG=1&SortMethod=3&TimeLine=0");
-	videoList->addVideo("http://www.bebo.com/FlashBox.jsp?FlashBoxId=3811155676");
-	videoList->addVideo("http://www.break.com/index/monkey-needs-a-drink.html");
-	videoList->addVideo("http://www.broadcaster.com/clip/32505");
-	videoList->addVideo("http://videos.caught-on-video.com/video/0f0f5255-310d-4f95-87f5-9881018b4697.htm");
-	videoList->addVideo("http://clip4e.com/play_po_belyo_na_rabotnoto_mqsto.htm");
-	videoList->addVideo("http://www.video.ca/video.php?id=1178558732");
-	videoList->addVideo("http://www.liveleak.com/view?i=969_1191475546");
-	videoList->addVideo("http://www.tu.tv/videos/ficeb-2007_6");
-	videoList->addVideo("http://www.spike.com/video/2938314/collection/25823/minisite/superbowl");
-	videoList->addVideo("http://www.myspace.com/index.cfm?fuseaction=vids.individual&VideoID=23409638");
-	videoList->addVideo("http://videos.cinemavip.com/informaciondecontenido.php?con=3015");
-	videoList->addVideo("http://video.yahoo.com/video/play?vid=1899050&fr=&cache=1");
-	videoList->addVideo("http://www.gamespot.com/video/943596/6185607/turok-official-trailer-2");
-	videoList->addVideo("http://www.stage6.com/Shutdown/video/2010536/-/shutdown-1x06:-DDR-Hero-(part-3-of-4)---720-HD");
-	videoList->addVideo("http://pcdnv4.xtube.com/watch_video.php?v_user_id=xtube_sponsor&cv=9&idx=5&v=uxNMB_S114_&cl=1XgcC-S114-");
-	videoList->addVideo("http://www.zuuble.com/media/5628/baby-gives-the-evil-eye.html");
-	videoList->addVideo("http://www.zippyvideos.com/5095924715953276/flexible/");
-	videoList->addVideo("http://www.zippyvideos.com/7648675377380426/bask/");
-	videoList->addVideo("http://www.zedge.net/videos/30829/yuridia-video/");
-	videoList->addVideo("http://blip.tv/file/683334/");
-	videoList->addVideo("http://www.ceknito.sk/video/115184");
-	videoList->addVideo("http://www.zanyvideos.com/videos/crazy_guy_hangs_on_top_of_a_crane_in_paris");
-	videoList->addVideo("http://zaable.com/media/4128/Shark_tears_entire_calf_off_and_eats_it_in_oene_bite/");
-	videoList->addVideo("http://www.youtubeislam.com/view_video.php?viewkey=073bc11916c6c1de226b");
-	videoList->addVideo("http://www.yourfilehost.com/media.php?cat=video&file=06411009_niceshirt.wmv");
-	videoList->addVideo("http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=26910554");
-	videoList->addVideo("http://tv.boingboing.net/2008/03/14/russell-porter-with-1.html");
-	videoList->addVideo("http://www.gametrailers.com/player/31902.html");
-	videoList->addVideo("http://www.tudou.com/playlist/playindex.do?lid=3105702&iid=15650679");
-	videoList->addVideo("http://www.tudou.com/programs/view/btMyaEXJr4E/");
-*/
-/*
-	// adult sites
-	videoList->addVideo("http://yuvutu.com/modules.php?name=Video&op=view&video_id=147706");
-	videoList->addVideo("http://badjojo.com/video_play_front.php?Id=6292");
-	videoList->addVideo("http://www.desisextube.com/dst/view_video.php?viewkey=d7fbdea1afc51c7c6ad2&page=1&viewtype=&category=mv");
-	videoList->addVideo("http://youporn.com/watch/126002");
-	videoList->addVideo("http://tuporno.tv/videos/sexo-virtual-morenaza");
-	videoList->addVideo("http://pornotube.com/media.php?m=1541072");
-	videoList->addVideo("http://www.dalealplay.com/informaciondecontenido.php?con=62750");
-	videoList->addVideo("http://www.shufuni.com/milf/FEA3744E-DC96-4FB6-9344-0D6B16C44081.html");
-	videoList->addVideo("http://pcdnv4.xtube.com/watch_video.php?v_user_id=Tatum76&cv=9&idx=6&v=oWf40_S314_&cl=GgIpm_S314_");
-*/
 }
 
 MainFormImpl::~MainFormImpl()
