@@ -1,6 +1,7 @@
 2.0.2a:
 -------
 
+- Added loading window
 - Added 13 new plugin:
 	- GodOfHumor
 	- Kontraband
@@ -27,6 +28,11 @@ Plugins SDK:
 ------------
 
 - Added new "headers" property to "VideoDefinition" structure
+
+MacOSX:
+-------
+
+- Fixed bug (Error: the completed popup text were allways the same)
 
 2.0.1a:
 -------

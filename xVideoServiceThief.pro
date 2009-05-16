@@ -1,7 +1,7 @@
 CONFIG += qt \
     warn_on \
-	debug_and_release \
-	$$[build_mode]
+    debug_and_release \
+    $$[build_mode]
 QT = core \
     gui \
     network \
@@ -26,7 +26,8 @@ FORMS = ui/addvideo.ui \
     ui/credits.ui \
     ui/winvistaupdatesmsg.ui \
     ui/newlanguages.ui \
-    ui/welcomedonate.ui
+    ui/welcomedonate.ui \
+	ui/loadingimpl.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/checkupdatesimpl.h \
     src/forms/completedpopupimpl.h \
@@ -63,7 +64,8 @@ HEADERS = src/forms/addvideoimpl.h \
     src/httpscriptclass.h \
     src/videoconverttypes.h \
     src/checkupdatesworker.h \
-    src/forms/welcomedonate.h
+    src/forms/welcomedonate.h \
+    src/forms/loadingimpl.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \
@@ -99,7 +101,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/toolsscriptclass.cpp \
     src/httpscriptclass.cpp \
     src/checkupdatesworker.cpp \
-    src/forms/welcomedonate.cpp
+    src/forms/welcomedonate.cpp \
+    src/forms/loadingimpl.cpp
 TRANSLATIONS = resources/translations/xVST_en.ts \
     resources/translations/xVST_ca.ts \
     resources/translations/xVST_es.ts \
@@ -130,13 +133,11 @@ win32 {
     RC_FILE += resources/xVST.rc
     OBJECTS_DIR += build/o/win32
 }
-frameworks_build {
-	DEFINES += FRAMEWORKS_BUILD
-	message(frameworks_build)
+frameworks_build { 
+    DEFINES += FRAMEWORKS_BUILD
+    message(frameworks_build)
 }
-static_build {
-	DEFINES += STATIC_BUILD
-	message(static_build)
+static_build { 
+    DEFINES += STATIC_BUILD
+    message(static_build)
 }
-
-#eval($$[build_mode] = static_build):DEFINES += STATIC_BUILD

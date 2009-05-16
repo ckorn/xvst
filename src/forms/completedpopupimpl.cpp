@@ -82,8 +82,13 @@ void CompletedPopupImpl::displayTimerOnTimer()
 void CompletedPopupImpl::displayPopup(const QIcon &serviceIcon, const QString videoTitle, const QString videoFile)
 {
 	// set window info
+	imgVideoService->hide();
+	lblVideoTitle->hide();
 	imgVideoService->setPixmap(serviceIcon.pixmap(QSize(16,16)));
 	lblVideoTitle->setText(videoTitle);
+	imgVideoService->show();
+	lblVideoTitle->show();
+
 	this->videoFile = videoFile;
 
 	QDesktopWidget *desktop = QApplication::desktop();

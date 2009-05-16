@@ -25,6 +25,7 @@
 
 #include <QtGui> //<QApplication>
 //
+#include "forms/loadingimpl.h"
 #include "forms/mainformimpl.h"
 //
 #include "options.h"
@@ -35,6 +36,9 @@ int main(int argc, char ** argv)
 {
 	QApplication app(argc, argv);
 
+	LoadingImpl loadingImpl(NULL);
+	loadingImpl.show();
+	qApp->processEvents();
 	// get language file
 	ProgramOptions *programOptions = ProgramOptions::getProgramOptionsInstance();
 	programOptions->load();
@@ -47,6 +51,9 @@ int main(int argc, char ** argv)
 
 	MainFormImpl win;
 	win.show();
+
+	loadingImpl.finished();
+
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
 	return app.exec();
 }

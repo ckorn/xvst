@@ -62,5 +62,6 @@
     </qresource>
     <qresource prefix="/popup" >
         <file>images/finished_background.png</file>
+        <file>images/loading.png</file>
     </qresource>
 </RCC>
