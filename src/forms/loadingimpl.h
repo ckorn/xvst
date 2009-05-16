@@ -5,7 +5,8 @@
 
 #include "ui_loadingimpl.h"
 
-class LoadingImpl : public QWidget, private Ui::LoadingImpl {
+class LoadingImpl : public QWidget, private Ui::LoadingImpl
+{
     Q_OBJECT
     Q_DISABLE_COPY(LoadingImpl)
 public:
