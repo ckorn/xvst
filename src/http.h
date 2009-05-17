@@ -49,7 +49,8 @@ enum StopReason
 	DOWNLOAD_FINISHED,
 	USER_CANCELLED,
 	USER_PAUSED,
-	TIME_OUT
+	TIME_OUT,
+	MAX_AUTO_JUMPS_REACHED
 };
 
 class ArrayAvg : public QObject
@@ -159,6 +160,8 @@ Q_OBJECT
 		QString parameters;			//!< internal post parameters
 		int maxRetries;				//!< maximum retries for session (each download is a session)
 		int retriesCount;			//!< current retries in this session (each download is a session)
+		int maxAutoJumps;			//!< maximum automatic jumps
+		int autoJumps;				//!< current automatic jumps realized
 		bool startedDownload;		//!< flag for know if is downloading (or just redirecting...
 		QTimer tmrTimeOut;			//!< time out timer
 		int timeOutIntervalCehck;	//!< time out interval checker
@@ -234,6 +237,8 @@ Q_OBJECT
 		void setMaxRetries(int value);
 		/*! Set the time out in seconds */
 		void setTimeOut(int value);
+		/*! Set the max automatic jumps */
+		void setMaxAutoJumps(int value);
 		/*! Get the last error generated (on start a new download, this value is reset) */
 		int getLastError();
 		/*! Get the last stop reason (on start a new download, this value is reset) */

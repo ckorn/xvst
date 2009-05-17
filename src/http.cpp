@@ -286,7 +286,8 @@ void Http::initClass(bool useInternalTimer)
 	// default max retries
 	maxRetries = 3;//5;
 	initRetriesData();
-	setTimeOut(10);	// 8 seconds
+	setTimeOut(10);	// 10 seconds
+	maxAutoJumps = 5;
 	// destination file
 	file = NULL;
 	// cancel or pause on finish?
@@ -323,6 +324,7 @@ void Http::initData()
 
 	oriURL.clear();
 
+	autoJumps = 0;
 	autoJump = true;
 	resuming = false;
 	autoRestartOnFail = false;
@@ -373,6 +375,15 @@ bool Http::isObjectMoved(int statusCode)
 
 void Http::jumpToURL(QUrl url)
 {	
+	// check if we supperated the autojumps control
+	if (autoJumps > maxAutoJumps && autoJump)
+	{
+		stopReason = MAX_AUTO_JUMPS_REACHED;
+		http->abort();
+		// abort process
+		return;
+	}
+
 	// check if the current url has a host (if not, assign the original url host)
 	if (url.host().isEmpty())
 	{
@@ -469,6 +480,9 @@ void Http::jumpToURL(QUrl url)
 
 	// post method off
 	if (httpMethod == httpPost) httpMethod = httpGet;
+
+	// inc auto jumps controller
+	autoJumps++;
 }
 
 int Http::download(const QUrl URL, QString destination, QString fileName, bool autoName)
@@ -774,6 +788,11 @@ void Http::setTimeOut(int value)
 	timeOut = value * 1000;
 }
 
+void Http::setMaxAutoJumps(int value)
+{
+	maxAutoJumps = value;
+}
+
 int Http::getLastError()
 {
 	return http->error();
@@ -836,6 +855,8 @@ void Http::requestFinished(int id, bool error)
 					case DOWNLOAD_FINISHED:
 						break;
 					case TIME_OUT:
+						break;
+					case MAX_AUTO_JUMPS_REACHED:
 						break;
 				}
 			else // others

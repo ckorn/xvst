@@ -79,6 +79,11 @@ void HttpScriptPrototype::setTimeOut(int value)
 	thisHttp()->setTimeOut(value);
 }
 
+void HttpScriptPrototype::setMaxAutoJumps(int value)
+{
+	thisHttp()->setMaxAutoJumps(value);
+}
+
 int HttpScriptPrototype::getLastError()
 {
 	return thisHttp()->getLastError();
