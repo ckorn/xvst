@@ -51,8 +51,7 @@ VideoInformation::~VideoInformation()
 	abortExecution();
 	// wait until thread end
 //	while (isRunning()) { /* do nothing, just wait... */ };
-	if (isRunning())
-		quit();
+	if (isRunning()) quit();
 	// abort plugins image catcher
 	delete faviconsCatcher;
 	// remove loaded plugins
@@ -406,7 +405,9 @@ void VideoInformationPluginIconsCatcher::downloadNextFavicon()
 	if (!plugins->isEmpty())
 	{
 		QFileInfo fileInfo(plugins->first()->getScriptFile(false));
-		http->download(plugins->first()->getFaviconUrl(), fileInfo.absolutePath() + PLUGINS_IMAGE_DIR, fileInfo.baseName(), false);
+		QString cahcePath = ProgramOptions::getProgramOptionsInstance()->getOptionsPath() + PLUGINS_IMAGE_CACHE_DIR;
+		// download
+		http->download(plugins->first()->getFaviconUrl(), cahcePath, fileInfo.baseName(), false);
 	}
 }
 
@@ -720,13 +721,12 @@ QString VideoInformationPlugin::getFaviconUrl() const
 
 void VideoInformationPlugin::reloadIcon()
 {
-	if (icon->isNull())
+	if (icon->isNull() && useOnlineFavicon())
 	{
-		if (useOnlineFavicon())
-		{
-			QFileInfo fileInfo(pluginFilePath);
-			icon->load(fileInfo.absolutePath() + PLUGINS_IMAGE_DIR + fileInfo.baseName());
-		}
+		QFileInfo fileInfo(pluginFilePath);
+		QString cahcePath = ProgramOptions::getProgramOptionsInstance()->getOptionsPath() + PLUGINS_IMAGE_CACHE_DIR;
+		// load icon
+		icon->load(cahcePath + fileInfo.baseName());
 	}
 }
 

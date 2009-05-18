@@ -29,11 +29,12 @@
 #include <QtGui>
 #include <QtScript>
 //
-#include "videoitem.h"
 #include "http.h"
+#include "videoitem.h"
 #include "httpscriptclass.h"
 #include "toolsscriptclass.h"
 #include "programversion.h"
+#include "options.h"
 
 enum BlockedState
 {
@@ -42,7 +43,11 @@ enum BlockedState
 	bsBlocked
 };
 
-static const QString PLUGINS_IMAGE_DIR = "/cache/";
+#ifdef Q_WS_MACX
+static const QString PLUGINS_IMAGE_CACHE_DIR = "/../Application Support/xVideoServiceThief/plugins-cache/";
+#else
+static const QString PLUGINS_IMAGE_CACHE_DIR = "/plugins-cache/";
+#endif
 
 class VideoInformation;
 
@@ -122,7 +127,7 @@ class VideoInformationPluginIconsCatcher : public QObject
 {
 Q_OBJECT
 	private:
-		Http *http;	//!< Download class
+		Http *http;		//!< Download class
 		VideoInformation *videoInformation;			//!< VideoInformation parent
 		QList<VideoInformationPlugin *> *plugins;	//!< List of plugins to download the favicon
 	public:
