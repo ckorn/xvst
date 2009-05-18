@@ -30,11 +30,13 @@
 //
 #include "options.h"
 #include "languages.h"
-//
 
 int main(int argc, char ** argv)
 {
 	QApplication app(argc, argv);
+
+	// display loading dialog
+	LoadingImpl::instance()->show();
 
 	// get language file
 	ProgramOptions *programOptions = ProgramOptions::getProgramOptionsInstance();
@@ -46,8 +48,8 @@ int main(int argc, char ** argv)
 	translator.load(qm);
 	app.installTranslator(&translator);
 
-	// create loading window
-	LoadingImpl::instance()->show();
+	// display loading plugins
+	LoadingImpl::instance()->setMessage(LoadingImpl::tr("Loading plugins... please wait..."));
 	qApp->processEvents();
 
 	// create and display main window
@@ -56,7 +58,10 @@ int main(int argc, char ** argv)
 
 	// hide loading window
 	if (LoadingImpl::instance() != NULL)
+	{
+		LoadingImpl::instance()->setMessage(LoadingImpl::tr("Plugins loaded"));
 		LoadingImpl::instance()->finished();
+	}
 
 	// run program
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
