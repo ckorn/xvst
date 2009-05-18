@@ -36,9 +36,9 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	pbrCheckingForUpdates->hide();
 	spbCancelCheckForUpdates->hide();
 	// resize add button to an optimum visualization on macosx
-#ifdef Q_WS_MAC
+#ifdef Q_WS_MACX
 	btnAddVideo->setMinimumWidth(158);
-	frame->layout()->setContentsMargins(4, 4, 6, 4);
+	frameHeader->layout()->setContentsMargins(4, 4, 6, 4);
 	setMinimumSize(780, 540);
 	QFont updatesFont = lblCheckForUpdatesLabel->font();
 	updatesFont.setPointSize(10);
@@ -181,8 +181,13 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 
 MainFormImpl::~MainFormImpl()
 {
+#ifdef Q_WS_MACX
+	// save the window state (MacOSX bug fix)
+	if (windowState() == Qt::WindowMaximized && width() == qApp->desktop()->availableGeometry(this).width())
+#else
 	// save the window state
 	if (windowState() == Qt::WindowMaximized)
+#endif
 		programOptions->setMainWinowMaximized(true);
 	else
 	{
