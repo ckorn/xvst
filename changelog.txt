@@ -43,14 +43,24 @@ MacOSX:
 
 - Changed Add Video dialog to MacOSX Sheet style for better MacOSX look&feel
 - Changed Languages Manager dialog to MacOSX Sheet style for better MacOSX look&feel
-- Changed historic.plist and session.plist location to /{user}/Library/Applicacion Support/xVideoServiceThief/
+- Changed Credits dialog to MacOSX Sheet style for better MacOSX look&feel
+- Changed historic.plist and session.plist location to "/{user}/Library/Applicacion Support/xVideoServiceThief/"
+- Changed image plugins cache dir to "/{user}/Library/Applicacion Support/xVideoServiceThief/plugins-cache"
 
 - Fixed bug (Error: the completed popup text were allways the same)
+- Fixed bug (Error: window size wasn't correctly saved and restored)
 
 Windows:
 --------
 
 - Fixed bug (Error: the "checking for updates" dialog was displayed as separated window on taskbar)
+
+- Changed image plugins cache dir to "C:\Documents and Settings\{user}\Program files\xVideoServiceThief\plugins-cache"
+
+Linux:
+------
+
+- Changed image plugins cache dir to "~/.xVideoServiceThief/plugins-cache"
 
 2.0.1a:
 -------
