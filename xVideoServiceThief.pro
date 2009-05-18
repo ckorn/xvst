@@ -139,5 +139,7 @@ frameworks_build {
 }
 static_build { 
     DEFINES += STATIC_BUILD
+    QTPLUGIN += qico \
+                qgif
     message(static_build)
 }

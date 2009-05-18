@@ -30,6 +30,12 @@
 //
 #include "options.h"
 #include "languages.h"
+//
+#ifdef STATIC_BUILD
+	#include <QtPlugin>
+	Q_IMPORT_PLUGIN(qico)
+	Q_IMPORT_PLUGIN(qgif)
+#endif
 
 int main(int argc, char ** argv)
 {
