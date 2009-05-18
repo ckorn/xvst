@@ -33,7 +33,7 @@
 
 enum Error
 {
-	UNABLE_CREATE_DIR	= 20,	//20
+	UNABLE_CREATE_DIR = 20,		//20
 	UNABLE_CREATE_FILE,			//21
 	INVALID_URL,				//22
 	ALREADY_DOWNLOADING,		//23
@@ -45,12 +45,12 @@ enum Error
 
 enum StopReason
 {
-	NO_STOPPED,
-	DOWNLOAD_FINISHED,
-	USER_CANCELLED,
-	USER_PAUSED,
-	TIME_OUT,
-	MAX_AUTO_JUMPS_REACHED
+	NO_STOPPED = 100,			//100
+	DOWNLOAD_FINISHED,			//101
+	USER_CANCELLED,				//102
+	USER_PAUSED,				//103
+	TIME_OUT,					//104
+	MAX_AUTO_JUMPS_REACHED		//105
 };
 
 class ArrayAvg : public QObject
@@ -206,7 +206,7 @@ Q_OBJECT
 		/*! Download a Webpage synchronously: post mode (return the webpage content) */
 		QString downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf8 = true);
 		/*! Get only the response header */
-		QHttpResponseHeader head(const QUrl URL, bool autoJump = false);
+		QHttpResponseHeader head(const QUrl URL);
 		/*! Add custom cookie */
 		void addCookie(QString cookie);
 		/*! Add custom cookies */

@@ -20,6 +20,7 @@ Q_OBJECT
 		QString downloadWebpageEx(const QString URL, bool url_tolerantMode, bool isUtf8 = true);
 		QString downloadWebpagePost(const QString URL, QString parameters, bool isUtf8 = true);
 		QString downloadWebpagePostEx(const QString URL, QString parameters, bool url_tolerantMode, bool isUtf8 = true);
+		QString downloadWebpageHeaders(const QString URL, QString separator = "\n");
 		void addCookie(QString cookie);
 		void addCookies(QString cookies, QString separator);
 		QString getCookies(QString separator);

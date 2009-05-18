@@ -675,7 +675,7 @@ QString Http::downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf
 	return result;
 }
 
-QHttpResponseHeader Http::head(const QUrl URL, bool autoJump)
+QHttpResponseHeader Http::head(const QUrl URL)
 {
 	QHttpResponseHeader result;
 
@@ -838,27 +838,18 @@ void Http::requestFinished(int id, bool error)
 		if (error)
 		{
 			bool canRemove = true;
-
+			// check if is an user abort (due to cancel or pause)
 			if (http->error() == QHttp::Aborted && 
 				(stopReason == USER_CANCELLED || stopReason == USER_PAUSED))
-				switch (stopReason)
+			{
+				if (stopReason == USER_CANCELLED)
+					emit downloadCanceled();
+				else if (stopReason == USER_PAUSED)
 				{
-					case USER_CANCELLED:
-						emit downloadCanceled();
-						break;
-					case USER_PAUSED:
-						canRemove = false;
-						emit downloadPaused(destFile);
-						break;
-					case NO_STOPPED:
-						break;
-					case DOWNLOAD_FINISHED:
-						break;
-					case TIME_OUT:
-						break;
-					case MAX_AUTO_JUMPS_REACHED:
-						break;
+					canRemove = false;
+					emit downloadPaused(destFile);
 				}
+			}
 			else // others
 			{
 				// abort all (and clear pending requests)

@@ -39,6 +39,12 @@ QString HttpScriptPrototype::downloadWebpagePostEx(const QString URL, QString pa
 	return thisHttp()->downloadWebpagePost(QUrl(URL, url_tolerantMode ? QUrl::TolerantMode : QUrl::StrictMode), parameters, isUtf8);
 }
 
+QString HttpScriptPrototype::downloadWebpageHeaders(const QString URL, QString separator)
+{
+	QHttpResponseHeader headers = thisHttp()->head(QUrl(URL));
+	return headers.toString().replace("\n", separator);
+}
+
 void HttpScriptPrototype::addCookie(QString cookie)
 {
 	thisHttp()->addCookie(cookie);
