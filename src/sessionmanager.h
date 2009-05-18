@@ -32,7 +32,7 @@
 #include "videolistcontroller.h"
 //
 
-#ifdef Q_WS_MAC
+#ifdef Q_WS_MACX
 static const QString SESSION_FILE = "/../Application Support/xVideoServiceThief/session.plist";
 static const QString LOG_FILE = "/../Application Support/xVideoServiceThief/historic.plist";
 #else
