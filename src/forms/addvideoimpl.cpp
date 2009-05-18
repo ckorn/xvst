@@ -34,7 +34,9 @@ AddVideoImpl::AddVideoImpl(ProgramOptions *programOptions, VideoInformation *vid
 	this->videoInformation = videoInformation;
 	// hide the conversion options
 	originalSize = size();
+#ifndef Q_WS_MACX
 	gpbVideoConversion->setVisible(false);
+#endif
 	chbOverrideConversion->setVisible(QFile::exists(programOptions->getFfmpegLibLocation()));
 	resize(width(), 50);
 	// prepare conversion options
@@ -122,6 +124,7 @@ void AddVideoImpl::spbPasteURLClicked()
 
 void AddVideoImpl::chbOverrideConversionClicked()
 {
+#ifndef Q_WS_MACX
 	if (!gpbVideoConversion->isVisible())
 	{
 		gpbVideoConversion->setVisible(true);
@@ -131,6 +134,7 @@ void AddVideoImpl::chbOverrideConversionClicked()
 		// move the form to update the new size
 		move(x() - preWidth, y() - preHeight);
 	}
+#endif
 	// enable or disable the groupbox
 	gpbVideoConversion->setEnabled(chbOverrideConversion->isChecked());
 }

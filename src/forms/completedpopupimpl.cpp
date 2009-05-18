@@ -56,16 +56,16 @@ void CompletedPopupImpl::displayTimerOnTimer()
 	// display popup animation
 	if (displayState == dsShowing)
 		if (pos().x() > availableGeometry.width() - size().width())// - 15)
-			move(pos().x() - 1, pos().y());
+			move(pos().x() - 2, pos().y());
 		else
 		{
 			displayState = dsWaiting;
-			displayTimer->start(4000);
+			displayTimer->start(5000);
 		}
 	// hide popup animation
 	else if (displayState == dsHiding)
 		if (pos().x() < availableGeometry.width())
-			move(pos().x() + 1, pos().y());
+			move(pos().x() + 2, pos().y());
 		else
 		{
 			displayState = dsWaiting;
@@ -75,7 +75,7 @@ void CompletedPopupImpl::displayTimerOnTimer()
 	else if (displayState == dsWaiting)
 	{
 		displayState = dsHiding;
-		displayTimer->start(1);
+		displayTimer->start(2);
 	}
 }
 
@@ -95,14 +95,17 @@ void CompletedPopupImpl::displayPopup(const QIcon &serviceIcon, const QString vi
 	QRect availableGeometry  = desktop->availableGeometry(this);
 	move(desktop->width(), availableGeometry.height() - size().height());
 	this->show();
+
+	alpha = 0;
+
 	displayState = dsShowing;
-	displayTimer->start(1);
+	displayTimer->start(2);
 }
 
 void CompletedPopupImpl::closeClicked()
 {
 	displayState = dsHiding;
-	displayTimer->start(1);
+	displayTimer->start(2);
 }
 
 void CompletedPopupImpl::playVideoClicked()

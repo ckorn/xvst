@@ -84,5 +84,6 @@ Q_OBJECT
 		void btnCheckNowClicked();
 		void btnAddNewLanguagesClicked();
 		void internalFFmpegStateChanged(int state);
+		void newLanguagesAccepted();
 };
 #endif

@@ -41,6 +41,7 @@ Q_OBJECT
 		QTimer *displayTimer;
 		QString videoFile;
 		DisplayState displayState;
+		double alpha;
 	public:
 		CompletedPopupImpl( QWidget * parent = 0, Qt::WFlags f = 0 );
 		~CompletedPopupImpl();

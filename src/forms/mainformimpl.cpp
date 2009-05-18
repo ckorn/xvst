@@ -339,7 +339,7 @@ void MainFormImpl::updatesClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 	
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this, Qt::Sheet);
 	checkUpdatesForm.exec();
 	
 	spbUpdates->setEnabled(true);
@@ -402,8 +402,19 @@ void MainFormImpl::addVideoClicked()
 
 	if (!isVisible()) restoreAppClicked();
 
-	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation(), this);
+	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation(), this, Qt::Sheet);
+
+#ifdef Q_WS_MACX
+	// display this form as a Sheet
+	addVideoForm.show();
+	// wait while addVideoForm is visible
+	while (addVideoForm.isVisible())
+		qApp->processEvents(QEventLoop::WaitForMoreEvents);
+	// user did "accept" or "cancel"?
+	if (addVideoForm.result() == QDialog::Accepted)
+#else
 	if (addVideoForm.exec() == QDialog::Accepted)
+#endif
 	{
 		// user want override the current conversion config
 		if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())

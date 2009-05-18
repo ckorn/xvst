@@ -476,10 +476,24 @@ void OptionsImpl::btnCheckNowClicked()
 
 void OptionsImpl::btnAddNewLanguagesClicked()
 {
+#ifdef Q_WS_MACX
+	NewLanguagesImpl *newLanguagesForm = new NewLanguagesImpl(programOptions, this, Qt::Sheet);
+	newLanguagesForm->show();
+	// capture when sheet is closed
+	connect(newLanguagesForm, SIGNAL(accepted()), this, SLOT(newLanguagesAccepted()));
+#else // windows and linux
 	NewLanguagesImpl newLanguagesForm(programOptions, this);
 	newLanguagesForm.exec();
-
 	// reload languages
+	fillLanguages();
+#endif
+}
+
+void OptionsImpl::newLanguagesAccepted()
+{
+	// destroy sender (NewLanguagesImpl)
+	delete this->sender();
+	// update languages list
 	fillLanguages();
 }
 

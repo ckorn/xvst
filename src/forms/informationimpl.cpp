@@ -34,6 +34,8 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 	resize(518, 550);
 	setMinimumSize(518, 550);
 #endif
+	//
+	creditsForm = new CreditsImpl(this, Qt::Sheet);
 	// signals
 	connect(btnCredits, SIGNAL(clicked()), this, SLOT(btnCreditsClicked()));
 	// set the program version
@@ -49,6 +51,11 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 	buildVideoServicesList(videoInformation);
 	// set the support project link
 	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button.png\" /></a>");
+}
+
+InformationImpl::~InformationImpl()
+{
+	delete creditsForm;
 }
 
 QString getPluginsAsHtml(QString title, QList<VideoInformationPlugin*> plugins)
@@ -87,7 +94,6 @@ void InformationImpl::buildVideoServicesList(VideoInformation *videoInformation)
 
 void InformationImpl::btnCreditsClicked()
 {
-	CreditsImpl creditsForm(this);
-	creditsForm.exec();
+	creditsForm->show();
 }
 //

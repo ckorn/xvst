@@ -30,15 +30,9 @@
 //
 #include "ui_checkupdates.h"
 //
-//#include "windowsvistadetectedimpl.h"
-//#include "updatecenterimpl.h"
-//
 #include "../options.h"
-//#include "../updates.h"
 #include "../checkupdatesworker.h"
 //
-
-static const QString URL_UPDATE_FILE__ = "http://xviservicethief.sourceforge.net/updates/xVST.update";
 
 class CheckUpdatesImpl : public QDialog, public Ui::CheckUpdates
 {
@@ -49,7 +43,7 @@ Q_OBJECT
 	protected:
 		void closeEvent(QCloseEvent *event);
 	public:
-		CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent = 0, Qt::WFlags f = 0 );
+		CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent = 0, Qt::WFlags f = 0);
 		~CheckUpdatesImpl();
 	private slots:
 		void checkUpdatesWorkerFinished(bool hasUpdates, bool closedByButton);

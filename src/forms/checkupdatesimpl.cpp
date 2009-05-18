@@ -26,6 +26,7 @@
 #include "checkupdatesimpl.h"
 
 CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent, Qt::WFlags f)
+	: QDialog(parent, f)
 {
 	setupUi(this);
 	// resize form if is needed
