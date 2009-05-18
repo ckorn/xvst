@@ -35,7 +35,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout">
     <item row="0" column="0" colspan="2">
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="frameHeader">
       <property name="styleSheet">
        <string notr="true">QFrame{background: white;}</string>
       </property>
@@ -500,7 +500,7 @@
      </widget>
     </item>
     <item row="2" column="1" rowspan="4">
-     <layout class="QVBoxLayout">
+     <layout class="QVBoxLayout" name="menuLayout">
       <item>
        <widget class="QPushButton" name="btnAddVideo">
         <property name="sizePolicy">
