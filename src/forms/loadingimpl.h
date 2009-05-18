@@ -13,6 +13,7 @@ private:
 	explicit LoadingImpl(QWidget *parent = 0);
 public:
 	void finished();
+	void setMessage(QString message);
 	static LoadingImpl* instance();
 public slots:
 	void closeLoading();

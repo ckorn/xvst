@@ -7,7 +7,7 @@ LoadingImpl::LoadingImpl(QWidget *parent) :
 {
     setupUi(this);
 	QWidget::setWindowFlags(Qt::ToolTip | Qt::WindowStaysOnTopHint);
-	lblMessage->setText("<font color=white>" + tr("Loading plugins... please wait...") + "</font>");
+
 
 	QDesktopWidget *desktop = QApplication::desktop();
 
@@ -36,9 +36,13 @@ LoadingImpl* LoadingImpl::instance()
 	return loadingImplInstance;
 }
 
+void LoadingImpl::setMessage(QString message)
+{
+	lblMessage->setText("<font color=white>" + message + "</font>");
+}
+
 void LoadingImpl::finished()
 {
-	lblMessage->setText("<font color=white>" + tr("Plugins loaded") + "</font>");
 	QTimer::singleShot(400, this, SLOT(closeLoading()));
 }
 
