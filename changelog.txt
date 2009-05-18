@@ -19,7 +19,8 @@
 
 - Updated completed download popup window 
 
-- Improved internal Http class
+- Fixed bug (Error: redirections were not correctly processed on HEAD requests)
+- Fixed bug (Error: infinite redirections were not controlled)
 
 - Changed plugins:
 	- Mp3Tube is now YehPlay
@@ -27,14 +28,29 @@
 Plugins SDK:
 ------------
 
-- Added new "headers" property to "VideoDefinition" structure
+- Added 1 new property to VideoDefinition class:
+	- String headers
+
+- Added 2 new methods to Http class:
+	- void setMaxAutoJumps(int value)
+	- String downloadWebpageHeaders(String URL, String separator = "\n")
+
+- Added 1 new helper function:
+	- Array splitString(String str, String separator, [bool splitBehavior], [bool caseSensitive])
 
 MacOSX:
 -------
 
+- Changed Add Video dialog to MacOSX Sheet style for better MacOSX look&feel
+- Changed Languages Manager dialog to MacOSX Sheet style for better MacOSX look&feel
 - Changed historic.plist and session.plist location to /{user}/Library/Applicacion Support/xVideoServiceThief/
 
 - Fixed bug (Error: the completed popup text were allways the same)
+
+Windows:
+--------
+
+- Fixed bug (Error: the "checking for updates" dialog was displayed as separated window on taskbar)
 
 2.0.1a:
 -------
