@@ -52,6 +52,10 @@ ToolsScriptClass::ToolsScriptClass(QScriptEngine *engine)
 	QScriptValue _strFormat = engine->newFunction(func_strFormat);
 	engine->globalObject().setProperty("strFormat", _strFormat);
 
+	// regist splitString(str,separator,[splitBehavior],[caseSensitive]) function
+	QScriptValue _splitString = engine->newFunction(func_splitString);
+	engine->globalObject().setProperty("splitString", _splitString);
+
 	// regist getMd4(str) function
 	QScriptValue _getMd4 = engine->newFunction(func_getMd4);
 	engine->globalObject().setProperty("getMd4", _getMd4);
@@ -256,6 +260,27 @@ QScriptValue ToolsScriptClass::func_strFormat(QScriptContext *context, QScriptEn
 			str.replace("%" + QString("%1").arg(n) , context->argument(n).toString());
 		// return final string
 		return engine->newVariant(QVariant(str));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_splitString(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() >=2)
+	{
+		QString str = context->argument(0).toString();
+		QString separator = context->argument(1).toString();
+		// keep empty parts by default
+		QString::SplitBehavior behavior = QString::KeepEmptyParts;
+		if (context->argumentCount() == 3)
+			behavior = context->argument(2).toBool() ? QString::KeepEmptyParts : QString::SkipEmptyParts;
+		// is casesensitive by default
+		Qt::CaseSensitivity sensitive = Qt::CaseSensitive;
+		if (context->argumentCount() == 4)
+			sensitive = context->argument(3).toBool() ? Qt::CaseSensitive : Qt::CaseInsensitive;
+		// return array with string elements
+		return qScriptValueFromSequence(engine, str.split(separator, behavior, sensitive));
 	}
 	else // invalid arguments count
 		return QScriptValue();
