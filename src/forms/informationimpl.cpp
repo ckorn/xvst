@@ -30,7 +30,8 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 		: QDialog(parent, f)
 {
 	setupUi(this);
-#ifdef Q_WS_MAC
+	// resize window
+#ifndef Q_WS_WIN
 	resize(518, 550);
 	setMinimumSize(518, 550);
 #endif
