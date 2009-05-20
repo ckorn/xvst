@@ -43,6 +43,13 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	QFont updatesFont = lblCheckForUpdatesLabel->font();
 	updatesFont.setPointSize(10);
 	lblCheckForUpdatesLabel->setFont(updatesFont);
+	// change lsvDownloadList alternateBase color (better look&feel)
+	QPalette palette = lsvDownloadList->palette();
+	QColor color("#efefef");
+	palette.setColor(QPalette::Disabled, QPalette::AlternateBase, color);
+	palette.setColor(QPalette::Active, QPalette::AlternateBase, color);
+	palette.setColor(QPalette::Inactive, QPalette::AlternateBase, color);
+	lsvDownloadList->setPalette(palette);
 #endif
 	// init program options
 	lastOptionsPage = 0;
