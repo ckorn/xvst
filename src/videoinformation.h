@@ -44,7 +44,7 @@ enum BlockedState
 };
 
 #ifdef Q_WS_MACX
-static const QString PLUGINS_IMAGE_CACHE_DIR = "/../Application Support/xVideoServiceThief/plugins-cache/";
+static const QString PLUGINS_IMAGE_CACHE_DIR = "/../Caches/xVideoServiceThief/plugins-cache/";
 #else
 static const QString PLUGINS_IMAGE_CACHE_DIR = "/plugins-cache/";
 #endif
