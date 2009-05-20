@@ -1176,6 +1176,16 @@
     <string>View error message</string>
    </property>
   </action>
+  <action name="actOptions">
+   <property name="text">
+    <string notr="true">Options</string>
+   </property>
+  </action>
+  <action name="actAbout">
+   <property name="text">
+    <string notr="true">About</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
   <tabstop>btnAddVideo</tabstop>

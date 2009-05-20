@@ -50,6 +50,60 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	palette.setColor(QPalette::Active, QPalette::AlternateBase, color);
 	palette.setColor(QPalette::Inactive, QPalette::AlternateBase, color);
 	lsvDownloadList->setPalette(palette);
+	// add preferences item Application menu
+	menuBar()->addMenu("<Application>")->addAction(actOptions);
+	menuBar()->addMenu("<Application>")->addAction(actAbout);
+	connect(actOptions, SIGNAL(triggered()), this, SLOT(moreOptionsClicked()));
+	connect(actAbout, SIGNAL(triggered()), this, SLOT(informationClicked()));
+	// add MenuBar for MacOSX
+	// File menu
+	QMenu *fileMenu = menuBar()->addMenu(tr("File"));
+	fileMenu->addAction(actAddVideo);
+	fileMenu->addAction(actDeleteVideo);
+	fileMenu->addSeparator();
+	fileMenu->addAction(actResetState);
+	fileMenu->addSeparator();
+	fileMenu->addAction(actMoveUP);
+	fileMenu->addAction(actMoveDOWN);
+	fileMenu->addSeparator();
+	fileMenu->addAction(actClearList);
+	fileMenu->addAction(actClearCompleted);
+	// Controllers menu
+	QMenu *controlsMenu = menuBar()->addMenu(tr("Controllers"));
+	controlsMenu->addAction(actPlayVideo);
+	controlsMenu->addAction(actViewErrorMessage);
+	controlsMenu->addSeparator();
+	controlsMenu->addAction(actStartDownload);
+	controlsMenu->addAction(actPauseResumeDownload);
+	controlsMenu->addAction(actCancelDownload);
+	// Tools menu
+	QMenu *toolsMenu = menuBar()->addMenu(tr("Tools"));
+	toolsMenu->addAction(actDragDrop);
+	toolsMenu->addAction(actUpdates);
+	toolsMenu->addSeparator();
+	toolsMenu->addAction(actOpenDownloadDir);
+	toolsMenu->addSeparator();
+	toolsMenu->addAction(actDownloadVideosAutomatically);
+	toolsMenu->addAction(actConvertVideos);
+	toolsMenu->addAction(actDisplayPopup);
+	// Help menu
+	QMenu *helpMenu = menuBar()->addMenu(tr("Help"));
+	helpMenu->addAction(actOnlineHelp);
+	// connect menu signals
+	connect(fileMenu, SIGNAL(aboutToShow()), this, SLOT(menuBarAboutToShow()));
+	connect(controlsMenu, SIGNAL(aboutToShow()), this, SLOT(menuBarAboutToShow()));
+	connect(toolsMenu, SIGNAL(aboutToShow()), this, SLOT(menuBarAboutToShow()));
+	connect(helpMenu, SIGNAL(aboutToShow()), this, SLOT(menuBarAboutToShow()));
+
+
+	QTreeWidgetItem *p = new QTreeWidgetItem(lsvDownloadList);
+	p->setText(0, "Testing item 1");
+	p->setText(1, "1024 bytes");
+	p->setText(2, "100,00%");
+	p->setText(3, "24h 59m 59s");
+	p->setText(4, "458,78 KB/sec");
+
+
 #endif
 	// init program options
 	lastOptionsPage = 0;
@@ -70,21 +124,21 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// change headers sizes
 	QFontMetrics fm = fontMetrics();
 	QHeaderView *header = lsvDownloadList->header();
-	// set sizes
-	header->resizeSection(1, fm.width(headers.at(1) + "11.11 MB"));
-	header->resizeSection(2, fm.width(headers.at(2) + "  100.00%  "));
-	header->resizeSection(3, qMax(fm.width(headers.at(3) + "  "), fm.width(" 24h 59m 59s ")));
-	header->resizeSection(4, qMax(fm.width(headers.at(4) + "  "), fm.width(" 999,99 KB/sec ")));
 	// configure resize mode
 	header->setHighlightSections(false);
 	header->setStretchLastSection(false);
 	header->setResizeMode(0, QHeaderView::Stretch);
+	// set sizes
+	header->resizeSection(1, qMax(fm.width(headers.at(1)), fm.width(" 1024 bytes  ")));
+	header->resizeSection(2, qMax(fm.width(headers.at(2)), 130));
+	header->resizeSection(3, qMax(fm.width(headers.at(3)), fm.width(" 24h 59m 59s  ")));
+	header->resizeSection(4, qMax(fm.width(headers.at(4)), fm.width(" 999,99 KB/sec  ")));
 	// set header text aligment
 	QTreeWidgetItem * headerItem = lsvDownloadList->headerItem();
 	headerItem->setTextAlignment(1, Qt::AlignRight   | Qt::AlignVCenter);
 	headerItem->setTextAlignment(2, Qt::AlignHCenter | Qt::AlignVCenter);
 	headerItem->setTextAlignment(3, Qt::AlignHCenter | Qt::AlignVCenter);
-	headerItem->setTextAlignment(4, Qt::AlignHCenter | Qt::AlignVCenter);
+	headerItem->setTextAlignment(4, Qt::AlignHCenter | Qt::AlignVCenter);	
 	// configure the TrayIcon
 	createTrayIcon();
 	// init the completed popup
@@ -184,6 +238,16 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	displayWelcomeMessage();
 	// updater timer
 	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
+	// fix MacOSX bug with alternating color rows and size when the list is empty
+#ifdef Q_WS_MACX
+	// if list is empty, then add and delete a temporal item
+	if (lsvDownloadList->topLevelItemCount() == 0)
+	{
+		QTreeWidgetItem *tmpItem = new QTreeWidgetItem(lsvDownloadList);
+		tmpItem->setSizeHint(0, QSize(18, 18));
+		delete tmpItem;
+	}
+#endif
 }
 
 MainFormImpl::~MainFormImpl()
@@ -826,6 +890,12 @@ void MainFormImpl::beforeDisplayUpdateCenter()
 	if (!isVisible()) restoreAppClicked();
 }
 
+// MacOSX menuBar signals
+void MainFormImpl::menuBarAboutToShow()
+{
+	updateVisualControls();
+}
+
 // lsvDownloadList functions
 QTreeWidgetItem* MainFormImpl::getQTreeWidgetItemByVideoItem(VideoItem *videoItem)
 {
@@ -956,7 +1026,12 @@ void MainFormImpl::updateVisualControls()
 		btnPauseResumeDownload->setText(tr("Pause download"));
 
 		actPlayVideo->setEnabled(false);
+		actPlayVideo->setVisible(true);
+		actViewErrorMessage->setVisible(false);
 		actResetState->setEnabled(false);
+
+		actMoveUP->setEnabled(false);
+		actMoveDOWN->setEnabled(false);
 	}
 	else
 	{
@@ -971,9 +1046,15 @@ void MainFormImpl::updateVisualControls()
 			btnPauseResumeDownload->setText(tr("Pause download"));
 
 		actPlayVideo->setEnabled(videoItem->isCompleted());
+		actPlayVideo->setVisible(!videoItem->hasErrors());
+		actViewErrorMessage->setVisible(videoItem->hasErrors());
 		actResetState->setEnabled(videoItem->isCanceled() ||
 		                          videoItem->isBlocked() ||
 		                          videoItem->hasErrors());
+
+		// update move up/down actions
+		actMoveUP->setEnabled(videoList->getVideoItem(0) != videoItem);
+		actMoveDOWN->setEnabled(videoList->getVideoItem(videoList->getVideoItemCount() - 1) != videoItem);
 	}
 
 	btnClearList->setEnabled(!videoList->isWorking() && videoList->getVideoItemCount(true) > 0);
@@ -1071,9 +1152,6 @@ void MainFormImpl::videoListContextMenu(const QPoint & pos)
 		videoItemMenu->addAction(actClearList);
 		videoItemMenu->addAction(actClearCompleted);
 
-		// update move up/down actions
-		actMoveUP->setEnabled(lsvDownloadList->topLevelItem(0) != item);
-		actMoveDOWN->setEnabled(lsvDownloadList->topLevelItem(lsvDownloadList->topLevelItemCount() - 1) != item);
 		// display popup
 		videoItemMenu->exec(QCursor::pos());
 		// destrueix el submenu

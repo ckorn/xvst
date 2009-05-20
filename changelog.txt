@@ -24,6 +24,8 @@
 - Fixed bug (Error: infinite re-directions were not controlled)
 - Fixed bug (Error: ICO and GIF formats weren't supported on static compilations)
 
+- Improved visualization of video information
+
 - Changed plug-ins:
 	- Mp3Tube is now YehPlay
 
@@ -43,6 +45,10 @@ Plug-ins SDK:
 MacOSX:
 -------
 
+- Added "File", "Controllers", "Tools" and "Help" menu items
+- Added "About xVideoServiceThief" in Application menu
+- Added "Preferences..." in Application menu
+
 - Changed Add Video dialog to MacOSX Sheet style for better MacOSX look&feel
 - Changed Languages Manager dialog to MacOSX Sheet style for better MacOSX look&feel
 - Changed Credits dialog to MacOSX Sheet style for better MacOSX look&feel
@@ -53,6 +59,7 @@ MacOSX:
 - Fixed bug (Error: the completed pop-up text were always the same)
 - Fixed bug (Error: window size wasn't correctly saved and restored)
 - Fixed bug (Error: Drag&Drop window wasn't usefull)
+- Fixed bug (Error: on empty lists the alternating height row was incorrect)
 
 Windows:
 --------

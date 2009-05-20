@@ -153,5 +153,7 @@ Q_OBJECT
 		void checkForUpdates();
 		void checkUpdatesWorkerFinished(bool hasUpdates, bool closedByButton);
 		void beforeDisplayUpdateCenter();
+		// MacOSX menu bar signals
+		void menuBarAboutToShow();
 };
 #endif
