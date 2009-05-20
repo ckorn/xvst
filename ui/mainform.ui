@@ -23,7 +23,7 @@
    <string notr="true">xVideoServiceThief %1 by Xesc &amp; Technology ® 2009</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/resources.qrc">
+   <iconset>
     <normaloff>:/icons/images/film_go.png</normaloff>:/icons/images/film_go.png</iconset>
   </property>
   <property name="accessibleDescription">
@@ -55,7 +55,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources/resources.qrc">:/header/images/header.png</pixmap>
+          <pixmap>:/header/images/header.png</pixmap>
          </property>
         </widget>
        </item>
@@ -126,7 +126,7 @@
           <string notr="true"/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources/resources.qrc">:/buttons/images/support_button_main.png</pixmap>
+          <pixmap>:/buttons/images/support_button_main.png</pixmap>
          </property>
          <property name="openExternalLinks">
           <bool>true</bool>
@@ -258,7 +258,7 @@
             <string notr="true"/>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/buttons/images/cross.png</normaloff>:/buttons/images/cross.png</iconset>
            </property>
            <property name="autoRaise">
@@ -312,7 +312,7 @@
             <string notr="true"/>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/buttons/images/application_link.png</normaloff>:/buttons/images/application_link.png</iconset>
            </property>
            <property name="autoRaise">
@@ -347,7 +347,7 @@
             <string notr="true"/>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/buttons/images/transmit_blue.png</normaloff>:/buttons/images/transmit_blue.png</iconset>
            </property>
            <property name="autoRaise">
@@ -382,7 +382,7 @@
             <string notr="true"/>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/buttons/images/book_open.png</normaloff>:/buttons/images/book_open.png</iconset>
            </property>
            <property name="autoRaise">
@@ -417,7 +417,7 @@
             <string notr="true"/>
            </property>
            <property name="icon">
-            <iconset resource="../resources/resources.qrc">
+            <iconset>
              <normaloff>:/buttons/images/information.png</normaloff>:/buttons/images/information.png</iconset>
            </property>
            <property name="autoRaise">
@@ -438,7 +438,7 @@
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QTreeWidget" name="lsvDownloadList">
+     <widget class="QTreeWidgetEx" name="lsvDownloadList">
       <property name="palette">
        <palette>
         <active>
@@ -478,6 +478,12 @@
       </property>
       <property name="contextMenuPolicy">
        <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="acceptDrops">
+       <bool>true</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::DropOnly</enum>
       </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
@@ -941,7 +947,7 @@
          <string notr="true"/>
         </property>
         <property name="icon">
-         <iconset resource="../resources/resources.qrc">
+         <iconset>
           <normaloff>:/buttons/images/folder_go.png</normaloff>:/buttons/images/folder_go.png</iconset>
         </property>
        </widget>
@@ -952,7 +958,7 @@
   </widget>
   <action name="actDragDrop">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/application_link.png</normaloff>:/buttons/images/application_link.png</iconset>
    </property>
    <property name="text">
@@ -961,7 +967,7 @@
   </action>
   <action name="actUpdates">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/transmit_blue.png</normaloff>:/buttons/images/transmit_blue.png</iconset>
    </property>
    <property name="text">
@@ -970,7 +976,7 @@
   </action>
   <action name="actOnlineHelp">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/book_open.png</normaloff>:/buttons/images/book_open.png</iconset>
    </property>
    <property name="text">
@@ -979,7 +985,7 @@
   </action>
   <action name="actInformation">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/information.png</normaloff>:/buttons/images/information.png</iconset>
    </property>
    <property name="text">
@@ -988,7 +994,7 @@
   </action>
   <action name="actAddVideo">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/film_add.png</normaloff>:/buttons/images/film_add.png</iconset>
    </property>
    <property name="text">
@@ -997,7 +1003,7 @@
   </action>
   <action name="actDeleteVideo">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/film_delete.png</normaloff>:/buttons/images/film_delete.png</iconset>
    </property>
    <property name="text">
@@ -1006,7 +1012,7 @@
   </action>
   <action name="actStartDownload">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/control_play.png</normaloff>:/buttons/images/control_play.png</iconset>
    </property>
    <property name="text">
@@ -1015,7 +1021,7 @@
   </action>
   <action name="actCancelDownload">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/control_stop.png</normaloff>:/buttons/images/control_stop.png</iconset>
    </property>
    <property name="text">
@@ -1029,7 +1035,7 @@
   </action>
   <action name="actMoreOptions">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/options.png</normaloff>:/buttons/images/options.png</iconset>
    </property>
    <property name="text">
@@ -1054,7 +1060,7 @@
   </action>
   <action name="actOpenDownloadDir">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/folder_go.png</normaloff>:/buttons/images/folder_go.png</iconset>
    </property>
    <property name="text">
@@ -1068,7 +1074,7 @@
   </action>
   <action name="actRestoreApp">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/restore.png</normaloff>:/buttons/images/restore.png</iconset>
    </property>
    <property name="text">
@@ -1077,7 +1083,7 @@
   </action>
   <action name="actCloseApp">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/exit.png</normaloff>:/buttons/images/exit.png</iconset>
    </property>
    <property name="text">
@@ -1099,7 +1105,7 @@
   </action>
   <action name="actMoveUP">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/arrow_up.png</normaloff>:/buttons/images/arrow_up.png</iconset>
    </property>
    <property name="text">
@@ -1108,7 +1114,7 @@
   </action>
   <action name="actMoveDOWN">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/arrow_down.png</normaloff>:/buttons/images/arrow_down.png</iconset>
    </property>
    <property name="text">
@@ -1117,7 +1123,7 @@
   </action>
   <action name="actPlayVideo">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/resultset_next.png</normaloff>:/buttons/images/resultset_next.png</iconset>
    </property>
    <property name="text">
@@ -1126,7 +1132,7 @@
   </action>
   <action name="actResetState">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/arrow_refresh.png</normaloff>:/buttons/images/arrow_refresh.png</iconset>
    </property>
    <property name="text">
@@ -1151,7 +1157,7 @@
   </action>
   <action name="actPauseResumeDownload">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/buttons/images/control_pause.png</normaloff>:/buttons/images/control_pause.png</iconset>
    </property>
    <property name="text">
@@ -1160,7 +1166,7 @@
   </action>
   <action name="actViewErrorMessage">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/icons/images/film_error.png</normaloff>:/icons/images/film_error.png</iconset>
    </property>
    <property name="text">
@@ -1168,6 +1174,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QTreeWidgetEx</class>
+   <extends>QTreeWidget</extends>
+   <header>../../src/qtreewidgetex.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>btnAddVideo</tabstop>
   <tabstop>btnDeleteVideo</tabstop>
@@ -1187,8 +1200,6 @@
   <tabstop>spbInformation</tabstop>
   <tabstop>lsvDownloadList</tabstop>
  </tabstops>
- <resources>
-  <include location="../resources/resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

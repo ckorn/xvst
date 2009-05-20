@@ -27,7 +27,7 @@ FORMS = ui/addvideo.ui \
     ui/winvistaupdatesmsg.ui \
     ui/newlanguages.ui \
     ui/welcomedonate.ui \
-	ui/loadingimpl.ui
+    ui/loadingimpl.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/checkupdatesimpl.h \
     src/forms/completedpopupimpl.h \
@@ -65,7 +65,8 @@ HEADERS = src/forms/addvideoimpl.h \
     src/videoconverttypes.h \
     src/checkupdatesworker.h \
     src/forms/welcomedonate.h \
-    src/forms/loadingimpl.h
+    src/forms/loadingimpl.h \
+    src/qtreewidgetex.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \
@@ -102,7 +103,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/httpscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/forms/welcomedonate.cpp \
-    src/forms/loadingimpl.cpp
+    src/forms/loadingimpl.cpp \
+    src/qtreewidgetex.cpp
 TRANSLATIONS = resources/translations/xVST_en.ts \
     resources/translations/xVST_ca.ts \
     resources/translations/xVST_es.ts \
@@ -140,6 +142,6 @@ frameworks_build {
 static_build { 
     DEFINES += STATIC_BUILD
     QTPLUGIN += qico \
-                qgif
+        qgif
     message(static_build)
 }
