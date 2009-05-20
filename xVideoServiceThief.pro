@@ -65,8 +65,7 @@ HEADERS = src/forms/addvideoimpl.h \
     src/videoconverttypes.h \
     src/checkupdatesworker.h \
     src/forms/welcomedonate.h \
-    src/forms/loadingimpl.h \
-    src/qtreewidgetex.h
+	src/forms/loadingimpl.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \
