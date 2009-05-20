@@ -1,8 +1,9 @@
-2.0.2a:
--------
+2.1a:
+-----
 
+- Added ability to Drop video directly to Downloads list
 - Added loading window
-- Added 13 new plugin:
+- Added 13 new plug-in:
 	- GodOfHumor
 	- Kontraband
 	- Pugorama
@@ -17,16 +18,16 @@
 	- KeezMovies
 	- Freecaster
 
-- Updated completed download popup window 
+- Updated completed download pop-up window 
 
-- Fixed bug (Error: redirections were not correctly processed on HEAD requests)
-- Fixed bug (Error: infinite redirections were not controlled)
+- Fixed bug (Error: re-directions were not correctly processed on HEAD requests)
+- Fixed bug (Error: infinite re-directions were not controlled)
 - Fixed bug (Error: ICO and GIF formats weren't supported on static compilations)
 
-- Changed plugins:
+- Changed plug-ins:
 	- Mp3Tube is now YehPlay
 
-Plugins SDK:
+Plug-ins SDK:
 ------------
 
 - Added 1 new property to VideoDefinition class:
@@ -45,23 +46,25 @@ MacOSX:
 - Changed Add Video dialog to MacOSX Sheet style for better MacOSX look&feel
 - Changed Languages Manager dialog to MacOSX Sheet style for better MacOSX look&feel
 - Changed Credits dialog to MacOSX Sheet style for better MacOSX look&feel
+- Changed alternating row color to grey for better MacOSX look&feel
 - Changed historic.plist and session.plist location to "/{user}/Library/Applicacion Support/xVideoServiceThief/"
-- Changed image plugins cache dir to "/{user}/Library/Applicacion Support/xVideoServiceThief/plugins-cache"
+- Changed image plug-ins cache dir to "/{user}/Library/Caches/xVideoServiceThief/plugins-cache"
 
-- Fixed bug (Error: the completed popup text were allways the same)
+- Fixed bug (Error: the completed pop-up text were always the same)
 - Fixed bug (Error: window size wasn't correctly saved and restored)
+- Fixed bug (Error: Drag&Drop window wasn't usefull)
 
 Windows:
 --------
 
-- Fixed bug (Error: the "checking for updates" dialog was displayed as separated window on taskbar)
+- Fixed bug (Error: the "checking for updates" dialog was displayed as separated window on task-bar)
 
-- Changed image plugins cache dir to "C:\Documents and Settings\{user}\Program files\xVideoServiceThief\plugins-cache"
+- Changed image plug-ins cache dir to "C:\Documents and Settings\{user}\Program files\xVideoServiceThief\plugins-cache"
 
 Linux:
 ------
 
-- Changed image plugins cache dir to "~/.xVideoServiceThief/plugins-cache"
+- Changed image plug-ins cache dir to "~/.xVideoServiceThief/plugins-cache"
 - Changed Information dialog size
 
 
