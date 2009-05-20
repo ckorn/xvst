@@ -60,6 +60,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	centerWindow();
 	// init main objects (program core)
 	videoList = new VideoListController(programOptions);
+	// set video list to lsvDownloadsList
+	lsvDownloadList->setVideoList(videoList);
 	// set-up the lsvDownloadList widget
 	QStringList headers;
 	headers << tr(" Video ") << tr(" Size ") << tr(" Progress ") << tr(" Time ") << tr(" Speed ");

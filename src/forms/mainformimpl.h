@@ -48,6 +48,7 @@
 #include "../sessionmanager.h"
 #include "../programversion.h"
 #include "../checkupdatesworker.h"
+#include "../qtreewidgetex.h"
 //
 class MainFormImpl : public QMainWindow, public Ui::MainForm
 {
