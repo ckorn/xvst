@@ -39,7 +39,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	languageManager = new LanguageManager;
 	// resize form if is needed
 #ifdef Q_WS_MACX
-	resize(835, 480);
+	resize(845, 480);
 	// change lsvServices1 & lsvServices2 alternateBase color (better look&feel)
 	QPalette palette = lsvServices1->palette();
 	QColor color("#efefef");
