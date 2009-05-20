@@ -94,16 +94,6 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(controlsMenu, SIGNAL(aboutToShow()), this, SLOT(menuBarAboutToShow()));
 	connect(toolsMenu, SIGNAL(aboutToShow()), this, SLOT(menuBarAboutToShow()));
 	connect(helpMenu, SIGNAL(aboutToShow()), this, SLOT(menuBarAboutToShow()));
-
-
-	QTreeWidgetItem *p = new QTreeWidgetItem(lsvDownloadList);
-	p->setText(0, "Testing item 1");
-	p->setText(1, "1024 bytes");
-	p->setText(2, "100,00%");
-	p->setText(3, "24h 59m 59s");
-	p->setText(4, "458,78 KB/sec");
-
-
 #endif
 	// init program options
 	lastOptionsPage = 0;
