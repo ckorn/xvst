@@ -48,7 +48,6 @@
 #include "../sessionmanager.h"
 #include "../programversion.h"
 #include "../checkupdatesworker.h"
-#include "../qtreewidgetex.h"
 //
 class MainFormImpl : public QMainWindow, public Ui::MainForm
 {
@@ -96,6 +95,9 @@ Q_OBJECT
 		void checkUpdates(bool forceCheckUpdates);
 		// welcome message
 		void displayWelcomeMessage();
+		// drop functions
+		void dragEnterEvent(QDragEnterEvent *event);
+		void dropEvent(QDropEvent *event);
 	protected:
 		void changeEvent(QEvent *event);
 		void closeEvent(QCloseEvent *event);

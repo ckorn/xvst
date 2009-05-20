@@ -103,8 +103,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/httpscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/forms/welcomedonate.cpp \
-    src/forms/loadingimpl.cpp \
-    src/qtreewidgetex.cpp
+    src/forms/loadingimpl.cpp
 TRANSLATIONS = resources/translations/xVST_en.ts \
     resources/translations/xVST_ca.ts \
     resources/translations/xVST_es.ts \

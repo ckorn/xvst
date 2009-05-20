@@ -60,8 +60,6 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	centerWindow();
 	// init main objects (program core)
 	videoList = new VideoListController(programOptions);
-	// set video list to lsvDownloadsList
-	lsvDownloadList->setVideoList(videoList);
 	// set-up the lsvDownloadList widget
 	QStringList headers;
 	headers << tr(" Video ") << tr(" Size ") << tr(" Progress ") << tr(" Time ") << tr(" Speed ");
@@ -1102,4 +1100,22 @@ void MainFormImpl::videoListContextMenu(const QPoint & pos)
 void MainFormImpl::optionsDidSomething()
 {
 	updateVisualOptions();
+}
+
+// drop functions
+void MainFormImpl::dragEnterEvent(QDragEnterEvent *event)
+{
+	if (event->mimeData()->hasFormat("text/plain"))
+		event->acceptProposedAction();
+}
+
+void MainFormImpl::dropEvent(QDropEvent *event)
+{
+	// get the url
+	QString url = event->mimeData()->text();
+	if (getTokenCount(url, "\n") > 0) url = getToken(url, "\n", 0);
+	// emit drop event with url
+	if (videoList != NULL) videoList->addVideo(url);
+	// ok
+	event->acceptProposedAction();
 }
