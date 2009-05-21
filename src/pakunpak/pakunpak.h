@@ -38,6 +38,7 @@
 
 #include <iostream>
 
+/*! Packer class */
 class Packer
 {
 	private:
@@ -53,6 +54,7 @@ class Packer
 		void addFile(const std::string fileName);
 };
 
+/*! Unpacker class */
 class Unpacker
 {
 	private:
