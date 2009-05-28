@@ -221,10 +221,6 @@
         <translation>Nu arăta &quot;Bug report&quot;</translation>
     </message>
     <message>
-        <source>Do not display &quot;Bug Report&quot; the next time</source>
-        <translation type="obsolete">Nu arăta &quot;Bug report&quot; data viitoare</translation>
-    </message>
-    <message>
         <source>Send the &quot;Bug report&quot; and close this dialog</source>
         <translation>Trimite &quot;Bug report&quot; şi închide fereastra</translation>
     </message>
@@ -281,29 +277,6 @@
     <message>
         <source>Cancel</source>
         <translation>Anulare</translation>
-    </message>
-</context>
-<context>
-    <name>CheckUpdatesImpl</name>
-    <message>
-        <source>Updates</source>
-        <translation type="obsolete">Update-uri</translation>
-    </message>
-    <message>
-        <source>You are using the most recent version of this program.</source>
-        <translation type="obsolete">Foloseşti cea mai nouă versiune a acestui program.</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Ok</translation>
-    </message>
-    <message>
-        <source>Cancelling... please wait...</source>
-        <translation type="obsolete">Anulare...aşteaptă, te rog...</translation>
-    </message>
-    <message>
-        <source>Checking for updates...</source>
-        <translation type="obsolete">Verificare update-uri</translation>
     </message>
 </context>
 <context>
@@ -371,28 +344,12 @@
         <source>Play the downloaded video</source>
         <translation>Redare pentru clip video descărcat</translation>
     </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
 </context>
 <context>
     <name>Credits</name>
     <message>
         <source>Credits</source>
         <translation>Credite</translation>
-    </message>
-    <message>
-        <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
-        <translation type="obsolete">Supervizat de &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
-        <translation type="obsolete">Acest soft este Open Source şi licenţiat sub &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</translation>
-    </message>
-    <message utf8="true">
-        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation type="obsolete">&lt;b&gt;Mulţumiri  pentru:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsabil pentru &lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
     </message>
     <message>
         <source>Close the Credits dialog</source>
@@ -516,10 +473,6 @@
     <message>
         <source>Drag&amp;Drop</source>
         <translation>Trage&amp;Lasa</translation>
-    </message>
-    <message>
-        <source>Drop the video link here</source>
-        <translation type="obsolete">Lasa link-ul clipului video aici</translation>
     </message>
     <message>
         <source>Display main window</source>
@@ -719,10 +672,6 @@ font-size:12px;
         <source>Close</source>
         <translation>Închidere</translation>
     </message>
-    <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>InformationImpl</name>
@@ -742,15 +691,15 @@ font-size:12px;
 <context>
     <name>LoadingImpl</name>
     <message>
+        <source>Loading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Loading plugins... please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Plugins loaded</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -877,10 +826,6 @@ font-size:12px;
         <translation>&lt;b&gt;Descărcare:&lt;/b&gt; 0 of 0</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 Kb/sec</source>
-        <translation type="obsolete">&lt;b&gt;Viteză descărcare:&lt;/b&gt; 0,00 Kb/sec</translation>
-    </message>
-    <message>
         <source>Download videos automatically checkbox</source>
         <translation type="unfinished"></translation>
     </message>
@@ -919,10 +864,6 @@ font-size:12px;
     <message>
         <source>Open the Select directory dialog for select the downloads directory</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Open downloads directory</source>
@@ -1114,6 +1055,22 @@ font-size:12px;
     <message>
         <source>- Converting: %1 (%2)</source>
         <translation>- Conversie: %1 (%2)</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controllers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1469,10 +1426,6 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use the selected language file</source>
-        <translation type="obsolete">Foloseşte fişierul limbă selectată</translation>
-    </message>
-    <message>
         <source>Use this language</source>
         <translation>Foloseşte limba</translation>
     </message>
@@ -1776,6 +1729,74 @@ font-size:12px;
         <source>Languages manager</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Schedule Configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable or disable automatic downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download videos automatically checkbox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download videos automatically</source>
+        <translation type="unfinished">Descarcă automat clipurile video</translation>
+    </message>
+    <message>
+        <source>Enable or disable user shcedules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedules checkbox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Customize my schedule download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of user schedules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shcedules list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adds a new schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New schedule button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected shedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the selected schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the selected schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -1806,58 +1827,6 @@ font-size:12px;
     <message>
         <source>Tracker</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>AVI Format (*.avi)</source>
-        <translation type="obsolete">Format AVI (*.avi)</translation>
-    </message>
-    <message>
-        <source>WMV Format ( *.wmv)</source>
-        <translation type="obsolete">Format WMV ( *.wmv)</translation>
-    </message>
-    <message>
-        <source>MPEG1 Format ( *.mpg)</source>
-        <translation type="obsolete">Format MPEG1 ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>MPEG2 Format ( *.mpg)</source>
-        <translation type="obsolete">Format MPEG2 ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>3GP Format (*.3gp)</source>
-        <translation type="obsolete">Format 3GP (*.3gp)</translation>
-    </message>
-    <message>
-        <source>MP3 Format (*.mp3)</source>
-        <translation type="obsolete">Format MP3 (*.mp3)</translation>
-    </message>
-    <message>
-        <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation type="obsolete">Calitate mai slabă (Video bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
-    </message>
-    <message>
-        <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation type="obsolete">Calitate joasă (Video bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
-    </message>
-    <message>
-        <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">Calitate normală (Video bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
-    </message>
-    <message>
-        <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">Calitate medie (Video bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
-    </message>
-    <message>
-        <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">Calitate bună (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
-    </message>
-    <message>
-        <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">Calitatea cea mai bună (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
-    </message>
-    <message>
-        <source>The Same quality as the original Video</source>
-        <translation type="obsolete">Aceaşi calitate ca filmul original</translation>
     </message>
     <message>
         <source>Day</source>
@@ -1934,6 +1903,77 @@ font-size:12px;
     <message>
         <source>No</source>
         <translation>Nu</translation>
+    </message>
+    <message>
+        <source> Enabled </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Start time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> End time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove schedule item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you remove the selected schedule item?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScheduleItemEditImpl</name>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comment:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The start time cannot exceed the end time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The start time and end time cannot be equals.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule edition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid schedule configuration</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

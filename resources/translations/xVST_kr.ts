@@ -230,10 +230,6 @@
         <translation>&quot;버그 리포트&quot;를 표시하지 않습니다.</translation>
     </message>
     <message>
-        <source>Do not display &quot;Bug Report&quot; the next time</source>
-        <translation type="obsolete">다음부터 &quot;버그 리포트&quot;를 표시하지 않습니다.</translation>
-    </message>
-    <message>
         <source>Send the &quot;Bug report&quot; and close this dialog</source>
         <translation>&quot;버그 리포트&quot;를 전송하고 이 창을 닫습니다.</translation>
     </message>
@@ -285,29 +281,6 @@
     </message>
 </context>
 <context>
-    <name>CheckUpdatesImpl</name>
-    <message>
-        <source>Checking for updates...</source>
-        <translation type="obsolete">업데이트를 확인 중...</translation>
-    </message>
-    <message>
-        <source>Updates</source>
-        <translation type="obsolete">업데이트</translation>
-    </message>
-    <message>
-        <source>You are using the most recent version of this program.</source>
-        <translation type="obsolete">당신은 현재 최신 버젼을 사용 중입니다.</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">확인</translation>
-    </message>
-    <message>
-        <source>Cancelling... please wait...</source>
-        <translation type="obsolete">취소 중... 잠시만 기다려주세요...</translation>
-    </message>
-</context>
-<context>
     <name>CheckUpdatesWorker</name>
     <message>
         <source>Updates</source>
@@ -341,10 +314,6 @@
 <context>
     <name>CompletedPopup</name>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
-    <message>
         <source>?</source>
         <translation>?</translation>
     </message>
@@ -359,18 +328,6 @@
     <message>
         <source>Play video</source>
         <translation>영상 재생</translation>
-    </message>
-    <message>
-        <source>QFrame{background-color:#ffecbf}</source>
-        <translation type="obsolete">QFrame{background-color:#ffecbf}</translation>
-    </message>
-    <message>
-        <source>QFrame{background-color:#fff7dd}</source>
-        <translation type="obsolete">QFrame{background-color:#fff7dd}</translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
     </message>
     <message>
         <source>Close button</source>
@@ -396,16 +353,8 @@
         <translation>제작자</translation>
     </message>
     <message>
-        <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
-        <translation type="obsolete">Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
-    </message>
-    <message>
         <source>Ok</source>
         <translation>확인</translation>
-    </message>
-    <message utf8="true">
-        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation type="obsolete">&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
     </message>
     <message>
         <source>Close the Credits dialog</source>
@@ -414,14 +363,6 @@
     <message>
         <source>Ok button</source>
         <translation>확인 버튼</translation>
-    </message>
-    <message>
-        <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
-        <translation type="obsolete">이 소프트웨어는 오픈소스이며 &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; (General Public Licence) 의 라이센스에 적용되어 있습니다.</translation>
-    </message>
-    <message utf8="true">
-        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Franck (HackenatoN)&lt;/b&gt;: French language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation type="obsolete">&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Franck (HackenatoN)&lt;/b&gt;: French language author&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
     </message>
 </context>
 <context>
@@ -579,10 +520,6 @@
         <translation>Drag &amp; Drop</translation>
     </message>
     <message>
-        <source>Drop the video link here</source>
-        <translation type="obsolete">영상의 주소를 이곳에 끌어다 놓으세</translation>
-    </message>
-    <message>
         <source>OFF</source>
         <translation>OFF</translation>
     </message>
@@ -694,10 +631,6 @@ xVideoServiceThief also provide you the ability to convert each video in most po
         <translation>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Credits...</source>
         <translation>제작자...</translation>
     </message>
@@ -740,10 +673,6 @@ font-size:12px;
         <source>Close button</source>
         <translation>닫기 버튼</translation>
     </message>
-    <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>InformationImpl</name>
@@ -763,6 +692,10 @@ font-size:12px;
 <context>
     <name>LoadingImpl</name>
     <message>
+        <source>Loading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Loading plugins... please wait...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -770,17 +703,9 @@ font-size:12px;
         <source>Plugins loaded</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Loading</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MainForm</name>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
     <message>
         <source>Check for updates</source>
         <translation>업데이트 확인</translation>
@@ -890,21 +815,12 @@ font-size:12px;
         <translation>영상의 다운로드/변환이 끝나면 팝업 창 띄우기</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Stay always on top</source>
         <translation>항상 위에</translation>
     </message>
     <message>
         <source>Minimize to system tray</source>
         <translation>시스템 트레이에 최소화</translation>
-    </message>
-    <message utf8="true">
-        <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</source>
-        <translation type="obsolete">xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</translation>
     </message>
     <message>
         <source>Open Drag &amp; Drop window</source>
@@ -973,10 +889,6 @@ font-size:12px;
     <message>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; 0 of 0</source>
         <translation>&lt;b&gt;Downloading:&lt;/b&gt; 0 중 0</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 Kb/sec</source>
-        <translation type="obsolete">&lt;b&gt;Download speed:&lt;/b&gt; 0,00 Kb/sec</translation>
     </message>
     <message>
         <source>Download videos automatically checkbox</source>
@@ -1144,6 +1056,22 @@ font-size:12px;
     <message>
         <source>Resume download</source>
         <translation>다운로드 재개</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controllers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1627,14 +1555,6 @@ font-size:12px;
         <translation>영상 변환 후 원본 영상 삭제 체크박스</translation>
     </message>
     <message>
-        <source>Use the selected language file</source>
-        <translation type="obsolete">선택 된 언어 파일을 사용합니다</translation>
-    </message>
-    <message>
-        <source>Use language selected</source>
-        <translation type="obsolete">선택된 언어 사용</translation>
-    </message>
-    <message>
         <source>List with all installed languages</source>
         <translation>설치 된 모든 언어의 리스트</translation>
     </message>
@@ -1810,6 +1730,74 @@ font-size:12px;
         <source>Languages manager</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Schedule Configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable or disable automatic downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download videos automatically checkbox</source>
+        <translation type="unfinished">자동으로 영상 다운로드 체크박스</translation>
+    </message>
+    <message>
+        <source>Download videos automatically</source>
+        <translation type="unfinished">영상을 자동으로 다운받습니다</translation>
+    </message>
+    <message>
+        <source>Enable or disable user shcedules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedules checkbox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Customize my schedule download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of user schedules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shcedules list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adds a new schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New schedule button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected shedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the selected schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the selected schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -1820,10 +1808,6 @@ font-size:12px;
     <message>
         <source>3 Days</source>
         <translation>3 일</translation>
-    </message>
-    <message>
-        <source>3GP Format (*.3gp)</source>
-        <translation type="obsolete">3GP Format (*.3gp)</translation>
     </message>
     <message>
         <source>4 Days</source>
@@ -1838,10 +1822,6 @@ font-size:12px;
         <translation>6 일</translation>
     </message>
     <message>
-        <source>AVI Format (*.avi)</source>
-        <translation type="obsolete">AVI Format (*.avi)</translation>
-    </message>
-    <message>
         <source>Basic</source>
         <translation>기본</translation>
     </message>
@@ -1854,10 +1834,6 @@ font-size:12px;
         <translation>일</translation>
     </message>
     <message>
-        <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">상위 품질 (영상 비트율: 1000kbps; 음성 비트율: 128kbps)</translation>
-    </message>
-    <message>
         <source>Http Proxy</source>
         <translation>Http Proxy</translation>
     </message>
@@ -1866,32 +1842,8 @@ font-size:12px;
         <translation>언어</translation>
     </message>
     <message>
-        <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation type="obsolete">하위 품질 (영상 비트율: 512kbps; 음성 비트율: 80kbps)</translation>
-    </message>
-    <message>
-        <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation type="obsolete">최하위 품질 (영상 비트율: 384kbps; 음성 비트율: 64kbps)</translation>
-    </message>
-    <message>
-        <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">중간 품질 (영상 비트율: 800kbps; 음성 비트율: 96kbps)</translation>
-    </message>
-    <message>
-        <source>MP3 Format (*.mp3)</source>
-        <translation type="obsolete">MP3 Format (*.mp3)</translation>
-    </message>
-    <message>
         <source>No</source>
         <translation>아니오</translation>
-    </message>
-    <message>
-        <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">보통 품질 (영상 비트율: 640kbps; 음성 비트율: 96kbps)</translation>
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="obsolete">Original</translation>
     </message>
     <message>
         <source>Proxy</source>
@@ -1904,14 +1856,6 @@ font-size:12px;
     <message>
         <source>Socks5 Proxy</source>
         <translation>Socks5 Proxy</translation>
-    </message>
-    <message>
-        <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">최상위 품질 (영상 비트율: 1200kbps; 음성 비트율: 128kbps)</translation>
-    </message>
-    <message>
-        <source>The Same quality as the original Video</source>
-        <translation type="obsolete">원본 영상과 동일한 품질</translation>
     </message>
     <message>
         <source>Updates</source>
@@ -1942,22 +1886,6 @@ font-size:12px;
         <translation>확인</translation>
     </message>
     <message>
-        <source>WMV Format ( *.wmv)</source>
-        <translation type="obsolete">WMV Format ( *.wmv)</translation>
-    </message>
-    <message>
-        <source>MPEG1 Format ( *.mpg)</source>
-        <translation type="obsolete">MPEG1 Format ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>MPEG2 Format ( *.mpg)</source>
-        <translation type="obsolete">MPEG2 Format ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>Apple iPod (*.mp4)</source>
-        <translation type="obsolete">Apple iPod (*.mp4)</translation>
-    </message>
-    <message>
         <source>Select the download directory:</source>
         <translation>다운로드 폴더를 선택하세요:</translation>
     </message>
@@ -1976,6 +1904,77 @@ font-size:12px;
     <message>
         <source>Tracker</source>
         <translation>Tracker</translation>
+    </message>
+    <message>
+        <source> Enabled </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Start time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> End time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove schedule item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you remove the selected schedule item?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScheduleItemEditImpl</name>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comment:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">확인</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">취소</translation>
+    </message>
+    <message>
+        <source>The start time cannot exceed the end time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The start time and end time cannot be equals.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule edition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid schedule configuration</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

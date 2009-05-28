@@ -27,7 +27,8 @@ FORMS = ui/addvideo.ui \
     ui/winvistaupdatesmsg.ui \
     ui/newlanguages.ui \
     ui/welcomedonate.ui \
-    ui/loadingimpl.ui
+    ui/loadingimpl.ui \
+	ui/scheduleitemedit.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/checkupdatesimpl.h \
     src/forms/completedpopupimpl.h \
@@ -41,6 +42,11 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/infoviewimpl.h \
     src/forms/bugreportimpl.h \
     src/forms/creditsimpl.h \
+    src/forms/welcomedonate.h \
+    src/forms/loadingimpl.h \
+    src/forms/windowsvistadetectedimpl.h \
+    src/forms/newlanguagesimpl.h \
+	src/forms/scheduleitemeditimpl.h \
     src/pakunpak/pakunpak.h \
     src/http.h \
     src/languages.h \
@@ -55,17 +61,14 @@ HEADERS = src/forms/addvideoimpl.h \
     src/videoinformation.h \
     src/videoitem.h \
     src/videolistcontroller.h \
+    src/schedule.h \
     src/trackerreport.h \
     src/xprogressbar.h \
-    src/forms/windowsvistadetectedimpl.h \
-    src/forms/newlanguagesimpl.h \
     src/newlanguages.h \
     src/toolsscriptclass.h \
     src/httpscriptclass.h \
     src/videoconverttypes.h \
-    src/checkupdatesworker.h \
-    src/forms/welcomedonate.h \
-	src/forms/loadingimpl.h
+	src/checkupdatesworker.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \
@@ -79,6 +82,11 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/infoviewimpl.cpp \
     src/forms/bugreportimpl.cpp \
     src/forms/creditsimpl.cpp \
+    src/forms/welcomedonate.cpp \
+    src/forms/loadingimpl.cpp \
+    src/forms/windowsvistadetectedimpl.cpp \
+    src/forms/newlanguagesimpl.cpp \
+	src/forms/scheduleitemeditimpl.cpp \
     src/pakunpak/pakunpak.cpp \
     src/http.cpp \
     src/languages.cpp \
@@ -93,16 +101,13 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/videoinformation.cpp \
     src/videoitem.cpp \
     src/videolistcontroller.cpp \
+    src/schedule.cpp \
     src/trackerreport.cpp \
     src/xprogressbar.cpp \
-    src/forms/windowsvistadetectedimpl.cpp \
-    src/forms/newlanguagesimpl.cpp \
     src/newlanguages.cpp \
     src/toolsscriptclass.cpp \
     src/httpscriptclass.cpp \
-    src/checkupdatesworker.cpp \
-    src/forms/welcomedonate.cpp \
-    src/forms/loadingimpl.cpp
+	src/checkupdatesworker.cpp
 TRANSLATIONS = resources/translations/xVST_en.ts \
     resources/translations/xVST_ca.ts \
     resources/translations/xVST_es.ts \

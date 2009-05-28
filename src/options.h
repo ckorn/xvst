@@ -89,6 +89,7 @@ Q_OBJECT
 		bool vistaUpdatesMessage;		//!< Flag for know if we won't see the attention message of vista (updates)
 		bool useInternalFFmpeg;			//!< Flag for know if the ffmpeg lib is into the app bundle
 		bool displayWelcomeMessage;		//!< Flag for know if can display the welcome message
+		bool scheduleEnabled;			//!< Flag for know if the shcedule option is enabled
 
 		QDir appDir;		//!< Initial program path
 		QString appExecutable;	//!< Executable program path
@@ -210,6 +211,8 @@ Q_OBJECT
 		bool getUseInternalFFmpeg();
 		void setDisplayWelcomeMessage(bool value);
 		bool getDisplayWelcomeMessage();
+		void setScheduleEnabled(bool value);
+		bool getScheduleEnabled();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();

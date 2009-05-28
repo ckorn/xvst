@@ -1,13 +1,15 @@
 2.1a:
 -----
 
+- Added new schedule option
 - Added ability to Drop video directly to Downloads list
 - Added loading window
-- Added 13 new plug-in:
+- Added 14 new plug-in:
 	- GodOfHumor
 	- Kontraband
 	- Pugorama
 	- OneHumor
+	- Clipjunkie
 	- Wat.tv
 	- CollageHumor
 	- Vimeo (Standard + HD)

@@ -40,8 +40,6 @@ Q_OBJECT
 	private:
 		CheckUpdatesWorker *checkUpdatesWorker;
 		bool closedByButton;
-	protected:
-		void closeEvent(QCloseEvent *event);
 	public:
 		CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent = 0, Qt::WFlags f = 0);
 		~CheckUpdatesImpl();

@@ -37,9 +37,13 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	this->videoInformation = videoList->getVideoInformation();
 	this->lastPageViewed = lastOptionsPage;
 	languageManager = new LanguageManager;
+	schedule = new ScheduleController(programOptions->getOptionsPath(), programOptions->getOptionsFormat());
+	schedule->load();
 	// resize form if is needed
 #ifdef Q_WS_MACX
-	resize(845, 480);
+	resize(865, 500);
+	// resize menu
+	trvMenu->setMaximumWidth(180);
 	// change lsvServices1 & lsvServices2 alternateBase color (better look&feel)
 	QPalette palette = lsvServices1->palette();
 	QColor color("#efefef");
@@ -48,7 +52,13 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	palette.setColor(QPalette::Inactive, QPalette::AlternateBase, color);
 	lsvServices1->setPalette(palette);
 	lsvServices2->setPalette(palette);
+	lsvSchedules->setPalette(palette);
 #endif
+	// prepare schedules columns
+	QStringList headers;
+	headers << tr(" Enabled ") << tr(" Start time ") << tr(" End time ") << tr("Comments");
+	// add the headers
+	lsvSchedules->setHeaderLabels(headers);
 	//signals
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
 	connect(spbSelectDownloadDir, SIGNAL(clicked()), this, SLOT(spbSelectDownloadDirPressed()));
@@ -69,12 +79,21 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	connect(btnCheckNow, SIGNAL(clicked()), this, SLOT(btnCheckNowClicked()));
 	connect(btnAddNewLanguages, SIGNAL(clicked()), this, SLOT(btnAddNewLanguagesClicked()));
 	connect(chbInternalFFmpeg, SIGNAL(stateChanged(int)), this, SLOT(internalFFmpegStateChanged(int)));
+	connect(chbDownloadVideosAuto, SIGNAL(clicked(bool)), this, SLOT(chbDownloadVideosAutoClicked(bool)));
+	connect(chbScheduleEnabled, SIGNAL(clicked(bool)), this, SLOT(chbScheduleEnabledClicked(bool)));
+	connect(spbAddSchedule, SIGNAL(clicked()), this, SLOT(spbAddNewSchedulePressed()));
+	connect(spbEditSchedule, SIGNAL(clicked()), this, SLOT(spbEditSchedulePressed()));
+	connect(spbRemoveSchedule, SIGNAL(clicked()), this, SLOT(spbRemoveSchedulePressed()));
+	connect(lsvSchedules, SIGNAL(itemSelectionChanged()), this, SLOT(lsvSchedulesItemSelectionChanged()));
+	connect(lsvSchedules, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(lsvSchedulesDoubleClicked(QModelIndex)));
 	// create menu
 	createMenu();
 	// add info
 	fillInitialData();
 	// add languages
 	fillLanguages();
+	// add schedules
+	fillSchedules();
 	// set values
 	setInitialOptionsValues();
 	// can update?
@@ -103,6 +122,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 
 OptionsImpl::~OptionsImpl()
 {
+	delete schedule;
 	delete languageManager;
 }
 
@@ -146,6 +166,11 @@ void OptionsImpl::createMenu()
 	newItem = new QTreeWidgetItem(trvMenu);
 	newItem->setText(0, tr("Ups!"));
 	newItem->setIcon(0, QIcon(":/options/images/ups.png"));
+
+	// Schedule
+	newItem = new QTreeWidgetItem(trvMenu);
+	newItem->setText(0, tr("Schedule"));
+	newItem->setIcon(0, QIcon(":/options/images/schedule.png"));
 
 	// proxy
 	newItem = new QTreeWidgetItem(trvMenu);
@@ -233,6 +258,19 @@ void OptionsImpl::fillLanguages()
 	}
 }
 
+void OptionsImpl::fillSchedules()
+{
+	for(int n = 0; n < schedule->getSchedulesCount(); n++)
+	{
+		ScheduleItem *scheduleItem = schedule->getScheduleItem(n);
+		QTreeWidgetItem *treeItem = new QTreeWidgetItem(lsvSchedules);
+		treeItem->setText(0, YesNoToString(scheduleItem->isEnabled()));
+		treeItem->setText(1, scheduleItem->getStartTime().toString("hh:mm"));
+		treeItem->setText(2, scheduleItem->getEndTime().toString("hh:mm"));
+		treeItem->setText(3, scheduleItem->getComment());
+	}
+}
+
 void OptionsImpl::setInitialOptionsValues()
 {
 	edtDownloadsDir->setText(programOptions->getDownloadDir());
@@ -283,6 +321,10 @@ void OptionsImpl::setInitialOptionsValues()
 	gpbDisplayErrorReport->setChecked(programOptions->getDisplayBugReport());
 
 	chbInternalFFmpeg->setChecked(programOptions->getUseInternalFFmpeg());
+
+	chbDownloadVideosAuto->setChecked(programOptions->getDownloadAutomatically());
+	chbScheduleEnabled->setChecked(programOptions->getScheduleEnabled());
+	chbDownloadVideosAutoClicked(chbDownloadVideosAuto->isChecked());
 }
 
 void OptionsImpl::setOptionsValues()
@@ -336,6 +378,10 @@ void OptionsImpl::setOptionsValues()
 	programOptions->setDisplayBugReport(gpbDisplayErrorReport->isChecked());
 
 	programOptions->setUseInternalFFmpeg(chbInternalFFmpeg->isChecked());
+
+	programOptions->setDownloadAutomatically(chbDownloadVideosAuto->isChecked());
+	programOptions->setScheduleEnabled(chbScheduleEnabled->isChecked());
+	schedule->save();
 }
 
 void OptionsImpl::dragEnterEvent(QDragEnterEvent */*event*/)
@@ -348,9 +394,101 @@ void OptionsImpl::dropEvent(QDropEvent */*event*/)
 	qDebug() << "dropEvent";
 }
 
+QString OptionsImpl::YesNoToString(bool value)
+{
+	return value ? tr("Yes") : tr("No");
+}
+
 void OptionsImpl::chbSaveRestoreStateClicked(bool checked)
 {
 	chbDontrestoreDownloads->setEnabled(checked);
+}
+
+void OptionsImpl::chbDownloadVideosAutoClicked(bool checked)
+{
+	chbScheduleEnabled->setEnabled(checked);
+	chbScheduleEnabledClicked(chbScheduleEnabled->isChecked() && checked);
+}
+
+void OptionsImpl::chbScheduleEnabledClicked(bool checked)
+{
+	lsvSchedules->setEnabled(checked);
+	spbAddSchedule->setEnabled(checked);
+	spbEditSchedule->setEnabled(checked);
+	spbRemoveSchedule->setEnabled(checked);
+	// update button sates
+	if (checked) lsvSchedulesItemSelectionChanged();
+}
+
+void OptionsImpl::spbAddNewSchedulePressed()
+{
+	ScheduleItemEditImpl addScheduleForm(this, Qt::Sheet);
+	if (showModalDialog(&addScheduleForm) == QDialog::Accepted)
+	{
+		schedule->addNewSchedule(addScheduleForm.chbActive->isChecked(),
+								 addScheduleForm.timerStart->time(),
+								 addScheduleForm.timerEnd->time(),
+								 addScheduleForm.edtComment->text());
+		QTreeWidgetItem *item = new QTreeWidgetItem(lsvSchedules);
+		item->setText(0, YesNoToString(addScheduleForm.chbActive->isChecked()));
+		item->setText(1, addScheduleForm.timerStart->time().toString("hh:mm"));
+		item->setText(2, addScheduleForm.timerEnd->time().toString("hh:mm"));
+		item->setText(3, addScheduleForm.edtComment->text());
+	}
+}
+
+void OptionsImpl::spbEditSchedulePressed()
+{
+	// get ScheduleItem
+	ScheduleItem *scheduleItem = schedule->getScheduleItem(lsvSchedules->currentIndex().row());
+	// display edit form
+	ScheduleItemEditImpl addScheduleForm(this, Qt::Sheet);
+	// prepare window
+	addScheduleForm.timerStart->setTime(scheduleItem->getStartTime());
+	addScheduleForm.timerEnd->setTime(scheduleItem->getEndTime());
+	addScheduleForm.edtComment->setText(scheduleItem->getComment());
+	addScheduleForm.chbActive->setChecked(scheduleItem->isEnabled());
+	// show modal
+	if (showModalDialog(&addScheduleForm) == QDialog::Accepted)
+	{
+		// update schedule info
+		scheduleItem->setStartTime(addScheduleForm.timerStart->time());
+		scheduleItem->setEndTime(addScheduleForm.timerEnd->time());
+		scheduleItem->setComment(addScheduleForm.edtComment->text());
+		scheduleItem->setEnabled(addScheduleForm.chbActive->isChecked());
+		// update visual info
+		QTreeWidgetItem *item = lsvSchedules->currentItem();
+		item->setText(0, YesNoToString(scheduleItem->isEnabled()));
+		item->setText(1, scheduleItem->getStartTime().toString("hh:mm"));
+		item->setText(2, scheduleItem->getEndTime().toString("hh:mm"));
+		item->setText(3, scheduleItem->getComment());
+	}
+}
+
+void OptionsImpl::spbRemoveSchedulePressed()
+{
+	if (QMessageBox::question(this,
+							  tr("Remove schedule item"),
+							  tr("Wish you remove the selected schedule item?"),
+							  tr("Yes"),
+							  tr("No"),
+							  QString(), 0, 1) == 0)
+	{
+		schedule->removeSchedule(lsvSchedules->currentIndex().row());
+		delete lsvSchedules->currentItem();
+	}
+}
+
+void OptionsImpl::lsvSchedulesItemSelectionChanged()
+{
+	bool enabled = lsvSchedules->currentItem() != NULL;
+	spbEditSchedule->setEnabled(enabled);
+	spbRemoveSchedule->setEnabled(enabled);
+}
+
+void OptionsImpl::lsvSchedulesDoubleClicked(QModelIndex)
+{
+	spbEditSchedulePressed();
 }
 
 void OptionsImpl::menuCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous)
@@ -435,8 +573,8 @@ void OptionsImpl::btnCheckNowClicked()
 
 	btnCheckNow->setEnabled(false);
 
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this);
-	checkUpdatesForm.exec();
+	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this, Qt::Sheet);
+	showModalDialog(&checkUpdatesForm);
 
 	btnCheckNow->setEnabled(true);
 }

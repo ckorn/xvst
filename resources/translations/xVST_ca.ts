@@ -69,99 +69,99 @@
         <translation>Botó de cancel·lar</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="218"/>
-        <location filename="../../ui/addvideo.ui" line="224"/>
+        <location filename="../../ui/addvideo.ui" line="221"/>
+        <location filename="../../ui/addvideo.ui" line="227"/>
         <source>Enable/disable the video conversions</source>
         <translation>Activa/desactiva la conversió de vídeos</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="221"/>
+        <location filename="../../ui/addvideo.ui" line="224"/>
         <source>Convert videos</source>
         <translation>Converteix vídeos</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="227"/>
+        <location filename="../../ui/addvideo.ui" line="230"/>
         <source>Convert video to Mpeg/DivX/etc...</source>
         <translation>Converteix el vídeo a Mpeg/DivX/etc...</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="242"/>
+        <location filename="../../ui/addvideo.ui" line="245"/>
         <source>Output format:</source>
         <translation>Format de sortida:</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="249"/>
-        <location filename="../../ui/addvideo.ui" line="255"/>
+        <location filename="../../ui/addvideo.ui" line="252"/>
+        <location filename="../../ui/addvideo.ui" line="258"/>
         <source>Video output format</source>
         <translation>Format de sortida del vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="252"/>
+        <location filename="../../ui/addvideo.ui" line="255"/>
         <source>Video output format combobox</source>
         <translation>Format de sortida del vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="262"/>
+        <location filename="../../ui/addvideo.ui" line="265"/>
         <source>Video resolution:</source>
         <translation>Resolució del vídeo:</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="269"/>
-        <location filename="../../ui/addvideo.ui" line="275"/>
+        <location filename="../../ui/addvideo.ui" line="272"/>
+        <location filename="../../ui/addvideo.ui" line="278"/>
         <source>Video resolution</source>
         <translation>Resolució del vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="272"/>
+        <location filename="../../ui/addvideo.ui" line="275"/>
         <source>Video resolution combobox</source>
         <translation>Resolució del vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="282"/>
+        <location filename="../../ui/addvideo.ui" line="285"/>
         <source>Audio sampling rate (Hz):</source>
         <translation>Audio sampling rate (Hz):</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="289"/>
-        <location filename="../../ui/addvideo.ui" line="295"/>
+        <location filename="../../ui/addvideo.ui" line="292"/>
+        <location filename="../../ui/addvideo.ui" line="298"/>
         <source>Video audio sampling rate (Hz)</source>
         <translation>Audio sampling rate (Hz)</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="292"/>
+        <location filename="../../ui/addvideo.ui" line="295"/>
         <source>Video audio sampling rate combobox</source>
         <translation>Audio sampling rate</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="302"/>
-        <location filename="../../ui/addvideo.ui" line="309"/>
-        <location filename="../../ui/addvideo.ui" line="315"/>
+        <location filename="../../ui/addvideo.ui" line="305"/>
+        <location filename="../../ui/addvideo.ui" line="312"/>
+        <location filename="../../ui/addvideo.ui" line="318"/>
         <source>Video frame rate (Hz)</source>
         <translation>Vídeo frame rate (Hz)</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="312"/>
+        <location filename="../../ui/addvideo.ui" line="315"/>
         <source>Video frame rate combobox</source>
         <translation>Vídeo frame rate</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="322"/>
+        <location filename="../../ui/addvideo.ui" line="325"/>
         <source>Output quality:</source>
         <translation>Qualitat de sortida:</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="329"/>
-        <location filename="../../ui/addvideo.ui" line="335"/>
+        <location filename="../../ui/addvideo.ui" line="332"/>
+        <location filename="../../ui/addvideo.ui" line="338"/>
         <source>General video output quality</source>
         <translation>Format de sortida del vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="332"/>
+        <location filename="../../ui/addvideo.ui" line="335"/>
         <source>General video output quality combobox</source>
         <translation>Format de sortida del vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="345"/>
+        <location filename="../../ui/addvideo.ui" line="348"/>
         <source>Override original conversion options for this video</source>
         <translation>Utilitza una configuració de converció diferent per aquest vídeo</translation>
     </message>
@@ -169,12 +169,12 @@
 <context>
     <name>AddVideoImpl</name>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="100"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="102"/>
         <source> - Adult content is not allowed</source>
         <translation> - El contingut per adults no està permès</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="98"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="100"/>
         <source> - Blocked site</source>
         <translation> - Bloquejat</translation>
     </message>
@@ -305,10 +305,6 @@
         <translation>No mostrar l&apos;&quot;Informe d&apos;errors&quot;</translation>
     </message>
     <message>
-        <source>Do not display &quot;Bug Report&quot; the next time</source>
-        <translation type="obsolete">No mostrar l&apos;&quot;Informe d&apos;errors&quot; la pròxima vegada</translation>
-    </message>
-    <message>
         <location filename="../../ui/bugreport.ui" line="367"/>
         <location filename="../../ui/bugreport.ui" line="373"/>
         <source>Send the &quot;Bug report&quot; and close this dialog</source>
@@ -369,29 +365,6 @@
     </message>
 </context>
 <context>
-    <name>CheckUpdatesImpl</name>
-    <message>
-        <source>Checking for updates...</source>
-        <translation type="obsolete">Buscant actualitzacions...</translation>
-    </message>
-    <message>
-        <source>Updates</source>
-        <translation type="obsolete">Actualitzacions</translation>
-    </message>
-    <message>
-        <source>You are using the most recent version of this program.</source>
-        <translation type="obsolete">Estàs utilitzant la versió més recent d&apos;aquest programa.</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">D&apos;acord</translation>
-    </message>
-    <message>
-        <source>Cancelling... please wait...</source>
-        <translation type="obsolete">Cancel·lant...espera uns segons...</translation>
-    </message>
-</context>
-<context>
     <name>CheckUpdatesWorker</name>
     <message>
         <location filename="../../src/checkupdatesworker.cpp" line="89"/>
@@ -433,10 +406,6 @@
 <context>
     <name>CompletedPopup</name>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
-    <message>
         <location filename="../../ui/completedpopup.ui" line="44"/>
         <source>?</source>
         <translation>?</translation>
@@ -455,18 +424,6 @@
         <location filename="../../ui/completedpopup.ui" line="143"/>
         <source>Play video</source>
         <translation>Reprodueix el vídeo</translation>
-    </message>
-    <message>
-        <source>QFrame{background-color:#ffecbf}</source>
-        <translation type="obsolete">QFrame{background-color:#ffecbf}</translation>
-    </message>
-    <message>
-        <source>QFrame{background-color:#fff7dd}</source>
-        <translation type="obsolete">QFrame{background-color:#fff7dd}</translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
     </message>
     <message>
         <location filename="../../ui/completedpopup.ui" line="216"/>
@@ -492,37 +449,25 @@
 <context>
     <name>Credits</name>
     <message>
-        <location filename="../../ui/credits.ui" line="14"/>
+        <location filename="../../ui/credits.ui" line="17"/>
         <source>Credits</source>
         <translation>Crèdits</translation>
     </message>
     <message>
-        <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
-        <translation type="obsolete">Desenvolupat per &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contacte: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../ui/credits.ui" line="191"/>
+        <location filename="../../ui/credits.ui" line="197"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
-    <message utf8="true">
-        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation type="obsolete">&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</translation>
-    </message>
     <message>
-        <location filename="../../ui/credits.ui" line="182"/>
         <location filename="../../ui/credits.ui" line="188"/>
+        <location filename="../../ui/credits.ui" line="194"/>
         <source>Close the Credits dialog</source>
         <translation>Tanca la finestra dels Crèdits</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="185"/>
+        <location filename="../../ui/credits.ui" line="191"/>
         <source>Ok button</source>
         <translation>Botó d&apos;acord</translation>
-    </message>
-    <message>
-        <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
-        <translation type="obsolete">Aquest software és OpenSource i té llicencia &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; (General Public Licence)</translation>
     </message>
 </context>
 <context>
@@ -719,10 +664,6 @@
         <translation>Drag &amp; Drop</translation>
     </message>
     <message>
-        <source>Drop the video link here</source>
-        <translation type="obsolete">Deixa anar la direcció del vídeo aquí</translation>
-    </message>
-    <message>
         <location filename="../../ui/dragdrop.ui" line="134"/>
         <source>OFF</source>
         <translation>Apagat</translation>
@@ -746,17 +687,17 @@
 <context>
     <name>DragDropImpl</name>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="175"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="178"/>
         <source> - Adult content is not allowed</source>
         <translation> - El contingut per adults no està permès</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="173"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="176"/>
         <source> - Blocked site</source>
         <translation> - Bloquejat</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="110"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="113"/>
         <source>Alpha blend value</source>
         <translation>Nivell de transparència</translation>
     </message>
@@ -860,10 +801,6 @@ xVideoServiceThief també pot convertir els vídeos baixats a un altre format m�
         <translation>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../../ui/information.ui" line="290"/>
         <source>Credits...</source>
         <translation>Crèdits...</translation>
@@ -885,11 +822,6 @@ font-size:12px;
         <location filename="../../ui/information.ui" line="205"/>
         <source>List of supported services</source>
         <translation>Llistat dels serveis suportats</translation>
-    </message>
-    <message>
-        <location filename="../../ui/information.ui" line="68"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/information.ui" line="243"/>
@@ -928,17 +860,17 @@ font-size:12px;
 <context>
     <name>InformationImpl</name>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="80"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="88"/>
         <source>&lt;p&gt;Total websites supported (plugins installed): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;Llocs webs suportats (plugins instalats): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="82"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="90"/>
         <source>Adult web sites:</source>
         <translation>Llocs per adults:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="83"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="91"/>
         <source>Music web sites:</source>
         <translation>Llocs de música:</translation>
     </message>
@@ -946,12 +878,12 @@ font-size:12px;
 <context>
     <name>LoadingImpl</name>
     <message>
-        <location filename="../../src/forms/loadingimpl.cpp" line="8"/>
+        <location filename="../../src/main.cpp" line="58"/>
         <source>Loading plugins... please wait...</source>
         <translation>Carregan&apos;t plugins... espera un moment...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/loadingimpl.cpp" line="33"/>
+        <location filename="../../src/main.cpp" line="68"/>
         <source>Plugins loaded</source>
         <translation>Plugins carregats</translation>
     </message>
@@ -964,343 +896,326 @@ font-size:12px;
 <context>
     <name>MainForm</name>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="338"/>
         <location filename="../../ui/mainform.ui" line="341"/>
         <location filename="../../ui/mainform.ui" line="344"/>
-        <location filename="../../ui/mainform.ui" line="968"/>
+        <location filename="../../ui/mainform.ui" line="347"/>
+        <location filename="../../ui/mainform.ui" line="987"/>
         <source>Check for updates</source>
         <translation>Busca actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="658"/>
-        <location filename="../../ui/mainform.ui" line="1027"/>
+        <location filename="../../ui/mainform.ui" line="667"/>
+        <location filename="../../ui/mainform.ui" line="1046"/>
         <source>Clear list</source>
         <translation>Esborra la llista</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1084"/>
+        <location filename="../../ui/mainform.ui" line="1103"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="824"/>
+        <location filename="../../ui/mainform.ui" line="843"/>
         <source>Convert videos to Mpeg/DivX/etc...</source>
         <translation>Converteix els vídeos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1052"/>
+        <location filename="../../ui/mainform.ui" line="1071"/>
         <source>Convert videos to Mpeg\DivX\etc...</source>
         <translation>Converteix els vídeos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="795"/>
-        <location filename="../../ui/mainform.ui" line="798"/>
-        <location filename="../../ui/mainform.ui" line="1044"/>
+        <location filename="../../ui/mainform.ui" line="804"/>
+        <location filename="../../ui/mainform.ui" line="807"/>
+        <location filename="../../ui/mainform.ui" line="1063"/>
         <source>Download videos automatically</source>
         <translation>Descarrega automàticament els Vídeos</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="986"/>
+        <location filename="../../ui/mainform.ui" line="1005"/>
         <source>Information</source>
         <translation>Informació</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1106"/>
+        <location filename="../../ui/mainform.ui" line="1125"/>
         <source>Move UP</source>
         <translation>Mou AMUNT</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="932"/>
-        <location filename="../../ui/mainform.ui" line="935"/>
-        <location filename="../../ui/mainform.ui" line="1061"/>
+        <location filename="../../ui/mainform.ui" line="951"/>
+        <location filename="../../ui/mainform.ui" line="954"/>
+        <location filename="../../ui/mainform.ui" line="1080"/>
         <source>Open downloads directory</source>
         <translation>Obre el directori de les descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1075"/>
+        <location filename="../../ui/mainform.ui" line="1094"/>
         <source>Restore xVideoServiceThief</source>
         <translation>Restaura xVideoServiceThief</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="907"/>
-        <location filename="../../ui/mainform.ui" line="1066"/>
+        <location filename="../../ui/mainform.ui" line="926"/>
+        <location filename="../../ui/mainform.ui" line="1085"/>
         <source>Select downloads directory</source>
         <translation>Selecciona el directori de les descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="904"/>
+        <location filename="../../ui/mainform.ui" line="923"/>
         <source>Select the downloads directory</source>
         <translation>Selecciona el directori de les descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="436"/>
+        <location filename="../../ui/mainform.ui" line="439"/>
         <source>Download list:</source>
         <translation>Llista de descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="176"/>
+        <location filename="../../ui/mainform.ui" line="179"/>
         <source>Connecting...</source>
         <translation>Connectant...</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="525"/>
-        <location filename="../../ui/mainform.ui" line="995"/>
+        <location filename="../../ui/mainform.ui" line="534"/>
+        <location filename="../../ui/mainform.ui" line="1014"/>
         <source>Add video</source>
         <translation>Afegeix vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="550"/>
-        <location filename="../../ui/mainform.ui" line="1004"/>
+        <location filename="../../ui/mainform.ui" line="559"/>
+        <location filename="../../ui/mainform.ui" line="1023"/>
         <source>Delete video</source>
         <translation>Esborra vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="585"/>
-        <location filename="../../ui/mainform.ui" line="1013"/>
+        <location filename="../../ui/mainform.ui" line="594"/>
+        <location filename="../../ui/mainform.ui" line="1032"/>
         <source>Start download</source>
         <translation>Inicia descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="623"/>
-        <location filename="../../ui/mainform.ui" line="1022"/>
+        <location filename="../../ui/mainform.ui" line="632"/>
+        <location filename="../../ui/mainform.ui" line="1041"/>
         <source>Cancel download</source>
         <translation>Cancel·la descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="680"/>
-        <location filename="../../ui/mainform.ui" line="1097"/>
+        <location filename="../../ui/mainform.ui" line="689"/>
+        <location filename="../../ui/mainform.ui" line="1116"/>
         <source>Clear completed</source>
         <translation>Esborra completats</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="715"/>
-        <location filename="../../ui/mainform.ui" line="1036"/>
+        <location filename="../../ui/mainform.ui" line="724"/>
+        <location filename="../../ui/mainform.ui" line="1055"/>
         <source>More options...</source>
         <translation>Més opcions...</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="777"/>
+        <location filename="../../ui/mainform.ui" line="786"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 bytes/sec</source>
         <translation>&lt;b&gt;Velocitat de baixada:&lt;/b&gt; 0,00 bytes/seg</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="844"/>
+        <location filename="../../ui/mainform.ui" line="863"/>
         <source>Downloads directory:</source>
         <translation>Directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="300"/>
-        <location filename="../../ui/mainform.ui" line="959"/>
+        <location filename="../../ui/mainform.ui" line="303"/>
+        <location filename="../../ui/mainform.ui" line="978"/>
         <source>Open the Drag &amp; Drop window</source>
         <translation>Obre la finestra del Drag &amp; Drop</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="114"/>
+        <location filename="../../ui/mainform.ui" line="117"/>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
         <translation>Fes una donació al &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="117"/>
-        <location filename="../../ui/mainform.ui" line="123"/>
+        <location filename="../../ui/mainform.ui" line="120"/>
+        <location filename="../../ui/mainform.ui" line="126"/>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
         <translation>Fés una donació al &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! És fàcil i ràpid! :)</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="120"/>
+        <location filename="../../ui/mainform.ui" line="123"/>
         <source>Support button</source>
         <translation>Botó de suport</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="373"/>
         <location filename="../../ui/mainform.ui" line="376"/>
         <location filename="../../ui/mainform.ui" line="379"/>
-        <location filename="../../ui/mainform.ui" line="977"/>
+        <location filename="../../ui/mainform.ui" line="382"/>
+        <location filename="../../ui/mainform.ui" line="996"/>
         <source>Online help</source>
         <translation>Ajuda en línia</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1115"/>
+        <location filename="../../ui/mainform.ui" line="1134"/>
         <source>Move DOWN</source>
         <translation>Mou ABALL</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1124"/>
+        <location filename="../../ui/mainform.ui" line="1143"/>
         <source>Play video</source>
         <translation>Reprodueix el vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1133"/>
+        <location filename="../../ui/mainform.ui" line="1152"/>
         <source>Reset state</source>
         <translation>Marca&apos;l com a nou</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="408"/>
         <location filename="../../ui/mainform.ui" line="411"/>
         <location filename="../../ui/mainform.ui" line="414"/>
+        <location filename="../../ui/mainform.ui" line="417"/>
         <source>Program information</source>
         <translation>Informació del programa</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1092"/>
+        <location filename="../../ui/mainform.ui" line="1111"/>
         <source>Display a popup window on finish a download/conversion video</source>
         <translation>Mostra un cartell informatiu al finalitzar la descàrrega/conversió d&apos;un vídeo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="1141"/>
+        <location filename="../../ui/mainform.ui" line="1160"/>
         <source>Stay always on top</source>
         <translation>Mostra sempre per sobre</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1149"/>
+        <location filename="../../ui/mainform.ui" line="1168"/>
         <source>Minimize to system tray</source>
         <translation>Minimitza a la barra del sistema</translation>
     </message>
-    <message utf8="true">
-        <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</source>
-        <translation type="obsolete">xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</translation>
-    </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="306"/>
         <location filename="../../ui/mainform.ui" line="309"/>
+        <location filename="../../ui/mainform.ui" line="312"/>
         <source>Open Drag &amp; Drop window</source>
         <translation>Obre la finestra del Drag &amp; Drop</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="519"/>
+        <location filename="../../ui/mainform.ui" line="528"/>
         <source>Add video button</source>
         <translation>Botó d&apos;afegir vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="522"/>
+        <location filename="../../ui/mainform.ui" line="531"/>
         <source>Add a new URL video</source>
         <translation>Afegeix una nova URL</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="544"/>
+        <location filename="../../ui/mainform.ui" line="553"/>
         <source>Delete video button</source>
         <translation>Botó d&apos;esborrar</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="547"/>
+        <location filename="../../ui/mainform.ui" line="556"/>
         <source>Delete the selected video</source>
         <translation>Elimina el vídeo seleccionat</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="579"/>
+        <location filename="../../ui/mainform.ui" line="588"/>
         <source>Start download button</source>
         <translation>Botó d&apos;iniciar descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="582"/>
+        <location filename="../../ui/mainform.ui" line="591"/>
         <source>Start to download the current selected video</source>
         <translation>Inicia la descàrrega del vídeo seleccionat</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="617"/>
+        <location filename="../../ui/mainform.ui" line="626"/>
         <source>Cancel download button</source>
         <translation>Botó de cancel·lar descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="620"/>
+        <location filename="../../ui/mainform.ui" line="629"/>
         <source>Cancel the current selected video</source>
         <translation>Cancel·la la descàrrega del vídeo seleccionat</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="652"/>
+        <location filename="../../ui/mainform.ui" line="661"/>
         <source>Clear list button</source>
         <translation>Botó de netejar la llista</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="655"/>
+        <location filename="../../ui/mainform.ui" line="664"/>
         <source>Clear downloads list</source>
         <translation>Neteja la llista de descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="674"/>
+        <location filename="../../ui/mainform.ui" line="683"/>
         <source>Clear completed button</source>
         <translation>Botó de netejar els completats</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="677"/>
+        <location filename="../../ui/mainform.ui" line="686"/>
         <source>Clear completed videos from list</source>
         <translation>Neteja els vídeos completats de la llista</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="709"/>
+        <location filename="../../ui/mainform.ui" line="718"/>
         <source>More options button</source>
         <translation>Botó de més opcions</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="712"/>
+        <location filename="../../ui/mainform.ui" line="721"/>
         <source>Display the Options dialog</source>
         <translation>Mostra la finestra de més opcions</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="760"/>
+        <location filename="../../ui/mainform.ui" line="769"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Vídeos afegits:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completats)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="767"/>
+        <location filename="../../ui/mainform.ui" line="776"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; 0 of 0</source>
         <translation>&lt;b&gt;Descarregant:&lt;/b&gt; 0 de 0</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 Kb/sec</source>
-        <translation type="obsolete">&lt;b&gt;Velocitat de baixada:&lt;/b&gt; 0,00 Kb/seg</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainform.ui" line="792"/>
+        <location filename="../../ui/mainform.ui" line="801"/>
         <source>Download videos automatically checkbox</source>
         <translation>Caixa de selecció per baixar automàticamentels vídeos</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="818"/>
+        <location filename="../../ui/mainform.ui" line="837"/>
         <source>Convert videos checkbox</source>
         <translation>Caixa de selecció per convertir vídeos</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="821"/>
+        <location filename="../../ui/mainform.ui" line="840"/>
         <source>Convert videos</source>
         <translation>Converteix vídeos</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="882"/>
-        <location filename="../../ui/mainform.ui" line="885"/>
+        <location filename="../../ui/mainform.ui" line="901"/>
+        <location filename="../../ui/mainform.ui" line="904"/>
         <source>Downloads directory</source>
         <translation>Directori de les descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="910"/>
+        <location filename="../../ui/mainform.ui" line="929"/>
         <source>Open the Select directory dialog for select the downloads directory</source>
         <translation>Obra la finestra per seleccionar el directori de descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="938"/>
+        <location filename="../../ui/mainform.ui" line="957"/>
         <source>Open the downloads directory</source>
         <translation>Obra el directori de descàrregues</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="601"/>
+        <location filename="../../ui/mainform.ui" line="610"/>
         <source>Pause Download</source>
         <translation>Pausa descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1158"/>
+        <location filename="../../ui/mainform.ui" line="1177"/>
         <source>Pause download</source>
         <translation>Pausa descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1167"/>
+        <location filename="../../ui/mainform.ui" line="1186"/>
         <source>View error message</source>
         <translation>Vere missatge d&apos;error</translation>
     </message>
@@ -1308,143 +1223,163 @@ font-size:12px;
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="109"/>
         <source> Progress </source>
         <translation> Progrés </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="109"/>
         <source> Size </source>
         <translation> Volum </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="109"/>
         <source> Speed </source>
         <translation> Velocitat </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="109"/>
         <source> Time </source>
         <translation> Temps </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="58"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="109"/>
         <source> Video </source>
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="264"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="330"/>
         <source>Closing...</source>
         <translation>Tancant...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="266"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="474"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="332"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="540"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="291"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="357"/>
         <source>Options</source>
         <translation>Opcions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="378"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="444"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="266"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="473"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="332"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="539"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="331"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="771"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="397"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="840"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="772"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="841"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;aplicació xUpdater no s&apos;ha pogut trobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="333"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="560"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="773"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="399"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="627"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="842"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="332"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="398"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="982"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1073"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Descarregant: %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="990"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1081"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertint: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="907"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="987"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Vídeos afegits:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completats)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="911"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="991"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Descarregant:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="915"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="995"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Velocitat de baixada:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="916"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="996"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="265"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="331"/>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
         <translation>xVideoServiceThief està treballant, realment vols Pausar totes les descàrregues?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="471"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="60"/>
+        <source>File</source>
+        <translation>Fitxer</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="72"/>
+        <source>Controllers</source>
+        <translation>Controls</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="80"/>
+        <source>Tools</source>
+        <translation>Utilitats</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="90"/>
+        <source>Help</source>
+        <translation>Ajuda</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="537"/>
         <source>Cancel download</source>
         <translation>Cancel·la descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="472"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="538"/>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Desitges cancel·lar la descàrrega de &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="558"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="625"/>
         <source>Error message</source>
         <translation>Missatge d&apos;error</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="559"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="626"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Aquest vídeo té el següent error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="931"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="946"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1011"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1031"/>
         <source>Pause download</source>
         <translation>Pausa descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="944"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1029"/>
         <source>Resume download</source>
         <translation>Continua descàrrega</translation>
     </message>
@@ -1578,22 +1513,10 @@ font-size:12px;
         <translation>Instal·lar idioma</translation>
     </message>
     <message>
-        <source>Wish you install this new lanuage?</source>
-        <translation type="obsolete">Vols instal·lar aquest nou idioma?</translation>
-    </message>
-    <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="120"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="125"/>
         <source>Language uninstall error</source>
         <translation>Error al desinstal·lar l&apos;idioma</translation>
-    </message>
-    <message>
-        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall new languages.</source>
-        <translation type="obsolete">S&apos;han produït alguns errors al intentar desinstal·lar l&apos;idioma &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Amb Windows Vista hauries d&apos;executar l&apos;xVST com a administrador abans de desinstal·lar els idiomes.</translation>
-    </message>
-    <message>
-        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
-        <translation type="obsolete">S&apos;han produït alguns errors al intentar desinstal·lar l&apos;idioma &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Amb Windows Vista hauries d&apos;executar l&apos;xVST com a administrador abans de desinstal·lar els idiomes.</translation>
     </message>
     <message>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="90"/>
@@ -1699,11 +1622,12 @@ font-size:12px;
         <location filename="../../ui/options.ui" line="482"/>
         <location filename="../../ui/options.ui" line="1234"/>
         <location filename="../../ui/options.ui" line="1316"/>
+        <location filename="../../ui/options.ui" line="1454"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1442"/>
+        <location filename="../../ui/options.ui" line="1703"/>
         <source>Adress:</source>
         <translation>Adreça:</translation>
     </message>
@@ -1728,7 +1652,7 @@ font-size:12px;
         <translation>Bloquejats:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1745"/>
+        <location filename="../../ui/options.ui" line="2006"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
@@ -1784,7 +1708,7 @@ font-size:12px;
         <translation>Configuració del idioma </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1720"/>
+        <location filename="../../ui/options.ui" line="1981"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -1804,17 +1728,17 @@ font-size:12px;
         <translation>Qualitat de sortida:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1394"/>
+        <location filename="../../ui/options.ui" line="1655"/>
         <source>Password:</source>
         <translation>Contrasenya:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1451"/>
+        <location filename="../../ui/options.ui" line="1712"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1519"/>
+        <location filename="../../ui/options.ui" line="1780"/>
         <source>Proxy type:</source>
         <translation>Tipus de Proxy:</translation>
     </message>
@@ -1906,17 +1830,17 @@ font-size:12px;
         <translation>Selecciona quins llocs Web estan permesos i quins han d&apos;estar bloquejats:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1375"/>
+        <location filename="../../ui/options.ui" line="1636"/>
         <source>Use proxy server</source>
         <translation>Usa un servidor proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1387"/>
+        <location filename="../../ui/options.ui" line="1648"/>
         <source>User name:</source>
         <translation>Nom d&apos;usuari:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1682"/>
+        <location filename="../../ui/options.ui" line="1943"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation>Recorda l&apos;ultima pàgina visitada de les opcions (només vàlid per aquesta sessió)</translation>
     </message>
@@ -1931,12 +1855,12 @@ font-size:12px;
         <translation>Cerca noves versions al iniciar el programa</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1613"/>
+        <location filename="../../ui/options.ui" line="1874"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Mostra la finestra de &quot;L&apos;Informe d&apos;errors&quot; al fallar una descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1622"/>
+        <location filename="../../ui/options.ui" line="1883"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Quan un vídeo produeix un error, pots ajudar a solucionar el problema enviant-nos un&quot;&lt;b&gt;Informe d&apos;errors&lt;/b&gt;&quot; via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;L&apos;&quot;&lt;b&gt;Informe d&apos;errors&lt;/b&gt;&quot; serà desat només al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; i serà visible per a tothom, no es desarà informació extra a cap Base de Dades externa.</translation>
     </message>
@@ -2105,14 +2029,6 @@ font-size:12px;
         <translation>Esborra el vídeo original després de la seva conversió</translation>
     </message>
     <message>
-        <source>Use the selected language file</source>
-        <translation type="obsolete">Usa el idioma seleccionat</translation>
-    </message>
-    <message>
-        <source>Use language selected</source>
-        <translation type="obsolete">Usa el idioma seleccionat</translation>
-    </message>
-    <message>
         <location filename="../../ui/options.ui" line="448"/>
         <location filename="../../ui/options.ui" line="454"/>
         <source>List with all installed languages</source>
@@ -2248,108 +2164,198 @@ font-size:12px;
         <translation>Llista de de llocs web bloquejats</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1366"/>
-        <location filename="../../ui/options.ui" line="1369"/>
-        <location filename="../../ui/options.ui" line="1372"/>
+        <location filename="../../ui/options.ui" line="1331"/>
+        <source>Schedule Configuration</source>
+        <translation>Configuració dels horaris</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1337"/>
+        <source>Enable or disable automatic downloads</source>
+        <translation>Activa o desactiva les descàrregues automàtiques</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1340"/>
+        <source>Download videos automatically checkbox</source>
+        <translation>Caixa de selecció per baixar automàticamentels vídeos</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1343"/>
+        <location filename="../../ui/options.ui" line="1346"/>
+        <source>Download videos automatically</source>
+        <translation>Descarrega automàticament els Vídeos</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1358"/>
+        <location filename="../../ui/options.ui" line="1364"/>
+        <source>Enable or disable user shcedules</source>
+        <translation>Activa o desactiva els horaris personalitzats</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1361"/>
+        <source>Schedules checkbox</source>
+        <translation>Caixa de selecció dels horaris</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1367"/>
+        <source>Customize my schedule download</source>
+        <translation>Personalitzar els meus horaris de descàrregues</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1429"/>
+        <location filename="../../ui/options.ui" line="1435"/>
+        <source>List of user schedules</source>
+        <translation>Llista d&apos;horaris personalitzats</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1432"/>
+        <source>Shcedules list</source>
+        <translation>Llista d&apos;horaris</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1488"/>
+        <source>Add new schedule</source>
+        <translation>Afegir un nou horari</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1491"/>
+        <location filename="../../ui/options.ui" line="1497"/>
+        <source>Adds a new schedule configuration</source>
+        <translation>Afageix un nou horari a la llista</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1494"/>
+        <source>New schedule button</source>
+        <translation>Botó nou horari</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1523"/>
+        <source>Edit selected schedule</source>
+        <translation>Edita l&apos;horari seleccionat</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1529"/>
+        <source>Edit selected shedule</source>
+        <translation>Edita l&apos;horari seleccionat</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1532"/>
+        <source>Edit the selected schedule configuration</source>
+        <translation>Edita la configuració de l&apos;horari seleccionat</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1558"/>
+        <location filename="../../ui/options.ui" line="1561"/>
+        <source>Remove selected schedule</source>
+        <translation>Elimina l&apos;horari seleccionat</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1564"/>
+        <source>Remove the selected schedule configuration</source>
+        <translation>Elimina la configuració d&apos;horari seleccionat</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1627"/>
+        <location filename="../../ui/options.ui" line="1630"/>
+        <location filename="../../ui/options.ui" line="1633"/>
         <source>Enable/disable proxy support</source>
         <translation>Activa/desactiva el proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1407"/>
-        <location filename="../../ui/options.ui" line="1413"/>
+        <location filename="../../ui/options.ui" line="1668"/>
+        <location filename="../../ui/options.ui" line="1674"/>
         <source>User name of your proxy configuration</source>
         <translation>Nom d&apos;usuari del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1410"/>
+        <location filename="../../ui/options.ui" line="1671"/>
         <source>Proxy user name</source>
         <translation>Nom d&apos;usuari del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1426"/>
-        <location filename="../../ui/options.ui" line="1432"/>
+        <location filename="../../ui/options.ui" line="1687"/>
+        <location filename="../../ui/options.ui" line="1693"/>
         <source>Password of your proxy configuration</source>
         <translation>Contrasenya del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1429"/>
+        <location filename="../../ui/options.ui" line="1690"/>
         <source>Proxy password</source>
         <translation>Contrasenya del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1470"/>
-        <location filename="../../ui/options.ui" line="1476"/>
+        <location filename="../../ui/options.ui" line="1731"/>
+        <location filename="../../ui/options.ui" line="1737"/>
         <source>Port of your proxy configuration</source>
         <translation>Port del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1473"/>
+        <location filename="../../ui/options.ui" line="1734"/>
         <source>Proxy port</source>
         <translation>Port del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1500"/>
-        <location filename="../../ui/options.ui" line="1506"/>
+        <location filename="../../ui/options.ui" line="1761"/>
+        <location filename="../../ui/options.ui" line="1767"/>
         <source>Adress of your proxy configuration</source>
         <translation>Adreça del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1503"/>
+        <location filename="../../ui/options.ui" line="1764"/>
         <source>Proxy adress</source>
         <translation>Adreça del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1526"/>
-        <location filename="../../ui/options.ui" line="1532"/>
+        <location filename="../../ui/options.ui" line="1787"/>
+        <location filename="../../ui/options.ui" line="1793"/>
         <source>Type of your proxy configuration</source>
         <translation>Tipus de proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1529"/>
+        <location filename="../../ui/options.ui" line="1790"/>
         <source>Proxy type</source>
         <translation>Tipus de proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1604"/>
-        <location filename="../../ui/options.ui" line="1610"/>
+        <location filename="../../ui/options.ui" line="1865"/>
+        <location filename="../../ui/options.ui" line="1871"/>
         <source>Enable/disable the &quot;Bug report&quot; window on video Error</source>
         <translation>Activa/desactiva els &quot;Informes d&apos;error&quot; al fallar un vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1607"/>
+        <location filename="../../ui/options.ui" line="1868"/>
         <source>Bug report</source>
         <translation>Informe d&apos;error</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1676"/>
+        <location filename="../../ui/options.ui" line="1937"/>
         <source>Remember last viewed options page checkbox</source>
         <translation>Recorda la última pàgina visitada</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1711"/>
-        <location filename="../../ui/options.ui" line="1717"/>
+        <location filename="../../ui/options.ui" line="1972"/>
+        <location filename="../../ui/options.ui" line="1978"/>
         <source>Save and close the current configuration</source>
         <translation>Desa la configuració actual i tanca la finestra</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1714"/>
+        <location filename="../../ui/options.ui" line="1975"/>
         <source>Save and close button</source>
         <translation>Botó de desa i tanca</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1736"/>
-        <location filename="../../ui/options.ui" line="1742"/>
+        <location filename="../../ui/options.ui" line="1997"/>
+        <location filename="../../ui/options.ui" line="2003"/>
         <source>Close without saving changes</source>
         <translation>Tanca sense desar els canvis</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1739"/>
+        <location filename="../../ui/options.ui" line="2000"/>
         <source>Cancel and close button</source>
         <translation>Botó de cancel·lar i tancar</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1673"/>
-        <location filename="../../ui/options.ui" line="1679"/>
+        <location filename="../../ui/options.ui" line="1934"/>
+        <location filename="../../ui/options.ui" line="1940"/>
         <source>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</source>
         <translation>Si aquesta opció està seleccionada, al obrir una altre vegada la finestra d&apos;&quot;Opcions&quot;, la última pàgina visitada (Bàsic, Idiomes, etc...) es mostrarà una altra vegada (només en aquesta sessió)</translation>
     </message>
@@ -2357,196 +2363,231 @@ font-size:12px;
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="205"/>
         <source>2 Days</source>
         <translation>2 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="205"/>
         <source>3 Days</source>
         <translation>3 Dies</translation>
     </message>
     <message>
-        <source>3GP Format (*.3gp)</source>
-        <translation type="obsolete">3GP Format (*.3gp)</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="205"/>
         <source>4 Days</source>
         <translation>4 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="214"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="206"/>
         <source>5 Days</source>
         <translation>5 Dies</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="214"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="206"/>
         <source>6 Days</source>
         <translation>6 Dies</translation>
     </message>
     <message>
-        <source>AVI Format (*.avi)</source>
-        <translation type="obsolete">AVI Format (*.avi)</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="118"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="146"/>
         <source>Basic</source>
         <translation>Bàsic</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="550"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="669"/>
         <source>Clear Log</source>
         <translation>Neteja l&apos;Històric</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="205"/>
         <source>Day</source>
         <translation>Dia</translation>
     </message>
     <message>
-        <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">Qualitat bona (Vídeo bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="219"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
         <source>Http Proxy</source>
         <translation>Http Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="124"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="152"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation type="obsolete">Baixa qualitat (Vídeo bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
-    </message>
-    <message>
-        <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation type="obsolete">Molt baixa qualitat (Vídeo bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
-    </message>
-    <message>
-        <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">Qualitat mitjana (Vídeo bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
-    </message>
-    <message>
-        <source>MP3 Format (*.mp3)</source>
-        <translation type="obsolete">MP3 Format (*.mp3)</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="553"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="399"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="474"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="672"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">Qualitat normal (Vídeo bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="obsolete">Original</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="144"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="129"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="157"/>
         <source>Session</source>
         <translation>Sessió</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="219"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
         <source>Socks5 Proxy</source>
         <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">Qualitat brutal (Vídeo bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
-    </message>
-    <message>
-        <source>The Same quality as the original Video</source>
-        <translation type="obsolete">Mantenir la qualitat del vídeo original</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="134"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="463"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="568"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="139"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="59"/>
+        <source> Enabled </source>
+        <translation>Actiu</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="59"/>
+        <source> Start time </source>
+        <translation>Hora inici</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="59"/>
+        <source> End time </source>
+        <translation>Hora fi</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="59"/>
+        <source>Comments</source>
+        <translation>Comentaris</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
         <source>Ups!</source>
         <translation>Ups!</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="214"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <source>Schedule</source>
+        <translation>Horaris</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="206"/>
         <source>Week</source>
         <translation>Setmana</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="552"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="399"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="473"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="671"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="446"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="471"/>
+        <source>Remove schedule item</source>
+        <translation>Elimna l&apos;horari</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="472"/>
+        <source>Wish you remove the selected schedule item?</source>
+        <translation>Desitges eliminar l&apos;horari seleccionat?</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="551"/>
         <source>Language Setup</source>
         <translation>Configuració del Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="447"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="552"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Per tal d&apos;aplicar el idioma seleccionat, és necessari reiniciar el programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="448"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="465"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="553"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="570"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <source>WMV Format ( *.wmv)</source>
-        <translation type="obsolete">WMV Format ( *.wmv)</translation>
-    </message>
-    <message>
-        <source>MPEG1 Format ( *.mpg)</source>
-        <translation type="obsolete">MPEG1 Format ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>MPEG2 Format ( *.mpg)</source>
-        <translation type="obsolete">MPEG2 Format ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>Apple iPod (*.mp4)</source>
-        <translation type="obsolete">Apple iPod (*.mp4)</translation>
-    </message>
-    <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="508"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="627"/>
         <source>Select the download directory:</source>
         <translation>Selecciona el directori de les descàrregues:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="518"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="637"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Selecciona on es troba el programa ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="551"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="670"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation>Estàs segur d&apos;esborrar el històric de vídeos baixats/convertits?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="464"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="569"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="149"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="182"/>
         <source>Tracker</source>
         <translation>Tracker</translation>
+    </message>
+</context>
+<context>
+    <name>ScheduleItemEditImpl</name>
+    <message>
+        <location filename="../../scheduleitemedit.ui" line="14"/>
+        <source>Schedule edition</source>
+        <translation>Edici´óo de l&apos;horari</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemedit.ui" line="22"/>
+        <source>Start time:</source>
+        <translation>Hora inici:</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemedit.ui" line="29"/>
+        <source>End time:</source>
+        <translation>Hora fi:</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemedit.ui" line="42"/>
+        <source>Comment:</source>
+        <translation>Comentari:</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemedit.ui" line="52"/>
+        <source>Active</source>
+        <translation>Actiu</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemedit.ui" line="80"/>
+        <location filename="../../scheduleitemeditimpl.cpp" line="17"/>
+        <location filename="../../scheduleitemeditimpl.cpp" line="22"/>
+        <source>Ok</source>
+        <translation>D&apos;acord</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemedit.ui" line="99"/>
+        <source>Cancel</source>
+        <translation>Cancel·la</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemeditimpl.cpp" line="15"/>
+        <location filename="../../scheduleitemeditimpl.cpp" line="20"/>
+        <source>Invalid schedule configuration</source>
+        <translation>Configuració d&apos;horari invàlida</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemeditimpl.cpp" line="16"/>
+        <source>The start time cannot exceed the end time.</source>
+        <translation>La hora d&apos;inici no pot ser superior a la hora fi.</translation>
+    </message>
+    <message>
+        <location filename="../../scheduleitemeditimpl.cpp" line="21"/>
+        <source>The start time and end time cannot be equals.</source>
+        <translation>La hora d&apos;inici i la hora de fi no poden ser iguals.</translation>
     </message>
 </context>
 <context>
@@ -2776,12 +2817,12 @@ font-size:12px;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="336"/>
+        <location filename="../../src/videoinformation.cpp" line="335"/>
         <source>Invalid URL</source>
         <translation>URL Invàlida</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="333"/>
+        <location filename="../../src/videoinformation.cpp" line="332"/>
         <source>Unsupported video service</source>
         <translation>Servei de vídeos no suportat</translation>
     </message>

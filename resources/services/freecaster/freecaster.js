@@ -25,8 +25,8 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
-	this.minVersion = "2.0.0a";
+	this.version = "1.0.1";
+	this.minVersion = "2.1a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://freecaster.tv/";
 	this.ID = "freecaster.tv";
@@ -53,6 +53,8 @@ function getVideoInformation(url)
 	result.URL = copyBetween(xml, "label=\"Standard Definition\">", "<");
 	// set video extension
 	result.extension = ".mov";
+	// add referer header
+	result.headers = "Referer=" + url;
 	// return the video information
 	return result;
 }

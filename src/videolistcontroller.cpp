@@ -37,6 +37,9 @@ VideoListController::VideoListController(ProgramOptions *programOptions)
 
 	videoList = new QList<VideoItem *>;
 
+	schedule = new ScheduleController(programOptions->getOptionsPath(), programOptions->getOptionsFormat());
+	schedule->load();
+
 	videoInformation = new VideoInformation(programOptions->getPluginsPath());
 	videoDownload = new VideoDownload(programOptions->getDownloadDir(), programOptions->getMaxActiveDownloads());
 	videoConverter = new VideoConverter(programOptions->getFfmpegLibLocation(),
@@ -70,6 +73,7 @@ VideoListController::~VideoListController()
 	delete videoConverter;
 	delete videoInformation;
 	delete videoDownload;
+	delete schedule;
 }
 
 bool VideoListController::validItemIndex(const int index)
@@ -111,7 +115,7 @@ void VideoListController::timerEvent(QTimerEvent */*event*/)
 	displayError(getFirstError());
 
 	// get the first ready item, to start the download
-	if (programOptions->getDownloadAutomatically() && videoDownload->canStartDownload())
+	if (programOptions->getDownloadAutomatically() && videoDownload->canStartDownload() &&	schedule->canStart())
 	{
 		VideoItem *videoItem = getFirstReady();
 		if (videoItem != NULL)
@@ -477,6 +481,10 @@ void VideoListController::updateOptions()
 	videoConverter->setConversionConfig(programOptions->getConversionConf());
 	videoConverter->setDeleteOriginalVideo(programOptions->getDeleteVideosOnConvert());
 	
+	// schedule
+	schedule->setEnabled(programOptions->getScheduleEnabled());
+	schedule->load();
+
 	// update proxy
 	if (programOptions->getUseProxy())
 	{

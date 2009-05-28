@@ -91,6 +91,9 @@
 	/*! Open the directory into the defined explorer */
 	bool openDirectory(QString directoryPath);
 
+	/*! Open dialog and wait until his end (usefull on mac and Qt::Sheet property) */
+	int showModalDialog(QDialog *form);
+
 	/*! Convert a Decimal HTML Char into the respective HTML Code */
 	QString htmlCharToHtmlCode(QString html);
 	

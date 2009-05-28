@@ -64,7 +64,7 @@ void DownloadLogImpl::buildLog(QList<LogEntry> logEntries, VideoInformation *vid
 	lsvLog->sortItems(0, Qt::AscendingOrder);
 }
 
-void DownloadLogImpl::itemDoubleClicked(QTreeWidgetItem *item, int column)
+void DownloadLogImpl::itemDoubleClicked(QTreeWidgetItem *item, int)
 {
 	QDesktopServices::openUrl(item->text(2));
 }

@@ -158,7 +158,7 @@ QScriptValue HttpScriptClass::prototype() const
 	return proto;
 }
 
-QScriptValue::PropertyFlags HttpScriptClass::propertyFlags(const QScriptValue &object, const QScriptString &name, uint id)
+QScriptValue::PropertyFlags HttpScriptClass::propertyFlags(const QScriptValue&, const QScriptString&, uint)
 {
 	return QScriptValue::Undeletable;
 }

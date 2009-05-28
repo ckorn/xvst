@@ -47,17 +47,6 @@ CheckUpdatesImpl::~CheckUpdatesImpl()
 	delete checkUpdatesWorker;
 }
 
-void CheckUpdatesImpl::closeEvent(QCloseEvent *event)
-{
-/*
-	if (!closedByButton)
-	{
-		event->ignore();
-		btnCancel->click();
-	}
-*/
-}
-
 void CheckUpdatesImpl::checkUpdatesWorkerFinished(bool hasUpdates, bool closedByButton)
 {
 	this->closedByButton = closedByButton;

@@ -226,7 +226,7 @@ void DragDropImpl::removeServiceIcon()
 
 // QLabelClickeable
 
-void QLabelClickeable::mouseDoubleClickEvent(QMouseEvent *event)
+void QLabelClickeable::mouseDoubleClickEvent(QMouseEvent *)
 {
 	emit doubleClicked();
 }

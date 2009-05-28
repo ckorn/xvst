@@ -171,6 +171,8 @@ void ProgramOptions::load()
 
 	displayWelcomeMessage = settings.value("configuration/displayWelcomeMessage", displayWelcomeMessage).toBool();
 
+	scheduleEnabled = settings.value("configuration/scheduleEnabled", scheduleEnabled).toBool();
+
 	emit optionsLoadAfter();
 }
 
@@ -243,6 +245,8 @@ void ProgramOptions::save()
 	settings.setValue("useInternalFFmpeg", useInternalFFmpeg);
 
 	settings.setValue("displayWelcomeMessage", displayWelcomeMessage);
+
+	settings.setValue("scheduleEnabled", scheduleEnabled);
 
 	settings.endGroup();
 
@@ -332,6 +336,8 @@ void ProgramOptions::setDefault()
 	useInternalFFmpeg = true;
 
 	displayWelcomeMessage = true;
+
+	scheduleEnabled = false;
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -801,3 +807,12 @@ bool ProgramOptions::getDisplayWelcomeMessage()
 	return displayWelcomeMessage;
 }
 
+void ProgramOptions::setScheduleEnabled(bool value)
+{
+	scheduleEnabled = value;
+}
+
+bool ProgramOptions::getScheduleEnabled()
+{
+	return scheduleEnabled;
+}

@@ -406,7 +406,7 @@ void MainFormImpl::updatesClicked()
 	if (!isVisible()) restoreAppClicked();
 	
 	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this, Qt::Sheet);
-	checkUpdatesForm.exec();
+	showModalDialog(&checkUpdatesForm); //checkUpdatesForm.exec();
 	
 	spbUpdates->setEnabled(true);
 	actUpdates->setEnabled(true);
@@ -469,18 +469,7 @@ void MainFormImpl::addVideoClicked()
 	if (!isVisible()) restoreAppClicked();
 
 	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation(), this, Qt::Sheet);
-
-#ifdef Q_WS_MACX
-	// display this form as a Sheet
-	addVideoForm.show();
-	// wait while addVideoForm is visible
-	while (addVideoForm.isVisible())
-		qApp->processEvents(QEventLoop::WaitForMoreEvents);
-	// user did "accept" or "cancel"?
-	if (addVideoForm.result() == QDialog::Accepted)
-#else
-	if (addVideoForm.exec() == QDialog::Accepted)
-#endif
+	if (showModalDialog(&addVideoForm) == QDialog::Accepted)
 	{
 		// user want override the current conversion config
 		if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())
@@ -567,6 +556,7 @@ void MainFormImpl::moreOptionsClicked()
 	if (!isVisible()) restoreAppClicked();
 
 	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage, this);
+
 	if (optionsForm.exec() == QDialog::Accepted)
 	{
 		updateVisualOptions();
@@ -640,8 +630,10 @@ void MainFormImpl::viewErrorMessageClicked()
 void MainFormImpl::downloadAutomaticallyStateChanged(int state)
 {
 	programOptions->setCanSendUpdateSignal(false);
-	programOptions->setDownloadAutomatically(state == 2 ? true : false);
+	programOptions->setDownloadAutomatically(state == Qt::Checked);// ? true : false);
 	programOptions->setCanSendUpdateSignal(true);
+	// update schedule image
+	imgSchedule->setVisible(programOptions->getDownloadAutomatically() && programOptions->getScheduleEnabled());
 }
 
 void MainFormImpl::edtDownloadDirChanged()
@@ -652,7 +644,7 @@ void MainFormImpl::edtDownloadDirChanged()
 void MainFormImpl::convertVideosStateChanged(int state)
 {
 	programOptions->setCanSendUpdateSignal(false);
-	programOptions->setConvertVideos(state == 2 ? true : false);
+	programOptions->setConvertVideos(state == Qt::Checked);// ? true : false);
 	programOptions->setCanSendUpdateSignal(true);
 }
 
@@ -934,6 +926,9 @@ void MainFormImpl::updateVisualOptions()
 	chbConvertVideos->setEnabled(QFile::exists(programOptions->getFfmpegLibLocation()));
 	chbConvertVideos->setChecked(chbConvertVideos->isEnabled() ? programOptions->getConvertVideos() : false);
 	edtDownloadDir->setText(programOptions->getDownloadDir());
+
+	// schedule image
+	imgSchedule->setVisible(programOptions->getDownloadAutomatically() && programOptions->getScheduleEnabled());
 }
 
 void MainFormImpl::checkUpdates(bool forceCheckUpdates)

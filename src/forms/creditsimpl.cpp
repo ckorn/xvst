@@ -30,8 +30,8 @@ CreditsImpl::CreditsImpl( QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	setupUi(this);
 	// resize form if is needed
 #ifndef Q_OS_WIN32
-	resize(468, 530);
-	setMinimumSize(468, 530);
+	resize(468, 540);
+	setMinimumSize(468, 560);
 #endif
 }
 //

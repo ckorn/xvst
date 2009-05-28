@@ -221,10 +221,6 @@
         <translation>Ne jelenítse meg a &quot;Hibajelentés&quot;-t</translation>
     </message>
     <message>
-        <source>Do not display &quot;Bug Report&quot; the next time</source>
-        <translation type="obsolete">Ne jelenítse meg a &quot;Hibajelentés&quot;-t legközelebb</translation>
-    </message>
-    <message>
         <source>Send the &quot;Bug report&quot; and close this dialog</source>
         <translation>&quot;Hibajelentés&quot;lküldése és az ablak bezárása</translation>
     </message>
@@ -284,29 +280,6 @@
     </message>
 </context>
 <context>
-    <name>CheckUpdatesImpl</name>
-    <message>
-        <source>Updates</source>
-        <translation type="obsolete">Frissítések</translation>
-    </message>
-    <message>
-        <source>You are using the most recent version of this program.</source>
-        <translation type="obsolete">Jelenleg a program legfrissebb verzióját használod.</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Ok</translation>
-    </message>
-    <message>
-        <source>Cancelling... please wait...</source>
-        <translation type="obsolete">Megszakítás... kis türelmet...</translation>
-    </message>
-    <message>
-        <source>Checking for updates...</source>
-        <translation type="obsolete">Frissítések ellenőrzése...</translation>
-    </message>
-</context>
-<context>
     <name>CheckUpdatesWorker</name>
     <message>
         <source>Updates</source>
@@ -340,10 +313,6 @@
 <context>
     <name>CompletedPopup</name>
     <message>
-        <source>QFrame{background-color:#ffecbf}</source>
-        <translation type="obsolete">QFrame{háttér-szín:#ffecbf}</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
         <translation>&lt;b&gt;A letöltés befejeződött&lt;/b&gt;</translation>
     </message>
@@ -358,14 +327,6 @@
     <message>
         <source>Close the information dialog</source>
         <translation>Az információs ablak bezárása</translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
-        <source>QFrame{background-color:#fff7dd}</source>
-        <translation type="obsolete">QFrame{háttér-szín:#fff7dd}</translation>
     </message>
     <message>
         <source>?</source>
@@ -383,28 +344,12 @@
         <source>Play the downloaded video</source>
         <translation>A letöltött videó lejátszása</translation>
     </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
 </context>
 <context>
     <name>Credits</name>
     <message>
         <source>Credits</source>
         <translation>Készítők</translation>
-    </message>
-    <message>
-        <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
-        <translation type="obsolete">Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Kapcsolat: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
-        <translation type="obsolete">Ez a szoftver az OpenSource és a &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; (General Public Licence) licenc alatt engedélyezett</translation>
-    </message>
-    <message utf8="true">
-        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation type="obsolete">&lt;b&gt;Speciális köszönet:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Lengyel nyelv készítő&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japán nyelv készítő&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Cseh nyelv készítő&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk ikon készlet 1.3 készítő&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; ikonok készítőjének</translation>
     </message>
     <message>
         <source>Close the Credits dialog</source>
@@ -530,10 +475,6 @@
         <translation>Húzd&amp;Ejtsd</translation>
     </message>
     <message>
-        <source>Drop the video link here</source>
-        <translation type="obsolete">Dobd a videó hivatkozást ide</translation>
-    </message>
-    <message>
         <source>Display main window</source>
         <translation>A fő ablak megjelenítése</translation>
     </message>
@@ -653,10 +594,6 @@ background: white;
         <translation>QFrame{háttér: fehér;} </translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Program version:</source>
         <translation>Program verzió:</translation>
     </message>
@@ -738,10 +675,6 @@ betűméret:12px;
         <source>Close</source>
         <translation>Bezárás</translation>
     </message>
-    <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
 </context>
 <context>
     <name>InformationImpl</name>
@@ -761,6 +694,10 @@ betűméret:12px;
 <context>
     <name>LoadingImpl</name>
     <message>
+        <source>Loading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Loading plugins... please wait...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -768,26 +705,9 @@ betűméret:12px;
         <source>Plugins loaded</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Loading</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MainForm</name>
-    <message utf8="true">
-        <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</source>
-        <translation type="obsolete">xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</translation>
-    </message>
-    <message>
-        <source>QFrame{background: white;}</source>
-        <translation type="obsolete">QFrame{háttér: fehér;}</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Open the Drag &amp; Drop window</source>
         <translation>A Húzd &amp; Ejtsd ablak megnyitása</translation>
@@ -901,20 +821,12 @@ betűméret:12px;
         <translation>További beállítások...</translation>
     </message>
     <message>
-        <source> QFrame{background: white;}</source>
-        <translation type="obsolete"> QFrame{háttér: fehér;}</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Videók száma:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 kész)&lt;/span&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; 0 of 0</source>
         <translation>&lt;b&gt;Letöltés:&lt;/b&gt; 0 - 0</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 Kb/sec</source>
-        <translation type="obsolete">&lt;b&gt;Letöltési sebesség:&lt;/b&gt; 0,00 Kb/mp</translation>
     </message>
     <message>
         <source>Download videos automatically checkbox</source>
@@ -955,10 +867,6 @@ betűméret:12px;
     <message>
         <source>Open the Select directory dialog for select the downloads directory</source>
         <translation>A könyvtár választás ablak megnyitása a letöltési könyvtár kiválasztásához</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Open downloads directory</source>
@@ -1151,6 +1059,22 @@ betűméret:12px;
         <source>- Converting: %1 (%2)</source>
         <translation>- Konvertálás: %1 (%2)</translation>
     </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controllers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewLanguages</name>
@@ -1250,10 +1174,6 @@ betűméret:12px;
         <translation>Nyelv telepítése</translation>
     </message>
     <message>
-        <source>Wish you install this new lanuage?</source>
-        <translation type="obsolete">Telepíted az új nyelvet?</translation>
-    </message>
-    <message>
         <source>Language uninstall error</source>
         <translation>Nyelv eltávolítási hiba</translation>
     </message>
@@ -1292,10 +1212,6 @@ betűméret:12px;
     <message>
         <source>New language &lt;b&gt;%1&lt;/b&gt; installed.</source>
         <translation>Az új &lt;b&gt;%1&lt;/b&gt; nyelv telepítve lett.</translation>
-    </message>
-    <message>
-        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before unistall languages.</source>
-        <translation type="obsolete">Néhány hiba történt a kiválasztott &lt;b&gt;%1&lt;/b&gt; nyelv eltávolításakor.&lt;br&gt;&lt;br&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt;A Windows Vista rendszeren rendszergazdaként kell futtatnod a xVST programot, mielött telepítenéd a nyelveket.</translation>
     </message>
     <message>
         <source>Wish you install this new language?</source>
@@ -1511,14 +1427,6 @@ betűméret:12px;
     <message>
         <source>Description:</source>
         <translation>Megjegyzés:</translation>
-    </message>
-    <message>
-        <source>Use the selected language file</source>
-        <translation type="obsolete">A kiválasztott nyelvi fájl használata</translation>
-    </message>
-    <message>
-        <source>Use language selected</source>
-        <translation type="obsolete">A kiválasztott nyelv használata</translation>
     </message>
     <message>
         <source>Use this language</source>
@@ -1824,6 +1732,74 @@ betűméret:12px;
         <source>Languages manager</source>
         <translation>Nyelvkezelő</translation>
     </message>
+    <message>
+        <source>Schedule Configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable or disable automatic downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download videos automatically checkbox</source>
+        <translation type="unfinished">Videók automatikus letöltése jelölőnégyzet</translation>
+    </message>
+    <message>
+        <source>Download videos automatically</source>
+        <translation type="unfinished">Videók automatikus letöltése</translation>
+    </message>
+    <message>
+        <source>Enable or disable user shcedules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedules checkbox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Customize my schedule download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of user schedules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shcedules list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adds a new schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New schedule button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected shedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the selected schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the selected schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -1854,66 +1830,6 @@ betűméret:12px;
     <message>
         <source>Tracker</source>
         <translation>Hibajelentés</translation>
-    </message>
-    <message>
-        <source>AVI Format (*.avi)</source>
-        <translation type="obsolete">AVI formátum (*.avi)</translation>
-    </message>
-    <message>
-        <source>WMV Format ( *.wmv)</source>
-        <translation type="obsolete">WMV formátum ( *.wmv)</translation>
-    </message>
-    <message>
-        <source>MPEG1 Format ( *.mpg)</source>
-        <translation type="obsolete">MPEG1 formátum ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>MPEG2 Format ( *.mpg)</source>
-        <translation type="obsolete">MPEG2 formátum ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>Apple iPod (*.mp4)</source>
-        <translation type="obsolete">Apple iPod (*.mp4)</translation>
-    </message>
-    <message>
-        <source>3GP Format (*.3gp)</source>
-        <translation type="obsolete">3GP formátum (*.3gp)</translation>
-    </message>
-    <message>
-        <source>MP3 Format (*.mp3)</source>
-        <translation type="obsolete">MP3 formátum (*.mp3)</translation>
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="obsolete">Eredeti</translation>
-    </message>
-    <message>
-        <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation type="obsolete">Leggyengébb minőség (Videó bitarány: 384kb/s; Audió bitarány: 64kb/s)</translation>
-    </message>
-    <message>
-        <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation type="obsolete">Gyenge minőség (Videó bitarány: 512kb/s; Audió bitarány: 80kb/s)</translation>
-    </message>
-    <message>
-        <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">Normál minőség (Videó bitarány: 640kb/s; Audió bitarány: 96kb/s)</translation>
-    </message>
-    <message>
-        <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">Közepes minőség (Videó bitarány: 800kb/ps; Audió bitarány: 96kb/s)</translation>
-    </message>
-    <message>
-        <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">Jó minőség (Videó bitarány: 1000kb/s; Audió bitarány: 128kb/s)</translation>
-    </message>
-    <message>
-        <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">Kiváló minőség (Videó bitarány: 1200kb/s; Audió bitarány: 128kb/s)</translation>
-    </message>
-    <message>
-        <source>The Same quality as the original Video</source>
-        <translation type="obsolete">Az eredeti videóval megegyező minőség</translation>
     </message>
     <message>
         <source>Day</source>
@@ -1990,6 +1906,77 @@ betűméret:12px;
     <message>
         <source>No</source>
         <translation>Nem</translation>
+    </message>
+    <message>
+        <source> Enabled </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Start time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> End time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove schedule item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you remove the selected schedule item?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScheduleItemEditImpl</name>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comment:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Mégse</translation>
+    </message>
+    <message>
+        <source>The start time cannot exceed the end time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The start time and end time cannot be equals.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule edition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid schedule configuration</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

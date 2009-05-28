@@ -442,3 +442,18 @@ bool openDirectory(QString directoryPath)
 {
 	return openFile(directoryPath);
 }
+
+int showModalDialog(QDialog *form)
+{
+#ifdef Q_WS_MACX
+	// display this form as a Sheet
+	form->show();
+	// wait while addVideoForm is visible
+	while (form->isVisible())
+		qApp->processEvents(QEventLoop::WaitForMoreEvents);
+	// return result
+	return form->result();
+#else
+	return form->exec()
+#endif
+}

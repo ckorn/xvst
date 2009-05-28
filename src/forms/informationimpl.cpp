@@ -32,8 +32,8 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 	setupUi(this);
 	// resize window
 #ifndef Q_WS_WIN
-	resize(518, 550);
-	setMinimumSize(518, 550);
+	resize(518, 570);
+	setMinimumSize(518, 570);
 #endif
 	//
 	creditsForm = new CreditsImpl(this, Qt::Sheet);

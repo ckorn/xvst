@@ -33,12 +33,14 @@
 #include "downloadlogimpl.h"
 #include "checkupdatesimpl.h"
 #include "newlanguagesimpl.h"
+#include "scheduleitemeditimpl.h"
 //
 #include "../options.h"
 #include "../videolistcontroller.h"
 #include "../sessionmanager.h"
 #include "../videoinformation.h"
 #include "../languages.h"
+#include "../schedule.h"
 //
 class OptionsImpl : public QDialog, public Ui::Options
 {
@@ -49,15 +51,18 @@ Q_OBJECT
 		VideoInformation *videoInformation;
 		LanguageManager *languageManager;
 		VideoListController *videoList;
+		ScheduleController *schedule;
 		int lastPageViewed;
 		QString tmpLangFile;
 		void createMenu();
 		void fillInitialData();
 		void fillLanguages();
+		void fillSchedules();
 		void setInitialOptionsValues();
 		void setOptionsValues();
 		void dragEnterEvent(QDragEnterEvent *event);
 		void dropEvent(QDropEvent *event);
+		QString YesNoToString(bool value);
 	public:
 		OptionsImpl(ProgramOptions *programOptions, SessionManager *sessionManager,
 			VideoListController *videoList, int lastOptionsPage,
@@ -85,5 +90,12 @@ Q_OBJECT
 		void btnAddNewLanguagesClicked();
 		void internalFFmpegStateChanged(int state);
 		void newLanguagesAccepted();
+		void chbDownloadVideosAutoClicked(bool checked = false);
+		void chbScheduleEnabledClicked(bool checked = false);
+		void spbAddNewSchedulePressed();
+		void spbEditSchedulePressed();
+		void spbRemoveSchedulePressed();
+		void lsvSchedulesItemSelectionChanged();
+		void lsvSchedulesDoubleClicked(QModelIndex index);
 };
 #endif

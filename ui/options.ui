@@ -14,7 +14,7 @@
    <string>Options</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources/resources.qrc">
     <normaloff>:/buttons/images/options.png</normaloff>:/buttons/images/options.png</iconset>
   </property>
   <property name="sizeGripEnabled">
@@ -81,7 +81,7 @@
    <item row="0" column="1">
     <widget class="QStackedWidget" name="pgOptions">
      <property name="currentIndex">
-      <number>4</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="pgBasic">
       <layout class="QGridLayout">
@@ -1323,6 +1323,267 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="pgSchedule">
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Schedule Configuration</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="chbDownloadVideosAuto">
+            <property name="whatsThis">
+             <string>Enable or disable automatic downloads</string>
+            </property>
+            <property name="accessibleName">
+             <string>Download videos automatically checkbox</string>
+            </property>
+            <property name="accessibleDescription">
+             <string>Download videos automatically</string>
+            </property>
+            <property name="text">
+             <string>Download videos automatically</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="leftMargin">
+             <number>25</number>
+            </property>
+            <item>
+             <widget class="QCheckBox" name="chbScheduleEnabled">
+              <property name="whatsThis">
+               <string>Enable or disable user shcedules</string>
+              </property>
+              <property name="accessibleName">
+               <string>Schedules checkbox</string>
+              </property>
+              <property name="accessibleDescription">
+               <string>Enable or disable user shcedules</string>
+              </property>
+              <property name="text">
+               <string>Customize my schedule download</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>15</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QTreeWidget" name="lsvSchedules">
+                <property name="palette">
+                 <palette>
+                  <active>
+                   <colorrole role="AlternateBase">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>243</green>
+                      <blue>197</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </active>
+                  <inactive>
+                   <colorrole role="AlternateBase">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>243</green>
+                      <blue>197</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </inactive>
+                  <disabled>
+                   <colorrole role="AlternateBase">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>255</red>
+                      <green>243</green>
+                      <blue>197</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </disabled>
+                 </palette>
+                </property>
+                <property name="whatsThis">
+                 <string>List of user schedules</string>
+                </property>
+                <property name="accessibleName">
+                 <string>Shcedules list</string>
+                </property>
+                <property name="accessibleDescription">
+                 <string>List of user schedules</string>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="rootIsDecorated">
+                 <bool>false</bool>
+                </property>
+                <property name="uniformRowHeights">
+                 <bool>true</bool>
+                </property>
+                <property name="itemsExpandable">
+                 <bool>false</bool>
+                </property>
+                <property name="allColumnsShowFocus">
+                 <bool>true</bool>
+                </property>
+                <column>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QToolButton" name="spbAddSchedule">
+                <property name="minimumSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Add new schedule</string>
+                </property>
+                <property name="whatsThis">
+                 <string>Adds a new schedule configuration</string>
+                </property>
+                <property name="accessibleName">
+                 <string>New schedule button</string>
+                </property>
+                <property name="accessibleDescription">
+                 <string>Adds a new schedule configuration</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/resources.qrc">
+                  <normaloff>:/buttons/images/add.png</normaloff>:/buttons/images/add.png</iconset>
+                </property>
+                <property name="autoRaise">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="spbEditSchedule">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Edit selected schedule</string>
+                </property>
+                <property name="statusTip">
+                 <string/>
+                </property>
+                <property name="accessibleName">
+                 <string>Edit selected shedule</string>
+                </property>
+                <property name="accessibleDescription">
+                 <string>Edit the selected schedule configuration</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/resources.qrc">
+                  <normaloff>:/buttons/images/pencil.png</normaloff>:/buttons/images/pencil.png</iconset>
+                </property>
+                <property name="autoRaise">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="spbRemoveSchedule">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Remove selected schedule</string>
+                </property>
+                <property name="accessibleName">
+                 <string>Remove selected schedule</string>
+                </property>
+                <property name="accessibleDescription">
+                 <string>Remove the selected schedule configuration</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/resources.qrc">
+                  <normaloff>:/buttons/images/cross.png</normaloff>:/buttons/images/cross.png</iconset>
+                </property>
+                <property name="autoRaise">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="pgProxy">
       <layout class="QGridLayout">
        <item row="0" column="1">
@@ -1794,7 +2055,9 @@
   <tabstop>btnOk</tabstop>
   <tabstop>btnCancel</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>btnCancel</sender>

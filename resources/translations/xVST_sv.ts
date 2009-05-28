@@ -221,10 +221,6 @@
         <translation>Visa inte &quot;Felrapport&quot;</translation>
     </message>
     <message>
-        <source>Do not display &quot;Bug Report&quot; the next time</source>
-        <translation type="obsolete">Visa inte &quot;Felrapport&quot; nästa gång</translation>
-    </message>
-    <message>
         <source>Send the &quot;Bug report&quot; and close this dialog</source>
         <translation>Skicka &quot;felrapport&quot; och stäng denna dialogruta</translation>
     </message>
@@ -284,29 +280,6 @@
     </message>
 </context>
 <context>
-    <name>CheckUpdatesImpl</name>
-    <message>
-        <source>Updates</source>
-        <translation type="obsolete">Uppdateringar</translation>
-    </message>
-    <message>
-        <source>You are using the most recent version of this program.</source>
-        <translation type="obsolete">Du använder den senaste versionen av detta program.</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Ok</translation>
-    </message>
-    <message>
-        <source>Cancelling... please wait...</source>
-        <translation type="obsolete">Avbryter... vänta...</translation>
-    </message>
-    <message>
-        <source>Checking for updates...</source>
-        <translation type="obsolete">Letar efter uppdateringar...</translation>
-    </message>
-</context>
-<context>
     <name>CheckUpdatesWorker</name>
     <message>
         <source>Updates</source>
@@ -340,10 +313,6 @@
 <context>
     <name>CompletedPopup</name>
     <message>
-        <source>QFrame{background-color:#ffecbf}</source>
-        <translation type="obsolete">QFrame{background-color:#ffecbf}</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
         <translation>&lt;b&gt;Hämtningen är färdig&lt;/b&gt;</translation>
     </message>
@@ -358,14 +327,6 @@
     <message>
         <source>Close the information dialog</source>
         <translation>Stäng informationsdialogen</translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
-        <source>QFrame{background-color:#fff7dd}</source>
-        <translation type="obsolete">QFrame{background-color:#fff7dd}</translation>
     </message>
     <message>
         <source>?</source>
@@ -383,28 +344,12 @@
         <source>Play the downloaded video</source>
         <translation>Spela upp hämtad video</translation>
     </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
 </context>
 <context>
     <name>Credits</name>
     <message>
         <source>Credits</source>
         <translation>Tack till</translation>
-    </message>
-    <message>
-        <source>Powered by &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Contact: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</source>
-        <translation type="obsolete">Drivs av &lt;b&gt;Xesc &amp;amp; Technology &amp;reg; 2008&lt;/b&gt;&lt;br&gt;Kontakt: &lt;a href=&quot;mailto:xeskuu.xvst@gmail.com&quot;&gt;xeskuu.xvst@gmail.com&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>This software is OpenSource and is licenced under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt; licence (General Public Licence)</source>
-        <translation type="obsolete">Denna programvara är öppen källkod och licensierad under &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;&lt;b&gt;GNU GPL&lt;/b&gt;&lt;/a&gt;-licensen (General Public Licence)</translation>
-    </message>
-    <message utf8="true">
-        <source>&lt;b&gt;Special thanks to:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Mac OS X responsable&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: Polish language author&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: Japanese language author&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; &amp; &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: Czech language authors&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk icon set 1.3 author&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot; icons author</source>
-        <translation type="obsolete">&lt;b&gt;Speciella tack till:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Xavi&lt;/b&gt;: Ansvarig för Mac OS X&lt;br&gt;&lt;b&gt;Grzegorz Gibas (Amigib)&lt;/b&gt;: polsk översättare&lt;br&gt;&lt;b&gt;Daisuke (barlog)&lt;/b&gt;: japansk översättare&lt;br&gt;&lt;b&gt;Johan Hornof&lt;/b&gt; och &lt;b&gt;Lukas Vana (fabian)&lt;/b&gt;: tjeckiska översättare&lt;br&gt;&lt;b&gt;Mark James&lt;/b&gt;: Silk-ikoner 1.3&lt;br&gt;&lt;b&gt;Mayosoft®&lt;/b&gt;: &quot;I&apos;m not a Patriot&quot;-ikoner</translation>
     </message>
     <message>
         <source>Close the Credits dialog</source>
@@ -528,10 +473,6 @@
     <message>
         <source>Drag&amp;Drop</source>
         <translation>Dra &amp; släpp</translation>
-    </message>
-    <message>
-        <source>Drop the video link here</source>
-        <translation type="obsolete">Släpp videolänken här</translation>
     </message>
     <message>
         <source>Display main window</source>
@@ -733,10 +674,6 @@ font-size:12px;
         <source>Close</source>
         <translation>Stäng</translation>
     </message>
-    <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2009&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>InformationImpl</name>
@@ -756,6 +693,10 @@ font-size:12px;
 <context>
     <name>LoadingImpl</name>
     <message>
+        <source>Loading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Loading plugins... please wait...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -763,27 +704,9 @@ font-size:12px;
         <source>Plugins loaded</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Loading</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MainForm</name>
-    <message utf8="true">
-        <source>xVideoServiceThief %1 by Xesc &amp; Technology ® 2008</source>
-        <translation type="obsolete">xVideoServiceThief %1 av Xesc &amp; Technology ® 2008</translation>
-    </message>
-    <message>
-        <source>QFrame{background: white;}</source>
-        <translation type="obsolete">QFrame{background: white;}</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Powered by Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;xVideoServiceThief&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;a {font-family: Arial, Helvetica, sans-serif;font-size: 13px; text-decoration:none; color:#999999}a: hover{text-decoration:underline; color:#0000FF}
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div align=&quot;center&quot;&gt;&lt;p&gt;&lt;span style=&quot;font-size: 32px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #666666;&quot;&gt;xVideoServiceThief&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;font-size: 13px;&quot;&gt;Drivs av Xesc &amp;amp; Technology &amp;reg; 2008&lt;br /&gt;&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Open the Drag &amp; Drop window</source>
         <translation type="unfinished"></translation>
@@ -897,20 +820,12 @@ font-size:12px;
         <translation>Fler alternativ...</translation>
     </message>
     <message>
-        <source> QFrame{background: white;}</source>
-        <translation type="obsolete"> QFrame{background: white;}</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Antal videor:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 färdiga)&lt;/span&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; 0 of 0</source>
         <translation>&lt;b&gt;Hämtar:&lt;/b&gt; 0 av 0</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 Kb/sec</source>
-        <translation type="obsolete">&lt;b&gt;Hämtningshastighet:&lt;/b&gt; 0,00 Kb/s</translation>
     </message>
     <message>
         <source>Download videos automatically checkbox</source>
@@ -951,10 +866,6 @@ font-size:12px;
     <message>
         <source>Open the Select directory dialog for select the downloads directory</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Open downloads directory</source>
@@ -1146,6 +1057,22 @@ font-size:12px;
     <message>
         <source>- Converting: %1 (%2)</source>
         <translation>- Konverterar: %1 (%2)</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controllers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1501,14 +1428,6 @@ font-size:12px;
         <translation>Beskrivning:</translation>
     </message>
     <message>
-        <source>Use the selected language file</source>
-        <translation type="obsolete">Använd markerad språkfil</translation>
-    </message>
-    <message>
-        <source>Use language selected</source>
-        <translation type="obsolete">Använd markerat språk</translation>
-    </message>
-    <message>
         <source>Use this language</source>
         <translation>Använd detta språk</translation>
     </message>
@@ -1812,6 +1731,74 @@ font-size:12px;
         <source>Languages manager</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Schedule Configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable or disable automatic downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download videos automatically checkbox</source>
+        <translation type="unfinished">Hämta videor automatiskt-kryssruta</translation>
+    </message>
+    <message>
+        <source>Download videos automatically</source>
+        <translation type="unfinished">Hämta videor automatiskt</translation>
+    </message>
+    <message>
+        <source>Enable or disable user shcedules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedules checkbox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Customize my schedule download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of user schedules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shcedules list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adds a new schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New schedule button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected shedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the selected schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the selected schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -1842,66 +1829,6 @@ font-size:12px;
     <message>
         <source>Tracker</source>
         <translation>Bevakare</translation>
-    </message>
-    <message>
-        <source>AVI Format (*.avi)</source>
-        <translation type="obsolete">AVI-format (*.avi)</translation>
-    </message>
-    <message>
-        <source>WMV Format ( *.wmv)</source>
-        <translation type="obsolete">WMV-format ( *.wmv)</translation>
-    </message>
-    <message>
-        <source>MPEG1 Format ( *.mpg)</source>
-        <translation type="obsolete">MPEG1-format ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>MPEG2 Format ( *.mpg)</source>
-        <translation type="obsolete">MPEG2-format ( *.mpg)</translation>
-    </message>
-    <message>
-        <source>Apple iPod (*.mp4)</source>
-        <translation type="obsolete">Apple iPod (*.mp4)</translation>
-    </message>
-    <message>
-        <source>3GP Format (*.3gp)</source>
-        <translation type="obsolete">3GP-format (*.3gp)</translation>
-    </message>
-    <message>
-        <source>MP3 Format (*.mp3)</source>
-        <translation type="obsolete">MP3-format (*.mp3)</translation>
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="obsolete">Ursprunglig</translation>
-    </message>
-    <message>
-        <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation type="obsolete">Lägre kvalitet (videobitfrekvens: 384 kbps; ljudbitfrekvens: 64 kbps)</translation>
-    </message>
-    <message>
-        <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation type="obsolete">Låg kvalitet (videobitfrekvens: 512 kbps; ljudbitfrekvens: 80 kbps)</translation>
-    </message>
-    <message>
-        <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">Normal kvalitet (videobitfrekvens: 640 kbps; ljudbitfrekvens: 96 kbps)</translation>
-    </message>
-    <message>
-        <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation type="obsolete">Medelhög kvalitet (videobitfrekvens: 800 kbps; ljudbitfrekvens: 96 kbps)</translation>
-    </message>
-    <message>
-        <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">Bra kvalitet (videobitfrekvens: 1000 kbps; ljudbitfrekvens: 128 kbps)</translation>
-    </message>
-    <message>
-        <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation type="obsolete">Utmärkt kvalitet (videobitfrekvens: 1200 kbps; ljudbitfrekvens: 128 kbps)</translation>
-    </message>
-    <message>
-        <source>The Same quality as the original Video</source>
-        <translation type="obsolete">Samma kvalitet som för urspunglig video</translation>
     </message>
     <message>
         <source>Day</source>
@@ -1978,6 +1905,77 @@ font-size:12px;
     <message>
         <source>No</source>
         <translation>Nej</translation>
+    </message>
+    <message>
+        <source> Enabled </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Start time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> End time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove schedule item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you remove the selected schedule item?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScheduleItemEditImpl</name>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comment:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Avbryt</translation>
+    </message>
+    <message>
+        <source>The start time cannot exceed the end time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The start time and end time cannot be equals.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule edition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid schedule configuration</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

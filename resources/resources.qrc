@@ -26,6 +26,9 @@
         <file>images/support_button.png</file>
         <file>images/support_button_main.png</file>
         <file>images/transmit_blue.png</file>
+        <file>images/add.png</file>
+        <file>images/pencil.png</file>
+        <file>images/clock.png</file>
     </qresource>
     <qresource prefix="/error" >
         <file>images/errorVideo.png</file>
@@ -50,6 +53,7 @@
         <file>images/tools.png</file>
         <file>images/updates.png</file>
         <file>images/ups.png</file>
+        <file>images/schedule.png</file>
     </qresource>
     <qresource prefix="/services" >
         <file>images/services/no_icon.png</file>

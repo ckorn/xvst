@@ -34,6 +34,7 @@
 #include "videoinformation.h"
 #include "videoconvert.h"
 #include "videodownload.h"
+#include "schedule.h"
 
 class VideoListController : public QObject
 {
@@ -44,6 +45,7 @@ Q_OBJECT
 		VideoDownload *videoDownload;		//!< video download class
 		VideoConverter *videoConverter;		//!< video converter class
 		ProgramOptions *programOptions; 	//!< pointer to the program options
+		ScheduleController *schedule;		//!< schedule controller
 		int internalTimer;					//!< internal timer
 		/*! Determine if this index is a valid item index */
 		bool validItemIndex(const int index);
@@ -85,9 +87,9 @@ Q_OBJECT
 		VideoItem* getFirstDownloaded();
 		/*! Get the first item converted */
 		VideoItem* getFirstConverted();
-		/* Get the current downloading video */
+		/*! Get the current downloading video */
 		VideoItem* getCurrentDownloadingVideo();
-		/* get the current converting video */
+		/*! get the current converting video */
 		VideoItem* getCurrentConvertingVideo();
 		/*! Get if this item can be deleted or not (by Position) */
 		bool canBeDeleted(const int index);
