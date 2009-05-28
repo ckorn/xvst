@@ -945,6 +945,10 @@ font-size:12px;
         <source>Support button</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Schedule option is &lt;b&gt;enabled&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainFormImpl</name>
@@ -1973,6 +1977,54 @@ font-size:12px;
     </message>
     <message>
         <source>Invalid schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the start time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start time edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the end time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set a information comment (this field is optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comment edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable or disable this schedule configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active checkbox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accept and close this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel and close this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

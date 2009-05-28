@@ -900,68 +900,68 @@ font-size:12px;
         <location filename="../../ui/mainform.ui" line="341"/>
         <location filename="../../ui/mainform.ui" line="344"/>
         <location filename="../../ui/mainform.ui" line="347"/>
-        <location filename="../../ui/mainform.ui" line="987"/>
+        <location filename="../../ui/mainform.ui" line="990"/>
         <source>Check for updates</source>
         <translation>Buscar actualizaciones</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="804"/>
         <location filename="../../ui/mainform.ui" line="807"/>
-        <location filename="../../ui/mainform.ui" line="1063"/>
+        <location filename="../../ui/mainform.ui" line="1066"/>
         <source>Download videos automatically</source>
         <translation>Descargar videos automáticamente</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="843"/>
+        <location filename="../../ui/mainform.ui" line="846"/>
         <source>Convert videos to Mpeg/DivX/etc...</source>
         <translation>Convertir videos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="923"/>
+        <location filename="../../ui/mainform.ui" line="926"/>
         <source>Select the downloads directory</source>
         <translation>Seleccione el directorio de las descargas</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="951"/>
         <location filename="../../ui/mainform.ui" line="954"/>
-        <location filename="../../ui/mainform.ui" line="1080"/>
+        <location filename="../../ui/mainform.ui" line="957"/>
+        <location filename="../../ui/mainform.ui" line="1083"/>
         <source>Open downloads directory</source>
         <translation>Abrir directorio de las descargas</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1005"/>
+        <location filename="../../ui/mainform.ui" line="1008"/>
         <source>Information</source>
         <translation>Información</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="667"/>
-        <location filename="../../ui/mainform.ui" line="1046"/>
+        <location filename="../../ui/mainform.ui" line="1049"/>
         <source>Clear list</source>
         <translation>Limpiar Lista</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1071"/>
+        <location filename="../../ui/mainform.ui" line="1074"/>
         <source>Convert videos to Mpeg\DivX\etc...</source>
         <translation>Convertir videos a Mpeg/DivX/etc...</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="926"/>
-        <location filename="../../ui/mainform.ui" line="1085"/>
+        <location filename="../../ui/mainform.ui" line="929"/>
+        <location filename="../../ui/mainform.ui" line="1088"/>
         <source>Select downloads directory</source>
         <translation>Seleccione el directorio de las descargas</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1094"/>
+        <location filename="../../ui/mainform.ui" line="1097"/>
         <source>Restore xVideoServiceThief</source>
         <translation>Restaurar xVideoServiceThief</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1103"/>
+        <location filename="../../ui/mainform.ui" line="1106"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1125"/>
+        <location filename="../../ui/mainform.ui" line="1128"/>
         <source>Move UP</source>
         <translation>Mover ARRIBA</translation>
     </message>
@@ -977,37 +977,37 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="534"/>
-        <location filename="../../ui/mainform.ui" line="1014"/>
+        <location filename="../../ui/mainform.ui" line="1017"/>
         <source>Add video</source>
         <translation>Añadir video</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="559"/>
-        <location filename="../../ui/mainform.ui" line="1023"/>
+        <location filename="../../ui/mainform.ui" line="1026"/>
         <source>Delete video</source>
         <translation>Eliminar video</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="594"/>
-        <location filename="../../ui/mainform.ui" line="1032"/>
+        <location filename="../../ui/mainform.ui" line="1035"/>
         <source>Start download</source>
         <translation>Iniciar descarga</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="632"/>
-        <location filename="../../ui/mainform.ui" line="1041"/>
+        <location filename="../../ui/mainform.ui" line="1044"/>
         <source>Cancel download</source>
         <translation>Cancelar descarga</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="689"/>
-        <location filename="../../ui/mainform.ui" line="1116"/>
+        <location filename="../../ui/mainform.ui" line="1119"/>
         <source>Clear completed</source>
         <translation>Limpiar completados</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="724"/>
-        <location filename="../../ui/mainform.ui" line="1055"/>
+        <location filename="../../ui/mainform.ui" line="1058"/>
         <source>More options...</source>
         <translation>Más opciones...</translation>
     </message>
@@ -1017,13 +1017,13 @@ font-size:12px;
         <translation>&lt;b&gt;Velocidad descarga:&lt;/b&gt; 0,00 bytes/seg</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="863"/>
+        <location filename="../../ui/mainform.ui" line="866"/>
         <source>Downloads directory:</source>
         <translation>Directorio de las descargas:</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="303"/>
-        <location filename="../../ui/mainform.ui" line="978"/>
+        <location filename="../../ui/mainform.ui" line="981"/>
         <source>Open the Drag &amp; Drop window</source>
         <translation>Abrir la ventana del Drag &amp; Drop</translation>
     </message>
@@ -1047,22 +1047,22 @@ font-size:12px;
         <location filename="../../ui/mainform.ui" line="376"/>
         <location filename="../../ui/mainform.ui" line="379"/>
         <location filename="../../ui/mainform.ui" line="382"/>
-        <location filename="../../ui/mainform.ui" line="996"/>
+        <location filename="../../ui/mainform.ui" line="999"/>
         <source>Online help</source>
         <translation>Ayuda en línea</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1134"/>
+        <location filename="../../ui/mainform.ui" line="1137"/>
         <source>Move DOWN</source>
         <translation>Mover ABAJO</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1143"/>
+        <location filename="../../ui/mainform.ui" line="1146"/>
         <source>Play video</source>
         <translation>Reproducir video</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1152"/>
+        <location filename="../../ui/mainform.ui" line="1155"/>
         <source>Reset state</source>
         <translation>Marcar como nuevo</translation>
     </message>
@@ -1074,17 +1074,17 @@ font-size:12px;
         <translation>Información del programa</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1111"/>
+        <location filename="../../ui/mainform.ui" line="1114"/>
         <source>Display a popup window on finish a download/conversion video</source>
         <translation>Mostrar una ventana informativa al finalizar la descarga/conversión de un video</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1160"/>
+        <location filename="../../ui/mainform.ui" line="1163"/>
         <source>Stay always on top</source>
         <translation>Mostrar siempre por encima</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1168"/>
+        <location filename="../../ui/mainform.ui" line="1171"/>
         <source>Minimize to system tray</source>
         <translation>Minimiza a la barra del sistema</translation>
     </message>
@@ -1180,28 +1180,33 @@ font-size:12px;
         <translation>Casilla de selección de bajar vídeos automaticamente</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="837"/>
+        <location filename="../../ui/mainform.ui" line="814"/>
+        <source>Schedule option is &lt;b&gt;enabled&lt;/b&gt;</source>
+        <translation>La opción de los horarios está &lt;b&gt;activada&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="840"/>
         <source>Convert videos checkbox</source>
         <translation>Casilla de selección para convertir vídeos</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="840"/>
+        <location filename="../../ui/mainform.ui" line="843"/>
         <source>Convert videos</source>
         <translation>Convertir vídeos</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="901"/>
         <location filename="../../ui/mainform.ui" line="904"/>
+        <location filename="../../ui/mainform.ui" line="907"/>
         <source>Downloads directory</source>
         <translation>Directorio de las descargas</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="929"/>
+        <location filename="../../ui/mainform.ui" line="932"/>
         <source>Open the Select directory dialog for select the downloads directory</source>
         <translation>Abrir la ventana de Seleccionar directorio para seleccionar el directorio de las descargas</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="957"/>
+        <location filename="../../ui/mainform.ui" line="960"/>
         <source>Open the downloads directory</source>
         <translation>Abrir directorio de las descargas</translation>
     </message>
@@ -1211,12 +1216,12 @@ font-size:12px;
         <translation>Pausar descarga</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1177"/>
+        <location filename="../../ui/mainform.ui" line="1180"/>
         <source>Pause download</source>
         <translation>Pausar descarga</translation>
     </message>
     <message>
-        <location filename="../../ui/mainform.ui" line="1186"/>
+        <location filename="../../ui/mainform.ui" line="1189"/>
         <source>View error message</source>
         <translation>Ver mensaje de error</translation>
     </message>
@@ -2364,173 +2369,173 @@ font-size:12px;
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="146"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="151"/>
         <source>Basic</source>
         <translation>Básico</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="152"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="157"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="157"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
         <source>Session</source>
         <translation>Sesión</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="568"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="581"/>
         <source>Updates</source>
         <translation>Actualizaciones</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
         <source>Ups!</source>
         <translation>Ups!</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
         <source>Schedule</source>
         <translation>Horarios</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="182"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="205"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="210"/>
         <source>Day</source>
         <translation>Día</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="205"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="210"/>
         <source>2 Days</source>
         <translation>2 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="205"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="210"/>
         <source>3 Days</source>
         <translation>3 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="205"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="210"/>
         <source>4 Days</source>
         <translation>4 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="206"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
         <source>5 Days</source>
         <translation>5 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="206"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
         <source>6 Days</source>
         <translation>6 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="206"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
         <source>Week</source>
         <translation>Semana</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="216"/>
         <source>Http Proxy</source>
         <translation>Http Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="216"/>
         <source>Socks5 Proxy</source>
         <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="471"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="484"/>
         <source>Remove schedule item</source>
         <translation>Eliminar horario</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="472"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="485"/>
         <source>Wish you remove the selected schedule item?</source>
         <translation>¿Desa usted eliminar el hoario seleccionado?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="669"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="682"/>
         <source>Clear Log</source>
         <translation>Limpiar Historial</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="399"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="473"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="671"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="408"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="486"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="684"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="59"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="60"/>
         <source> Enabled </source>
         <translation>Activado</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="59"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="60"/>
         <source> Start time </source>
         <translation>Hora inicio</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="59"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="60"/>
         <source> End time </source>
         <translation>Hora finalización</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="59"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="60"/>
         <source>Comments</source>
         <translation>Comentarios</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="399"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="474"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="672"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="408"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="487"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="551"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="564"/>
         <source>Language Setup</source>
         <translation>Instalación del Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="552"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="565"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Para poder aplicar el idioma seleccionado, el programa necesita ser reiniciado.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="553"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="570"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="566"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="583"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="627"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="640"/>
         <source>Select the download directory:</source>
         <translation>Seleccione el directorio de las descargas:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="637"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="650"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Seleccione donde encontrar la lib ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="670"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="683"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation>¿Está seguro de querer borrar el historial: descargas/conversiones?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="569"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="582"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Otro proceso esta actualmente trabajando, por favor párelo o espere a su finalización.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="182"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="187"/>
         <source>Tracker</source>
         <translation>Tracker</translation>
     </message>
@@ -2538,55 +2543,121 @@ font-size:12px;
 <context>
     <name>ScheduleItemEditImpl</name>
     <message>
-        <location filename="../../scheduleitemedit.ui" line="14"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="14"/>
         <source>Schedule edition</source>
         <translation>Editar horario</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemedit.ui" line="22"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="22"/>
         <source>Start time:</source>
         <translation>Hora de inicio</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemedit.ui" line="29"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="29"/>
         <source>End time:</source>
         <translation>Hora de finalización:</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemedit.ui" line="42"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="36"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="42"/>
+        <source>Set the start time</source>
+        <translation>Asigna una hora de inicio</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="39"/>
+        <source>Start time edit</source>
+        <translation>Caja de texto de la hora de inicio</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="52"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="58"/>
+        <source>Set the end time</source>
+        <translation>Asigna una hora de finalización</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="55"/>
+        <source>End time edit</source>
+        <translation>Caja de texto de la hora de finalización</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="68"/>
         <source>Comment:</source>
         <translation>Comentario:</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemedit.ui" line="52"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="75"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="81"/>
+        <source>Set a information comment (this field is optional)</source>
+        <translation>Asigna un comentario informativo (esta opción es opcional)</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="78"/>
+        <source>Comment edit</source>
+        <translation>Caja de texto del comentario</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="88"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="94"/>
+        <source>Enable or disable this schedule configuration</source>
+        <translation>Activa o desactiva la esta configuración de horario</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="91"/>
+        <source>Active checkbox</source>
+        <translation>Casilla de selección de activar y desactivar el horario</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="97"/>
         <source>Active</source>
         <translation>Activo</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemedit.ui" line="80"/>
-        <location filename="../../scheduleitemeditimpl.cpp" line="17"/>
-        <location filename="../../scheduleitemeditimpl.cpp" line="22"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="125"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="131"/>
+        <source>Accept and close this window</source>
+        <translation>Acepta y cierra la ventana</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="128"/>
+        <source>Ok button</source>
+        <translation>Botón de aceptar</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="153"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="159"/>
+        <source>Cancel and close this window</source>
+        <translation>Botón de cancelar y cerrar</translation>
+    </message>
+    <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="156"/>
+        <source>Cancel button</source>
+        <translation>Botón de cancelar</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="21"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="26"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="134"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemedit.ui" line="99"/>
+        <location filename="../../ui/scheduleitemedit.ui" line="162"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemeditimpl.cpp" line="15"/>
-        <location filename="../../scheduleitemeditimpl.cpp" line="20"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="19"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="24"/>
         <source>Invalid schedule configuration</source>
         <translation>Configuración errónea</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemeditimpl.cpp" line="16"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="20"/>
         <source>The start time cannot exceed the end time.</source>
         <translation>La hora de inicio no puede superar la hora de finalización.</translation>
     </message>
     <message>
-        <location filename="../../scheduleitemeditimpl.cpp" line="21"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="25"/>
         <source>The start time and end time cannot be equals.</source>
         <translation>La hora de inicio y la hora de finalización no pueden ser iguales.</translation>
     </message>

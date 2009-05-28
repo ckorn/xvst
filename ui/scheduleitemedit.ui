@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>161</height>
+    <height>196</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,10 +31,36 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QTimeEdit" name="timerStart"/>
+      <widget class="QTimeEdit" name="timerStart">
+       <property name="whatsThis">
+        <string>Set the start time</string>
+       </property>
+       <property name="accessibleName">
+        <string>Start time edit</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Set the start time</string>
+       </property>
+       <property name="displayFormat">
+        <string notr="true">hh:mm</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QTimeEdit" name="timerEnd"/>
+      <widget class="QTimeEdit" name="timerEnd">
+       <property name="whatsThis">
+        <string>Set the end time</string>
+       </property>
+       <property name="accessibleName">
+        <string>End time edit</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Set the end time</string>
+       </property>
+       <property name="displayFormat">
+        <string notr="true">hh:mm</string>
+       </property>
+      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label">
@@ -44,10 +70,29 @@
       </widget>
      </item>
      <item row="3" column="0" colspan="2">
-      <widget class="QLineEdit" name="edtComment"/>
+      <widget class="QLineEdit" name="edtComment">
+       <property name="whatsThis">
+        <string>Set a information comment (this field is optional)</string>
+       </property>
+       <property name="accessibleName">
+        <string>Comment edit</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Set a information comment (this field is optional)</string>
+       </property>
+      </widget>
      </item>
      <item row="4" column="0" colspan="2">
       <widget class="QCheckBox" name="chbActive">
+       <property name="whatsThis">
+        <string>Enable or disable this schedule configuration</string>
+       </property>
+       <property name="accessibleName">
+        <string>Active checkbox</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Enable or disable this schedule configuration</string>
+       </property>
        <property name="text">
         <string>Active</string>
        </property>
@@ -76,6 +121,15 @@
        <height>0</height>
       </size>
      </property>
+     <property name="whatsThis">
+      <string>Accept and close this window</string>
+     </property>
+     <property name="accessibleName">
+      <string>Ok button</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Accept and close this window</string>
+     </property>
      <property name="text">
       <string>Ok</string>
      </property>
@@ -94,6 +148,15 @@
        <width>100</width>
        <height>0</height>
       </size>
+     </property>
+     <property name="whatsThis">
+      <string>Cancel and close this window</string>
+     </property>
+     <property name="accessibleName">
+      <string>Cancel button</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Cancel and close this window</string>
      </property>
      <property name="text">
       <string>Cancel</string>
