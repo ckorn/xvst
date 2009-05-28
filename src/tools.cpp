@@ -454,6 +454,6 @@ int showModalDialog(QDialog *form)
 	// return result
 	return form->result();
 #else
-	return form->exec()
+	return form->exec();
 #endif
 }
