@@ -40,10 +40,12 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	schedule = new ScheduleController(programOptions->getOptionsPath(), programOptions->getOptionsFormat());
 	schedule->load();
 	// resize form if is needed
-#ifdef Q_WS_MACX
+#ifndef Q_OS_WIN32
 	resize(865, 500);
 	// resize menu
 	trvMenu->setMaximumWidth(180);
+#endif
+#ifdef Q_WS_MACX
 	// change lsvServices1 & lsvServices2 alternateBase color (better look&feel)
 	QPalette palette = lsvServices1->palette();
 	QColor color("#efefef");
