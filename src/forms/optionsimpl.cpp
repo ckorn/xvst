@@ -58,8 +58,12 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	// prepare schedules columns
 	QStringList headers;
 	headers << tr(" Enabled ") << tr(" Start time ") << tr(" End time ") << tr("Comments");
-	// add the headers
+	// add the schedule headers
 	lsvSchedules->setHeaderLabels(headers);
+	// set aligns to schedule headers
+	lsvSchedules->headerItem()->setTextAlignment(0, Qt::AlignHCenter | Qt::AlignVCenter);
+	lsvSchedules->headerItem()->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
+	lsvSchedules->headerItem()->setTextAlignment(2, Qt::AlignHCenter | Qt::AlignVCenter);
 	//signals
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
 	connect(spbSelectDownloadDir, SIGNAL(clicked()), this, SLOT(spbSelectDownloadDirPressed()));
@@ -269,6 +273,10 @@ void OptionsImpl::fillSchedules()
 		treeItem->setText(1, scheduleItem->getStartTime().toString("hh:mm"));
 		treeItem->setText(2, scheduleItem->getEndTime().toString("hh:mm"));
 		treeItem->setText(3, scheduleItem->getComment());
+		// set texts alignments
+		treeItem->setTextAlignment(0, Qt::AlignHCenter | Qt::AlignVCenter);
+		treeItem->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
+		treeItem->setTextAlignment(2, Qt::AlignHCenter | Qt::AlignVCenter);
 	}
 }
 
@@ -435,6 +443,10 @@ void OptionsImpl::spbAddNewSchedulePressed()
 		item->setText(1, addScheduleForm.timerStart->time().toString("hh:mm"));
 		item->setText(2, addScheduleForm.timerEnd->time().toString("hh:mm"));
 		item->setText(3, addScheduleForm.edtComment->text());
+		// set text alignments
+		item->setTextAlignment(0, Qt::AlignHCenter | Qt::AlignVCenter);
+		item->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
+		item->setTextAlignment(2, Qt::AlignHCenter | Qt::AlignVCenter);
 	}
 }
 

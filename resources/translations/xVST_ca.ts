@@ -2198,7 +2198,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="1367"/>
         <source>Customize my schedule download</source>
-        <translation>Personalitzar els meus horaris de descàrregues</translation>
+        <translation>Personalitza els meus horaris de descàrregues</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1429"/>
