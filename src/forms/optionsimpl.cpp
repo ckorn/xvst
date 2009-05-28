@@ -50,6 +50,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	palette.setColor(QPalette::Disabled, QPalette::AlternateBase, color);
 	palette.setColor(QPalette::Active, QPalette::AlternateBase, color);
 	palette.setColor(QPalette::Inactive, QPalette::AlternateBase, color);
+	palette.setColor(QPalette::Disabled, QPalette::Base, palette.base().color());
 	lsvServices1->setPalette(palette);
 	lsvServices2->setPalette(palette);
 	lsvSchedules->setPalette(palette);
