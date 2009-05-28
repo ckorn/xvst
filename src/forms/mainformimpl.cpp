@@ -406,7 +406,7 @@ void MainFormImpl::updatesClicked()
 	if (!isVisible()) restoreAppClicked();
 	
 	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this, Qt::Sheet);
-	showModalDialog(&checkUpdatesForm); //checkUpdatesForm.exec();
+	checkUpdatesForm.exec();
 	
 	spbUpdates->setEnabled(true);
 	actUpdates->setEnabled(true);

@@ -574,7 +574,7 @@ void OptionsImpl::btnCheckNowClicked()
 	btnCheckNow->setEnabled(false);
 
 	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this, Qt::Sheet);
-	showModalDialog(&checkUpdatesForm);
+	checkUpdatesForm.exec();
 
 	btnCheckNow->setEnabled(true);
 }
