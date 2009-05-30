@@ -862,12 +862,18 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="90"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="91"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="93"/>
         <source>Adult web sites:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/forms/informationimpl.cpp" line="91"/>
+        <source>Adult sites are blocked...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/informationimpl.cpp" line="94"/>
         <source>Music web sites:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2365,173 +2371,173 @@ font-size:12px;
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="151"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="153"/>
         <source>Basic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="157"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="159"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="164"/>
         <source>Session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="581"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="169"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="583"/>
         <source>Updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="174"/>
         <source>Ups!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="179"/>
         <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="182"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="184"/>
         <source>Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="187"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="189"/>
         <source>Tracker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="210"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="212"/>
         <source>Day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="210"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="212"/>
         <source>2 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="210"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="212"/>
         <source>3 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="210"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="212"/>
         <source>4 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
         <source>5 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
         <source>6 Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="211"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
         <source>Week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="216"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="218"/>
         <source>Http Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="216"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="218"/>
         <source>Socks5 Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="484"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="486"/>
         <source>Remove schedule item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="485"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="487"/>
         <source>Wish you remove the selected schedule item?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="564"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="566"/>
         <source>Language Setup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="565"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="567"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="566"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="583"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="568"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="585"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="582"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="584"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="640"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="642"/>
         <source>Select the download directory:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="650"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="652"/>
         <source>Select the ffmpeg lib:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="682"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="684"/>
         <source>Clear Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="683"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="408"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="486"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="684"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="410"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="488"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="686"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="60"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="62"/>
         <source> Enabled </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="60"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="62"/>
         <source> Start time </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="60"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="62"/>
         <source> End time </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="60"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="62"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="408"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="487"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="410"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="489"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="687"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>

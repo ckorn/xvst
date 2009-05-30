@@ -20,6 +20,8 @@
 	- KeezMovies
 	- Freecaster
 
+- Removed adult links from Information window when "Block adults content" is enabled
+
 - Updated completed download pop-up window 
 
 - Fixed bug (Error: re-directions were not correctly processed on HEAD requests)
@@ -27,6 +29,7 @@
 - Fixed bug (Error: ICO and GIF formats weren't supported on static compilations)
 
 - Improved visualization of video information
+- Improved visualization of options menu
 
 - Changed plug-ins:
 	- Mp3Tube is now YehPlay

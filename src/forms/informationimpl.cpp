@@ -87,7 +87,10 @@ void InformationImpl::buildVideoServicesList(VideoInformation *videoInformation)
 	QString html;
 	html += tr("<p>Total websites supported (plugins installed): <strong>%1</strong></p>").arg(videoInformation->pluginsCount());
 	html += getPluginsAsHtml(tr(""), standardPlugins);
-	html += getPluginsAsHtml(tr("Adult web sites:"), adultPlugins);
+	if (ProgramOptions::getProgramOptionsInstance()->getBlockAdultContent())
+		html += tr("Adult web sites:") + "<ul><li><font color='red'>" + tr("Adult sites are blocked...") + "</font></li></ul>";
+	else // display adult sites
+		html += getPluginsAsHtml(tr("Adult web sites:"), adultPlugins);
 	html += getPluginsAsHtml(tr("Music web sites:"), musicPlugins);
 	// display html
 	rchServices->setHtml(html);

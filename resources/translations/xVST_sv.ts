@@ -689,6 +689,10 @@ font-size:12px;
         <source>Music web sites:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Adult sites are blocked...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoadingImpl</name>
