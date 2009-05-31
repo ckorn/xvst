@@ -14,7 +14,7 @@
    <string>Options</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/resources.qrc">
+   <iconset>
     <normaloff>:/buttons/images/options.png</normaloff>:/buttons/images/options.png</iconset>
   </property>
   <property name="sizeGripEnabled">
@@ -81,7 +81,7 @@
    <item row="0" column="1">
     <widget class="QStackedWidget" name="pgOptions">
      <property name="currentIndex">
-      <number>5</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="pgBasic">
       <layout class="QGridLayout">
@@ -1500,7 +1500,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
+                 <iconset>
                   <normaloff>:/buttons/images/add.png</normaloff>:/buttons/images/add.png</iconset>
                 </property>
                 <property name="autoRaise">
@@ -1535,7 +1535,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
+                 <iconset>
                   <normaloff>:/buttons/images/pencil.png</normaloff>:/buttons/images/pencil.png</iconset>
                 </property>
                 <property name="autoRaise">
@@ -1567,7 +1567,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../resources/resources.qrc">
+                 <iconset>
                   <normaloff>:/buttons/images/cross.png</normaloff>:/buttons/images/cross.png</iconset>
                 </property>
                 <property name="autoRaise">
@@ -2055,9 +2055,7 @@
   <tabstop>btnOk</tabstop>
   <tabstop>btnCancel</tabstop>
  </tabstops>
- <resources>
-  <include location="../resources/resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>btnCancel</sender>

@@ -1943,6 +1943,22 @@ betűméret:12px;
         <source>Wish you remove the selected schedule item?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlocking password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid UPS! password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ScheduleItemEditImpl</name>
@@ -2028,6 +2044,53 @@ betűméret:12px;
     </message>
     <message>
         <source>Cancel and close this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished">Mégse gomb</translation>
+    </message>
+</context>
+<context>
+    <name>UPSPasswordImpl</name>
+    <message>
+        <source>&lt;b&gt;Enter a security password to prevent unlock adult sites without your permission.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locking password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Mégse</translation>
+    </message>
+    <message>
+        <source>UPS! Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Field where you enter the password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm and close the window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">Ok gomb</translation>
+    </message>
+    <message>
+        <source>Discard and close window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

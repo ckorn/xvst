@@ -2,6 +2,7 @@
 -----
 
 - Added new schedule option
+- Added password for UPS! adult content blocking
 - Added ability to Drop video directly to Downloads list
 - Added loading window
 - Added 14 new plug-in:
@@ -21,6 +22,7 @@
 	- Freecaster
 
 - Removed adult links from Information window when "Block adults content" is enabled
+- Removed adult plugins from blocking list when "Block adults content" is enabled
 
 - Updated completed download pop-up window 
 

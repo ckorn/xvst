@@ -93,6 +93,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	connect(spbRemoveSchedule, SIGNAL(clicked()), this, SLOT(spbRemoveSchedulePressed()));
 	connect(lsvSchedules, SIGNAL(itemSelectionChanged()), this, SLOT(lsvSchedulesItemSelectionChanged()));
 	connect(lsvSchedules, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(lsvSchedulesDoubleClicked(QModelIndex)));
+	connect(chbDisableAdultSupport, SIGNAL(clicked(bool)), this, SLOT(chbDisableAdultSupportClicked(bool)));
 	// create menu
 	createMenu();
 	// add info
@@ -101,6 +102,8 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	fillLanguages();
 	// add schedules
 	fillSchedules();
+	// add plugins
+	fillPluginsLists();
 	// set values
 	setInitialOptionsValues();
 	// can update?
@@ -217,23 +220,6 @@ void OptionsImpl::fillInitialData()
 	itemsToAdd.clear();
 	itemsToAdd	<< tr("Http Proxy") << tr("Socks5 Proxy");
 	cmbProxyType->addItems(itemsToAdd);
-
-	// set plugins list
-	lsvServices1->header()->hide();
-	lsvServices2->header()->hide();
-	QStringList plugins = videoInformation->getPluginsCompleteList();
-
-	for (int n = 0; n < plugins.count(); n++)
-	{
-		QStringList info = plugins.at(n).split("|");
-
-		QTreeWidgetItem *item = new QTreeWidgetItem(lsvServices1);
-		item->setData(0, Qt::UserRole, info.at(0)); // store the host id
-		item->setText(0, info.at(1)); // caption
-		item->setIcon(0, QIcon(videoInformation->getHostImage(info.at(0))));
-		item->setSizeHint(0, QSize(18,18));
-	}
-	servicesItemSelectionChanged();
 }
 
 void OptionsImpl::fillLanguages()
@@ -280,6 +266,27 @@ void OptionsImpl::fillSchedules()
 		treeItem->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
 		treeItem->setTextAlignment(2, Qt::AlignHCenter | Qt::AlignVCenter);
 	}
+}
+
+void OptionsImpl::fillPluginsLists()
+{
+	// set plugins list
+	lsvServices1->header()->hide();
+	lsvServices2->header()->hide();
+	QStringList plugins = videoInformation->getPluginsCompleteList();
+
+	for (int n = 0; n < plugins.count(); n++)
+	{
+		QStringList info = plugins.at(n).split("|");
+
+		QTreeWidgetItem *item = new QTreeWidgetItem(lsvServices1);
+		item->setData(0, Qt::UserRole, info.at(0)); // store the host id
+		item->setText(0, info.at(1)); // caption
+		item->setIcon(0, QIcon(videoInformation->getHostImage(info.at(0))));
+		item->setSizeHint(0, QSize(18,18));
+	}
+	servicesItemSelectionChanged();
+	showAdultSites(!programOptions->getBlockAdultContent());
 }
 
 void OptionsImpl::setInitialOptionsValues()
@@ -410,6 +417,34 @@ QString OptionsImpl::YesNoToString(bool value)
 	return value ? tr("Yes") : tr("No");
 }
 
+void OptionsImpl::hideAdultSitesFromList(QTreeWidget *list, bool visible)
+{
+	for (int n = 0; n < list->topLevelItemCount(); n++)
+	{
+		QString pluginId = list->topLevelItem(n)->data(0, Qt::UserRole).toString();
+		VideoInformationPlugin *plugin = videoInformation->getRegisteredPlugin(pluginId);
+		// exists?
+		if (plugin != NULL)
+		{
+			if (plugin->hasAdultContent() && !visible)
+				list->topLevelItem(n)->setHidden(true);
+			else // make it visible
+				list->topLevelItem(n)->setHidden(false);
+		}
+	}
+}
+
+void OptionsImpl::showAdultSites(bool visible)
+{
+	hideAdultSitesFromList(lsvServices1, visible);
+	hideAdultSitesFromList(lsvServices2, visible);
+	// disable speed buttons
+	spbAdd->setEnabled(false);
+	spbAddAll->setEnabled(false);
+	spbRemove->setEnabled(false);
+	spbRemoveAll->setEnabled(false);
+}
+
 void OptionsImpl::chbSaveRestoreStateClicked(bool checked)
 {
 	chbDontrestoreDownloads->setEnabled(checked);
@@ -504,6 +539,45 @@ void OptionsImpl::lsvSchedulesItemSelectionChanged()
 void OptionsImpl::lsvSchedulesDoubleClicked(QModelIndex)
 {
 	spbEditSchedulePressed();
+}
+
+void OptionsImpl::chbDisableAdultSupportClicked(bool checked)
+{
+	UPSPasswordImpl upsPasswordForm(this, Qt::Sheet);
+
+	// if we want UNLOCK
+	if (!checked)
+	{
+		// change window texts
+		upsPasswordForm.lblTitle->setText(tr("<b>Enter the security password to unlock adult sites.</b>"));
+		upsPasswordForm.lblPassword->setText(tr("Unlocking password:"));
+		// display password dialog and wait for user selection
+		if (showModalDialog(&upsPasswordForm) == QDialog::Accepted)
+		{
+			// compare passwords
+			if (upsPasswordForm.edtPassword->text() != programOptions->getBlockAdultContentPassword())
+			{
+				QMessageBox::critical(this,
+									  tr("Invalid UPS! password"),
+									  tr("You entered an invalid UPS! password and the adults contents will continue locked."),
+									  tr("Ok"));
+				// check again this option...
+				chbDisableAdultSupport->setChecked(true);
+			} // password is ok
+		}
+		else // user did cancel (so check this option again)
+			chbDisableAdultSupport->setChecked(true);
+	}
+	else // entering new password
+	{
+		// display password dialog and wait for user selection
+		if (showModalDialog(&upsPasswordForm) == QDialog::Accepted)
+			programOptions->setBlockAdultContentPassword(upsPasswordForm.edtPassword->text());
+		else
+			chbDisableAdultSupport->setChecked(false);
+	}
+	// update visible sites
+	showAdultSites(!chbDisableAdultSupport->isChecked());
 }
 
 void OptionsImpl::menuCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous)
@@ -719,6 +793,7 @@ void OptionsImpl::spbRemoveAllPressed()
 	lsvServices2->clear();
 	lsvServices1->sortItems(0, Qt::AscendingOrder);
 	servicesItemSelectionChanged();
+	showAdultSites(!chbDisableAdultSupport->isChecked());
 }
 
 void OptionsImpl::spbAddAllPressed()
@@ -734,6 +809,7 @@ void OptionsImpl::spbAddAllPressed()
 	lsvServices1->clear();
 	lsvServices2->sortItems(0, Qt::AscendingOrder);
 	servicesItemSelectionChanged();
+	showAdultSites(!chbDisableAdultSupport->isChecked());
 }
 
 void OptionsImpl::spbAddPressed()

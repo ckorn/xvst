@@ -148,7 +148,7 @@ VideoInformationPlugin *VideoInformation::getRegisteredPlugin(const int index)
 {
 	if (validItemIndex(index))
 		return plugins->at(index);
-	else
+	else // not found
 		return NULL;
 }
 
@@ -159,6 +159,19 @@ VideoInformationPlugin* VideoInformation::getRegisteredPlugin(const QString file
 		VideoInformationPlugin *plugin = plugins->at(n);
 		// compare names
 		if (plugin->getScriptFile(onlyFileName) == fileName)
+			return plugin;
+	}
+	// not found
+	return NULL;
+}
+
+VideoInformationPlugin* VideoInformation::getRegisteredPlugin(const QString pluginId)
+{
+	for (int n = 0; n < plugins->count(); n++)
+	{
+		VideoInformationPlugin *plugin = plugins->at(n);
+		// compare names
+		if (plugin->getID() == pluginId)
 			return plugin;
 	}
 	// not found

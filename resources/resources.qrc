@@ -68,4 +68,7 @@
         <file>images/finished_background.png</file>
         <file>images/loading.png</file>
     </qresource>
+    <qresource prefix="/ups_lock_unlock" >
+        <file>images/ups_lock_unlock.png</file>
+    </qresource>
 </RCC>

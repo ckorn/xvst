@@ -34,6 +34,7 @@
 #include "checkupdatesimpl.h"
 #include "newlanguagesimpl.h"
 #include "scheduleitemeditimpl.h"
+#include "upspasswordimpl.h"
 //
 #include "../options.h"
 #include "../videolistcontroller.h"
@@ -58,11 +59,14 @@ Q_OBJECT
 		void fillInitialData();
 		void fillLanguages();
 		void fillSchedules();
+		void fillPluginsLists();
 		void setInitialOptionsValues();
 		void setOptionsValues();
 		void dragEnterEvent(QDragEnterEvent *event);
 		void dropEvent(QDropEvent *event);
 		QString YesNoToString(bool value);
+		void hideAdultSitesFromList(QTreeWidget *list, bool visible);
+		void showAdultSites(bool visible);
 	public:
 		OptionsImpl(ProgramOptions *programOptions, SessionManager *sessionManager,
 			VideoListController *videoList, int lastOptionsPage,
@@ -97,5 +101,6 @@ Q_OBJECT
 		void spbRemoveSchedulePressed();
 		void lsvSchedulesItemSelectionChanged();
 		void lsvSchedulesDoubleClicked(QModelIndex index);
+		void chbDisableAdultSupportClicked(bool checked = false);
 };
 #endif

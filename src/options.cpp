@@ -129,6 +129,7 @@ void ProgramOptions::load()
 
 	blockAdultContent = settings.value("configuration/blockAdultContent", blockAdultContent).toBool();
 	blockedWebsitesList = settings.value("configuration/blockedWebsitesList", blockAdultContent).toString();
+	blockAdultContentPassword = settings.value("configuration/blockAdultContentPassword", blockAdultContentPassword).toString();
 
 	dragDropLeft = settings.value("configuration/dragDropLeft", dragDropTop).toInt();
 	dragDropTop = settings.value("configuration/dragDropTop", dragDropTop).toInt();
@@ -207,6 +208,7 @@ void ProgramOptions::save()
 
 	settings.setValue("blockAdultContent", blockAdultContent);
 	settings.setValue("blockedWebsitesList", blockedWebsitesList);
+	settings.setValue("blockAdultContentPassword", blockAdultContentPassword);
 
 	settings.setValue("maxActiveDownloads", maxActiveDownloads);
 
@@ -294,6 +296,7 @@ void ProgramOptions::setDefault()
 
 	blockAdultContent = false;
 	blockedWebsitesList = "";
+	blockAdultContentPassword = "";
 
 	saveRestoreSessions = true;
 	saveLogDownloadedVideos = true;
@@ -815,4 +818,14 @@ void ProgramOptions::setScheduleEnabled(bool value)
 bool ProgramOptions::getScheduleEnabled()
 {
 	return scheduleEnabled;
+}
+
+void ProgramOptions::setBlockAdultContentPassword(QString value)
+{
+	blockAdultContentPassword = value;
+}
+
+QString ProgramOptions::getBlockAdultContentPassword()
+{
+	return blockAdultContentPassword;
 }

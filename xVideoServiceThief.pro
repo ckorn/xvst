@@ -28,7 +28,8 @@ FORMS = ui/addvideo.ui \
     ui/newlanguages.ui \
     ui/welcomedonate.ui \
     ui/loadingimpl.ui \
-	ui/scheduleitemedit.ui
+    ui/scheduleitemedit.ui \
+	ui/upspassword.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/checkupdatesimpl.h \
     src/forms/completedpopupimpl.h \
@@ -46,7 +47,8 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/loadingimpl.h \
     src/forms/windowsvistadetectedimpl.h \
     src/forms/newlanguagesimpl.h \
-	src/forms/scheduleitemeditimpl.h \
+    src/forms/scheduleitemeditimpl.h \
+	src/forms/upspasswordimpl.h \
     src/pakunpak/pakunpak.h \
     src/http.h \
     src/languages.h \
@@ -86,7 +88,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/loadingimpl.cpp \
     src/forms/windowsvistadetectedimpl.cpp \
     src/forms/newlanguagesimpl.cpp \
-	src/forms/scheduleitemeditimpl.cpp \
+    src/forms/scheduleitemeditimpl.cpp \
+	src/forms/upspasswordimpl.cpp \
     src/pakunpak/pakunpak.cpp \
     src/http.cpp \
     src/languages.cpp \

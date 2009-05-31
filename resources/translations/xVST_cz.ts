@@ -2375,105 +2375,125 @@ font-size:12px;
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="153"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="156"/>
         <source>Basic</source>
         <translation>Zálkadní</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="159"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="162"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="164"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="167"/>
         <source>Session</source>
         <translation>Sezení</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="169"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="583"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="655"/>
         <source>Updates</source>
         <translation>Aktualizace</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="174"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="177"/>
         <source>Ups!</source>
         <translation>Oops!</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="179"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="182"/>
         <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="184"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="187"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="212"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="215"/>
         <source>Day</source>
         <translation>Den</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="212"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="215"/>
         <source>2 Days</source>
         <translation>2 Dny</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="212"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="215"/>
         <source>3 Days</source>
         <translation>3 Dny</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="212"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="215"/>
         <source>4 Days</source>
         <translation>4 Dny</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="216"/>
         <source>5 Days</source>
         <translation>5 Dnů</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="216"/>
         <source>6 Days</source>
         <translation>6 Dnů</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="213"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="216"/>
         <source>Week</source>
         <translation>Týden</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="218"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="221"/>
         <source>Http Proxy</source>
         <translation>Http Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="218"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="221"/>
         <source>Socks5 Proxy</source>
         <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="486"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="521"/>
         <source>Remove schedule item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="487"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="522"/>
         <source>Wish you remove the selected schedule item?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="684"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="552"/>
+        <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="553"/>
+        <source>Unlocking password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="561"/>
+        <source>Invalid UPS! password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="562"/>
+        <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="756"/>
         <source>Clear Log</source>
         <translation>Vyčistit log</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="410"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="488"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="686"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="417"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="523"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="758"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
@@ -2498,50 +2518,51 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="410"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="489"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="687"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="417"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="524"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="759"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="566"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="638"/>
         <source>Language Setup</source>
         <translation>Jazyková nastavení</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="567"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="639"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Změna jazyka se projeví až při dalším startu programu.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="568"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="585"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="563"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="640"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="657"/>
         <source>Ok</source>
         <translation>Budiž</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="642"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="714"/>
         <source>Select the download directory:</source>
         <translation>Vyberte složku pro stažená videa:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="652"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="724"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Vyberte knihovnu ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="757"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation>Opravdu chcete zmazat log stahování a konverzí?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="584"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="656"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Právě se provádí jiný úkol. Můžete ho přerušit nebo počkat až se dokončí.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="189"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="192"/>
         <source>Tracker</source>
         <translation>Tracker</translation>
     </message>
@@ -2666,6 +2687,67 @@ font-size:12px;
         <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="25"/>
         <source>The start time and end time cannot be equals.</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UPSPasswordImpl</name>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="14"/>
+        <source>UPS! Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="39"/>
+        <source>&lt;b&gt;Enter a security password to prevent unlock adult sites without your permission.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="49"/>
+        <source>Locking password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="56"/>
+        <location filename="../../ui/upspassword.ui" line="62"/>
+        <source>Field where you enter the password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="59"/>
+        <source>Password edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="91"/>
+        <location filename="../../ui/upspassword.ui" line="97"/>
+        <source>Confirm and close the window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="94"/>
+        <source>Ok button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="100"/>
+        <source>Ok</source>
+        <translation type="unfinished">Budiž</translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="116"/>
+        <location filename="../../ui/upspassword.ui" line="122"/>
+        <source>Discard and close window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="119"/>
+        <source>Cancel button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/upspassword.ui" line="125"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Zrušit</translation>
     </message>
 </context>
 <context>
@@ -2895,12 +2977,12 @@ font-size:12px;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="332"/>
+        <location filename="../../src/videoinformation.cpp" line="345"/>
         <source>Unsupported video service</source>
         <translation>Nepodporovaná služba</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="335"/>
+        <location filename="../../src/videoinformation.cpp" line="348"/>
         <source>Invalid URL</source>
         <translation>Špatné URL</translation>
     </message>

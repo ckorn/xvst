@@ -178,7 +178,9 @@ Q_OBJECT
 		/*! Get a registered VideoInformationPlugin */
 		VideoInformationPlugin* getRegisteredPlugin(const int index);
 		/*! Get a registered VideoInformationPlugin by file name (*.js) */
-		VideoInformationPlugin* getRegisteredPlugin(const QString fileName, const bool onlyFileName = true);
+		VideoInformationPlugin* getRegisteredPlugin(const QString fileName, const bool onlyFileName);
+		/*! Get a registered VideoInformationPlugin by id */
+		VideoInformationPlugin* getRegisteredPlugin(const QString pluginId);
 		/*! Get the list of all registered plugins */
 		QStringList getPluginsList(bool asCaptions = true);
 		/*! Get the list of all registered plugins (host + caption) */

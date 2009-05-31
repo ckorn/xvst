@@ -62,6 +62,7 @@ Q_OBJECT
 		bool saveLogDownloadedVideos;	//!< flag for know if can make a log with all downloaded files
 		bool dontRememberDownloadedVideos;	//!< flag for know if can remember "completed" videos
 		bool blockAdultContent;			//!< flag for know if adult content is allowed or not
+		QString blockAdultContentPassword;	//!< Ups password protection
 		QString blockedWebsitesList;	//!< fist of services which are blocked (not allowed)	int proxyPort;
 		int maxActiveDownloads;			//!< Maximum active downloads
 		bool useProxy;					//!< flag for know if Proxy is enabled or not
@@ -213,6 +214,8 @@ Q_OBJECT
 		bool getDisplayWelcomeMessage();
 		void setScheduleEnabled(bool value);
 		bool getScheduleEnabled();
+		void setBlockAdultContentPassword(QString value);
+		QString getBlockAdultContentPassword();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();
