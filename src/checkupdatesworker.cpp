@@ -37,7 +37,10 @@ void CheckUpdatesWorker::checkUpdates()
 void CheckUpdatesWorker::waitThread()
 {
 	while (updates->isRunning())
-		qApp->processEvents();
+	{
+		//qDebug() << "loooop";
+		//qApp->processEvents(); // this causes a terrorific crash xD
+	}
 }
 
 void CheckUpdatesWorker::updatesChecked(bool hasUpdates)

@@ -482,7 +482,7 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 				// validate if all main information is assigned
 				loaded = !version.isEmpty() && !minVersion.isEmpty() && !ID.isEmpty() && !caption.isEmpty();
 				// if this plugin has been loaded, then try to load the service icon
-				if (loaded && compareVersions(minVersion, PROGRAM_VERSION_SHORT) <= 0)
+				if (loaded && compareVersions(minVersion, PROGRAM_VERSION_SHORT) >= 0)
 				{
 					QScriptValue func_getIcon = engine->evaluate("getVideoServiceIcon");
 					// check if getVideoServiceIcon function has been loaded

@@ -1053,7 +1053,7 @@ void MainFormImpl::updateVisualControls()
 	actCancelDownload->setEnabled(btnCancelDownload->isEnabled());
 	actClearList->setEnabled(btnClearList->isEnabled());
 	actClearCompleted->setEnabled(btnClearCompleted->isEnabled());
-	
+
 	// update tray icon
 	QString trayIconStr = videoList->isWorking() ? ":/icons/images/film_save.png" : ":/icons/images/film_go.png";
 	if (lastTrayIconStr != trayIconStr)

@@ -212,14 +212,22 @@ int subVersionToInt(QString subVersion)
 {
 	subVersion = subVersion.toLower();
 	
-	if (subVersion == "alpha")
+	if (subVersion == "alpha" || subVersion == "a")
 		return 1;
-	else if (subVersion == "beta")
+	else if (subVersion == "beta" || subVersion == "b")
 		return 2;
-	else if (subVersion == "final")
+	else if (subVersion == "final" || subVersion == "f")
 		return 3;
 	else
 		return 4;
+}
+
+QString convertEmbededSubVersionToStandardSubVersion(QString version)
+{
+	version = QString(version).replace("a", " Alpha");
+	version = QString(version).replace("b", " Beta");
+	version = QString(version).replace("f", " Final");
+	return version;
 }
 
 int compareVersions(QString version1, QString version2)
@@ -239,6 +247,9 @@ int compareVersions(QString version1, QString version2)
 		int max = num1 != num2 ? (num1 > num2 ? num1 : num2) : num1;
 		// get subversions
 		QString subVersion1, subVersion2;
+		// convert a embeded version to standard version (i.e: 2.0a -> 2.0 Alpha)
+		s1 = convertEmbededSubVersionToStandardSubVersion(s1);
+		s2 = convertEmbededSubVersionToStandardSubVersion(s2);
 		// get major version and sub-version (version1)
 		if (getTokenCount(s1, " ") > 1)
 		{

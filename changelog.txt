@@ -1,11 +1,13 @@
-2.1a:
------
+2.1:
+----
+
+- First non ALPHA version!
 
 - Added new schedule option
 - Added password for UPS! adult content blocking
 - Added ability to Drop video directly to Downloads list
 - Added loading window
-- Added 14 new plug-in:
+- Added 14 new plug-ins:
 	- GodOfHumor
 	- Kontraband
 	- Pugorama
@@ -24,11 +26,14 @@
 - Removed adult links from Information window when "Block adults content" is enabled
 - Removed adult plugins from blocking list when "Block adults content" is enabled
 
-- Updated completed download pop-up window 
+- Updated completed download pop-up window
+- Updated PayPal icon in main window
 
 - Fixed bug (Error: re-directions were not correctly processed on HEAD requests)
 - Fixed bug (Error: infinite re-directions were not controlled)
 - Fixed bug (Error: ICO and GIF formats weren't supported on static compilations)
+- Fixed bug (Error: The "short" subversions were not compared correctly (i.e: 2.0.0a was equal to 2.0.0))
+- Fixed bug (Error: After cancel the updates the progam was finishing throwing an exception)
 
 - Improved visualization of video information
 - Improved visualization of options menu

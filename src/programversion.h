@@ -26,8 +26,8 @@
 #ifndef __PROGRAMVERSION_H__
 #define __PROGRAMVERSION_H__
 
-static const QString PROGRAM_VERSION		= "2.1 Alpha"; 	//<! Current program version
-static const QString PROGRAM_VERSION_SHORT	= "2.1a"; 		//<! Current program version (short version)
+static const QString PROGRAM_VERSION		= "2.1"; 	//<! Current program version
+static const QString PROGRAM_VERSION_SHORT	= "2.1";	//<! Current program version (short version)
 
 #ifdef Q_OS_WIN32
 static const QString CURRENT_OS = "MSWINDOWS"; //<! Microsoft windows version
@@ -49,15 +49,5 @@ static const QString COMPILATION_MODE = "FRAMEWORKS";	//<! Frameworks compilatio
 static const QString COMPILATION_MODE = "DYNAMIC";		//<! Dynamic compilation
 	#endif
 #endif
-
-/*
-#ifndef Q_WS_MAC
-	#ifdef STATIC_BUILD
-static const QString COMPILATION_MODE = "STATIC"; //<! Static compilation
-	#else
-static const QString COMPILATION_MODE = "DYNAMIC"; //<! Dynamic compilation
-	#endif
-#endif
-*/
 
 #endif // __PROGRAMVERSION_H__
