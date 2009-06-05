@@ -554,8 +554,9 @@ void OptionsImpl::chbDisableAdultSupportClicked(bool checked)
 		// display password dialog and wait for user selection
 		if (showModalDialog(&upsPasswordForm) == QDialog::Accepted)
 		{
+			QString password_MD5 = QCryptographicHash::hash(upsPasswordForm.edtPassword->text().toAscii(), QCryptographicHash::Md5).toHex();
 			// compare passwords
-			if (upsPasswordForm.edtPassword->text() != programOptions->getBlockAdultContentPassword())
+			if (password_MD5 != programOptions->getBlockAdultContentPassword())
 			{
 				QMessageBox::critical(this,
 									  tr("Invalid UPS! password"),
@@ -572,7 +573,10 @@ void OptionsImpl::chbDisableAdultSupportClicked(bool checked)
 	{
 		// display password dialog and wait for user selection
 		if (showModalDialog(&upsPasswordForm) == QDialog::Accepted)
-			programOptions->setBlockAdultContentPassword(upsPasswordForm.edtPassword->text());
+		{
+			QString password_MD5 = QCryptographicHash::hash(upsPasswordForm.edtPassword->text().toAscii(), QCryptographicHash::Md5).toHex();
+			programOptions->setBlockAdultContentPassword(password_MD5);
+		}
 		else
 			chbDisableAdultSupport->setChecked(false);
 	}
