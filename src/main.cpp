@@ -35,6 +35,7 @@
 	#include <QtPlugin>
 	Q_IMPORT_PLUGIN(qico)
 	Q_IMPORT_PLUGIN(qgif)
+	Q_IMPORT_PLUGIN(qjpeg)
 #endif
 
 int main(int argc, char ** argv)
