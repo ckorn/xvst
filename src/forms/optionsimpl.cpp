@@ -418,12 +418,12 @@ void OptionsImpl::setOptionsValues()
 	schedule->save();
 }
 
-void OptionsImpl::dragEnterEvent(QDragEnterEvent */*event*/)
+void OptionsImpl::dragEnterEvent(QDragEnterEvent* /*event*/)
 {
 	qDebug() << "dragEnterEvent";
 }
 
-void OptionsImpl::dropEvent(QDropEvent */*event*/)
+void OptionsImpl::dropEvent(QDropEvent* /*event*/)
 {
 	qDebug() << "dropEvent";
 }
@@ -619,7 +619,7 @@ void OptionsImpl::menuCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetI
 	}
 }
 
-void OptionsImpl::langCurrentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem */*previous*/)
+void OptionsImpl::langCurrentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* /*previous*/)
 {
 	if (current != NULL)
 	{
@@ -663,7 +663,7 @@ void OptionsImpl::btnUseThisClicked()
 							 QString(), 0, 1);
 }
 
-void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem */*item*/, int /*column*/)
+void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem* /*item*/, int /*column*/)
 {
 	if (btnUseThis->isEnabled())
 		btnUseThisClicked();

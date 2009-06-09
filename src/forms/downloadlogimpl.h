@@ -30,8 +30,9 @@
 
 #include "ui_downloadlog.h"
 
-class LogEntry;
 class VideoInformation;
+
+struct LogEntry;
 
 class LogTreeWidgetItem : public QTreeWidgetItem
 {

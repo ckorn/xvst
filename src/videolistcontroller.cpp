@@ -116,7 +116,7 @@ void VideoListController::swapVideoItems(VideoItem *from, VideoItem *to)
 	}
 }
 
-void VideoListController::timerEvent(QTimerEvent */*event*/)
+void VideoListController::timerEvent(QTimerEvent* /*event*/)
 {
 	// get first null item to, to start get info
 	if (videoInformation->canGetInformation())

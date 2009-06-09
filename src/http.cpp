@@ -500,16 +500,16 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 
 	// check if is already downloading another file
 	if (isDownloading()) 
-		return ALREADY_DOWNLOADING;
+		return _ALREADY_DOWNLOADING;
 
 	// check if is a valid URL
 	if (!validURL(URL.toString())) 
-		return INVALID_URL;
+		return _INVALID_URL;
 
 	// create the destination path, if it don't exists
 	if (!QDir(destination).exists())
 		if (!QDir(destination).mkpath(destination))
-			return UNABLE_CREATE_DIR;
+			return _UNABLE_CREATE_DIR;
 
 	// set a default name (only if it is empty)
 	if (fileName.isEmpty())
@@ -532,7 +532,7 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 	{
 		delete file;
 		file = NULL;
-		return UNABLE_CREATE_FILE;
+		return _UNABLE_CREATE_FILE;
 	}
 
 	// set file info
@@ -559,14 +559,14 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 {
 	// check if is already downloading another file
 	if (isDownloading()) 
-		return ALREADY_DOWNLOADING;
+		return _ALREADY_DOWNLOADING;
 
 	// check if is a valid URL
 	if (!validURL(URL.toString())) 
-		return INVALID_URL;
+		return _INVALID_URL;
 
 	if (!QFile::exists(fileName))
-		return MISSING_RESUME_FILE;
+		return _MISSING_RESUME_FILE;
 
 	// open the existent file in append mode
 	file = new QFile(fileName);
@@ -574,7 +574,7 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 	{
 		delete file;
 		file = NULL;
-		return UNABLE_APPEND_FILE;
+		return _UNABLE_APPEND_FILE;
 	}
 
 	// set file info
@@ -875,7 +875,7 @@ void Http::requestFinished(int id, bool error)
 				// abort all (and clear pending requests)
 				http->clearPendingRequests();
 				// send the error signal
-				emit downloadError(INVALID_FILE_SIZE);
+				emit downloadError(_INVALID_FILE_SIZE);
 			}
 			else
 			{

@@ -45,7 +45,6 @@ struct LogEntry
 class ProgramOptions;
 class VideoListController;
 class VideoItem;
-class LogEntry;
 
 class SessionManager : public QObject
 {

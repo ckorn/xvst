@@ -44,9 +44,10 @@ static const QString PLUGINS_IMAGE_CACHE_DIR = "/plugins-cache/";
 
 class Http;
 class VideoItem;
-class VideoDefinition;
 class VideoInformation;
 class SearchResults;
+
+struct VideoDefinition;
 
 /*! Plugin information class */
 class VideoInformationPlugin : public QObject
