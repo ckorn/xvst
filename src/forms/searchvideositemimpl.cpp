@@ -63,8 +63,6 @@ void SearchVideosItemImpl::reloadPreview()
 	if (QFile::exists(QDir::tempPath() + searchItem->getPreviewFileName()))
 	{
 		QPixmap preview = QPixmap(QDir::tempPath() + searchItem->getPreviewFileName());
-		pre
-
 		if (!preview.isNull())
 			imgVideo->setPixmap(preview);
 	}
