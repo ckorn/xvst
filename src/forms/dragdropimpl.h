@@ -25,16 +25,13 @@
 
 #ifndef DRAGDROPIMPL_H
 #define DRAGDROPIMPL_H
-//
+
 #include <QtGui>
-//
+
 #include "ui_dragdrop.h"
-//
-#include "customalphablendimpl.h"
-//
-#include "../tools.h"
-#include "../options.h"
-#include "../videolistcontroller.h"
+
+class ProgramOptions;
+class VideoListController;
 
 class QLabelClickeable : public QLabel
 {

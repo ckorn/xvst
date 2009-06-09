@@ -24,7 +24,10 @@
 */
 
 #include "infoviewimpl.h"
-//
+
+#include "../programversion.h"
+#include "../videoitem.h"
+
 InfoViewImpl::InfoViewImpl(VideoItem *videoItem, QString userName, QString email,
 	QString comments, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {

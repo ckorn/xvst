@@ -27,10 +27,9 @@
 #define __VIDEODOWNLOAD_H__
 
 #include <QtGui>
-//
-#include "http.h"
-#include "videoitem.h"
 
+class Http;
+class VideoItem;
 class VideoDownload;
 
 /*! Single download */

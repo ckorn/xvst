@@ -25,12 +25,14 @@
 
 #ifndef ADDVIDEOIMPL_H
 #define ADDVIDEOIMPL_H
-//
+
 #include "ui_addvideo.h"
-//
-#include "../options.h"
-#include "../videoinformation.h"
-//
+
+class ProgramOptions;
+class VideoInformation;
+
+struct OverridedVideoConversionConfig;
+
 class AddVideoImpl : public QDialog, public Ui::AddVideo
 {
 Q_OBJECT

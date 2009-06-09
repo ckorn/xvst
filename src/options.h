@@ -28,10 +28,8 @@
 
 #include <QtGui>
 #include <QNetworkProxy>
-//
-#include "tools.h"
-#include "videoconvert.h"
-#include "languages.h"
+
+#include "videoconverttypes.h"
 
 #ifdef Q_OS_LINUX
 static const QString DEFAULT_DOWNLOADS = "/xVideoServiceThief_downloads";	//!< Default sub-directory for downloads

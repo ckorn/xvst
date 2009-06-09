@@ -27,8 +27,7 @@
 #define __VIDEOITEM_H__
 
 #include <QtGui>
-//
-#include "tools.h"
+
 #include "videoconverttypes.h"
 
 enum VideoState

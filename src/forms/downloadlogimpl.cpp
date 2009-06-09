@@ -24,7 +24,11 @@
 */
 
 #include "downloadlogimpl.h"
-//
+
+#include "../sessionmanager.h"
+#include "../videoinformation.h"
+#include "../tools.h"
+
 DownloadLogImpl::DownloadLogImpl(QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
 {

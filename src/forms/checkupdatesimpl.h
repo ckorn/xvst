@@ -25,14 +25,13 @@
 
 #ifndef CHECKUPDATESIMPL_H
 #define CHECKUPDATESIMPL_H
-//
+
 #include <QDialog>
-//
+
 #include "ui_checkupdates.h"
-//
-#include "../options.h"
-#include "../checkupdatesworker.h"
-//
+
+class ProgramOptions;
+class CheckUpdatesWorker;
 
 class CheckUpdatesImpl : public QDialog, public Ui::CheckUpdates
 {

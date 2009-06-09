@@ -25,16 +25,12 @@
 
 #ifndef UPDATECENTERIMPL_H
 #define UPDATECENTERIMPL_H
-//
+
 #include <QDialog>
-//
+
 #include "ui_updatecenter.h"
-//
-#include "windowsvistadetectedimpl.h"
-//
-#include "../updates.h"
-#include "../tools.h"
-#include "../programversion.h"
+
+class Updates;
 
 class UpdateCenterImpl : public QDialog, public Ui::UpdateCenter
 {
@@ -47,7 +43,7 @@ Q_OBJECT
 	protected:
 		void closeEvent(QCloseEvent *event);
 	public:
-		UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall, QWidget * parent = 0, Qt::WFlags f = 0 );
+		UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall, QWidget *parent = 0, Qt::WFlags f = 0);
 	private slots:
 		void itemChanged(QTreeWidgetItem * item, int column);
 		void btnCancelClicked();

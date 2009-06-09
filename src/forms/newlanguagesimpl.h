@@ -27,14 +27,13 @@
 #define NEWLANGUAGESIMPL_H
 
 #include <QtGui>
-//
+
 #include "ui_newlanguages.h"
-//
-#include "../options.h"
-#include "../languages.h"
-#include "../newlanguages.h"
-#include "../tools.h"
-#include "../updates.h"
+
+class NewLanguagesController;
+class ProgramOptions;
+class Language;
+class Update;
 
 class NewLanguagesImpl : public QDialog, public Ui::NewLanguages
 {

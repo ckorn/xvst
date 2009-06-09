@@ -180,6 +180,40 @@ QString secondsToHMS(const int seconds, const bool compact, const bool allowNega
 	}
 }
 
+QString secondsToHMS_formatted(const int seconds, const QString separator,
+							   const bool autoHours, const bool autoMins,
+							   const bool allowNegative)
+{
+	int sec = seconds;
+
+	if (!allowNegative && seconds < 0)
+		sec = 0;
+
+	QString result;
+
+	// h
+	if (!autoHours || sec/3600 != 0)
+		result = QString("%1" + separator).arg(sec/3600);
+	// m
+	if (!autoMins || sec/60%60 != 0 || !result.isEmpty())
+		result += QString("%1" + separator).arg(intToMinLength(sec/60%60, 2));
+	// s
+	//if (sec%60 != 0)
+		result += QString("%1").arg(intToMinLength(sec%60, 2));
+	// return result
+	return result;
+}
+
+QString intToMinLength(int value, int minLength)
+{
+	QString base = QString().fill('0', minLength);
+	QString s = QString("%1").arg(value);
+	if (s.length() >= base.length())
+		return s;
+	else // remove some zeros and append the value (ie: 00 -> 01)
+		return base.remove(0, s.size()).append(s);
+}
+
 float calculePercent(const float value, const float total)
 {
 	if (total == 0)

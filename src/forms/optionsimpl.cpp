@@ -24,7 +24,23 @@
 */
 
 #include "optionsimpl.h"
-//
+
+#include "downloadlogimpl.h"
+#include "checkupdatesimpl.h"
+#include "newlanguagesimpl.h"
+#include "scheduleitemeditimpl.h"
+#include "upspasswordimpl.h"
+
+#include "../tools.h"
+#include "../options.h"
+#include "../videolistcontroller.h"
+#include "../sessionmanager.h"
+#include "../videoinformation.h"
+#include "../videoconvert.h"
+#include "../languages.h"
+#include "../schedule.h"
+#include "../updates.h"
+
 OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *sessionManager,
 			 VideoListController *videoList, int lastOptionsPage,
 			 QWidget * parent, Qt::WFlags f)

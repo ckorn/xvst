@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "2.0.0";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://video.google.com/";
@@ -58,6 +58,45 @@ function getVideoInformation(url)
 	result.URL = cleanUrl(result.URL);
 	// return the video information
 	return result;
+}
+
+function searchVideos(keyWord, pageIndex)
+{
+	const URL_SEARCH = "http://video.google.com/videosearch?q=%1&start=%2";
+	// replace all spaces for "+"
+	keyWord = strReplace(keyWord, " ", "+");
+	pageIndex = pageIndex * 10;
+	// init search results object
+	var searchResults = new SearchResults();
+	// init http object
+	var http = new Http();
+	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex), false);
+	// get results html block
+	var htmlResults = copyBetween(html, '<div class="rl-item-spacer spacer-initial"></div>', '<div style=clear:both;></div>');
+	// iterate over results
+	var block = "";
+	do
+	{
+		block = copyBetween(htmlResults, '<div class=rl-item>', '<div class="rl-item-spacer spacer-initial"></div>');
+		parseResultItem(searchResults, block);
+		htmlResults = strRemove(htmlResults, 0, block.toString().length);
+	} while (block != "");
+	// return search results
+	return searchResults;
+}
+
+function parseResultItem(searchResults, html)
+{
+	var videoUrl, imageUrl, title, description, duration;
+	// get info from html block
+	videoUrl = copyBetween(html, "srcurl=", ">");
+	imageUrl = copyBetween(html, "img class=thumbnail-img src=", ">");
+	title = copyBetween(html, "<div class=rl-title>", "</div>");
+	title = copyBetween(title, "target=_top>", "</a>");
+	description = copyBetween(html, "<div class=rl-snippet>", "</div>");
+	duration = copyBetween(html, 'duration=', ' ');
+	// add to results list
+	searchResults.addSearchResult(videoUrl, imageUrl, title, description, duration);
 }
 
 function getVideoServiceIcon()

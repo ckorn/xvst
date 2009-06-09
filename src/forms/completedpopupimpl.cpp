@@ -24,7 +24,9 @@
 */
 
 #include "completedpopupimpl.h"
-//
+
+#include "../tools.h"
+
 CompletedPopupImpl::CompletedPopupImpl( QWidget * parent, Qt::WFlags f)
 		: QWidget(parent, f)
 {

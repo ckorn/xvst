@@ -25,6 +25,12 @@
 
 #include "newlanguagesimpl.h"
 
+#include "../options.h"
+#include "../languages.h"
+#include "../newlanguages.h"
+#include "../tools.h"
+#include "../updates.h"
+
 NewLanguagesImpl::NewLanguagesImpl(ProgramOptions *programOptions, QWidget *parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {

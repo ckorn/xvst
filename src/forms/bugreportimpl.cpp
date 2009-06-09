@@ -24,7 +24,16 @@
 */
 
 #include "bugreportimpl.h"
-//
+
+#include "infoviewimpl.h"
+
+#include "../tools.h"
+#include "../trackerreport.h"
+#include "../programversion.h"
+#include "../videoitem.h"
+#include "../videoinformation.h"
+#include "../options.h"
+
 BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
 {

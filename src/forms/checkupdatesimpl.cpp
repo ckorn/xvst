@@ -25,6 +25,9 @@
 
 #include "checkupdatesimpl.h"
 
+#include "../options.h"
+#include "../checkupdatesworker.h"
+
 CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {

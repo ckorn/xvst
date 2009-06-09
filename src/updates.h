@@ -25,17 +25,11 @@
 
 #ifndef __UPDATES_H__
 #define __UPDATES_H__
-//
+
 #include <QtGui>
-//
-#include "pakunpak/pakunpak.h"
-#include "programversion.h"
-#include "languages.h"
-#include "videoinformation.h"
-#include "http.h"
-#include "tools.h"
 
 #ifdef Q_OS_WIN32
+#include <windows.h>
 static const QString XUPDATER_PATH = "/bin/xUpdater.exe";	//<! xUpdater app (win32)
 #else
 #ifdef Q_WS_MAC
@@ -55,10 +49,11 @@ enum UpdateState
 	usInstalling
 };
 
+class Http;
+
 /*! Update item */
 class Update : public QObject
 {
-Q_OBJECT
 	private:
 		QString caption;		//!< Update caption
 		QString version;		//!< Update version

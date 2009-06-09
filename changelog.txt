@@ -3,10 +3,25 @@
 
 - First non ALPHA version!
 
+- Added search videos feature
 - Added new schedule option
 - Added password for UPS! adult content blocking
 - Added ability to Drop video directly to Downloads list
 - Added loading window
+- Added shortcuts to some common actions:
+	- Add video (control + A)
+	- Start download (control + S)
+	- Cancel download (alt + S)
+	- Pause/Resume download (control + P)
+	- Drag & Drop window (control + D)
+	- Check for updates (control + U)
+	- Program options (control + O)
+	- Search videos (control + F)
+	- Program information (control + I or "cmd + ," in MacOSX)
+	- Move video up (control + up)
+	- Move video down (control + down)
+	- Open downloads directory (control + T)
+	- Online help (F1)
 - Added 14 new plug-ins:
 	- GodOfHumor
 	- Kontraband
@@ -33,7 +48,7 @@
 - Fixed bug (Error: infinite re-directions were not controlled)
 - Fixed bug (Error: ICO and GIF formats weren't supported on static compilations)
 - Fixed bug (Error: The "short" subversions were not compared correctly (i.e: 2.0.0a was equal to 2.0.0))
-- Fixed bug (Error: After cancel the updates the progam was finishing throwing an exception)
+- Fixed bug (Error: After cancel the updates the program was finishing throwing an exception)
 
 - Improved visualization of video information
 - Improved visualization of options menu
@@ -43,6 +58,11 @@
 
 Plug-ins SDK:
 ------------
+
+- Added search plugins core:
+	- function searchVideos(keyWord, pageIndex)
+	- new SearchResults()
+	- void SearchResults::addSearchResult(videoUrl, imageUrl, title, description, duration)
 
 - Added 1 new property to VideoDefinition class:
 	- String headers
@@ -65,12 +85,12 @@ MacOSX:
 - Changed Languages Manager dialog to MacOSX Sheet style for better MacOSX look&feel
 - Changed Credits dialog to MacOSX Sheet style for better MacOSX look&feel
 - Changed alternating row color to grey for better MacOSX look&feel
-- Changed historic.plist and session.plist location to "/{user}/Library/Applicacion Support/xVideoServiceThief/"
+- Changed historic.plist and session.plist location to "/{user}/Library/Application Support/xVideoServiceThief/"
 - Changed image plug-ins cache dir to "/{user}/Library/Caches/xVideoServiceThief/plugins-cache"
 
 - Fixed bug (Error: the completed pop-up text were always the same)
 - Fixed bug (Error: window size wasn't correctly saved and restored)
-- Fixed bug (Error: Drag&Drop window wasn't usefull)
+- Fixed bug (Error: Drag&Drop window wasn't useful)
 - Fixed bug (Error: on empty lists the alternating height row was incorrect)
 
 Windows:

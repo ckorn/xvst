@@ -27,28 +27,17 @@
 #define MAINFORMIMPL_H
 //
 #include <QtGui>
-//
+
 #include "ui_mainform.h"
-//
-#include "loadingimpl.h"
-#include "dragdropimpl.h"
-#include "completedpopupimpl.h"
-#include "addvideoimpl.h"
-#include "informationimpl.h"
-#include "optionsimpl.h"
-#include "checkupdatesimpl.h"
-#include "bugreportimpl.h"
-#include "welcomedonate.h"
-//
-#include "../tools.h"
-#include "../options.h"
-#include "../progressbardelegate.h"
-#include "../videolistcontroller.h"
-#include "../videoinformation.h"
-#include "../sessionmanager.h"
-#include "../programversion.h"
-#include "../checkupdatesworker.h"
-//
+
+class DragDropImpl;
+class CompletedPopupImpl;
+class ProgramOptions;
+class VideoListController;
+class VideoItem;
+class SessionManager;
+class CheckUpdatesWorker;
+
 class MainFormImpl : public QMainWindow, public Ui::MainForm
 {
 Q_OBJECT
@@ -128,6 +117,7 @@ Q_OBJECT
 		void stayOnTopClicked();
 		void minimizeToSystemTrayClicked();
 		void viewErrorMessageClicked();
+		void searchVideosClicked();
 		void downloadAutomaticallyStateChanged(int state);
 		void convertVideosStateChanged(int state);
 		void edtDownloadDirChanged();

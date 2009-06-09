@@ -26,6 +26,8 @@
 #include "progressbardelegate.h"
 #include "xprogressbar.h"
 
+#include "videolistcontroller.h"
+
 ProgressBarDelegate::ProgressBarDelegate(QObject *parent, VideoListController *videoList) : QItemDelegate(parent)
 {
 	this->videoList = videoList;

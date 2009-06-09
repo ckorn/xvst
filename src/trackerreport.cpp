@@ -24,7 +24,10 @@
 */
 
 #include "trackerreport.h"
-//
+
+#include "http.h"
+#include "tools.h"
+
 TrackerReport::TrackerReport(QString groupID, QString atid)
 {
 	this->groupID = groupID;

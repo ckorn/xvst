@@ -25,6 +25,10 @@
 
 #include "videodownload.h"
 
+#include "tools.h"
+#include "http.h"
+#include "videoitem.h"
+
 /* DownloadItem Class */
 
 DownloadItem::DownloadItem(VideoDownload *parent, VideoItem *videoItem)

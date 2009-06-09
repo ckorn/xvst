@@ -25,13 +25,13 @@
 
 #ifndef XPROGRESSBAR_H
 #define XPROGRESSBAR_H
-//
+
 #include <QRect>
 #include <QColor>
 #include <QPainter>
 #include <QLinearGradient>
 #include <QLocale>
-//
+
 /*! xProgressBar class */
 class xProgressBar : public QObject
 {

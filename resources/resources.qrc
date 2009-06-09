@@ -29,6 +29,7 @@
         <file>images/add.png</file>
         <file>images/pencil.png</file>
         <file>images/clock.png</file>
+        <file>images/search.png</file>
     </qresource>
     <qresource prefix="/error" >
         <file>images/errorVideo.png</file>
@@ -70,5 +71,8 @@
     </qresource>
     <qresource prefix="/ups_lock_unlock" >
         <file>images/ups_lock_unlock.png</file>
+    </qresource>
+    <qresource prefix="/search" >
+        <file>images/no-preview.png</file>
     </qresource>
 </RCC>

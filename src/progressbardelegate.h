@@ -27,8 +27,8 @@
 #define __PROGRESSBARDELEGATE_H__
 
 #include <QtGui>
-//
-#include "videolistcontroller.h"
+
+class VideoListController;
 
 class ProgressBarDelegate : public QItemDelegate 
 {

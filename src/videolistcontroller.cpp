@@ -25,7 +25,16 @@
 
 #include "videolistcontroller.h"
 
+#include "options.h"
+#include "videoitem.h"
+#include "videoinformation.h"
+#include "videoconvert.h"
+#include "videodownload.h"
+#include "schedule.h"
+
 // VideoListController class
+
+static VideoListController *lastInstance = NULL;
 
 VideoListController::VideoListController(ProgramOptions *programOptions)
 {
@@ -58,6 +67,8 @@ VideoListController::VideoListController(ProgramOptions *programOptions)
 	connect(videoConverter, SIGNAL(videoItemUpdated(VideoItem *)), this, SLOT(videoItemUpdated(VideoItem *)));
 	connect(videoConverter, SIGNAL(conversionStarted(VideoItem *)), this, SLOT(actionStarted(VideoItem *)));
 	connect(videoConverter, SIGNAL(conversionFinished(VideoItem *)), this, SLOT(actionFinished(VideoItem *)));
+	//
+	lastInstance = this;
 }
 
 VideoListController::~VideoListController()
@@ -525,6 +536,11 @@ void VideoListController::moveDOWN(VideoItem *videoItem)
 	
 	if (nextItem < getVideoItemCount() - 1)
 		swapVideoItems(videoItem, videoList->at(nextItem + 1));
+}
+
+VideoListController* VideoListController::getLastInstance()
+{
+	return lastInstance;
 }
 
 void VideoListController::videoItemUpdated(VideoItem *videoItem)

@@ -25,6 +25,10 @@
 
 #include "options.h"
 
+#include "videoconvert.h"
+#include "languages.h"
+#include "tools.h"
+
 static ProgramOptions *programOptionsInstance = NULL;
 
 ProgramOptions::ProgramOptions(QString optionsPath)

@@ -28,13 +28,6 @@
 
 #include <QtGui>
 #include <QtScript>
-//
-#include "http.h"
-#include "videoitem.h"
-#include "httpscriptclass.h"
-#include "toolsscriptclass.h"
-#include "programversion.h"
-#include "options.h"
 
 enum BlockedState
 {
@@ -49,12 +42,15 @@ static const QString PLUGINS_IMAGE_CACHE_DIR = "/../Caches/xVideoServiceThief/pl
 static const QString PLUGINS_IMAGE_CACHE_DIR = "/plugins-cache/";
 #endif
 
+class Http;
+class VideoItem;
+class VideoDefinition;
 class VideoInformation;
+class SearchResults;
 
 /*! Plugin information class */
 class VideoInformationPlugin : public QObject
 {
-Q_OBJECT
 	private:
 		VideoInformation *owner;	//<! Plugin owner
 		QString scriptCode;			//<! Plugin source code
@@ -69,6 +65,7 @@ Q_OBJECT
 		bool adultContent;			//<! Flag for know if this webservice has adult contents
 		bool musicSite;				//<! Flag for know if this webservice is a music site (i.e: mp3tube)
 		bool loaded;				//<! Flag for know if this plugin has been loaded
+		bool hasSearchEngine;		//<! Flag for know if this plugin has a search engine
 		QString onlineFaviconUrl;	//<! Online favicon url
 		QScriptEngine *engine;		//<! Pointer to script engine
 	private:
@@ -88,6 +85,8 @@ Q_OBJECT
 		bool isLikeMyId(QString ID);
 		/*! Get the video information from URL (this function executes the JS plugin) */
 		VideoDefinition getVideoInformation(const QString URL);
+		/*! Search Videos and return the results */
+		SearchResults searchVideos(const QString keyWords, const int page);
 		/*! Abot current work (only if is running) */
 		void abortExecution();
 		/*! Get the plugin file path or only name */
@@ -118,9 +117,9 @@ Q_OBJECT
 		void reloadIcon();
 		/*! Get if has been loaded */
 		bool isLoaded() const;
+		/*! Get if has a search engine */
+		bool isSearchEngineAvailable() const;
 };
-
-//static VideoInformation *lastVideoInformationInstance; //!< Used as semi-singleton (remember the last instance created)
 
 /*! Download plugins icons and save them into a cache */
 class VideoInformationPluginIconsCatcher : public QObject
@@ -142,7 +141,7 @@ Q_OBJECT
 		void downloadFinished(const QFileInfo destFile);
 		/*! Favicon download error */
 		void downloadError(int error);
-		/*! Download the first favicon plugin */
+		/*! Download the next favicon plugin */
 		void downloadNextFavicon();
 };
 

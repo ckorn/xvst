@@ -25,6 +25,8 @@
 
 #include "http.h"
 
+#include "tools.h"
+
 // ArrayAvg class
 
 ArrayAvg::ArrayAvg(const int maxItems)

@@ -24,7 +24,28 @@
 */
 
 #include "mainformimpl.h"
-//
+
+#include "loadingimpl.h"
+#include "welcomedonate.h"
+#include "dragdropimpl.h"
+#include "completedpopupimpl.h"
+#include "addvideoimpl.h"
+#include "informationimpl.h"
+#include "optionsimpl.h"
+#include "checkupdatesimpl.h"
+#include "bugreportimpl.h"
+#include "searchvideosimpl.h"
+
+#include "../tools.h"
+#include "../options.h"
+#include "../updates.h"
+#include "../progressbardelegate.h"
+#include "../videolistcontroller.h"
+#include "../videoinformation.h"
+#include "../sessionmanager.h"
+#include "../programversion.h"
+#include "../checkupdatesworker.h"
+
 MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 		: QMainWindow(parent, f)
 {
@@ -78,6 +99,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	controlsMenu->addAction(actCancelDownload);
 	// Tools menu
 	QMenu *toolsMenu = menuBar()->addMenu(tr("Tools"));
+	toolsMenu->addAction(actSearchVideos);
 	toolsMenu->addAction(actDragDrop);
 	toolsMenu->addAction(actUpdates);
 	toolsMenu->addSeparator();
@@ -136,6 +158,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// start the drag & drop window
 	dragDropForm = new DragDropImpl(programOptions, videoList, this);
 	// connect buttons (header)
+	connect(spbSearchVideos, SIGNAL(clicked()), this, SLOT(searchVideosClicked())); //spb Search Videos (clicked)
 	connect(spbDragDrop, SIGNAL(clicked()), this, SLOT(dragDropClicked())); //spb Drag&Drop (clicked)
 	connect(spbUpdates, SIGNAL(clicked()), this, SLOT(updatesClicked())); //spb Updates (clicked)
 	connect(spbHelp, SIGNAL(clicked()), this, SLOT(onlineHelpClicked())); //spb Online Help (clicked)
@@ -166,6 +189,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actMinimizeToSystemTray, SIGNAL(triggered()), this, SLOT(minimizeToSystemTrayClicked())); // actMinimizeToSystemTray (clicked)
 	connect(actViewErrorMessage, SIGNAL(triggered()), this, SLOT(viewErrorMessageClicked())); // actViewErrorMessage (clicked)
 	connect(actOpenDownloadDir, SIGNAL(triggered()), this, SLOT(openDownloadDirClicked())); //actOpenDownloadDir (clicked)
+	connect(actSearchVideos, SIGNAL(triggered()), this, SLOT(searchVideosClicked())); //actSearchVideos (clicked)
 	// edtDownloadDir
 	connect(edtDownloadDir, SIGNAL(editingFinished()), this, SLOT(edtDownloadDirChanged()));
 	// connect buttons
@@ -352,6 +376,7 @@ void MainFormImpl::createTrayIcon()
 	trayIconMenu->addSeparator();
 	trayIconMenu->addAction(actDragDrop);
 	trayIconMenu->addAction(actAddVideo);
+	trayIconMenu->addAction(actSearchVideos);
 	trayIconMenu->addAction(actOpenDownloadDir);
 	trayIconMenu->addSeparator();
 	trayIconMenuOptions = trayIconMenu->addMenu(tr("Options"));
@@ -622,9 +647,15 @@ void MainFormImpl::viewErrorMessageClicked()
 
 	if (videoItem != NULL)
 		QMessageBox::information(this,
-		tr("Error message"),
-		tr("This video has the following error:<br><br><b>%1</b>").arg(videoItem->getErrorMessage()), 
-		tr("Ok"));
+								tr("Error message"),
+								tr("This video has the following error:<br><br><b>%1</b>").arg(videoItem->getErrorMessage()),
+								tr("Ok"));
+}
+
+void MainFormImpl::searchVideosClicked()
+{
+	SearchVideosImpl *searchVideos = new SearchVideosImpl(this, Qt::Window);
+	searchVideos->show();
 }
 
 void MainFormImpl::downloadAutomaticallyStateChanged(int state)

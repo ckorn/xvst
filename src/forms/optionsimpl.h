@@ -25,24 +25,18 @@
 
 #ifndef OPTIONSIMPL_H
 #define OPTIONSIMPL_H
-//
+
 #include <QtGui>
-//
+
 #include "ui_options.h"
-//
-#include "downloadlogimpl.h"
-#include "checkupdatesimpl.h"
-#include "newlanguagesimpl.h"
-#include "scheduleitemeditimpl.h"
-#include "upspasswordimpl.h"
-//
-#include "../options.h"
-#include "../videolistcontroller.h"
-#include "../sessionmanager.h"
-#include "../videoinformation.h"
-#include "../languages.h"
-#include "../schedule.h"
-//
+
+class ProgramOptions;
+class SessionManager;
+class VideoInformation;
+class LanguageManager;
+class VideoListController;
+class ScheduleController;
+
 class OptionsImpl : public QDialog, public Ui::Options
 {
 Q_OBJECT

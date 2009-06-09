@@ -25,6 +25,8 @@
 
 #include "videoitem.h"
 
+#include "tools.h"
+
 int VideoItem::internalID = 0;
 
 VideoItem::VideoItem()

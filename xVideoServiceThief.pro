@@ -12,119 +12,129 @@ UI_DIR = build/ui
 MOC_DIR = build/moc
 RCC_DIR = build/rcc
 FORMS = ui/addvideo.ui \
+	ui/searchvideositem.ui \
+    ui/bugreport.ui \
     ui/checkupdates.ui \
     ui/completedpopup.ui \
+    ui/credits.ui \
     ui/customalphablend.ui \
     ui/downloadlog.ui \
     ui/dragdrop.ui \
     ui/information.ui \
-    ui/mainform.ui \
-    ui/options.ui \
-    ui/updatecenter.ui \
     ui/infoview.ui \
-    ui/bugreport.ui \
-    ui/credits.ui \
-    ui/winvistaupdatesmsg.ui \
-    ui/newlanguages.ui \
-    ui/welcomedonate.ui \
     ui/loadingimpl.ui \
+    ui/mainform.ui \
+    ui/newlanguages.ui \
+    ui/options.ui \
     ui/scheduleitemedit.ui \
-	ui/upspassword.ui
+    ui/searchvideos.ui \
+    ui/updatecenter.ui \
+    ui/upspassword.ui \
+    ui/welcomedonate.ui \
+    ui/winvistaupdatesmsg.ui
 HEADERS = src/forms/addvideoimpl.h \
+	src/forms/searchvideositemimpl.h \
+    src/forms/bugreportimpl.h \
     src/forms/checkupdatesimpl.h \
     src/forms/completedpopupimpl.h \
+    src/forms/creditsimpl.h \
     src/forms/customalphablendimpl.h \
     src/forms/downloadlogimpl.h \
     src/forms/dragdropimpl.h \
     src/forms/informationimpl.h \
-    src/forms/mainformimpl.h \
-    src/forms/optionsimpl.h \
-    src/forms/updatecenterimpl.h \
     src/forms/infoviewimpl.h \
-    src/forms/bugreportimpl.h \
-    src/forms/creditsimpl.h \
-    src/forms/welcomedonate.h \
     src/forms/loadingimpl.h \
-    src/forms/windowsvistadetectedimpl.h \
+    src/forms/mainformimpl.h \
     src/forms/newlanguagesimpl.h \
+    src/forms/optionsimpl.h \
     src/forms/scheduleitemeditimpl.h \
-	src/forms/upspasswordimpl.h \
+    src/forms/searchvideosimpl.h \
+    src/forms/updatecenterimpl.h \
+    src/forms/upspasswordimpl.h \
+    src/forms/welcomedonate.h \
+    src/forms/windowsvistadetectedimpl.h \
     src/pakunpak/pakunpak.h \
+	src/searchvideosscriptclass.h \
+    src/checkupdatesworker.h \
     src/http.h \
+    src/httpscriptclass.h \
     src/languages.h \
+    src/newlanguages.h \
     src/options.h \
     src/programversion.h \
     src/progressbardelegate.h \
+    src/schedule.h \
+    src/searchvideos.h \
     src/sessionmanager.h \
     src/tools.h \
+    src/toolsscriptclass.h \
+    src/trackerreport.h \
     src/updates.h \
     src/videoconvert.h \
+    src/videoconverttypes.h \
     src/videodownload.h \
     src/videoinformation.h \
     src/videoitem.h \
     src/videolistcontroller.h \
-    src/schedule.h \
-    src/trackerreport.h \
-    src/xprogressbar.h \
-    src/newlanguages.h \
-    src/toolsscriptclass.h \
-    src/httpscriptclass.h \
-    src/videoconverttypes.h \
-	src/checkupdatesworker.h
+    src/xprogressbar.h
 SOURCES = src/forms/addvideoimpl.cpp \
+	src/forms/searchvideositemimpl.cpp \
+    src/forms/bugreportimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \
+    src/forms/creditsimpl.cpp \
     src/forms/customalphablendimpl.cpp \
     src/forms/downloadlogimpl.cpp \
     src/forms/dragdropimpl.cpp \
     src/forms/informationimpl.cpp \
-    src/forms/mainformimpl.cpp \
-    src/forms/optionsimpl.cpp \
-    src/forms/updatecenterimpl.cpp \
     src/forms/infoviewimpl.cpp \
-    src/forms/bugreportimpl.cpp \
-    src/forms/creditsimpl.cpp \
-    src/forms/welcomedonate.cpp \
     src/forms/loadingimpl.cpp \
-    src/forms/windowsvistadetectedimpl.cpp \
+    src/forms/mainformimpl.cpp \
     src/forms/newlanguagesimpl.cpp \
+    src/forms/optionsimpl.cpp \
     src/forms/scheduleitemeditimpl.cpp \
-	src/forms/upspasswordimpl.cpp \
-    src/pakunpak/pakunpak.cpp \
+    src/forms/searchvideosimpl.cpp \
+    src/forms/updatecenterimpl.cpp \
+    src/forms/upspasswordimpl.cpp \
+    src/forms/welcomedonate.cpp \
+    src/forms/windowsvistadetectedimpl.cpp \
+	src/searchvideosscriptclass.cpp \
+    src/checkupdatesworker.cpp \
     src/http.cpp \
+    src/httpscriptclass.cpp \
     src/languages.cpp \
     src/main.cpp \
+    src/newlanguages.cpp \
     src/options.cpp \
+    src/pakunpak/pakunpak.cpp \
     src/progressbardelegate.cpp \
+    src/schedule.cpp \
+    src/searchvideos.cpp \
     src/sessionmanager.cpp \
     src/tools.cpp \
+    src/toolsscriptclass.cpp \
+    src/trackerreport.cpp \
     src/updates.cpp \
     src/videoconvert.cpp \
     src/videodownload.cpp \
     src/videoinformation.cpp \
     src/videoitem.cpp \
     src/videolistcontroller.cpp \
-    src/schedule.cpp \
-    src/trackerreport.cpp \
-    src/xprogressbar.cpp \
-    src/newlanguages.cpp \
-    src/toolsscriptclass.cpp \
-    src/httpscriptclass.cpp \
-	src/checkupdatesworker.cpp
-TRANSLATIONS = resources/translations/xVST_en.ts \
+    src/xprogressbar.cpp 
+TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/xVST_ca.ts \
-    resources/translations/xVST_es.ts \
-    resources/translations/xVST_pl.ts \
-    resources/translations/xVST_it.ts \
     resources/translations/xVST_cz.ts \
-    resources/translations/xVST_fr.ts \
     resources/translations/xVST_da.ts \
-    resources/translations/xVST_br.ts \
-    resources/translations/xVST_kr.ts \
-    resources/translations/xVST_hu.ts \
-    resources/translations/xVST_gl.ts \
-    resources/translations/xVST_ro.ts \
     resources/translations/xVST_de.ts \
+    resources/translations/xVST_en.ts \
+    resources/translations/xVST_es.ts \
+    resources/translations/xVST_fr.ts \
+    resources/translations/xVST_gl.ts \
+    resources/translations/xVST_hu.ts \
+    resources/translations/xVST_it.ts \
+    resources/translations/xVST_kr.ts \
+    resources/translations/xVST_pl.ts \
+    resources/translations/xVST_ro.ts \
     resources/translations/xVST_sv.ts \
     resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc

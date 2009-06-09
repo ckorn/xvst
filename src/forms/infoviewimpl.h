@@ -25,14 +25,13 @@
 
 #ifndef INFOVIEWIMPL_H
 #define INFOVIEWIMPL_H
-//
+
 #include <QtGui>
-//
+
 #include "ui_infoview.h"
-//
-#include "../programversion.h"
-#include "../videoitem.h"
-//
+
+class VideoItem;
+
 class InfoViewImpl : public QDialog, public Ui::InfoView
 {
 Q_OBJECT

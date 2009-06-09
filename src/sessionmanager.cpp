@@ -24,7 +24,11 @@
 */
 
 #include "sessionmanager.h"
-//
+
+#include "options.h"
+#include "videoitem.h"
+#include "videolistcontroller.h"
+
 SessionManager::SessionManager(ProgramOptions *programOptions)
 {
 	this->programOptions = programOptions;

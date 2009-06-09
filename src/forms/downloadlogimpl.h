@@ -25,15 +25,14 @@
 
 #ifndef DOWNLOADLOGIMPL_H
 #define DOWNLOADLOGIMPL_H
-//
+
 #include <QtGui>
-//
+
 #include "ui_downloadlog.h"
-//
-#include "../sessionmanager.h"
-#include "../videoinformation.h"
-#include "../tools.h"
-//
+
+class LogEntry;
+class VideoInformation;
+
 class LogTreeWidgetItem : public QTreeWidgetItem
 {
 	public:
@@ -48,7 +47,7 @@ class LogTreeWidgetItem : public QTreeWidgetItem
 			return myDate < otherDate;
 		}
 };
-//
+
 class DownloadLogImpl : public QDialog, public Ui::DownloadLog
 {
 Q_OBJECT

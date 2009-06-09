@@ -24,7 +24,13 @@
 */
 
 #include "updatecenterimpl.h"
-//
+
+#include "windowsvistadetectedimpl.h"
+
+#include "../updates.h"
+#include "../tools.h"
+#include "../programversion.h"
+
 UpdateCenterImpl::UpdateCenterImpl(Updates *updates, bool autoDownloadAndInstall, QWidget * parent, Qt::WFlags f)
 		: QDialog(parent, f)
 {

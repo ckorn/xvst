@@ -286,6 +286,47 @@
           </spacer>
          </item>
          <item>
+          <widget class="QToolButton" name="spbSearchVideos">
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::TabFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Search videos window</string>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="accessibleName">
+            <string>Search videos</string>
+           </property>
+           <property name="accessibleDescription">
+            <string>Search videos</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/resources.qrc">
+             <normaloff>:/buttons/images/search.png</normaloff>:/buttons/images/search.png</iconset>
+           </property>
+           <property name="autoRaise">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QToolButton" name="spbDragDrop">
            <property name="minimumSize">
             <size>
@@ -298,6 +339,9 @@
              <width>25</width>
              <height>25</height>
             </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::TabFocus</enum>
            </property>
            <property name="toolTip">
             <string>Open the Drag &amp; Drop window</string>
@@ -337,6 +381,9 @@
              <height>25</height>
             </size>
            </property>
+           <property name="focusPolicy">
+            <enum>Qt::TabFocus</enum>
+           </property>
            <property name="toolTip">
             <string>Check for updates</string>
            </property>
@@ -372,6 +419,9 @@
              <height>25</height>
             </size>
            </property>
+           <property name="focusPolicy">
+            <enum>Qt::TabFocus</enum>
+           </property>
            <property name="toolTip">
             <string>Online help</string>
            </property>
@@ -406,6 +456,9 @@
              <width>25</width>
              <height>25</height>
             </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::TabFocus</enum>
            </property>
            <property name="toolTip">
             <string>Program information</string>
@@ -980,6 +1033,9 @@
    <property name="text">
     <string>Open the Drag &amp; Drop window</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
   </action>
   <action name="actUpdates">
    <property name="icon">
@@ -988,6 +1044,9 @@
    </property>
    <property name="text">
     <string>Check for updates</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
    </property>
   </action>
   <action name="actOnlineHelp">
@@ -998,6 +1057,9 @@
    <property name="text">
     <string>Online help</string>
    </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
   </action>
   <action name="actInformation">
    <property name="icon">
@@ -1007,6 +1069,9 @@
    <property name="text">
     <string>Information</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
   </action>
   <action name="actAddVideo">
    <property name="icon">
@@ -1015,6 +1080,9 @@
    </property>
    <property name="text">
     <string>Add video</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
    </property>
   </action>
   <action name="actDeleteVideo">
@@ -1034,6 +1102,9 @@
    <property name="text">
     <string>Start download</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
   </action>
   <action name="actCancelDownload">
    <property name="icon">
@@ -1042,6 +1113,9 @@
    </property>
    <property name="text">
     <string>Cancel download</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+S</string>
    </property>
   </action>
   <action name="actClearList">
@@ -1081,6 +1155,9 @@
    </property>
    <property name="text">
     <string>Open downloads directory</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
    </property>
   </action>
   <action name="actSelectDownloadDir">
@@ -1127,6 +1204,9 @@
    <property name="text">
     <string>Move UP</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Up</string>
+   </property>
   </action>
   <action name="actMoveDOWN">
    <property name="icon">
@@ -1135,6 +1215,9 @@
    </property>
    <property name="text">
     <string>Move DOWN</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Down</string>
    </property>
   </action>
   <action name="actPlayVideo">
@@ -1179,6 +1262,9 @@
    <property name="text">
     <string>Pause download</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
   </action>
   <action name="actViewErrorMessage">
    <property name="icon">
@@ -1193,10 +1279,28 @@
    <property name="text">
     <string notr="true">Options</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="actAbout">
    <property name="text">
     <string notr="true">About</string>
+   </property>
+  </action>
+  <action name="actSearchVideos">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/buttons/images/search.png</normaloff>:/buttons/images/search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Search videos</string>
+   </property>
+   <property name="toolTip">
+    <string>Search Videos</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
    </property>
   </action>
  </widget>
@@ -1204,15 +1308,17 @@
   <tabstop>btnAddVideo</tabstop>
   <tabstop>btnDeleteVideo</tabstop>
   <tabstop>btnStartDownload</tabstop>
+  <tabstop>btnPauseResumeDownload</tabstop>
   <tabstop>btnCancelDownload</tabstop>
   <tabstop>btnClearList</tabstop>
   <tabstop>btnClearCompleted</tabstop>
-  <tabstop>btnMoreOptions</tabstop>
   <tabstop>chbDownloadVideosAuto</tabstop>
   <tabstop>chbConvertVideos</tabstop>
   <tabstop>edtDownloadDir</tabstop>
   <tabstop>spbSelectDownloadDir</tabstop>
   <tabstop>spbOpenDownloadDir</tabstop>
+  <tabstop>btnMoreOptions</tabstop>
+  <tabstop>spbSearchVideos</tabstop>
   <tabstop>spbDragDrop</tabstop>
   <tabstop>spbUpdates</tabstop>
   <tabstop>spbHelp</tabstop>

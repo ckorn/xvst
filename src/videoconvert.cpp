@@ -25,6 +25,9 @@
 
 #include "videoconvert.h"
 
+#include "tools.h"
+#include "videoitem.h"
+
 VideoConverter::VideoConverter(QString ffmpegApp, QString workingDir,
                                VideoConversionConfig convConf, bool deleteOriginalVideo)
 {

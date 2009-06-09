@@ -28,8 +28,6 @@
 
 #include <QtGui>
 #include <QtNetwork>
-//
-#include "tools.h"
 
 enum Error
 {
@@ -187,7 +185,7 @@ Q_OBJECT
 	public:
 		/*! class constructor */
 		Http(bool useInternalTimer = true);
-		/* copy class constructor */
+		/*! copy class constructor */
 		Http(const Http&);
 		/*! class destructor */
 		~Http();

@@ -25,9 +25,12 @@
 
 #include "updates.h"
 
-#ifdef Q_WS_WIN
-	#include <windows.h>
-#endif
+#include "pakunpak/pakunpak.h"
+#include "programversion.h"
+#include "languages.h"
+#include "videoinformation.h"
+#include "http.h"
+#include "tools.h"
 
 // Updates class
 

@@ -25,12 +25,10 @@
 
 #ifndef COMPLETEDPOPUPIMPL_H
 #define COMPLETEDPOPUPIMPL_H
-//
+
 #include <QtGui>
-//
+
 #include "ui_completedpopup.h"
-//
-#include "../tools.h"
 
 enum DisplayState {dsInactive, dsShowing, dsWaiting, dsHiding};
 

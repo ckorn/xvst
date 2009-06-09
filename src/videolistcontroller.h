@@ -28,13 +28,17 @@
 
 #include <QtGui>
 #include <QNetworkProxy>
-//
-#include "options.h"
+
 #include "videoitem.h"
-#include "videoinformation.h"
-#include "videoconvert.h"
-#include "videodownload.h"
-#include "schedule.h"
+
+class VideoItem;
+class VideoInformation;
+class VideoDownload;
+class VideoConverter;
+class ProgramOptions;
+class ScheduleController;
+
+struct OverridedVideoConversionConfig;
 
 class VideoListController : public QObject
 {
@@ -65,15 +69,15 @@ Q_OBJECT
 		void start();
 		/*! Stop the main loop */
 		void stop();
-		/*! Add a new TDownloadVideoItem */
+		/*! Add a new VideoItem */
 		VideoItem* addVideo(const QString URL);
-		/*! Add a new TDownloadVideoItem with an overrided Conversion configuration */
+		/*! Add a new VideoItem with an overrided Conversion configuration */
 		VideoItem* addVideo(const QString URL, const OverridedVideoConversionConfig overridedConversionConfig);
-		/*! Add a Stored TDownloadVideoItem */
+		/*! Add a Stored VideoItem */
 		VideoItem* addVideo(VideoItem *videoItem);
-		/*! Delete by Index an existent TDownloadVideoItem */
+		/*! Delete by Index an existent VideoItem */
 		void deleteVideo(const int index, bool removePausedFile = false);
-		/*! Delete an existent TDownloadVideoItem */
+		/*! Delete an existent VideoItem */
 		void deleteVideo(VideoItem *videoItem, bool removePausedFile = false);
 		/*! Clear videoList list */
 		void clear(bool removePausedFile = false);
@@ -155,6 +159,8 @@ Q_OBJECT
 		void moveUP(VideoItem *videoItem);
 		/*! Move an item down (into prior list) */
 		void moveDOWN(VideoItem *videoItem);
+		/*! Get the last created instance */
+		static VideoListController* getLastInstance();
 	private slots:
 		/*! Video item has been updated */
 		void videoItemUpdated(VideoItem *videoItem);

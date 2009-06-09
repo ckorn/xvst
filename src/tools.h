@@ -64,6 +64,14 @@
 	/*! Convert seconds to Hours minutes seconds */
 	QString secondsToHMS(const int seconds, const bool compact, const bool allowNegative = false);
 
+	/*! Convert seconds to Hours minutes seconds (semi-formated) */
+	QString secondsToHMS_formatted(const int seconds, const QString separator,
+								   const bool autoHours, const bool autoMins,
+								   const bool allowNegative = false);
+
+	/*! Fill with zeros */
+	QString intToMinLength(int value, int minLength);
+
 	/*! Calcule the % value */
 	float calculePercent(const float value, const float total);
 	

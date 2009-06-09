@@ -27,9 +27,10 @@
 #define __CONVERTVIDEO_H__
 
 #include <QtGui>
-//
+
 #include "videoconverttypes.h"
-#include "videoitem.h"
+
+class VideoItem;
 
 class VideoConverter : public QObject
 {

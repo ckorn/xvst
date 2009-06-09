@@ -24,13 +24,8 @@
 */
 #ifndef SESSIONMANAGER_H
 #define SESSIONMANAGER_H
-//
+
 #include <QtGui>
-//
-#include "options.h"
-#include "videoitem.h"
-#include "videolistcontroller.h"
-//
 
 #ifdef Q_WS_MACX
 static const QString SESSION_FILE = "/../Application Support/xVideoServiceThief/session.plist";
@@ -46,6 +41,11 @@ struct LogEntry
 	QString title;		//!< video title
 	QString URL;		//!< video URL
 };
+
+class ProgramOptions;
+class VideoListController;
+class VideoItem;
+class LogEntry;
 
 class SessionManager : public QObject
 {

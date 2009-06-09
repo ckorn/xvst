@@ -25,7 +25,29 @@
 
 #include "videoinformation.h"
 
+#include "tools.h"
+#include "http.h"
+#include "searchvideos.h"
+#include "videoitem.h"
+#include "searchvideosscriptclass.h"
+#include "httpscriptclass.h"
+#include "toolsscriptclass.h"
+#include "programversion.h"
+#include "options.h"
+
 Q_DECLARE_METATYPE(VideoDefinition)
+Q_DECLARE_METATYPE(SearchResults)
+
+Q_DECLARE_METATYPE(SearchResults*)
+QScriptValue myObjectToScriptValue(QScriptEngine *engine, SearchResults* const &in)
+{
+	return engine->newQObject(in);
+}
+
+void myObjectFromScriptValue(const QScriptValue &object, SearchResults* &out)
+{
+	out = qobject_cast<SearchResults*>(object.toQObject());
+}
 
 static VideoInformation *lastVideoInformationInstance; //!< Used as semi-singleton (remember the last instance created)
 
@@ -447,6 +469,7 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 	this->owner = videoInformation;
 	// inits
 	loaded = false;
+	hasSearchEngine = false;
 	icon = new QPixmap();
 	onlineFaviconUrl = "";
 	pluginFilePath = videoServicePath;
@@ -484,6 +507,9 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 				// if this plugin has been loaded, then try to load the service icon
 				if (loaded && compareVersions(minVersion, PROGRAM_VERSION_SHORT) >= 0)
 				{
+					// get if this plugin has a search engine
+					hasSearchEngine = engine->evaluate("searchVideos").isFunction();
+					// get the plugin icon
 					QScriptValue func_getIcon = engine->evaluate("getVideoServiceIcon");
 					// check if getVideoServiceIcon function has been loaded
 					if (func_getIcon.isFunction())
@@ -626,7 +652,6 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 
 	// create and regist the Http class
 	HttpScriptClass *httpClass = new HttpScriptClass(engine);
-	engine->globalObject().setProperty("Http", httpClass->constructor());
 
 	// evaluate plugin code
 	engine->evaluate(scriptCode);
@@ -653,6 +678,55 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	// destroy auxiliar classes
 	delete toolsClass;
 	delete httpClass;
+	// detach global engine
+	delete engine;
+	engine = NULL;
+	// return the video definition returned
+	return result;
+}
+
+SearchResults VideoInformationPlugin::searchVideos(const QString keyWords, const int page)
+{
+	SearchResults result;
+
+	// If this plugin has not been loaded before, then return an empty "information"
+	if (!isLoaded() || !isSearchEngineAvailable()) return result;
+
+	// plugin script engine
+	engine = new QScriptEngine();
+
+	// create and regist the script tools class
+	ToolsScriptClass *toolsClass = new ToolsScriptClass(engine);
+
+	// create and regist the Http class
+	HttpScriptClass *httpClass = new HttpScriptClass(engine);
+
+	// create and regist the SearchResults class
+	SearchResultsScriptClass *searchResultsClass = new SearchResultsScriptClass(engine);
+
+	// evaluate plugin code
+	engine->evaluate(scriptCode);
+	// execute regist code if no errors found
+	if (!engine->hasUncaughtException())
+	{
+		QScriptValue func_searchVideos = engine->evaluate("searchVideos");
+		// check if searchVideos function has been loaded
+		if (func_searchVideos.isFunction())
+		{
+			QScriptValueList args;
+			args << QScriptValue(engine, keyWords) << QScriptValue(engine, page);
+			// execute plugin
+			QScriptValue searchResults = func_searchVideos.call(QScriptValue(), args);
+			QVariant v = searchResults.data().toVariant();
+			result = v.value<SearchResults>();
+		}
+	}
+	else // error found
+		qWarning() << "Plugin error : " << engine->uncaughtException().toString();
+	// destroy auxiliar classes
+	delete toolsClass;
+	delete httpClass;
+	delete searchResultsClass;
 	// detach global engine
 	delete engine;
 	engine = NULL;
@@ -746,4 +820,9 @@ void VideoInformationPlugin::reloadIcon()
 bool VideoInformationPlugin::isLoaded() const
 {
 	return loaded;
+}
+
+bool VideoInformationPlugin::isSearchEngineAvailable() const
+{
+	return hasSearchEngine;
 }

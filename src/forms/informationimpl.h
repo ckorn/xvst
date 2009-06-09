@@ -25,16 +25,13 @@
 
 #ifndef INFORMATIONIMPL_H
 #define INFORMATIONIMPL_H
-//
+
 #include "ui_information.h"
-//
-#include "creditsimpl.h"
-//
-#include "../programversion.h"
-#include "../options.h"
-#include "../languages.h"
-#include "../videoinformation.h"
-//
+
+class CreditsImpl;
+class ProgramOptions;
+class VideoInformation;
+
 class InformationImpl : public QDialog, public Ui::Information
 {
 Q_OBJECT

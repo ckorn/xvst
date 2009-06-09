@@ -25,11 +25,9 @@
 
 #ifndef __LANGUAGES_H__
 #define __LANGUAGES_H__
-//
+
 #include <QtGui>
-//
-#include "tools.h"
-//
+
 /*! Language file description */
 class Language : public QObject
 {

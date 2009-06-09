@@ -25,13 +25,12 @@
 
 #ifndef TRACKERREPORT_H
 #define TRACKERREPORT_H
-//
+
 #include <QtGui>
-//
-#include "http.h"
-#include "tools.h"
-//
+
 const QString SF_TRACKER_URL = "http://sourceforge.net/tracker/index.php";
+
+class Http;
 
 /*! SourceForge.net Tracker wrapper */
 class TrackerReport : public QObject

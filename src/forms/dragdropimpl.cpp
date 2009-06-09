@@ -24,7 +24,14 @@
  */
 
 #include "dragdropimpl.h"
-//
+
+#include "customalphablendimpl.h"
+
+#include "../tools.h"
+#include "../options.h"
+#include "../videolistcontroller.h"
+#include "../videoinformation.h"
+
 DragDropImpl::DragDropImpl(ProgramOptions *programOptions, VideoListController *videoList,
 						   QWidget * parent, Qt::WFlags f) : QWidget(parent, f)
 {

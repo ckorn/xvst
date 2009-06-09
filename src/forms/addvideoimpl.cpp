@@ -24,7 +24,13 @@
 */
 
 #include "addvideoimpl.h"
-//
+
+#include "../tools.h"
+#include "../options.h"
+#include "../videoinformation.h"
+#include "../videoconvert.h"
+#include "../videoitem.h"
+
 AddVideoImpl::AddVideoImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,
 						   QWidget * parent, Qt::WFlags f)
 		: QDialog(parent, f)

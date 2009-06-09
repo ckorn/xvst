@@ -24,7 +24,14 @@
 */
 
 #include "informationimpl.h"
-//
+
+#include "creditsimpl.h"
+
+#include "../programversion.h"
+#include "../options.h"
+#include "../languages.h"
+#include "../videoinformation.h"
+
 InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,
 								 QWidget * parent, Qt::WFlags f)
 		: QDialog(parent, f)

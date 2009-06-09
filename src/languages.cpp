@@ -25,6 +25,8 @@
 
 #include "languages.h"
 
+#include "tools.h"
+
 LanguageManager::LanguageManager()
 {
 	languagesList = new QList<Language *>;
