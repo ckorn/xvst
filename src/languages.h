@@ -35,7 +35,7 @@ Q_OBJECT
 	private:
 		QString file;			//!< Language file
 		QString langFile;		//!< QM file
-		QString id;				//!< Language id (english, català, español...
+		QString id;				//!< Language id (english, català, español...)
 		QString version;		//!< Current language file version
 		QString author;			//!< Language file author
 		QString contact;		//!< Language file author contact
@@ -55,6 +55,7 @@ Q_OBJECT
 		void setContact(QString value);
 		QString getDescription();
 		void setDescription(QString value);
+		QString getLangLocale();
 };
 
 /*! Language files manager */

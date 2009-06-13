@@ -165,6 +165,7 @@ Q_OBJECT
 		int timeOutIntervalCehck;	//!< time out interval checker
 		int timeOut;				//!< when the connection is considered "time out" in miliseconds (we will ot wait infinite...)
 		QStringList *customHeaders;	//!< list with custom header parameters
+		bool skipExistentFiles;		//!< Skip files which are already present (downloaded)
 		/*! Init Http class */
 		void initClass(bool useInternalTimer = true);
 		/*! Init the internal http data */
@@ -237,6 +238,8 @@ Q_OBJECT
 		void setTimeOut(int value);
 		/*! Set the max automatic jumps */
 		void setMaxAutoJumps(int value);
+		/*! Set if should skip existent files (avoid download duplicated data) */
+		void setSkipExistentFiles(bool value);
 		/*! Get the last error generated (on start a new download, this value is reset) */
 		int getLastError();
 		/*! Get the last stop reason (on start a new download, this value is reset) */

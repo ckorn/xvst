@@ -39,6 +39,7 @@
 #include "../tools.h"
 #include "../options.h"
 #include "../updates.h"
+#include "../searchvideos.h"
 #include "../progressbardelegate.h"
 #include "../videolistcontroller.h"
 #include "../videoinformation.h"
@@ -301,6 +302,9 @@ MainFormImpl::~MainFormImpl()
 	// delete tray icon
 	delete trayIconMenu;
 	delete trayIcon;
+
+	// remove previews
+	SearchVideos::removePreviews();
 }
 
 void MainFormImpl::centerWindow()

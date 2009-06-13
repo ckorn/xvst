@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>580</width>
+    <width>678</width>
     <height>571</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>Video Search</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources/resources.qrc">
     <normaloff>:/buttons/images/search.png</normaloff>:/buttons/images/search.png</iconset>
   </property>
   <property name="sizeGripEnabled">
@@ -44,26 +44,13 @@
       <widget class="QLineEdit" name="edtKeyWord"/>
      </item>
      <item row="1" column="1">
-      <widget class="QComboBox" name="cmbSearchIn">
-       <item>
-        <property name="text">
-         <string>All video services</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Custom search</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Google Videos</string>
-        </property>
-       </item>
-      </widget>
+      <widget class="QComboBox" name="cmbSearchIn"/>
      </item>
      <item row="1" column="2">
       <widget class="QPushButton" name="btnSearch">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="minimumSize">
         <size>
          <width>100</width>
@@ -112,7 +99,7 @@
      <item row="0" column="2">
       <widget class="QLabel" name="lblResultsCount">
        <property name="text">
-        <string>“bla” results 1 - 20 of about 62,000</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -133,9 +120,12 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>550</width>
+          <width>648</width>
           <height>375</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string>QWidget{background: white;}</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
          <property name="margin">
@@ -161,6 +151,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="btnPrevSearch">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="maximumSize">
         <size>
          <width>60</width>
@@ -173,7 +166,17 @@
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="spinBoxPage"/>
+      <widget class="QSpinBox" name="spinBoxPage">
+       <property name="prefix">
+        <string>Page </string>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnNextSearch">
@@ -221,6 +224,25 @@
    </item>
   </layout>
  </widget>
- <resources/>
- <connections/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchVideosImpl</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>509</x>
+     <y>534</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>536</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

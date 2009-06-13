@@ -47,9 +47,19 @@ SearchResults *SearchResultsScriptPrototype::thisSearchResults() const
 }
 
 void SearchResultsScriptPrototype::addSearchResult(QString videoUrl, QString imageUrl, QString title,
-												   QString description, int duration)
+												   QString description, int duration, double rating)
 {
-	thisSearchResults()->addSearchResult(videoUrl, imageUrl, title, description, duration);
+	thisSearchResults()->addSearchResult(videoUrl, imageUrl, title, description, duration, rating);
+}
+
+void SearchResultsScriptPrototype::setSummary(QString value)
+{
+	thisSearchResults()->setSummary(value);
+}
+
+QString SearchResultsScriptPrototype::getUserLanguage()
+{
+	return thisSearchResults()->getUserLanguage();
 }
 
 // SearchResultsScriptClass class

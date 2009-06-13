@@ -191,6 +191,8 @@ Q_OBJECT
 		QList<VideoInformationPlugin*> getAllAdultPlugins() const;
 		/*! Get the list of all music sites */
 		QList<VideoInformationPlugin*> getAllMusicPlugins() const;
+		/*! Get the list of all plugins with search capabilities */
+		QList<VideoInformationPlugin*> getAllSearchPlugins() const;
 		/*! Get the video URL */
 		void getVideoInformation(VideoItem *videoItem);
 		/*! Get plugins count */

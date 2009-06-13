@@ -40,15 +40,22 @@ Q_OBJECT
 	private:
 		SearchVideos *searchVideos;
 		SearchVideosItemImpl* getSearchVideosItemImplBySearchItem(SearchResultItem *item);
+		QMovie *loadingMovie;
+		void clearResults();
+		void updateButons(bool searching);
+		void fillSearchServices();
 	public:
 		SearchVideosImpl(QWidget *parent = 0, Qt::WFlags f = 0);
 		~SearchVideosImpl();
 	private slots:
+		void finished(int);
 		void btnSearchClicked();
+		void btnPrevSearchClicked();
+		void btnNextSearchClicked();
+		void edtKeyWordChanged(QString text);
 		void searchStarted();
 		void searchFinished();
 		void searchResultAdded(SearchResultItem *searchResultItem);
-		void btnCloseClicked();
 		void startedDownloadPreview(SearchResultItem *searchItem);
 		void finishedDownloadPreview(SearchResultItem *searchItem, bool error);
 };

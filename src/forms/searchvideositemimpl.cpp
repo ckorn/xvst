@@ -25,16 +25,21 @@
 
 #include "searchvideositemimpl.h"
 
+#include <math.h>
+
 #include "../tools.h"
 #include "../searchvideos.h"
 #include "../videolistcontroller.h"
 
-SearchVideosItemImpl::SearchVideosItemImpl(QWidget *parent, SearchResultItem *searchItem)
+SearchVideosItemImpl::SearchVideosItemImpl(QWidget *parent, SearchResultItem *searchItem, QMovie *loadingMovie)
 	: QWidget(parent)
 {
 	setupUi(this);
 	setSearchVideosItem(searchItem);
-	//
+	hasPreview = QFile(searchItem->getPreviewFileName(true)).size() > 0;
+	// set the preview if it exists
+	if (hasPreview) reloadPreview(); else imgVideo->setMovie(loadingMovie);
+	// connect signals
 	connect(lblDownloadVideo, SIGNAL(linkActivated(const QString&)), this, SLOT(linkActivated(const QString&)));
 }
 
@@ -49,8 +54,13 @@ void SearchVideosItemImpl::setSearchVideosItem(SearchResultItem *searchItem)
 	lblTitle->setText(QString(lblTitle->text()).arg(searchItem->getTitle()));
 	lblDescription->setText(QString(lblDescription->text()).arg(searchItem->getDescription()));
 
-	lblExtraInformation->setText(QString("(%1)").arg(secondsToHMS_formatted(searchItem->getDuration(), ":", true, false)));
-	lblExtraInformation->setVisible(searchItem->getDuration() > 0);
+	lblDuration->setText(QString("(%1)").arg(secondsToHMS_formatted(searchItem->getDuration(), ":", true, false)));
+	lblDuration->setVisible(searchItem->getDuration() > 0);
+
+	imgRating->setText(toStars(searchItem->getRating()));
+	imgRating->setToolTip(tr("<b>Rating:</b> %1").arg(floatToStr(searchItem->getRating())));
+	imgRating->setVisible(searchItem->getRating() > 0);
+	lblRating->setVisible(searchItem->getRating() > 0);
 
 	lblDownloadVideo->setText(QString("<a href=\"%1\"><img src=\":/buttons/images/film_add.png\" /></a>").arg(searchItem->getVideoUrl()));
 	lblPlayVideo->setText(QString("<a href=\"%1\"><img src=\":/buttons/images/control_play.png\" /></a>").arg(searchItem->getVideoUrl()));
@@ -59,13 +69,22 @@ void SearchVideosItemImpl::setSearchVideosItem(SearchResultItem *searchItem)
 void SearchVideosItemImpl::reloadPreview()
 {
 	if (searchItem == NULL) return;
+	// remove loading image
+	imgVideo->clear();
+	// make it screachable
+	imgVideo->setScaledContents(true);
+	// init preview image
+	QPixmap preview;
 	// reload preview if it exists
-	if (QFile::exists(QDir::tempPath() + searchItem->getPreviewFileName()))
-	{
-		QPixmap preview = QPixmap(QDir::tempPath() + searchItem->getPreviewFileName());
-		if (!preview.isNull())
-			imgVideo->setPixmap(preview);
-	}
+	if (QFile::exists(searchItem->getPreviewFileName(true)))
+		preview.load(searchItem->getPreviewFileName(true));
+	// loaded?
+	if (preview.isNull())
+		preview.load(":/search/images/no-preview.png");
+	// load image
+	imgVideo->setPixmap(preview);
+	// yes, has preview now
+	hasPreview = true;
 }
 
 void SearchVideosItemImpl::linkActivated(const QString &link)
@@ -80,4 +99,21 @@ void SearchVideosItemImpl::linkActivated(const QString &link)
 								tr("Already added"),
 								tr("You already added this video."),
 								tr("Ok"));
+}
+
+QString SearchVideosItemImpl::toStars(double rating)
+{
+	// rating 0..5
+	QString stars = "";
+	int count = floor(rating);
+	// set stars
+	for (int n = 0; n < count; n++)
+		stars+="<img src=\":/search/images/star_full.png\" />";
+	// need an half star?
+	if (count < 5 && (rating - floor(rating)) >= 0.5)
+		stars+="<img src=\":/search/images/star_half.png\" />";
+	else if (count < 5) // need some empty stars
+		for (int n = count; n < 5; n++)
+			stars+="<img src=\":/search/images/star_empty.png\" />";
+	return stars;
 }

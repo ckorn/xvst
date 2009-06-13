@@ -290,6 +290,7 @@ void Http::initClass(bool useInternalTimer)
 	initRetriesData();
 	setTimeOut(10);	// 10 seconds
 	maxAutoJumps = 5;
+	skipExistentFiles = false;
 	// destination file
 	file = NULL;
 	// cancel or pause on finish?
@@ -537,6 +538,13 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 
 	// set file info
 	destFile = QFileInfo(fileName);
+
+	// if skip existent files is enabled and the output file already exists, then...
+	if (QFile::exists(fileName) && skipExistentFiles)
+	{
+		emit downloadFinished(destFile);
+		return QHttp::NoError;
+	}
 
 	// init http variables
 	initData();
@@ -793,6 +801,11 @@ void Http::setTimeOut(int value)
 void Http::setMaxAutoJumps(int value)
 {
 	maxAutoJumps = value;
+}
+
+void Http::setSkipExistentFiles(bool value)
+{
+	skipExistentFiles = value;
 }
 
 int Http::getLastError()

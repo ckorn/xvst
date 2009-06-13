@@ -36,8 +36,10 @@ Q_OBJECT
 	private:
 		SearchResultItem *searchItem;
 		bool added;
+		bool hasPreview;
+		QString toStars(double rating);
 	public:
-		SearchVideosItemImpl(QWidget *parent, SearchResultItem *searchItem);
+		SearchVideosItemImpl(QWidget *parent, SearchResultItem *searchItem, QMovie *loadingMovie);
 		void setSearchVideosItem(SearchResultItem *searchItem);
 		void reloadPreview();
 	private slots:

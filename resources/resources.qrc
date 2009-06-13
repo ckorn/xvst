@@ -74,5 +74,9 @@
     </qresource>
     <qresource prefix="/search" >
         <file>images/no-preview.png</file>
+        <file>images/loader.gif</file>
+        <file>images/star_empty.png</file>
+        <file>images/star_full.png</file>
+        <file>images/star_half.png</file>
     </qresource>
 </RCC>

@@ -239,3 +239,8 @@ void Language::setDescription(QString value)
 {
 	description = value;
 }
+
+QString Language::getLangLocale()
+{
+	return copyBetween(langFile, "xVST_", ".qm");
+}

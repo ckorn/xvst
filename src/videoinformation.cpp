@@ -27,8 +27,8 @@
 
 #include "tools.h"
 #include "http.h"
-#include "searchvideos.h"
 #include "videoitem.h"
+#include "searchvideos.h"
 #include "searchvideosscriptclass.h"
 #include "httpscriptclass.h"
 #include "toolsscriptclass.h"
@@ -259,6 +259,19 @@ QList<VideoInformationPlugin*> VideoInformation::getAllMusicPlugins() const
 	return result;
 }
 
+QList<VideoInformationPlugin*> VideoInformation::getAllSearchPlugins() const
+{
+	QList<VideoInformationPlugin*> result;
+
+	for(int n = 0; n < plugins->count(); n++)
+	{
+		if (plugins->at(n)->isSearchEngineAvailable())
+			result.append(plugins->at(n));
+	}
+
+	return result;
+}
+
 void VideoInformation::getVideoInformation(VideoItem *videoItem)
 {
 	if (videoItem == NULL || isGettingInfo()) return;
@@ -442,12 +455,16 @@ void VideoInformationPluginIconsCatcher::downloadNextFavicon()
 		QFileInfo fileInfo(plugins->first()->getScriptFile(false));
 		QString cahcePath = ProgramOptions::getProgramOptionsInstance()->getOptionsPath() + PLUGINS_IMAGE_CACHE_DIR;
 		// download
-		http->download(plugins->first()->getFaviconUrl(), cahcePath, fileInfo.baseName(), false);
+		int httpError = http->download(plugins->first()->getFaviconUrl(), cahcePath, fileInfo.baseName(), false);
+		// has errors?
+		if (httpError != 0)	downloadError(httpError);
 	}
 }
 
 void VideoInformationPluginIconsCatcher::downloadFinished(const QFileInfo)
 {
+	if (plugins->isEmpty()) return;
+	// take out the first favicon (due it has been processed)
 	plugins->takeFirst()->reloadIcon();
 	// download next favicon
 	QTimer::singleShot(50, this, SLOT(downloadNextFavicon()));
@@ -455,6 +472,8 @@ void VideoInformationPluginIconsCatcher::downloadFinished(const QFileInfo)
 
 void VideoInformationPluginIconsCatcher::downloadError(int)
 {
+	if (plugins->isEmpty()) return;
+	// remove first favicon (due it has been processed)
 	plugins->removeFirst();
 	// download next favicon
 	QTimer::singleShot(50, this, SLOT(downloadNextFavicon()));

@@ -40,7 +40,9 @@ Q_OBJECT
 		SearchResultsScriptPrototype(QObject *parent = 0);
 		~SearchResultsScriptPrototype();
 	public slots:
-		void addSearchResult(QString videoUrl, QString imageUrl, QString title, QString description, int duration);
+		void addSearchResult(QString videoUrl, QString imageUrl, QString title, QString description, int duration, double rating);
+		void setSummary(QString value);
+		QString getUserLanguage();
 };
 
 class SearchResultsScriptClass : public QObject, public QScriptClass

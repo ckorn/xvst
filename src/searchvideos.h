@@ -39,10 +39,11 @@ class SearchResultItem : public QObject
 		QString title;			//! Video title
 		QString description;	//! Video description
 		int duration;			//! Video duration
+		double rating;			//! Video rating
 	public:
 		/*! Class constructor */
 		SearchResultItem(QString videoUrl, QString imageUrl, QString title,
-						 QString description, int duration);
+						 QString description, int duration, double rating);
 		/*! Get the video Id */
 		QString getVideoId();
 		/*! Get the video url */
@@ -55,8 +56,10 @@ class SearchResultItem : public QObject
 		QString getDescription();
 		/*! Get the video duration */
 		int getDuration();
+		/*! Gt video rating */
+		double getRating();
 		/*! Get the preview file name */
-		QString getPreviewFileName();
+		QString getPreviewFileName(bool withFullPath = false);
 };
 
 class SearchResults : public QObject
@@ -64,10 +67,10 @@ class SearchResults : public QObject
 Q_OBJECT
 	private:
 		QList<SearchResultItem *> *results;	//! List of search results
+		QString summary;					//! Search summary
+		QString userLanguage;				//! Current user language configuration
 		/*! Copy elements from another SearchResults */
-		void copyFrom(const SearchResults &);
-		/*! Remove all search results */
-		void removeAllSearchResults();
+		void copyFrom(const SearchResults&, bool clear);
 	public:
 		/*! Class constructor */
 		SearchResults();
@@ -76,13 +79,24 @@ Q_OBJECT
 		/*! Class destructor */
 		~SearchResults();
 		/*! Override = operator */
-		SearchResults &operator=(const SearchResults &);
+		SearchResults &operator=(const SearchResults&);
 		/*! Add a new search result */
-		void addSearchResult(QString videoUrl, QString imageUrl, QString title, QString description, int duration);
+		void addSearchResult(QString videoUrl, QString imageUrl, QString title,
+							 QString description, int duration, double rating);
+		/*! Add a list of search results */
+		void addSearchResults(const SearchResults &searchResults);
 		/*! Get a search result */
 		SearchResultItem *getSearchResult(int index);
 		/*! Get search results count */
 		int getSearchResultCount();
+		/*! Set search summary */
+		void setSummary(QString value);
+		/*! Get search summary */
+		QString getSummary();
+		/*! Get current user language */
+		QString getUserLanguage();
+		/*! Remove all search results */
+		void removeAllSearchResults();
 };
 
 class SearchResultsPreviewCatcher : public QObject
@@ -90,7 +104,7 @@ class SearchResultsPreviewCatcher : public QObject
 Q_OBJECT
 	private:
 		Http *http;							//!< Download class
-		QList<SearchResultItem*> *queue;	//!< List of previews to download
+		QList<SearchResultItem*> *previews;	//!< List of previews to download
 	public:
 		/*! Class constructor */
 		SearchResultsPreviewCatcher();
@@ -98,6 +112,8 @@ Q_OBJECT
 		~SearchResultsPreviewCatcher();
 		/*! Add a new  */
 		void addPreview(SearchResultItem *searchItem);
+		/*! Download previews */
+		void downloadPreviews();
 		/*! Stop and also clear the downloads queue */
 		void stop();
 	private slots:
@@ -114,19 +130,28 @@ Q_OBJECT
 		void finishedDownloadPreview(SearchResultItem *searchItem, bool error);
 };
 
-class SearchVideos : public QObject
+class SearchVideos : public QThread
 {
 Q_OBJECT
 	private:
 		SearchResults *searchResults;				//!< List with search results
 		SearchResultsPreviewCatcher *imageCatcher;	//!< Image preview downloader
+		QString internalPluginId;	//!< Plugin id (to identify the plugin to use as searcher)
+		QString internalKeyWords;	//!< Text to search
+		int internalPage;			//!< Page to display
+		/*! Thread executation */
+		void run();
 	public:
 		/*! Class constructor */
 		SearchVideos();
 		/*! Class destructor */
 		~SearchVideos();
 		/*! Start to search videos */
-		void searchVideos(QString keyWords, int page);
+		void searchVideos(QString keyWords, int page, QString pluginId);
+		/*! Get the search summary */
+		QString getSearchSummary();
+		/*! Clean search images previews */
+		static void removePreviews();
 	private slots:
 		/*! Download preview started */
 		void privateStartedDownloadPreview(SearchResultItem *searchItem);
