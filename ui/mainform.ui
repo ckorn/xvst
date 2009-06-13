@@ -303,7 +303,7 @@
             <enum>Qt::TabFocus</enum>
            </property>
            <property name="toolTip">
-            <string>Search videos window</string>
+            <string>Search video</string>
            </property>
            <property name="whatsThis">
             <string/>
