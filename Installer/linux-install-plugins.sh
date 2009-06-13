@@ -2,7 +2,7 @@
 
 PLUGINS_SRC='../resources/services'
 PLUGINS_PRE='../bin/plugins'
-PLUGINS_END='$HOME/.xVideoServiceThief/plugins'
+PLUGINS_END=$HOME/'.xVideoServiceThief/plugins'
 
 # change to script directory
 cd `dirname "$0"`

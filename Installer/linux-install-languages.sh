@@ -2,7 +2,7 @@
 
 LANGUAGES_SRC='../resources/translations'
 LANGUAGES_PRE='../bin/languages'
-LANGUAGES_END='$HOME/.xVideoServiceThief/languages'
+LANGUAGES_END=$HOME/'.xVideoServiceThief/languages'
 
 # change to script directory
 cd `dirname "$0"`
