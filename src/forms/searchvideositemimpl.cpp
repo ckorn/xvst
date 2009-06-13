@@ -35,6 +35,24 @@ SearchVideosItemImpl::SearchVideosItemImpl(QWidget *parent, SearchResultItem *se
 	: QWidget(parent)
 {
 	setupUi(this);
+	// configure fonts
+	QFont titleFont = lblTitle->font();
+	QFont descriptionFont = lblDescription->font();
+	QFont timeAndRatingFont = lblDuration->font();
+	titleFont.setBold(true);
+	// set MacOSX and Linux points sizes
+#ifndef Q_OS_WIN32
+	descriptionFont.setPointSize(descriptionFont.pointSize() - 1);
+	timeAndRatingFont.setPointSize(timeAndRatingFont.pointSize() - 2);
+#else // set windows points sizes
+	titleFont.setPointSize(titleFont.pointSize() + 1);
+	timeAndRatingFont.setPointSize(timeAndRatingFont.pointSize() - 1);
+#endif
+	lblTitle->setFont(titleFont);
+	lblDescription->setFont(descriptionFont);
+	lblDuration->setFont(timeAndRatingFont);
+	lblRating->setFont(timeAndRatingFont);
+	// configure
 	setSearchVideosItem(searchItem);
 	hasPreview = QFile(searchItem->getPreviewFileName(true)).size() > 0;
 	// set the preview if it exists
