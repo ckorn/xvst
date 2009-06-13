@@ -35,6 +35,7 @@ SearchVideosImpl::SearchVideosImpl(QWidget *parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {
 	setupUi(this);
+	centerWindow();
 	// set it as beta
 	setWindowTitle(windowTitle() + " - Beta!");
 	//
@@ -190,4 +191,27 @@ void SearchVideosImpl::fillSearchServices()
 							 QVariant(searchEngines.at(n)->getID()));
 	//
 //	cmbSearchIn->setCurrentIndex(-1);
+}
+
+void SearchVideosImpl::centerWindow()
+{
+	QDesktopWidget *desktop = QApplication::desktop();
+
+	int screenWidth, width;
+	int screenHeight, height;
+	int x, y;
+	QSize windowSize;
+
+	screenWidth = desktop->width();
+	screenHeight = desktop->height();
+
+	windowSize = size();
+	width = windowSize.width();
+	height = windowSize.height();
+
+	x = (screenWidth - width) / 2;
+	y = (screenHeight - height) / 2;
+	y -= 50;
+
+	move(x, y);
 }

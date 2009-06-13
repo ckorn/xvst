@@ -44,6 +44,7 @@ Q_OBJECT
 		void clearResults();
 		void updateButons(bool searching);
 		void fillSearchServices();
+		void centerWindow();
 	public:
 		SearchVideosImpl(QWidget *parent = 0, Qt::WFlags f = 0);
 		~SearchVideosImpl();
