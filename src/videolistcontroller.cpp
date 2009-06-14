@@ -407,6 +407,16 @@ bool VideoListController::canStartDownload()
 	return videoDownload->canStartDownload();
 }
 
+bool VideoListController::isAlreadyAdded(const QString URL)
+{
+	// find a video with this URL
+	for (int n = 0; n < videoList->count(); n++)
+		if (URL == videoList->at(n)->getURL())
+			return true;
+	// not added
+	return false;
+}
+
 void VideoListController::startGetInformation(VideoItem *videoItem)
 {
 	videoInformation->getVideoInformation(videoItem);
@@ -538,7 +548,7 @@ void VideoListController::moveDOWN(VideoItem *videoItem)
 		swapVideoItems(videoItem, videoList->at(nextItem + 1));
 }
 
-VideoListController* VideoListController::getLastInstance()
+VideoListController* VideoListController::instance()
 {
 	return lastInstance;
 }

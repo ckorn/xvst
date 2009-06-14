@@ -121,7 +121,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// init program options
 	lastOptionsPage = 0;
 	// load options
-	programOptions = ProgramOptions::getProgramOptionsInstance();
+	programOptions = ProgramOptions::instance();
 	programOptions->load();
 	// setu-up the main form
 	centerWindow();
@@ -294,7 +294,7 @@ MainFormImpl::~MainFormImpl()
 	delete completedPopup;
 
 	// delete program options
-	ProgramOptions::destroyProgramOptionsInstance();
+	ProgramOptions::destroyInstance();
 
 	// delete main objects
 	delete videoList;

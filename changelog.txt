@@ -22,7 +22,7 @@
 	- Move video down (control + down)
 	- Open downloads directory (control + T)
 	- Online help (F1)
-- Added 14 new plug-ins:
+- Added 15 new plug-ins:
 	- GodOfHumor
 	- Kontraband
 	- Pugorama
@@ -37,6 +37,7 @@
 	- Pornhub
 	- KeezMovies
 	- Freecaster
+	- GoEar
 
 - Removed adult links from Information window when "Block adults content" is enabled
 - Removed adult plugins from blocking list when "Block adults content" is enabled

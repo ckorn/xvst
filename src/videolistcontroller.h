@@ -131,6 +131,8 @@ Q_OBJECT
 		bool isConverting();
 		/*! Get if is can start a new download */
 		bool canStartDownload();
+		/*! Get if this URL is already into the list */
+		bool isAlreadyAdded(const QString URL);
 		/*! Start to get video information */
 		void startGetInformation(VideoItem *videoItem);
 		/*! Start a new download */
@@ -160,7 +162,7 @@ Q_OBJECT
 		/*! Move an item down (into prior list) */
 		void moveDOWN(VideoItem *videoItem);
 		/*! Get the last created instance */
-		static VideoListController* getLastInstance();
+		static VideoListController* instance();
 	private slots:
 		/*! Video item has been updated */
 		void videoItemUpdated(VideoItem *videoItem);

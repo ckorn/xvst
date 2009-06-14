@@ -35,8 +35,8 @@ class SearchVideosItemImpl : public QWidget, private Ui::SearchVideosItemImpl
 Q_OBJECT
 	private:
 		SearchResultItem *searchItem;
-		bool added;
 		bool hasPreview;
+		bool canBeDownloaded;
 		QString toStars(double rating);
 	public:
 		SearchVideosItemImpl(QWidget *parent, SearchResultItem *searchItem, QMovie *loadingMovie);

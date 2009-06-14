@@ -54,7 +54,7 @@ ProgramOptions::~ProgramOptions()
 	save();
 }
 
-ProgramOptions* ProgramOptions::getProgramOptionsInstance()
+ProgramOptions* ProgramOptions::instance()
 {
 	if (programOptionsInstance == NULL)
 	{
@@ -89,7 +89,7 @@ ProgramOptions* ProgramOptions::getProgramOptionsInstance()
 	return programOptionsInstance;
 }
 
-void ProgramOptions::destroyProgramOptionsInstance()
+void ProgramOptions::destroyInstance()
 {
 	if (programOptionsInstance != NULL)
 	{

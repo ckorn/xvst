@@ -46,7 +46,7 @@ int main(int argc, char ** argv)
 	LoadingImpl::instance()->show();
 
 	// get language file
-	ProgramOptions *programOptions = ProgramOptions::getProgramOptionsInstance();
+	ProgramOptions *programOptions = ProgramOptions::instance();
 	programOptions->load();
 	QString qm = LanguageManager::get_qm_languageFile(programOptions->getLanguageFile(true));
 

@@ -95,7 +95,7 @@ void SearchVideos::run()
 	// stop getting results
 	imageCatcher->stop();
 	// get results
-	VideoInformationPlugin *plugin = VideoInformation::getLastVideoInformationInstance()->getRegisteredPlugin(internalPluginId);
+	VideoInformationPlugin *plugin = VideoInformation::instance()->getRegisteredPlugin(internalPluginId);
 	SearchResults results = plugin->searchVideos(internalKeyWords, internalPage);
 	searchResults->removeAllSearchResults();
 	searchResults->addSearchResults(results);
@@ -192,7 +192,7 @@ SearchResults::SearchResults()
 {
 	results = new QList<SearchResultItem *>();
 	// get current user language id
-	QString langFile = ProgramOptions::getProgramOptionsInstance()->getLanguageFile(true);
+	QString langFile = ProgramOptions::instance()->getLanguageFile(true);
 	Language *lang = LanguageManager::getLanguageInfo(langFile);
 	userLanguage = lang != NULL ? lang->getLangLocale() : "en";
 }

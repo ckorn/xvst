@@ -30,6 +30,7 @@
 #include "../tools.h"
 #include "../searchvideos.h"
 #include "../videolistcontroller.h"
+#include "../videoinformation.h"
 
 SearchVideosItemImpl::SearchVideosItemImpl(QWidget *parent, SearchResultItem *searchItem, QMovie *loadingMovie)
 	: QWidget(parent)
@@ -68,9 +69,13 @@ void SearchVideosItemImpl::setSearchVideosItem(SearchResultItem *searchItem)
 	this->searchItem = searchItem;
 	this->setObjectName(searchItem->getVideoId());
 
+	canBeDownloaded = VideoInformation::instance()->isValidHost(searchItem->getVideoUrl());
+
 	// auto configure items
 	lblTitle->setText(QString(lblTitle->text()).arg(searchItem->getTitle()));
 	lblDescription->setText(QString(lblDescription->text()).arg(searchItem->getDescription()));
+
+	lblPlayVideo->setText(QString("<a href=\"%1\"><img src=\":/buttons/images/control_play.png\" /></a>").arg(searchItem->getVideoUrl()));
 
 	lblDuration->setText(QString("(%1)").arg(secondsToHMS_formatted(searchItem->getDuration(), ":", true, false)));
 	lblDuration->setVisible(searchItem->getDuration() > 0);
@@ -80,8 +85,13 @@ void SearchVideosItemImpl::setSearchVideosItem(SearchResultItem *searchItem)
 	imgRating->setVisible(searchItem->getRating() > 0);
 	lblRating->setVisible(searchItem->getRating() > 0);
 
-	lblDownloadVideo->setText(QString("<a href=\"%1\"><img src=\":/buttons/images/film_add.png\" /></a>").arg(searchItem->getVideoUrl()));
-	lblPlayVideo->setText(QString("<a href=\"%1\"><img src=\":/buttons/images/control_play.png\" /></a>").arg(searchItem->getVideoUrl()));
+	if (canBeDownloaded)
+		lblDownloadVideo->setText(QString("<a href=\"%1\"><img src=\":/buttons/images/film_add.png\" /></a>").arg(searchItem->getVideoUrl()));
+	else // download not avaiable
+	{
+		lblDownloadVideo->setText("<a href=\"%1\"><img src=\":/services/images/services/invalid.png\" /></a>");
+		lblDownloadVideo->setToolTip(tr("Download not avaiable..."));
+	}
 }
 
 void SearchVideosItemImpl::reloadPreview()
@@ -107,15 +117,21 @@ void SearchVideosItemImpl::reloadPreview()
 
 void SearchVideosItemImpl::linkActivated(const QString &link)
 {
-	if (!added)
+	if (!VideoListController::instance()->isAlreadyAdded(link))
 	{
-		VideoListController::getLastInstance()->addVideo(link);
-		added = true;
+		// check if this video can be downloaded
+		if (canBeDownloaded)
+			VideoListController::instance()->addVideo(link);
+		else // ops, its not possible add this video
+			QMessageBox::information(this,
+									tr("Missing plugin"),
+									tr("<p>Is not possible to download this video.</p><p>The xVST didn't find any plugin capable to get the video information.</p>"),
+									tr("Ok"));
 	}
-	else
+	else // already added
 		QMessageBox::information(this,
 								tr("Already added"),
-								tr("You already added this video."),
+								tr("You already added this video. Check your downloads list."),
 								tr("Ok"));
 }
 

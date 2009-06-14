@@ -413,7 +413,7 @@ bool VideoInformation::isBlockedHost(QString URL)
 	return isBlockedHost(URL, bs);
 }
 
-VideoInformation* VideoInformation::getLastVideoInformationInstance()
+VideoInformation* VideoInformation::instance()
 {
 	return lastVideoInformationInstance;
 }
@@ -453,7 +453,7 @@ void VideoInformationPluginIconsCatcher::downloadNextFavicon()
 	if (!plugins->isEmpty())
 	{
 		QFileInfo fileInfo(plugins->first()->getScriptFile(false));
-		QString cahcePath = ProgramOptions::getProgramOptionsInstance()->getOptionsPath() + PLUGINS_IMAGE_CACHE_DIR;
+		QString cahcePath = ProgramOptions::instance()->getOptionsPath() + PLUGINS_IMAGE_CACHE_DIR;
 		// download
 		int httpError = http->download(plugins->first()->getFaviconUrl(), cahcePath, fileInfo.baseName(), false);
 		// has errors?
@@ -614,7 +614,7 @@ QScriptValue VideoInformationPlugin::func_isPluginInstalled(QScriptContext *cont
 		// get params
 		QString id = context->argument(0).toString();
 		// get this plugin is installed
-		VideoInformation *vidInf = VideoInformation::getLastVideoInformationInstance();
+		VideoInformation *vidInf = VideoInformation::instance();
 		bool installed = vidInf->getRegisteredPlugin(id + ".js", true) != NULL;
 		// return the asked item from url
 		return engine->newVariant(QVariant(installed));
@@ -631,7 +631,7 @@ QScriptValue VideoInformationPlugin::func_executePlugin(QScriptContext *context,
 		QString id = context->argument(0).toString();
 		QString url = context->argument(1).toString();
 		// create a temporal VideoItem
-		VideoInformation *vidInf = VideoInformation::getLastVideoInformationInstance();
+		VideoInformation *vidInf = VideoInformation::instance();
 		VideoInformationPlugin *plugin = vidInf->getRegisteredPlugin(id + ".js", true);
 		// is it registered?
 		if (plugin != NULL)
@@ -830,7 +830,7 @@ void VideoInformationPlugin::reloadIcon()
 	if (icon->isNull() && useOnlineFavicon())
 	{
 		QFileInfo fileInfo(pluginFilePath);
-		QString cahcePath = ProgramOptions::getProgramOptionsInstance()->getOptionsPath() + PLUGINS_IMAGE_CACHE_DIR;
+		QString cahcePath = ProgramOptions::instance()->getOptionsPath() + PLUGINS_IMAGE_CACHE_DIR;
 		// load icon
 		icon->load(cahcePath + fileInfo.baseName());
 	}

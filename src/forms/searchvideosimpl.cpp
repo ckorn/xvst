@@ -45,6 +45,7 @@ SearchVideosImpl::SearchVideosImpl(QWidget *parent, Qt::WFlags f)
 	//
 	layoutSearchItems->setAlignment(Qt::AlignTop);
 	//
+	updateButons(true);
 	fillSearchServices();
 	//
 	connect(this, SIGNAL(finished(int)), this, SLOT(finished(int)));
@@ -72,9 +73,8 @@ void SearchVideosImpl::finished(int)
 
 void SearchVideosImpl::edtKeyWordChanged(QString text)
 {
-	btnSearch->setEnabled(!text.isEmpty());
 	spinBoxPage->setValue(1);
-	btnPrevSearch->setEnabled(false);
+	updateButons(text.isEmpty());
 }
 
 void SearchVideosImpl::btnSearchClicked()
@@ -176,7 +176,7 @@ void SearchVideosImpl::updateButons(bool searching)
 
 void SearchVideosImpl::fillSearchServices()
 {
-	QList<VideoInformationPlugin*> searchEngines = VideoInformation::getLastVideoInformationInstance()->getAllSearchPlugins();
+	QList<VideoInformationPlugin*> searchEngines = VideoInformation::instance()->getAllSearchPlugins();
 	// has more than one item?
 	if (searchEngines.count() > 1)
 	{
@@ -189,8 +189,6 @@ void SearchVideosImpl::fillSearchServices()
 		cmbSearchIn->addItem(*(searchEngines.at(n)->getIcon()),
 							 searchEngines.at(n)->getCaption(),
 							 QVariant(searchEngines.at(n)->getID()));
-	//
-//	cmbSearchIn->setCurrentIndex(-1);
 }
 
 void SearchVideosImpl::centerWindow()

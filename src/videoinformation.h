@@ -226,7 +226,7 @@ Q_OBJECT
 		/*! Get if is a blocked host */
 		bool isBlockedHost(QString URL);
 		/*! Get the last VideoInformation reference */
-		static VideoInformation* getLastVideoInformationInstance();
+		static VideoInformation* instance();
 	signals:
 		/*! A Video item download started */
 		void informationStarted(VideoItem *videoItem);

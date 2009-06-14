@@ -104,9 +104,9 @@ Q_OBJECT
 		~ProgramOptions();
 	public:
 		/*! Get singleton instance of ProgramOptions */
-		static ProgramOptions* getProgramOptionsInstance();
+		static ProgramOptions* instance();
 		/*! Destroy singleton instance of ProgramOptions */
-		static void destroyProgramOptionsInstance();
+		static void destroyInstance();
 		/*! Load the program options */
 		void load();
 		/*! Save the program options */

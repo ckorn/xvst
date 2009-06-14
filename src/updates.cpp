@@ -138,7 +138,7 @@ bool Updates::hasUpdates()
 				// plugin files
 				else if (fileInf.completeSuffix() == "js")
 				{
-					VideoInformation *vidInf = VideoInformation::getLastVideoInformationInstance();
+					VideoInformation *vidInf = VideoInformation::instance();
 					VideoInformationPlugin *plugin = vidInf->getRegisteredPlugin(fileInf.fileName(), true);
 					// have info?
 					if (plugin != NULL)
