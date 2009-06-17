@@ -26,6 +26,7 @@
 #include "searchvideos.h"
 
 #include "http.h"
+#include "tools.h"
 #include "videoinformation.h"
 #include "options.h"
 #include "languages.h"
@@ -48,11 +49,11 @@ SearchVideos::~SearchVideos()
 	delete imageCatcher;
 }
 
-void SearchVideos::searchVideos(QString keyWords, int page, QString pluginId)
+void SearchVideos::searchVideos(QString keyWords, int page, QStringList pluginsIds)
 {
 	if (!this->isRunning())
 	{
-		internalPluginId = pluginId;
+		internalPluginsIds = pluginsIds;
 		internalKeyWords = keyWords;
 		internalPage = page;
 		// start thread
@@ -94,22 +95,54 @@ void SearchVideos::run()
 	emit searchStarted();
 	// stop getting results
 	imageCatcher->stop();
-	// get results
-	VideoInformationPlugin *plugin = VideoInformation::instance()->getRegisteredPlugin(internalPluginId);
-	SearchResults results = plugin->searchVideos(internalKeyWords, internalPage);
+	// clear previous results
 	searchResults->removeAllSearchResults();
-	searchResults->addSearchResults(results);
-	searchResults->setSummary(results.getSummary());
+	// has plugins to search?
+	if (internalPluginsIds.count() == 0)
+	{
+		// search finished
+		emit searchFinished();
+		// abort process
+		return;
+	}
+	// build the plugins search list
+	QList<VideoInformationPlugin *> plugins;
+	// check which plugins goes into the list
+	if (internalPluginsIds.at(0) == "*") // all plugins
+		plugins.append(VideoInformation::instance()->getAllSearchPlugins());
+	else if (internalPluginsIds.count() == 1) // single search
+		plugins.append(VideoInformation::instance()->getRegisteredPlugin(internalPluginsIds.at(0)));
+	else // custom search, so add them...
+		for (int n = 0; n < internalPluginsIds.count(); n++)
+			plugins.append(VideoInformation::instance()->getRegisteredPlugin(internalPluginsIds.at(n)));
+	// inits
+	int lastCount = 0;
+	// start to search
+	while (!plugins.isEmpty())
+	{
+		// get results
+		VideoInformationPlugin *plugin = plugins.takeFirst();
+		if (plugin != NULL)
+		{
+			SearchResults results = plugin->searchVideos(internalKeyWords, internalPage);
+			searchResults->addSearchResults(results);
+			searchResults->setSummary(results.getSummary());
+		}
+		// add new search block
+		emit addNewSearchBlock(plugin);
+		// show results
+		for (int n = lastCount; n < searchResults->getSearchResultCount(); n++)
+		{
+			// emit add result
+			emit searchResultAdded(searchResults->getSearchResult(n));
+			// add to previews download previews
+			imageCatcher->addPreview(searchResults->getSearchResult(n));
+		}
+		// update last count
+		lastCount = searchResults->getSearchResultCount();
+	}
 	// search finished
 	emit searchFinished();
-	// show results
-	for (int n = 0; n < searchResults->getSearchResultCount(); n++)
-	{
-		// emit add result
-		emit searchResultAdded(searchResults->getSearchResult(n));
-		// add to previews download previews
-		imageCatcher->addPreview(searchResults->getSearchResult(n));
-	}
 	// download previews
 	imageCatcher->downloadPreviews();
 }
@@ -265,7 +298,7 @@ int SearchResults::getSearchResultCount()
 
 void SearchResults::setSummary(QString value)
 {
-	summary = value;
+	summary = multiLineToSingleLine(value);
 }
 
 QString SearchResults::getSummary()

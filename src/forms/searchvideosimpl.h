@@ -33,13 +33,15 @@
 class SearchVideos;
 class SearchResultItem;
 class SearchVideosItemImpl;
+class VideoInformationPlugin;
 
 class SearchVideosImpl : public QDialog, private Ui::SearchVideosImpl
 {
 Q_OBJECT
 	private:
 		SearchVideos *searchVideos;
-		SearchVideosItemImpl* getSearchVideosItemImplBySearchItem(SearchResultItem *item);
+		QStringList customServices;
+		QList<SearchVideosItemImpl*> getSearchVideosItemImplBySearchItem(SearchResultItem *item);
 		QMovie *loadingMovie;
 		void clearResults();
 		void updateButons(bool searching);
@@ -50,11 +52,13 @@ Q_OBJECT
 		~SearchVideosImpl();
 	private slots:
 		void finished(int);
+		void cmbSearchInActivated(int index);
 		void btnSearchClicked();
 		void btnPrevSearchClicked();
 		void btnNextSearchClicked();
 		void edtKeyWordChanged(QString text);
 		void searchStarted();
+		void addNewSearchBlock(VideoInformationPlugin *plugin);
 		void searchFinished();
 		void searchResultAdded(SearchResultItem *searchResultItem);
 		void startedDownloadPreview(SearchResultItem *searchItem);

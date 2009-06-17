@@ -12,7 +12,7 @@ UI_DIR = build/ui
 MOC_DIR = build/moc
 RCC_DIR = build/rcc
 FORMS = ui/addvideo.ui \
-	ui/searchvideositem.ui \
+    ui/searchvideositem.ui \
     ui/bugreport.ui \
     ui/checkupdates.ui \
     ui/completedpopup.ui \
@@ -31,9 +31,11 @@ FORMS = ui/addvideo.ui \
     ui/updatecenter.ui \
     ui/upspassword.ui \
     ui/welcomedonate.ui \
-    ui/winvistaupdatesmsg.ui
+    ui/winvistaupdatesmsg.ui \
+    ui/searchvideossearchblock.ui \
+	ui/searchvideoscustomize.ui
 HEADERS = src/forms/addvideoimpl.h \
-	src/forms/searchvideositemimpl.h \
+    src/forms/searchvideositemimpl.h \
     src/forms/bugreportimpl.h \
     src/forms/checkupdatesimpl.h \
     src/forms/completedpopupimpl.h \
@@ -53,8 +55,10 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/upspasswordimpl.h \
     src/forms/welcomedonate.h \
     src/forms/windowsvistadetectedimpl.h \
+    src/forms/searchvideossearchblockimpl.h \
+	src/forms/searchvideoscustomizeimpl.h \
     src/pakunpak/pakunpak.h \
-	src/searchvideosscriptclass.h \
+    src/searchvideosscriptclass.h \
     src/checkupdatesworker.h \
     src/http.h \
     src/httpscriptclass.h \
@@ -76,9 +80,9 @@ HEADERS = src/forms/addvideoimpl.h \
     src/videoinformation.h \
     src/videoitem.h \
     src/videolistcontroller.h \
-    src/xprogressbar.h
+	src/xprogressbar.h
 SOURCES = src/forms/addvideoimpl.cpp \
-	src/forms/searchvideositemimpl.cpp \
+    src/forms/searchvideositemimpl.cpp \
     src/forms/bugreportimpl.cpp \
     src/forms/checkupdatesimpl.cpp \
     src/forms/completedpopupimpl.cpp \
@@ -98,7 +102,9 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/upspasswordimpl.cpp \
     src/forms/welcomedonate.cpp \
     src/forms/windowsvistadetectedimpl.cpp \
-	src/searchvideosscriptclass.cpp \
+    src/forms/searchvideossearchblockimpl.cpp \
+	src/forms/searchvideoscustomizeimpl.cpp \
+    src/searchvideosscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/http.cpp \
     src/httpscriptclass.cpp \
@@ -120,7 +126,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/videoinformation.cpp \
     src/videoitem.cpp \
     src/videolistcontroller.cpp \
-    src/xprogressbar.cpp 
+	src/xprogressbar.cpp
 TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/xVST_ca.ts \
     resources/translations/xVST_cz.ts \
@@ -157,8 +163,8 @@ frameworks_build {
 }
 static_build { 
     DEFINES += STATIC_BUILD
-	QTPLUGIN += qico \
-		qgif \
-		qjpeg
+    QTPLUGIN += qico \
+        qgif \
+        qjpeg
     message(static_build)
 }

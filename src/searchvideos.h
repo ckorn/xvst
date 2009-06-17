@@ -29,6 +29,8 @@
 #include <QtCore>
 
 class Http;
+class VideoInformationPlugin;
+
 
 class SearchResultItem : public QObject
 {
@@ -136,9 +138,9 @@ Q_OBJECT
 	private:
 		SearchResults *searchResults;				//!< List with search results
 		SearchResultsPreviewCatcher *imageCatcher;	//!< Image preview downloader
-		QString internalPluginId;	//!< Plugin id (to identify the plugin to use as searcher)
-		QString internalKeyWords;	//!< Text to search
-		int internalPage;			//!< Page to display
+		QStringList internalPluginsIds;	//!< Plugin id (to identify the plugin to use as searcher)
+		QString internalKeyWords;		//!< Text to search
+		int internalPage;				//!< Page to display
 		/*! Thread executation */
 		void run();
 	public:
@@ -147,7 +149,7 @@ Q_OBJECT
 		/*! Class destructor */
 		~SearchVideos();
 		/*! Start to search videos */
-		void searchVideos(QString keyWords, int page, QString pluginId);
+		void searchVideos(QString keyWords, int page, QStringList pluginsIds);
 		/*! Get the search summary */
 		QString getSearchSummary();
 		/*! Clean search images previews */
@@ -160,6 +162,8 @@ Q_OBJECT
 	signals:
 		/*! New search started */
 		void searchStarted();
+		/*! Added new search (used on multiple searchs) */
+		void addNewSearchBlock(VideoInformationPlugin *plugin);
 		/*! The current search finished */
 		void searchFinished();
 		/*! A new search result has been added */

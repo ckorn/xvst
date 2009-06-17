@@ -173,7 +173,7 @@ Q_OBJECT
 		VideoInformation(QString pluginsDir);
 		/*! Class destructor */
 		~VideoInformation();
-		/* Register a new VideoDownload Plugin */
+		/*! Register a new VideoDownload Plugin */
 		void registerPlugin(VideoInformationPlugin *videoInformationPlugin);
 		/*! Get a registered VideoInformationPlugin */
 		VideoInformationPlugin* getRegisteredPlugin(const int index);

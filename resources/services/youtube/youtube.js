@@ -25,12 +25,12 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "2.0.0";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
 	this.ID = "youtube.com";
-	this.caption = "Youtube";
+	this.caption = "YouTube";
 	this.adultContent = false;
 	this.musicSite = false;
 }
@@ -71,6 +71,88 @@ function getVideoInformation(url)
 	result.needLogin = result.title == "Broadcast Yourself.";
 	// return the video information
 	return result;
+}
+
+function searchVideos(keyWord, pageIndex)
+{
+	const URL_SEARCH = "http://www.youtube.com/results?search_query=%1&page=%2&hl=%3";
+	const HTML_SEARCH_START = "<!-- start search results -->";
+	const HTML_SEARCH_FINISH = "<!-- end search results -->";
+	const HTML_SEARCH_SEPARATOR = '<div class="video-entry">';
+	// replace all spaces for "+"
+	keyWord = strReplace(keyWord, " ", "+");
+	// init search results object
+	var searchResults = new SearchResults();
+	// init http object
+	var http = new Http();
+	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex, searchResults.getUserLanguage()));
+	// get the search summary
+	var summary = copyBetween(html, '<span  class="search-query">', '</div>');
+	searchResults.setSummary(cleanSummary(summary));
+	// get results html block
+	var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
+	// if we found some results then...
+	if (htmlResults != "")
+	{
+		var block = "";
+		// iterate over results
+		while ((block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_SEPARATOR)) != "")
+		{
+			parseResultItem(searchResults, block);
+			htmlResults = strRemove(htmlResults, 0, block.toString().length);
+		}
+		// get last result
+		parseResultItem(searchResults, htmlResults);
+	}
+	// return search results
+	return searchResults;
+}
+
+function cleanSummary(summary)
+{
+	// remove all "\n"
+	summary = strReplace(summary, "\n", "");
+	// remove unused </span>
+	summary = strReplace(summary, "</span>", '');
+	// return cleanned summary
+	return summary;
+}
+
+function parseResultItem(searchResults, html)
+{
+	const VIDEO_URL = "http://www.youtube.com";
+	// vars
+	var tmp, videoUrl, imageUrl, title, description, duration, rating;
+	// get video url
+	videoUrl = VIDEO_URL + copyBetween(html, 'href="', '"');
+	// get title and image url
+	tmp = copyBetween(html, '<img', '>') ;
+	title = copyBetween(tmp, 'title="', '"');
+	imageUrl = copyBetween(tmp, 'src="', '"');
+	if (strIndexOf(imageUrl, "default.jpg") == -1) // if is not a "default.jpg"...
+		imageUrl = copyBetween(tmp, 'thumb="', '"');
+	// get video description
+	description = copyBetween(html, 'class="video-description">', '</div>');
+	// get video duration
+	tmp = copyBetween(html, '<div class="video-time"', '</div>');
+	duration = convertToSeconds(copyBetween(tmp, '">', '</span'));
+	// get rating
+	tmp = copyBetween(html, '<button class="master-sprite ratingVS', '>');
+	rating = copyBetween(tmp, 'title="', '"');
+	// add to results list
+	searchResults.addSearchResult(videoUrl, imageUrl, title, description, duration, rating);
+}
+
+function convertToSeconds(text)
+{
+	// how many ":" exists?
+	var count = getTokenCount(text, ":");
+	// get mins and seconds
+	var h = new Number(h = count == 3 ? getToken(text, ":", 0) * 3600 : 0);
+	var m = new Number(getToken(text, ":", count - 2) * 60);
+	var s = new Number(getToken(text, ":", count - 1));
+	// convert h:m:s to seconds
+	return h + m + s;
 }
 
 function getVideoServiceIcon()

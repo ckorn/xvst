@@ -26,6 +26,8 @@
 #include "searchvideosimpl.h"
 
 #include "searchvideositemimpl.h"
+#include "searchvideossearchblockimpl.h"
+#include "searchvideoscustomizeimpl.h"
 
 #include "../videoinformation.h"
 #include "../searchvideos.h"
@@ -47,13 +49,16 @@ SearchVideosImpl::SearchVideosImpl(QWidget *parent, Qt::WFlags f)
 	//
 	updateButons(true);
 	fillSearchServices();
+	stackedResults->setCurrentIndex(1);
 	//
 	connect(this, SIGNAL(finished(int)), this, SLOT(finished(int)));
+	connect(cmbSearchIn, SIGNAL(activated(int)), this, SLOT(cmbSearchInActivated(int)));
 	connect(edtKeyWord, SIGNAL(textChanged(QString)), this, SLOT(edtKeyWordChanged(QString)));
 	connect(btnSearch, SIGNAL(clicked()), this, SLOT(btnSearchClicked()));
 	connect(btnPrevSearch, SIGNAL(clicked()), this, SLOT(btnPrevSearchClicked()));
 	connect(btnNextSearch, SIGNAL(clicked()), this, SLOT(btnNextSearchClicked()));
 	connect(searchVideos, SIGNAL(searchStarted()), this, SLOT(searchStarted()));
+	connect(searchVideos, SIGNAL(addNewSearchBlock(VideoInformationPlugin*)), this, SLOT(addNewSearchBlock(VideoInformationPlugin *)));
 	connect(searchVideos, SIGNAL(searchFinished()), this, SLOT(searchFinished()));
 	connect(searchVideos, SIGNAL(searchResultAdded(SearchResultItem*)), this, SLOT(searchResultAdded(SearchResultItem*)));
 	connect(searchVideos, SIGNAL(startedDownloadPreview(SearchResultItem*)), this, SLOT(startedDownloadPreview(SearchResultItem*)));
@@ -71,6 +76,16 @@ void SearchVideosImpl::finished(int)
 	this->deleteLater();
 }
 
+void SearchVideosImpl::cmbSearchInActivated(int index)
+{
+	if (cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString() == "?")
+	{
+		SearchVideosCustomizeImpl customize(customServices, this, Qt::Sheet);
+		if (showModalDialog(&customize) == QDialog::Accepted)
+			customServices = customize.getCustomServices();
+	}
+}
+
 void SearchVideosImpl::edtKeyWordChanged(QString text)
 {
 	spinBoxPage->setValue(1);
@@ -80,8 +95,12 @@ void SearchVideosImpl::edtKeyWordChanged(QString text)
 void SearchVideosImpl::btnSearchClicked()
 {
 	clearResults();
-	searchVideos->searchVideos(edtKeyWord->text(), spinBoxPage->value(),
-							   cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString());
+	// custom search?
+	if (cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString() == "?")
+		searchVideos->searchVideos(edtKeyWord->text(), spinBoxPage->value(), customServices);
+	else // single search
+		searchVideos->searchVideos(edtKeyWord->text(), spinBoxPage->value(),
+								   QStringList() << cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString());
 	updateButons(true);
 }
 
@@ -103,31 +122,24 @@ void SearchVideosImpl::btnNextSearchClicked()
 void SearchVideosImpl::searchStarted()
 {
 	btnSearch->setEnabled(false);
-	// create loading info
-	QLabel *loadingText, *loadingImage;
-	layoutSearchItems->addStretch();
-	loadingText = new QLabel(tr("Searching \"<b>%1</b>\" (page %2)... please wait...").arg(edtKeyWord->text()).arg(spinBoxPage->value()), this);
-	loadingText->setAlignment(Qt::AlignHCenter);
-	layoutSearchItems->addWidget(loadingText);
-	loadingImage = new QLabel(this);
-	loadingImage->setMovie(loadingMovie);
-	loadingImage->setAlignment(Qt::AlignHCenter);
-	layoutSearchItems->addWidget(loadingImage);
-	layoutSearchItems->addStretch();
+	//
+	imgSearching->setMovie(loadingMovie);
+	lblSearching->setText(tr("Searching \"<b>%1</b>\" (page %2)... please wait...").arg(edtKeyWord->text()).arg(spinBoxPage->value()));
+	// display searching sping
+	stackedResults->setCurrentIndex(0);
+}
+
+void SearchVideosImpl::addNewSearchBlock(VideoInformationPlugin *plugin)
+{
+	layoutSearchItems->addWidget(new SearchVideosSearchBlockImpl(this, plugin, searchVideos->getSearchSummary()));
 }
 
 void SearchVideosImpl::searchFinished()
 {
-	// remove the loading "status"...
-	clearResults();
 	// enable buttons again
 	updateButons(false);
-	// set the search summary
-	lblResultsCount->setText(searchVideos->getSearchSummary());
-
-	// add a default strech (top alignment)
-	//qDebug() << "addStretch();";
-	//layoutSearchItems->addStretch();
+	// display results
+	stackedResults->setCurrentIndex(1);
 }
 
 void SearchVideosImpl::searchResultAdded(SearchResultItem *searchResultItem)
@@ -146,19 +158,19 @@ void SearchVideosImpl::startedDownloadPreview(SearchResultItem *searchItem)
 */
 }
 
-void SearchVideosImpl::finishedDownloadPreview(SearchResultItem *searchItem, bool error)
+void SearchVideosImpl::finishedDownloadPreview(SearchResultItem *searchItem, bool /*error*/)
 {
-	SearchVideosItemImpl *impl = getSearchVideosItemImplBySearchItem(searchItem);
-	if (impl != NULL)
-		impl->reloadPreview();
+	QList<SearchVideosItemImpl*> items = getSearchVideosItemImplBySearchItem(searchItem);
+	for (int n = 0; n < items.count(); n++)
+		items.at(n)->reloadPreview();
 }
 
-SearchVideosItemImpl* SearchVideosImpl::getSearchVideosItemImplBySearchItem(SearchResultItem *item)
+QList<SearchVideosItemImpl*> SearchVideosImpl::getSearchVideosItemImplBySearchItem(SearchResultItem *item)
 {
 	if (item != NULL)
-		return this->findChild<SearchVideosItemImpl*>(item->getVideoId());
+		return this->findChildren<SearchVideosItemImpl*>(item->getVideoId());
 	else
-		return NULL;
+		return QList<SearchVideosItemImpl*>();
 }
 
 void SearchVideosImpl::clearResults()
@@ -180,8 +192,8 @@ void SearchVideosImpl::fillSearchServices()
 	// has more than one item?
 	if (searchEngines.count() > 1)
 	{
-		cmbSearchIn->addItem(tr("All video services"), QVariant("?"));
-		cmbSearchIn->addItem(tr("Custom search"), QVariant("*"));
+		cmbSearchIn->addItem(tr("All video services"), QVariant("*"));
+		cmbSearchIn->addItem(tr("Custom search"), QVariant("?"));
 		cmbSearchIn->insertSeparator(2);
 	}
 	// add them to combobox

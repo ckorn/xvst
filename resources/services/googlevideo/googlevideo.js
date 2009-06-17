@@ -85,7 +85,6 @@ function searchVideos(keyWord, pageIndex)
 		// iterate over results
 		while ((block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_START)) != "")
 		{
-			block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_START);
 			parseResultItem(searchResults, block);
 			htmlResults = strRemove(htmlResults, 0, block.toString().length);
 		}

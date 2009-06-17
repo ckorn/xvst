@@ -102,13 +102,16 @@
 	/*! Open dialog and wait until his end (usefull on mac and Qt::Sheet property) */
 	int showModalDialog(QDialog *form);
 
+	/*! Convert a multi line string into a single line string (trimmed)  */
+	QString multiLineToSingleLine(QString text);
+
 	/*! Convert a Decimal HTML Char into the respective HTML Code */
 	QString htmlCharToHtmlCode(QString html);
 	
 	/*! Convert a HTML Code into the respective Decimal HTML Char */
 	QString htmlCodeToHtmlChar(QString html);
 	
-	/*! Convert a "standard" char into a HTML char */
+	/*! Convert a standard char into a HTML char */
 	QString charToHtml(QChar asciiChar, bool htmlCodes = true);
 	
 	/*! Convert a HTML string into a "standard" string */

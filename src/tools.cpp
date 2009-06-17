@@ -502,3 +502,29 @@ int showModalDialog(QDialog *form)
 	return form->exec();
 #endif
 }
+
+QString multiLineToSingleLine(QString text)
+{
+	// remove start and end spaces
+	text = text.trimmed();
+	// init result
+	QString result = "";
+	int spacesCount = 0;
+	// normalize text
+	for (int n = 0; n < text.length(); n++)
+	{
+		if (text.at(n).isSpace() && spacesCount == 0)
+		{
+			result += text.at(n);
+			spacesCount++;
+		}
+		else if (!text.at(n).isSpace()) // not space
+		{
+			result += text.at(n);
+			spacesCount = 0;
+		}
+	}
+	// return the normalized text
+	return result;
+}
+

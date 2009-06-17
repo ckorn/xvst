@@ -56,6 +56,8 @@
 
 - Changed plug-ins:
 	- Mp3Tube is now YehPlay
+	- Google videos (added search feature)
+	- YouTube (added search feature)
 
 Plug-ins SDK:
 ------------
