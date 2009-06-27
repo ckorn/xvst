@@ -124,6 +124,14 @@
       </widget>
      </item>
      <item>
+      <widget class="QLabel" name="lblCustomDownload">
+       <property name="text">
+        <string notr="true">&lt;html&gt;&lt;head&gt;&lt;style type=&quot;text/css&quot;&gt;a {text-decoration:none}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;(&lt;a href=&quot;custom&quot;&gt;%1&lt;/a&gt;)&lt;/body&gt;&lt;/html&gt;
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>

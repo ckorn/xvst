@@ -144,6 +144,13 @@ QString extractFileName(const QString fileName)
 	return file.fileName();
 }
 
+QString extractFileExt(const QString fileName)
+{
+	QFileInfo file(fileName);
+	QString ext = file.suffix();
+	return ext != "" ? "." + ext : "";
+}
+
 QString validPath(QString path)
 {
 	path.replace("\\", "/");

@@ -500,11 +500,19 @@ void MainFormImpl::addVideoClicked()
 	AddVideoImpl addVideoForm(programOptions, videoList->getVideoInformation(), this, Qt::Sheet);
 	if (showModalDialog(&addVideoForm) == QDialog::Accepted)
 	{
-		// user want override the current conversion config
-		if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())
-			videoList->addVideo(addVideoForm.edtURL->text(), addVideoForm.getOverridedConversionConfig());
-		else // user DON'T want override the current conversion config
-			videoList->addVideo(addVideoForm.edtURL->text());
+		// is a user custom download?
+		if (addVideoForm.isCustomDownload())
+			// user want override the current conversion config
+			if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())
+				videoList->addVideo(addVideoForm.edtURL->text(), addVideoForm.getCustomDownloadTitle(), addVideoForm.getOverridedConversionConfig());
+			else // user DON'T want override the current conversion config
+				videoList->addVideo(addVideoForm.edtURL->text(), addVideoForm.getCustomDownloadTitle());
+		else // standard add (not custom download)
+			// user want override the current conversion config
+			if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())
+				videoList->addVideo(addVideoForm.edtURL->text(), addVideoForm.getOverridedConversionConfig());
+			else // user DON'T want override the current conversion config
+				videoList->addVideo(addVideoForm.edtURL->text());
 	}
 
 	actAddVideo->setEnabled(true);
@@ -719,7 +727,10 @@ void MainFormImpl::videoAdded(VideoItem *videoItem)
 	item->setTextAlignment(3, Qt::AlignHCenter | Qt::AlignVCenter);
 	item->setTextAlignment(4, Qt::AlignHCenter | Qt::AlignVCenter);
 
-	item->setIcon(0, QIcon(videoList->getVideoInformation()->getHostImage(videoItem->getURL())));
+	if (videoItem->isCustomDownload()) // get the "custom video" icon
+		item->setIcon(0, QPixmap(":/services/images/services/custom_video.png"));
+	else // get service icon
+		item->setIcon(0, QIcon(videoList->getVideoInformation()->getHostImage(videoItem->getURL())));
 
 	item->setSizeHint(0, QSize(18,18));
 

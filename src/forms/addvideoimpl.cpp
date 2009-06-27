@@ -25,6 +25,8 @@
 
 #include "addvideoimpl.h"
 
+#include "customdownloadtitleimpl.h"
+
 #include "../tools.h"
 #include "../options.h"
 #include "../videoinformation.h"
@@ -38,6 +40,7 @@ AddVideoImpl::AddVideoImpl(ProgramOptions *programOptions, VideoInformation *vid
 	setupUi(this);
 	this->programOptions = programOptions;
 	this->videoInformation = videoInformation;
+	isCustomDownloadFlag = false;
 	// hide the conversion options
 	originalSize = size();
 #ifndef Q_WS_MACX
@@ -45,6 +48,12 @@ AddVideoImpl::AddVideoImpl(ProgramOptions *programOptions, VideoInformation *vid
 #endif
 	chbOverrideConversion->setVisible(QFile::exists(programOptions->getFfmpegLibLocation()));
 	resize(width(), 50);
+	// set custom download text and font size
+	lblCustomDownload->setText(QString(lblCustomDownload->text()).arg(tr("mark as custom download")));
+	QFont customDownloadFont = lblCustomDownload->font();
+	customDownloadFont.setPointSize(customDownloadFont.pointSize() - 2);
+	lblCustomDownload->setFont(customDownloadFont);
+	lblCustomDownload->hide();
 	// prepare conversion options
 	fillConversionOptions();
 	// connect ok button
@@ -52,6 +61,7 @@ AddVideoImpl::AddVideoImpl(ProgramOptions *programOptions, VideoInformation *vid
 	connect(edtURL, SIGNAL(textChanged(const QString &)), this, SLOT(edtURLChanged(const QString &))); //edtURL changed
 	connect(spbPasteURL, SIGNAL(clicked()), this, SLOT(spbPasteURLClicked()));
 	connect(chbOverrideConversion, SIGNAL(clicked()), this, SLOT(chbOverrideConversionClicked()));
+	connect(lblCustomDownload, SIGNAL(linkActivated(QString)), this, SLOT(linkActivated(QString)));
 }
 
 void AddVideoImpl::fillConversionOptions()
@@ -87,6 +97,16 @@ OverridedVideoConversionConfig AddVideoImpl::getOverridedConversionConfig()
 	return result;
 }
 
+bool AddVideoImpl::isCustomDownload()
+{
+	return isCustomDownloadFlag;
+}
+
+QString AddVideoImpl::getCustomDownloadTitle()
+{
+	return customDownloadTitle;
+}
+
 void AddVideoImpl::btnOkClicked()
 {
 	done(QDialog::Accepted);
@@ -96,7 +116,8 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 {
 	bool ok = videoInformation->isValidHost(text) && validURL(text);
 	QString blockMsg = "";
-	
+	QString isCustomVideo = "";
+
 	if (ok)
 	{
 		BlockedState bs = bsNotBlocked;
@@ -110,6 +131,9 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 	
 	btnOk->setEnabled(ok);
 	
+	// set custom download visibility
+	lblCustomDownload->setVisible(!videoInformation->isValidHost(text) && validURL(text));
+
 	// set color
 	QColor valid(qApp->palette().brush(QPalette::Base).color());
 	QColor invalid(255, 170, 127);
@@ -119,8 +143,11 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 	edtURL->setPalette(p);
 	
 	// set host info
-	lblVideoService->setText(videoInformation->getHostCaption(text) + blockMsg);
+	lblVideoService->setText(videoInformation->getHostCaption(text) + blockMsg + isCustomVideo);
 	imgService->setPixmap(QPixmap(videoInformation->getHostImage(text, true)));
+
+	// any change cancels the "custom download" flag
+	isCustomDownloadFlag = false;
 }
 
 void AddVideoImpl::spbPasteURLClicked()
@@ -143,5 +170,27 @@ void AddVideoImpl::chbOverrideConversionClicked()
 #endif
 	// enable or disable the groupbox
 	gpbVideoConversion->setEnabled(chbOverrideConversion->isChecked());
+}
+
+void AddVideoImpl::linkActivated(const QString &)
+{
+	// display the custom title dialog
+	CustomDownloadTitleImpl customTitleDialog(this, Qt::Sheet);
+	if (showModalDialog(&customTitleDialog) == QDialog::Accepted)
+	{
+		customDownloadTitle = customTitleDialog.edtTitle->text();
+		isCustomDownloadFlag = true;
+		// change service image
+		lblVideoService->setText(tr("User custom video download"));
+		imgService->setPixmap(QPixmap(":/services/images/services/custom_video.png"));
+		// remove red colors
+		QPalette p = edtURL->palette();
+		p.setColor(QPalette::Base, qApp->palette().brush(QPalette::Base).color());
+		edtURL->setPalette(p);
+		// enable ok button
+		btnOk->setEnabled(true);
+		// hide custom link
+		lblCustomDownload->hide();
+	}
 }
 //

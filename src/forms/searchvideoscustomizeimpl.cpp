@@ -30,6 +30,7 @@ void SearchVideosCustomizeImpl::fillServices()
 		item->setText(0, searchEngines.at(n)->getCaption());
 		item->setData(0, Qt::UserRole, QVariant(searchEngines.at(n)->getID()));
 		item->setCheckState(0, customServices.indexOf(searchEngines.at(n)->getID(), 0) > -1 ? Qt::Checked : Qt::Unchecked);
+		item->setHidden(VideoInformation::instance()->getBlockAdultContent() && searchEngines.at(n)->hasAdultContent());
 	}
 }
 

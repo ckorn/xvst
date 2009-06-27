@@ -5,6 +5,7 @@
 
 - Added search videos feature
 - Added new schedule option
+- Added possibility to add custom downloads (if you have the video URL just enter it and the xVST will download/convert it for you)
 - Added password for UPS! adult content blocking
 - Added ability to Drop video directly to Downloads list
 - Added loading window
@@ -22,7 +23,7 @@
 	- Move video down (control + down)
 	- Open downloads directory (control + T)
 	- Online help (F1)
-- Added 15 new plug-ins:
+- Added 16 new plug-ins:
 	- GodOfHumor
 	- Kontraband
 	- Pugorama
@@ -38,6 +39,7 @@
 	- KeezMovies
 	- Freecaster
 	- GoEar
+	- XVideos
 
 - Removed adult links from Information window when "Block adults content" is enabled
 - Removed adult plugins from blocking list when "Block adults content" is enabled

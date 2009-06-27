@@ -141,8 +141,11 @@ Q_OBJECT
 		QStringList internalPluginsIds;	//!< Plugin id (to identify the plugin to use as searcher)
 		QString internalKeyWords;		//!< Text to search
 		int internalPage;				//!< Page to display
+		bool destroying;				//!< Flag for know if this thread is being destroyed
 		/*! Thread executation */
 		void run();
+		/*! Wait while the updater is running */
+		void waitThread();
 	public:
 		/*! Class constructor */
 		SearchVideos();

@@ -75,6 +75,8 @@ void SearchVideosItemImpl::setSearchVideosItem(SearchResultItem *searchItem)
 	lblTitle->setText(QString(lblTitle->text()).arg(searchItem->getTitle()));
 	lblDescription->setText(QString(lblDescription->text()).arg(searchItem->getDescription()));
 
+	imgVideo->setToolTip(tr("Play <b>%1</b>").arg(searchItem->getTitle()));
+
 	lblPlayVideo->setText(QString("<a href=\"%1\"><img src=\":/buttons/images/control_play.png\" /></a>").arg(searchItem->getVideoUrl()));
 
 	lblDuration->setText(QString("(%1)").arg(secondsToHMS_formatted(searchItem->getDuration(), ":", true, false)));
@@ -101,6 +103,8 @@ void SearchVideosItemImpl::reloadPreview()
 	imgVideo->clear();
 	// make it screachable
 	imgVideo->setScaledContents(true);
+
+	/*
 	// init preview image
 	QPixmap preview;
 	// reload preview if it exists
@@ -111,6 +115,18 @@ void SearchVideosItemImpl::reloadPreview()
 		preview.load(":/search/images/no-preview.png");
 	// load image
 	imgVideo->setPixmap(preview);
+	*/
+
+	// init preview image
+	QPixmap preview;
+	QString previewSrc;
+	// reload preview if it exists
+	if (QFile::exists(searchItem->getPreviewFileName(true)))
+		preview.load(searchItem->getPreviewFileName(true));
+	// loaded?
+	previewSrc = preview.isNull() ? ":/search/images/no-preview.png" : searchItem->getPreviewFileName(true);
+	// load image
+	imgVideo->setText(QString("<a href='%1'><img src='%2' /></a>").arg(searchItem->getVideoUrl()).arg(previewSrc));
 	// yes, has preview now
 	hasPreview = true;
 }

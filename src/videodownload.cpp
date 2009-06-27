@@ -60,7 +60,7 @@ void DownloadItem::startDownload()
 {
 	// assign data
 	this->videoItem = videoItem;
-	videoItem->lock (this);
+	videoItem->lock(this);
 	videoItem->setAsDownloading(this);
 	videoItem->setProgress(0, this);
 	// if this video has special cookies, then assing them

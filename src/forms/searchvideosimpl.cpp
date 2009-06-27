@@ -67,6 +67,8 @@ SearchVideosImpl::SearchVideosImpl(QWidget *parent, Qt::WFlags f)
 
 SearchVideosImpl::~SearchVideosImpl()
 {
+	disconnect();
+	// destroy objects
 	delete loadingMovie;
 	delete searchVideos;
 }
@@ -198,9 +200,13 @@ void SearchVideosImpl::fillSearchServices()
 	}
 	// add them to combobox
 	for (int n = 0; n < searchEngines.count(); n++)
-		cmbSearchIn->addItem(*(searchEngines.at(n)->getIcon()),
-							 searchEngines.at(n)->getCaption(),
-							 QVariant(searchEngines.at(n)->getID()));
+		if (!VideoInformation::instance()->getBlockAdultContent() ||
+			 VideoInformation::instance()->getBlockAdultContent() && !searchEngines.at(n)->hasAdultContent())
+		{
+			cmbSearchIn->addItem(*(searchEngines.at(n)->getIcon()),
+								 searchEngines.at(n)->getCaption(),
+								 QVariant(searchEngines.at(n)->getID()));
+		}
 }
 
 void SearchVideosImpl::centerWindow()

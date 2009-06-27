@@ -58,6 +58,9 @@
 	/*! Return the file name  */
 	QString extractFileName(const QString fileName);
 
+	/*! Return the file extension */
+	QString extractFileExt(const QString fileName);
+
 	/*! Return a valid file path */
 	QString validPath(QString path);
 

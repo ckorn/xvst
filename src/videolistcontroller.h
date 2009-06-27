@@ -73,8 +73,12 @@ Q_OBJECT
 		VideoItem* addVideo(const QString URL);
 		/*! Add a new VideoItem with an overrided Conversion configuration */
 		VideoItem* addVideo(const QString URL, const OverridedVideoConversionConfig overridedConversionConfig);
-		/*! Add a Stored VideoItem */
+		/*! Add a stored VideoItem */
 		VideoItem* addVideo(VideoItem *videoItem);
+		/*! Add a custom VideoItem */
+		VideoItem* addVideo(const QString URL, const QString title);
+		/*! Add a custom VideoItem with an overrided Conversion configuration */
+		VideoItem* addVideo(const QString URL, const QString title, const OverridedVideoConversionConfig overridedConversionConfig);
 		/*! Delete by Index an existent VideoItem */
 		void deleteVideo(const int index, bool removePausedFile = false);
 		/*! Delete an existent VideoItem */

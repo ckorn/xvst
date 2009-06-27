@@ -38,6 +38,7 @@ SearchVideos::SearchVideos()
 	// inits
 	internalKeyWords = "";
 	internalPage = 0;
+	destroying = false;
 	// connect signals
 	connect(imageCatcher, SIGNAL(startedDownloadPreview(SearchResultItem*)), this, SLOT(privateStartedDownloadPreview(SearchResultItem*)));
 	connect(imageCatcher, SIGNAL(finishedDownloadPreview(SearchResultItem*,bool)), this, SLOT(privateFinishedDownloadPreview(SearchResultItem*,bool)));
@@ -45,6 +46,11 @@ SearchVideos::SearchVideos()
 
 SearchVideos::~SearchVideos()
 {
+	disconnect();
+	// wait while the thread is running
+	destroying = true;
+	waitThread();
+	// destroy all
 	delete searchResults;
 	delete imageCatcher;
 }
@@ -93,7 +99,7 @@ void SearchVideos::run()
 {
 	// search started
 	emit searchStarted();
-	// stop getting results
+	// stop getting previews
 	imageCatcher->stop();
 	// clear previous results
 	searchResults->removeAllSearchResults();
@@ -115,6 +121,11 @@ void SearchVideos::run()
 	else // custom search, so add them...
 		for (int n = 0; n < internalPluginsIds.count(); n++)
 			plugins.append(VideoInformation::instance()->getRegisteredPlugin(internalPluginsIds.at(n)));
+	// if adult sites are disabled, then remove them from list
+	if (VideoInformation::instance()->getBlockAdultContent())
+		for (int n = plugins.count() - 1; n >= 0; n--)
+			if (plugins.at(n)->hasAdultContent())
+				plugins.removeAt(n);
 	// inits
 	int lastCount = 0;
 	// start to search
@@ -125,18 +136,21 @@ void SearchVideos::run()
 		if (plugin != NULL)
 		{
 			SearchResults results = plugin->searchVideos(internalKeyWords, internalPage);
+			// check if we are destroying the searchResults (if yes, then abort the process)
+			if (destroying) return;
+			// add results
 			searchResults->addSearchResults(results);
 			searchResults->setSummary(results.getSummary());
-		}
-		// add new search block
-		emit addNewSearchBlock(plugin);
-		// show results
-		for (int n = lastCount; n < searchResults->getSearchResultCount(); n++)
-		{
-			// emit add result
-			emit searchResultAdded(searchResults->getSearchResult(n));
-			// add to previews download previews
-			imageCatcher->addPreview(searchResults->getSearchResult(n));
+			// add new search block
+			emit addNewSearchBlock(plugin);
+			// show results
+			for (int n = lastCount; n < searchResults->getSearchResultCount(); n++)
+			{
+				// emit add result
+				emit searchResultAdded(searchResults->getSearchResult(n));
+				// add to previews download previews
+				imageCatcher->addPreview(searchResults->getSearchResult(n));
+			}
 		}
 		// update last count
 		lastCount = searchResults->getSearchResultCount();
@@ -145,6 +159,11 @@ void SearchVideos::run()
 	emit searchFinished();
 	// download previews
 	imageCatcher->downloadPreviews();
+}
+
+void SearchVideos::waitThread()
+{
+	while (this->isRunning()) {}
 }
 
 // SearchResultsPreviewCatcher class
@@ -160,6 +179,8 @@ SearchResultsPreviewCatcher::SearchResultsPreviewCatcher()
 
 SearchResultsPreviewCatcher::~SearchResultsPreviewCatcher()
 {
+	disconnect();
+	// stop and destroy
 	stop();
 	delete previews;
 }
@@ -205,17 +226,10 @@ void SearchResultsPreviewCatcher::downloadNextPreview()
 	if (!previews->isEmpty())
 	{
 		emit startedDownloadPreview(previews->first());
-		// check if this preview already exists
-//		if (QFile::exists(previews->first()->getPreviewFileName(true)))
-//			//downloadFinished(QFileInfo(previews->first()->getPreviewFileName(true)));
-//			QTimer::singleShot(50, this, SLOT(previewIgnored()));
-//		else // download first preview
-		{
-			int httpResult = http->download(QUrl(previews->first()->getImageUrl()), QDir::tempPath(), previews->first()->getPreviewFileName(), false);
-			// error?
-			if (httpResult != 0)
-				downloadError(httpResult);
-		}
+		int httpResult = http->download(QUrl(previews->first()->getImageUrl()), QDir::tempPath(), previews->first()->getPreviewFileName(), false);
+		// error?
+		if (httpResult != 0)
+			downloadError(httpResult);
 	}
 }
 

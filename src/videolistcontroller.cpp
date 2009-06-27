@@ -25,6 +25,7 @@
 
 #include "videolistcontroller.h"
 
+#include "tools.h"
 #include "options.h"
 #include "videoitem.h"
 #include "videoinformation.h"
@@ -174,6 +175,37 @@ VideoItem* VideoListController::addVideo(VideoItem *videoItem)
 {
 	videoList->append(new VideoItem);
 	videoList->last()->assign(videoItem);
+	emit videoAdded(videoList->last());
+	return videoList->last();
+}
+
+VideoItem* VideoListController::addVideo(const QString URL, const QString title)
+{
+	videoList->append(new VideoItem(URL));
+	VideoDefinition videoDef;
+	videoDef.title = title;
+	videoDef.URL = URL;
+	videoDef.extension = extractFileExt(URL);
+	videoList->last()->setVideoInformation(videoDef);
+	videoList->last()->setVideoFile(cleanFileName(title + videoDef.extension), NULL);
+	videoList->last()->setAsGettedURL();
+	videoList->last()->setAsCustomDownload();
+	emit videoAdded(videoList->last());
+	return videoList->last();
+}
+
+VideoItem* VideoListController::addVideo(const QString URL, const QString title,
+										 const OverridedVideoConversionConfig overridedConversionConfig)
+{
+	videoList->append(new VideoItem(URL, overridedConversionConfig));
+	VideoDefinition videoDef;
+	videoDef.title = title;
+	videoDef.URL = URL;
+	videoDef.extension = extractFileExt(URL);
+	videoList->last()->setVideoInformation(videoDef);
+	videoList->last()->setVideoFile(cleanFileName(title + videoDef.extension), NULL);
+	videoList->last()->setAsGettedURL();
+	videoList->last()->setAsCustomDownload();
 	emit videoAdded(videoList->last());
 	return videoList->last();
 }

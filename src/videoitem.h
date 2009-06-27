@@ -95,6 +95,7 @@ Q_OBJECT
 		bool audioFile;				//!< flag for know if this item is a "Audio only" (no conversion...)
 		bool overrideConversionConfig;						//!< flag for know if this video has an overrided conversion config
 		OverridedVideoConversionConfig overridedConvConf;	//!< overrided conversion config for this video
+		bool customItemDownload;	//!< flag for know if this item has been added as "Custom download" so no plugin is needed to download it
 		/*! Init internal data */
 		void initData();
 		/*! Assign a unique ID for this instance */
@@ -156,6 +157,8 @@ Q_OBJECT
 		bool isReported();
 		/*! Get if is an Audio file */
 		bool isAudioFile();
+		/*! Get if is a custom download */
+		bool isCustomDownload();
 		/*! Get if need login */
 		bool needLogin();
 		/*! Get the internal ID */
@@ -248,6 +251,8 @@ Q_OBJECT
 		void setAsAudioFile(QObject *who = NULL);
 		/*! Set as Need login */
 		void setAsNeedLogin(QObject *who = NULL);
+		/*! Set as Custom download */
+		void setAsCustomDownload();
 		/*! Init a VideoDefinition structure */
 		static void initVideoDefinition(VideoDefinition &videoDef);
 };

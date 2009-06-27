@@ -14,7 +14,7 @@
    <string>Video Search</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources/resources.qrc">
     <normaloff>:/buttons/images/search.png</normaloff>:/buttons/images/search.png</iconset>
   </property>
   <property name="sizeGripEnabled">
@@ -194,7 +194,7 @@
          <item row="1" column="0">
           <widget class="QStackedWidget" name="stackedResults">
            <property name="currentIndex">
-            <number>0</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="pageSearching">
             <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -350,7 +350,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>btnClose</sender>

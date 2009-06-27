@@ -33,7 +33,8 @@ FORMS = ui/addvideo.ui \
     ui/welcomedonate.ui \
     ui/winvistaupdatesmsg.ui \
     ui/searchvideossearchblock.ui \
-	ui/searchvideoscustomize.ui
+    ui/searchvideoscustomize.ui \
+	ui/customdownloadtitle.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/searchvideositemimpl.h \
     src/forms/bugreportimpl.h \
@@ -56,7 +57,8 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/welcomedonate.h \
     src/forms/windowsvistadetectedimpl.h \
     src/forms/searchvideossearchblockimpl.h \
-	src/forms/searchvideoscustomizeimpl.h \
+    src/forms/searchvideoscustomizeimpl.h \
+	src/forms/customdownloadtitleimpl.h \
     src/pakunpak/pakunpak.h \
     src/searchvideosscriptclass.h \
     src/checkupdatesworker.h \
@@ -103,7 +105,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/welcomedonate.cpp \
     src/forms/windowsvistadetectedimpl.cpp \
     src/forms/searchvideossearchblockimpl.cpp \
-	src/forms/searchvideoscustomizeimpl.cpp \
+    src/forms/searchvideoscustomizeimpl.cpp \
+	src/forms/customdownloadtitleimpl.cpp \
     src/searchvideosscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/http.cpp \

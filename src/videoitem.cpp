@@ -78,6 +78,7 @@ void VideoItem::assign(VideoItem *videoItem)
 	errorCode = videoItem->getErrorCode();
 	overrideConversionConfig = videoItem->overrideConversionConfig;
 	overridedConvConf = videoItem->overridedConvConf;
+	customItemDownload = videoItem->isCustomDownload();
 }
 
 void VideoItem::initData()
@@ -96,6 +97,7 @@ void VideoItem::initData()
 	errorCode = 0;
 	audioFile = false;
 	overrideConversionConfig = false;
+	customItemDownload = false;
 }
 
 void VideoItem::assignID()
@@ -271,6 +273,11 @@ bool VideoItem::isReported()
 bool VideoItem::isAudioFile()
 {
 	return videoInfo.isAudioFile;
+}
+
+bool VideoItem::isCustomDownload()
+{
+	return customItemDownload;
 }
 
 bool VideoItem::needLogin()
@@ -595,6 +602,11 @@ void VideoItem::setAsNeedLogin(QObject *who)
 {
 	if (isLocked() && who != locker) return;
 	videoState = vsNeedLogin;
+}
+
+void VideoItem::setAsCustomDownload()
+{
+	customItemDownload = true;
 }
 
 void VideoItem::initVideoDefinition(VideoDefinition &videoDef)
