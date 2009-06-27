@@ -50,9 +50,11 @@ AddVideoImpl::AddVideoImpl(ProgramOptions *programOptions, VideoInformation *vid
 	resize(width(), 50);
 	// set custom download text and font size
 	lblCustomDownload->setText(QString(lblCustomDownload->text()).arg(tr("mark as custom download")));
+#ifndef Q_WS_WIN32
 	QFont customDownloadFont = lblCustomDownload->font();
 	customDownloadFont.setPointSize(customDownloadFont.pointSize() - 2);
 	lblCustomDownload->setFont(customDownloadFont);
+#endif
 	lblCustomDownload->hide();
 	// prepare conversion options
 	fillConversionOptions();
