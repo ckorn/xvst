@@ -134,6 +134,14 @@
         <source> - Adult content is not allowed</source>
         <translation>A felnőtt tartalom nem engedélyezett</translation>
     </message>
+    <message>
+        <source>mark as custom download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User custom video download</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BugReport</name>
@@ -427,6 +435,53 @@
     </message>
 </context>
 <context>
+    <name>CustomDownloadTitleImpl</name>
+    <message>
+        <source>Custom download title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Enter the text which will be used as title of this download.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm and close the window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">Ok gomb</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Discard and close window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished">Mégse gomb</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Mégse</translation>
+    </message>
+    <message>
+        <source>Field where you enter the video title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadLog</name>
     <message>
         <source>Download Log</source>
@@ -451,6 +506,14 @@
     <message>
         <source>Close</source>
         <translation>Bezárás</translation>
+    </message>
+    <message>
+        <source>Close this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation type="unfinished">Bezárás gomb</translation>
     </message>
 </context>
 <context>
@@ -954,6 +1017,62 @@ betűméret:12px;
     </message>
     <message>
         <source>Schedule option is &lt;b&gt;enabled&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+U</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+F</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2052,6 +2171,211 @@ betűméret:12px;
     </message>
 </context>
 <context>
+    <name>SearchVideosCustomizeImpl</name>
+    <message>
+        <source>Custom search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select where you want to search:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Mégse</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uncheck all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invert selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchVideosImpl</name>
+    <message>
+        <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All video services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key word to search:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search in:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;&lt;</source>
+        <translation type="unfinished">&lt;&lt;</translation>
+    </message>
+    <message>
+        <source>Page </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&gt;&gt;</source>
+        <translation type="unfinished">&gt;&gt;</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Bezárás</translation>
+    </message>
+    <message>
+        <source>Field where your enter the key words to search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key words edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of services with search capabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search services list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start new search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search on previus page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previus page button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current search page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current search page edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search on next page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next page button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation type="unfinished">Bezárás gomb</translation>
+    </message>
+</context>
+<context>
+    <name>SearchVideosItemImpl</name>
+    <message>
+        <source>Play &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Rating:&lt;/b&gt; %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download not avaiable...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Is not possible to download this video.&lt;/p&gt;&lt;p&gt;The xVST didn&apos;t find any plugin capable to get the video information.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Rating:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play video into your webbrowser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video preview image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play video</source>
+        <translation type="unfinished">Videó lejátszása</translation>
+    </message>
+    <message>
+        <source>Play video button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download video button</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UPSPasswordImpl</name>
     <message>
         <source>&lt;b&gt;Enter a security password to prevent unlock adult sites without your permission.&lt;/b&gt;</source>
@@ -2387,6 +2711,10 @@ betűméret:12px;
     <message>
         <source>Connection error: Unable to download the video</source>
         <translation>Csatlakozási hiba: Nem lehet letölteni a videót</translation>
+    </message>
+    <message>
+        <source>Updating info...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
