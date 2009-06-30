@@ -306,7 +306,7 @@ bool VideoItem::isCustomDownload()
 
 bool VideoItem::isUrlExpired()
 {
-	return lastUpdateDateTime.secsTo(QDateTime::currentDateTime()) >= 10/*TIMEOUT_MINS*60*/ && !customItemDownload;
+	return lastUpdateDateTime.secsTo(QDateTime::currentDateTime()) >= TIMEOUT_MINS*60 && !customItemDownload;
 }
 
 bool VideoItem::isUpdatingUrl()
