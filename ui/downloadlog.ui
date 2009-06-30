@@ -114,12 +114,21 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="btnClose">
        <property name="minimumSize">
         <size>
          <width>120</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="whatsThis">
+        <string>Close this window</string>
+       </property>
+       <property name="accessibleName">
+        <string>Close button</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Close this window</string>
        </property>
        <property name="text">
         <string>Close</string>
@@ -138,7 +147,7 @@
  </resources>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>btnClose</sender>
    <signal>clicked()</signal>
    <receiver>DownloadLog</receiver>
    <slot>reject()</slot>

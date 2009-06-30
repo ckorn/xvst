@@ -98,6 +98,8 @@ void VideoItem::initData()
 	audioFile = false;
 	overrideConversionConfig = false;
 	customItemDownload = false;
+	updateSate = vusNothing;
+	videoPreState = vpsNothing;
 }
 
 void VideoItem::assignID()
@@ -148,7 +150,14 @@ QString VideoItem::getVideoStateAsString()
 		case vsNULL:
 			return tr("-");
 		case vsGettingURL:
-			return tr("Getting info...");
+			switch (videoPreState)
+			{
+				case vpsNothing:
+					return tr("Getting info...");
+				case vpsPreDownloading:
+				case vpsPreResuming:
+					return tr("Updating info...");
+			}
 		case vsGettedURL:
 			return tr("Ready");
 		case vsDownloading:
@@ -275,9 +284,39 @@ bool VideoItem::isAudioFile()
 	return videoInfo.isAudioFile;
 }
 
+bool VideoItem::isPreStateNothing()
+{
+	return videoPreState == vpsNothing;
+}
+
+bool VideoItem::isPreDownloading()
+{
+	return videoPreState == vpsPreDownloading;
+}
+
+bool VideoItem::isPreResuming()
+{
+	return videoPreState == vpsPreResuming;
+}
+
 bool VideoItem::isCustomDownload()
 {
 	return customItemDownload;
+}
+
+bool VideoItem::isUrlExpired()
+{
+	return lastUpdateDateTime.secsTo(QDateTime::currentDateTime()) >= 10/*TIMEOUT_MINS*60*/ && !customItemDownload;
+}
+
+bool VideoItem::isUpdatingUrl()
+{
+	return updateSate == vusUpdatingURL;
+}
+
+bool VideoItem::needUpdateUrl()
+{
+	return updateSate == vusNeedUpdateURL;
 }
 
 bool VideoItem::needLogin()
@@ -412,6 +451,11 @@ QString VideoItem::getErrorMessage()
 	}
 }
 
+QDateTime VideoItem::getLastUpdateDateTime()
+{
+	return lastUpdateDateTime;
+}
+
 void VideoItem::setVideoInformation(VideoDefinition videoInformation, QObject *who)
 {
 	if (isLocked() && who != locker) return;
@@ -427,6 +471,10 @@ void VideoItem::setVideoInformation(VideoDefinition videoInformation, QObject *w
 	this->videoInfo.isAudioFile = videoInformation.isAudioFile;
 	// set the stored cookies for this video
 	this->videoInfo.cookies = videoInformation.cookies;
+	// update updating date
+	setLastUpdateDateTime(QDateTime::currentDateTime());
+	// no need to update information
+	removeUpdatingURLStatus();
 }
 
 void VideoItem::setVideoFile(QString videoFile, QObject *who)
@@ -604,9 +652,35 @@ void VideoItem::setAsNeedLogin(QObject *who)
 	videoState = vsNeedLogin;
 }
 
+void VideoItem::setAsNothingPreState()
+{
+	videoPreState = vpsNothing;
+}
+
 void VideoItem::setAsCustomDownload()
 {
 	customItemDownload = true;
+}
+
+void VideoItem::setAsNeedUpdateURL(VideoPreState preState)
+{
+	videoPreState = preState;
+	updateSate = vusNeedUpdateURL;
+}
+
+void VideoItem::setAsUpdatingURL()
+{
+	updateSate = vusUpdatingURL;
+}
+
+void VideoItem::removeUpdatingURLStatus()
+{
+	updateSate = vusNothing;
+}
+
+void VideoItem::setLastUpdateDateTime(QDateTime dateTime)
+{
+	lastUpdateDateTime = dateTime;
 }
 
 void VideoItem::initVideoDefinition(VideoDefinition &videoDef)

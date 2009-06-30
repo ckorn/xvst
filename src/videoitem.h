@@ -45,6 +45,20 @@ enum VideoState
 	vsNeedLogin
 };
 
+enum VideoUpdateState
+{
+	vusNothing,
+	vusNeedUpdateURL,
+	vusUpdatingURL
+};
+
+enum VideoPreState
+{
+	vpsNothing,
+	vpsPreDownloading,
+	vpsPreResuming
+};
+
 struct VideoDefinition
 {
 	QString URL;		//!< real video URL
@@ -73,29 +87,33 @@ struct OverridedVideoConversionConfig
 	VideoConversionConfig videoConversionConfig;
 };
 
+const static int TIMEOUT_MINS = 5;
 
 class VideoItem : public QObject
 {
 Q_OBJECT
 	private:
-		static int internalID;		//!< internal id counter
-		int ID;						//!< internal assigned id for this instance
-		VideoDefinition videoInfo;	//!< internal video information
-		QString URL;				//!< initial video url (i.e.: http://youtube.com/watch?v=AzXR58sd2jY)
-		QString videoFile;			//!< downloaded file (*.flv)
-		QString videoFileSavedTo;	//!< where to find the final video
-		int errorCode;				//!< what error is (if exsit an error)
-		float progress;				//!< current action progress (downloading/converting)
-		int videoSize;				//!< video file size in bytes
-		int downloadSpeed;			//!< current downoad speed
-		int timeRemaining;			//!< current time remaining
-		VideoState videoState;		//!< current video state
-		QObject *locker;			//!< pointer to the locker
-		bool reported;				//!< flag for know if this item has been reported (error)
-		bool audioFile;				//!< flag for know if this item is a "Audio only" (no conversion...)
+		static int internalID;			//!< internal id counter
+		int ID;							//!< internal assigned id for this instance
+		VideoDefinition videoInfo;		//!< internal video information
+		QString URL;					//!< initial video url (i.e.: http://youtube.com/watch?v=AzXR58sd2jY)
+		QString videoFile;				//!< downloaded file (*.flv)
+		QString videoFileSavedTo;		//!< where to find the final video
+		int errorCode;					//!< what error is (if exsit an error)
+		float progress;					//!< current action progress (downloading/converting)
+		int videoSize;					//!< video file size in bytes
+		int downloadSpeed;				//!< current downoad speed
+		int timeRemaining;				//!< current time remaining
+		VideoState videoState;			//!< current video state
+		VideoPreState videoPreState;	//!< current video pre-state
+		QObject *locker;				//!< pointer to the locker
+		bool reported;					//!< flag for know if this item has been reported (error)
+		bool audioFile;					//!< flag for know if this item is a "Audio only" (no conversion...)
 		bool overrideConversionConfig;						//!< flag for know if this video has an overrided conversion config
 		OverridedVideoConversionConfig overridedConvConf;	//!< overrided conversion config for this video
-		bool customItemDownload;	//!< flag for know if this item has been added as "Custom download" so no plugin is needed to download it
+		bool customItemDownload;		//!< flag for know if this item has been added as "Custom download" so no plugin is needed to download it
+		QDateTime lastUpdateDateTime;	//!< used as timeout for url's flv
+		VideoUpdateState updateSate;	//!< current update video state
 		/*! Init internal data */
 		void initData();
 		/*! Assign a unique ID for this instance */
@@ -157,8 +175,20 @@ Q_OBJECT
 		bool isReported();
 		/*! Get if is an Audio file */
 		bool isAudioFile();
+		/*! Get if don't has any pre-state */
+		bool isPreStateNothing();
+		/*! Get if is pre-downloading */
+		bool isPreDownloading();
+		/*! Get if is pre-resuming */
+		bool isPreResuming();
 		/*! Get if is a custom download */
 		bool isCustomDownload();
+		/*! Get last update date */
+		bool isUrlExpired();
+		/*! Get if is updating the URL */
+		bool isUpdatingUrl();
+		/*! Get if need to update the URL (high priority) */
+		bool needUpdateUrl();
 		/*! Get if need login */
 		bool needLogin();
 		/*! Get the internal ID */
@@ -197,6 +227,8 @@ Q_OBJECT
 		int getErrorCode();
 		/*! Get the error as String */
 		QString getErrorMessage();
+		/*! Get last update date time */
+		QDateTime getLastUpdateDateTime();
 		/*! Set the video information */
 		void setVideoInformation(VideoDefinition videoInformation, QObject *who = NULL);
 		/*! Set video file */
@@ -251,8 +283,18 @@ Q_OBJECT
 		void setAsAudioFile(QObject *who = NULL);
 		/*! Set as Need login */
 		void setAsNeedLogin(QObject *who = NULL);
+		/*! Set as no pre-state */
+		void setAsNothingPreState();
 		/*! Set as Custom download */
 		void setAsCustomDownload();
+		/*! Set as Need update URL */
+		void setAsNeedUpdateURL(VideoPreState preState = vpsNothing);
+		/*! Set as updating URL */
+		void setAsUpdatingURL();
+		/*! Remove the updating URL status (aborted?) */
+		void removeUpdatingURLStatus();
+		/*! Set last update date time */
+		void setLastUpdateDateTime(QDateTime dateTime);
 		/*! Init a VideoDefinition structure */
 		static void initVideoDefinition(VideoDefinition &videoDef);
 };

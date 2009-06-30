@@ -41,10 +41,30 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLineEdit" name="edtKeyWord"/>
+      <widget class="QLineEdit" name="edtKeyWord">
+       <property name="whatsThis">
+        <string>Field where your enter the key words to search</string>
+       </property>
+       <property name="accessibleName">
+        <string>Key words edit</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Field where your enter the key words to search</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QComboBox" name="cmbSearchIn"/>
+      <widget class="QComboBox" name="cmbSearchIn">
+       <property name="whatsThis">
+        <string>List of services with search capabilities</string>
+       </property>
+       <property name="accessibleName">
+        <string>Search services list</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>List of services with search capabilities</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="2">
       <widget class="QPushButton" name="btnSearch">
@@ -56,6 +76,15 @@
          <width>100</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="whatsThis">
+        <string>Start new search</string>
+       </property>
+       <property name="accessibleName">
+        <string>Search button</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Start new search</string>
        </property>
        <property name="text">
         <string>Search</string>
@@ -181,9 +210,6 @@
           </disabled>
          </palette>
         </property>
-        <property name="styleSheet">
-         <string>/*QWidget{background: white;}*/</string>
-        </property>
         <layout class="QGridLayout" name="gridLayout_3">
          <property name="margin">
           <number>2</number>
@@ -194,7 +220,7 @@
          <item row="1" column="0">
           <widget class="QStackedWidget" name="stackedResults">
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="pageSearching">
             <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -286,6 +312,15 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="whatsThis">
+        <string>Search on previus page</string>
+       </property>
+       <property name="accessibleName">
+        <string>Previus page button</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Search on previus page</string>
+       </property>
        <property name="text">
         <string>&lt;&lt;</string>
        </property>
@@ -293,6 +328,15 @@
      </item>
      <item>
       <widget class="QSpinBox" name="spinBoxPage">
+       <property name="whatsThis">
+        <string>Current search page</string>
+       </property>
+       <property name="accessibleName">
+        <string>Current search page edit</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Current search page</string>
+       </property>
        <property name="prefix">
         <string>Page </string>
        </property>
@@ -311,6 +355,15 @@
          <width>60</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="whatsThis">
+        <string>Search on next page</string>
+       </property>
+       <property name="accessibleName">
+        <string>Next page button</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Search on next page</string>
        </property>
        <property name="text">
         <string>&gt;&gt;</string>
@@ -337,6 +390,15 @@
          <width>100</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="whatsThis">
+        <string>Close this window</string>
+       </property>
+       <property name="accessibleName">
+        <string>Close button</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Close this window</string>
        </property>
        <property name="text">
         <string>Close</string>

@@ -37,8 +37,8 @@
 
 Q_DECLARE_METATYPE(VideoDefinition)
 Q_DECLARE_METATYPE(SearchResults)
-
 Q_DECLARE_METATYPE(SearchResults*)
+
 QScriptValue myObjectToScriptValue(QScriptEngine *engine, SearchResults* const &in)
 {
 	return engine->newQObject(in);
@@ -110,7 +110,7 @@ void VideoInformation::registerPlugin(VideoInformationPlugin *videoInformationPl
 
 void VideoInformation::run()
 {
-	videoItem->lock (this);
+	videoItem->lock(this);
 
 	VideoInformationPlugin *service = getPluginByHost(QUrl(videoItem->getURL()));
 
@@ -121,6 +121,10 @@ void VideoInformation::run()
 		else
 		{
 			videoItem->setAsGettingURL(this);
+
+			// if this item was market as "need update the url" then change the status to "updating url..."
+			if (videoItem->needUpdateUrl()) videoItem->setAsUpdatingURL();
+
 			emit informationStarted(videoItem);
 
 			VideoDefinition info = service->getVideoInformation(videoItem->getURL());
@@ -128,12 +132,14 @@ void VideoInformation::run()
 			if (videoItem == NULL) return;
 
 			if (info.needLogin)
-				videoItem->setAsNeedLogin(this);
-			else
 			{
+				videoItem->setAsNeedLogin(this);
+				videoItem->removeUpdatingURLStatus();
+			}
+			else // ok, assing information and prepare the item to be downloaded
+			{
+				if (videoItem->needUpdateUrl())	videoItem->setVideoFile(cleanFileName(info.title + info.extension), this);
 				videoItem->setVideoInformation(info, this);
-				videoItem->setVideoFile(cleanFileName(videoItem->getVideoInformation().title + info.extension), this);
-
 				videoItem->setAsGettedURL(this);
 			}
 		}

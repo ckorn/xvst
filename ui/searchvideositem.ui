@@ -2,8 +2,13 @@
 <ui version="4.0">
  <class>SearchVideosItemImpl</class>
  <widget class="QWidget" name="SearchVideosItemImpl">
-  <property name="windowTitle">
-   <string>Form</string>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>347</width>
+    <height>104</height>
+   </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="margin">
@@ -34,6 +39,15 @@
           <width>120</width>
           <height>90</height>
          </size>
+        </property>
+        <property name="whatsThis">
+         <string>Play video into your webbrowser</string>
+        </property>
+        <property name="accessibleName">
+         <string>Video preview image</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Play video into your webbrowser</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -81,13 +95,22 @@
       <item row="3" column="1">
        <widget class="QLabel" name="lblPlayVideo">
         <property name="toolTip">
-         <string>Play this video</string>
+         <string>Play video</string>
+        </property>
+        <property name="whatsThis">
+         <string>Play video into your webbrowser</string>
+        </property>
+        <property name="accessibleName">
+         <string>Play video button</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Play video into your webbrowser</string>
         </property>
         <property name="text">
          <string notr="true"/>
         </property>
         <property name="pixmap">
-         <pixmap>:/buttons/images/control_play.png</pixmap>
+         <pixmap resource="../resources/resources.qrc">:/buttons/images/control_play.png</pixmap>
         </property>
         <property name="openExternalLinks">
          <bool>true</bool>
@@ -130,13 +153,22 @@
       <item row="3" column="6">
        <widget class="QLabel" name="lblDownloadVideo">
         <property name="toolTip">
-         <string>Download this video</string>
+         <string>Download video</string>
+        </property>
+        <property name="whatsThis">
+         <string>Download video</string>
+        </property>
+        <property name="accessibleName">
+         <string>Download video button</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Download video</string>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/buttons/images/film_add.png</pixmap>
+         <pixmap resource="../resources/resources.qrc">:/buttons/images/film_add.png</pixmap>
         </property>
        </widget>
       </item>
@@ -152,6 +184,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

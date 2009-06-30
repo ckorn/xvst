@@ -37,7 +37,7 @@ class DownloadItem : public QObject
 {
 Q_OBJECT
 	private:
-		VideoDownload *parent;	// parent class
+		VideoDownload *parent;	//!< parent class
 		Http *http;				//!< download class
 		VideoItem *videoItem;	//!< current video item
 		/*! when work started */

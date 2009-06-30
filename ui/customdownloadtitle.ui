@@ -59,13 +59,13 @@
    <item row="2" column="1" colspan="3">
     <widget class="QLineEdit" name="edtTitle">
      <property name="whatsThis">
-      <string>Field where you enter the password</string>
+      <string>Field where you enter the video title</string>
      </property>
      <property name="accessibleName">
-      <string>Password edit</string>
+      <string>Title edit</string>
      </property>
      <property name="accessibleDescription">
-      <string>Field where you enter the password</string>
+      <string>Field where you enter the video title</string>
      </property>
     </widget>
    </item>

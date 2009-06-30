@@ -555,7 +555,7 @@ void MainFormImpl::pauseResumeDownloadVideoClicked()
 	if (videoItem != NULL)
 	{
 		if (videoItem->isDownloading() || videoItem->isResuming()) videoList->pauseDownload(videoItem);
-		else if (videoItem->isPaused())	videoList->resumeDownload(videoItem); 
+		else if (videoItem->isPaused())	videoList->resumeDownload(videoItem);
 		updateVisualControls();
 	}
 }

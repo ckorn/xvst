@@ -37,6 +37,7 @@ DownloadItem::DownloadItem(VideoDownload *parent, VideoItem *videoItem)
 	// assign main info
 	this->parent = parent;
 	this->videoItem = videoItem;
+	this->videoItem->setAsNothingPreState();
 	// create the http object
 	http = new Http;
 	// connect signals
@@ -84,7 +85,7 @@ void DownloadItem::resumeDownload()
 {
 	// assign data
 	this->videoItem = videoItem;
-	videoItem->lock (this);
+	videoItem->lock(this);
 	videoItem->setAsDownloading(this);
 	// resume download
 	int er = http->resume(QUrl(videoItem->getVideoInformation().URL), videoItem->getVideoFile());

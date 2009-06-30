@@ -3,6 +3,8 @@
 
 - First non ALPHA version!
 
+- Compiled with Qt 4.5.2
+
 - Added search videos feature
 - Added new schedule option
 - Added possibility to add custom downloads (if you have the video URL just enter it and the xVST will download/convert it for you)
@@ -52,6 +54,7 @@
 - Fixed bug (Error: ICO and GIF formats weren't supported on static compilations)
 - Fixed bug (Error: The "short" subversions were not compared correctly (i.e: 2.0.0a was equal to 2.0.0))
 - Fixed bug (Error: After cancel the updates the program was finishing throwing an exception)
+- Fixed bug (Error: Expired URL's were not refreshed before start download or resume an existend download)
 
 - Improved visualization of video information
 - Improved visualization of options menu

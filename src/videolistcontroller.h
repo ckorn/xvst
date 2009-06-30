@@ -95,6 +95,10 @@ Q_OBJECT
 		VideoItem* getFirstDownloaded();
 		/*! Get the first item converted */
 		VideoItem* getFirstConverted();
+		/*! Get the first item which need to update the url */
+		VideoItem* getFirstWhichNeedUpdateUrl();
+		/*! Get the first item which has a pre-state */
+		VideoItem* getFirstWithPreState();
 		/*! Get the current downloading video */
 		VideoItem* getCurrentDownloadingVideo();
 		/*! get the current converting video */

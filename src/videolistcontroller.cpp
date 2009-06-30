@@ -121,19 +121,41 @@ void VideoListController::timerEvent(QTimerEvent* /*event*/)
 {
 	// get first null item to, to start get info
 	if (videoInformation->canGetInformation())
-		startGetInformation(getFirstNULL());
+	{
+		// get first item which need to update the url
+		VideoItem *item = getFirstWhichNeedUpdateUrl();
+		// if no items where found, then get the first null item
+		if (item == NULL) item = getFirstNULL();
+		// get video information
+		startGetInformation(item);
+	}
 
 	// get the first error item, to display the bug report (if is necessary)
 	displayError(getFirstError());
 
-	// get the first ready item, to start the download
-	if (programOptions->getDownloadAutomatically() && videoDownload->canStartDownload() &&	schedule->canStart())
+	// get first item which has a pre-state assigned
+	VideoItem *videoItem = getFirstWithPreState();
+	// if we found an item with a pre-state, then it has a high priority (no one can start before it)
+	if (videoItem != NULL)// && videoDownload->canStartDownload())
 	{
-		VideoItem *videoItem = getFirstReady();
-		if (videoItem != NULL)
+		if (!videoItem->needUpdateUrl())
 		{
-			if (videoItem->isResuming()) resumeDownload(videoItem);
-			else startDownload(videoItem);
+			if (videoItem->isPreDownloading()) startDownload(videoItem);
+			else if (videoItem->isPreResuming()) resumeDownload(videoItem);
+
+		}
+	}
+	else // no special items was found
+	{
+		// get the first ready item, to auto-start the download
+		if (programOptions->getDownloadAutomatically() && schedule->canStart() && videoDownload->canStartDownload())
+		{
+			videoItem = getFirstReady();
+			if (videoItem != NULL)
+			{
+				if (videoItem->isResuming()) resumeDownload(videoItem);
+				else startDownload(videoItem);
+			}
 		}
 	}
 
@@ -281,6 +303,24 @@ VideoItem* VideoListController::getFirstDownloaded()
 VideoItem* VideoListController::getFirstConverted()
 {
 	return getFirstByState(vsConverted);
+}
+
+VideoItem* VideoListController::getFirstWhichNeedUpdateUrl()
+{
+	for (int n = 0; n < getVideoItemCount(); n++)
+		if (getVideoItem(n)->needUpdateUrl())
+			return getVideoItem(n);
+	// no items found
+	return NULL;
+}
+
+VideoItem* VideoListController::getFirstWithPreState()
+{
+	for (int n = 0; n < getVideoItemCount(); n++)
+		if (!getVideoItem(n)->isPreStateNothing())
+			return getVideoItem(n);
+	// no items found
+	return NULL;
 }
 
 VideoItem* VideoListController::getCurrentDownloadingVideo()
@@ -459,11 +499,17 @@ void VideoListController::startDownload(VideoItem *videoItem)
 	if (videoItem == NULL) return;
 	// check if is possible download this video
 	if (!videoInformation->isBlockedHost(videoItem->getURL()))
-		videoDownload->downloadVideo(videoItem);
+	{
+		// check if his URL hasn't been expired
+		if (!videoItem->isUrlExpired())
+			videoDownload->downloadVideo(videoItem);
+		else // url expired and not is updating this URL
+			if (!videoItem->isUpdatingUrl() && !videoItem->needUpdateUrl())
+				videoItem->setAsNeedUpdateURL(vpsPreDownloading);
+	}
 	else
 	{
 		videoItem->setAsBlocked();
-		
 		emit videoItemUpdated(videoItem);
 	}
 }
@@ -484,7 +530,12 @@ void VideoListController::pauseDownload(VideoItem *videoItem)
 
 void VideoListController::resumeDownload(VideoItem *videoItem)
 {
-	videoDownload->resumeDownload(videoItem);
+	// check if his URL hasn't been expired
+	if (!videoItem->isUrlExpired())
+		videoDownload->resumeDownload(videoItem);
+	else // url expired and not is updating this URL
+		if (!videoItem->isUpdatingUrl() && !videoItem->needUpdateUrl())
+			videoItem->setAsNeedUpdateURL(vpsPreResuming);
 }
 
 void VideoListController::cancelDownload(VideoItem *videoItem)

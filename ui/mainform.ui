@@ -295,7 +295,7 @@
            </property>
            <property name="maximumSize">
             <size>
-             <width>20</width>
+             <width>25</width>
              <height>25</height>
             </size>
            </property>
@@ -303,7 +303,7 @@
             <enum>Qt::TabFocus</enum>
            </property>
            <property name="toolTip">
-            <string>Search video</string>
+            <string>Search videos</string>
            </property>
            <property name="whatsThis">
             <string/>
@@ -1297,7 +1297,7 @@
     <string>Search videos</string>
    </property>
    <property name="toolTip">
-    <string>Search Videos</string>
+    <string>Search videos</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+F</string>
