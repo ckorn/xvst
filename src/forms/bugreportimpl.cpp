@@ -38,8 +38,8 @@ BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Q
 	: QDialog(parent, f)
 {
 	setupUi(this);
-#ifdef Q_WS_MAC
-	resize(512, 560);
+#ifndef Q_OS_WIN32
+	resize(540, 650);
 #endif
 	// program options
 	this->programOptions = programOptions;
@@ -69,6 +69,7 @@ BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Q
 	trackerReport->addGroup("1.8.2a", "825062");
 	trackerReport->addGroup("2.0.0a", "898961");
 	trackerReport->addGroup("2.0.1a", "899073");
+	trackerReport->addGroup("2.1", "910835");
 	// signals
 	connect(spbViewInfo, SIGNAL(clicked()), this, SLOT(viewInfoClicked()));
 	connect(btnSend, SIGNAL(clicked()), this, SLOT(sendReportClicked()));
@@ -141,15 +142,24 @@ void BugReportImpl::trackerReportSent(QString result)
 	lblSending->hide();
 	prbSending->hide();
 	
-	QString msg1 = copy(result, 0, result.indexOf("<p>")).trimmed();
-	QString msg2 = copyBetween(result, "<p>", "<br>").trimmed();
-	QString msg3 = copyBetween(result, "<a href='", "'>").trimmed();
-
-	QMessageBox::information(this, 
-							 QString("SourceForge.net Tracker: %1").arg(msg1),
-							 QString("%1 <a href=\"%2\">%2</a>").arg(msg2).arg(msg3),
-							 tr("Ok"));
-
+	if (result.isEmpty())
+	{
+		QMessageBox::information(this,
+								 "SourceForge.net Tracker",
+								 tr("Thank you for your report."),
+								 tr("Ok"));
+	}
+	else // display the web message
+	{
+		QString msg1 = copy(result, 0, result.indexOf("<p>")).trimmed();
+		QString msg2 = copyBetween(result, "<p>", "<br>").trimmed();
+		QString msg3 = copyBetween(result, "<a href='", "'>").trimmed();
+		//
+		QMessageBox::information(this,
+								 QString("SourceForge.net Tracker: %1").arg(msg1),
+								 QString("%1 <a href=\"%2\">%2</a>").arg(msg2).arg(msg3),
+								 tr("Ok"));
+	}
 	done(QDialog::Accepted);
 }
 //

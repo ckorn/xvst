@@ -267,6 +267,10 @@
         <source>Ok</source>
         <translation>OK</translation>
     </message>
+    <message>
+        <source>Thank you for your report.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CheckUpdates</name>
@@ -2317,6 +2321,14 @@ Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</t
     </message>
     <message>
         <source>Close button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select one or more services.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

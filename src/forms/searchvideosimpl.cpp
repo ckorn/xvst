@@ -38,8 +38,6 @@ SearchVideosImpl::SearchVideosImpl(QWidget *parent, Qt::WFlags f)
 {
 	setupUi(this);
 	centerWindow();
-	// set it as beta
-	setWindowTitle(windowTitle() + " - Beta!");
 	//
 	searchVideos = new SearchVideos();
 	loadingMovie = new QMovie(":/search/images/loader.gif");
@@ -99,7 +97,21 @@ void SearchVideosImpl::btnSearchClicked()
 	clearResults();
 	// custom search?
 	if (cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString() == "?")
-		searchVideos->searchVideos(edtKeyWord->text(), spinBoxPage->value(), customServices);
+	{
+		if (customServices.isEmpty())
+		{
+			QMessageBox::information(this,
+									tr("Custom search"),
+									tr("Please, select one or more services."),
+									tr("Ok"));
+			// display custom search services
+			cmbSearchInActivated(cmbSearchIn->currentIndex());
+			// abort process
+			return;
+		}
+		else
+			searchVideos->searchVideos(edtKeyWord->text(), spinBoxPage->value(), customServices);
+	}
 	else // single search
 		searchVideos->searchVideos(edtKeyWord->text(), spinBoxPage->value(),
 								   QStringList() << cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString());

@@ -37,7 +37,6 @@ static const QString CURRENT_OS = "LINUX"; //<! Gnu/Linux version
 #endif
 #ifdef Q_WS_MAC
 static const QString CURRENT_OS = "MACOSX";				//<! MacOS X version
-//static const QString COMPILATION_MODE = "FRAMEWORKS";	//<! Frameworks compilation
 #endif
 
 #ifdef STATIC_BUILD

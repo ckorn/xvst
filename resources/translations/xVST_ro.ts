@@ -263,6 +263,10 @@
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
+    <message>
+        <source>Thank you for your report.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CheckUpdates</name>
@@ -2306,6 +2310,14 @@ font-size:12px;
     </message>
     <message>
         <source>Close button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select one or more services.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

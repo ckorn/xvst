@@ -340,7 +340,13 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="151"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="149"/>
+        <source>Thank you for your report.</source>
+        <translation>Gràcies per el teu report.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="150"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="161"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -2902,17 +2908,28 @@ font-size:12px;
 <context>
     <name>SearchVideosImpl</name>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="129"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="105"/>
+        <source>Please, select one or more services.</source>
+        <translation>Si us plau, selecciona un o més serveis de cerca.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="106"/>
+        <source>Ok</source>
+        <translation>D&apos;acord</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="141"/>
         <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
         <translation>Buscant &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (pàgina %2)... si us plau espera...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="197"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="209"/>
         <source>All video services</source>
         <translation>Tots els serveis</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="198"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="104"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="210"/>
         <source>Custom search</source>
         <translation>Cerca personalitzada</translation>
     </message>
@@ -3057,28 +3074,28 @@ font-size:12px;
         <translation>Descàrrega no disponible...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="143"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="129"/>
         <source>Missing plugin</source>
         <translation>Plugin no disponible</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="144"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="130"/>
         <source>&lt;p&gt;Is not possible to download this video.&lt;/p&gt;&lt;p&gt;The xVST didn&apos;t find any plugin capable to get the video information.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;Impossible baixar el vídeo.&lt;/p&gt;&lt;p&gt;El xVST no ha trobat cap plugin capaç d&apos;obtenir la informació del vídeo.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Impossible baixar el vídeo.&lt;/p&gt;&lt;p&gt;El xVST no ha trobat cap plugin capaç d&apos;obtenir la informació del vídeo.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="145"/>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="151"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="131"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="137"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="149"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="135"/>
         <source>Already added</source>
         <translation>Repetit</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="150"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="136"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation>Aquest vídeo ja està afegit. Comprova la teva llista de descàrregues.</translation>
     </message>

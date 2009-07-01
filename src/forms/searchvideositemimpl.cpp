@@ -103,20 +103,6 @@ void SearchVideosItemImpl::reloadPreview()
 	imgVideo->clear();
 	// make it screachable
 	imgVideo->setScaledContents(true);
-
-	/*
-	// init preview image
-	QPixmap preview;
-	// reload preview if it exists
-	if (QFile::exists(searchItem->getPreviewFileName(true)))
-		preview.load(searchItem->getPreviewFileName(true));
-	// loaded?
-	if (preview.isNull())
-		preview.load(":/search/images/no-preview.png");
-	// load image
-	imgVideo->setPixmap(preview);
-	*/
-
 	// init preview image
 	QPixmap preview;
 	QString previewSrc;
