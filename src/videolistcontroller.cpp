@@ -145,7 +145,7 @@ void VideoListController::timerEvent(QTimerEvent* /*event*/)
 
 		}
 	}
-	else // no special items was found
+	else // no special items were found
 	{
 		// get the first ready item, to auto-start the download
 		if (programOptions->getDownloadAutomatically() && schedule->canStart() && videoDownload->canStartDownload())

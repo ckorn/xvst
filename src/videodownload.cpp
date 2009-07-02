@@ -235,7 +235,7 @@ void VideoDownload::pauseDownload(VideoItem *videoItem)
 void VideoDownload::resumeDownload(VideoItem *videoItem)
 {
 	if (videoItem == NULL) return;
-	// cant resume the download now, so mark it as "next to start"
+	// can't resume the download now, so mark it as "next to start"
 	if (!canStartDownload())
 	{
 		videoItem->setAsResuming();

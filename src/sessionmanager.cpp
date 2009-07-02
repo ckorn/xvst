@@ -71,7 +71,6 @@ void SessionManager::saveSession(VideoListController *videoListController)
 			settings.setValue("videoSize", videoItem->getVideoSize());
 			settings.setValue("videoProgress", videoItem->getProgress());
 			settings.setValue("customDownload", videoItem->isCustomDownload());
-			settings.setValue("lastUpdateDateTime", videoItem->getLastUpdateDateTime());
 			settings.setValue("VIDEO_URL", videoItem->getVideoInformation().URL);
 			settings.setValue("VIDEO_title", videoItem->getVideoInformation().title);
 			settings.setValue("VIDEO_extension", videoItem->getVideoInformation().extension);
@@ -107,7 +106,6 @@ void SessionManager::loadSession(VideoListController *videoListController)
 		videoItem->setVideoInformation(videoInformation);
 		if (videoItem->hasErrors()) videoItem->setAsReported();
 		if (settings.value(videos.at(n) + "/customDownload", false).toBool()) videoItem->setAsCustomDownload();
-		videoItem->setLastUpdateDateTime(settings.value(videos.at(n) + "/lastUpdateDateTime", QDateTime()).toDateTime());
 		if (!videoItem->isReady() && !videoItem->isNULL() && !videoItem->isCanceled()
 			&& !QFile::exists(videoItem->getVideoFile())) continue;
 		videoListController->addVideo(videoItem);
