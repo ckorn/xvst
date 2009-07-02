@@ -123,7 +123,8 @@ void VideoInformation::run()
 			videoItem->setAsGettingURL(this);
 
 			// if this item was market as "need update the url" then change the status to "updating url..."
-			if (videoItem->needUpdateUrl()) videoItem->setAsUpdatingURL();
+			bool urlWasUpdated = videoItem->needUpdateUrl();
+			if (urlWasUpdated) videoItem->setAsUpdatingURL();
 
 			emit informationStarted(videoItem);
 
@@ -138,8 +139,8 @@ void VideoInformation::run()
 			}
 			else // ok, assing information and prepare the item to be downloaded
 			{
-				if (videoItem->needUpdateUrl())	videoItem->setVideoFile(cleanFileName(info.title + info.extension), this);
 				videoItem->setVideoInformation(info, this);
+				if (!urlWasUpdated)	videoItem->setVideoFile(cleanFileName(info.title + info.extension), this);
 				videoItem->setAsGettedURL(this);
 			}
 		}

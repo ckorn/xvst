@@ -521,6 +521,7 @@ void VideoListController::pauseDownload(VideoItem *videoItem)
 		if (videoItem->isResuming()) 
 		{
 			videoItem->setAsPaused();
+			videoItem->setAsNothingPreState();
 			emit videoUpdated(videoItem);
 		}
 		else

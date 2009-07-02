@@ -60,7 +60,6 @@ DownloadItem::~DownloadItem()
 void DownloadItem::startDownload()
 {
 	// assign data
-	this->videoItem = videoItem;
 	videoItem->lock(this);
 	videoItem->setAsDownloading(this);
 	videoItem->setProgress(0, this);
@@ -84,7 +83,6 @@ void DownloadItem::pauseDownload()
 void DownloadItem::resumeDownload()
 {
 	// assign data
-	this->videoItem = videoItem;
 	videoItem->lock(this);
 	videoItem->setAsDownloading(this);
 	// resume download
