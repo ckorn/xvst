@@ -1,3 +1,4 @@
+if not "%1" == "" cd "%1"
 rmdir "..\bin\languages" /s /q
 mkdir "..\bin\languages"
 FOR /R "..\resources\translations" %%v IN (*.qm) DO copy "%%v" "..\bin\languages"
