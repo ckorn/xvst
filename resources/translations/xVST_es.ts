@@ -3441,12 +3441,12 @@ font-size:12px;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="386"/>
+        <location filename="../../src/videoinformation.cpp" line="387"/>
         <source>Unsupported video service</source>
         <translation>Servicio no soportado</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="389"/>
+        <location filename="../../src/videoinformation.cpp" line="390"/>
         <source>Invalid URL</source>
         <translation>URL Errónea</translation>
     </message>
