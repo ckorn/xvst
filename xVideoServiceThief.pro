@@ -155,6 +155,7 @@ macx {
     ICON += resources/icons/MacOSX.icns
     OBJECTS_DIR += build/o/mac
     TARGET = xVideoServiceThief
+	QMAKE_INFO_PLIST = Info.plist
 }
 win32 { 
     RC_FILE += resources/xVST.rc
