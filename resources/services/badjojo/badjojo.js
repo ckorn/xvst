@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-this.version = "1.0.0";
+this.version = "2.0.0";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.badjojo.com/";
@@ -50,6 +50,66 @@ function getVideoInformation(url)
 	result.URL = copyBetween(info, "Video file:", "*/");
 	// return the video information
 	return result;
+}
+
+function searchVideos(keyWord, pageIndex)
+{
+	const URL_SEARCH = "http://www.badjojo.com/?q=%1&p=%2";
+	const HTML_SEARCH_START = '<div class="results_body" >';
+	const HTML_SEARCH_FINISH = '<div class="pagination">';
+	const HTML_SEARCH_START_ITEM = '<div class="thumbSearch">';
+	const HTML_SEARCH_END_ITEM = '</div> <!-- // end results_body -->';
+	// replace all spaces for "+"
+	keyWord = strReplace(keyWord, " ", "+");
+	// init search results object
+	var searchResults = new SearchResults();
+	// init http object
+	var http = new Http();
+	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex));
+	// get the search summary -- No summary --
+	searchResults.setSummary("");
+	// get results html block
+	var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
+	// if we found some results then...
+	if (htmlResults != "")
+	{
+		var block = "";
+		// iterate over results
+		while ((block = copyBetween(htmlResults, HTML_SEARCH_START_ITEM, HTML_SEARCH_END_ITEM)) != "")
+		{
+			parseResultItem(searchResults, block);
+			htmlResults = strRemove(htmlResults, 0, block.toString().length);
+		}
+	}
+	// return search results
+	return searchResults;
+}
+
+function parseResultItem(searchResults, html)
+{
+	var videoUrl, imageUrl, title, description, duration, rating;
+	// get info from html block
+	videoUrl = copyBetween(html, '<a  href="', '"');
+	imageUrl = copyBetween(html, '<img src="', '"');
+	title = copyBetween(html, '<div class="title">', '</div>') + "~";
+	title = copyBetween(title, ')">', "~");
+	description = copyBetween(html, '<div class="url">', '</div>');
+	duration = convertToSeconds(copyBetween(html, '<span>', '</span>'));
+	rating = 0.0;
+	// add to results list
+	searchResults.addSearchResult(videoUrl, imageUrl, title, description, duration, rating);
+}
+
+function convertToSeconds(text)
+{
+	// how many ":" exists?
+	var count = getTokenCount(text, ":");
+	// get mins and seconds
+	var h = new Number(h = count == 3 ? getToken(text, ":", 0) * 3600 : 0);
+	var m = new Number(getToken(text, ":", count - 2) * 60);
+	var s = new Number(getToken(text, ":", count - 1));
+	// convert h:m:s to seconds
+	return h + m + s;
 }
 
 function getVideoServiceIcon()
