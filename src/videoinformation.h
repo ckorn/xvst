@@ -53,22 +53,22 @@ struct VideoDefinition;
 class VideoInformationPlugin : public QObject
 {
 	private:
-		VideoInformation *owner;	//<! Plugin owner
-		QString scriptCode;			//<! Plugin source code
-		QString version;			//<! Plugin version
-		QString minVersion;			//<! Min xVST version to run
-		QString author;				//<! Plugin author
-		QString pluginFilePath;		//<! Where the plugin is stored
-		QString website;			//<! Plugin service website (i.e.: http://www.youtube.com/)
-		QString ID;					//<! Plugin ID (used by the engine to determine if this plugin knows how to resolve an url)
-		QString caption;			//<! Plugin public caption
-		QPixmap *icon;				//<! Plugin public icon (acts as a proxy)
-		bool adultContent;			//<! Flag for know if this webservice has adult contents
-		bool musicSite;				//<! Flag for know if this webservice is a music site (i.e: mp3tube)
-		bool loaded;				//<! Flag for know if this plugin has been loaded
-		bool hasSearchEngine;		//<! Flag for know if this plugin has a search engine
-		QString onlineFaviconUrl;	//<! Online favicon url
-		QScriptEngine *engine;		//<! Pointer to script engine
+		VideoInformation *owner;	//!< Plugin owner
+		QString scriptCode;			//!< Plugin source code
+		QString version;			//!< Plugin version
+		QString minVersion;			//!< Min xVST version to run
+		QString author;				//!< Plugin author
+		QString pluginFilePath;		//!< Where the plugin is stored
+		QString website;			//!< Plugin service website (i.e.: http://www.youtube.com/)
+		QString ID;					//!< Plugin ID (used by the engine to determine if this plugin knows how to resolve an url)
+		QString caption;			//!< Plugin public caption
+		QPixmap *icon;				//!< Plugin public icon (acts as a proxy)
+		bool adultContent;			//!< Flag for know if this webservice has adult contents
+		bool musicSite;				//!< Flag for know if this webservice is a music site (i.e: mp3tube)
+		bool loaded;				//!< Flag for know if this plugin has been loaded
+		bool hasSearchEngine;		//!< Flag for know if this plugin has a search engine
+		QString onlineFaviconUrl;	//!< Online favicon url
+		QScriptEngine *engine;		//!< Pointer to script engine
 	private:
 		/* VideoDefinition struct script definition */
 		static QScriptValue create_VideoDefinition(QScriptContext *context, QScriptEngine *engine);

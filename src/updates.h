@@ -30,12 +30,12 @@
 
 #ifdef Q_OS_WIN32
 #include <windows.h>
-static const QString XUPDATER_PATH = "/bin/xUpdater.exe";	//<! xUpdater app (win32)
+static const QString XUPDATER_PATH = "/bin/xUpdater.exe";	//!< xUpdater app (win32)
 #else
 #ifdef Q_WS_MAC
-static const QString XUPDATER_PATH = "/tools/xUpdater";		//<! xUpdater app (MacOSX)
+static const QString XUPDATER_PATH = "/tools/xUpdater";		//!< xUpdater app (MacOSX)
 #else
-static const QString XUPDATER_PATH = "/bin/xUpdater";		//<! xUpdater app (unix)
+static const QString XUPDATER_PATH = "/bin/xUpdater";		//!< xUpdater app (unix)
 #endif
 #endif
 static const QString XUPDATER_FILE 	= "/xVST.update";			//!< update script file
