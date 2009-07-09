@@ -3021,7 +3021,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/searchvideos.ui" line="341"/>
         <source>Page </source>
-        <translation>Pàgina</translation>
+        <translation>Pàgina </translation>
     </message>
     <message>
         <location filename="../../ui/searchvideos.ui" line="360"/>
