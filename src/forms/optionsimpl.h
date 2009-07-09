@@ -96,5 +96,6 @@ Q_OBJECT
 		void lsvSchedulesItemSelectionChanged();
 		void lsvSchedulesDoubleClicked(QModelIndex index);
 		void chbDisableAdultSupportClicked(bool checked = false);
+		void chbProxySystemConfigStateChanged(int state);
 };
 #endif

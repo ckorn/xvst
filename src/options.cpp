@@ -142,6 +142,7 @@ void ProgramOptions::load()
 
 	maxActiveDownloads = settings.value("configuration/maxActiveDownloads", maxActiveDownloads).toInt();
 
+	systemProxyConfiguration = settings.value("configuration/systemProxyConfiguration", systemProxyConfiguration).toBool();
 	useProxy = settings.value("configuration/useProxy", useProxy).toBool();
 	proxyAdress = settings.value("configuration/proxyAdress", proxyAdress).toString();
 	proxyPassword = settings.value("configuration/proxyPassword", proxyPassword).toString();
@@ -216,6 +217,7 @@ void ProgramOptions::save()
 
 	settings.setValue("maxActiveDownloads", maxActiveDownloads);
 
+	settings.setValue("systemProxyConfiguration", systemProxyConfiguration);
 	settings.setValue("useProxy", useProxy);
 	settings.setValue("proxyAdress", proxyAdress);
 	settings.setValue("proxyPassword", proxyPassword);
@@ -308,6 +310,7 @@ void ProgramOptions::setDefault()
 
 	maxActiveDownloads = 4;
 
+	systemProxyConfiguration = true;
 	useProxy = false;
 	proxyAdress = "";
 	proxyPassword = "";
@@ -567,6 +570,16 @@ int ProgramOptions::getMaxActiveDownloads()
 bool ProgramOptions::getUseProxy()
 {
 	return useProxy;
+}
+
+void ProgramOptions::setUseSystemProxyConfig(bool value)
+{
+	systemProxyConfiguration = value;
+}
+
+bool ProgramOptions::getUseSystemProxyConfig()
+{
+	return systemProxyConfiguration;
 }
 
 void ProgramOptions::setUseProxy(bool value)

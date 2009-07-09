@@ -590,24 +590,47 @@ void VideoListController::updateOptions()
 	schedule->setEnabled(programOptions->getScheduleEnabled());
 	schedule->load();
 
-	// update proxy
-	if (programOptions->getUseProxy())
+	// configure proxy
+	setupProxy();
+}
+
+void VideoListController::setupProxy()
+{
+	// use user proxy config
+	if (!programOptions->getUseSystemProxyConfig())
 	{
-		QNetworkProxy networkProxy;
-		networkProxy.setUser(programOptions->getProxyUserName());
-		networkProxy.setPassword(programOptions->getProxyPassword());
-		networkProxy.setHostName(programOptions->getProxyAdress());
-		networkProxy.setPort(programOptions->getProxyPort());
-		networkProxy.setType(static_cast<QNetworkProxy::ProxyType>(programOptions->getProxyType()));
-		// set application proxy
-		QNetworkProxy::setApplicationProxy(networkProxy);
+		// update proxy
+		if (programOptions->getUseProxy())
+		{
+			QNetworkProxy networkProxy;
+			networkProxy.setUser(programOptions->getProxyUserName());
+			networkProxy.setPassword(programOptions->getProxyPassword());
+			networkProxy.setHostName(programOptions->getProxyAdress());
+			networkProxy.setPort(programOptions->getProxyPort());
+			networkProxy.setType(static_cast<QNetworkProxy::ProxyType>(programOptions->getProxyType()));
+			// set application proxy
+			QNetworkProxy::setApplicationProxy(networkProxy);
+		}
+		else // no proxy
+		{
+			QNetworkProxy networkProxy;
+			networkProxy.setType(QNetworkProxy::NoProxy);
+			// remove application proxy
+			QNetworkProxy::setApplicationProxy(networkProxy);
+		}
 	}
-	else
+	else // use system configuration
 	{
-		QNetworkProxy networkProxy;
-		networkProxy.setType(QNetworkProxy::NoProxy);
-		// remove application proxy
-		QNetworkProxy::setApplicationProxy(networkProxy);
+		class SystemProxyFactory : public QNetworkProxyFactory
+		{
+			public:
+				virtual QList<QNetworkProxy> queryProxy(const QNetworkProxyQuery &query)
+				{
+					return QNetworkProxyFactory::systemProxyForQuery(query);
+				}
+		};
+		// assign this system-proxy
+		QNetworkProxyFactory::setApplicationProxyFactory(new SystemProxyFactory());
 	}
 }
 

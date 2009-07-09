@@ -110,6 +110,7 @@ OptionsImpl::OptionsImpl(ProgramOptions *programOptions, SessionManager *session
 	connect(lsvSchedules, SIGNAL(itemSelectionChanged()), this, SLOT(lsvSchedulesItemSelectionChanged()));
 	connect(lsvSchedules, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(lsvSchedulesDoubleClicked(QModelIndex)));
 	connect(chbDisableAdultSupport, SIGNAL(clicked(bool)), this, SLOT(chbDisableAdultSupportClicked(bool)));
+	connect(chbProxySystemConfig, SIGNAL(stateChanged(int)), this, SLOT(chbProxySystemConfigStateChanged(int)));
 	// create menu
 	createMenu();
 	// add info
@@ -336,6 +337,7 @@ void OptionsImpl::setInitialOptionsValues()
 			lsvServices1->topLevelItem(i)->setSelected(true);
 	spbAddPressed();
 
+	chbProxySystemConfig->setChecked(programOptions->getUseSystemProxyConfig());
 	gpbProxy->setChecked(programOptions->getUseProxy());
 	edtUserName->setText(programOptions->getProxyUserName());
 	edtPassword->setText(programOptions->getProxyPassword());
@@ -392,6 +394,7 @@ void OptionsImpl::setOptionsValues()
 	programOptions->setBlockAdultContent(chbDisableAdultSupport->isChecked());
 	programOptions->setBlockedWebsitesList(hosts);
 
+	programOptions->setUseSystemProxyConfig(chbProxySystemConfig->isChecked());
 	programOptions->setUseProxy(gpbProxy->isChecked());
 	programOptions->setProxyUserName(edtUserName->text());
 	programOptions->setProxyPassword(edtPassword->text());
@@ -598,6 +601,11 @@ void OptionsImpl::chbDisableAdultSupportClicked(bool checked)
 	}
 	// update visible sites
 	showAdultSites(!chbDisableAdultSupport->isChecked());
+}
+
+void OptionsImpl::chbProxySystemConfigStateChanged(int state)
+{
+	gpbProxy->setEnabled(state == Qt::Unchecked);
 }
 
 void OptionsImpl::menuCurrentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous)

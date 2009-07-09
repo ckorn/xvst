@@ -27,7 +27,8 @@
 #define __VIDEOLISTCONTROLLER_H__
 
 #include <QtGui>
-#include <QNetworkProxy>
+//#include <QNetworkProxy>
+#include <QtNetwork>
 
 #include "videoitem.h"
 
@@ -57,6 +58,8 @@ Q_OBJECT
 		VideoItem* getFirstByState(VideoState videoState);
 		/*! Swap two items */
 		void swapVideoItems(VideoItem *from, VideoItem *to);
+		/*! Configure the proxy settings */
+		void setupProxy();
 	protected:
 		/*! Internal timer event */
 		void timerEvent(QTimerEvent *event);

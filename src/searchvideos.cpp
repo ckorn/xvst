@@ -114,8 +114,12 @@ void SearchVideos::run()
 	// build the plugins search list
 	QList<VideoInformationPlugin *> plugins;
 	// check which plugins goes into the list
-	if (internalPluginsIds.at(0) == "*") // all plugins
+	if (internalPluginsIds.at(0) == SEARCH_ID_ALL) // all plugins
 		plugins.append(VideoInformation::instance()->getAllSearchPlugins());
+	else if (internalPluginsIds.at(0) == SEARCH_ID_STANDARD) // all standard plugins
+		plugins.append(VideoInformation::instance()->getAllSearchStandardPlugins());
+	else if (internalPluginsIds.at(0) == SEARCH_ID_ADULTS) // all adult plugins
+		plugins.append(VideoInformation::instance()->getAllSearchAdultPlugins());
 	else if (internalPluginsIds.count() == 1) // single search
 		plugins.append(VideoInformation::instance()->getRegisteredPlugin(internalPluginsIds.at(0)));
 	else // custom search, so add them...

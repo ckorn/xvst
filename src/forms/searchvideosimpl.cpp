@@ -78,7 +78,7 @@ void SearchVideosImpl::finished(int)
 
 void SearchVideosImpl::cmbSearchInActivated(int index)
 {
-	if (cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString() == "?")
+	if (cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString() == SEARCH_ID_CUSTOM)
 	{
 		SearchVideosCustomizeImpl customize(customServices, this, Qt::Sheet);
 		if (showModalDialog(&customize) == QDialog::Accepted)
@@ -96,7 +96,7 @@ void SearchVideosImpl::btnSearchClicked()
 {
 	clearResults();
 	// custom search?
-	if (cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString() == "?")
+	if (cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString() == SEARCH_ID_CUSTOM)
 	{
 		if (customServices.isEmpty())
 		{
@@ -206,9 +206,16 @@ void SearchVideosImpl::fillSearchServices()
 	// has more than one item?
 	if (searchEngines.count() > 1)
 	{
-		cmbSearchIn->addItem(tr("All video services"), QVariant("*"));
-		cmbSearchIn->addItem(tr("Custom search"), QVariant("?"));
-		cmbSearchIn->insertSeparator(2);
+		// if adult sites are not blocked then add these two search options
+		if (!VideoInformation::instance()->getBlockAdultContent())
+		{
+			cmbSearchIn->addItem(tr("All standard services"), QVariant(SEARCH_ID_STANDARD));
+			cmbSearchIn->addItem(tr("All adult services"), QVariant(SEARCH_ID_ADULTS));
+		}
+		cmbSearchIn->addItem(tr("All services"), QVariant(SEARCH_ID_ALL));
+		cmbSearchIn->insertSeparator(cmbSearchIn->count());
+		cmbSearchIn->addItem(tr("Custom search"), QVariant(SEARCH_ID_CUSTOM));
+		cmbSearchIn->insertSeparator(cmbSearchIn->count());
 	}
 	// add them to combobox
 	for (int n = 0; n < searchEngines.count(); n++)

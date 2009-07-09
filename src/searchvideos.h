@@ -28,9 +28,13 @@
 
 #include <QtCore>
 
+static const QString SEARCH_ID_ALL = "*";		//!< All services id
+static const QString SEARCH_ID_STANDARD = "~";	//!< All standard services id
+static const QString SEARCH_ID_ADULTS = "!";	//!< All adults services id
+static const QString SEARCH_ID_CUSTOM = "?";	//!< Custom services id
+
 class Http;
 class VideoInformationPlugin;
-
 
 class SearchResultItem : public QObject
 {

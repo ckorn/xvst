@@ -63,6 +63,7 @@ Q_OBJECT
 		QString blockAdultContentPassword;	//!< Ups password protection
 		QString blockedWebsitesList;	//!< fist of services which are blocked (not allowed)	int proxyPort;
 		int maxActiveDownloads;			//!< Maximum active downloads
+		bool systemProxyConfiguration;	//!< flag for know if Proxy is automatic (using system-configuration)
 		bool useProxy;					//!< flag for know if Proxy is enabled or not
 		QString proxyAdress;			//!< Proxy Adress
 		QString proxyPassword;			//!< Proxy Password
@@ -170,6 +171,8 @@ Q_OBJECT
 		QString getProxyUserName();
 		void setUseProxy(bool value);
 		bool getUseProxy();
+		void setUseSystemProxyConfig(bool value);
+		bool getUseSystemProxyConfig();
 		void setProxyType(int value);
 		int getProxyType();
 		void setDragDropLeft(int value);

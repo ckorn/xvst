@@ -81,7 +81,7 @@
    <item row="0" column="1">
     <widget class="QStackedWidget" name="pgOptions">
      <property name="currentIndex">
-      <number>4</number>
+      <number>6</number>
      </property>
      <widget class="QWidget" name="pgBasic">
       <layout class="QGridLayout">
@@ -1599,7 +1599,7 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="0">
+       <item row="4" column="0">
         <spacer>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -1615,7 +1615,7 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="1" colspan="2">
+       <item row="4" column="1" colspan="2">
         <widget class="QGroupBox" name="gpbProxy">
          <property name="minimumSize">
           <size>
@@ -1797,7 +1797,7 @@
          </layout>
         </widget>
        </item>
-       <item row="1" column="3">
+       <item row="4" column="4">
         <spacer>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -1810,7 +1810,7 @@
          </property>
         </spacer>
        </item>
-       <item row="2" column="2">
+       <item row="6" column="2">
         <spacer>
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -1819,6 +1819,29 @@
           <size>
            <width>20</width>
            <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="QCheckBox" name="chbProxySystemConfig">
+         <property name="text">
+          <string>Use the system configuration</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>8</height>
           </size>
          </property>
         </spacer>

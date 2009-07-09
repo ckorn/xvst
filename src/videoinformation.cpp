@@ -271,10 +271,30 @@ QList<VideoInformationPlugin*> VideoInformation::getAllSearchPlugins() const
 	QList<VideoInformationPlugin*> result;
 
 	for(int n = 0; n < plugins->count(); n++)
-	{
 		if (plugins->at(n)->isSearchEngineAvailable())
 			result.append(plugins->at(n));
-	}
+
+	return result;
+}
+
+QList<VideoInformationPlugin*> VideoInformation::getAllSearchStandardPlugins() const
+{
+	QList<VideoInformationPlugin*> result;
+
+	for(int n = 0; n < plugins->count(); n++)
+		if (plugins->at(n)->isSearchEngineAvailable() && !plugins->at(n)->hasAdultContent())
+			result.append(plugins->at(n));
+
+	return result;
+}
+
+QList<VideoInformationPlugin*> VideoInformation::getAllSearchAdultPlugins() const
+{
+	QList<VideoInformationPlugin*> result;
+
+	for(int n = 0; n < plugins->count(); n++)
+		if (plugins->at(n)->isSearchEngineAvailable() && plugins->at(n)->hasAdultContent())
+			result.append(plugins->at(n));
 
 	return result;
 }

@@ -427,6 +427,10 @@ void Http::jumpToURL(QUrl url)
 	// set the host
 	header.setValue("Host", url.host());
 
+	// set user agent
+	if (!HTTP_GLOBAL_USER_AGENT.isEmpty())
+		header.addValue("User-Agent", HTTP_GLOBAL_USER_AGENT);
+
 	// prepare parameters (they will only used for "POST" method)
 	QByteArray paramsStr;
 
@@ -816,6 +820,11 @@ int Http::getLastError()
 int Http::getLastStopReason()
 {
 	return stopReason;
+}
+
+void Http::setUserAgent(QString value)
+{
+	HTTP_GLOBAL_USER_AGENT = value;
 }
 
 void Http::dataReadProgress(int done, int total)

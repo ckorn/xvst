@@ -30,6 +30,8 @@
 //
 #include "options.h"
 #include "languages.h"
+#include "http.h"
+#include "programversion.h"
 //
 #ifdef STATIC_BUILD
 	#include <QtPlugin>
@@ -69,6 +71,9 @@ int main(int argc, char ** argv)
 		LoadingImpl::instance()->setMessage(LoadingImpl::tr("Plugins loaded"));
 		LoadingImpl::instance()->finished();
 	}
+
+	// set http user agent
+	Http::setUserAgent("xVST-" + PROGRAM_VERSION_SHORT);
 
 	// run program
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));

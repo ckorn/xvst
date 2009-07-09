@@ -124,6 +124,8 @@ enum HttpMethod
 	httpHead
 };
 
+static QString HTTP_GLOBAL_USER_AGENT = "";
+
 class Http : public QObject
 {
 Q_OBJECT
@@ -244,6 +246,8 @@ Q_OBJECT
 		int getLastError();
 		/*! Get the last stop reason (on start a new download, this value is reset) */
 		int getLastStopReason();
+		/*! Set the HTTP user agent */
+		static void setUserAgent(QString value);
 	private slots:
 		/*! when the http protocol read data */
 		void dataReadProgress(int done, int total);

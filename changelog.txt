@@ -1,3 +1,25 @@
+2.1.1:
+------
+
+- Added automatic network configuration (automatic proxy detection and configuration)
+- Added two new searching scopes ("All standard services" and "All adult services")
+- Added 5 new plug-in:
+	- Spankwire
+	- elRellano
+	- Pornfuze
+	- EJB
+	- T'n A flix
+	- Jizz-hut
+
+- Changed plug-ins:
+	- Badjojo (added search functions)
+
+- Fixed bug (Error: User-Agent was not send on HTTP requests)
+
+- Changed default searching scope to "All standard services"
+
+- Revised the Catalˆ language file
+
 2.1:
 ----
 
