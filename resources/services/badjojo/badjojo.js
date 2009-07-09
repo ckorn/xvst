@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-this.version = "2.0.0";
+	this.version = "2.0.0";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.badjojo.com/";
