@@ -6,6 +6,7 @@ QT = core \
     gui \
     network \
     script
+DEFINES += xVST_DEBUG_PLUGINS_OFF
 TEMPLATE = app
 DESTDIR = bin
 UI_DIR = build/ui

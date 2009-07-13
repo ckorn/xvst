@@ -68,6 +68,7 @@ struct VideoDefinition
 	bool isAudioFile;	//!< flag for know if is a audio file
 	QString cookies;	//!< special cookies for this video (only if is needed)
 	QString headers;	//!< special headers for this video (only if is needed)
+	QString userAgent;	//!< special userAgent for this video (only if is needed)
 	/*! Struct initializer */
 	VideoDefinition()
 	{
@@ -78,6 +79,7 @@ struct VideoDefinition
 		isAudioFile = false;
 		cookies = "";
 		headers = "";
+		userAgent = "";
 	}
 };
 

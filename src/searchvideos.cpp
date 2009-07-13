@@ -30,6 +30,7 @@
 #include "videoinformation.h"
 #include "options.h"
 #include "languages.h"
+#include "options.h"
 
 SearchVideos::SearchVideos()
 {
@@ -168,6 +169,68 @@ void SearchVideos::run()
 void SearchVideos::waitThread()
 {
 	while (this->isRunning()) {}
+}
+
+// SearchResultsSettings class
+
+void SearchVideosSettings::setDefaults()
+{
+	searchInId = SEARCH_ID_STANDARD;
+}
+
+void SearchVideosSettings::save()
+{
+	// generate the search settings file path (path + name)
+	QString searchSettingsFile = ProgramOptions::instance()->getOptionsPath() + SEARCH_SETTINGS_FILE;
+	// init settings file
+#ifdef Q_WS_MAC
+	QSettings settings(searchSettingsFile, QSettings::NativeFormat);
+#else
+	QSettings settings(searchSettingsFile, QSettings::IniFormat);
+#endif
+	settings.beginGroup("lastsettings");
+	// assign values
+	settings.setValue("pluginsIds", pluginsIds);
+	settings.setValue("searchInId", searchInId);
+	// save settings
+	settings.endGroup();
+}
+
+void SearchVideosSettings::load()
+{
+	// set default values
+	setDefaults();
+	// generate the search settings file path (path + name)
+	QString searchSettingsFile = ProgramOptions::instance()->getOptionsPath() + SEARCH_SETTINGS_FILE;
+	// load settings
+#ifdef Q_WS_MAC
+	QSettings settings(searchSettingsFile, QSettings::NativeFormat);
+#else
+	QSettings settings(searchSettingsFile, QSettings::IniFormat);
+#endif
+	// assign values
+	pluginsIds = settings.value("lastsettings/pluginsIds", pluginsIds).toStringList();
+	searchInId = settings.value("lastsettings/searchInId", searchInId).toString();
+}
+
+void SearchVideosSettings::setPluginsIds(QStringList value)
+{
+	pluginsIds = value;
+}
+
+QStringList SearchVideosSettings::getPluginsIds()
+{
+	return pluginsIds;
+}
+
+void SearchVideosSettings::setSearchInId(QString value)
+{
+	searchInId = value;
+}
+
+QString SearchVideosSettings::getSearchInId()
+{
+	return searchInId;
 }
 
 // SearchResultsPreviewCatcher class

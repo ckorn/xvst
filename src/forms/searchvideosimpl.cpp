@@ -49,6 +49,8 @@ SearchVideosImpl::SearchVideosImpl(QWidget *parent, Qt::WFlags f)
 	fillSearchServices();
 	stackedResults->setCurrentIndex(1);
 	//
+	restoreLastSearchSettings();
+	//
 	connect(this, SIGNAL(finished(int)), this, SLOT(finished(int)));
 	connect(cmbSearchIn, SIGNAL(activated(int)), this, SLOT(cmbSearchInActivated(int)));
 	connect(edtKeyWord, SIGNAL(textChanged(QString)), this, SLOT(edtKeyWordChanged(QString)));
@@ -65,6 +67,9 @@ SearchVideosImpl::SearchVideosImpl(QWidget *parent, Qt::WFlags f)
 
 SearchVideosImpl::~SearchVideosImpl()
 {
+	// save last search settings
+	saveLastSearchSettings();
+	// disconnect all signals
 	disconnect();
 	// destroy objects
 	delete loadingMovie;
@@ -249,4 +254,37 @@ void SearchVideosImpl::centerWindow()
 	y -= 50;
 
 	move(x, y);
+}
+
+void SearchVideosImpl::restoreLastSearchSettings()
+{
+	SearchVideosSettings lastSearchSettings;
+	lastSearchSettings.load();
+	// get the list of custom services
+	customServices = lastSearchSettings.getPluginsIds();
+	// check if the last searchIn is adults and ups is enabled
+	if (lastSearchSettings.getSearchInId() == SEARCH_ID_ADULTS && VideoInformation::instance()->getBlockAdultContent())
+	{
+		cmbSearchIn->setCurrentIndex(0);
+		return;
+	}
+	// get combobox option which corresponds to the searchIn
+	for (int n = 0; n < cmbSearchIn->count(); n++)
+		if (cmbSearchIn->itemData(n, Qt::UserRole).toString() == lastSearchSettings.getSearchInId())
+		{
+			cmbSearchIn->setCurrentIndex(n);
+			return;
+		}
+	// not found, then the default option is the first item
+	cmbSearchIn->setCurrentIndex(0);
+}
+
+void SearchVideosImpl::saveLastSearchSettings()
+{
+	SearchVideosSettings lastSearchSettings;
+	// assign last search settings
+	lastSearchSettings.setPluginsIds(customServices);
+	lastSearchSettings.setSearchInId(cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString());
+	// save settings
+	lastSearchSettings.save();
 }

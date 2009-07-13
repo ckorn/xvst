@@ -168,6 +168,7 @@ Q_OBJECT
 		int timeOut;				//!< when the connection is considered "time out" in miliseconds (we will ot wait infinite...)
 		QStringList *customHeaders;	//!< list with custom header parameters
 		bool skipExistentFiles;		//!< Skip files which are already present (downloaded)
+		QString userAgent;			//!< "user agent" used for this http instance
 		/*! Init Http class */
 		void initClass(bool useInternalTimer = true);
 		/*! Init the internal http data */
@@ -246,8 +247,10 @@ Q_OBJECT
 		int getLastError();
 		/*! Get the last stop reason (on start a new download, this value is reset) */
 		int getLastStopReason();
-		/*! Set the HTTP user agent */
-		static void setUserAgent(QString value);
+		/*! Set the user agent for this http instance (this override the global user agent) */
+		void setUserAgent(QString value);
+		/*! Set the global (default) HTTP user agent */
+		static void setGlobalUserAgent(QString value);
 	private slots:
 		/*! when the http protocol read data */
 		void dataReadProgress(int done, int total);

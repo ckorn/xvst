@@ -428,7 +428,9 @@ void Http::jumpToURL(QUrl url)
 	header.setValue("Host", url.host());
 
 	// set user agent
-	if (!HTTP_GLOBAL_USER_AGENT.isEmpty())
+	if (!userAgent.isEmpty())
+		header.addValue("User-Agent", userAgent);
+	else if (!HTTP_GLOBAL_USER_AGENT.isEmpty()) // set the global user agent
 		header.addValue("User-Agent", HTTP_GLOBAL_USER_AGENT);
 
 	// prepare parameters (they will only used for "POST" method)
@@ -823,6 +825,11 @@ int Http::getLastStopReason()
 }
 
 void Http::setUserAgent(QString value)
+{
+	userAgent = value;
+}
+
+void Http::setGlobalUserAgent(QString value)
 {
 	HTTP_GLOBAL_USER_AGENT = value;
 }

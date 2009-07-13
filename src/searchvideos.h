@@ -33,9 +33,16 @@ static const QString SEARCH_ID_STANDARD = "~";	//!< All standard services id
 static const QString SEARCH_ID_ADULTS = "!";	//!< All adults services id
 static const QString SEARCH_ID_CUSTOM = "?";	//!< Custom services id
 
+#ifdef Q_WS_MACX
+static const QString SEARCH_SETTINGS_FILE = "/../Application Support/xVideoServiceThief/searchsettings.plist";
+#else
+static const QString SEARCH_SETTINGS_FILE = "/searchsettings.conf";
+#endif
+
 class Http;
 class VideoInformationPlugin;
 
+/*! Search result item which has all the search item information */
 class SearchResultItem : public QObject
 {
 	private:
@@ -68,6 +75,7 @@ class SearchResultItem : public QObject
 		QString getPreviewFileName(bool withFullPath = false);
 };
 
+/*! Stores the list of search items results */
 class SearchResults : public QObject
 {
 Q_OBJECT
@@ -105,6 +113,7 @@ Q_OBJECT
 		void removeAllSearchResults();
 };
 
+/*! Download the video previews from searchs */
 class SearchResultsPreviewCatcher : public QObject
 {
 Q_OBJECT
@@ -136,6 +145,30 @@ Q_OBJECT
 		void finishedDownloadPreview(SearchResultItem *searchItem, bool error);
 };
 
+/*! Save and restore the last search video settings */
+class SearchVideosSettings : public QObject
+{
+	private:
+		QStringList pluginsIds;
+		QString searchInId;
+		/*! Default settings */
+		void setDefaults();
+	public:
+		/*! Save settings */
+		void save();
+		/*! Load settings */
+		void load();
+		/*! Set the plugins ids list */
+		void setPluginsIds(QStringList value);
+		/*! Get the plugins ids list */
+		QStringList getPluginsIds();
+		/*! Set the search in ID */
+		void setSearchInId(QString value);
+		/*! Get the search in ID */
+		QString getSearchInId();
+};
+
+/*! Main threaded search videos */
 class SearchVideos : public QThread
 {
 Q_OBJECT

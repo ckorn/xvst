@@ -29,6 +29,10 @@
 #include <QtGui>
 #include <QtScript>
 
+#ifdef xVST_DEBUG_PLUGINS_ON
+#include <QtScriptTools>
+#endif
+
 enum BlockedState
 {
 	bsNotBlocked,
@@ -49,7 +53,7 @@ class SearchResults;
 
 struct VideoDefinition;
 
-/*! Plugin information class */
+/*! Stores the plugin information */
 class VideoInformationPlugin : public QObject
 {
 	private:
@@ -69,6 +73,10 @@ class VideoInformationPlugin : public QObject
 		bool hasSearchEngine;		//!< Flag for know if this plugin has a search engine
 		QString onlineFaviconUrl;	//!< Online favicon url
 		QScriptEngine *engine;		//!< Pointer to script engine
+		// debug options
+#ifndef QT_NO_SCRIPTTOOLS
+		bool debug;					//!< Flag for know if Debug is ON or OFF
+#endif
 	private:
 		/* VideoDefinition struct script definition */
 		static QScriptValue create_VideoDefinition(QScriptContext *context, QScriptEngine *engine);
@@ -120,6 +128,10 @@ class VideoInformationPlugin : public QObject
 		bool isLoaded() const;
 		/*! Get if has a search engine */
 		bool isSearchEngineAvailable() const;
+		// debug methods
+#ifdef xVST_DEBUG_PLUGINS_ON
+		void setDebug(bool value);
+#endif
 };
 
 /*! Download plugins icons and save them into a cache */
@@ -167,14 +179,16 @@ Q_OBJECT
 		/*! Load all plugins from /plugins/.js */
 		void loadPlugins(QString pluginsDir);
 		/*! Load a plugin and regist it */
-		void loadPluginFile(QString scriptFile);		
+		void loadPluginFile(QString scriptFile);
 	public:
-		/*! Class constructor */
-		VideoInformation(QString pluginsDir);
+		/*! Class constructor (load all plugins from "pluginsDir" location) */
+		VideoInformation(QString pluginsDir = "");
 		/*! Class destructor */
 		~VideoInformation();
-		/*! Register a new VideoDownload Plugin */
+		/*! Register a new videoInformationPlugin Plugin */
 		void registerPlugin(VideoInformationPlugin *videoInformationPlugin);
+		/*! Unregister an existent videoInformationPlugin Plugin */
+		void unregisterPlugin(VideoInformationPlugin *videoInformationPlugin, bool destroy = true);
 		/*! Get a registered VideoInformationPlugin */
 		VideoInformationPlugin* getRegisteredPlugin(const int index);
 		/*! Get a registered VideoInformationPlugin by file name (*.js) */
@@ -232,9 +246,9 @@ Q_OBJECT
 		/*! Get the last VideoInformation reference */
 		static VideoInformation* instance();
 	signals:
-		/*! A Video item download started */
+		/*! Started to get the video information of videoItem */
 		void informationStarted(VideoItem *videoItem);
-		/*! A Video item download finished */
+		/*! Finished to get the video information of videoItem */
 		void informationFinished(VideoItem *videoItem);
 };
 

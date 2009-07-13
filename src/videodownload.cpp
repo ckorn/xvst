@@ -69,6 +69,9 @@ void DownloadItem::startDownload()
 	// if this video has special headers, then add them
 	if (!videoItem->getVideoInformation().headers.isEmpty())
 		http->addHeaderParameters(videoItem->getVideoInformation().headers);
+	// if this video has a special "user agent", then override it
+	if (!videoItem->getVideoInformation().userAgent.isEmpty())
+		http->setUserAgent(videoItem->getVideoInformation().userAgent);
 	// start download
 	int er = http->download(QUrl(videoItem->getVideoInformation().URL), 
 		parent->getDownloadDir(), videoItem->getVideoFile());

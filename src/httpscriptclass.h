@@ -55,6 +55,7 @@ Q_OBJECT
 		void setMaxRetries(int value);
 		void setTimeOut(int value);
 		void setMaxAutoJumps(int value);
+		void setUserAgent(QString value);
 		int getLastError();
 		int getLastStopReason();
 };

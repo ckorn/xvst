@@ -3,6 +3,7 @@
 
 - Added automatic network configuration (automatic proxy detection and configuration)
 - Added two new searching scopes ("All standard services" and "All adult services")
+- Added save/restore last search settings
 - Added 5 new plug-in:
 	- Spankwire
 	- elRellano
@@ -19,6 +20,15 @@
 - Changed default searching scope to "All standard services"
 
 - Revised the Catalˆ language file
+
+Plug-ins SDK:
+------------
+
+- Added 1 new property to VideoDefinition class:
+	- String userAgent
+
+- Added 1 new method to Http class:
+	- void setUserAgent(String value)
 
 2.1:
 ----

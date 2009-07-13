@@ -56,7 +56,7 @@ VideoInformation::VideoInformation(QString pluginsDir)
 	setObjectName("VideoInformation");
 	// plugins
 	plugins = new QList<VideoInformationPlugin *>;
-	loadPlugins(pluginsDir);
+	if (!pluginsDir.isEmpty()) loadPlugins(pluginsDir);
 	// init data
 	videoItem = NULL;
 	blockAdultContent = false;
@@ -72,7 +72,6 @@ VideoInformation::~VideoInformation()
 	// abort any current plugin execution
 	abortExecution();
 	// wait until thread end
-//	while (isRunning()) { /* do nothing, just wait... */ };
 	if (isRunning()) quit();
 	// abort plugins image catcher
 	delete faviconsCatcher;
@@ -108,6 +107,14 @@ void VideoInformation::registerPlugin(VideoInformationPlugin *videoInformationPl
 	plugins->push_back(videoInformationPlugin);
 }
 
+void VideoInformation::unregisterPlugin(VideoInformationPlugin *videoInformationPlugin, bool destroy)
+{
+	if (plugins->contains(videoInformationPlugin))
+		plugins->removeAt(plugins->indexOf(videoInformationPlugin));
+	// destroy this plugin?
+	if (destroy) delete videoInformationPlugin;
+}
+
 void VideoInformation::run()
 {
 	videoItem->lock(this);
@@ -129,6 +136,7 @@ void VideoInformation::run()
 			emit informationStarted(videoItem);
 
 			VideoDefinition info = service->getVideoInformation(videoItem->getURL());
+
 			// canceled?
 			if (videoItem == NULL) return;
 
@@ -519,6 +527,10 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 	icon = new QPixmap();
 	onlineFaviconUrl = "";
 	pluginFilePath = videoServicePath;
+	// configure debug options
+#ifndef QT_NO_SCRIPTTOOLS
+	debug = false;
+#endif
 	// load js code
 	QFile scriptFile(videoServicePath);
 	if (scriptFile.exists())
@@ -620,6 +632,7 @@ QScriptValue VideoInformationPlugin::toScriptValue_VideoDefinition(QScriptEngine
 	obj.setProperty("needLogin", QScriptValue(engine, vd.needLogin));
 	obj.setProperty("cookies", QScriptValue(engine, vd.cookies));
 	obj.setProperty("headers", QScriptValue(engine, vd.headers));
+	obj.setProperty("userAgent", QScriptValue(engine, vd.userAgent));
 	return obj;
 }
 
@@ -632,6 +645,7 @@ void VideoInformationPlugin::fromScriptValue_VideoDefinition(const QScriptValue 
 	vd.needLogin = obj.property("needLogin").toBool();
 	vd.cookies = obj.property("cookies").toString();
 	vd.headers = obj.property("headers").toString();
+	vd.userAgent = obj.property("userAgent").toString();
 }
 
 QScriptValue VideoInformationPlugin::func_isPluginInstalled(QScriptContext *context, QScriptEngine *engine)
@@ -699,8 +713,15 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	// create and regist the Http class
 	HttpScriptClass *httpClass = new HttpScriptClass(engine);
 
+	// configure debugger
+#ifdef xVST_DEBUG_PLUGINS_ON
+	QScriptEngineDebugger debugger;
+	debugger.attachTo(engine);
+#endif
+
 	// evaluate plugin code
 	engine->evaluate(scriptCode);
+
 	// execute regist code if no errors found
 	if (!engine->hasUncaughtException())
 	{
@@ -710,6 +731,10 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 		{
 			QScriptValueList args;
 			args << QScriptValue(engine, URL);
+			// start debug from begining (only if this->debug == true)
+#ifdef xVST_DEBUG_PLUGINS_ON
+			if (debug) debugger.action(QScriptEngineDebugger::InterruptAction)->activate(QAction::Trigger);
+#endif
 			// execute plugin
 			QScriptValue videoDefinition = func_getVideoInfo.call(QScriptValue(), args);
 			result = qscriptvalue_cast<VideoDefinition>(videoDefinition);
@@ -750,6 +775,12 @@ SearchResults VideoInformationPlugin::searchVideos(const QString keyWords, const
 	// create and regist the SearchResults class
 	SearchResultsScriptClass *searchResultsClass = new SearchResultsScriptClass(engine);
 
+	// configure debugger
+#ifdef xVST_DEBUG_PLUGINS_ON
+	QScriptEngineDebugger debugger;
+	debugger.attachTo(engine);
+#endif
+
 	// evaluate plugin code
 	engine->evaluate(scriptCode);
 	// execute regist code if no errors found
@@ -761,6 +792,10 @@ SearchResults VideoInformationPlugin::searchVideos(const QString keyWords, const
 		{
 			QScriptValueList args;
 			args << QScriptValue(engine, keyWords) << QScriptValue(engine, page);
+			// start debug from begining (only if this->debug == true)
+#ifdef xVST_DEBUG_PLUGINS_ON
+			if (debug) debugger.action(QScriptEngineDebugger::InterruptAction)->activate(QAction::Trigger);
+#endif
 			// execute plugin
 			QScriptValue searchResults = func_searchVideos.call(QScriptValue(), args);
 			QVariant v = searchResults.data().toVariant();
@@ -872,3 +907,10 @@ bool VideoInformationPlugin::isSearchEngineAvailable() const
 {
 	return hasSearchEngine;
 }
+
+#ifdef xVST_DEBUG_PLUGINS_ON
+void VideoInformationPlugin::setDebug(bool value)
+{
+	debug = value;
+}
+#endif

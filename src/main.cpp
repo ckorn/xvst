@@ -72,8 +72,8 @@ int main(int argc, char ** argv)
 		LoadingImpl::instance()->finished();
 	}
 
-	// set http user agent
-	Http::setUserAgent("xVST-" + PROGRAM_VERSION_SHORT);
+	// set http global user agent
+	Http::setGlobalUserAgent("xVST-" + PROGRAM_VERSION_SHORT);
 
 	// run program
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));

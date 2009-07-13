@@ -117,6 +117,11 @@ void HttpScriptPrototype::setMaxAutoJumps(int value)
 	thisHttp()->setMaxAutoJumps(value);
 }
 
+void HttpScriptPrototype::setUserAgent(QString value)
+{
+	thisHttp()->setUserAgent(value);
+}
+
 int HttpScriptPrototype::getLastError()
 {
 	return thisHttp()->getLastError();
