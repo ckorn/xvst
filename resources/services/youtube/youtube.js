@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.0";
+	this.version = "2.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -45,7 +45,7 @@ function getVideoInformation(url)
 	// default URL
 	var youTubeURL = url;
 	// check if is an embeded video, and get the "real url" of youtube
-	if (youTubeURL.indexOf(".youtube.com/v/") != -1)
+	if (youTubeURL.toString().indexOf(".youtube.com/v/") != -1)
 	{
 		var embededID = youTubeURL;
 		embededID = strRemove(embededID, 0, embededID.lastIndexOf("/v/") + 3);
