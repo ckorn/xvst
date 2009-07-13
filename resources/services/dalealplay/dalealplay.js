@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.dalealplay.com/";
@@ -44,8 +44,7 @@ function getVideoInformation(url)
 	var http = new Http();
 	var html = http.downloadWebpage(url, false);
 	// get video title
-	result.title = copyBetween(html, "<title>", "</title>");
-	result.title = strReplace(result.title, "www dalealplay com", "");
+	result.title = copyBetween(html, "<title>", "- www.dalealplay.com</title>");
 	// get the video path
 	var videoPath = copyBetween(html, "file=", "&");
 	// build url
