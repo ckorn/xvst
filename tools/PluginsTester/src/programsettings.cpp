@@ -3,13 +3,13 @@
 ProgramSettings::ProgramSettings()
 {
 #ifdef Q_OS_LINUX // modification made by "AzalSup"
-	settingsFile = QDir::homePath() + "/.xVideoServiceThief" + SETTINGS_FILE;
+	settingsFile = QDir::homePath() + "/.PluginsTester" + SETTINGS_FILE;
 #endif
 #ifdef Q_WS_MACX
 	settingsFile = QDir::homePath() + "/Library/Preferences" + SETTINGS_FILE;
 #endif
 #ifdef Q_OS_WIN32
-	settingsFile = QDir::homePath() + "/xVideoServiceThief" + SETTINGS_FILE;
+	settingsFile = QDir::homePath() + "/PluginsTester" + SETTINGS_FILE;
 #endif
 	// init defaults
 	testingFile = "";
