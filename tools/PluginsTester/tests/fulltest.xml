@@ -180,6 +180,10 @@
 		<video url="http://pugorama.com/Awesome-Emo-Evelyn-video1228.html" caption="Awesome Emo Evelyn" size="14684550" />
 	</test>
 	<test>
+		<plugin file="shredordie.js" title="Shred or Die" />
+		<video url="http://www.shredordie.com/videos/b701a26af8/ken-hale" caption="Ken Hale" size="24049383" />
+	</test>
+	<test>
 		<plugin file="redtube.js" title="RedTube" />
 		<video url="http://www.redtube.com/21793" caption="Eva and her daughters boyfriend" size="10424777" />
 	</test>
