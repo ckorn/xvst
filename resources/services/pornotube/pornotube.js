@@ -49,9 +49,9 @@ function getVideoInformation(url)
 	// download html
 	var html = http.downloadWebpagePost(url, AGE_VALIDATION);
 	// get video title
-	result.title = copyBetween(html, "<span class=\"blue\">", "<");
+	result.title = copyBetween(html, '<span class="blue">', "<");
 	// get the video ID
-	var videoID = copyBetween(html, "player/v.swf?v=", "\"");
+	var videoID = copyBetween(html, "player/v.swf?v=", '"');
 	// get the video Information
 	http.clearHeaderParameters();
 	info = http.downloadWebpage(strFormat(GET_FLV_INFO_URL, videoID));

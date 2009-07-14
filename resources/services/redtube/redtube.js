@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.redtube.com/";
@@ -44,7 +44,7 @@ function getVideoInformation(url)
 	// download html
 	var html = http.downloadWebpage(url);
 	// get video information
-	result.title = copyBetween(html, "<title>&nbsp;RedTube -", "</title>");
+	result.title = copyBetween(html, "<h1 class='videoTitle'>", "</td>");
 	result.URL = generateUrl(copyBetween(url + "/", ".com/", "/"));
 	// return the video information
 	return result;
