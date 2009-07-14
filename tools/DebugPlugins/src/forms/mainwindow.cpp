@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+
 #include "ui_mainwindow.h"
 
 #include "../programsettings.h"
@@ -55,6 +56,7 @@ void MainWindow::testPluginVideoInformation(bool debug)
 	ui->outputVideoInformation->appendHtml("<p>");
 	ui->outputVideoInformation->appendHtml(QString("<b>Name:</b> %1").arg(plugin.getCaption()));
 	ui->outputVideoInformation->appendHtml(QString("<b>Version:</b> %1").arg(plugin.getVersion()));
+	ui->outputVideoInformation->appendHtml(QString("<b>Adult content:</b> %1").arg(plugin.hasAdultContent() ? "Yes" : "No"));
 	ui->outputVideoInformation->appendHtml("</p>");
 
 	// video information
@@ -77,8 +79,8 @@ void MainWindow::testPluginVideoInformation(bool debug)
 	// video information: optional information
 	ui->outputVideoInformation->appendHtml("<p>");
 	ui->outputVideoInformation->appendHtml(QString("<b>Extension:</b> %1").arg(vd.extension));
-	ui->outputVideoInformation->appendHtml(QString("<b>Is Audio File:</b> %1").arg(vd.isAudioFile));
-	ui->outputVideoInformation->appendHtml(QString("<b>Need Login:</b> %1").arg(vd.needLogin));
+	ui->outputVideoInformation->appendHtml(QString("<b>Is Audio File:</b> %1").arg(vd.isAudioFile ? "Yes" : "No"));
+	ui->outputVideoInformation->appendHtml(QString("<b>Need Login:</b> %1").arg(vd.needLogin ? "Yes" : "No"));
 	ui->outputVideoInformation->appendHtml("<p>");
 	ui->outputVideoInformation->appendHtml(QString("<b>Overrided HTTP User-Agent:</b> %1").arg(vd.userAgent));
 	ui->outputVideoInformation->appendHtml(QString("<b>Extra HTTP headers:</b> %1").arg(vd.headers));
