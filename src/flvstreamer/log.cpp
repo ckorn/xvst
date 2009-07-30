@@ -47,9 +47,10 @@ void LogPrintf(const char *format, ...)
           return;
 
         fprintf(fmsg, "%s", str);
-	#ifdef _DEBUG
-	fflush(fmsg);
-	#endif
+		
+#ifdef WIN32 //#ifdef _DEBUG
+		fflush(fmsg);
+#endif
 }
 
 void Log(int level, const char *format, ...)
