@@ -91,8 +91,14 @@
 	QString cleanURL(QString URL);
 	
 	/*! Validate url */
-	bool validURL(QString URL);
+	bool validURL(QString URL, bool acceptRTMP = false);
 	
+	/*! Return if is a HTTP url */
+	bool isHttpURL(QString URL);
+
+	/*! Return if is a RTMP url */
+	bool isRtmpURL(QString URL);
+
 	/*! Get the URL path + query */
 	QString getPathAndQuery(QUrl URL);
 	

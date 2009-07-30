@@ -414,14 +414,15 @@ QString VideoInformation::getHostCaption(QString URL)
 		VideoInformationPlugin *plugin = getPluginByHost(QUrl(URL));
 		return plugin != NULL ? plugin->getCaption() : tr("Unsupported video service");
 	}
+	else if (isRtmpURL(URL))
+		return tr("Adobe Flash streaming");
 	else
 		return tr("Invalid URL");
 }
 
 bool VideoInformation::isValidHost(QString URL)
 {
-
-	return getPluginByHost(QUrl(URL)) != NULL && QUrl(URL).isValid() ? true : false;
+	return getPluginByHost(QUrl(URL)) != NULL && QUrl(URL).isValid() && !isRtmpURL(URL)? true : false;
 }
 
 bool VideoInformation::isBlockedHost(QString URL, BlockedState &result)

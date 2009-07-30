@@ -134,7 +134,7 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 	btnOk->setEnabled(ok);
 	
 	// set custom download visibility
-	lblCustomDownload->setVisible(!videoInformation->isValidHost(text) && validURL(text));
+	lblCustomDownload->setVisible(!videoInformation->isValidHost(text) && validURL(text, true));
 
 	// set color
 	QColor valid(qApp->palette().brush(QPalette::Base).color());

@@ -29,27 +29,37 @@
 #include <QtGui>
 #include <QtNetwork>
 
-enum Error
+namespace EnumHTTP
 {
-	_UNABLE_CREATE_DIR = 20,	//20
-	_UNABLE_CREATE_FILE,		//21
-	_INVALID_URL,				//22
-	_ALREADY_DOWNLOADING,		//23
-	_INVALID_FILE_SIZE,			//24
-	_MISSING_RESUME_FILE,		//25
-	_UNABLE_RESUME_DOWNLOAD,	//26
-	_UNABLE_APPEND_FILE			//27
-};
+	enum Error
+	{
+		UNABLE_CREATE_DIR = 20,	//20
+		UNABLE_CREATE_FILE,		//21
+		INVALID_URL,				//22
+		ALREADY_DOWNLOADING,		//23
+		INVALID_FILE_SIZE,			//24
+		MISSING_RESUME_FILE,		//25
+		UNABLE_RESUME_DOWNLOAD,	//26
+		UNABLE_APPEND_FILE			//27
+	};
 
-enum StopReason
-{
-	NO_STOPPED = 100,			//100
-	DOWNLOAD_FINISHED,			//101
-	USER_CANCELLED,				//102
-	USER_PAUSED,				//103
-	TIME_OUT,					//104
-	MAX_AUTO_JUMPS_REACHED		//105
-};
+	enum StopReason
+	{
+		NO_STOPPED = 100,			//100
+		DOWNLOAD_FINISHED,			//101
+		USER_CANCELLED,				//102
+		USER_PAUSED,				//103
+		TIME_OUT,					//104
+		MAX_AUTO_JUMPS_REACHED		//105
+	};
+
+	enum HttpMethod
+	{
+		httpGet,
+		httpPost,
+		httpHead
+	};
+}
 
 class ArrayAvg : public QObject
 {
@@ -117,13 +127,6 @@ class CookieController : public QObject
 		QString getCookies(bool complete, const QString separator = "|");
 };
 
-enum HttpMethod
-{
-	httpGet,
-	httpPost,
-	httpHead
-};
-
 static QString HTTP_GLOBAL_USER_AGENT = "";
 
 class Http : public QObject
@@ -137,7 +140,7 @@ Q_OBJECT
 		bool useInternalTimer;		//!< flag for know if is being used an internal timer
 		QFile *file;				//!< destination file
 		int httpGetId;				//!< current download id
-		StopReason stopReason;		//!< flag for know if the user aborted
+		EnumHTTP::StopReason stopReason; //!< flag for know if the user aborted
 		bool pauseOnDestroyF;		//!< should pause the download instead of cancel it?
 		int timeRemaining;			//!< time remaining in seconds
 		int downloadSpeed;			//!< download speed in bytes
@@ -155,7 +158,7 @@ Q_OBJECT
 		bool autoRestartOnFail;		//!< restart the download on fail?
 		bool restartDownload;		//!< flog for know if should restart again
 		bool syncFlag;				//!< sync. flag
-		HttpMethod httpMethod;		//!< http request method: get, post or head
+		EnumHTTP::HttpMethod httpMethod; //!< http request method: get, post or head
 		QString data;				//!< internal downloaded data
 		QString parameters;			//!< internal post parameters
 		int maxRetries;				//!< maximum retries for session (each download is a session)

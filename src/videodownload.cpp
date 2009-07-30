@@ -25,78 +25,13 @@
 
 #include "videodownload.h"
 
-#include "tools.h"
 #include "http.h"
+#include "rtmp.h"
+#include "tools.h"
 #include "videoitem.h"
+#include "options.h"
 
 /* DownloadItem Class */
-
-DownloadItem::DownloadItem(VideoDownload *parent, VideoItem *videoItem)
-{
-	setObjectName("DownloadItem");
-	// assign main info
-	this->parent = parent;
-	this->videoItem = videoItem;
-	this->videoItem->setAsNothingPreState();
-	// create the http object
-	http = new Http;
-	// connect signals
-	connect(http, SIGNAL(downloadStarted()), this, SLOT(downloadStarted()));
-	connect(http, SIGNAL(downloadPaused(const QFileInfo)), this, SLOT(downloadPaused(const QFileInfo)));
-	connect(http, SIGNAL(downloadResumed()), this, SLOT(downloadResumed()));
-	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
-	connect(http, SIGNAL(downloadCanceled()), this, SLOT(downloadCanceled()));
-	connect(http, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
-	connect(http, SIGNAL(downloadEvent(int, int)), this, SLOT(downloadEvent(int, int)));
-}
-
-DownloadItem::~DownloadItem()
-{
-	cancelDownload();
-
-	delete http;
-}
-
-void DownloadItem::startDownload()
-{
-	// assign data
-	videoItem->lock(this);
-	videoItem->setAsDownloading(this);
-	videoItem->setProgress(0, this);
-	// if this video has special cookies, then assing them
-	if (!videoItem->getVideoInformation().cookies.isEmpty())
-		http->addCookies(videoItem->getVideoInformation().cookies);
-	// if this video has special headers, then add them
-	if (!videoItem->getVideoInformation().headers.isEmpty())
-		http->addHeaderParameters(videoItem->getVideoInformation().headers);
-	// if this video has a special "user agent", then override it
-	if (!videoItem->getVideoInformation().userAgent.isEmpty())
-		http->setUserAgent(videoItem->getVideoInformation().userAgent);
-	// start download
-	int er = http->download(QUrl(videoItem->getVideoInformation().URL), 
-		parent->getDownloadDir(), videoItem->getVideoFile());
-	if (er != 0) downloadError(er);
-}
-
-void DownloadItem::pauseDownload()
-{
-	http->pause();
-}
-
-void DownloadItem::resumeDownload()
-{
-	// assign data
-	videoItem->lock(this);
-	videoItem->setAsDownloading(this);
-	// resume download
-	int er = http->resume(QUrl(videoItem->getVideoInformation().URL), videoItem->getVideoFile());
-	if (er != 0) downloadError(er);
-}
-
-void DownloadItem::cancelDownload()
-{
-	http->cancel();
-}
 
 VideoItem* DownloadItem::getVideoItem()
 {
@@ -144,8 +79,8 @@ void DownloadItem::downloadEvent(int pos, int max)
 {
 	videoItem->setProgress(calculePercent(pos, max), this);
 	videoItem->setVideoSize(max, this);
-	videoItem->setDownloadSpeed(http->getDownloadSpeed(), this);
-	videoItem->setTimeRemaining(http->getTimeRemaining(), this);
+	videoItem->setDownloadSpeed(getDownloadSpeed(), this);
+	videoItem->setTimeRemaining(getTimeRemaining(), this);
 	// emit signal
 	emit videoItemUpdated_child(videoItem);
 }
@@ -162,6 +97,155 @@ void DownloadItem::workFinished()
 	emit downloadFinished_child(videoItem);
 	// emit the destroy signal (bye bye cruel world!)
 	emit downloadDestroyable();
+}
+
+/* DownloadItem_HTTP */
+
+DownloadItem_HTTP::DownloadItem_HTTP(VideoDownload *parent, VideoItem *videoItem)
+{
+	setObjectName("DownloadItem_HTTP");
+	// assign main info
+	this->parent = parent;
+	this->videoItem = videoItem;
+	this->videoItem->setAsNothingPreState();
+	// create the http object
+	http = new Http();
+	// connect signals
+	connect(http, SIGNAL(downloadStarted()), this, SLOT(downloadStarted()));
+	connect(http, SIGNAL(downloadPaused(const QFileInfo)), this, SLOT(downloadPaused(const QFileInfo)));
+	connect(http, SIGNAL(downloadResumed()), this, SLOT(downloadResumed()));
+	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
+	connect(http, SIGNAL(downloadCanceled()), this, SLOT(downloadCanceled()));
+	connect(http, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
+	connect(http, SIGNAL(downloadEvent(int, int)), this, SLOT(downloadEvent(int, int)));
+}
+
+DownloadItem_HTTP::~DownloadItem_HTTP()
+{
+	cancelDownload();
+
+	delete http;
+}
+
+void DownloadItem_HTTP::startDownload()
+{
+	// assign data
+	videoItem->lock(this);
+	videoItem->setAsDownloading(this);
+	videoItem->setProgress(0, this);
+	// if this video has special cookies, then assing them
+	if (!videoItem->getVideoInformation().cookies.isEmpty())
+		http->addCookies(videoItem->getVideoInformation().cookies);
+	// if this video has special headers, then add them
+	if (!videoItem->getVideoInformation().headers.isEmpty())
+		http->addHeaderParameters(videoItem->getVideoInformation().headers);
+	// if this video has a special "user agent", then override it
+	if (!videoItem->getVideoInformation().userAgent.isEmpty())
+		http->setUserAgent(videoItem->getVideoInformation().userAgent);
+	// start download
+	int er = http->download(QUrl(videoItem->getVideoInformation().URL),
+		parent->getDownloadDir(), videoItem->getVideoFile());
+	if (er != 0) downloadError(er);
+}
+
+void DownloadItem_HTTP::pauseDownload()
+{
+	http->pause();
+}
+
+void DownloadItem_HTTP::resumeDownload()
+{
+	// assign data
+	videoItem->lock(this);
+	videoItem->setAsDownloading(this);
+	// resume download
+	int er = http->resume(QUrl(videoItem->getVideoInformation().URL), videoItem->getVideoFile());
+	if (er != 0) downloadError(er);
+}
+
+void DownloadItem_HTTP::cancelDownload()
+{
+	http->cancel();
+}
+
+int DownloadItem_HTTP::getDownloadSpeed()
+{
+	return http->getDownloadSpeed();
+}
+
+int DownloadItem_HTTP::getTimeRemaining()
+{
+	return http->getTimeRemaining();
+}
+
+/* DownloadItem_RTMP */
+
+DownloadItem_RTMP::DownloadItem_RTMP(VideoDownload *parent, VideoItem *videoItem)
+{
+	setObjectName("DownloadItem_RTMP");
+	// assign main info
+	this->parent = parent;
+	this->videoItem = videoItem;
+	this->videoItem->setAsNothingPreState();
+	// create the rtmp object
+	rtmp = new RTMP(ProgramOptions::instance()->getToolsPath());
+	// connect signals
+	connect(rtmp, SIGNAL(downloadStarted()), this, SLOT(downloadStarted()));
+	connect(rtmp, SIGNAL(downloadPaused(const QFileInfo)), this, SLOT(downloadPaused(const QFileInfo)));
+	connect(rtmp, SIGNAL(downloadResumed()), this, SLOT(downloadResumed()));
+	connect(rtmp, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
+	connect(rtmp, SIGNAL(downloadCanceled()), this, SLOT(downloadCanceled()));
+	connect(rtmp, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
+	connect(rtmp, SIGNAL(downloadEvent(int, int)), this, SLOT(downloadEvent(int, int)));
+}
+
+DownloadItem_RTMP::~DownloadItem_RTMP()
+{
+	cancelDownload();
+
+	delete rtmp;
+}
+
+void DownloadItem_RTMP::startDownload()
+{
+	// assign data
+	videoItem->lock(this);
+	videoItem->setAsDownloading(this);
+	videoItem->setProgress(0, this);
+	// start download
+	int er = rtmp->download(videoItem->getVideoInformation().URL,
+		parent->getDownloadDir(), videoItem->getVideoFile());
+	if (er != 0) downloadError(er);
+}
+
+void DownloadItem_RTMP::pauseDownload()
+{
+	rtmp->pause();
+}
+
+void DownloadItem_RTMP::resumeDownload()
+{
+	// assign data
+	videoItem->lock(this);
+	videoItem->setAsDownloading(this);
+	// resume download
+	int er = rtmp->resume(videoItem->getVideoInformation().URL, videoItem->getVideoFile());
+	if (er != 0) downloadError(er);
+}
+
+void DownloadItem_RTMP::cancelDownload()
+{
+	rtmp->cancel();
+}
+
+int DownloadItem_RTMP::getDownloadSpeed()
+{
+	return rtmp->getDownloadSpeed();
+}
+
+int DownloadItem_RTMP::getTimeRemaining()
+{
+	return rtmp->getTimeRemaining();
 }
 
 /* VideoDownload Class */
@@ -214,8 +298,11 @@ void VideoDownload::stopAllDownloads(bool doCancel)
 void VideoDownload::downloadVideo(VideoItem *videoItem)
 {
 	if (videoItem == NULL || !canStartDownload()) return;
-	// add a new download
-	downloads->append(new DownloadItem(this, videoItem));
+	// check if is an HTTP or RTMP download and add it inot downloads queue
+	if (isHttpURL(videoItem->getVideoInformation().URL))
+		downloads->append(new DownloadItem_HTTP(this, videoItem));
+	else if (isRtmpURL(videoItem->getVideoInformation().URL))
+		downloads->append(new DownloadItem_RTMP(this, videoItem));
 	// get the new item added
 	DownloadItem *downloadItem = downloads->last();
 	// connect signals of this new child
@@ -245,8 +332,11 @@ void VideoDownload::resumeDownload(VideoItem *videoItem)
 		emit videoItemUpdated(videoItem);
 		return;
 	}
-	// add a new download
-	downloads->append(new DownloadItem(this, videoItem));
+	// check if is an HTTP or RTMP download and add it inot downloads queue
+	if (isHttpURL(videoItem->getVideoInformation().URL))
+		downloads->append(new DownloadItem_HTTP(this, videoItem));
+	else if (isRtmpURL(videoItem->getVideoInformation().URL))
+		downloads->append(new DownloadItem_RTMP(this, videoItem));
 	// get the new item added
 	DownloadItem *downloadItem = downloads->last();
 	// connect signals of this new child

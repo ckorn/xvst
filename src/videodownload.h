@@ -29,37 +29,37 @@
 #include <QtGui>
 
 class Http;
+class RTMP;
 class VideoItem;
 class VideoDownload;
 
-/*! Single download */
+/*! Single download (Base class) */
 class DownloadItem : public QObject
 {
 Q_OBJECT
-	private:
+	protected:
 		VideoDownload *parent;	//!< parent class
-		Http *http;				//!< download class
 		VideoItem *videoItem;	//!< current video item
-		/*! when work started */
+		/*! When work started */
 		void workStarted();
-		/*! when work finished */
+		/*! When work finished */
 		void workFinished();
+		/*! Set download speed */
+		virtual int getDownloadSpeed() = 0;
+		/*! Set time remaining */
+		virtual int getTimeRemaining() = 0;
 	public:
-		/*! Class constructor */
-		DownloadItem(VideoDownload *parent, VideoItem *videoItem);
-		/*! Class destructor */
-		~DownloadItem();
-		/*! Start the download */
-		void startDownload();
-		/*! Pause the download */
-		void pauseDownload();
-		/*! Resume the download */
-		void resumeDownload();
-		/*! Cancel the download */
-		void cancelDownload();
 		/*! Get the video item associated */
 		VideoItem* getVideoItem();
-	private slots:
+		/*! Start the download */
+		virtual void startDownload() = 0;
+		/*! Pause the download */
+		virtual void pauseDownload() = 0;
+		/*! Resume the download */
+		virtual void resumeDownload() = 0;
+		/*! Cancel the download */
+		virtual void cancelDownload() = 0;
+	protected slots:
 		/*! A new download started */
 		void downloadStarted();
 		/*! Download has been paused */
@@ -83,6 +83,54 @@ Q_OBJECT
 		void downloadFinished_child(VideoItem *videoItem);
 		/*! This signal is send when all work finished */
 		void downloadDestroyable();
+};
+
+/*! Single download via HTTP */
+class DownloadItem_HTTP : public DownloadItem
+{
+	private:
+		Http *http;	//!< download class
+		/*! Set download speed */
+		int getDownloadSpeed();
+		/*! Set time remaining */
+		int getTimeRemaining();
+	public:
+		/*! Class constructor */
+		DownloadItem_HTTP(VideoDownload *parent, VideoItem *videoItem);
+		/*! Class destructor */
+		~DownloadItem_HTTP();
+		/*! Start the download */
+		void startDownload();
+		/*! Pause the download */
+		void pauseDownload();
+		/*! Resume the download */
+		void resumeDownload();
+		/*! Cancel the download */
+		void cancelDownload();
+};
+
+/*! Single download via RTMP */
+class DownloadItem_RTMP : public DownloadItem
+{
+	private:
+		RTMP *rtmp;	//!< download class
+		/*! Set download speed */
+		int getDownloadSpeed();
+		/*! Set time remaining */
+		int getTimeRemaining();
+	public:
+		/*! Class constructor */
+		DownloadItem_RTMP(VideoDownload *parent, VideoItem *videoItem);
+		/*! Class destructor */
+		~DownloadItem_RTMP();
+		/*! Start the download */
+		void startDownload();
+		/*! Pause the download */
+		void pauseDownload();
+		/*! Resume the download */
+		void resumeDownload();
+		/*! Cancel the download */
+		void cancelDownload();
 };
 
 /*! Downloads controller */

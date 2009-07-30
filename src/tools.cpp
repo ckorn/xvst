@@ -340,15 +340,29 @@ QString cleanURL(QString URL)
 	return URL;
 }
 
-bool validURL(QString URL)
+bool validURL(QString URL, bool acceptRTMP)
 {
 	// first at all, check if have the "http://"
-	if (URL.indexOf("http://") == 0)
+	if (isHttpURL(URL))
+		return QUrl(URL).isValid();
+	// if rtmp urls are accepted and have the "rtmp://"
+	else if (acceptRTMP && isRtmpURL(URL))
 	{
+		URL = URL.replace("rtmp://", "http://");
 		return QUrl(URL).isValid();
 	}
-	else
+	else // invalid url
 		return false;
+}
+
+bool isHttpURL(QString URL)
+{
+	return URL.indexOf("http://") == 0;
+}
+
+bool isRtmpURL(QString URL)
+{
+	return URL.indexOf("rtmp://") == 0;
 }
 
 QString getPathAndQuery(QUrl URL)

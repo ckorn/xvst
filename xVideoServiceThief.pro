@@ -35,7 +35,7 @@ FORMS = ui/addvideo.ui \
     ui/winvistaupdatesmsg.ui \
     ui/searchvideossearchblock.ui \
     ui/searchvideoscustomize.ui \
-	ui/customdownloadtitle.ui
+    ui/customdownloadtitle.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/searchvideositemimpl.h \
     src/forms/bugreportimpl.h \
@@ -59,7 +59,7 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/windowsvistadetectedimpl.h \
     src/forms/searchvideossearchblockimpl.h \
     src/forms/searchvideoscustomizeimpl.h \
-	src/forms/customdownloadtitleimpl.h \
+    src/forms/customdownloadtitleimpl.h \
     src/pakunpak/pakunpak.h \
     src/searchvideosscriptclass.h \
     src/checkupdatesworker.h \
@@ -83,7 +83,8 @@ HEADERS = src/forms/addvideoimpl.h \
     src/videoinformation.h \
     src/videoitem.h \
     src/videolistcontroller.h \
-	src/xprogressbar.h
+    src/xprogressbar.h \
+    src/rtmp.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/searchvideositemimpl.cpp \
     src/forms/bugreportimpl.cpp \
@@ -107,7 +108,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/windowsvistadetectedimpl.cpp \
     src/forms/searchvideossearchblockimpl.cpp \
     src/forms/searchvideoscustomizeimpl.cpp \
-	src/forms/customdownloadtitleimpl.cpp \
+    src/forms/customdownloadtitleimpl.cpp \
     src/searchvideosscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/http.cpp \
@@ -130,7 +131,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/videoinformation.cpp \
     src/videoitem.cpp \
     src/videolistcontroller.cpp \
-	src/xprogressbar.cpp
+    src/xprogressbar.cpp \
+    src/rtmp.cpp
 TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/xVST_ca.ts \
     resources/translations/xVST_cz.ts \
@@ -146,6 +148,7 @@ TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/xVST_pl.ts \
     resources/translations/xVST_ro.ts \
     resources/translations/xVST_sv.ts \
+    resources/translations/xVST_du.ts \
     resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc
 unix { 
@@ -156,7 +159,7 @@ macx {
     ICON += resources/icons/MacOSX.icns
     OBJECTS_DIR += build/o/mac
     TARGET = xVideoServiceThief
-	QMAKE_INFO_PLIST = Info.plist
+    QMAKE_INFO_PLIST = Info.plist
 }
 win32 { 
     RC_FILE += resources/xVST.rc

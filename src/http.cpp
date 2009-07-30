@@ -310,7 +310,7 @@ void Http::initClass(bool useInternalTimer)
 
 void Http::initData()
 {
-	stopReason = NO_STOPPED;
+	stopReason = EnumHTTP::NO_STOPPED;
 
 	timeRemaining = 0;
 	downloadSpeed = 0;
@@ -333,7 +333,7 @@ void Http::initData()
 	autoRestartOnFail = false;
 	restartDownload = false;
 
-	httpMethod = httpGet;
+	httpMethod = EnumHTTP::httpGet;
 	syncFlag = false;
 	data = "";
 	parameters = "";
@@ -381,7 +381,7 @@ void Http::jumpToURL(QUrl url)
 	// check if we supperated the autojumps control
 	if (autoJumps > maxAutoJumps && autoJump)
 	{
-		stopReason = MAX_AUTO_JUMPS_REACHED;
+		stopReason = EnumHTTP::MAX_AUTO_JUMPS_REACHED;
 		http->abort();
 		// abort process
 		return;
@@ -410,13 +410,13 @@ void Http::jumpToURL(QUrl url)
 	QString headerMethod;
 	switch (httpMethod)
 	{
-		case httpGet:
+		case EnumHTTP::httpGet:
 			headerMethod = "GET";
 			break;
-		case httpPost:
+		case EnumHTTP::httpPost:
 			headerMethod = "POST";
 			break;
-		case httpHead:
+		case EnumHTTP::httpHead:
 			headerMethod = "HEAD";
 			break;
 	}
@@ -437,7 +437,7 @@ void Http::jumpToURL(QUrl url)
 	QByteArray paramsStr;
 
 	// if is a "POST" method then, add some extra info
-	if (httpMethod == httpPost)
+	if (httpMethod == EnumHTTP::httpPost)
 	{
 		// add the parametes
 		paramsStr.append(parameters);
@@ -478,7 +478,7 @@ void Http::jumpToURL(QUrl url)
 	tmrTimeOut.stop();
 
 	// send the request header
-	if (httpMethod == httpPost)
+	if (httpMethod == EnumHTTP::httpPost)
 		httpGetId = http->request(header, paramsStr, file);
 	else // get
 		httpGetId = http->request(header, NULL, file);
@@ -488,7 +488,7 @@ void Http::jumpToURL(QUrl url)
 	tmrTimeOut.start(timeOut);
 
 	// post method off
-	if (httpMethod == httpPost) httpMethod = httpGet;
+	if (httpMethod == EnumHTTP::httpPost) httpMethod = EnumHTTP::httpGet;
 
 	// inc auto jumps controller
 	autoJumps++;
@@ -507,16 +507,16 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 
 	// check if is already downloading another file
 	if (isDownloading()) 
-		return _ALREADY_DOWNLOADING;
+		return EnumHTTP::ALREADY_DOWNLOADING;
 
 	// check if is a valid URL
 	if (!validURL(URL.toString())) 
-		return _INVALID_URL;
+		return EnumHTTP::INVALID_URL;
 
 	// create the destination path, if it don't exists
 	if (!QDir(destination).exists())
 		if (!QDir(destination).mkpath(destination))
-			return _UNABLE_CREATE_DIR;
+			return EnumHTTP::UNABLE_CREATE_DIR;
 
 	// set a default name (only if it is empty)
 	if (fileName.isEmpty())
@@ -539,7 +539,7 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 	{
 		delete file;
 		file = NULL;
-		return _UNABLE_CREATE_FILE;
+		return EnumHTTP::UNABLE_CREATE_FILE;
 	}
 
 	// set file info
@@ -573,14 +573,14 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 {
 	// check if is already downloading another file
 	if (isDownloading()) 
-		return _ALREADY_DOWNLOADING;
+		return EnumHTTP::ALREADY_DOWNLOADING;
 
 	// check if is a valid URL
 	if (!validURL(URL.toString())) 
-		return _INVALID_URL;
+		return EnumHTTP::INVALID_URL;
 
 	if (!QFile::exists(fileName))
-		return _MISSING_RESUME_FILE;
+		return EnumHTTP::MISSING_RESUME_FILE;
 
 	// open the existent file in append mode
 	file = new QFile(fileName);
@@ -588,7 +588,7 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 	{
 		delete file;
 		file = NULL;
-		return _UNABLE_APPEND_FILE;
+		return EnumHTTP::UNABLE_APPEND_FILE;
 	}
 
 	// set file info
@@ -617,7 +617,7 @@ void Http::pause()
 {
 	if (isDownloading())
 	{
-		stopReason = USER_PAUSED;
+		stopReason = EnumHTTP::USER_PAUSED;
 		http->abort();
 	}
 }
@@ -626,7 +626,7 @@ void Http::cancel()
 {
 	if (isDownloading())
 	{
-		stopReason = USER_CANCELLED;
+		stopReason = EnumHTTP::USER_CANCELLED;
 		http->abort();
 	}
 }
@@ -643,7 +643,7 @@ QString Http::downloadWebpage(const QUrl URL, bool isUtf8)
 			file = NULL;
 			// set the sync flag active
 			syncFlag = true;
-			httpMethod = httpGet;
+			httpMethod = EnumHTTP::httpGet;
 			// do the first jump
 			oriURL = URL;
 			jumpToURL(URL);
@@ -672,7 +672,7 @@ QString Http::downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf
 			file = NULL;
 			// set the sync flag active
 			syncFlag = true;
-			httpMethod = httpPost;
+			httpMethod = EnumHTTP::httpPost;
 			// set parameters
 			this->parameters = parameters;
 			// do the first jump
@@ -703,7 +703,7 @@ QHttpResponseHeader Http::head(const QUrl URL)
 			file = NULL;
 			// set the sync flag active
 			syncFlag = true;
-			httpMethod = httpHead;
+			httpMethod = EnumHTTP::httpHead;
 			// do the first jump
 			oriURL = URL;
 			jumpToURL(URL);
@@ -871,11 +871,11 @@ void Http::requestFinished(int id, bool error)
 			bool canRemove = true;
 			// check if is an user abort (due to cancel or pause)
 			if (http->error() == QHttp::Aborted && 
-				(stopReason == USER_CANCELLED || stopReason == USER_PAUSED))
+				(stopReason == EnumHTTP::USER_CANCELLED || stopReason == EnumHTTP::USER_PAUSED))
 			{
-				if (stopReason == USER_CANCELLED)
+				if (stopReason == EnumHTTP::USER_CANCELLED)
 					emit downloadCanceled();
-				else if (stopReason == USER_PAUSED)
+				else if (stopReason == EnumHTTP::USER_PAUSED)
 				{
 					canRemove = false;
 					emit downloadPaused(destFile);
@@ -887,7 +887,7 @@ void Http::requestFinished(int id, bool error)
 				http->clearPendingRequests();
 				// if is an "auto-abort" for restart the download then do not send the error signal
 				if (restartDownload || (!restartDownload && retriesCount < maxRetries) ||
-					(stopReason == TIME_OUT && retriesCount < maxRetries))
+					(stopReason == EnumHTTP::TIME_OUT && retriesCount < maxRetries))
 					QTimer::singleShot(500, this, SLOT(restartDownloadSignal()));
 				else
 					// send error signal
@@ -904,7 +904,7 @@ void Http::requestFinished(int id, bool error)
 				// abort all (and clear pending requests)
 				http->clearPendingRequests();
 				// send the error signal
-				emit downloadError(_INVALID_FILE_SIZE);
+				emit downloadError(EnumHTTP::INVALID_FILE_SIZE);
 			}
 			else
 			{
@@ -1006,7 +1006,7 @@ void Http::restartDownloadSignal()
 
 void Http::timeOutCheckout()
 {
-	stopReason = TIME_OUT;
+	stopReason = EnumHTTP::TIME_OUT;
 	http->abort();
 }
 
