@@ -51,3 +51,6 @@ $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/romanian_ro_lang.update" "$LANGUAGES_DI
 
 # german package
 $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/german_de_lang.update" "$LANGUAGES_DIR/xVST_de.qm" "$LANGUAGES_DIR/definitions/german.language"
+
+# dutch package
+$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/dutch_du_lang.update" "$LANGUAGES_DIR/xVST_du.qm" "$LANGUAGES_DIR/definitions/dutch.language"
