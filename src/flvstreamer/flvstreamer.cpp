@@ -1100,6 +1100,16 @@ int main(int argc, char **argv)
 				//LogPrintf("\rD: %.3f kB / %.2f sec", (double)size/1024.0, (double)(timestamp)/1000.0);
 				LogPrintf("\rD: %d %.2f", size, (double)(timestamp)/1000.0);
 			}
+
+#ifdef WIN32
+			// small hack for xVideoServiceThief on win32
+			if (!bCtrlC)
+			{
+				int canContinue;
+				scanf("%d", &canContinue);
+				bCtrlC = canContinue == 1;
+			}
+#endif
 		}
 #ifdef _DEBUG
 		else { Log(LOGDEBUG, "zero read!"); }
