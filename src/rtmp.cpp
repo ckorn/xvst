@@ -135,17 +135,8 @@ void RTMP::pause()
 	if (isDownloading())
 	{
 		stopReason = EnumRTMP::USER_PAUSED;
+#ifndef Q_WS_WIN32
 		// kill the flvstreaming
-#ifdef Q_WS_WIN32
-		qDebug() << flvstreamerProcess->pid()->dwProcessId << flvstreamerProcess->pid()->dwThreadId;
-
-		qDebug() << GenerateConsoleCtrlEvent(CTRL_C_EVENT, flvstreamerProcess->pid()->hProcess);
-//		qDebug() << GenerateConsoleCtrlEvent(CTRL_BREAK_EVENT, flvstreamerProcess->pid()->dwProcessId);
-
-//		qDebug() << GenerateConsoleCtrlEvent(CTRL_C_EVENT, flvstreamerProcess->pid()->dwThreadId);
-//		qDebug() << GenerateConsoleCtrlEvent(CTRL_BREAK_EVENT, flvstreamerProcess->pid()->dwThreadId);
-
-#else
 		kill(flvstreamerProcess->pid(), SIGINT);
 #endif
 	}
@@ -231,9 +222,6 @@ void RTMP::readyReadStandardError()
 void RTMP::parseOutput(QString output)
 {
 	output = output.trimmed();
-
-	qDebug() << output;
-
 	// split output into lines
 	QStringList lines = output.split("\n");
 	// parse each line
@@ -258,6 +246,14 @@ void RTMP::parseOutput(QString output)
 			}
 		}
 	}
+	// small win32 hack due to problems with: GenerateConsoleCtrlEvent(CTRL_C_EVENT, flvstreamerProcess->pid()->hProcess);
+#ifdef Q_WS_WIN32
+	// user canceled?
+	if (stopReason == EnumRTMP::USER_PAUSED)
+		flvstreamerProcess->write("1\n"); // cancel download
+	else // continue...
+		flvstreamerProcess->write("0\n"); // continue download
+#endif
 }
 
 void RTMP::singleTimerShot()
