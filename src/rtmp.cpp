@@ -3,9 +3,7 @@
 #include "http.h"
 #include "tools.h"
 
-#ifdef Q_WS_WIN32
-#include <windows.h>
-#else
+#ifndef Q_WS_WIN32
 #include <signal.h>
 #endif
 
