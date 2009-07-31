@@ -37,46 +37,46 @@ void LogSetOutput(FILE *file)
 
 void LogPrintf(const char *format, ...)
 {
-        char str[MAX_PRINT_LEN]="";
-        va_list args;
-        va_start(args, format);
-        vsnprintf(str, MAX_PRINT_LEN-1, format, args);
-        va_end(args);
-
-        if ( debuglevel==LOGCRIT )
-          return;
-
-        fprintf(fmsg, "%s", str);
-		
+	char str[MAX_PRINT_LEN]="";
+	va_list args;
+	va_start(args, format);
+	vsnprintf(str, MAX_PRINT_LEN-1, format, args);
+	va_end(args);
+	
+	if ( debuglevel==LOGCRIT )
+		return;
+	
+	fprintf(fmsg, "%s", str);
+	
 #ifdef WIN32 //#ifdef _DEBUG
-		fflush(fmsg);
+	fflush(fmsg);
 #endif
 }
 
 void Log(int level, const char *format, ...)
 {
-        char str[MAX_PRINT_LEN]="";
-        va_list args;
-        va_start(args, format);
-        vsnprintf(str, MAX_PRINT_LEN-1, format, args);
-        va_end(args);
-
+	char str[MAX_PRINT_LEN]="";
+	va_list args;
+	va_start(args, format);
+	vsnprintf(str, MAX_PRINT_LEN-1, format, args);
+	va_end(args);
+	
 	// Filter out 'no-name'
 	if ( debuglevel<LOGALL && strstr(str, "no-name" ) != NULL )
-	  return;
-
-        if ( level <= debuglevel )
-          fprintf(fmsg, "\r%s: %s\n", level==LOGDEBUG?"DEBUG":(level==LOGERROR?"ERROR":(level==LOGWARNING?"WARNING":(level==LOGCRIT?"CRIT":"INFO"))), str);
-  
-	#ifdef _DEBUG
+		return;
+	
+	if ( level <= debuglevel )
+		fprintf(fmsg, "\r%s: %s\n", level==LOGDEBUG?"DEBUG":(level==LOGERROR?"ERROR":(level==LOGWARNING?"WARNING":(level==LOGCRIT?"CRIT":"INFO"))), str);
+	
+#ifdef _DEBUG
 	fflush(fmsg);
-	#endif
+#endif
 }
 
 void LogHex(const char *data, unsigned long len)
 {
-        if ( debuglevel==LOGCRIT )
-          return;
+	if ( debuglevel==LOGCRIT )
+		return;
 	for(unsigned long i=0; i<len; i++) {
 		LogPrintf("%02X ", (unsigned char)data[i]);
 	}
@@ -85,16 +85,16 @@ void LogHex(const char *data, unsigned long len)
 
 void LogHexString(const char *data, unsigned long len)
 {
-        if ( debuglevel==LOGCRIT )
-          return;
-        for(unsigned long i=0; i<len; i++) {
-                LogPrintf("%02X ", (unsigned char)data[i]);
-        }
-        LogPrintf("\n");
-
-        for(unsigned long i=0; i<len; i++) {
-                LogPrintf("%c", (unsigned char)data[i]);
-        }
-        LogPrintf("\n");
+	if ( debuglevel==LOGCRIT )
+		return;
+	for(unsigned long i=0; i<len; i++) {
+		LogPrintf("%02X ", (unsigned char)data[i]);
+	}
+	LogPrintf("\n");
+	
+	for(unsigned long i=0; i<len; i++) {
+		LogPrintf("%c", (unsigned char)data[i]);
+	}
+	LogPrintf("\n");
 }
 

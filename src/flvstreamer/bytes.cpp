@@ -26,28 +26,28 @@
 void WriteNumber(char *data, double dVal)
 {
 	uint64_t res;
-
+	
 #if __FLOAT_WORD_ORDER == __BYTE_ORDER
 #if __BYTE_ORDER == __BIG_ENDIAN
 	res = *((uint64_t*)&dVal);
 #elif __BYTE_ORDER == __LITTLE_ENDIAN
-        uint64_t in  = *((uint64_t*)&dVal);
-        res = __bswap_64(in);
+	uint64_t in  = *((uint64_t*)&dVal);
+	res = __bswap_64(in);
 #endif
 #else
 #if __BYTE_ORDER == __LITTLE_ENDIAN // __FLOAT_WORD_ORER == __BIG_ENDIAN
-        uint32_t in1 = *((uint32_t*)&dVal);
-        uint32_t in2 = *((uint32_t*)((char *)&dVal+4));
-        
-        in1 = __bswap_32(in1);
-        in2 = __bswap_32(in2);
-
-        res = ((uint64_t)in2<<32) | (uint64_t)in1;
+	uint32_t in1 = *((uint32_t*)&dVal);
+	uint32_t in2 = *((uint32_t*)((char *)&dVal+4));
+	
+	in1 = __bswap_32(in1);
+	in2 = __bswap_32(in2);
+	
+	res = ((uint64_t)in2<<32) | (uint64_t)in1;
 #else // __BYTE_ORDER == __BIG_ENDIAN && __FLOAT_WORD_ORER == __LITTLE_ENDIAN
-        uint32_t in1 = *((uint32_t*)&dVal);
-        uint32_t in2 = *((uint32_t*)((char*)&dVal+4));
-
-        res = ((uint64_t)in1<<32) | (uint64_t)in2;
+	uint32_t in1 = *((uint32_t*)&dVal);
+	uint32_t in2 = *((uint32_t*)((char*)&dVal+4));
+	
+	res = ((uint64_t)in1<<32) | (uint64_t)in2;
 #endif
 #endif
 	memcpy(data, &res, 8);
@@ -73,15 +73,15 @@ double ReadNumber(const char *data)
 	
 	in1 = __bswap_32(in1);
 	in2 = __bswap_32(in2);
-
+	
 	uint64_t res = ((uint64_t)in2<<32) | (uint64_t)in1;
 	return *((double *)&res);
 #else // __BYTE_ORDER == __BIG_ENDIAN && __FLOAT_WORD_ORER == __LITTLE_ENDIAN
 	uint32_t in1 = *((uint32_t*)data);
-        uint32_t in2 = *((uint32_t*)(data+4));
-        
-        uint64_t res = ((uint64_t)in1<<32) | (uint64_t)in2;
-        return *((double *)&res);
+	uint32_t in2 = *((uint32_t*)(data+4));
+	
+	uint64_t res = ((uint64_t)in1<<32) | (uint64_t)in2;
+	return *((double *)&res);
 #endif
 #endif
 }
@@ -89,25 +89,25 @@ double ReadNumber(const char *data)
 // read little-endian 32bit integer
 int ReadInt32LE(const char *data)
 {
-  int val;
-  memcpy(&val, data, sizeof(int));
-
+	int val;
+	memcpy(&val, data, sizeof(int));
+	
 #if __BYTE_ORDER == __BIG_ENDIAN
-  val = __bswap_32(val);
+	val = __bswap_32(val);
 #endif
-
-  return val;
+	
+	return val;
 }
 
 // write little-endian 32bit integer
 int EncodeInt32LE(char *output, int nVal)
 {
-
+	
 #if __BYTE_ORDER == __BIG_ENDIAN
-  nVal = __bswap_32(nVal);
+	nVal = __bswap_32(nVal);
 #endif
-
-  memcpy(output, &nVal, sizeof(int));
-  return sizeof(int);
+	
+	memcpy(output, &nVal, sizeof(int));
+	return sizeof(int);
 }
 

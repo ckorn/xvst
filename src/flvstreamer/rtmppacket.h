@@ -34,38 +34,38 @@
 typedef unsigned char BYTE;
 
 typedef struct
-{
-	BYTE Type; // 0x03 RTMP, 0x06 RTMPE
-
-} HANDSHAKE_SIGNATURE;
+	{
+		BYTE Type; // 0x03 RTMP, 0x06 RTMPE
+		
+	} HANDSHAKE_SIGNATURE;
 
 namespace RTMP_LIB
 {
-  class RTMPPacket
-  {
-    public:
-      RTMPPacket();
-      virtual ~RTMPPacket();
-
-      void Reset();
-      bool AllocPacket(int nSize);
-      void FreePacket();
-      void FreePacketHeader();
-      
-      inline bool IsReady() { return m_nBytesRead == m_nBodySize; }
-      void Dump();
-
-      BYTE	m_headerType;
-      BYTE	m_packetType;
-      BYTE	m_nChannel;
-      int32_t	m_nInfoField1; // 3 first bytes
-      int32_t	m_nInfoField2; // last 4 bytes in a long header, absolute timestamp for long headers, relative timestamp for short headers 
-      bool      m_hasAbsTimestamp; // timestamp absolute or relative?
-      uint32_t  m_nTimeStamp; // absolute timestamp
-      uint32_t	m_nBodySize;
-      uint32_t	m_nBytesRead;
-      char 	*m_body;
-  };
+	class RTMPPacket
+		{
+		public:
+			RTMPPacket();
+			virtual ~RTMPPacket();
+			
+			void Reset();
+			bool AllocPacket(int nSize);
+			void FreePacket();
+			void FreePacketHeader();
+			
+			inline bool IsReady() { return m_nBytesRead == m_nBodySize; }
+			void Dump();
+			
+			BYTE	m_headerType;
+			BYTE	m_packetType;
+			BYTE	m_nChannel;
+			int32_t	m_nInfoField1; // 3 first bytes
+			int32_t	m_nInfoField2; // last 4 bytes in a long header, absolute timestamp for long headers, relative timestamp for short headers 
+			bool      m_hasAbsTimestamp; // timestamp absolute or relative?
+			uint32_t  m_nTimeStamp; // absolute timestamp
+			uint32_t	m_nBodySize;
+			uint32_t	m_nBytesRead;
+			char 	*m_body;
+		};
 };
 
 #endif

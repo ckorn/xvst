@@ -55,71 +55,71 @@ using namespace std;
 
 bool CRTMP::HandShake()
 {
-
-  char clientsig[RTMP_SIG_SIZE+1];
-  char serversig[RTMP_SIG_SIZE];
-
-  clientsig[0] = 0x03;
-  
-  uint32_t uptime = htonl(GetTime());
-  memcpy(clientsig + 1, &uptime, 4);
-  memset(&clientsig[5], 0, 4);
-
+	
+	char clientsig[RTMP_SIG_SIZE+1];
+	char serversig[RTMP_SIG_SIZE];
+	
+	clientsig[0] = 0x03;
+	
+	uint32_t uptime = htonl(GetTime());
+	memcpy(clientsig + 1, &uptime, 4);
+	memset(&clientsig[5], 0, 4);
+	
 #ifdef _DEBUG
     for (int i=9; i<=RTMP_SIG_SIZE; i++) 
-      clientsig[i] = 0xff;
+		clientsig[i] = 0xff;
 #else
     for (int i=9; i<=RTMP_SIG_SIZE; i++)
-      clientsig[i] = (char)(rand() % 256);
+		clientsig[i] = (char)(rand() % 256);
 #endif
-
-  if (!WriteN(clientsig, RTMP_SIG_SIZE + 1))
-    return false;
-
-  char type;
-  if (ReadN(&type, 1) != 1) // 0x03
-    return false;
-
-  Log(LOGDEBUG, "%s: Type Answer   : %02X", __FUNCTION__, type);
-  
-  if(type != clientsig[0])
-  	Log(LOGWARNING, "%s: Type mismatch: client sent %d, server answered %d", __FUNCTION__, clientsig[0], type);
-
-  if (ReadN(serversig, RTMP_SIG_SIZE) != RTMP_SIG_SIZE)
-    return false;
-
-  // decode server response
-  uint32_t suptime;
-
-  memcpy(&suptime, serversig, 4);
-  suptime = ntohl(suptime);
-
-  Log(LOGDEBUG, "%s: Server Uptime : %d", __FUNCTION__, suptime);
-  Log(LOGDEBUG, "%s: FMS Version   : %d.%d.%d.%d", __FUNCTION__, serversig[4], serversig[5], serversig[6], serversig[7]);
-
-  /*printf("Server signature:\n");
-  for(int i=0; i<RTMP_SIG_SIZE; i++) {
-  	printf("%02X ", serversig[i]);
-  }
-  printf("\n");*/
-
-  // 2nd part of handshake
-  char resp[RTMP_SIG_SIZE];
-  if (ReadN(resp, RTMP_SIG_SIZE) != RTMP_SIG_SIZE)
-    return false;
-
-  bool bMatch = (memcmp(resp, clientsig + 1, RTMP_SIG_SIZE) == 0);
-  if (!bMatch)
-  {
-    Log(LOGWARNING, "%s, client signiture does not match!",__FUNCTION__);
-  }
-
-  // the second time field is when 1st part was read by the client:
-  uint32_t timeRead = htonl(GetTime());
-  memcpy(serversig+4, &timeRead, 4);
-
-  if (!WriteN(serversig, RTMP_SIG_SIZE))
-    return false;
-
-  return true;
+	
+	if (!WriteN(clientsig, RTMP_SIG_SIZE + 1))
+		return false;
+	
+	char type;
+	if (ReadN(&type, 1) != 1) // 0x03
+		return false;
+	
+	Log(LOGDEBUG, "%s: Type Answer   : %02X", __FUNCTION__, type);
+	
+	if(type != clientsig[0])
+		Log(LOGWARNING, "%s: Type mismatch: client sent %d, server answered %d", __FUNCTION__, clientsig[0], type);
+	
+	if (ReadN(serversig, RTMP_SIG_SIZE) != RTMP_SIG_SIZE)
+		return false;
+	
+	// decode server response
+	uint32_t suptime;
+	
+	memcpy(&suptime, serversig, 4);
+	suptime = ntohl(suptime);
+	
+	Log(LOGDEBUG, "%s: Server Uptime : %d", __FUNCTION__, suptime);
+	Log(LOGDEBUG, "%s: FMS Version   : %d.%d.%d.%d", __FUNCTION__, serversig[4], serversig[5], serversig[6], serversig[7]);
+	
+	/*printf("Server signature:\n");
+	 for(int i=0; i<RTMP_SIG_SIZE; i++) {
+	 printf("%02X ", serversig[i]);
+	 }
+	 printf("\n");*/
+	
+	// 2nd part of handshake
+	char resp[RTMP_SIG_SIZE];
+	if (ReadN(resp, RTMP_SIG_SIZE) != RTMP_SIG_SIZE)
+		return false;
+	
+	bool bMatch = (memcmp(resp, clientsig + 1, RTMP_SIG_SIZE) == 0);
+	if (!bMatch)
+	{
+		Log(LOGWARNING, "%s, client signiture does not match!",__FUNCTION__);
+	}
+	
+	// the second time field is when 1st part was read by the client:
+	uint32_t timeRead = htonl(GetTime());
+	memcpy(serversig+4, &timeRead, 4);
+	
+	if (!WriteN(serversig, RTMP_SIG_SIZE))
+		return false;
+	
+	return true;
 }
