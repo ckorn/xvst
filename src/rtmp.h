@@ -53,7 +53,7 @@ Q_OBJECT
 		void init();
 	public:
 		/*! Class constructor */
-		RTMP(QString flvstreamerPath);
+		RTMP(QString flvstreamerPath, QString workingDir);
 		/*! Class destructor */
 		~RTMP();
 		/*! Return if flvstreamer is installed (detected) */

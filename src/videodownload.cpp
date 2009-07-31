@@ -188,7 +188,7 @@ DownloadItem_RTMP::DownloadItem_RTMP(VideoDownload *parent, VideoItem *videoItem
 	this->videoItem = videoItem;
 	this->videoItem->setAsNothingPreState();
 	// create the rtmp object
-	rtmp = new RTMP(ProgramOptions::instance()->getToolsPath());
+	rtmp = new RTMP(ProgramOptions::instance()->getToolsPath(), ProgramOptions::instance()->getDownloadDir());
 	// connect signals
 	connect(rtmp, SIGNAL(downloadStarted()), this, SLOT(downloadStarted()));
 	connect(rtmp, SIGNAL(downloadPaused(const QFileInfo)), this, SLOT(downloadPaused(const QFileInfo)));

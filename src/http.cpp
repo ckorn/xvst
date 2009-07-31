@@ -904,7 +904,7 @@ void Http::requestFinished(int id, bool error)
 				// abort all (and clear pending requests)
 				http->clearPendingRequests();
 				// send the error signal
-				emit downloadError(EnumHTTP::INVALID_FILE_SIZE);
+				emit downloadError(EnumHTTP::INVALID_INITIAL_FILE_SIZE);
 			}
 			else
 			{

@@ -3,9 +3,13 @@
 #include "http.h"
 #include "tools.h"
 
-#include  <signal.h>
+#ifdef Q_WS_WIN32
+#include <windows.h>
+#else
+#include <signal.h>
+#endif
 
-RTMP::RTMP(QString flvstreamerPath)
+RTMP::RTMP(QString flvstreamerPath, QString workingDir)
 {
 	setObjectName("RTMP");
 	// init internal vars
@@ -21,6 +25,8 @@ RTMP::RTMP(QString flvstreamerPath)
 	connect(flvstreamerProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(finished(int, QProcess::ExitStatus)));
 	connect(flvstreamerProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(readyReadStandardOutput()));
 	connect(flvstreamerProcess, SIGNAL(readyReadStandardError()), this, SLOT(readyReadStandardError()));
+	// cofnigure process
+	flvstreamerProcess->setWorkingDirectory(workingDir);
 }
 
 RTMP::~RTMP()
@@ -127,10 +133,21 @@ int RTMP::resume(const QString URL, QString fileName)
 void RTMP::pause()
 {
 	if (isDownloading())
-	{	
+	{
 		stopReason = EnumRTMP::USER_PAUSED;
 		// kill the flvstreaming
+#ifdef Q_WS_WIN32
+		qDebug() << flvstreamerProcess->pid()->dwProcessId << flvstreamerProcess->pid()->dwThreadId;
+
+		qDebug() << GenerateConsoleCtrlEvent(CTRL_C_EVENT, flvstreamerProcess->pid()->hProcess);
+//		qDebug() << GenerateConsoleCtrlEvent(CTRL_BREAK_EVENT, flvstreamerProcess->pid()->dwProcessId);
+
+//		qDebug() << GenerateConsoleCtrlEvent(CTRL_C_EVENT, flvstreamerProcess->pid()->dwThreadId);
+//		qDebug() << GenerateConsoleCtrlEvent(CTRL_BREAK_EVENT, flvstreamerProcess->pid()->dwThreadId);
+
+#else
 		kill(flvstreamerProcess->pid(), SIGINT);
+#endif
 	}
 }
 
