@@ -385,7 +385,8 @@ pthread_t ThreadCreate(void *(*routine)(void *), void *args)
 	
 	ret = pthread_create(&id, &attributes, (void *(*)(void *))routine, (void *)args);
 	if(ret != 0)
-		LogPrintf("%s, pthread_create failed with %d\n", __FUNCTION__, ret);
+		//LogPrintf("%s, pthread_create failed with %d\n", __FUNCTION__, ret);
+		LogPrintf("\rE: 105 PTHREAD_CREATE_FAILED\n");
     
 	return id;
 }
@@ -637,7 +638,8 @@ void processTCPrequest
 					   dSeek,
 					   req.bLiveStream, 
 					   req.timeout)) {
-		LogPrintf("%s, failed to connect!\n", __FUNCTION__);
+		//LogPrintf("%s, failed to connect!\n", __FUNCTION__);
+		LogPrintf("\rE: 102 FAILED_TO_CONNECT\n");
 	}
 	else 
 	{
@@ -686,9 +688,11 @@ void processTCPrequest
 				if(duration > 0) {
 					percent = ((double)(dSeek+req.nTimeStamp)) / (duration*1000.0)*100.0;
 					percent = round(percent*10.0)/10.0;
-					LogPrintf("\r%.3f KB / %.2f sec (%.1f%%)", (double)size/1024.0, (double)(req.nTimeStamp)/1000.0, percent);
+					//LogPrintf("\r%.3f KB / %.2f sec (%.1f%%)", (double)size/1024.0, (double)(req.nTimeStamp)/1000.0, percent);
+					LogPrintf("\rD: %d %.2f %.1f", size, (double)(req.nTimeStamp)/1000.0, percent);
 				} else {
-					LogPrintf("\r%.3f kB / %.2f sec", (double)size/1024.0, (double)(req.nTimeStamp)/1000.0);
+					//LogPrintf("\r%.3f kB / %.2f sec", (double)size/1024.0, (double)(req.nTimeStamp)/1000.0);
+					LogPrintf("\rD: %d %.2f", size, (double)(req.nTimeStamp)/1000.0);
 				}
 			}
 #ifdef _DEBUG
@@ -724,7 +728,8 @@ quit:
 	return;
 	
 filenotfound:
-	LogPrintf("%s, File not found, %s\n", __FUNCTION__, filename);
+	//LogPrintf("%s, File not found, %s\n", __FUNCTION__, filename);
+	LogPrintf("\rE: 106 FILE_NOT_FOUND\n");
 	sprintf(buf,"HTTP/1.0 404 File Not Found%s", srvhead);
 	send(sockfd, buf, (int) strlen(buf), 0);
 	goto quit;

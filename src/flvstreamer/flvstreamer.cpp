@@ -991,7 +991,7 @@ int main(int argc, char **argv)
 		{
 			file = fopen(flvFile, "wb");
 			if(file == 0) {
-				LogPrintf("E: -1 FAILED_TO_OPEN_FILE\n"); // LogPrintf("Failed to open file!\n");
+				LogPrintf("\rE: 101 FAILED_TO_OPEN_FILE\n"); // LogPrintf("Failed to open file!\n");
 				return RD_FAILED;
 			}
 		}
@@ -1022,7 +1022,7 @@ int main(int argc, char **argv)
 	//	dFindSeek-=10.0;
 	
 	if (!rtmp->Connect(protocol, hostname, port, playpath, tcUrl, swfUrl, pageUrl, app, auth, flashVer, subscribepath, dSeek, bLiveStream, timeout)) {
-		LogPrintf("E: -2 FAILED_TO_CONNECT\n"); // LogPrintf("Failed to connect!\n");
+		LogPrintf("\rE: 102 FAILED_TO_CONNECT\n"); // LogPrintf("Failed to connect!\n");
 		return RD_FAILED;
 	}
 	Log(LOGINFO, "Connected...");
@@ -1045,9 +1045,11 @@ int main(int argc, char **argv)
 	} else if(duration > 0) {
 		percent = ((double)timestamp) / (duration*1000.0)*100.0;
 		percent = round(percent*10.0)/10.0;
-		LogPrintf("Starting download at %.3f kB (%.1f%%)\n", (double)size/1024.0, percent);
+		//LogPrintf("Starting download at %.3f kB (%.1f%%)\n", (double)size/1024.0, percent);
+		LogPrintf("\rS: %d %.1f\n", size, percent);
 	} else {
-		LogPrintf("Starting download at %.3f kB\n", (double)size/1024.0);
+		//LogPrintf("Starting download at %.3f kB\n", (double)size/1024.0);
+		LogPrintf("\rS: %d\n", size);
 	}
 	
 	// write FLV header if not resuming
@@ -1095,7 +1097,7 @@ int main(int argc, char **argv)
 				percent = ((double)timestamp) / (duration*1000.0)*100.0;
 				percent = round(percent*10.0)/10.0;
 				//LogPrintf("\rD: %.3f kB / %.2f sec (%.1f%%)", (double)size/1024.0, (double)(timestamp)/1000.0, percent);
-				LogPrintf("\rD: %d %.2f %.1f", size, (double)(timestamp)/1000.0, percent);
+				LogPrintf("\rD: %d %.2f %d", size, (double)(timestamp)/1000.0, (int)(percent*10));
 			} else {
 				//LogPrintf("\rD: %.3f kB / %.2f sec", (double)size/1024.0, (double)(timestamp)/1000.0);
 				LogPrintf("\rD: %d %.2f", size, (double)(timestamp)/1000.0);
@@ -1141,14 +1143,14 @@ int main(int argc, char **argv)
 	
 	if(bResume && nRead == -2) {
 		//LogPrintf("\rCouldn't resume FLV file, try --skip %d\n\n", nSkipKeyFrames+1);
-		LogPrintf("\rE: -3 COULDNT_RESUME_FLV\n");
+		LogPrintf("\rE: 103 COULDNT_RESUME_FLV\n");
 		nStatus = RD_FAILED;
 		goto clean;
 	}
 	
 	if( bLiveStream == false && ((duration > 0 && percent < 99.9) || bCtrlC || nRead != (-1) ) ) {
 		//LogPrintf("\rDownload may be incomplete (downloaded about %.2f%%), try --resume\n", percent);
-		LogPrintf("\rE: -4 DOWNLOAD_INCOMPLETE\n");
+		LogPrintf("\rE: 104 DOWNLOAD_INCOMPLETE\n");
 		nStatus = RD_INCOMPLETE;
 	}
 	
