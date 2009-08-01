@@ -16,14 +16,21 @@ namespace EnumRTMP
 	enum Error
 	{
 		FLVSTREAMER_MISSING = 100,	//100
+		FAILED_TO_OPEN_FILE,		//101
+		FAILED_TO_CONNECT,			//102
+		COULDNT_RESUME_FLV,			//103
+		DOWNLOAD_INCOMPLETE,		//104
+		PTHREAD_CREATE_FAILED,		//105
+		FILE_NOT_FOUND				//106
 	};
 
 	enum StopReason
 	{
-		NO_STOPPED = 100,			//100
-		DOWNLOAD_FINISHED,			//101
-		USER_CANCELLED,				//102
-		USER_PAUSED,				//103
+		NO_STOPPED = 200,			//200
+		DOWNLOAD_FINISHED,			//201
+		USER_CANCELLED,				//202
+		USER_PAUSED,				//203
+		DOWNLOAD_ERROR,				//204
 	};
 }
 
@@ -45,6 +52,7 @@ Q_OBJECT
 		int lastDownloadedSize;		//!< Last downloaded size
 		int timeRemaining;			//!< Time remaining in seconds
 		bool pauseOnDestroyF;		//!< Should pause the download instead of cancel it?
+		int errorCode;				//!< Last error code detected
 		/*! Parse the current output text */
 		void parseOutput(QString output);
 		/*! Single timer shot */

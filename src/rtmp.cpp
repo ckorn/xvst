@@ -39,6 +39,8 @@ void RTMP::init()
 {
 	stopReason = EnumRTMP::NO_STOPPED;
 	resuming = false;
+	errorCode = 0;
+	fileSize = 0;
 	currentDownloadedSize = 0;
 	lastDownloadedSize = 0;
 	downloadSpeed = 0;
@@ -202,6 +204,9 @@ void RTMP::finished(int /*exitCode*/, QProcess::ExitStatus /*exitStatus*/)
 	// user paused
 	else if (stopReason == EnumRTMP::USER_PAUSED)
 		emit downloadPaused(destinationFile);
+	// download error
+	else if (stopReason == EnumRTMP::DOWNLOAD_ERROR)
+		emit downloadError(errorCode);
 	// download finished
 	else if (stopReason == EnumRTMP::NO_STOPPED)
 		emit downloadFinished(destinationFile);
@@ -229,18 +234,29 @@ void RTMP::parseOutput(QString output)
 		// parse tokens
 		if (!tokens.isEmpty())
 		{
-			// get fileSze
-			if (tokens.at(0) == "filesize")
-				fileSize = tokens.at(1).toInt(NULL, 10);
+			// get fileSize
+			if (tokens.at(0).trimmed() == "filesize")
+				fileSize = tokens.at(1).trimmed().toInt(NULL, 10);
+			// get the starting size
+			else if (tokens.at(0).trimmed() == "S:")
+				lastDownloadedSize = tokens.at(1).trimmed().toInt(NULL, 10);
 			// get error and send error signal
-			else if (tokens.at(0) == "E:" && stopReason == EnumRTMP::NO_STOPPED)
-				emit downloadError(tokens.at(1).toInt(NULL, 10));
-			// get download event
-			else if (tokens.at(0) == "D:")
+			else if (tokens.at(0).trimmed() == "E:" && stopReason == EnumRTMP::NO_STOPPED)
 			{
-				currentDownloadedSize = tokens.at(1).toInt(NULL, 10);
-				// send signal
-				emit downloadEvent(currentDownloadedSize, fileSize);
+				stopReason = EnumRTMP::DOWNLOAD_ERROR;
+				// send error signal
+				errorCode = tokens.at(1).trimmed().toInt(NULL, 10);
+			}
+			// get download event
+			else if (tokens.at(0).trimmed() == "D:")
+			{
+				// get the current downloaded data
+				currentDownloadedSize = tokens.at(1).trimmed().toInt(NULL, 10);
+				// if fileSize is avaialbe, use the downloaded data as %
+				if (fileSize != 0)
+					emit downloadEvent(currentDownloadedSize, fileSize);
+				else if (tokens.count() == 4) // use the % instead of downloaded data
+					emit downloadEvent(tokens.at(3).trimmed().toInt(NULL, 10), 1000);
 			}
 		}
 	}
