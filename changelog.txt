@@ -1,23 +1,31 @@
-2.1.1:
+2.2:
 ------
 
+- Added RTMP (Adobe Flash streaming) support (thanks to flvstreamer)
 - Added automatic network configuration (automatic proxy detection and configuration)
 - Added two new searching scopes ("All standard services" and "All adult services")
 - Added save/restore last search settings
-- Added 5 new plug-in:
+- Added dutch translation (thanks to Reintjedevos)
+- Added japanese translation (thanks to Tilt)
+- Added 11 new plug-ins:
 	- Spankwire
 	- elRellano
 	- Pornfuze
 	- EJB
 	- T'n A flix
 	- Jizz-hut
+	- PP2G TV
+	- Shred or Die
+	- Atom
+	- ATV
+	- TSN
 
 - Changed plug-ins:
 	- Badjojo (added search functions)
 
 - Fixed bug (Error: User-Agent was not send on HTTP requests)
 
-- Changed default searching scope to "All standard services"
+- Changed default searching scope from "All services" to "All standard services"
 
 - Revised the Catalˆ language file
 
