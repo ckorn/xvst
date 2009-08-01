@@ -428,8 +428,8 @@ QString VideoItem::getErrorMessage()
 {
 	switch (errorCode)
 	{
-		//00 NO_ERROR
-		case 00: return "";
+		//0 NO_ERROR
+		case 0: return "";
 		//20 UNABLE_CREATE_DIR
 		case 20: return tr("Unable to create the destination dir");
 		//21 UNABLE_CREATE_FILE
@@ -446,6 +446,20 @@ QString VideoItem::getErrorMessage()
 		case 26: return tr("Unable resume the download");
 		//27 UNABLE_APPEND_FILE
 		case 27: return tr("Unable append data to file");
+		// FLVSTREAMER_MISSING
+		case 100: return tr("flvstreamer is missing (impossible download from RTMP server)");
+		// 101 FAILED_TO_OPEN_FILE
+		case 101: return tr("Unable to open the destination file");
+		// 102 FAILED_TO_CONNECT
+		case 102: return tr("Failed to connect with RTMP server");
+		// 103 COULDNT_RESUME_FLV
+		case 103: return tr("Unable to resume the FLV file");
+		// 104 DOWNLOAD_INCOMPLETE
+		case 104: return tr("Download incomplete (due to download errors)");
+		// 105 PTHREAD_CREATE_FAILED
+		case 105: return tr("Failed on initialize the pthread_create");
+		// 106 FILE_NOT_FOUND
+		case 106: return tr("File to resume not found");
 		// other errors, are "download errors"
 		default: return tr("Connection error: Unable to download the video");
 	}
