@@ -48,6 +48,8 @@ Q_OBJECT
 		virtual int getDownloadSpeed() = 0;
 		/*! Set time remaining */
 		virtual int getTimeRemaining() = 0;
+		/*! Get the video size */
+		virtual int getFileSize() = 0;
 	public:
 		/*! Get the video item associated */
 		VideoItem* getVideoItem();
@@ -94,6 +96,8 @@ class DownloadItem_HTTP : public DownloadItem
 		int getDownloadSpeed();
 		/*! Set time remaining */
 		int getTimeRemaining();
+		/*! Get the video size */
+		int getFileSize();
 	public:
 		/*! Class constructor */
 		DownloadItem_HTTP(VideoDownload *parent, VideoItem *videoItem);
@@ -118,6 +122,8 @@ class DownloadItem_RTMP : public DownloadItem
 		int getDownloadSpeed();
 		/*! Set time remaining */
 		int getTimeRemaining();
+		/*! Get the video size */
+		int getFileSize();
 	public:
 		/*! Class constructor */
 		DownloadItem_RTMP(VideoDownload *parent, VideoItem *videoItem);

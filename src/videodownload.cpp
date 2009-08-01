@@ -78,7 +78,7 @@ void DownloadItem::downloadError(int error)
 void DownloadItem::downloadEvent(int pos, int max)
 {
 	videoItem->setProgress(calculePercent(pos, max), this);
-	videoItem->setVideoSize(max, this);
+	videoItem->setVideoSize(getFileSize(), this);
 	videoItem->setDownloadSpeed(getDownloadSpeed(), this);
 	videoItem->setTimeRemaining(getTimeRemaining(), this);
 	// emit signal
@@ -178,6 +178,11 @@ int DownloadItem_HTTP::getTimeRemaining()
 	return http->getTimeRemaining();
 }
 
+int DownloadItem_HTTP::getFileSize()
+{
+	return http->getFileSize();
+}
+
 /* DownloadItem_RTMP */
 
 DownloadItem_RTMP::DownloadItem_RTMP(VideoDownload *parent, VideoItem *videoItem)
@@ -246,6 +251,11 @@ int DownloadItem_RTMP::getDownloadSpeed()
 int DownloadItem_RTMP::getTimeRemaining()
 {
 	return rtmp->getTimeRemaining();
+}
+
+int DownloadItem_RTMP::getFileSize()
+{
+	return rtmp->getFileSize();
 }
 
 /* VideoDownload Class */
