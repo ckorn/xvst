@@ -12,6 +12,14 @@
 		<video url="http://www.aniboom.com/animation-video/5082/Sucking-Loop/" caption="Sucking Loop" size="4917346" />
 	</test>
 	<test>
+		<plugin file="atom.js" title="Atom" />
+		<video url="http://www.atom.com/funny_videos/bunnykill_2/" caption="Bunnykill #2" size="11809651" />
+	</test>
+	<test>
+		<plugin file="atv.js" title="ATV" />
+		<video url="http://atv.hu/videotar/090731_megvan_balla_irma_gyilkosa__megsem_a_fia_tette.html" caption="Megvan Balla Irma gyilkosa! Megsem a fia tette" size="0" />
+	</test>
+	<test>
 		<plugin file="badjojo.js" title="BadJojo" />
 		<video url="http://www.badjojo.com/482711/super-sexy-kristi-klenot-fucks-hard/" caption="Super Sexy Kristi Klenot Fucks Hard" size="86330556" />
 	</test>
@@ -202,6 +210,10 @@
 	<test>
 		<plugin file="tangle.js" title="Tangle" />
 		<video url="http://www.tangle.com/view_video.php?viewkey=c5f88145973ff00d3752" caption="The Annoying Groundhog" size="0" />
+	</test>
+	<test>
+		<plugin file="tsn.js" title="TSN" />
+		<video url="http://watch.tsn.ca/#clip199252" caption="MLB : Moving Pieces" size="341110" />
 	</test>
 	<test>
 		<plugin file="tnaflix.js" title="T'n A flix" />
