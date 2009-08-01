@@ -149,6 +149,7 @@ TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/xVST_ro.ts \
     resources/translations/xVST_sv.ts \
     resources/translations/xVST_du.ts \
+    resources/translations/xVST_jp.ts \
     resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc
 unix { 
