@@ -263,7 +263,12 @@ void VideoListController::clear(bool removePausedFile)
 		videoInformation->cancel();
 
 	while (!videoList->isEmpty())
+	{
+		// process any pending event... (such as downloadPaused, or others...)
+		qApp->processEvents();
+		// try to delete this video
 		deleteVideo(videoList->at(0), removePausedFile);
+	}
 }
 
 VideoItem* VideoListController::getFirstNULL()
