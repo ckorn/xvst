@@ -28,7 +28,7 @@ MainWindow::~MainWindow()
 	settings.setVideoSearchKeyWords(ui->edtTestingKeyWords->text());
 	settings.setPluginIcon(ui->edtImagePath->text());
 	settings.save();
-//
+	//
 	delete ui;
 }
 
@@ -57,6 +57,7 @@ void MainWindow::testPluginVideoInformation(bool debug)
 	ui->outputVideoInformation->appendHtml(QString("<b>Name:</b> %1").arg(plugin.getCaption()));
 	ui->outputVideoInformation->appendHtml(QString("<b>Version:</b> %1").arg(plugin.getVersion()));
 	ui->outputVideoInformation->appendHtml(QString("<b>Adult content:</b> %1").arg(plugin.hasAdultContent() ? "Yes" : "No"));
+	ui->outputVideoInformation->appendHtml(QString("<b>Loaded:</b> %1").arg(plugin.isLoaded() ? "Yes" : "No"));
 	ui->outputVideoInformation->appendHtml("</p>");
 
 	// video information
@@ -109,6 +110,7 @@ void MainWindow::testPluginSearchVideos(bool debug)
 	ui->outputSearchVideos->appendHtml("<p>");
 	ui->outputSearchVideos->appendHtml(QString("<b>Name:</b> %1").arg(plugin.getCaption()));
 	ui->outputSearchVideos->appendHtml(QString("<b>Version:</b> %1").arg(plugin.getVersion()));
+	ui->outputSearchVideos->appendHtml(QString("<b>Loaded:</b> %1").arg(plugin.isLoaded() ? "Yes" : "No"));
 	ui->outputSearchVideos->appendHtml("</p>");
 
 	// searchs information
