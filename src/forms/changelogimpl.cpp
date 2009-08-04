@@ -53,9 +53,9 @@ QString ChangelogImpl::convertPlainTextToHtml(QString plainText)
 		if (line.trimmed().at(0) != '-' && line.trimmed().at(0).isNumber())
 		{
 			if (!result.isEmpty()) result += "<hr>";
-			result += QString("<a name='%1' id='%1' />").arg(line.remove(":"));
+			result += QString("<a name='%1' id='%1' />").arg(line.trimmed().remove(":"));
 			result += QString("<h3>Version: %1</h3>").arg(line);
-			cmbVersions->addItem(line.remove(":"));
+			cmbVersions->addItem(line.trimmed().remove(":"));
 		}
 		// sub-section
 		else if (line.trimmed().at(0) != '-')
@@ -84,5 +84,5 @@ QString ChangelogImpl::convertPlainTextToHtml(QString plainText)
 
 void ChangelogImpl::cmbVersionsInActivated(int index)
 {
-	rchChangelog->scrollToAnchor(cmbVersions->currentText());
+	rchChangelog->scrollToAnchor(cmbVersions->itemText(index));
 }
