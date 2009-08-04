@@ -205,10 +205,10 @@ xVideoServiceThief also provide you the ability to convert each video in most po
       <string>List of supported services</string>
      </property>
      <property name="accessibleName">
-      <string/>
+      <string>List of services</string>
      </property>
      <property name="accessibleDescription">
-      <string/>
+      <string>List of supported services</string>
      </property>
      <property name="styleSheet">
       <string>QTextBrowser{

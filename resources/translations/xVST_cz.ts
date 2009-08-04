@@ -360,27 +360,49 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="36"/>
+        <location filename="../../ui/changelog.ui" line="20"/>
+        <location filename="../../ui/changelog.ui" line="26"/>
+        <source>List of the complete xVST changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="23"/>
+        <source>xVST Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="56"/>
         <source>Version:</source>
         <translation type="unfinished">Verze:</translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="77"/>
+        <location filename="../../ui/changelog.ui" line="63"/>
+        <location filename="../../ui/changelog.ui" line="69"/>
+        <source>List of program versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="66"/>
+        <source>Versions combobox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="107"/>
         <source>Close the Changelog dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="80"/>
+        <location filename="../../ui/changelog.ui" line="110"/>
         <source>Ok button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="83"/>
+        <location filename="../../ui/changelog.ui" line="113"/>
         <source>Close the Changelot dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="86"/>
+        <location filename="../../ui/changelog.ui" line="116"/>
         <source>Ok</source>
         <translation type="unfinished">Budiž</translation>
     </message>
@@ -908,6 +930,11 @@ xVideoServiceThief také umožňuje převést video do většiny populárních f
         <translation>&lt;b&gt;xVideoServiceThief momentálně podporuje následující stránky:&lt;/b&lt;</translation>
     </message>
     <message>
+        <location filename="../../ui/information.ui" line="208"/>
+        <source>List of services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../ui/information.ui" line="277"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
@@ -947,6 +974,7 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../ui/information.ui" line="205"/>
+        <location filename="../../ui/information.ui" line="211"/>
         <source>List of supported services</source>
         <translation type="unfinished"></translation>
     </message>

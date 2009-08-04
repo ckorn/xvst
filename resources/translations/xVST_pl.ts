@@ -295,6 +295,22 @@
         <source>Close the Changelot dialog</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>List of the complete xVST changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>xVST Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of program versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions combobox</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CheckUpdates</name>
@@ -774,6 +790,10 @@ font-size:12px;
     </message>
     <message>
         <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List of services</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

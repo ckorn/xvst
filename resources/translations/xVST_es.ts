@@ -360,27 +360,49 @@
         <translation>Historial de cambios</translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="36"/>
+        <location filename="../../ui/changelog.ui" line="20"/>
+        <location filename="../../ui/changelog.ui" line="26"/>
+        <source>List of the complete xVST changelog</source>
+        <translation>Lista completa de los cambios realizados en el xVST</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="23"/>
+        <source>xVST Changelog</source>
+        <translation>Historial de cambios del xVST</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="56"/>
         <source>Version:</source>
         <translation>Versión:</translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="77"/>
+        <location filename="../../ui/changelog.ui" line="63"/>
+        <location filename="../../ui/changelog.ui" line="69"/>
+        <source>List of program versions</source>
+        <translation>Listado con las diferentes versiones del programa</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="66"/>
+        <source>Versions combobox</source>
+        <translation>Lista de versiones</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="107"/>
         <source>Close the Changelog dialog</source>
         <translation>Cerrar la ventanta de cambios</translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="80"/>
+        <location filename="../../ui/changelog.ui" line="110"/>
         <source>Ok button</source>
         <translation>Botón de aceptar</translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="83"/>
+        <location filename="../../ui/changelog.ui" line="113"/>
         <source>Close the Changelot dialog</source>
         <translation>Cerrar la ventanta de cambios</translation>
     </message>
     <message>
-        <location filename="../../ui/changelog.ui" line="86"/>
+        <location filename="../../ui/changelog.ui" line="116"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
@@ -908,6 +930,11 @@ xVideoServiceThief te permite también convertir estos videos descargados a los 
         <translation>&lt;b&gt;xVideoServiceThief actualmente puede bajar de:&lt;/b&lt;</translation>
     </message>
     <message>
+        <location filename="../../ui/information.ui" line="208"/>
+        <source>List of services</source>
+        <translation>Lista de los servicios soportados</translation>
+    </message>
+    <message>
         <location filename="../../ui/information.ui" line="277"/>
         <source>Changelog</source>
         <translation>Historial de cambios</translation>
@@ -947,6 +974,7 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../ui/information.ui" line="205"/>
+        <location filename="../../ui/information.ui" line="211"/>
         <source>List of supported services</source>
         <translation>Lista de los servicios soportados</translation>
     </message>
