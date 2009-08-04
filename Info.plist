@@ -10,6 +10,8 @@
 	<string>Xesc &amp; Technology 2009</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.Xesc&amp;Technology.xVideoServiceThief</string>
 	<key>CFBundleExecutable</key>
 	<string>xVideoServiceThief</string>
 	<key>CFBundleVersion</key>
