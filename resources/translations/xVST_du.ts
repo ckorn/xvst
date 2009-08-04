@@ -359,6 +359,39 @@
     </message>
 </context>
 <context>
+    <name>ChangelogImpl</name>
+    <message>
+        <location filename="../../ui/changelog.ui" line="14"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="36"/>
+        <source>Version:</source>
+        <translation type="unfinished">Versie:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="77"/>
+        <source>Close the Changelog dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="80"/>
+        <source>Ok button</source>
+        <translation type="unfinished">Ok knop</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="83"/>
+        <source>Close the Changelot dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="86"/>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+</context>
+<context>
     <name>CheckUpdates</name>
     <message>
         <location filename="../../ui/checkupdates.ui" line="26"/>
@@ -923,34 +956,42 @@ font-size:12px;
         <translation>Supportknop</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="281"/>
-        <location filename="../../ui/information.ui" line="287"/>
+        <location filename="../../ui/information.ui" line="268"/>
+        <location filename="../../ui/information.ui" line="274"/>
+        <location filename="../../ui/information.ui" line="290"/>
+        <location filename="../../ui/information.ui" line="296"/>
         <source>Display the credits dialog</source>
         <translation>Toon het creditsvenster</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="284"/>
+        <location filename="../../ui/information.ui" line="271"/>
+        <location filename="../../ui/information.ui" line="293"/>
         <source>Credits button</source>
         <translation>Creditsknop</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="290"/>
+        <location filename="../../ui/information.ui" line="277"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/information.ui" line="299"/>
         <source>Credits...</source>
         <translation>Credits...</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="315"/>
-        <location filename="../../ui/information.ui" line="321"/>
+        <location filename="../../ui/information.ui" line="324"/>
+        <location filename="../../ui/information.ui" line="330"/>
         <source>Close the Information dialog</source>
         <translation>Het Informatievenster sluiten</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="318"/>
+        <location filename="../../ui/information.ui" line="327"/>
         <source>Close button</source>
         <translation>Afsluitknop</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="324"/>
+        <location filename="../../ui/information.ui" line="333"/>
         <source>Close</source>
         <translation>Sluiten</translation>
     </message>
@@ -958,23 +999,23 @@ font-size:12px;
 <context>
     <name>InformationImpl</name>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="95"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="99"/>
         <source>&lt;p&gt;Total websites supported (plugins installed): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;Totaal websites  die worden ondersteund.(plugins geïnstalleerd): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="98"/>
-        <location filename="../../src/forms/informationimpl.cpp" line="100"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="102"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="104"/>
         <source>Adult web sites:</source>
         <translation>Websites 18+:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="98"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="102"/>
         <source>Adult sites are blocked...</source>
         <translation>18+ websites zijn geblokkeerd...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="101"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="105"/>
         <source>Music web sites:</source>
         <translation>Muziek websites:</translation>
     </message>
@@ -987,12 +1028,12 @@ font-size:12px;
         <translation>Laden</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="59"/>
+        <location filename="../../src/main.cpp" line="61"/>
         <source>Loading plugins... please wait...</source>
         <translation>Laden plugins... even wachten alstublieft...</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="69"/>
+        <location filename="../../src/main.cpp" line="71"/>
         <source>Plugins loaded</source>
         <translation>Plugins geladen</translation>
     </message>
@@ -2474,71 +2515,76 @@ font-size:12px;
         <translation>Proxy type</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1865"/>
-        <location filename="../../ui/options.ui" line="1871"/>
+        <location filename="../../ui/options.ui" line="1829"/>
+        <source>Use the system configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1888"/>
+        <location filename="../../ui/options.ui" line="1894"/>
         <source>Enable/disable the &quot;Bug report&quot; window on video Error</source>
         <translation>Inschakelen/uitschakelen &quot;Foutenrapport&quot;venster bij een video fout</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1868"/>
+        <location filename="../../ui/options.ui" line="1891"/>
         <source>Bug report</source>
         <translation>Foutenrapport</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1874"/>
+        <location filename="../../ui/options.ui" line="1897"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Toon &quot;Foutenrapport&quot;venster bij een Video fout</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1883"/>
+        <location filename="../../ui/options.ui" line="1906"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Als de video een fout meldt kunt u helpen de fout te herstellen door een &quot;&lt;b&gt;Foutenrapport&lt;/b&gt;&quot; te zenden aan ons via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;Het &quot;&lt;b&gt;Foutenrapport&lt;/b&gt;&quot;wordt alleen maar opgeslagen in de &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; , is voor iedereen zichtbaar en er worden geen extra gegevens opgeslagen in een externe DataBase.</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1934"/>
-        <location filename="../../ui/options.ui" line="1940"/>
+        <location filename="../../ui/options.ui" line="1957"/>
+        <location filename="../../ui/options.ui" line="1963"/>
         <source>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</source>
         <translation>Als deze optie is aangevinkt zal, bij het opnieuw openen van het &quot;Opties&quot; venster, de laatst bekeken pagina (Basis, Taal, etc...) opnieuw worden getoond (alleen gedurende deze sessie)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1937"/>
+        <location filename="../../ui/options.ui" line="1960"/>
         <source>Remember last viewed options page checkbox</source>
         <translation>Selectievakje onthoudt de laatst bekeken opties pagina</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1943"/>
+        <location filename="../../ui/options.ui" line="1966"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation>Onthoudt de laatst bekeken opties pagina (alleen gedurende deze sessie)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1972"/>
-        <location filename="../../ui/options.ui" line="1978"/>
+        <location filename="../../ui/options.ui" line="1995"/>
+        <location filename="../../ui/options.ui" line="2001"/>
         <source>Save and close the current configuration</source>
         <translation>De huidige instellingen opslaan en afsluiten</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1975"/>
+        <location filename="../../ui/options.ui" line="1998"/>
         <source>Save and close button</source>
         <translation>Knop opslaan en afsluiten</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1981"/>
+        <location filename="../../ui/options.ui" line="2004"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1997"/>
-        <location filename="../../ui/options.ui" line="2003"/>
+        <location filename="../../ui/options.ui" line="2020"/>
+        <location filename="../../ui/options.ui" line="2026"/>
         <source>Close without saving changes</source>
         <translation>Afsluiten zonder wijzgingen op te slaan</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2000"/>
+        <location filename="../../ui/options.ui" line="2023"/>
         <source>Cancel and close button</source>
         <translation>Knop annuleren en sluiten</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2006"/>
+        <location filename="../../ui/options.ui" line="2029"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
@@ -2546,167 +2592,167 @@ font-size:12px;
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>Basic</source>
         <translation>Basis</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="178"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="179"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="183"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="184"/>
         <source>Session</source>
         <translation>Sessie</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="188"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="677"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="189"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
         <source>Updates</source>
         <translation>Updates</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="193"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="194"/>
         <source>Ups!</source>
         <translation>18+!</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="198"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="199"/>
         <source>Schedule</source>
         <translation>Taak</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="203"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="204"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="208"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="209"/>
         <source>Tracker</source>
         <translation>Tracker</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="231"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
         <source>Day</source>
         <translation>Dag</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="231"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
         <source>2 Days</source>
         <translation>2 Dagen</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="231"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
         <source>3 Days</source>
         <translation>3 Dagen</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="231"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
         <source>4 Days</source>
         <translation>4 Dagen</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="233"/>
         <source>5 Days</source>
         <translation>5 Dagen</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="233"/>
         <source>6 Days</source>
         <translation>6 Dagen</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="233"/>
         <source>Week</source>
         <translation>Week</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="237"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="238"/>
         <source>Http Proxy</source>
         <translation>Http Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="237"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="238"/>
         <source>Socks5 Proxy</source>
         <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="537"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="540"/>
         <source>Remove schedule item</source>
         <translation>Verwijder geplande item</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="538"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="541"/>
         <source>Wish you remove the selected schedule item?</source>
         <translation>Wilt u het  geselecteerde geplande item verwijderen?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="568"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="571"/>
         <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Vul het beveiligingswachtwoord in om 18+ sites te ontgrendelen.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="569"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="572"/>
         <source>Unlocking password:</source>
         <translation>Ontgrendel wachtwoord:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="578"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="581"/>
         <source>Invalid UPS! password</source>
         <translation>Ongeldig 18+! wachtwoord</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="579"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="582"/>
         <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
         <translation>U hebt een ongeldig 18+! wachtwoord ingevuld en de inhoud voor volwassenen bijft vergrendelt.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="660"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="668"/>
         <source>Language Setup</source>
         <translation>Taal  Opzet</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="661"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="669"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Opdat de nieuw geselecteerde taal kan worden gebruikt, dient het programma opnieuw te worden opgestart.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="580"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="662"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="679"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="583"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="670"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="687"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="678"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="686"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Een ander proces is bezig, beëindig dit alstublieft of wacht tot dit proces gereed is.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="736"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="744"/>
         <source>Select the download directory:</source>
         <translation>Selecteer de downloadmap:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="746"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="754"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Selecteer de ffmpeg bieb:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="778"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="786"/>
         <source>Clear Log</source>
         <translation>Log opschonen</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="779"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="787"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation>Weet u zeker dat u het download/conversie geschiedenisbestand wilt opschonen?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="433"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="539"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="780"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="436"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="542"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="788"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
@@ -2731,9 +2777,9 @@ font-size:12px;
         <translation>Opmerkingen</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="433"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="540"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="781"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="436"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="543"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="789"/>
         <source>No</source>
         <translation>Nee</translation>
     </message>
@@ -2906,28 +2952,38 @@ font-size:12px;
 <context>
     <name>SearchVideosImpl</name>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="105"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="110"/>
         <source>Please, select one or more services.</source>
         <translation>Selecteer alstublieft één of meer diensten.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="106"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="111"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="141"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="146"/>
         <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
         <translation>Zoeken &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (pagina %2)... alstublieft even wachten...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="209"/>
-        <source>All video services</source>
-        <translation>Alle video diensten</translation>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="217"/>
+        <source>All standard services</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="104"/>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="210"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="218"/>
+        <source>All adult services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="220"/>
+        <source>All services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="109"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="222"/>
         <source>Custom search</source>
         <translation>Aangepast zoeken</translation>
     </message>
@@ -3426,12 +3482,17 @@ font-size:12px;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="387"/>
+        <location filename="../../src/videoinformation.cpp" line="415"/>
         <source>Unsupported video service</source>
         <translation>Niet ondersteunde video dienst</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="390"/>
+        <location filename="../../src/videoinformation.cpp" line="418"/>
+        <source>Adobe Flash streaming</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoinformation.cpp" line="420"/>
         <source>Invalid URL</source>
         <translation>Ongeldige URL</translation>
     </message>
@@ -3565,6 +3626,41 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="450"/>
+        <source>flvstreamer is missing (impossible download from RTMP server)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="452"/>
+        <source>Unable to open the destination file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="454"/>
+        <source>Failed to connect with RTMP server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="456"/>
+        <source>Unable to resume the FLV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="458"/>
+        <source>Download incomplete (due to download errors)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="460"/>
+        <source>Failed on initialize the pthread_create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="462"/>
+        <source>File to resume not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="464"/>
         <source>Connection error: Unable to download the video</source>
         <translation>Verbindingsfout: onmogelijk om de video te downloaden</translation>
     </message>

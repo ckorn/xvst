@@ -272,6 +272,33 @@
     </message>
 </context>
 <context>
+    <name>ChangelogImpl</name>
+    <message>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="unfinished">バージョン:</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">OK-ボタン</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the Changelog dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the Changelot dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CheckUpdates</name>
     <message>
         <source>Connecting...</source>
@@ -741,6 +768,10 @@ background: white;
     <message>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
         <translation>Realiza una donación al &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</translation>
+    </message>
+    <message>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2288,10 +2319,6 @@ background: white;
         <translation>検索</translation>
     </message>
     <message>
-        <source>All video services</source>
-        <translation type="obsolete">すべての動画サービス</translation>
-    </message>
-    <message>
         <source>Key words edit</source>
         <translation>キーワード編集</translation>
     </message>
@@ -2747,6 +2774,34 @@ background: white;
     <message>
         <source>Connection error: Unable to download the video</source>
         <translation>接続エラー: このビデオはダウンロードできません</translation>
+    </message>
+    <message>
+        <source>flvstreamer is missing (impossible download from RTMP server)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to open the destination file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to connect with RTMP server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to resume the FLV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download incomplete (due to download errors)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed on initialize the pthread_create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File to resume not found</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

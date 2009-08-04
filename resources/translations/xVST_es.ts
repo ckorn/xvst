@@ -353,6 +353,39 @@
     </message>
 </context>
 <context>
+    <name>ChangelogImpl</name>
+    <message>
+        <location filename="../../ui/changelog.ui" line="14"/>
+        <source>Changelog</source>
+        <translation>Historial de cambios</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="36"/>
+        <source>Version:</source>
+        <translation>Versión:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="77"/>
+        <source>Close the Changelog dialog</source>
+        <translation>Cerrar la ventanta de cambios</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="80"/>
+        <source>Ok button</source>
+        <translation>Botón de aceptar</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="83"/>
+        <source>Close the Changelot dialog</source>
+        <translation>Cerrar la ventanta de cambios</translation>
+    </message>
+    <message>
+        <location filename="../../ui/changelog.ui" line="86"/>
+        <source>Ok</source>
+        <translation>Aceptar</translation>
+    </message>
+</context>
+<context>
     <name>CheckUpdates</name>
     <message>
         <location filename="../../ui/checkupdates.ui" line="26"/>
@@ -582,14 +615,6 @@
         <location filename="../../ui/customdownloadtitle.ui" line="55"/>
         <source>Video title:</source>
         <translation>Título del vídeo:</translation>
-    </message>
-    <message>
-        <source>Field where you enter the password</source>
-        <translation type="obsolete">Sitio donde se introduce la contraseña</translation>
-    </message>
-    <message>
-        <source>Password edit</source>
-        <translation type="obsolete">Caja de texto de la contraseña</translation>
     </message>
     <message>
         <location filename="../../ui/customdownloadtitle.ui" line="62"/>
@@ -883,7 +908,12 @@ xVideoServiceThief te permite también convertir estos videos descargados a los 
         <translation>&lt;b&gt;xVideoServiceThief actualmente puede bajar de:&lt;/b&lt;</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="324"/>
+        <location filename="../../ui/information.ui" line="277"/>
+        <source>Changelog</source>
+        <translation>Historial de cambios</translation>
+    </message>
+    <message>
+        <location filename="../../ui/information.ui" line="333"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -898,7 +928,7 @@ xVideoServiceThief te permite también convertir estos videos descargados a los 
         <translation>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="290"/>
+        <location filename="../../ui/information.ui" line="299"/>
         <source>Credits...</source>
         <translation>Créditos...</translation>
     </message>
@@ -932,24 +962,27 @@ font-size:12px;
         <translation>Botón de soporte</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="281"/>
-        <location filename="../../ui/information.ui" line="287"/>
+        <location filename="../../ui/information.ui" line="268"/>
+        <location filename="../../ui/information.ui" line="274"/>
+        <location filename="../../ui/information.ui" line="290"/>
+        <location filename="../../ui/information.ui" line="296"/>
         <source>Display the credits dialog</source>
         <translation>Mostrar la ventana de créditos</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="284"/>
+        <location filename="../../ui/information.ui" line="271"/>
+        <location filename="../../ui/information.ui" line="293"/>
         <source>Credits button</source>
         <translation>Botón de créditos</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="315"/>
-        <location filename="../../ui/information.ui" line="321"/>
+        <location filename="../../ui/information.ui" line="324"/>
+        <location filename="../../ui/information.ui" line="330"/>
         <source>Close the Information dialog</source>
         <translation>Cerrar la ventana de información</translation>
     </message>
     <message>
-        <location filename="../../ui/information.ui" line="318"/>
+        <location filename="../../ui/information.ui" line="327"/>
         <source>Close button</source>
         <translation>Botón de cerrar</translation>
     </message>
@@ -957,23 +990,23 @@ font-size:12px;
 <context>
     <name>InformationImpl</name>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="95"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="99"/>
         <source>&lt;p&gt;Total websites supported (plugins installed): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;Sitios web soportados (plugins instalados): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="98"/>
-        <location filename="../../src/forms/informationimpl.cpp" line="100"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="102"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="104"/>
         <source>Adult web sites:</source>
         <translation>Sitios para adultos:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="98"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="102"/>
         <source>Adult sites are blocked...</source>
         <translation>Los sitios para adultos estan bloqueados...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/informationimpl.cpp" line="101"/>
+        <location filename="../../src/forms/informationimpl.cpp" line="105"/>
         <source>Music web sites:</source>
         <translation>Sitios de música:</translation>
     </message>
@@ -981,12 +1014,12 @@ font-size:12px;
 <context>
     <name>LoadingImpl</name>
     <message>
-        <location filename="../../src/main.cpp" line="59"/>
+        <location filename="../../src/main.cpp" line="61"/>
         <source>Loading plugins... please wait...</source>
         <translation>Cargando los plugins... por favor espere...</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="69"/>
+        <location filename="../../src/main.cpp" line="71"/>
         <source>Plugins loaded</source>
         <translation>Plugins cargados</translation>
     </message>
@@ -1247,10 +1280,6 @@ font-size:12px;
         <translation>Ventana del Drag &amp; Drop</translation>
     </message>
     <message>
-        <source>Search video</source>
-        <translation type="obsolete">Buscar vídeos</translation>
-    </message>
-    <message>
         <location filename="../../ui/mainform.ui" line="306"/>
         <location filename="../../ui/mainform.ui" line="312"/>
         <location filename="../../ui/mainform.ui" line="315"/>
@@ -1379,10 +1408,6 @@ font-size:12px;
         <location filename="../../ui/mainform.ui" line="1283"/>
         <source>Ctrl+O</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Search Videos</source>
-        <translation type="obsolete">Buscar vídeos</translation>
     </message>
     <message>
         <location filename="../../ui/mainform.ui" line="1303"/>
@@ -1960,12 +1985,12 @@ font-size:12px;
         <translation>Puerto:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1981"/>
+        <location filename="../../ui/options.ui" line="2004"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2006"/>
+        <location filename="../../ui/options.ui" line="2029"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -2035,7 +2060,7 @@ font-size:12px;
         <translation>Nombre de usuario:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1943"/>
+        <location filename="../../ui/options.ui" line="1966"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation>Recordar la última pagina visitada de las opciones (valido sólo para esta sesión)</translation>
     </message>
@@ -2050,12 +2075,12 @@ font-size:12px;
         <translation>Buscar nuevas versiones al arrancar el programa</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1874"/>
+        <location filename="../../ui/options.ui" line="1897"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Mostrar la ventana de &quot;Informe de errores&quot; al fallar un Vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1883"/>
+        <location filename="../../ui/options.ui" line="1906"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Cuando un vídeo provoca un error, puede ayudar a solucionar el problema enviandonos un &quot;&lt;b&gt;Informe de errores&lt;/b&gt;&quot; vía &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.nettracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;El &quot;&lt;b&gt;Informe de errores&lt;/b&gt;&quot; se guardará sólo en el &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; y será visible para todo el mundo, y ninguna información extra será guardada en una Base de Datos externa.</translation>
     </message>
@@ -2506,46 +2531,51 @@ font-size:12px;
         <translation>Tipo de proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1865"/>
-        <location filename="../../ui/options.ui" line="1871"/>
+        <location filename="../../ui/options.ui" line="1829"/>
+        <source>Use the system configuration</source>
+        <translation>Usar la configuración del sistema</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1888"/>
+        <location filename="../../ui/options.ui" line="1894"/>
         <source>Enable/disable the &quot;Bug report&quot; window on video Error</source>
         <translation>Activar/desactivar el &quot;Informe de errores&quot; al fallar un vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1868"/>
+        <location filename="../../ui/options.ui" line="1891"/>
         <source>Bug report</source>
         <translation>Informe de errores</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1937"/>
+        <location filename="../../ui/options.ui" line="1960"/>
         <source>Remember last viewed options page checkbox</source>
         <translation>Casilla de selección para recordar la última página visualizada de las opciones</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1972"/>
-        <location filename="../../ui/options.ui" line="1978"/>
+        <location filename="../../ui/options.ui" line="1995"/>
+        <location filename="../../ui/options.ui" line="2001"/>
         <source>Save and close the current configuration</source>
         <translation>Guardar la configuración y cerrar la ventana</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1975"/>
+        <location filename="../../ui/options.ui" line="1998"/>
         <source>Save and close button</source>
         <translation>Botón de guardar y cerrar</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1997"/>
-        <location filename="../../ui/options.ui" line="2003"/>
+        <location filename="../../ui/options.ui" line="2020"/>
+        <location filename="../../ui/options.ui" line="2026"/>
         <source>Close without saving changes</source>
         <translation>Cerrar sin guardar los cambios</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2000"/>
+        <location filename="../../ui/options.ui" line="2023"/>
         <source>Cancel and close button</source>
         <translation>Botón de cancelar y cerrar</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1934"/>
-        <location filename="../../ui/options.ui" line="1940"/>
+        <location filename="../../ui/options.ui" line="1957"/>
+        <location filename="../../ui/options.ui" line="1963"/>
         <source>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</source>
         <translation>Si esta opción esta seleccionada, al abrir otra vez las &quot;Opciones&quot;, la última página visualizada (Básico, Idiomas, etc...) se volverá a mostrar (sólo sirve para esta sesión, al cerrar y volver a abrir el programa este valor se perderá)</translation>
     </message>
@@ -2553,125 +2583,125 @@ font-size:12px;
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="172"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="173"/>
         <source>Basic</source>
         <translation>Básico</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="178"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="179"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="183"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="184"/>
         <source>Session</source>
         <translation>Sesión</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="188"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="677"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="189"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
         <source>Updates</source>
         <translation>Actualizaciones</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="193"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="194"/>
         <source>Ups!</source>
         <translation>Ups!</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="198"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="199"/>
         <source>Schedule</source>
         <translation>Horarios</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="203"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="204"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="231"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
         <source>Day</source>
         <translation>Día</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="231"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
         <source>2 Days</source>
         <translation>2 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="231"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
         <source>3 Days</source>
         <translation>3 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="231"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
         <source>4 Days</source>
         <translation>4 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="233"/>
         <source>5 Days</source>
         <translation>5 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="233"/>
         <source>6 Days</source>
         <translation>6 Días</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="233"/>
         <source>Week</source>
         <translation>Semana</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="237"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="238"/>
         <source>Http Proxy</source>
         <translation>Http Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="237"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="238"/>
         <source>Socks5 Proxy</source>
         <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="537"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="540"/>
         <source>Remove schedule item</source>
         <translation>Eliminar horario</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="538"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="541"/>
         <source>Wish you remove the selected schedule item?</source>
         <translation>¿Desa usted eliminar el hoario seleccionado?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="568"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="571"/>
         <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Entre la contraseña para desbloquear los sitios para adultos.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="569"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="572"/>
         <source>Unlocking password:</source>
         <translation>Contraseña para desbloquear:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="578"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="581"/>
         <source>Invalid UPS! password</source>
         <translation>Contraseña ¡UPS! invalida</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="579"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="582"/>
         <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
         <translation>Usted ha introducido una contraseña invalida y los sitios para adultos seguirán bloqueados.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="778"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="786"/>
         <source>Clear Log</source>
         <translation>Limpiar Historial</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="433"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="539"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="780"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="436"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="542"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="788"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
@@ -2696,51 +2726,51 @@ font-size:12px;
         <translation>Comentarios</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="433"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="540"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="781"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="436"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="543"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="789"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="660"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="668"/>
         <source>Language Setup</source>
         <translation>Instalación del Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="661"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="669"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Para poder aplicar el idioma seleccionado, el programa necesita ser reiniciado.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="580"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="662"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="679"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="583"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="670"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="687"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="736"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="744"/>
         <source>Select the download directory:</source>
         <translation>Seleccione el directorio de las descargas:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="746"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="754"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Seleccione donde encontrar la lib ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="779"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="787"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation>¿Está seguro de querer borrar el historial: descargas/conversiones?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="678"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="686"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Otro proceso esta actualmente trabajando, por favor párelo o espere a su finalización.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="208"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="209"/>
         <source>Tracker</source>
         <translation>Tracker</translation>
     </message>
@@ -2913,28 +2943,38 @@ font-size:12px;
 <context>
     <name>SearchVideosImpl</name>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="105"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="110"/>
         <source>Please, select one or more services.</source>
         <translation>Porfavor, seleccione uno o más servicios de búsqueda.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="106"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="111"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="141"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="146"/>
         <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
         <translation>Buscando &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (pagina %2)... por favor espere...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="209"/>
-        <source>All video services</source>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="217"/>
+        <source>All standard services</source>
+        <translation>Todos los servicios estándar</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="218"/>
+        <source>All adult services</source>
+        <translation>Todos los servicios para adultos</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="220"/>
+        <source>All services</source>
         <translation>Todos los servicios</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="104"/>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="210"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="109"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="222"/>
         <source>Custom search</source>
         <translation>Búsqueda personalizada</translation>
     </message>
@@ -3105,10 +3145,6 @@ font-size:12px;
         <translation>Ya ha añadido este vídeo. Compruebe su lista de descargas.</translation>
     </message>
     <message>
-        <source>Play this video</source>
-        <translation type="obsolete">Reproducir video</translation>
-    </message>
-    <message>
         <location filename="../../ui/searchvideositem.ui" line="44"/>
         <location filename="../../ui/searchvideositem.ui" line="50"/>
         <location filename="../../ui/searchvideositem.ui" line="101"/>
@@ -3147,10 +3183,6 @@ font-size:12px;
         <location filename="../../ui/searchvideositem.ui" line="162"/>
         <source>Download video button</source>
         <translation>Botón de descargar vídeo</translation>
-    </message>
-    <message>
-        <source>Download this video</source>
-        <translation type="obsolete">Bajar este vídeo</translation>
     </message>
 </context>
 <context>
@@ -3441,12 +3473,17 @@ font-size:12px;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="387"/>
+        <location filename="../../src/videoinformation.cpp" line="415"/>
         <source>Unsupported video service</source>
         <translation>Servicio no soportado</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="390"/>
+        <location filename="../../src/videoinformation.cpp" line="418"/>
+        <source>Adobe Flash streaming</source>
+        <translation>Adobe Flash streaming</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoinformation.cpp" line="420"/>
         <source>Invalid URL</source>
         <translation>URL Errónea</translation>
     </message>
@@ -3580,6 +3617,41 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="450"/>
+        <source>flvstreamer is missing (impossible download from RTMP server)</source>
+        <translation>Falta el flvstreamer (sin él es imposile bajar desde los servidores RTMP)</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="452"/>
+        <source>Unable to open the destination file</source>
+        <translation>Imposible abrir el fichero destino</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="454"/>
+        <source>Failed to connect with RTMP server</source>
+        <translation>Ha fallado al intentar conectar con el servidor RTMP</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="456"/>
+        <source>Unable to resume the FLV file</source>
+        <translation>Imposible reanudar la descarga</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="458"/>
+        <source>Download incomplete (due to download errors)</source>
+        <translation>Descarga incompleta (por errorers con la bajada)</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="460"/>
+        <source>Failed on initialize the pthread_create</source>
+        <translation>Ha fallado al intentar inicializar el pthread_create</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="462"/>
+        <source>File to resume not found</source>
+        <translation>El vídeo a reanudar no existe</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="464"/>
         <source>Connection error: Unable to download the video</source>
         <translation>Error de conexión: Imposible bajar el vídeo</translation>
     </message>

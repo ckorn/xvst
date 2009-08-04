@@ -273,6 +273,33 @@
     </message>
 </context>
 <context>
+    <name>ChangelogImpl</name>
+    <message>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="unfinished">Version:</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the Changelog dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the Changelot dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CheckUpdates</name>
     <message>
         <source>Check updates...</source>
@@ -747,6 +774,10 @@ font-size:12px;(new line)
     <message>
         <source>Close</source>
         <translation>Pechar</translation>
+    </message>
+    <message>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1938,6 +1969,10 @@ Procurar actualizacións sempre:</translation>
         <source>Remove the selected schedule configuration</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Use the system configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -2224,10 +2259,6 @@ Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</t
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All video services</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Custom search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2329,6 +2360,18 @@ Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</t
     </message>
     <message>
         <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All standard services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All adult services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All services</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2629,6 +2672,10 @@ Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</t
         <source>Invalid URL</source>
         <translation>URL non válida</translation>
     </message>
+    <message>
+        <source>Adobe Flash streaming</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VideoItem</name>
@@ -2734,6 +2781,34 @@ Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</t
     </message>
     <message>
         <source>Updating info...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>flvstreamer is missing (impossible download from RTMP server)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to open the destination file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to connect with RTMP server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to resume the FLV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download incomplete (due to download errors)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed on initialize the pthread_create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File to resume not found</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

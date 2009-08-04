@@ -269,6 +269,33 @@
     </message>
 </context>
 <context>
+    <name>ChangelogImpl</name>
+    <message>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="unfinished">Verzió:</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">Ok gomb</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Close the Changelog dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the Changelot dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CheckUpdates</name>
     <message>
         <source>Check updates...</source>
@@ -741,6 +768,10 @@ betűméret:12px;
     <message>
         <source>Close</source>
         <translation>Bezárás</translation>
+    </message>
+    <message>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1931,6 +1962,10 @@ betűméret:12px;
         <source>Remove the selected schedule configuration</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Use the system configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -2216,10 +2251,6 @@ betűméret:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All video services</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Custom search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2322,6 +2353,18 @@ betűméret:12px;
     <message>
         <source>Ok</source>
         <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>All standard services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All adult services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All services</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2621,6 +2664,10 @@ betűméret:12px;
         <source>Invalid URL</source>
         <translation>Érvénytelen URL</translation>
     </message>
+    <message>
+        <source>Adobe Flash streaming</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VideoItem</name>
@@ -2726,6 +2773,34 @@ betűméret:12px;
     </message>
     <message>
         <source>Updating info...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>flvstreamer is missing (impossible download from RTMP server)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to open the destination file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to connect with RTMP server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to resume the FLV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download incomplete (due to download errors)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed on initialize the pthread_create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File to resume not found</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
