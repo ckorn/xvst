@@ -202,6 +202,8 @@ void Updates::buildInstalScript()
 				}
 #endif
 			}
+			// configure appPath (temporary for this update item)
+			QString appPath = update->hasRelativePath() ? this->appPath : "";
 			// is checked?
 			if (update->isChecked() && !update->hasErrors())
 				if (!update->isPacked())
@@ -212,7 +214,7 @@ void Updates::buildInstalScript()
 										.arg(extractFilePath(appPath + update->getInstallTo()))
 								 << QString("if copy \"%1\" \"%2\"")
 										.arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))	// downloaded file
-										.arg(appPath + update->getInstallTo())						// destination file
+										.arg(appPath + update->getInstallTo()) // destination file
 					// if the downloaded file has been copied, then delete it and jump to the next file
 								 << QString("del \"%1\"").arg(QDir::tempPath() + QString(XUPDATER_DWN_FILE).arg(n))
 					// if isn't the last file, go to next update file
@@ -700,5 +702,5 @@ bool Update::hasErrors()
 
 bool Update::hasRelativePath()
 {
-	return hasRelativePath;
+	return isRelativePath;
 }
