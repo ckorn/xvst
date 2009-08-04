@@ -1,5 +1,5 @@
 2.2:
-------
+----
 
 - Added RTMP (Adobe Flash streaming) support (thanks to flvstreamer)
 - Added automatic network configuration (automatic proxy detection and configuration)
@@ -7,6 +7,7 @@
 - Added save/restore last search settings
 - Added dutch translation (thanks to Reintjedevos)
 - Added japanese translation (thanks to Tilt)
+- Added Changelog in "Information" window
 - Added 11 new plug-ins:
 	- Spankwire
 	- elRellano
@@ -30,7 +31,7 @@
 - Revised the Catalˆ language file
 
 Plug-ins SDK:
-------------
+-------------
 
 - Added 1 new property to VideoDefinition class:
 	- String userAgent
@@ -263,12 +264,12 @@ Windows Vista:
 - Added detection of Windows Vista for advertise about "administrator permission"
 - Added administrator permission before execute xUpdater
 
-MacOS X:
+MacOSX:
 --------
 
 - Added ffmpeg internal detection
 - Resized all windows for better user experience
-- Configuration file for MacOS X is now: /Users/{User}/Preferences
+- Configuration file for MacOSX is now: /Users/{User}/Preferences
 - All configuration files are now PLIST's
 
 
@@ -369,8 +370,8 @@ Windows:
 - Fixed bug (Error: "Display popup" option was not saved)
 - Fixed bug (Error: prevent access violation on invalid videos)
 
-1.7a
-----
+1.7a:
+-----
 
 - Added 10 new services:
     - XTube
@@ -399,8 +400,8 @@ Windows:
 - Improved video errors management
 
 
-1.6.1a
-------
+1.6.1a:
+--------
 
 - Revised 1 service:
     - Tu.tv
@@ -414,8 +415,8 @@ Windows:
 - Revised Spanish (ES) language file
 - Revised Catalan (CAT) language file
 
-1.6a
-----
+1.6a:
+-----
 
 - Added 2 new services:
     - GameSpot
@@ -474,7 +475,7 @@ Linux:
 
 - Changed executable name to "xvst"
 
-Mac OS X:
+MacOSX:
 ---------
 
 - Improved all dialogs
