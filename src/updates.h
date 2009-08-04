@@ -66,6 +66,7 @@ class Update : public QObject
 		bool obligatory;		//!< Flag for know if this update must be downloaed (if don't exists, it is downloaded anyway)
 		bool checked;			//!< Selected to update
 		bool error;				//!< An error ocurred during download process
+		bool isRelativePath;	//!< Flag for know if the "installTo" property is a full or relative path
 	public:
 		/*! Set the update caption */
 		void setCaption(QString value);
@@ -74,7 +75,7 @@ class Update : public QObject
 		/*! Set the update file size */
 		void setSize(int value);
 		/*! Set where to install this update */
-		void setInstallTo(QString value);
+		void setInstallTo(QString value, bool isRelativePath = true);
 		/*! Set the update url */
 		void setUrl(QString value);
 		/*! Set if is update is packed */
@@ -89,7 +90,7 @@ class Update : public QObject
 		void setChecked(bool value);
 		/*! Set it as error */
 		void setError(bool value);
-		/* Get the update caption */
+		/*! Get the update caption */
 		QString getCaption();
 		/*! Get the update version */
 		QString getVersion();
@@ -111,6 +112,8 @@ class Update : public QObject
 		bool isChecked();
 		/*! Get if has an error */
 		bool hasErrors();
+		/*! Get if the "installTo" is a relative path */
+		bool hasRelativePath();
 };
 
 /*! Check and download program updates */

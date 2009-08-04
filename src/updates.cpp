@@ -184,8 +184,13 @@ void Updates::buildInstalScript()
 			// check if is "this" reference
 			if (update->getInstallTo().toLower() == "this")
 			{
+#ifdef Q_OS_LINUX
+				// on linux the install to must be an absolute path
+				update->setInstallTo(QCoreApplication::applicationFilePath(), false);
+#else // mac & win
 				QFileInfo appExe(QCoreApplication::applicationFilePath());
 				update->setInstallTo("/" + appExe.fileName());
+#endif
 #ifdef Q_WS_MAC
 				// special MacOSX update (DMG)
 				if (update->isChecked() && update->isPacked())
@@ -597,9 +602,10 @@ void Update::setSize(int value)
 	size = value;
 }
 
-void Update::setInstallTo(QString value)
+void Update::setInstallTo(QString value, bool isRelativePath)
 {
 	installTo = value;
+	this->isRelativePath = isRelativePath;
 }
 
 void Update::setUrl(QString value)
@@ -690,4 +696,9 @@ bool Update::isChecked()
 bool Update::hasErrors()
 {
 	return error;
+}
+
+bool Update::hasRelativePath()
+{
+	return hasRelativePath;
 }
