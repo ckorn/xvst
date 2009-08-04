@@ -26,6 +26,7 @@
 #include "informationimpl.h"
 
 #include "creditsimpl.h"
+#include "changelogimpl.h"
 
 #include "../programversion.h"
 #include "../options.h"
@@ -44,8 +45,10 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 #endif
 	//
 	creditsForm = new CreditsImpl(this, Qt::Sheet);
+	changelogForm = new ChangelogImpl(this, Qt::Sheet);
 	// signals
 	connect(btnCredits, SIGNAL(clicked()), this, SLOT(btnCreditsClicked()));
+	connect(btnChangelog, SIGNAL(clicked()), this, SLOT(btnChangelogClicked()));
 	// set the program version
 	lblProgramVersion->setText(QString("<b>%1</b>").arg(PROGRAM_VERSION));
 	// set language info
@@ -64,6 +67,7 @@ InformationImpl::InformationImpl(ProgramOptions *programOptions, VideoInformatio
 InformationImpl::~InformationImpl()
 {
 	delete creditsForm;
+	delete changelogForm;
 }
 
 QString getPluginsAsHtml(QString title, QList<VideoInformationPlugin*> plugins)
@@ -106,5 +110,10 @@ void InformationImpl::buildVideoServicesList(VideoInformation *videoInformation)
 void InformationImpl::btnCreditsClicked()
 {
 	creditsForm->show();
+}
+
+void InformationImpl::btnChangelogClicked()
+{
+	changelogForm->show();
 }
 //

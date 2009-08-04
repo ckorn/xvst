@@ -29,6 +29,7 @@
 #include "ui_information.h"
 
 class CreditsImpl;
+class ChangelogImpl;
 class ProgramOptions;
 class VideoInformation;
 
@@ -37,6 +38,7 @@ class InformationImpl : public QDialog, public Ui::Information
 Q_OBJECT
 	private:
 		CreditsImpl *creditsForm;
+		ChangelogImpl *changelogForm;
 		void buildVideoServicesList(VideoInformation *videoInformation);
 	public:
 		InformationImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,
@@ -44,5 +46,6 @@ Q_OBJECT
 		~InformationImpl();
 	private slots:
 		void btnCreditsClicked();
+		void btnChangelogClicked();
 };
 #endif

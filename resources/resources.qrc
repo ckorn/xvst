@@ -83,4 +83,7 @@
     <qresource prefix="/custom_download" >
         <file>images/custom_download_title.png</file>
     </qresource>
+    <qresource prefix="/changelog" >
+        <file>changelog.txt</file>
+    </qresource>
 </RCC>
