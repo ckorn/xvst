@@ -38,6 +38,12 @@ Plug-ins SDK:
 
 - Added 1 new method to Http class:
 	- void setUserAgent(String value)
+Linux:
+------
+
+- Fixed bug (Error: Updates were not installed correctly)
+- Fixed bug (Error: The program updates were not installed correctly)
+
 
 2.1:
 ----
