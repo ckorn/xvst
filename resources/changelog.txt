@@ -1,3 +1,13 @@
+2.2.1:
+------
+
+- Added "Plugin Version" information in "Bug Report"
+- Added Italiano translation (thanks to Vecna)
+
+- Changed plug-ins:
+	- Youtube
+	- Dailymotion
+
 2.2:
 ----
 
