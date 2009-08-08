@@ -172,8 +172,6 @@ Q_OBJECT
 		bool validItemIndex(const int index);
 		/*! Clear and destroy all the stored plugins */
 		void clearPlugins();
-		/*! Get the VideoInformation_plugin according to a Host */
-		VideoInformationPlugin* getPluginByHost(QUrl URL);
 		/*! Thread executation */
 		void run();
 		/*! Load all plugins from /plugins/.js */
@@ -189,6 +187,8 @@ Q_OBJECT
 		void registerPlugin(VideoInformationPlugin *videoInformationPlugin);
 		/*! Unregister an existent videoInformationPlugin Plugin */
 		void unregisterPlugin(VideoInformationPlugin *videoInformationPlugin, bool destroy = true);
+		/*! Get the VideoInformationPlugin according to a Host */
+		VideoInformationPlugin* getPluginByHost(QUrl URL);
 		/*! Get a registered VideoInformationPlugin */
 		VideoInformationPlugin* getRegisteredPlugin(const int index);
 		/*! Get a registered VideoInformationPlugin by file name (*.js) */
