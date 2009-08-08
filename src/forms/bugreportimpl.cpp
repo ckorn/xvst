@@ -69,8 +69,8 @@ BugReportImpl::BugReportImpl(ProgramOptions *programOptions, QWidget * parent, Q
 	trackerReport->addGroup("1.8.2a", "825062");
 	trackerReport->addGroup("2.0.0a", "898961");
 	trackerReport->addGroup("2.0.1a", "899073");
-	trackerReport->addGroup("2.1", "910835");
-	trackerReport->addGroup("2.2", "930083");
+	trackerReport->addGroup("2.1",    "910835");
+	trackerReport->addGroup("2.2",    "930083");
 	// signals
 	connect(spbViewInfo, SIGNAL(clicked()), this, SLOT(viewInfoClicked()));
 	connect(btnSend, SIGNAL(clicked()), this, SLOT(sendReportClicked()));
@@ -93,10 +93,20 @@ void BugReportImpl::fillErrorInfo(VideoItem *videoItem, VideoInformation *videoI
 	lblVideoURL->setText(QString(lblVideoURL->text()).arg(videoItem->getURL()));
 }
 
+QString BugReportImpl::getPluginInformation(QString URL)
+{
+	VideoInformationPlugin *plugin = videoInformation->getPluginByHost(QUrl(URL));
+	// exists?
+	if (plugin != NULL)
+		return QString("%1 (%2)").arg(plugin->getScriptFile(true)).arg(plugin->getVersion());
+	else
+		return "-";
+}
+
 void BugReportImpl::viewInfoClicked()
 {
-	InfoViewImpl infoView(videoItem, edtName->text(), edtEmail->text(), 
-		rchComments->toPlainText(), this);
+	InfoViewImpl infoView(videoItem, getPluginInformation(videoItem->getURL()), edtName->text(),
+						  edtEmail->text(), rchComments->toPlainText(), this);
 	infoView.exec();
 }
 
@@ -114,6 +124,7 @@ void BugReportImpl::sendReportClicked()
 	info 	<< "Video Information:\n"
 			<< "Video URL: " + videoItem->getURL() + "\n"
 			<< "xVST Version: " + PROGRAM_VERSION + " (" + CURRENT_OS + ")" + "\n"
+			<< "Plugin Version: " + getPluginInformation(videoItem->getURL()) + "\n"
 			<< "FLV URL: " + videoItem->getVideoInformation().URL + "\n"
 			<< "FLV Title: " + videoItem->getVideoInformation().title + "\n\n"
 			<< "Sender Information:\n"

@@ -27,9 +27,12 @@
 
 #include "../programversion.h"
 #include "../videoitem.h"
+#include "../videoinformation.h"
 
-InfoViewImpl::InfoViewImpl(VideoItem *videoItem, QString userName, QString email,
-	QString comments, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+InfoViewImpl::InfoViewImpl(VideoItem *videoItem, QString pluginInfo,
+						   QString userName, QString email, QString comments,
+						   QWidget *parent, Qt::WFlags f)
+	: QDialog(parent, f)
 {
 	setupUi(this);
 #ifdef Q_WS_MAC
@@ -40,6 +43,7 @@ InfoViewImpl::InfoViewImpl(VideoItem *videoItem, QString userName, QString email
 	info 	<< "<p><b>Video Information:</b>\n"
 			<< "Video URL: " + videoItem->getURL() + "\n"
 			<< "xVST Version: " + PROGRAM_VERSION + " (" + CURRENT_OS + ")" + "\n"
+			<< "Plugin Version: " + pluginInfo + "\n"
 			<< "FLV URL: " + videoItem->getVideoInformation().URL + "\n"
 			<< "FLV Title: " + videoItem->getVideoInformation().title + "</p>"
 			<< "<p><b>Sender Information:</b>\n"

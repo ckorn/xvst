@@ -43,6 +43,8 @@ Q_OBJECT
 		VideoItem *videoItem; 				//!< VideoItem with the error
 		TrackerReport *trackerReport;		//!< Tracker report class
 		VideoInformation *videoInformation;	//!< Video service info
+		/*! Get used plugin information */
+		QString getPluginInformation(QString URL);
 	public:
 		/*! Class constructor */
 		BugReportImpl(ProgramOptions *programOptions, QWidget * parent = 0, Qt::WFlags f = 0);
