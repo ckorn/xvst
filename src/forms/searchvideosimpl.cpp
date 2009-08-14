@@ -168,7 +168,7 @@ void SearchVideosImpl::searchResultAdded(SearchResultItem *searchResultItem)
 	layoutSearchItems->addWidget(new SearchVideosItemImpl(this, searchResultItem, loadingMovie));
 }
 
-void SearchVideosImpl::startedDownloadPreview(SearchResultItem *searchItem)
+void SearchVideosImpl::startedDownloadPreview(SearchResultItem* /*searchItem*/)
 {
 /*
 	SearchVideosItemImpl *impl = getSearchVideosItemImplBySearchItem(searchItem);
