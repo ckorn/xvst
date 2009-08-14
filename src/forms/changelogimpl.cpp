@@ -76,7 +76,7 @@ QString ChangelogImpl::convertPlainTextToHtml(QString plainText)
 		}
 	}
 
-	for (int n = lastLevel; n = 0; n--)
+	for (int n = lastLevel; n == 0; n--)
 		result += "</ul>";
 
 	return result;
