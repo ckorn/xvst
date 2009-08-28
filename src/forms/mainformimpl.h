@@ -87,6 +87,10 @@ Q_OBJECT
 		// drop functions
 		void dragEnterEvent(QDragEnterEvent *event);
 		void dropEvent(QDropEvent *event);
+		// check if is possible add this video
+		bool canAddThisVideo(QString URL);
+		// try to add a new video
+		void addVideo(QString URL);
 	protected:
 		void changeEvent(QEvent *event);
 		void closeEvent(QCloseEvent *event);

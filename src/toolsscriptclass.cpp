@@ -37,7 +37,7 @@ ToolsScriptClass::ToolsScriptClass(QScriptEngine *engine)
 	QScriptValue _getUrlParam = engine->newFunction(func_getUrlParam);
 	engine->globalObject().setProperty("getUrlParam", _getUrlParam);
 
-	// regist getUrlParam(url,param) function
+	// regist cleanUrlParam(url) function
 	QScriptValue _cleanUrl = engine->newFunction(func_cleanUrl);
 	engine->globalObject().setProperty("cleanUrl", _cleanUrl);
 

@@ -335,6 +335,12 @@ void VideoDownload::pauseDownload(VideoItem *videoItem)
 void VideoDownload::resumeDownload(VideoItem *videoItem)
 {
 	if (videoItem == NULL) return;
+	// if is Ready and paused then it should start instead of resume
+	if (videoItem->isReadyAndPaused())
+	{
+		downloadVideo(videoItem);
+		return;
+	}
 	// can't resume the download now, so mark it as "next to start"
 	if (!canStartDownload())
 	{

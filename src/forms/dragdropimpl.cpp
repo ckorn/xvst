@@ -173,17 +173,28 @@ void DragDropImpl::contextMenuEvent(QContextMenuEvent * event)
 
 void DragDropImpl::addVideo(QString URL)
 {
+	// check if we already added this video
+	if (videoList->isAlreadyAdded(URL))
+	{
+		QMessageBox::information(this,
+								tr("Already added"),
+								tr("You already added this video. Check your downloads list."),
+								tr("Ok"));
+		// abort current process
+		return;
+	}
+	// init vars
 	bool ok = videoList->getVideoInformation()->isValidHost(URL);
 	QString blockMsg = "";
 	if (ok)
-	  {
-		  BlockedState bs = bsNotBlocked;
-		  ok = !videoList->getVideoInformation()->isBlockedHost(URL, bs);
-		  if (bs == bsBlocked)
-			  blockMsg = tr(" - Blocked site");
-		  else if (bs == bsAdultContent)
-			  blockMsg = tr(" - Adult content is not allowed");
-	  }
+	{
+		BlockedState bs = bsNotBlocked;
+		ok = !videoList->getVideoInformation()->isBlockedHost(URL, bs);
+		if (bs == bsBlocked)
+			blockMsg = tr(" - Blocked site");
+		else if (bs == bsAdultContent)
+			blockMsg = tr(" - Adult content is not allowed");
+	}
 	imgVideoService->setPixmap(QPixmap(videoList->getVideoInformation()->getHostImage(URL)));
 	imgVideoService->setToolTip(videoList->getVideoInformation()->getHostCaption(URL) + blockMsg);
 	if (ok)

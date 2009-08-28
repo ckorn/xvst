@@ -42,7 +42,8 @@ enum VideoState
 	vsError,
 	vsDeleted,
 	vsPaused, vsResuming,
-	vsNeedLogin
+	vsNeedLogin,
+	vsReadyAndPaused
 };
 
 enum VideoUpdateState
@@ -56,7 +57,8 @@ enum VideoPreState
 {
 	vpsNothing,
 	vpsPreDownloading,
-	vpsPreResuming
+	vpsPreResuming,
+	vpsPreResumingReadyPaused
 };
 
 struct VideoDefinition
@@ -143,6 +145,8 @@ Q_OBJECT
 		bool isNULL();
 		/*! Get if is Ready to be downloaded */
 		bool isReady();
+		/*! Get if is Ready but paused (download didn't started yet) */
+		bool isReadyAndPaused();
 		/*! Get if is Getting the video URL */
 		bool isGettingURL();
 		/*! Get if has the video URL */
@@ -171,6 +175,8 @@ Q_OBJECT
 		bool isDeleted();
 		/*! Get if is paused */
 		bool isPaused();
+		/*! Get if is any kind of paused (paused or readyPaused) */
+		bool isAnyKindOfPaused();
 		/*! Get if is being resumed */
 		bool isResuming();
 		/*! Get if is reported */
@@ -183,6 +189,8 @@ Q_OBJECT
 		bool isPreDownloading();
 		/*! Get if is pre-resuming */
 		bool isPreResuming();
+		/*! Get if is pre-resuming a readyPaused item */
+		bool isPreResumingReadyPaused();
 		/*! Get if is a custom download */
 		bool isCustomDownload();
 		/*! Get last update date */
@@ -253,6 +261,8 @@ Q_OBJECT
 		void setAsNULL(QObject *who = NULL);
 		/*! Set as ready */
 		void setAsReady(QObject *who = NULL);
+		/*! Set as ready and paused */
+		void setAsReadyAndPaused(QObject *who = NULL);
 		/*! Set as getting url */
 		void setAsGettingURL(QObject *who = NULL);
 		/*! Set as getted url */

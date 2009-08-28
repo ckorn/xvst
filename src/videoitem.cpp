@@ -156,6 +156,7 @@ QString VideoItem::getVideoStateAsString()
 					return tr("Getting info...");
 				case vpsPreDownloading:
 				case vpsPreResuming:
+				case vpsPreResumingReadyPaused:
 					return tr("Updating info...");
 			}
 		case vsGettedURL:
@@ -184,6 +185,8 @@ QString VideoItem::getVideoStateAsString()
 			return tr("Resuming...");
 		case vsNeedLogin:
 			return tr("Need login...");
+		case vsReadyAndPaused:
+			return tr("Paused");
 	}
 	// default value
 	return "-";
@@ -197,6 +200,11 @@ bool VideoItem::isNULL()
 bool VideoItem::isReady()
 {
 	return videoState == vsGettedURL;
+}
+
+bool VideoItem::isReadyAndPaused()
+{
+	return videoState == vsReadyAndPaused;
 }
 
 bool VideoItem::isGettingURL()
@@ -269,6 +277,11 @@ bool VideoItem::isPaused()
 	return videoState == vsPaused;
 }
 
+bool VideoItem::isAnyKindOfPaused()
+{
+	return isReadyAndPaused() || isPaused();
+}
+
 bool VideoItem::isResuming()
 {
 	return videoState == vsResuming;
@@ -297,6 +310,11 @@ bool VideoItem::isPreDownloading()
 bool VideoItem::isPreResuming()
 {
 	return videoPreState == vpsPreResuming;
+}
+
+bool VideoItem::isPreResumingReadyPaused()
+{
+	return videoPreState == vpsPreResumingReadyPaused;
 }
 
 bool VideoItem::isCustomDownload()
@@ -568,6 +586,12 @@ void VideoItem::setAsNULL(QObject *who)
 void VideoItem::setAsReady(QObject *who)
 {
 	setAsGettedURL(who);
+}
+
+void VideoItem::setAsReadyAndPaused(QObject *who)
+{
+	if (isLocked() && who != locker) return;
+	videoState = vsReadyAndPaused;
 }
 
 void VideoItem::setAsGettingURL(QObject *who)

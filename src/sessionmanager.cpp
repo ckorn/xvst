@@ -65,6 +65,8 @@ void SessionManager::saveSession(VideoListController *videoListController)
 				settings.setValue("videoState", vsGettedURL);
 			else if (videoItem->isConverting())
 				settings.setValue("videoState", vsDownloaded);
+			else if (videoItem->isResuming())
+				settings.setValue("videoState", vsPaused);
 			else
 				settings.setValue("videoState", videoItem->getVideoState());
 			settings.setValue("errorCode", videoItem->getErrorCode());
@@ -106,7 +108,7 @@ void SessionManager::loadSession(VideoListController *videoListController)
 		videoItem->setVideoInformation(videoInformation);
 		if (videoItem->hasErrors()) videoItem->setAsReported();
 		if (settings.value(videos.at(n) + "/customDownload", false).toBool()) videoItem->setAsCustomDownload();
-		if (!videoItem->isReady() && !videoItem->isNULL() && !videoItem->isCanceled()
+		if (!videoItem->isReady() && !videoItem->isReadyAndPaused() && !videoItem->isNULL() && !videoItem->isCanceled()
 			&& !QFile::exists(videoItem->getVideoFile())) continue;
 		videoListController->addVideo(videoItem);
 	}

@@ -135,14 +135,15 @@ void VideoListController::timerEvent(QTimerEvent* /*event*/)
 
 	// get first item which has a pre-state assigned
 	VideoItem *videoItem = getFirstWithPreState();
+
 	// if we found an item with a pre-state, then it has a high priority (no one can start before it)
-	if (videoItem != NULL)// && videoDownload->canStartDownload())
+	if (videoItem != NULL)
 	{
+		// the item don't need to update the url
 		if (!videoItem->needUpdateUrl())
 		{
-			if (videoItem->isPreDownloading()) startDownload(videoItem);
+			if (videoItem->isPreDownloading() || videoItem->isPreResumingReadyPaused()) startDownload(videoItem);
 			else if (videoItem->isPreResuming()) resumeDownload(videoItem);
-
 		}
 	}
 	else // no special items were found
@@ -529,8 +530,17 @@ void VideoListController::pauseDownload(VideoItem *videoItem)
 			videoItem->setAsNothingPreState();
 			emit videoUpdated(videoItem);
 		}
-		else
-			videoDownload->pauseDownload(videoItem);
+		else // pause
+		{
+			// isn't downloading, but can be paused because is ready (new state will be ReadyAndPaused)
+			if (videoItem->isReady())
+			{
+				videoItem->setAsReadyAndPaused();
+				emit videoUpdated(videoItem);
+			}
+			else // is downloading, so pause it
+				videoDownload->pauseDownload(videoItem);
+		}
 	}
 }
 
@@ -541,7 +551,7 @@ void VideoListController::resumeDownload(VideoItem *videoItem)
 		videoDownload->resumeDownload(videoItem);
 	else // url expired and not is updating this URL
 		if (!videoItem->isUpdatingUrl() && !videoItem->needUpdateUrl())
-			videoItem->setAsNeedUpdateURL(vpsPreResuming);
+			videoItem->setAsNeedUpdateURL(videoItem->isReadyAndPaused() ? vpsPreResumingReadyPaused : vpsPreResuming);
 }
 
 void VideoListController::cancelDownload(VideoItem *videoItem)

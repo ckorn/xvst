@@ -29,6 +29,7 @@
 
 #include "../tools.h"
 #include "../options.h"
+#include "../videolistcontroller.h"
 #include "../videoinformation.h"
 #include "../videoconvert.h"
 #include "../videoitem.h"
@@ -111,7 +112,13 @@ QString AddVideoImpl::getCustomDownloadTitle()
 
 void AddVideoImpl::btnOkClicked()
 {
-	done(QDialog::Accepted);
+	if (VideoListController::instance()->isAlreadyAdded(edtURL->text()))
+		QMessageBox::information(this,
+								tr("Already added"),
+								tr("You already added this video. Check your downloads list."),
+								tr("Ok"));
+	else // all ok
+		done(QDialog::Accepted);
 }
 
 void AddVideoImpl::edtURLChanged(const QString &text)
@@ -154,7 +161,7 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 
 void AddVideoImpl::spbPasteURLClicked()
 {
-	edtURL->setText(QApplication::clipboard()->text());
+	edtURL->setText(QApplication::clipboard()->text().trimmed());
 }
 
 void AddVideoImpl::chbOverrideConversionClicked()

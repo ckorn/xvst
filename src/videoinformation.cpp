@@ -657,6 +657,9 @@ QScriptValue VideoInformationPlugin::func_isPluginInstalled(QScriptContext *cont
 		QString id = context->argument(0).toString();
 		// get this plugin is installed
 		VideoInformation *vidInf = VideoInformation::instance();
+		// VideoInformation instance exists?
+		if (vidInf == NULL) return QScriptValue();
+		// get if this plugin has been installed
 		bool installed = vidInf->getRegisteredPlugin(id + ".js", true) != NULL;
 		// return the asked item from url
 		return engine->newVariant(QVariant(installed));

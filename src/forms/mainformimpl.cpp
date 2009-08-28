@@ -554,8 +554,11 @@ void MainFormImpl::pauseResumeDownloadVideoClicked()
 	// we have a video to resume or pause?
 	if (videoItem != NULL)
 	{
-		if (videoItem->isDownloading() || videoItem->isResuming()) videoList->pauseDownload(videoItem);
-		else if (videoItem->isPaused())	videoList->resumeDownload(videoItem);
+		// is ready, and we want pause it before start download
+		if (videoItem->isDownloading() || videoItem->isResuming() || videoItem->isReady())
+			videoList->pauseDownload(videoItem);
+		else if (videoItem->isAnyKindOfPaused())
+			videoList->resumeDownload(videoItem);
 		updateVisualControls();
 	}
 }
@@ -863,7 +866,7 @@ void MainFormImpl::videoMoved(int from, int to)
 // shortcut signals
 void MainFormImpl::pasteURLfromClipboardClicked()
 {
-	dragDropForm->addVideoURL(QApplication::clipboard()->text());
+	addVideo(QApplication::clipboard()->text().trimmed());
 }
 
 // updates
@@ -1064,14 +1067,15 @@ void MainFormImpl::updateVisualControls()
 		actMoveUP->setEnabled(false);
 		actMoveDOWN->setEnabled(false);
 	}
-	else
+	else // item selected
 	{
 		btnDeleteVideo->setEnabled(videoItem->isRemovable());
 		btnStartDownload->setEnabled(videoList->canStartDownload() && (videoItem->isReady() || videoItem->isCanceled()));
-		btnPauseResumeDownload->setEnabled(videoItem->isDownloading() || videoItem->isPaused() || videoItem->isResuming());
+		btnPauseResumeDownload->setEnabled(videoItem->isDownloading() || videoItem->isAnyKindOfPaused() ||
+										   videoItem->isResuming() || videoItem->isReady());
 		btnCancelDownload->setEnabled(videoItem->isDownloading());
 		
-		if (videoItem->isPaused())
+		if (videoItem->isAnyKindOfPaused())
 			btnPauseResumeDownload->setText(tr("Resume download"));
 		else 
 			btnPauseResumeDownload->setText(tr("Pause download"));
@@ -1224,7 +1228,30 @@ void MainFormImpl::dropEvent(QDropEvent *event)
 	QString url = event->mimeData()->text();
 	if (getTokenCount(url, "\n") > 0) url = getToken(url, "\n", 0);
 	// emit drop event with url
-	if (videoList != NULL) videoList->addVideo(url);
+	if (videoList != NULL && canAddThisVideo(url)) addVideo(url); //videoList->addVideo(url);
 	// ok
 	event->acceptProposedAction();
+}
+
+bool MainFormImpl::canAddThisVideo(QString URL)
+{
+	if (videoList->isAlreadyAdded(URL))
+	{
+		QMessageBox::information(this,
+								tr("Already added"),
+								tr("You already added this video. Check your downloads list."),
+								tr("Ok"));
+		// can't add this video
+		return false;
+	}
+	else // yes, can add it
+		return true;
+}
+
+void MainFormImpl::addVideo(QString URL)
+{
+	// init vars
+	bool ok = videoList->getVideoInformation()->isValidHost(URL) && canAddThisVideo(URL);
+	// can be added?
+	if (ok)	videoList->addVideo(URL);
 }

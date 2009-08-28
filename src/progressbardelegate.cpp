@@ -45,20 +45,20 @@ void ProgressBarDelegate::paint(QPainter * painter, const QStyleOptionViewItem &
 		if (videoItem != NULL)
 		{
 			if (videoItem->isDownloading() || videoItem->isConverting() || 
-				videoItem->isPaused() || videoItem->isResuming())
+				videoItem->isAnyKindOfPaused() || videoItem->isResuming())
 			{
 				// paint the progress bar
 				xProgressBar progressBar(option.rect, painter);
 				// set the color schema
 				progressBar.setColorSchema(
-					videoItem->isDownloading() ? 0 :	// downloading progress bar
-					videoItem->isConverting() ? 8 :		// converting progress bar
-					videoItem->isPaused() ? 9 :			// paused progress bar
-					4);									// resuming progress bar
+					videoItem->isDownloading() ? 0 :		// downloading progress bar
+					videoItem->isConverting() ? 8 :			// converting progress bar
+					videoItem->isAnyKindOfPaused() ? 9 :	// paused progress bar
+					4);										// resuming progress bar
 				// display a text only, for paused and resuming videos
-				progressBar.setDisplayText(videoItem->isPaused() || videoItem->isResuming());
+				progressBar.setDisplayText(videoItem->isAnyKindOfPaused() || videoItem->isResuming());
 				// set a custom text, only for paused and resuming videos
-				if (videoItem->isPaused() || videoItem->isResuming()) 
+				if (videoItem->isAnyKindOfPaused() || videoItem->isResuming())
 					progressBar.setText(videoItem->getVideoStateAsString());
 				// set progressbar value
 				progressBar.setValue(videoItem->getProgress());
