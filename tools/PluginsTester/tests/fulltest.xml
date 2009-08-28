@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <tests title="Full Plugins Tests">
 	<test>
 		<plugin file="5min.js" title="5min" />
@@ -5,7 +6,7 @@
 	</test>
 	<test>
 		<plugin file="123video.js" title="123video" />
-		<video url="http://www.123video.nl/playvideos.asp?MovieID=517065" caption="Etta James - All I Could do was Cry" size="-1" />
+		<video url="http://www.123video.nl/playvideos.asp?MovieID=517065" caption="Etta James - All I Could do was Cry" size="0" />
 	</test>
 	<test>
 		<plugin file="aniboom.js" title="Aniboom" />
@@ -17,7 +18,7 @@
 	</test>
 	<test>
 		<plugin file="atv.js" title="ATV" />
-		<video url="http://atv.hu/videotar/090731_megvan_balla_irma_gyilkosa__megsem_a_fia_tette.html" caption="Megvan Balla Irma gyilkosa! Megsem a fia tette" size="0" />
+		<video url="http://atv.hu/videotar/090731_megvan_balla_irma_gyilkosa__megsem_a_fia_tette.html" caption="Megvan Balla Irma gyilkosa! Mégsem a fia tette" size="0" />
 	</test>
 	<test>
 		<plugin file="badjojo.js" title="BadJojo" />
@@ -53,7 +54,7 @@
 	</test>
 	<test>
 		<plugin file="clip4e.js" title="Clip4e" />
-		<video url="http://www.clip4e.com/play_monkityyy.htm" caption="MONKITYYY" size="3790137" />
+		<video url="http://www.clip4e.com/play_monkityyy.htm" caption="MONKITYYY" size="363344" />
 	</test>
 	<test>
 		<plugin file="clipjunkie.js" title="ClipJunkie" />
@@ -61,7 +62,7 @@
 	</test>
 	<test>
 		<plugin file="clipfish.js" title="ClipFish" />
-		<video url="http://www.clipfish.de/channel/279/video/3036605/cannes-2009-glitzer-glamour-und-glotzbrillen/" caption="Cannes 2009: Glitzer, Glamour und Glotzbrillen" size="4598713" />
+		<video url="http://www.clipfish.de/video/3113575/schwein-gehabt/" caption="Pfurtz" size="776556" />
 	</test>
 	<test>
 		<plugin file="collagehumor.js" title="CollageHumor" />
@@ -69,7 +70,7 @@
 	</test>
 	<test>
 		<plugin file="dailymotion.js" title="DailyMotion" />
-		<video url="http://www.dailymotion.com/es/featured/channel/fun/video/x98z7e_el-picadito_fun" caption="El Picadito" size="700974" />
+		<video url="http://www.dailymotion.com/es/featured/channel/fun/video/x98z7e_el-picadito_fun" caption="El Picadito" size="700614" />
 	</test>
 	<test>
 		<plugin file="demoscene.js" title="Demoscene" />
@@ -199,6 +200,10 @@
 		<plugin file="redtube.js" title="RedTube" />
 		<video url="http://www.redtube.com/21793" caption="Eva and her daughters boyfriend" size="10424777" />
 	</test>
+	<test>
+		<plugin file="scientificblogging.js" title="Scientific Blogging" />
+		<video url="http://video.scientificblogging.com/video/Tommaso-Dorigo-leo2d1" caption="Tommaso Dorigo leo2d1" size="1129291" />
+	</test>	
 	<test>
 		<plugin file="spankwire.js" title="Spankwire" />
 		<video url="http://www.spankwire.com/SUPER-HEAD-Karrine-Stephans/video118962/" caption="SUPER HEAD! Karrine Stephans" size="52129989" />
