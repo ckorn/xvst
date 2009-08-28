@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+	// set http global user agent
+	Http::setGlobalUserAgent("xVST-PluginsTester");
+
 	ProgramSettings settings;
 	settings.load();
 	ui->edtPluginsDir->setText(settings.getPluginsDir());
