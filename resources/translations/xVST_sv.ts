@@ -142,6 +142,18 @@
         <source>User custom video download</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
 </context>
 <context>
     <name>BugReport</name>
@@ -658,6 +670,18 @@
     <message>
         <source> - Adult content is not allowed</source>
         <translation> - Vuxet material tillåts inte</translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
     </message>
 </context>
 <context>
@@ -1256,6 +1280,14 @@ font-size:12px;
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewLanguages</name>
@@ -1634,10 +1666,6 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save and restore the curren session</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>If this option is checked, the completed videos will not be restored in next session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1983,6 +2011,10 @@ font-size:12px;
     </message>
     <message>
         <source>Use the system configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save and restore the current session</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

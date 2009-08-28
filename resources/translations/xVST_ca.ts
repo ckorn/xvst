@@ -169,22 +169,37 @@
 <context>
     <name>AddVideoImpl</name>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="52"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="53"/>
         <source>mark as custom download</source>
         <translation>marca&apos;l com a personalitzat</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="131"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="117"/>
+        <source>Already added</source>
+        <translation>Repetit</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="118"/>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>Aquest vídeo ja està afegit. Comprova la teva llista de descàrregues.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="119"/>
+        <source>Ok</source>
+        <translation>D&apos;acord</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="138"/>
         <source> - Adult content is not allowed</source>
         <translation> - El contingut per adults no està permès</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="186"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="193"/>
         <source>User custom video download</source>
         <translation>Descàrrega personalitzada</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="129"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="136"/>
         <source> - Blocked site</source>
         <translation> - Bloquejat</translation>
     </message>
@@ -340,13 +355,13 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="149"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="161"/>
         <source>Thank you for your report.</source>
         <translation>Gràcies per el teu report.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="150"/>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="161"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="162"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="173"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -830,12 +845,12 @@
 <context>
     <name>DragDropImpl</name>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="185"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="196"/>
         <source> - Adult content is not allowed</source>
         <translation> - El contingut per adults no està permès</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="183"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="194"/>
         <source> - Blocked site</source>
         <translation> - Bloquejat</translation>
     </message>
@@ -843,6 +858,21 @@
         <location filename="../../src/forms/dragdropimpl.cpp" line="120"/>
         <source>Alpha blend value</source>
         <translation>Nivell de transparència</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="180"/>
+        <source>Already added</source>
+        <translation>Repetit</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="181"/>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>Aquest vídeo ja està afegit. Comprova la teva llista de descàrregues.</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="182"/>
+        <source>Ok</source>
+        <translation>D&apos;acord</translation>
     </message>
 </context>
 <context>
@@ -1496,7 +1526,7 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="360"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="577"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="580"/>
         <source>No</source>
         <translation>No</translation>
     </message>
@@ -1512,25 +1542,26 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="360"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="576"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="579"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="426"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="886"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="889"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="887"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="890"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;aplicació xUpdater no s&apos;ha pogut trobar.&lt;br&gt;&lt;br&gt;Reinstal·la el xVideoServiceThief si vols activar les actualitzacions automàtiques del programa.</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="428"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="664"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="888"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="667"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="891"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1243"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -1540,32 +1571,32 @@ font-size:12px;
         <translation>Un altre procés està treballant, si us plau para&apos;l o espera a que finalitzi.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1119"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1123"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Descarregant: %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1127"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1131"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertint: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1033"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1036"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Vídeos afegits:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completats)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1037"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1040"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Descarregant:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1041"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1044"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Velocitat de baixada:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1042"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1045"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
@@ -1595,35 +1626,45 @@ font-size:12px;
         <translation>Ajuda</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="574"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="577"/>
         <source>Cancel download</source>
         <translation>Cancel·la descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="575"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="578"/>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Desitges cancel·lar la descàrrega de &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="662"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="665"/>
         <source>Error message</source>
         <translation>Missatge d&apos;error</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="663"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="666"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Aquest vídeo té el següent error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1057"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1077"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1060"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1081"/>
         <source>Pause download</source>
         <translation>Pausa descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1075"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1079"/>
         <source>Resume download</source>
         <translation>Continua descàrrega</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1241"/>
+        <source>Already added</source>
+        <translation>Repetit</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1242"/>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>Aquest vídeo ja està afegit. Comprova la teva llista de descàrregues.</translation>
     </message>
 </context>
 <context>
@@ -2052,9 +2093,8 @@ font-size:12px;
         <translation>Usa aquest idioma</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="668"/>
         <source>Save and restore the curren session</source>
-        <translation>Desa i recupera la sessió actual</translation>
+        <translation type="obsolete">Desa i recupera la sessió actual</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="895"/>
@@ -2295,6 +2335,11 @@ font-size:12px;
     <message>
         <location filename="../../ui/options.ui" line="662"/>
         <source>Save and restore current session checkbox</source>
+        <translation>Desa i recupera la sessió actual</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="668"/>
+        <source>Save and restore the current session</source>
         <translation>Desa i recupera la sessió actual</translation>
     </message>
     <message>
@@ -3523,52 +3568,52 @@ font-size:12px;
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="377"/>
+        <location filename="../../src/videoitem.cpp" line="395"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="176"/>
+        <location filename="../../src/videoitem.cpp" line="177"/>
         <source>Blocked</source>
         <translation>Bloquejat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="174"/>
+        <location filename="../../src/videoitem.cpp" line="175"/>
         <source>Canceled</source>
         <translation>Cancel·lat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="172"/>
+        <location filename="../../src/videoitem.cpp" line="173"/>
         <source>Completed</source>
         <translation>Finalitzat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="170"/>
+        <location filename="../../src/videoitem.cpp" line="171"/>
         <source>Converted</source>
         <translation>Convertit</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="168"/>
+        <location filename="../../src/videoitem.cpp" line="169"/>
         <source>Converting...</source>
         <translation>Convertint...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="180"/>
+        <location filename="../../src/videoitem.cpp" line="181"/>
         <source>Deleted</source>
         <translation>Esborrat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="166"/>
+        <location filename="../../src/videoitem.cpp" line="167"/>
         <source>Downloaded</source>
         <translation>Descarregat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="164"/>
+        <location filename="../../src/videoitem.cpp" line="165"/>
         <source>Downloading...</source>
         <translation>Descarregant...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="178"/>
+        <location filename="../../src/videoitem.cpp" line="179"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -3578,107 +3623,108 @@ font-size:12px;
         <translation>Obtenint info...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="159"/>
+        <location filename="../../src/videoitem.cpp" line="160"/>
         <source>Updating info...</source>
         <translation>Actualitzant...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="162"/>
+        <location filename="../../src/videoitem.cpp" line="163"/>
         <source>Ready</source>
         <translation>Preparat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="182"/>
+        <location filename="../../src/videoitem.cpp" line="183"/>
+        <location filename="../../src/videoitem.cpp" line="189"/>
         <source>Paused</source>
         <translation>Pausat</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="184"/>
+        <location filename="../../src/videoitem.cpp" line="185"/>
         <source>Resuming...</source>
         <translation>Resumint...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="186"/>
+        <location filename="../../src/videoitem.cpp" line="187"/>
         <source>Need login...</source>
         <translation>Necessita login...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="434"/>
+        <location filename="../../src/videoitem.cpp" line="452"/>
         <source>Unable to create the destination dir</source>
         <translation>Impossible crear el directori de destí</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="436"/>
+        <location filename="../../src/videoitem.cpp" line="454"/>
         <source>Unable to create the destination file</source>
         <translation>Impossible crear el fitxer de destí</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="438"/>
+        <location filename="../../src/videoitem.cpp" line="456"/>
         <source>Invalid URL</source>
         <translation>URL Invàlida</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="440"/>
+        <location filename="../../src/videoitem.cpp" line="458"/>
         <source>An another download is already active</source>
         <translation>Hi ha una altra descàrrega activa</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="442"/>
+        <location filename="../../src/videoitem.cpp" line="460"/>
         <source>Invalid file size</source>
         <translation>Volum del fitxer invàlid</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="444"/>
+        <location filename="../../src/videoitem.cpp" line="462"/>
         <source>The video to resume is missing</source>
         <translation>El fitxer a continuar no existeix</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="446"/>
+        <location filename="../../src/videoitem.cpp" line="464"/>
         <source>Unable resume the download</source>
         <translation>Impossible continuar la descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="448"/>
+        <location filename="../../src/videoitem.cpp" line="466"/>
         <source>Unable append data to file</source>
         <translation>Impossible afegir contingut al fitxer</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="450"/>
+        <location filename="../../src/videoitem.cpp" line="468"/>
         <source>flvstreamer is missing (impossible download from RTMP server)</source>
         <translation>No s&apos;ha pogut trobar el flvstreamer (sense ell és impossible baixar vídeos dels servidors RTMP)</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="452"/>
+        <location filename="../../src/videoitem.cpp" line="470"/>
         <source>Unable to open the destination file</source>
         <translation>Impossible obrir el fitxer de destí</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="454"/>
+        <location filename="../../src/videoitem.cpp" line="472"/>
         <source>Failed to connect with RTMP server</source>
         <translation>Ha fallat al intentar connectar amb el servidor RTMP</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="456"/>
+        <location filename="../../src/videoitem.cpp" line="474"/>
         <source>Unable to resume the FLV file</source>
         <translation>Impossible continuar la descàrrega</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="458"/>
+        <location filename="../../src/videoitem.cpp" line="476"/>
         <source>Download incomplete (due to download errors)</source>
         <translation>Descàrrega incompleta (per problemes amb la baixada)</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="460"/>
+        <location filename="../../src/videoitem.cpp" line="478"/>
         <source>Failed on initialize the pthread_create</source>
         <translation>Ha fallat al intentar inicialitzar el pthread_create</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="462"/>
+        <location filename="../../src/videoitem.cpp" line="480"/>
         <source>File to resume not found</source>
         <translation>El fitxer a continuar no existeix</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="464"/>
+        <location filename="../../src/videoitem.cpp" line="482"/>
         <source>Connection error: Unable to download the video</source>
         <translation>Error de connexió: Impossible baixar el fitxer</translation>
     </message>

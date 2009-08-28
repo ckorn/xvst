@@ -53,11 +53,11 @@
     </message>
     <message>
         <source>Enable/disable the video conversions</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktywuj/Deaktywuj konwersję plików wideo</translation>
     </message>
     <message>
         <source>Convert videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Konwertuj pliki wideo</translation>
     </message>
     <message>
         <source>Convert video to Mpeg/DivX/etc...</source>
@@ -141,6 +141,18 @@
     <message>
         <source>User custom video download</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished">Już zostało dodane</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished">Dodałeś już ten film. Sprawdź listę.</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
     </message>
 </context>
 <context>
@@ -266,18 +278,18 @@
     </message>
     <message>
         <source>Thank you for your report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dzięĸuję za twój raport.</translation>
     </message>
 </context>
 <context>
     <name>ChangelogImpl</name>
     <message>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista zmian</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation type="unfinished">Wersja:</translation>
+        <translation>Wersja:</translation>
     </message>
     <message>
         <source>Ok button</source>
@@ -285,11 +297,11 @@
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Close the Changelog dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij listę zmian</translation>
     </message>
     <message>
         <source>Close the Changelot dialog</source>
@@ -297,15 +309,15 @@
     </message>
     <message>
         <source>List of the complete xVST changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompletna lista zmian dla xVST</translation>
     </message>
     <message>
         <source>xVST Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista zmian w xVST</translation>
     </message>
     <message>
         <source>List of program versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista wersji programów</translation>
     </message>
     <message>
         <source>Versions combobox</source>
@@ -328,7 +340,7 @@
     </message>
     <message>
         <source>Cancel the checking for updates process and close this dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj sprawdzanie aktualizacji i zamknij okno</translation>
     </message>
     <message>
         <source>Cancel button</source>
@@ -339,31 +351,31 @@
     <name>CheckUpdatesWorker</name>
     <message>
         <source>Updates</source>
-        <translation type="unfinished">Aktualizacje</translation>
+        <translation>Aktualizacje</translation>
     </message>
     <message>
         <source>You are using the most recent version of this program.</source>
-        <translation type="unfinished">Używasz najnowszej wersji tego programu.</translation>
+        <translation>Używasz najnowszej wersji tego programu.</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Cancelling... please wait...</source>
-        <translation type="unfinished">Anulowanie... proszę poczekać...</translation>
+        <translation>Anulowanie... proszę poczekać...</translation>
     </message>
     <message>
         <source>Checking for updates...</source>
-        <translation type="unfinished">Sprawdzanie aktualizacji...</translation>
+        <translation>Sprawdzanie aktualizacji...</translation>
     </message>
     <message>
         <source>Update Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Centrum Aktualizacji</translation>
     </message>
     <message>
         <source>Please, download the new version of &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; from &lt;a href=&apos;%2&apos;&gt;here.&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę, ściągnij najnowaszą wersję &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; &lt;a href=&apos;%2&apos;&gt;tutaj.&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -472,7 +484,7 @@
     </message>
     <message>
         <source>Cancel button</source>
-        <translation type="unfinished">Przycisk Anuluj</translation>
+        <translation>Przycisk Anuluj</translation>
     </message>
 </context>
 <context>
@@ -498,7 +510,7 @@
     </message>
     <message>
         <source>Confirm and close the window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zatwierdź i zamknij okno</translation>
     </message>
     <message>
         <source>Ok button</source>
@@ -510,7 +522,7 @@
     </message>
     <message>
         <source>Discard and close window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anuluj i zamknij okno</translation>
     </message>
     <message>
         <source>Cancel button</source>
@@ -660,6 +672,18 @@
         <source>Alpha blend value</source>
         <translation>Wartość efektu przeźroczystości</translation>
     </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished">Już zostało dodane</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished">Dodałeś już ten film. Sprawdź listę.</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
 </context>
 <context>
     <name>InfoView</name>
@@ -758,15 +782,15 @@ font-size:12px;
     </message>
     <message>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <translation>Wesprzyj rozwój &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>List of supported services</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista wspieranych serwisów</translation>
     </message>
     <message>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wesprzyj rozwój &lt;b&gt;xVideoServiceThief&lt;/b&gt; poprzez Paypal! To łatwe i szybkie! :)</translation>
     </message>
     <message>
         <source>Support button</source>
@@ -786,49 +810,49 @@ font-size:12px;
     </message>
     <message>
         <source>Close button</source>
-        <translation type="unfinished">Przycisk zamknij</translation>
+        <translation>Przycisk zamknij</translation>
     </message>
     <message>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista zmian</translation>
     </message>
     <message>
         <source>List of services</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista serwisów</translation>
     </message>
 </context>
 <context>
     <name>InformationImpl</name>
     <message>
         <source>&lt;p&gt;Total websites supported (plugins installed): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Wszystkie obsługiwane serwisy (zainstalowane wtyczki): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Adult web sites:</source>
-        <translation type="unfinished"></translation>
+        <translation>Strony dla dorosłych:</translation>
     </message>
     <message>
         <source>Music web sites:</source>
-        <translation type="unfinished"></translation>
+        <translation>Strony z muzyką:</translation>
     </message>
     <message>
         <source>Adult sites are blocked...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zablokowane strony dla dorosłych...</translation>
     </message>
 </context>
 <context>
     <name>LoadingImpl</name>
     <message>
         <source>Loading</source>
-        <translation type="unfinished"></translation>
+        <translation>Wczytywanie</translation>
     </message>
     <message>
         <source>Loading plugins... please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wczytywanie wtyczek... proszę czekać...</translation>
     </message>
     <message>
         <source>Plugins loaded</source>
-        <translation type="unfinished"></translation>
+        <translation>Załadowane wtyczki</translation>
     </message>
 </context>
 <context>
@@ -1027,7 +1051,7 @@ font-size:12px;
     </message>
     <message>
         <source>Convert videos</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konwertuj pliki wideo</translation>
     </message>
     <message>
         <source>Downloads directory</source>
@@ -1055,7 +1079,7 @@ font-size:12px;
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Łączenie...</translation>
+        <translation>Łączenie...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 bytes/sec</source>
@@ -1063,11 +1087,11 @@ font-size:12px;
     </message>
     <message>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <translation>Wesprzyj finansowo rozwój &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wesprzyj finansowo rozwój &lt;b&gt;xVideoServiceThief&lt;/b&gt; przez Paypal! To łatwe i szybkie! :)</translation>
     </message>
     <message>
         <source>Support button</source>
@@ -1075,11 +1099,11 @@ font-size:12px;
     </message>
     <message>
         <source>Schedule option is &lt;b&gt;enabled&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcja harmonogramu jest &lt;b&gt;włączona&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Search videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Szukaj filmów</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
@@ -1194,11 +1218,11 @@ font-size:12px;
     </message>
     <message>
         <source>- Downloading: %1 (%2, %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>- Ściąganie: %1 (%2, %3)</translation>
     </message>
     <message>
         <source>- Converting: %1 (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>- Enkodowanie: %1 (%2)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
@@ -1206,7 +1230,7 @@ font-size:12px;
     </message>
     <message>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;Ściągnięto:&lt;/b&gt; %1 z %2</translation>
+        <translation>&lt;b&gt;Ściągnięto:&lt;/b&gt; %1 z %2</translation>
     </message>
     <message>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
@@ -1246,7 +1270,7 @@ font-size:12px;
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik</translation>
     </message>
     <message>
         <source>Controllers</source>
@@ -1260,28 +1284,36 @@ font-size:12px;
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished">Już zostało dodane</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished">Dodałeś już ten film. Sprawdź listę.</translation>
+    </message>
 </context>
 <context>
     <name>NewLanguages</name>
     <message>
         <source>Your installed languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Zainstalowane języki</translation>
     </message>
     <message>
         <source>List with all installed languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista wszystkich zainstalowanych języków</translation>
     </message>
     <message>
         <source>Languages list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista tłumaczeń</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>Uninstall the selected language</source>
-        <translation type="unfinished"></translation>
+        <translation>Odinstaluj zaznaczone tłumaczenie</translation>
     </message>
     <message>
         <source>Uninstall language button</source>
@@ -1289,15 +1321,15 @@ font-size:12px;
     </message>
     <message>
         <source>Uninstall selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Odinstaluj zaznaczone</translation>
     </message>
     <message>
         <source>Available languages to install</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostępne tłumaczenia</translation>
     </message>
     <message>
         <source>List with all languages which you can install</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista wszystkich tłumaczeń, które możesz zainstalować</translation>
     </message>
     <message>
         <source>Languages to install list</source>
@@ -1309,7 +1341,7 @@ font-size:12px;
     </message>
     <message>
         <source>Install the selected language</source>
-        <translation type="unfinished"></translation>
+        <translation>Instaluj zaznaczone tłumaczenie</translation>
     </message>
     <message>
         <source>Install language button</source>
@@ -1317,11 +1349,11 @@ font-size:12px;
     </message>
     <message>
         <source>Install selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Instaluj zaznaczone</translation>
     </message>
     <message>
         <source>Close the Languages manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij Menedżer tłumaczeń</translation>
     </message>
     <message>
         <source>Close button</source>
@@ -1329,42 +1361,42 @@ font-size:12px;
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Zamknij</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Languages manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mededżer tłumaczeń</translation>
     </message>
 </context>
 <context>
     <name>NewLanguagesImpl</name>
     <message>
         <source>Uninstall language</source>
-        <translation type="unfinished"></translation>
+        <translation>Odinstaluj język</translation>
     </message>
     <message>
         <source>Wish you uninstall the lanuage?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcesz odinstalować tłumaczenie?</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished">Tak</translation>
+        <translation>Tak</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished">Nie</translation>
+        <translation>Nie</translation>
     </message>
     <message>
         <source>Install language</source>
-        <translation type="unfinished"></translation>
+        <translation>Instaluj tłumaczenie</translation>
     </message>
     <message>
         <source>Language uninstall error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd przy instalowaniu tłumaczenia</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.</source>
@@ -1380,11 +1412,11 @@ font-size:12px;
     </message>
     <message>
         <source>Installing new language...</source>
-        <translation type="unfinished"></translation>
+        <translation>Instaluję nowe tłumaczenie...</translation>
     </message>
     <message>
         <source>Language install error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd przy instalowaniu tłumaczenia</translation>
     </message>
     <message>
         <source>Some errors has ocurred on try install the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before install new languages.</source>
@@ -1400,7 +1432,7 @@ font-size:12px;
     </message>
     <message>
         <source>Wish you install this new language?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcesz zainstalować nowe tłumaczenie?</translation>
     </message>
     <message>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
@@ -1583,7 +1615,7 @@ font-size:12px;
     </message>
     <message>
         <source>Save and restore the curren session</source>
-        <translation>Zapisz i odzyskaj aktualną sesję</translation>
+        <translation type="obsolete">Zapisz i odzyskaj aktualną sesję</translation>
     </message>
     <message>
         <source>Check for new versions every:</source>
@@ -1631,11 +1663,11 @@ font-size:12px;
     </message>
     <message>
         <source>Options menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Menu opcji</translation>
     </message>
     <message>
         <source>Path which the downloaded video will be saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Miejsce gdzie ściągnięty film ma być zapisany</translation>
     </message>
     <message>
         <source>Downloads directory</source>
@@ -1691,11 +1723,11 @@ font-size:12px;
     </message>
     <message>
         <source>Enable/disable the video conversions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktywuj/Deaktywuj konwersję plików wideo</translation>
     </message>
     <message>
         <source>Convert videos</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konwertuj pliki wideo</translation>
     </message>
     <message>
         <source>Video output format</source>
@@ -1743,11 +1775,11 @@ font-size:12px;
     </message>
     <message>
         <source>List with all installed languages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista wszystkich zainstalowanych języków</translation>
     </message>
     <message>
         <source>Languages list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista tłumaczeń</translation>
     </message>
     <message>
         <source>If this option is checked, on close the xVideoServiceThief, the downloads list will be saved (and restored on open again the xVST)</source>
@@ -1911,11 +1943,11 @@ font-size:12px;
     </message>
     <message>
         <source>Internal FFmpeg</source>
-        <translation type="unfinished"></translation>
+        <translation>Wbudowany FFmpeg</translation>
     </message>
     <message>
         <source>Languages manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Menedżer tłumaczeń</translation>
     </message>
     <message>
         <source>Schedule Configuration</source>
@@ -1943,7 +1975,7 @@ font-size:12px;
     </message>
     <message>
         <source>Customize my schedule download</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Edytuj harmonogram zadań.</translation>
     </message>
     <message>
         <source>List of user schedules</source>
@@ -1967,26 +1999,30 @@ font-size:12px;
     </message>
     <message>
         <source>Edit selected schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj wybrane zadanie</translation>
     </message>
     <message>
         <source>Edit selected shedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj wybrane zadanie</translation>
     </message>
     <message>
         <source>Edit the selected schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj konfigurację zaznaczonego zadania</translation>
     </message>
     <message>
         <source>Remove selected schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń zaznaczone zadanie</translation>
     </message>
     <message>
         <source>Remove the selected schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń konfigurację zaznaczonego zadania</translation>
     </message>
     <message>
         <source>Use the system configuration</source>
+        <translation>Użyj ustawień systemowych</translation>
+    </message>
+    <message>
+        <source>Save and restore the current session</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2098,118 +2134,118 @@ font-size:12px;
     </message>
     <message>
         <source> Enabled </source>
-        <translation type="unfinished"></translation>
+        <translation>Włączone</translation>
     </message>
     <message>
         <source> Start time </source>
-        <translation type="unfinished"></translation>
+        <translation>Czas rozpoczęcia</translation>
     </message>
     <message>
         <source> End time </source>
-        <translation type="unfinished"></translation>
+        <translation>Czas zakończenia</translation>
     </message>
     <message>
         <source>Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentarze</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Harmonogram</translation>
     </message>
     <message>
         <source>Remove schedule item</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń zadanie z harmonogramu</translation>
     </message>
     <message>
         <source>Wish you remove the selected schedule item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcesz usunąć zaznaczone zadanie?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Ustaw hasło zabezpieczające dostęp do stron dla dorosłych.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Unlocking password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasło dostępu:</translation>
     </message>
     <message>
         <source>Invalid UPS! password</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieprawidłowe hasło UPS!</translation>
     </message>
     <message>
         <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wpisałeś nieprawidłowe hasło UPS! więc dostęp do stron dla dorosłych będzie zablokowany.</translation>
     </message>
 </context>
 <context>
     <name>ScheduleItemEditImpl</name>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Czas rozpoczęcia:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Czas zakończenia:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentarz:</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktywny</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Anuluj</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>The start time cannot exceed the end time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Czas rozpoczęcia nie może być większy od czasu zakończenia zadania.</translation>
     </message>
     <message>
         <source>The start time and end time cannot be equals.</source>
-        <translation type="unfinished"></translation>
+        <translation>Czasy rozpoczęcia i zakończenia nie mogą być takie same.</translation>
     </message>
     <message>
         <source>Schedule edition</source>
-        <translation type="unfinished"></translation>
+        <translation>Edycja zadania</translation>
     </message>
     <message>
         <source>Invalid schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieprawidłowe ustawienia zadania</translation>
     </message>
     <message>
         <source>Set the start time</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustaw czas rozpoczęcia</translation>
     </message>
     <message>
         <source>Start time edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Edycja czasu startu</translation>
     </message>
     <message>
         <source>Set the end time</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustaw czas zakończenia</translation>
     </message>
     <message>
         <source>End time edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Edycja czasu zakończenia</translation>
     </message>
     <message>
         <source>Set a information comment (this field is optional)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wpisz opis zadania (to pole jest opcjonalne)</translation>
     </message>
     <message>
         <source>Comment edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj komentarz</translation>
     </message>
     <message>
         <source>Enable or disable this schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Włącz lub wyłącz konfigurację tego zadania</translation>
     </message>
     <message>
         <source>Active checkbox</source>
@@ -2229,93 +2265,93 @@ font-size:12px;
     </message>
     <message>
         <source>Cancel button</source>
-        <translation type="unfinished">Przycisk Anuluj</translation>
+        <translation>Przycisk Anuluj</translation>
     </message>
 </context>
 <context>
     <name>SearchVideosCustomizeImpl</name>
     <message>
         <source>Custom search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wybierz serwisy</translation>
     </message>
     <message>
         <source>Select where you want to search:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz gdzie chcesz szukać:</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Anuluj</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Akcje</translation>
     </message>
     <message>
         <source>Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz wszystkie</translation>
     </message>
     <message>
         <source>Uncheck all</source>
-        <translation type="unfinished"></translation>
+        <translation>Odznacz wszystkie</translation>
     </message>
     <message>
         <source>Invert selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Odwróć zaznaczenie</translation>
     </message>
 </context>
 <context>
     <name>SearchVideosImpl</name>
     <message>
         <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Szukanie &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (strona %2)... proszę czekać...</translation>
     </message>
     <message>
         <source>Custom search</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz serwisy</translation>
     </message>
     <message>
         <source>Video Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyszukiwanie filmów</translation>
     </message>
     <message>
         <source>Key word to search:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wpisz szukane słowo:</translation>
     </message>
     <message>
         <source>Search in:</source>
-        <translation type="unfinished"></translation>
+        <translation>Szukaj w:</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Szukaj</translation>
     </message>
     <message>
         <source>Results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyniki:</translation>
     </message>
     <message>
         <source>&lt;&lt;</source>
-        <translation type="unfinished">&lt;&lt;</translation>
+        <translation>&lt;&lt;</translation>
     </message>
     <message>
         <source>Page </source>
-        <translation type="unfinished"></translation>
+        <translation>Strona</translation>
     </message>
     <message>
         <source>&gt;&gt;</source>
-        <translation type="unfinished">&gt;&gt;</translation>
+        <translation>&gt;&gt;</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Zamknij</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Field where your enter the key words to search</source>
-        <translation type="unfinished"></translation>
+        <translation>Pole gdzie wpisujesz słowo, które chcesz wyszukać</translation>
     </message>
     <message>
         <source>Key words edit</source>
@@ -2367,78 +2403,78 @@ font-size:12px;
     </message>
     <message>
         <source>Close button</source>
-        <translation type="unfinished">Przycisk zamknij</translation>
+        <translation>Przycisk zamknij</translation>
     </message>
     <message>
         <source>Please, select one or more services.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę, wybierz jeden lub więcej serwisów.</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>All standard services</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardowe serwisy</translation>
     </message>
     <message>
         <source>All adult services</source>
-        <translation type="unfinished"></translation>
+        <translation>Strony dla dorosłych</translation>
     </message>
     <message>
         <source>All services</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie strony</translation>
     </message>
 </context>
 <context>
     <name>SearchVideosItemImpl</name>
     <message>
         <source>Play &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Odtwarzaj &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Rating:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Ocena:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>Download not avaiable...</source>
-        <translation type="unfinished"></translation>
+        <translation>Niedostępny...</translation>
     </message>
     <message>
         <source>Missing plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak wtyczki</translation>
     </message>
     <message>
         <source>&lt;p&gt;Is not possible to download this video.&lt;/p&gt;&lt;p&gt;The xVST didn&apos;t find any plugin capable to get the video information.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Ściągnięcie tego filmu nie jest możliwe.&lt;/p&gt;&lt;p&gt;xVST nie znalazł odpowiedniej wtyczki do zebrania informacji o tym pliku wideo.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Already added</source>
-        <translation type="unfinished"></translation>
+        <translation>Już zostało dodane</translation>
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodałeś już ten film. Sprawdź listę.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Rating:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Ocena:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Play video into your webbrowser</source>
-        <translation type="unfinished"></translation>
+        <translation>Odtwarzaj film w przeglądarce internetowej</translation>
     </message>
     <message>
         <source>Video preview image</source>
-        <translation type="unfinished"></translation>
+        <translation>Obraz podglądu filmu</translation>
     </message>
     <message>
         <source>Play video</source>
-        <translation type="unfinished">Odtwórz wideo</translation>
+        <translation>Odtwórz wideo</translation>
     </message>
     <message>
         <source>Play video button</source>
@@ -2446,7 +2482,7 @@ font-size:12px;
     </message>
     <message>
         <source>Download video</source>
-        <translation type="unfinished"></translation>
+        <translation>Ściągnij film</translation>
     </message>
     <message>
         <source>Download video button</source>
@@ -2457,35 +2493,35 @@ font-size:12px;
     <name>UPSPasswordImpl</name>
     <message>
         <source>&lt;b&gt;Enter a security password to prevent unlock adult sites without your permission.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Wpisz hasło zabezpieczające przed włączeniem serwisów dla dorosłych bez twojego pozwolenia.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Locking password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasło:</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Anuluj</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>UPS! Password</source>
-        <translation type="unfinished"></translation>
+        <translation>UPS! Hasło</translation>
     </message>
     <message>
         <source>Field where you enter the password</source>
-        <translation type="unfinished"></translation>
+        <translation>Pole gdzie wpisujesz hasło</translation>
     </message>
     <message>
         <source>Password edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Edycja hasła</translation>
     </message>
     <message>
         <source>Confirm and close the window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatwierdź i zamknij okno</translation>
     </message>
     <message>
         <source>Ok button</source>
@@ -2493,7 +2529,7 @@ font-size:12px;
     </message>
     <message>
         <source>Discard and close window</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj i zamknij okno</translation>
     </message>
     <message>
         <source>Cancel button</source>
@@ -2610,71 +2646,71 @@ font-size:12px;
     <name>VideoConverter</name>
     <message>
         <source>AVI Format (*.avi)</source>
-        <translation type="unfinished">Format AVI (*.avi)</translation>
+        <translation>Format AVI (*.avi)</translation>
     </message>
     <message>
         <source>WMV Format ( *.wmv)</source>
-        <translation type="unfinished">Format WMV (*.wmv)</translation>
+        <translation>Format WMV (*.wmv)</translation>
     </message>
     <message>
         <source>MPEG1 Format ( *.mpg)</source>
-        <translation type="unfinished">Format MPEG1 (*..mpg)</translation>
+        <translation>Format MPEG1 (*..mpg)</translation>
     </message>
     <message>
         <source>MPEG2 Format ( *.mpg)</source>
-        <translation type="unfinished">Format MPEG2 (*.mpg)</translation>
+        <translation>Format MPEG2 (*.mpg)</translation>
     </message>
     <message>
         <source>MP4 Format (*.mp4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Format MP4 (*.mp4)</translation>
     </message>
     <message>
         <source>Apple iPod (*.mp4)</source>
-        <translation type="unfinished">Apple iPod (*.mp4)</translation>
+        <translation>Apple iPod (*.mp4)</translation>
     </message>
     <message>
         <source>Sony PSP (*.mp4)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>3GP Format (*.3gp)</source>
-        <translation type="unfinished">Format 3GP (*.3gp)</translation>
+        <translation>Format 3GP (*.3gp)</translation>
     </message>
     <message>
         <source>MP3 Format (*.mp3)</source>
-        <translation type="unfinished">Format MP3 (*.mp3)</translation>
+        <translation>Format MP3 (*.mp3)</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished">Oryginalny</translation>
+        <translation>Oryginalny</translation>
     </message>
     <message>
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
-        <translation type="unfinished">Najniższa jakość (Bitrate wideo: 384kbps; Bitrate audio: 64kbps)</translation>
+        <translation>Najniższa jakość (Bitrate wideo: 384kbps; Bitrate audio: 64kbps)</translation>
     </message>
     <message>
         <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
-        <translation type="unfinished">Niska jakość (Bitrate wideo: 512kbps; Bitrate audio: 80kbps)</translation>
+        <translation>Niska jakość (Bitrate wideo: 512kbps; Bitrate audio: 80kbps)</translation>
     </message>
     <message>
         <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
-        <translation type="unfinished">Normalna jakość (Bitrate wideo: 640kbps; Bitrate audio: 96kbps)</translation>
+        <translation>Normalna jakość (Bitrate wideo: 640kbps; Bitrate audio: 96kbps)</translation>
     </message>
     <message>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
-        <translation type="unfinished">Średnia jakość (Bitrate wideo: 800kbps; Bitrate audio: 96kbps)</translation>
+        <translation>Średnia jakość (Bitrate wideo: 800kbps; Bitrate audio: 96kbps)</translation>
     </message>
     <message>
         <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
-        <translation type="unfinished">Dobra jakość (Bitrate wideo: 1000kbps; Bitrate audio: 128kbps)</translation>
+        <translation>Dobra jakość (Bitrate wideo: 1000kbps; Bitrate audio: 128kbps)</translation>
     </message>
     <message>
         <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
-        <translation type="unfinished">Doskonała jakość (Bitrate wideo: 1200kbps; Bitrate audio: 128kbps)</translation>
+        <translation>Doskonała jakość (Bitrate wideo: 1200kbps; Bitrate audio: 128kbps)</translation>
     </message>
     <message>
         <source>The Same quality as the original Video</source>
-        <translation type="unfinished">Jakość taka sama jak oryginalny plik</translation>
+        <translation>Jakość taka sama jak oryginalny plik</translation>
     </message>
 </context>
 <context>
@@ -2689,7 +2725,7 @@ font-size:12px;
     </message>
     <message>
         <source>Adobe Flash streaming</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2796,27 +2832,27 @@ font-size:12px;
     </message>
     <message>
         <source>Updating info...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizuję info...</translation>
     </message>
     <message>
         <source>flvstreamer is missing (impossible download from RTMP server)</source>
-        <translation type="unfinished"></translation>
+        <translation>brak flvstreamer (nie można ściągać z serwera RTMP)</translation>
     </message>
     <message>
         <source>Unable to open the destination file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie mogę otworzyć docelowego pliku</translation>
     </message>
     <message>
         <source>Failed to connect with RTMP server</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd przy połączeniu z serwerem RTMP</translation>
     </message>
     <message>
         <source>Unable to resume the FLV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie mogę wznowić pliku FLV</translation>
     </message>
     <message>
         <source>Download incomplete (due to download errors)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik niekompletny (z powodu błędów przy ściąganiu)</translation>
     </message>
     <message>
         <source>Failed on initialize the pthread_create</source>
@@ -2824,7 +2860,7 @@ font-size:12px;
     </message>
     <message>
         <source>File to resume not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie znalazłem pliku do wznowienia</translation>
     </message>
 </context>
 <context>
@@ -2846,7 +2882,7 @@ font-size:12px;
     </message>
     <message>
         <source>Don&apos;t display this message again</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nie wyświetlaj więcej tej wiadomości</translation>
     </message>
     <message>
         <source>Donate!</source>
@@ -2861,27 +2897,27 @@ font-size:12px;
     <name>WindowsVistaDetected</name>
     <message>
         <source>Update center - Windows Vista detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Centrum aktualizacji - Wykryto Windows Vista</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Uwaga, xVST wykrył, że używasz Windows Vista więc automatyczna aktualizacja może nie działa prawidłowo.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Jeśli masz włączony &lt;b&gt;UAC&lt;/b&gt; (Kontrolę Konta Użytkownika), automatyczne aktualizacje nie zainstalują się z powodu braku odpowiednich uprawnień dla użytkownika.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
-        <translation type="unfinished"></translation>
+        <translation>Żeby pominąć ten problem, zalecane jest uruchamianie xVST jako administrator (prawy klik myszki na ikonce xVST -&gt; Uruchom jako Administrator) tylko jeśli chcesz zainstalować nowszą wersję xVST poprzez Centrum aktualizacji.</translation>
     </message>
     <message>
         <source>Don&apos;t display this message again</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie wyświetlaj więcej tej wiadomości</translation>
     </message>
     <message>
         <source>Continue...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontynuuj...</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Anuluj</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 </TS>

@@ -169,22 +169,37 @@
 <context>
     <name>AddVideoImpl</name>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="52"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="53"/>
         <source>mark as custom download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="129"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="117"/>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="118"/>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="119"/>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="136"/>
         <source> - Blocked site</source>
         <translation>- Side blokeret</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="131"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="138"/>
         <source> - Adult content is not allowed</source>
         <translation>- Pornografisk indhold ikke tilladt</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="186"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="193"/>
         <source>User custom video download</source>
         <translation type="unfinished"></translation>
     </message>
@@ -342,13 +357,13 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="149"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="161"/>
         <source>Thank you for your report.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="150"/>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="161"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="162"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="173"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
@@ -837,12 +852,27 @@
         <translation>Alpha blend værdi</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="183"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="180"/>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="181"/>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="182"/>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="194"/>
         <source> - Blocked site</source>
         <translation> - Blokkeret side</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="185"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="196"/>
         <source> - Adult content is not allowed</source>
         <translation>- Pornografisk indhold ikke tilladt</translation>
     </message>
@@ -1528,13 +1558,13 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="360"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="576"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="579"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="360"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="577"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="580"/>
         <source>No</source>
         <translation>Nej</translation>
     </message>
@@ -1545,7 +1575,7 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="426"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="886"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="889"/>
         <source>Updates</source>
         <translation>Updateringer</translation>
     </message>
@@ -1556,8 +1586,9 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="428"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="664"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="888"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="667"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="891"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1243"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
@@ -1567,70 +1598,80 @@ font-size:12px;
         <translation>Vælg download mappe :</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="574"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="577"/>
         <source>Cancel download</source>
         <translation>Annuller download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="575"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="578"/>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Ønsker du at annuller download af &lt;b&gt;%1&lt;/b&gt; ?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="662"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="665"/>
         <source>Error message</source>
         <translation>Fejl meddelse</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="663"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="666"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Denne video har følgende fejl : &lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="887"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="890"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>Programmet xUpdater mangler.&lt;br&gt;&lt;br&gt;Geninstaller xVideoServiceThief hvis du �nsker automatisk at opdatere dette program.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1033"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1036"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Video antal :&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 fuldført)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1037"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1040"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Downloader :&lt;/b&gt; %1 af %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1041"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1044"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Download hastighed :&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1042"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1045"/>
         <source>/sec</source>
         <translation type="unfinished">/s</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1057"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1077"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1060"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1081"/>
         <source>Pause download</source>
         <translation>Pause download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1075"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1079"/>
         <source>Resume download</source>
         <translation>Genoptag download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1119"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1123"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Downloader : %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1127"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1131"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Konvertere : %1 (%2)</translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1241"/>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1242"/>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2154,9 +2195,13 @@ font-size:12px;
         <translation>Gem og gendam nuværende session indstilling</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="668"/>
         <source>Save and restore the curren session</source>
-        <translation>Gem og gendan nuværende session</translation>
+        <translation type="obsolete">Gem og gendan nuværende session</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="668"/>
+        <source>Save and restore the current session</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="693"/>
@@ -3535,157 +3580,158 @@ font-size:12px;
         <translation>Henter info...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="159"/>
+        <location filename="../../src/videoitem.cpp" line="160"/>
         <source>Updating info...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="162"/>
+        <location filename="../../src/videoitem.cpp" line="163"/>
         <source>Ready</source>
         <translation>Klar</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="164"/>
+        <location filename="../../src/videoitem.cpp" line="165"/>
         <source>Downloading...</source>
         <translation>Downloader...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="166"/>
+        <location filename="../../src/videoitem.cpp" line="167"/>
         <source>Downloaded</source>
         <translation>Downloaded</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="168"/>
+        <location filename="../../src/videoitem.cpp" line="169"/>
         <source>Converting...</source>
         <translation>Konvertere...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="170"/>
+        <location filename="../../src/videoitem.cpp" line="171"/>
         <source>Converted</source>
         <translation>Converteret</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="172"/>
+        <location filename="../../src/videoitem.cpp" line="173"/>
         <source>Completed</source>
         <translation>Fuldført</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="174"/>
+        <location filename="../../src/videoitem.cpp" line="175"/>
         <source>Canceled</source>
         <translation>Annuller</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="176"/>
+        <location filename="../../src/videoitem.cpp" line="177"/>
         <source>Blocked</source>
         <translation>Blokkeret</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="178"/>
+        <location filename="../../src/videoitem.cpp" line="179"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="180"/>
+        <location filename="../../src/videoitem.cpp" line="181"/>
         <source>Deleted</source>
         <translation>Slettet</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="182"/>
+        <location filename="../../src/videoitem.cpp" line="183"/>
+        <location filename="../../src/videoitem.cpp" line="189"/>
         <source>Paused</source>
         <translation>Pause</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="184"/>
+        <location filename="../../src/videoitem.cpp" line="185"/>
         <source>Resuming...</source>
         <translation>Genoptager...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="186"/>
+        <location filename="../../src/videoitem.cpp" line="187"/>
         <source>Need login...</source>
         <translation>Kræver login...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="377"/>
+        <location filename="../../src/videoitem.cpp" line="395"/>
         <source>/sec</source>
         <translation>/s</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="434"/>
+        <location filename="../../src/videoitem.cpp" line="452"/>
         <source>Unable to create the destination dir</source>
         <translation>Kunne ikke oprette destinations mappe</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="436"/>
+        <location filename="../../src/videoitem.cpp" line="454"/>
         <source>Unable to create the destination file</source>
         <translation>Kunne ikke oprette destinations fil</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="438"/>
+        <location filename="../../src/videoitem.cpp" line="456"/>
         <source>Invalid URL</source>
         <translation>Ugyldig URL</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="440"/>
+        <location filename="../../src/videoitem.cpp" line="458"/>
         <source>An another download is already active</source>
         <translation>Et anden download er allered aktivt</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="442"/>
+        <location filename="../../src/videoitem.cpp" line="460"/>
         <source>Invalid file size</source>
         <translation>Ugyldig fil størrelse</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="444"/>
+        <location filename="../../src/videoitem.cpp" line="462"/>
         <source>The video to resume is missing</source>
         <translation>Video some skal genoptages mangler</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="446"/>
+        <location filename="../../src/videoitem.cpp" line="464"/>
         <source>Unable resume the download</source>
         <translation>Kunne ikke genoptage download</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="448"/>
+        <location filename="../../src/videoitem.cpp" line="466"/>
         <source>Unable append data to file</source>
         <translation>Kunne ikke skirve data til fil</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="450"/>
+        <location filename="../../src/videoitem.cpp" line="468"/>
         <source>flvstreamer is missing (impossible download from RTMP server)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="452"/>
+        <location filename="../../src/videoitem.cpp" line="470"/>
         <source>Unable to open the destination file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="454"/>
+        <location filename="../../src/videoitem.cpp" line="472"/>
         <source>Failed to connect with RTMP server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="456"/>
+        <location filename="../../src/videoitem.cpp" line="474"/>
         <source>Unable to resume the FLV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="458"/>
+        <location filename="../../src/videoitem.cpp" line="476"/>
         <source>Download incomplete (due to download errors)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="460"/>
+        <location filename="../../src/videoitem.cpp" line="478"/>
         <source>Failed on initialize the pthread_create</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="462"/>
+        <location filename="../../src/videoitem.cpp" line="480"/>
         <source>File to resume not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="464"/>
+        <location filename="../../src/videoitem.cpp" line="482"/>
         <source>Connection error: Unable to download the video</source>
         <translation>Forbindelses fejl: Kunne ike downloade videoen</translation>
     </message>

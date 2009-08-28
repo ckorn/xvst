@@ -143,6 +143,18 @@
         <source>User custom video download</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BugReport</name>
@@ -662,6 +674,18 @@
     <message>
         <source> - Adult content is not allowed</source>
         <translation>- Non está permitido contido adulto</translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1263,6 +1287,14 @@ font-size:12px;(new line)
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewLanguages</name>
@@ -1642,7 +1674,7 @@ font-size:12px;(new line)
     </message>
     <message>
         <source>Save and restore the curren session</source>
-        <translation>Gardar e restaurar esta sesión</translation>
+        <translation type="obsolete">Gardar e restaurar esta sesión</translation>
     </message>
     <message>
         <source>If this option is checked, the completed videos will not be restored in next session</source>
@@ -1991,6 +2023,10 @@ Procurar actualizacións sempre:</translation>
     </message>
     <message>
         <source>Use the system configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save and restore the current session</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
