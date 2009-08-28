@@ -57,3 +57,6 @@ $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/dutch_du_lang.update" "$LANGUAGES_DIR/x
 
 # japanese package
 $PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/japanese_jp_lang.update" "$LANGUAGES_DIR/xVST_jp.qm" "$LANGUAGES_DIR/definitions/japanese.language"
+
+# italiano package
+$PAKUNPAK_BIN -i "$LANGUAGES_DIR/updates/italiano_it_lang.update" "$LANGUAGES_DIR/xVST_it.qm" "$LANGUAGES_DIR/definitions/italiano.language"
