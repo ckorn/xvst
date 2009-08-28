@@ -9,7 +9,9 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-	//
+	// set http global user agent
+	Http::setGlobalUserAgent("xVST-DebugPlugins");
+	// init settings
 	ProgramSettings settings;
 	settings.load();
 	ui->edtPluginPathVideoInformation->setText(settings.getVideoInformationPlugin());
