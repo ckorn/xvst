@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.1";
+	this.version = "2.0.4";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -37,9 +37,10 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_YOUTBE  = "http://www.youtube.com/watch?v=%1";
-	const URL_GET_FLV = "http://%1/get_video?video_id=%2&t=%3&fmt=%4";
-	const HD_VIDEO_RES  = "22";
+	const URL_YOUTBE = "http://www.youtube.com/watch?v=%1";
+	const URL_GET_FLV = "http://%1/get_video?video_id=%2&t=%3";
+	const URL_GET_FLV_FMT = "http://%1/get_video?video_id=%2&t=%3&fmt=%4";
+	const HD_VIDEO_RES = "22";
 	// init result
 	var result = new VideoDefinition();
 	// default URL
@@ -56,17 +57,22 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(youTubeURL);
 	// get the video ID and the video HASH
 	var vidID =  getUrlParam(youTubeURL, "v");
-	var vidHash = copyBetween(html, "\"t\": \"", "\"");
-	// check if a HD version is aviable
-	//var vidRes = STD_VIDEO_RES;
-	vidRes = copyBetween(html, "\"fmt_map\": \"", "/");
+	var vidHash = copyBetween(html, '"t": "', '"');
+	// get the video resolution
+	var vidRes = copyBetween(html, '"fmt_map":', '",') + '"';
+	vidRes = copyBetween(vidRes, '"', '"');
+	vidRes = strReplace(vidRes, "%2F", "/");
+	if (vidRes != "") vidRes = getToken(vidRes, "/", 0);
 	// check if is a HD_VIDEO_RES
 	if (vidRes == HD_VIDEO_RES) // for HD videos the extension is mp4
 		result.extension = ".mp4";
 	// get the video title
 	result.title = copyBetween(html, "<title>YouTube - ", "</title>");
 	// build the video url
-	result.URL = strFormat(URL_GET_FLV, getUrlHost(youTubeURL), vidID, vidHash, vidRes);
+	if (vidRes != "") // videoRes (fmt) specified
+		result.URL = strFormat(URL_GET_FLV_FMT, getUrlHost(youTubeURL), vidID, vidHash, vidRes);
+	else // NO videoRes (fmt) specified
+		result.URL = strFormat(URL_GET_FLV, getUrlHost(youTubeURL), vidID, vidHash);
 	// check if this video need a login
 	result.needLogin = result.title == "Broadcast Yourself.";
 	// return the video information
@@ -78,7 +84,7 @@ function searchVideos(keyWord, pageIndex)
 	const URL_SEARCH = "http://www.youtube.com/results?search_query=%1&page=%2&hl=%3";
 	const HTML_SEARCH_START = "<!-- start search results -->";
 	const HTML_SEARCH_FINISH = "<!-- end search results -->";
-	const HTML_SEARCH_SEPARATOR = '<div class="video-entry">';
+	const HTML_SEARCH_SEPARATOR = '<div class="video-entry yt-uix-hovercard">';
 	// replace all spaces for "+"
 	keyWord = strReplace(keyWord, " ", "+");
 	// init search results object

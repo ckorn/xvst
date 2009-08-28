@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.5min.com/";
@@ -37,22 +37,15 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_XML = "http://www.5min.com/handlers/smartplayerhandler.ashx?autoStart=None&sid=0&isEmbed=false&videoID=%1&overlay=None&func=InitializePlayer&referrerURL=none";
 	// init result
 	var result = new VideoDefinition();
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
-	// get the video ID 
-	var vidID =  copyBetween(html,"videoID:'","'");
-	// get video information file with vidID
-	var xmlFile = strFormat(URL_GET_XML, vidID);
-	// download xml
-	var xml = http.downloadWebpage(xmlFile);
-	// get the video title
-	result.title = copyBetween(xml, "\"vidTitle\":\"", "\"");
-	// build the video url
-	result.URL = copyBetween(xml,"\"vidURL\":\"","\"");
+	// get video title
+	result.title = copyBetween(html, '<h1 class="videoTitle">', '</h1>');
+	// get video url
+	result.URL = copyBetween(html, "videoUrl=", "&");
 	// return the video information
 	return result;
 }

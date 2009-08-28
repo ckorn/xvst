@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.dailymotion.com/";
@@ -37,23 +37,21 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_FLV = "http://www.dailymotion.com%1";
 	// video information
 	var result = new VideoDefinition();
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// get video title
-	result.title = copyBetween(html, "<h1 class=\"nav\">", "</h1>");
+	result.title = copyBetween(html, '<h1 class="dmco_title">', '</h1>');
 	// get flv url
-	result.URL = cleanUrl(copyBetween(html, ".addVariable(\"video\", \"", "\");"));
+	result.URL = cleanUrl(copyBetween(html, '.addVariable("video", "', '");'));
 	result.URL = getToken(result.URL, "||", 0);
 	result.URL = getToken(result.URL, "@@", 0);
-	result.URL = strFormat(URL_GET_FLV, result.URL);
 	// clear and get the final flv url
 	result.URL = cleanUrl(result.URL);
 	// check if need login
-	result.needLogin = html.indexOf("addVariable(\"start\"") != -1;
+	result.needLogin = html.indexOf('addVariable("start"') != -1;
 	// return the video information
 	return result;
 }

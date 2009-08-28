@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.metacafe.com/";
@@ -44,7 +44,7 @@ function getVideoInformation(url)
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// get the video title
-	result.title = copyBetween(html, "<h1 id=\"ItemTitle\">", "</h1>");
+	result.title = copyBetween(html, "<title>", "- Video</title>");
 	// get the flv url and params
 	flv_url = cleanUrl(copyBetween(html, "mediaURL=", "&"));
 	gda = copyBetween(html, "gdaKey=", "&");

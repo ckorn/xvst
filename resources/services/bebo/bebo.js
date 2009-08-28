@@ -40,7 +40,7 @@ function getVideoInformation(url)
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
-	// check if is a embeded youtube video
+	// check if is an embeded youtube video
 	if (strIndexOf(html, "http://www.youtube.com/") != -1)
 		return getVideoFromYoutube(html);
 	else if (strIndexOf(html, "http://www.motionbox.com/") != -1) // check if is a embeded motionbox video

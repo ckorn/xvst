@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.caught-on-video.com/";
@@ -37,23 +37,58 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_XML = "http://%1/handlers/SFAsysPlayer_GetData.ashx?playerinfo={%20id:'null',%20mode:'stdvideo_from_id',%20note:'true',%20pno:'-1',%20cfg:'4482',%20playlistid:'-1',%20video:'%2',%20album:'null',%20photo:'null',%20overlay:'null',%20conurl:'',%20condomain:'%3',%20watchedlist:''%20}";
 	// video information
 	var result = new VideoDefinition();
-	// get video id
-	var video = copyBetween(url, "video/", ".htm");
-	// get pre-url
-	var xmlUrl = strReplace(URL_GET_XML, "%20", " ");
-	xmlUrl = strFormat(xmlUrl, getUrlHost(url), video, url);
-	xmlUrl = strReplace(xmlUrl, " ", "%20");
 	// download xml
 	var http = new Http();
-	var xml = http.downloadWebpageEx(xmlUrl, false);
-	// get video information
-	result.title = strReplace(copyBetween(xml, "<media:title>", "</media:title>"), ". Caught on Video.", "");
-	result.URL = copyBetween(xml, "<sf:mediapath>", "</sf:mediapath>");
-	// clear and get the final url
-	result.URL = cleanUrl(result.URL);
-	// return the video information
-	return result;
+	var html = http.downloadWebpageEx(url, false);
+	// check if is an embeded youtube video
+	if (strIndexOf(html, "http://www.youtube.com/") != -1)
+		return getVideoFromYoutube(html);
+	else if (strIndexOf(html, "http://www.veoh.com/") != -1)
+		return getVideoFromVeoh(html);
+	else if (strIndexOf(html, "http://www.dailymotion.com/") != -1)
+		return getVideoFromDailymotion(html);
+	else
+		return new VideoDefinition();
+}
+
+function getVideoFromYoutube(html)
+{
+	// check if youtube plugin is installed
+	if (isPluginInstalled("youtube") == true)
+	{
+		var youtubeUrl = copyBetween(html, 'SWFObject("', '"');
+		youtubeUrl = strReplace(youtubeUrl, "&amp;", "&");
+		return executePlugin("youtube", youtubeUrl);
+	}
+	else // youtube plugin not installed
+		return new VideoDefinition();
+}
+
+function getVideoFromVeoh(html)
+{
+	// check if youtube plugin is installed
+	if (isPluginInstalled("veoh") == true)
+	{
+		var veohUrl = copyBetween(html, 'SWFObject("', '"');
+		veohUrl = strReplace(veohUrl, "&amp;", "&");
+		return executePlugin("veoh", veohUrl);
+	}
+	else // youtube plugin not installed
+		return new VideoDefinition();
+}
+
+function getVideoFromDailymotion(html)
+{
+	const VIDEO_URL = "http://www.dailymotion.com/video/";
+	// check if youtube plugin is installed
+	if (isPluginInstalled("dailymotion") == true)
+	{
+		var videoId = copyBetween(html, 'SWFObject("', '"');
+		videoId = copyBetween(videoId, "swf/", "?");
+		return executePlugin("dailymotion", VIDEO_URL + videoId);
+	}
+	else // youtube plugin not installed
+		return new VideoDefinition();
 }
