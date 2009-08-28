@@ -3,10 +3,28 @@
 
 - Added "Plugin Version" information in "Bug Report"
 - Added Italiano translation (thanks to Vecna)
+- Added possibility to pause an item when it is as "Ready" state
+- Added one new plug-in:
+	- Scientific Blogging
+
+- Revised English translation
+- Revised Spanish translation
+- Revised Catalan translation
+- Revised Japanese translation
+- Revised Italian translation
 
 - Changed plug-ins:
 	- Youtube
 	- Dailymotion
+	- Youtube (updated search functions)
+	- 5min
+	- Caught-on-video
+	- ClipFish
+	- Metacafe
+
+- Improved pasting URLs from clipboard (now they are trimmed)
+
+- Fixed bug (Error: Dropped URLs directly to main window were not checked)
 
 2.2:
 ----
