@@ -513,7 +513,7 @@ void VideoItem::setVideoFile(QString videoFile, QObject *who)
 {
 	if (isLocked() && who != locker) return;
 	// set value
-	this->videoFile = videoFile;
+	this->videoFile = htmlToStr(videoFile);
 }
 
 void VideoItem::setVideoFileSavedTo(QString videoFileSavedTo, QObject *who)
