@@ -18,7 +18,7 @@
 	</test>
 	<test>
 		<plugin file="atv.js" title="ATV" />
-		<video url="http://atv.hu/videotar/090731_megvan_balla_irma_gyilkosa__megsem_a_fia_tette.html" caption="Megvan Balla Irma gyilkosa! Mégsem a fia tette" size="0" />
+		<video url="http://atv.hu/videotar/090731_megvan_balla_irma_gyilkosa__megsem_a_fia_tette.html" caption="Megvan Balla Irma gyilkosa! M√©gsem a fia tette" size="0" />
 	</test>
 	<test>
 		<plugin file="badjojo.js" title="BadJojo" />
@@ -213,6 +213,10 @@
 		<video url="http://www.spike.com/video/white-house-press/3171267" caption="White House Press Secretary Owns Reporter" size="6372179" />
 	</test>
 	<test>
+		<plugin file="streetfire.js" title="StreetFire" />
+		<video url="http://videos.streetfire.net/video/2008-Malibu-exhaust_705560.htm" caption="2008 Malibu exhaust" size="4206605" />
+	</test>
+	<test>
 		<plugin file="tangle.js" title="Tangle" />
 		<video url="http://www.tangle.com/view_video.php?viewkey=c5f88145973ff00d3752" caption="The Annoying Groundhog" size="0" />
 	</test>
@@ -221,12 +225,24 @@
 		<video url="http://watch.tsn.ca/#clip199252" caption="MLB : Moving Pieces" size="341110" />
 	</test>
 	<test>
+		<plugin file="tv2.js" title="TV2 (tv2.hu)" />
+		<video url="http://tv2.hu/Nyitooldal/Musoraink/Aktiv/Videok/2009-08-27-Vaczi_Gergo_Sandor_Orsival_par" caption="Váczi Gergő Sándor Orsival párbajozott" size="1555598" />
+	</test>
+	<test>
+		<plugin file="tv2.js" title="TV2 (webcast.tv2.hu)" />
+		<video url="http://webcast.tv2.hu/dynamic/index.php?m=embed2&amp;video_id=401445&amp;p=1&amp;nocache=1&amp;ap=0" caption="Váczi Gergő Sándor Orsival párbajozott" size="1555598" />
+	</test>
+	<test>
 		<plugin file="tnaflix.js" title="T'n A flix" />
 		<video url="http://www.tnaflix.com/view_video.php?viewkey=93dc84bef4f6b1d4799f" caption="brooke h-brooke squirts" size="74635990" />
 	</test>
 	<test>
 		<plugin file="videoca.js" title="Video.ca" />
 		<video url="http://www.video.ca/video.php?id=1841568228&amp;mode=views" caption="Toronto Maple Leafs vs New York Islanders #10" size="2037198" />
+	</test>
+	<test>
+		<plugin file="videolog.uol.js" title="Videolog (UOL)" />
+		<video url="http://videolog.uol.com.br/video.php?id=476528" caption="#01 SAFC" size="34998983" />
 	</test>
 	<test>
 		<plugin file="vimeo.js" title="Vimeo (Standard)" />
