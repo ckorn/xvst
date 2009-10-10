@@ -103,6 +103,12 @@ void InformationImpl::buildVideoServicesList(VideoInformation *videoInformation)
 	else // display adult sites
 		html += getPluginsAsHtml(tr("Adult web sites:"), adultPlugins);
 	html += getPluginsAsHtml(tr("Music web sites:"), musicPlugins);
+
+//	QFile updateScriptFile("/Users/xEsk/Desktop/services.html");
+//	updateScriptFile.open(QFile::WriteOnly | QFile::Truncate);
+//	QTextStream file(&updateScriptFile);
+//	file << html;
+
 	// display html
 	rchServices->setHtml(html);
 }
