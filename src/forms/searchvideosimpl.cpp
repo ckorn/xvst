@@ -81,7 +81,7 @@ void SearchVideosImpl::finished(int)
 	this->deleteLater();
 }
 
-void SearchVideosImpl::cmbSearchInActivated(int index)
+void SearchVideosImpl::cmbSearchInActivated(int /*index*/)
 {
 	if (cmbSearchIn->itemData(cmbSearchIn->currentIndex(), Qt::UserRole).toString() == SEARCH_ID_CUSTOM)
 	{

@@ -278,7 +278,7 @@ void SearchResultsPreviewCatcher::downloadFinished(const QFileInfo)
 	QTimer::singleShot(50, this, SLOT(downloadNextPreview()));
 }
 
-void SearchResultsPreviewCatcher::downloadError(int error)
+void SearchResultsPreviewCatcher::downloadError(int /*error*/)
 {
 	if (previews->isEmpty()) return;
 	// emit download finished with errors

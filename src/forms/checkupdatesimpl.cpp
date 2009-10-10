@@ -28,7 +28,7 @@
 #include "../options.h"
 #include "../checkupdatesworker.h"
 
-CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, bool isUser, QWidget * parent, Qt::WFlags f)
+CheckUpdatesImpl::CheckUpdatesImpl(ProgramOptions *programOptions, QWidget * parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {
 	setupUi(this);

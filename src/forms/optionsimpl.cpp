@@ -690,7 +690,7 @@ void OptionsImpl::btnCheckNowClicked()
 
 	btnCheckNow->setEnabled(false);
 
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this, Qt::Sheet);
+	CheckUpdatesImpl checkUpdatesForm(programOptions, this, Qt::Sheet);
 	checkUpdatesForm.exec();
 
 	btnCheckNow->setEnabled(true);

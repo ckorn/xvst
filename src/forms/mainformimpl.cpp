@@ -434,7 +434,7 @@ void MainFormImpl::updatesClicked()
 	
 	if (!isVisible()) restoreAppClicked();
 	
-	CheckUpdatesImpl checkUpdatesForm(programOptions, true, this, Qt::Sheet);
+	CheckUpdatesImpl checkUpdatesForm(programOptions, this, Qt::Sheet);
 	checkUpdatesForm.exec();
 	
 	spbUpdates->setEnabled(true);
@@ -669,7 +669,11 @@ void MainFormImpl::viewErrorMessageClicked()
 
 void MainFormImpl::searchVideosClicked()
 {
+#ifdef Q_WS_MACX
 	SearchVideosImpl *searchVideos = new SearchVideosImpl(this, Qt::Window);
+#else // linux and windows
+	SearchVideosImpl *searchVideos = new SearchVideosImpl(this);
+#endif
 	searchVideos->show();
 }
 
@@ -900,7 +904,7 @@ void MainFormImpl::checkForUpdates()
 		videoList->start();
 }
 
-void MainFormImpl::checkUpdatesWorkerFinished(bool hasUpdates, bool closedByButton)
+void MainFormImpl::checkUpdatesWorkerFinished(bool hasUpdates, bool /*closedByButton*/)
 {
 	spbUpdates->setEnabled(true);
 	actUpdates->setEnabled(true);
