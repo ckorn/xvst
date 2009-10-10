@@ -17,6 +17,8 @@ HEADERS += src/forms/mainwindow.h \
 FORMS += ui/mainwindow.ui
 macx {
 	QMAKE_INFO_PLIST = Info.plist
+	ICON += resources/icons/MacOSX.icns
 }
+
 # include the common xVST classes
 include(../Common/xvst-classes.pri)
