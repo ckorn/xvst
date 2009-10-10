@@ -145,10 +145,10 @@ void VideoInformation::run()
 				videoItem->setAsNeedLogin(this);
 				videoItem->removeUpdatingURLStatus();
 			}
-			else // ok, assing information and prepare the item to be downloaded
+			else // ok, assign information and prepare the item to be downloaded
 			{
 				videoItem->setVideoInformation(info, this);
-				if (!urlWasUpdated)	videoItem->setVideoFile(cleanFileName(info.title + info.extension), this);
+				if (!urlWasUpdated) videoItem->setVideoFile(cleanFileName(info.title + info.extension), this);
 				videoItem->setAsGettedURL(this);
 			}
 		}
