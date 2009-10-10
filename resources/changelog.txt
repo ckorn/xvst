@@ -6,6 +6,9 @@
 - Added possibility to pause an item when it is as "Ready" state
 - Added one new plug-in:
 	- Scientific Blogging
+	- TV2.hu
+	- Videolog (UOL)
+	- StreetFire
 
 - Revised English translation
 - Revised Spanish translation
@@ -13,18 +16,28 @@
 - Revised Japanese translation
 - Revised Italian translation
 
+- Updated the "Thanks to" list with:
+	- Tilt: Japanese language author
+	- Christian Kieschnick: German language author
+	- Reintjedevos: Dutch language author
+	- Vecna: Italian language author
+	- Daniel Nylander: Swedish language author
+
 - Changed plug-ins:
+	- Youtube (updated search functions)
+	- Google Videos (updated search functions)
 	- Youtube
 	- Dailymotion
-	- Youtube (updated search functions)
 	- 5min
 	- Caught-on-video
 	- ClipFish
 	- Metacafe
+	- T'n A flix
 
 - Improved pasting URLs from clipboard (now they are trimmed)
 
 - Fixed bug (Error: Dropped URLs directly to main window were not checked)
+- Fixed bug (Error: The html tags where not removed from file name)
 
 2.2:
 ----
