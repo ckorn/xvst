@@ -149,5 +149,8 @@ Q_OBJECT
 		void beforeDisplayUpdateCenter();
 		// MacOSX menu bar signals
 		void menuBarAboutToShow();
+	public slots:
+		// Single application instance - messages from another new instance
+		void SingleApplicationHandleMessage(const QString& message);
 };
 #endif

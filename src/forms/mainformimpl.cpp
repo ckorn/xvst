@@ -47,6 +47,8 @@
 #include "../programversion.h"
 #include "../checkupdatesworker.h"
 
+#include <QtSingleApplication>
+
 MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 		: QMainWindow(parent, f)
 {
@@ -929,6 +931,17 @@ void MainFormImpl::beforeDisplayUpdateCenter()
 void MainFormImpl::menuBarAboutToShow()
 {
 	updateVisualControls();
+}
+
+// Single application instance - messages from another new instance
+void MainFormImpl::SingleApplicationHandleMessage(const QString& message)
+{
+	QStringList URLs = message.split("\n", QString::SkipEmptyParts);
+	// add url's
+	foreach (QString URL, URLs)
+	{
+		videoList->addVideo(URL);
+	}
 }
 
 // lsvDownloadList functions

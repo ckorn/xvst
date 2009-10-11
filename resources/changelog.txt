@@ -1,6 +1,8 @@
-2.2.1:
+2.3:
 ------
 
+- Added possibility to execute the xVST without the loading splash screen (execute with -nosplash)
+- Added possibility to add videos on execution time (if another instance of xVST is running those URLs will be added into the current xVST instance)
 - Added "Plugin Version" information in "Bug Report"
 - Added Italiano translation (thanks to Vecna)
 - Added possibility to pause an item when it is as "Ready" state
@@ -23,6 +25,7 @@
 	- Vecna: Italian language author
 	- Daniel Nylander: Swedish language author
 
+- Changed: Only one instance of xVST can run at same time (this can be changed, executing the new xVST instance with parameter -forcenewinstance)
 - Changed plug-ins:
 	- Youtube (updated search functions)
 	- Google Videos (updated search functions)

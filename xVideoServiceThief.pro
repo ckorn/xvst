@@ -180,3 +180,4 @@ static_build {
         qjpeg
     message(static_build)
 }
+include(src/qtsingleapplication/src/qtsingleapplication.pri)

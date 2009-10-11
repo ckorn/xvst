@@ -23,7 +23,8 @@
 *
 */
 
-#include <QtGui> //<QApplication>
+#include <QtGui>
+#include <QtSingleApplication>
 //
 #include "forms/loadingimpl.h"
 #include "forms/mainformimpl.h"
@@ -40,12 +41,34 @@
 	Q_IMPORT_PLUGIN(qjpeg)
 #endif
 
-int main(int argc, char ** argv)
+int main(int argc, char **argv)
 {
-	QApplication app(argc, argv);
+	QtSingleApplication app("xVideoServiceThief " + PROGRAM_VERSION_SHORT, argc, argv);
+
+	// init defaults
+	bool noSplash = false;
+	bool forceNewInstance = false;
+
+	// capture the application arguments
+	QString URLs;
+
+	for (int n = 1; n < argc; n++)
+	{
+		QString arg = argv[n];
+		// is a command?
+		if (arg == "-nosplash")
+			noSplash = true;
+		else if (arg == "-forcenewinstance")
+			forceNewInstance = true;
+		else // we assume which it is an URL to add
+			URLs += arg + "\n";
+	}
+
+	// another instance is running? (and we aren't forcing a new instance)
+	if (!forceNewInstance && app.sendMessage(URLs)) return 0;
 
 	// display loading dialog
-	LoadingImpl::instance()->show();
+	if (!noSplash) LoadingImpl::instance()->show();
 
 	// get language file
 	ProgramOptions *programOptions = ProgramOptions::instance();
@@ -65,6 +88,12 @@ int main(int argc, char ** argv)
 	MainFormImpl win;
 	win.show();
 
+	// set instance message handler
+	QObject::connect(&app, SIGNAL(messageReceived(const QString&)), &win, SLOT(SingleApplicationHandleMessage(const QString&)));
+
+	// set instance activation window
+	app.setActivationWindow(&win, true);
+
 	// hide loading window
 	if (LoadingImpl::instance() != NULL)
 	{
@@ -74,6 +103,9 @@ int main(int argc, char ** argv)
 
 	// set http global user agent
 	Http::setGlobalUserAgent("xVST-" + PROGRAM_VERSION_SHORT);
+
+	// has URLs to add?
+	if (!URLs.isEmpty()) win.SingleApplicationHandleMessage(URLs);
 
 	// run program
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
