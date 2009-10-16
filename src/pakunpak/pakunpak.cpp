@@ -57,7 +57,7 @@ void Packer::buildPackage(const std::string packageFile)
 	if (package->is_open())
 	{
 		// write package header
-		char *header_id = "XPK";
+		const char *header_id = "XPK";
 		package->write(header_id, sizeof(header_id)); // package header id
 		delete header_id;
 
