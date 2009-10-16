@@ -175,7 +175,7 @@ void Updates::buildInstalScript()
 		QStringList updateScript;
 		// write the info vars
 		updateScript << "#MAIN_APP=" + QCoreApplication::applicationFilePath()
-					 << "#PARAMETERS=forceCheckUpdates"
+					 << "#PARAMETERS=-forceCheckUpdates"
 					 << "#RESTART=true";	
 		// add updates
 		for (int n = 0; n < getUpdatesCount(); n++)

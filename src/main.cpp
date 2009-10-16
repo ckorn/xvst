@@ -60,7 +60,7 @@ int main(int argc, char **argv)
 			noSplash = true;
 		else if (arg == "-forcenewinstance")
 			forceNewInstance = true;
-		else // we assume which it is an URL to add
+		else if (arg != "-forceCheckUpdates") // we assume which it is an URL to add
 			URLs += arg + "\n";
 	}
 

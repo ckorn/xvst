@@ -880,9 +880,14 @@ void MainFormImpl::checkForUpdates()
 {
 	bool forceCheckUpdates = !videoList->getVideoInformation()->hasPlugins();
 	// cehck parameters
-	if (qApp->arguments().count() > 1 && !forceCheckUpdates)
-		forceCheckUpdates = qApp->arguments().at(1) == "forceCheckUpdates";
-
+	if (!forceCheckUpdates)
+		for (int n = 1; n < qApp->arguments().count() - 1; n++)
+			if (qApp->arguments().at(n) == "-forceCheckUpdates")
+			{
+				forceCheckUpdates = true;
+				break;
+			}
+	// check updates?
 	if (programOptions->getCheckForUpdatesOnStartup() || forceCheckUpdates)
 		// check if the xUpdater is installed (can install updates?)
 		if (!Updates::canUpdate(programOptions->getToolsPath())) //getOptionsPath()))
