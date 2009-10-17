@@ -879,14 +879,18 @@ void MainFormImpl::pasteURLfromClipboardClicked()
 void MainFormImpl::checkForUpdates()
 {
 	bool forceCheckUpdates = !videoList->getVideoInformation()->hasPlugins();
+
 	// cehck parameters
 	if (!forceCheckUpdates)
-		for (int n = 1; n < qApp->arguments().count() - 1; n++)
+		for (int n = 1; n < qApp->arguments().count(); n++)
+		{
 			if (qApp->arguments().at(n) == "-forceCheckUpdates")
 			{
 				forceCheckUpdates = true;
 				break;
 			}
+		}
+
 	// check updates?
 	if (programOptions->getCheckForUpdatesOnStartup() || forceCheckUpdates)
 		// check if the xUpdater is installed (can install updates?)
