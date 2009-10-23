@@ -1,12 +1,31 @@
-2.3:
+2.3.1:
 ------
+
+- Added one new plug-in:
+	- Game Anyone? (thanks to Max Zorloff)
+
+- Changed plug-ins:
+	- YouPorn (added search functions, thanks to Matze Ba)
+	- 5min
+	- Break
+	- Caught-on-video
+	- KeezMovies
+	- MySpass
+	- PornHub
+	- Spike
+	- Tangle
+	- T'n A flix
+	- Vimeo
+
+2.3:
+----
 
 - Added possibility to execute the xVST without the loading splash screen (execute with -nosplash)
 - Added possibility to add videos on execution time (if another instance of xVST is running those URLs will be added into the current xVST instance)
 - Added "Plugin Version" information in "Bug Report"
 - Added Italiano translation (thanks to Vecna)
 - Added possibility to pause an item when it is as "Ready" state
-- Added one new plug-in:
+- Added four new plug-in:
 	- Scientific Blogging
 	- TV2.hu
 	- Videolog (UOL)
@@ -50,7 +69,7 @@
 - Added two new searching scopes ("All standard services" and "All adult services")
 - Added save/restore last search settings
 - Added dutch translation (thanks to Reintjedevos)
-- Added japanese translation (thanks to Tilt)
+- Added Japanese translation (thanks to Tilt)
 - Added Changelog in "Information" window
 - Added 11 new plug-ins:
 	- Spankwire
