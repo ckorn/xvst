@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.break.com/";
@@ -37,7 +37,7 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_FLV = "http://media1.break.com/dnet/media/%1/%2.flv";
+	const URL_GET_FLV = "%1%2/%3.flv";
 	// video information
 	var result = new VideoDefinition();
 	// download webpage
@@ -45,11 +45,13 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(url);
 	// get title
 	result.title = copyBetween(html, "<title>", "&nbsp;");
+	// get video pre-url
+	var preUrl = copyBetween(html, 'var videoPath = "', '"');
 	// get variable values
 	var sGlobalContentFilePath = copyBetween(html, "sGlobalContentFilePath='", "'");
 	var sGlobalFileName = copyBetween(html, "sGlobalFileName='", "'");
 	// clear and get the final url
-	result.URL = cleanUrl(strFormat(URL_GET_FLV, sGlobalContentFilePath, sGlobalFileName));
+	result.URL = cleanUrl(strFormat(URL_GET_FLV, preUrl, sGlobalContentFilePath, sGlobalFileName));
 	// return the video information
 	return result;
 }

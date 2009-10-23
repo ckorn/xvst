@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.5min.com/";
@@ -46,6 +46,8 @@ function getVideoInformation(url)
 	result.title = copyBetween(html, '<h1 class="videoTitle">', '</h1>');
 	// get video url
 	result.URL = copyBetween(html, "videoUrl=", "&");
+	result.URL = strReplace(result.URL, "%3a", ":");
+	result.URL = strReplace(result.URL, "%2f", "/");
 	// return the video information
 	return result;
 }

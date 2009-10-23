@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.tangle.com/";
@@ -37,25 +37,17 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_FLV = "http://xml.tangle.com/xml/xml_v4.php?vkey=%1&cc=%2";
-	const URL_FLV = "http://video.tangle.com/%1";
+	const URL_GET_FLV = "http://xml.tangle.com/playlist/media/video/%1"; //"http://xml.tangle.com/xml/xml_v4.php?vkey=%1&cc=%2";
 	// video information
 	var result = new VideoDefinition();
+	// get the vkey
+	var vkey = getUrlParam(url, "viewkey");
 	// download webpage
 	var http = new Http();
-	var html = http.downloadWebpage(url);
-	// get the flv url and params
-	var vkey = copyBetween(html,"viewkey:\"","\"");
-	var cc = copyBetween(html,"cc=","\"");
-	//get xml info
-	var xml_flv = strFormat(URL_GET_FLV,vkey,cc);
-	html = http.downloadWebpage(xml_flv);
-	// get the video title
-	result.title = copyBetween(html, "<title>", "</title>");
-	result.title = strReplace(result.title, "Sin:", "");
-	// build final url
-	var flv = copyBetween(html, "<flv>", "</flv>");
-	result.URL = strFormat(URL_FLV, flv);
+	var xml = http.downloadWebpage(strFormat(URL_GET_FLV, vkey));
+	// get video information
+	result.title = copyBetween(xml, "<title><![CDATA[", "]]></title>");
+	result.URL = copyBetween(xml, "<filelocation>", "</filelocation>");
 	// return the video information
 	return result;
 }

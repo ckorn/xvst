@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.vimeo.com/";
@@ -37,7 +37,7 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_XML = "http://vimeo.com/moogaloop/load/clip:%1/local?";
+	const URL_GET_XML = "http://vimeo.com/moogaloop/load/clip:%1/local?%2";
 	const URL_GET_FLV = "http://vimeo.com/moogaloop/play/clip:%1/%2/%3/?q=sd";
 	// init result
 	var result = new VideoDefinition();
@@ -49,9 +49,17 @@ function getVideoInformation(url)
 		videoId = getToken(url, "hd#", 1);
 		result.extension = ".mp4";
 	}
+	// get the possible channel
+	var channel_id = "";
 	// download webpage
 	var http = new Http();
-	var xml = http.downloadWebpage(strFormat(URL_GET_XML, videoId));
+	var html = http.downloadWebpage(url);
+	// has a channel id?
+	if (html.toString().indexOf('id="channel_id"') != -1) 
+		channel_id = copyBetween(html, 'id="channel_id" value="', '"');
+	// found the channel id?
+	var channel_params = channel_id != "" ? "context=channel&context_id=" + channel_id : "";
+	var xml = http.downloadWebpage(strFormat(URL_GET_XML, videoId, channel_params));
 	// get video title
 	result.title = copyBetween(xml, "<caption>", "</caption>");
 	// get signature

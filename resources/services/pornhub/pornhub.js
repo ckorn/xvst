@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.pornhub.com/";
@@ -45,7 +45,7 @@ function getVideoInformation(url)
 	// get video title
 	result.title = copyBetween(html, "<title>", "- Pornhub.com</title>");
 	// get xml url
-	var xmlUrl = cleanUrl(copyBetween(html, "options\", \"", "\""));
+	var xmlUrl = cleanUrl(copyBetween(html, 'options=', '"'));
 	// download xml
 	var xml = http.downloadWebpage(xmlUrl);
 	// get video url

@@ -47,6 +47,9 @@ function getVideoInformation(url)
 	var uri = copyBetween(html, ",uri: '", "'");
 	// download feed
 	var feed = http.downloadWebpage(strFormat(URL_GET_FEED, uri));
+	
+	print(feed);
+	
 	// get video title
 	result.title = copyBetween(feed, "<title>", "</title>");
 	// get flv xml url

@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.keezmovies.com/";
@@ -43,9 +43,10 @@ function getVideoInformation(url)
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// get video title
-	result.title = copyBetween(html, "<title>", "- KeezMovies.com</title>");
+	result.title = copyBetween(html, "<title>", "</title>");
+	result.title = strReplace(result.title, "- KeezMovies.com", "");
 	// get the xml url
-	var xmlUrl = copyBetween(html, '"options", "', '"');
+	var xmlUrl = copyBetween(html, '"options","', '"');
 	// download xml
 	var xml = http.downloadWebpage(xmlUrl);
 	// get flv url

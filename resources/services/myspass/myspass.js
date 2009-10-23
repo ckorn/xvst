@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.myspass.de/";
@@ -37,11 +37,11 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_XML = "http://www.myspass.de/myspass/portal/macros/xml/getUrlById.xml?id=%1";
+	const URL_GET_XML = "http://www.myspass.de/myspass/includes/apps/video/getvideometadataxml.php?id=%1";
 	// video information
 	var result = new VideoDefinition();
 	// get id
-	var id = getUrlParam(url, "id");
+	var id = getToken(url, "/", getTokenCount(url, "/") - 2); //getUrlParam(url, "id");
 	// download xml
 	var http = new Http();
 	var xml = http.downloadWebpage(strFormat(URL_GET_XML, id));

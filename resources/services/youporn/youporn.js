@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "2.0.1";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2009 (thanks to Matze Ba)";
 	this.website = "http://www.youporn.com/";
 	this.ID = "youporn.com";
 	this.caption = "YouPorn";
@@ -49,6 +49,91 @@ function getVideoInformation(url)
 	result.URL = copyBetween(result.URL, "<a href=\"", "\"");
 	// return the video information
 	return result;
+}
+
+function searchVideos(keyWord, pageIndex)
+{
+	const URL_SEARCH = "http://youporn.com/search?query=%1&type=straight&page=%2";
+	const HTML_SEARCH_START = '<div id="video-listing">';
+	const HTML_SEARCH_FINISH = '<div id="pages" class="clearfix">';
+	const HTML_SEARCH_SEPARATOR = "5.00</span>";
+	// replace all spaces for "+"
+	keyWord = strReplace(keyWord, " ", "+");
+	// init search results object
+	var searchResults = new SearchResults();
+	// init http object
+	var http = new Http();
+	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex) + "&user_choice=Enter");
+	// get the search summary
+	var summary = copyBetween(html, '<div id="search-listing-hd">', '<div id="search-sort" class="clearfix">'); 
+	summary = copyBetween(summary, '<h1>', '</h1>');
+	searchResults.setSummary(cleanSummary(summary));
+	// get results html block
+	var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
+	// if we found some results then...
+	if (htmlResults != "")
+	{
+		// iterate over results
+		while ((block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_SEPARATOR)) != "")
+		{
+			parseResultItem(searchResults, block);
+			htmlResults = strRemove(htmlResults, 0, block.toString().length);
+		}
+	}
+	// return search results
+	return searchResults;
+}
+
+function cleanSummary(summary)
+{
+	// remove all "\n"
+	summary = strReplace(summary, "\n", "");
+	// remove unused tags
+	summary = strReplace(summary, "</span>", '');
+	summary = strReplace(summary, "<span>", '');
+	summary = strReplace(summary, "<em>", '');
+	summary = strReplace(summary, "</em>", '');
+	// return cleanned summary
+	return summary;
+}
+
+function parseResultItem(searchResults, html)
+{
+	const VIDEO_URL = "http://youporn.com";
+	// vars
+	var tmp, videoUrl, imageUrl, title, description, duration, rating;
+	// get video url
+	videoUrl = VIDEO_URL + copyBetween(html, 'href="', '"');
+	// get title and image url
+	tmp = copyBetween(html, '<img id="', '/>');
+	title = copyBetween(tmp, 'alt="', '"');
+	imageUrl = copyBetween(tmp, 'src="', '"');
+	// get video description
+	description = "";
+	// get video duration
+	tmp = copyBetween(html, '<div class="duration_views">', '</div>');
+	tmp = copyBetween(tmp, '<h2>', '</h2>');
+	duration = convertToSeconds(tmp); 
+	// get rating
+	tmp = copyBetween(html, '<div class="rating">', 'span>');
+	rating = copyBetween(tmp, '<p>', '<');
+	// add to results list
+	searchResults.addSearchResult(videoUrl, imageUrl, title, description, duration, rating);
+}
+
+function convertToSeconds(text)
+{
+	//Clean
+	var tmp2 = strReplace(text, "<span>", "");
+	var tmp2 = strReplace(tmp2, "</span>", "");
+	// how many ":" exists?
+	var count = getTokenCount(tmp2, ":");
+	// get mins and seconds
+	var h = new Number(h = count == 3 ? getToken(tmp2, ":", 0) * 3600 : 0);
+	var m = new Number(getToken(tmp2, ":", count - 2) * 60);
+	var s = new Number(getToken(tmp2, ":", count - 1));
+	// convert h:m:s to seconds
+	return h + m + s;
 }
 
 function getVideoServiceIcon()

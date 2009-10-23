@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.spike.com/";
@@ -45,6 +45,7 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(url);
 	// get the video title
 	result.title = copyBetween(html, "<title>", "</title>");
+	result.title = strReplace(result.title, "| SPIKE", "");
 	// get the video id
 	var videoId = strRemove(url, 0, url.lastIndexOf("/") + 1);
 	// download xml
