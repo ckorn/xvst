@@ -126,7 +126,7 @@
 	</test>	
 	<test>
 		<plugin file="googlevideo.js" title="Google Video" />
-		<video url="http://video.google.es/videoplay?docid=-1926945802003454003" caption="Jonas Brothers y Demi Lovato" size="3299347" />
+		<video url="http://video.google.es/videoplay?docid=-1926945802003454003" caption="Jonas Brothers y Demi Lovato" size="3299621" />
 	</test>	
 	<test>
 		<plugin file="jizzhut.js" title="Jizz-hut" />
@@ -134,7 +134,7 @@
 	</test>	
 	<test>
 		<plugin file="keezmovies.js" title="KeezMovies" />
-		<video url="http://www.keezmovies.com/444529" caption="Tight brunette in lime panties" size="109551954" />
+		<video url="http://www.keezmovies.com/444529" caption="Alicia Angel - Tight brunette in lime panties" size="109551954" />
 	</test>	
 	<test>
 		<plugin file="kontraband.js" title="Kontraband" />
@@ -162,7 +162,7 @@
 	</test>
 	<test>
 		<plugin file="myspass.js" title="MySpass" />
-		<video url="http://www.myspass.de/de/ulmentv/voneich/windhundzucht/index.html?id=127712" caption="Liebe und Gehorsam" size="28241990" />
+		<video url="http://www.myspass.de/myspass/shows/tvshows/stromberg/Exklusive-Preview-der-1-Folge--/1015/" caption="Exklusive Preview der 1. Folge" size="15008161" />
 	</test>
 	<test>
 		<plugin file="myvideo.js" title="MyVideo" />
@@ -194,7 +194,7 @@
 	</test>
 	<test>
 		<plugin file="shredordie.js" title="Shred or Die" />
-		<video url="http://www.shredordie.com/videos/b701a26af8/ken-hale" caption="Ken Hale" size="24049383" />
+		<video url="http://www.shredordie.com/videos/b701a26af8/ken-hale" caption="Ken Hale" size="11120241" />
 	</test>
 	<test>
 		<plugin file="redtube.js" title="RedTube" />
@@ -241,7 +241,7 @@
 		<video url="http://www.video.ca/video.php?id=1841568228&amp;mode=views" caption="Toronto Maple Leafs vs New York Islanders #10" size="2037198" />
 	</test>
 	<test>
-		<plugin file="videolog.uol.js" title="Videolog (UOL)" />
+		<plugin file="videologuol.js" title="Videolog (UOL)" />
 		<video url="http://videolog.uol.com.br/video.php?id=476528" caption="#01 SAFC" size="34998983" />
 	</test>
 	<test>
