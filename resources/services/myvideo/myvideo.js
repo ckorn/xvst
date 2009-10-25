@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "2.0.0";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.myvideo.de/";
@@ -54,6 +54,103 @@ function getVideoInformation(url)
 	result.cookies = http.getCookies("|");
 	// return the video information
 	return result;
+}
+
+function searchVideos(keyWord, pageIndex)
+{
+	const URL_SEARCH = "http://www.myvideo.de/Videos_A-Z?lpage=%2&searchWord=%1&searchOrder=0";
+	const HTML_SEARCH_START = "<table class='body sCenter vl_newMargin'>"; //'<div class="lBox lLeftBox globalBxBorder globalBx video_list">';
+	const HTML_SEARCH_FINISH = '</table>'; //"</body>";
+	const HTML_SEARCH_SEPARATOR = "<td class='body sTLeft hslice entry-content vCont' id='slice_";
+	// replace all spaces for "+"
+	keyWord = strReplace(keyWord, " ", "+");
+	// init search results object
+	var searchResults = new SearchResults();
+	// init http object
+	var http = new Http();
+	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex, searchResults.getUserLanguage()));
+	// get the search summary
+	var tmp = copyBetween(html, '<td> Dein Ergebnis', '</td>');
+	var summary = "Dein Ergebnis" + copyBetween(tmp, "<span class='sWord'>", "'");
+	var tmp = copyBetween(html, "<span class='pView pnPages'>", "</span>");
+	var summary = summary + " " + tmp
+	var tmp = copyBetween(html, "<span class='pView pnResults'>", "</span>");
+	var summary = summary + " " + tmp
+	searchResults.setSummary(summary);
+	// get results html block
+	var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
+	// if we found some results then...
+	if (htmlResults != "")
+	{
+		var block = "";
+		// iterate over results
+		while ((block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_SEPARATOR)) != "")
+		{
+			parseResultItem(searchResults, block);
+			htmlResults = strRemove(htmlResults, 0, block.toString().length);
+		}
+		// get last result
+		parseResultItem(searchResults, htmlResults);
+	}
+	// return search results
+	return searchResults;
+}
+
+function parseResultItem(searchResults, html)
+{
+	const VIDEO_URL = "http://www.myvideo.de";
+	// vars
+	var tmp, videoUrl, imageUrl, title, description, duration, rating;
+	// get title and image url
+	tmp = copyBetween(html, "<div class='vThumb'>", '</div>') ;
+	title = copyBetween(tmp, "title='", "'");
+	imageUrl = copyBetween(tmp, "src='", "'");
+	// get video url
+	videoUrl = VIDEO_URL + copyBetween(tmp, "href='", "'");
+	//if (strIndexOf(imageUrl, "default.jpg") == -1) // if is not a "default.jpg"...
+	//	imageUrl = copyBetween(tmp, 'thumb="', '"');
+	// get video description
+	tmp = copyBetween(html, "<div class='sCenter vTitle'>", '</div>') ;
+	description = copyBetween(tmp, "<span class='hidden'>", '</span>');
+	// get video duration
+	tmp = copyBetween(html, ' Länge ', '/span>');
+	duration = convertToSeconds(copyBetween(tmp, "> ", '<'));
+	// get rating
+	rating = getrating(copyBetween(html, 'ratingBox', '</div>'));
+	// add to results list
+	searchResults.addSearchResult(videoUrl, imageUrl, title, description, duration, rating);
+}
+
+function getrating(text)
+{
+	var rating = 0
+	var i = 1
+	while (i < 6)
+	{
+		var part = getToken(text, '<img',i);
+		if (strIndexOf(part,"m_star_red_0.gif") != -1)
+		{
+			rating = rating + 1
+		}
+		if (strIndexOf(part,"m_star_half_0.gif") != -1)
+		{
+			rating = rating + 0.5
+		}
+		i++
+	}
+	return rating;
+}
+
+function convertToSeconds(text)
+{
+	// how many ":" exists?
+	var count = getTokenCount(text, ":");
+	// get mins and seconds
+	var h = new Number(h = count == 3 ? getToken(text, ":", 0) * 3600 : 0);
+	var m = new Number(getToken(text, ":", count - 2) * 60);
+	var s = new Number(getToken(text, ":", count - 1));
+	// convert h:m:s to seconds
+	return h + m + s;
 }
 
 function getVideoServiceIcon()
