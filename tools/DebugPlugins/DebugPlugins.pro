@@ -16,8 +16,11 @@ HEADERS += src/forms/mainwindow.h \
     src/programsettings.h
 FORMS += ui/mainwindow.ui
 macx {
-	QMAKE_INFO_PLIST = Info.plist
+	QMAKE_INFO_PLIST = resources/Info.plist
 	ICON += resources/icons/MacOSX.icns
+}
+win32 {
+	RC_FILE += resources/DebugPlugins.rc
 }
 
 # include the common xVST classes
