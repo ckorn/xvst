@@ -6,6 +6,7 @@
 
 - Changed plug-ins:
 	- YouPorn (added search functions, thanks to Matze Ba)
+	- MyVideo (added search functions, thanks to Matze Ba)
 	- 5min
 	- Break
 	- Caught-on-video
@@ -16,6 +17,8 @@
 	- Tangle
 	- T'n A flix
 	- Vimeo
+
+- Revised Hungarian translation
 
 2.3:
 ----
