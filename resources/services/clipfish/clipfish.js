@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "2.0.0";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.clipfish.de/";
@@ -53,6 +53,155 @@ function getVideoInformation(url)
 	result.URL = copyBetween(xml, "=", "&");
 	// return the video information
 	return result;
+}
+
+//http://www.clipfish.de/suche/?search=Will+Smith
+//http://www.clipfish.de/suche/Will+Smith/video/bestertreffer/2/listenansicht/?search=Will%20Smith
+function searchVideos(keyWord, pageIndex)
+{
+	const URL_SEARCH = "http://www.clipfish.de/suche/%1/video/bestertreffer/%2/listenansicht/?search=%1";
+	const HTML_SEARCH_START = '<ul class="cf-video-list cf-list-linear">'; //"<!-- GENERIC BOX BEGIN -->";
+	const HTML_SEARCH_FINISH = '<!-- GENERIC BOX END -->';
+	const HTML_SEARCH_SEPARATOR = '<li id="cf-video-item_';
+	// replace all spaces for "+"
+	keyWord = strReplace(keyWord, " ", "+");
+	// init search results object
+	var searchResults = new SearchResults();
+	// init http object
+	var http = new Http();
+	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex));
+	// get the search summary
+	var tmp = copyBetween(html, '>Deine Suche nach', 'Treffer ergeben.');
+	var summary = "Deine Suche nach " + cleanwhitespace(cleartags(tmp,1)) + ' Treffer ergeben.';
+	var tmp = copyBetween(html, "Suchergebnisse", "</span></span>");
+	var summary = summary + " (" + cleanwhitespace(cleartags(tmp,1)) + ")";
+	searchResults.setSummary(summary);
+	// get results html block
+	var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
+	if (strIndexOf(htmlResults,HTML_SEARCH_SEPARATOR) != -1) {
+		htmlResults = strRemove(htmlResults, 0, strIndexOf(htmlResults,HTML_SEARCH_SEPARATOR));
+	}
+	// if we found some results then...
+	if (htmlResults != "")
+	{
+		var block = "";
+		// iterate over results
+		while ((block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_SEPARATOR)) != "")
+		{
+			parseResultItem(searchResults, block);
+			htmlResults = strRemove(htmlResults, 0, block.toString().length + HTML_SEARCH_SEPARATOR.toString().length);
+		}
+		// get last result
+		parseResultItem(searchResults, htmlResults);
+	}
+	// return search results
+	return searchResults;
+}
+
+function parseResultItem(searchResults, html)
+{
+	const VIDEO_URL = "http://www.clipfish.de";
+	// vars
+	var tmp, videoUrl, imageUrl, title, description, duration, rating;
+	// get video url
+	videoUrl = VIDEO_URL + copyBetween(html, '<a href="', '"');
+	// get title and image url
+	title = trim(copyBetween(html, 'title="', '"')," ");
+	imageUrl = copyBetween(html, '<img src="', '"');
+	//if (strIndexOf(imageUrl, "default.jpg") == -1) // if is not a "default.jpg"...
+	//	imageUrl = copyBetween(tmp, 'thumb="', '"');
+	// get video description
+	tmp = copyBetween(html, '<div class="cf-video-list-item-info cf-gray">', '</div>') ;
+	description = trim(cleartags(copyBetween(tmp,"<p>","</p>"),0)," ");
+	description = (strIndexOf(description,"Video-L&auml;nge:") == -1 ? description : "Keine Beschreibung vorhanden.");
+	// get video duration
+	duration = convertToSeconds(trim(cleartags(copyBetween(tmp, "Video-L&auml;nge:", '</span>'),0)," "));
+	// get rating
+	rating = getrating(copyBetween(html, '<div class="cf-voting-fishes">', '</div>'));
+	// add to results list
+	searchResults.addSearchResult(videoUrl, imageUrl, title, description, duration, rating);
+}
+
+function getrating(text)
+{
+	var rating = 0
+	var i = 1
+	while (i < 6)
+	{
+		var part = getToken(text, '<img',i);
+		if (strIndexOf(part,"cf-voting-fish-full") != -1)
+		{
+			rating = rating + 1
+		}
+		if (strIndexOf(part,"cf-voting-fish-half") != -1)
+		{
+			rating = rating + 0.5
+		}
+		i++
+	}
+	return rating;
+}
+
+function cleanwhitespace(text)
+{
+	text = trim(text," ");
+	text = trim(text,"	");
+	text = cleandoublevalue(text," ");
+	text = cleandoublevalue(text,"	");
+	text = strReplace(text,"\n","");
+	text = strReplace(text,"\r","");
+	return text;
+}
+
+function trim(text,value)
+{
+	while(strIndexOf(text,value) == 0) {
+		text = strRemove(text,0,1);
+	}
+	while(strLastIndexOf(text,value,-1) == text.toString().length - 1) {
+		text = strRemove(text,text.toString().length - 1,1);
+	}
+	return text;
+}
+
+function cleandoublevalue(text,value)
+{
+	while (strIndexOf(text,value+value) != -1) {
+		text = strReplace(text,value+value,value);
+	}
+	return text;
+}
+
+function cleartags(text, killopen)
+{
+	var cleartext = text
+	if (killopen==1) {
+		if (strIndexOf(cleartext,">") < strIndexOf(cleartext,"<")) {
+			cleartext = strRemove(cleartext,0,strIndexOf(cleartext,">")+1);
+		}
+		if (strLastIndexOf(cleartext,">",-1) < strLastIndexOf(cleartext,"<",-1)) {
+			var tmp = strLastIndexOf(cleartext,"<",-1);
+			cleartext = strRemove(cleartext,tmp,cleartext.toString().length-tmp);
+		}
+	}
+	while (strIndexOf(cleartext,">") != -1 && strIndexOf(cleartext,"<") != -1) {
+		var start = strIndexOf(cleartext,"<");
+		var stop = strIndexOf(cleartext,">");
+		cleartext = strRemove(cleartext,start,stop-start+1);
+	}
+	return cleartext;
+}
+
+function convertToSeconds(text)
+{
+	// how many ":" exists?
+	var count = getTokenCount(text, ":");
+	// get mins and seconds
+	var h = new Number(h = count == 3 ? getToken(text, ":", 0) * 3600 : 0);
+	var m = new Number(getToken(text, ":", count - 2) * 60);
+	var s = new Number(getToken(text, ":", count - 1));
+	// convert h:m:s to seconds
+	return h + m + s;
 }
 
 function getVideoServiceIcon()

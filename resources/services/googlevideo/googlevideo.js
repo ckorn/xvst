@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.1";
+	this.version = "2.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://video.google.com/";
@@ -63,7 +63,7 @@ function getVideoInformation(url)
 function searchVideos(keyWord, pageIndex)
 {
 	const URL_SEARCH = "http://video.google.com/videosearch?q=%1&start=%2&hl=%3";
-	const HTML_SEARCH_START = '<div class="rl-item-spacer spacer-initial "></div>';
+	const HTML_SEARCH_START = '<div class=tv-res id=search-results>';
 	const HTML_SEARCH_FINISH = "<div style=clear:both;></div>";
 	const HTML_SEARCH_SEPARATOR = "<div class=rl-item>";
 	// replace all spaces for "+"
@@ -83,7 +83,7 @@ function searchVideos(keyWord, pageIndex)
 	{
 		var block = "";
 		// iterate over results
-		while ((block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_START)) != "")
+		while ((block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_SEPARATOR)) != "")
 		{
 			parseResultItem(searchResults, block);
 			htmlResults = strRemove(htmlResults, 0, block.toString().length);

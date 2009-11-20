@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.4";
+	this.version = "2.0.5";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -67,7 +67,7 @@ function getVideoInformation(url)
 	if (vidRes == HD_VIDEO_RES) // for HD videos the extension is mp4
 		result.extension = ".mp4";
 	// get the video title
-	result.title = copyBetween(html, "<title>YouTube - ", "</title>");
+	result.title = copyBetween(html, 'title="', '"');
 	// build the video url
 	if (vidRes != "") // videoRes (fmt) specified
 		result.URL = strFormat(URL_GET_FLV_FMT, getUrlHost(youTubeURL), vidID, vidHash, vidRes);

@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.3";
 	this.minVersion = "2.0.0a";
 	this.author = "Max Zorloff";
 	this.website = "http://www.gameanyone.com/";
@@ -45,12 +45,15 @@ function getVideoInformation(url)
 	// Get the video title
 	result.title = copyBetween(html, "&title=", "&");
 	// get the flv url
-	result.URL = copyBetween(html, "&file=", "&");
+	result.URL = copyBetween(html, "file=", "&");
 	// clear and get the final url
 	result.URL = cleanUrl(result.URL);
+	result.URL += "&fmt=22";
+	result.extension = ".mp4";
 	// return the video information
 	return result;
 }
+
 
 function getVideoServiceIcon()
 {
