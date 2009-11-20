@@ -7,6 +7,7 @@
 - Changed plug-ins:
 	- YouPorn (added search functions, thanks to Matze Ba)
 	- MyVideo (added search functions, thanks to Matze Ba)
+	- ClipFish (added search functions, thanks to Matze Ba)
 	- 5min
 	- Break
 	- Caught-on-video
@@ -19,6 +20,11 @@
 	- Vimeo
 
 - Revised Hungarian translation
+
+Plugins SDK:
+------------
+
+- Fixed bug (Error: The default value of strLastIndexOf was incorrect)
 
 2.3:
 ----
