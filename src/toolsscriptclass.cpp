@@ -260,8 +260,8 @@ QScriptValue ToolsScriptClass::func_strLastIndexOf(QScriptContext *context, QScr
 		// get params
 		QString str = context->argument(0).toString();
 		QString subStr = context->argument(1).toString();
-		// default index is 0
-		int from = 0;
+		// default index is -1
+		int from = -1;
 		if (context->argumentCount() >= 3)
 			from = context->argument(2).toInteger();
 		// is casesensitive by default
