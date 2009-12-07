@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.1";
+	this.version = "2.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009 (thanks to Matze Ba)";
 	this.website = "http://www.youporn.com/";
@@ -73,12 +73,9 @@ function searchVideos(keyWord, pageIndex)
 	// if we found some results then...
 	if (htmlResults != "")
 	{
-		// iterate over results
-		while ((block = copyBetween(htmlResults, HTML_SEARCH_SEPARATOR, HTML_SEARCH_SEPARATOR)) != "")
-		{
-			parseResultItem(searchResults, block);
-			htmlResults = strRemove(htmlResults, 0, block.toString().length);
-		}
+		var blocks = splitString(htmlResults,HTML_SEARCH_SEPARATOR);
+		for (n = 0; n < blocks.length-1; n++)
+			parseResultItem(searchResults, blocks[n]);
 	}
 	// return search results
 	return searchResults;
