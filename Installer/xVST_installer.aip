@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT type="Advanced Installer" CreateVersion="5.2.2" version="7.2.1" modules="freeware" RootPath="." Language="en">
+<DOCUMENT type="Advanced Installer" CreateVersion="5.2.2" version="7.3.1" modules="freeware" RootPath="." Language="en">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="ALLUSERS" Value="2"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
@@ -10,10 +10,10 @@
     <ROW Property="BannerBitmap" MultiBuildValue="DefaultBuild:default_banner.bmp" Type="1"/>
     <ROW Property="DialogBitmap" MultiBuildValue="DefaultBuild:default_dialog.bmp" Type="1"/>
     <ROW Property="Manufacturer" Value="Xesc &amp; Technology" ValueLocId="*"/>
-    <ROW Property="ProductCode" Value="1033:{3949B3F8-AE2F-43D5-840E-FC3E586BEB1F} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{5CFA7236-AD0D-4F0A-8014-D0204493CED9} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="xVideoServiceThief" ValueLocId="*"/>
-    <ROW Property="ProductVersion" Value="2.3"/>
+    <ROW Property="ProductVersion" Value="2.3.1"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{FA98D6CA-0AA3-4897-9928-194EC4DEEA4D}"/>
   </COMPONENT>
@@ -36,7 +36,7 @@
     <ROW Component="downloads" ComponentId="{6788E29F-0CCC-491B-964D-619EA1AE9F1D}" Directory_="downloads_DIR" Attributes="0"/>
     <ROW Component="ffmpeg.exe" ComponentId="{C1171B40-C396-4C62-AC62-EC8DE2A0EE7D}" Directory_="bin_DIR" Attributes="0" KeyPath="ffmpeg.exe" Type="0"/>
     <ROW Component="flvstreamer.exe" ComponentId="{E7231ED3-5354-458F-8824-3266C21FB2C4}" Directory_="bin_DIR" Attributes="0" KeyPath="flvstreamer.exe"/>
-    <ROW Component="min.js" ComponentId="{F1479387-E5DD-4F2F-86EF-0F99446CDE58}" Directory_="plugins_DIR" Attributes="0" KeyPath="min.js" Type="0"/>
+    <ROW Component="min.js" ComponentId="{F6202F63-95FC-4E0F-B7AB-2870498933E7}" Directory_="plugins_DIR" Attributes="0" KeyPath="min.js" Type="0"/>
     <ROW Component="msvcm90.dll" ComponentId="{48743BAB-137D-4F2F-B04D-D5E1C8352C07}" Directory_="Microsoft.VC90.CRT_DIR" Attributes="0" KeyPath="msvcm90.dll"/>
     <ROW Component="msvcp90.dll" ComponentId="{495169F9-2797-4674-9990-508761248897}" Directory_="Microsoft.VC90.CRT_DIR" Attributes="0" KeyPath="msvcp90.dll"/>
     <ROW Component="msvcr90.dll" ComponentId="{18807880-A16F-42D0-A95A-B80E9A7C8EF5}" Directory_="Microsoft.VC90.CRT_DIR" Attributes="0" KeyPath="msvcr90.dll"/>
@@ -85,57 +85,58 @@
     <ROW File="freecaster.js" Component_="min.js" FileName="freeca~1.js|freecaster.js" Attributes="0" SourcePath="..\bin\plugins\freecaster.js" SelfReg="false" Sequence="70"/>
     <ROW File="french.language" Component_="catala.language" FileName="french~1.lan|french.language" Attributes="0" SourcePath="..\bin\languages\french.language" SelfReg="false" Sequence="17"/>
     <ROW File="galician.language" Component_="catala.language" FileName="galici~1.lan|galician.language" Attributes="0" SourcePath="..\bin\languages\galician.language" SelfReg="false" Sequence="18"/>
-    <ROW File="gamespot.js" Component_="min.js" FileName="gamespot.js" Attributes="0" SourcePath="..\bin\plugins\gamespot.js" SelfReg="false" Sequence="71"/>
-    <ROW File="gametrailers.js" Component_="min.js" FileName="gametr~1.js|gametrailers.js" Attributes="0" SourcePath="..\bin\plugins\gametrailers.js" SelfReg="false" Sequence="72"/>
+    <ROW File="gameanyone.js" Component_="min.js" FileName="gamean~1.js|gameanyone.js" Attributes="0" SourcePath="..\bin\plugins\gameanyone.js" SelfReg="false" Sequence="71"/>
+    <ROW File="gamespot.js" Component_="min.js" FileName="gamespot.js" Attributes="0" SourcePath="..\bin\plugins\gamespot.js" SelfReg="false" Sequence="72"/>
+    <ROW File="gametrailers.js" Component_="min.js" FileName="gametr~1.js|gametrailers.js" Attributes="0" SourcePath="..\bin\plugins\gametrailers.js" SelfReg="false" Sequence="73"/>
     <ROW File="german.language" Component_="catala.language" FileName="german~1.lan|german.language" Attributes="0" SourcePath="..\bin\languages\german.language" SelfReg="false" Sequence="19"/>
-    <ROW File="glumbert.js" Component_="min.js" FileName="glumbert.js" Attributes="0" SourcePath="..\bin\plugins\glumbert.js" SelfReg="false" Sequence="73"/>
-    <ROW File="godofhumor.js" Component_="min.js" FileName="godofh~1.js|godofhumor.js" Attributes="0" SourcePath="..\bin\plugins\godofhumor.js" SelfReg="false" Sequence="74"/>
-    <ROW File="goear.js" Component_="min.js" FileName="goear.js" Attributes="0" SourcePath="..\bin\plugins\goear.js" SelfReg="false" Sequence="75"/>
-    <ROW File="googlevideo.js" Component_="min.js" FileName="google~1.js|googlevideo.js" Attributes="0" SourcePath="..\bin\plugins\googlevideo.js" SelfReg="false" Sequence="76"/>
+    <ROW File="glumbert.js" Component_="min.js" FileName="glumbert.js" Attributes="0" SourcePath="..\bin\plugins\glumbert.js" SelfReg="false" Sequence="74"/>
+    <ROW File="godofhumor.js" Component_="min.js" FileName="godofh~1.js|godofhumor.js" Attributes="0" SourcePath="..\bin\plugins\godofhumor.js" SelfReg="false" Sequence="75"/>
+    <ROW File="goear.js" Component_="min.js" FileName="goear.js" Attributes="0" SourcePath="..\bin\plugins\goear.js" SelfReg="false" Sequence="76"/>
+    <ROW File="googlevideo.js" Component_="min.js" FileName="google~1.js|googlevideo.js" Attributes="0" SourcePath="..\bin\plugins\googlevideo.js" SelfReg="false" Sequence="77"/>
     <ROW File="hungarian.language" Component_="catala.language" FileName="hungar~1.lan|hungarian.language" Attributes="0" SourcePath="..\bin\languages\hungarian.language" SelfReg="false" Sequence="20"/>
     <ROW File="italiano.language" Component_="catala.language" FileName="italia~1.lan|italiano.language" Attributes="0" SourcePath="..\bin\languages\italiano.language" SelfReg="false" Sequence="21"/>
     <ROW File="japanese.language" Component_="catala.language" FileName="japane~1.lan|japanese.language" Attributes="0" SourcePath="..\bin\languages\japanese.language" SelfReg="false" Sequence="22"/>
-    <ROW File="jizzhut.js" Component_="min.js" FileName="jizzhut.js" Attributes="0" SourcePath="..\bin\plugins\jizzhut.js" SelfReg="false" Sequence="77"/>
-    <ROW File="keezmovies.js" Component_="min.js" FileName="keezmo~1.js|keezmovies.js" Attributes="0" SourcePath="..\bin\plugins\keezmovies.js" SelfReg="false" Sequence="78"/>
-    <ROW File="kontraband.js" Component_="min.js" FileName="kontra~1.js|kontraband.js" Attributes="0" SourcePath="..\bin\plugins\kontraband.js" SelfReg="false" Sequence="79"/>
+    <ROW File="jizzhut.js" Component_="min.js" FileName="jizzhut.js" Attributes="0" SourcePath="..\bin\plugins\jizzhut.js" SelfReg="false" Sequence="78"/>
+    <ROW File="keezmovies.js" Component_="min.js" FileName="keezmo~1.js|keezmovies.js" Attributes="0" SourcePath="..\bin\plugins\keezmovies.js" SelfReg="false" Sequence="79"/>
+    <ROW File="kontraband.js" Component_="min.js" FileName="kontra~1.js|kontraband.js" Attributes="0" SourcePath="..\bin\plugins\kontraband.js" SelfReg="false" Sequence="80"/>
     <ROW File="korean.language" Component_="catala.language" FileName="korean~1.lan|korean.language" Attributes="0" SourcePath="..\bin\languages\korean.language" SelfReg="false" Sequence="23"/>
-    <ROW File="liveleak.js" Component_="min.js" FileName="liveleak.js" Attributes="0" SourcePath="..\bin\plugins\liveleak.js" SelfReg="false" Sequence="80"/>
-    <ROW File="livevideo.js" Component_="min.js" FileName="livevi~1.js|livevideo.js" Attributes="0" SourcePath="..\bin\plugins\livevideo.js" SelfReg="false" Sequence="81"/>
-    <ROW File="metacafe.js" Component_="min.js" FileName="metacafe.js" Attributes="0" SourcePath="..\bin\plugins\metacafe.js" SelfReg="false" Sequence="82"/>
+    <ROW File="liveleak.js" Component_="min.js" FileName="liveleak.js" Attributes="0" SourcePath="..\bin\plugins\liveleak.js" SelfReg="false" Sequence="81"/>
+    <ROW File="livevideo.js" Component_="min.js" FileName="livevi~1.js|livevideo.js" Attributes="0" SourcePath="..\bin\plugins\livevideo.js" SelfReg="false" Sequence="82"/>
+    <ROW File="metacafe.js" Component_="min.js" FileName="metacafe.js" Attributes="0" SourcePath="..\bin\plugins\metacafe.js" SelfReg="false" Sequence="83"/>
     <ROW File="min.js" Component_="min.js" FileName="5min.js" Attributes="0" SourcePath="..\bin\plugins\5min.js" SelfReg="false" Sequence="45"/>
-    <ROW File="mp3tube.js" Component_="min.js" FileName="mp3tube.js" Attributes="0" SourcePath="..\bin\plugins\mp3tube.js" SelfReg="false" Sequence="83"/>
+    <ROW File="mp3tube.js" Component_="min.js" FileName="mp3tube.js" Attributes="0" SourcePath="..\bin\plugins\mp3tube.js" SelfReg="false" Sequence="84"/>
     <ROW File="msvcm90.dll" Component_="msvcm90.dll" FileName="msvcm90.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC90.CRT\msvcm90.dll" SelfReg="false" Sequence="7"/>
     <ROW File="msvcp90.dll" Component_="msvcp90.dll" FileName="msvcp90.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC90.CRT\msvcp90.dll" SelfReg="false" Sequence="8"/>
     <ROW File="msvcr90.dll" Component_="msvcr90.dll" FileName="msvcr90.dll" Attributes="0" SourcePath="..\bin\Microsoft.VC90.CRT\msvcr90.dll" SelfReg="false" Sequence="9"/>
-    <ROW File="myspacetv.js" Component_="min.js" FileName="myspac~1.js|myspacetv.js" Attributes="0" SourcePath="..\bin\plugins\myspacetv.js" SelfReg="false" Sequence="84"/>
-    <ROW File="myspass.js" Component_="min.js" FileName="myspass.js" Attributes="0" SourcePath="..\bin\plugins\myspass.js" SelfReg="false" Sequence="85"/>
-    <ROW File="myvideo.js" Component_="min.js" FileName="myvideo.js" Attributes="0" SourcePath="..\bin\plugins\myvideo.js" SelfReg="false" Sequence="86"/>
-    <ROW File="onehumor.js" Component_="min.js" FileName="onehumor.js" Attributes="0" SourcePath="..\bin\plugins\onehumor.js" SelfReg="false" Sequence="87"/>
+    <ROW File="myspacetv.js" Component_="min.js" FileName="myspac~1.js|myspacetv.js" Attributes="0" SourcePath="..\bin\plugins\myspacetv.js" SelfReg="false" Sequence="85"/>
+    <ROW File="myspass.js" Component_="min.js" FileName="myspass.js" Attributes="0" SourcePath="..\bin\plugins\myspass.js" SelfReg="false" Sequence="86"/>
+    <ROW File="myvideo.js" Component_="min.js" FileName="myvideo.js" Attributes="0" SourcePath="..\bin\plugins\myvideo.js" SelfReg="false" Sequence="87"/>
+    <ROW File="onehumor.js" Component_="min.js" FileName="onehumor.js" Attributes="0" SourcePath="..\bin\plugins\onehumor.js" SelfReg="false" Sequence="88"/>
     <ROW File="polish.language" Component_="catala.language" FileName="polish~1.lan|polish.language" Attributes="0" SourcePath="..\bin\languages\polish.language" SelfReg="false" Sequence="24"/>
-    <ROW File="pornfuze.js" Component_="min.js" FileName="pornfuze.js" Attributes="0" SourcePath="..\bin\plugins\pornfuze.js" SelfReg="false" Sequence="88"/>
-    <ROW File="pornhub.js" Component_="min.js" FileName="pornhub.js" Attributes="0" SourcePath="..\bin\plugins\pornhub.js" SelfReg="false" Sequence="89"/>
-    <ROW File="pornotube.js" Component_="min.js" FileName="pornot~1.js|pornotube.js" Attributes="0" SourcePath="..\bin\plugins\pornotube.js" SelfReg="false" Sequence="90"/>
+    <ROW File="pornfuze.js" Component_="min.js" FileName="pornfuze.js" Attributes="0" SourcePath="..\bin\plugins\pornfuze.js" SelfReg="false" Sequence="89"/>
+    <ROW File="pornhub.js" Component_="min.js" FileName="pornhub.js" Attributes="0" SourcePath="..\bin\plugins\pornhub.js" SelfReg="false" Sequence="90"/>
+    <ROW File="pornotube.js" Component_="min.js" FileName="pornot~1.js|pornotube.js" Attributes="0" SourcePath="..\bin\plugins\pornotube.js" SelfReg="false" Sequence="91"/>
     <ROW File="portuguese_br.language" Component_="catala.language" FileName="portug~1.lan|portuguese_br.language" Attributes="0" SourcePath="..\bin\languages\portuguese_br.language" SelfReg="false" Sequence="25"/>
-    <ROW File="pp2g.js" Component_="min.js" FileName="pp2g.js" Attributes="0" SourcePath="..\bin\plugins\pp2g.js" SelfReg="false" Sequence="91"/>
+    <ROW File="pp2g.js" Component_="min.js" FileName="pp2g.js" Attributes="0" SourcePath="..\bin\plugins\pp2g.js" SelfReg="false" Sequence="92"/>
     <ROW File="pthreadGC2.dll" Component_="pthreadGC2.dll" FileName="pthrea~1.dll|pthreadGC2.dll" Attributes="0" SourcePath="..\bin\bin\pthreadGC2.dll" SelfReg="false" Sequence="2"/>
-    <ROW File="pugorama.js" Component_="min.js" FileName="pugorama.js" Attributes="0" SourcePath="..\bin\plugins\pugorama.js" SelfReg="false" Sequence="92"/>
-    <ROW File="redtube.js" Component_="min.js" FileName="redtube.js" Attributes="0" SourcePath="..\bin\plugins\redtube.js" SelfReg="false" Sequence="93"/>
+    <ROW File="pugorama.js" Component_="min.js" FileName="pugorama.js" Attributes="0" SourcePath="..\bin\plugins\pugorama.js" SelfReg="false" Sequence="93"/>
+    <ROW File="redtube.js" Component_="min.js" FileName="redtube.js" Attributes="0" SourcePath="..\bin\plugins\redtube.js" SelfReg="false" Sequence="94"/>
     <ROW File="romanian.language" Component_="catala.language" FileName="romani~1.lan|romanian.language" Attributes="0" SourcePath="..\bin\languages\romanian.language" SelfReg="false" Sequence="26"/>
-    <ROW File="scientificblogging.js" Component_="min.js" FileName="scient~1.js|scientificblogging.js" Attributes="0" SourcePath="..\bin\plugins\scientificblogging.js" SelfReg="false" Sequence="94"/>
-    <ROW File="shredordie.js" Component_="min.js" FileName="shredo~1.js|shredordie.js" Attributes="0" SourcePath="..\bin\plugins\shredordie.js" SelfReg="false" Sequence="95"/>
-    <ROW File="spankwire.js" Component_="min.js" FileName="spankw~1.js|spankwire.js" Attributes="0" SourcePath="..\bin\plugins\spankwire.js" SelfReg="false" Sequence="96"/>
-    <ROW File="spike.js" Component_="min.js" FileName="spike.js" Attributes="0" SourcePath="..\bin\plugins\spike.js" SelfReg="false" Sequence="97"/>
-    <ROW File="streetfire.js" Component_="min.js" FileName="street~1.js|streetfire.js" Attributes="0" SourcePath="..\bin\plugins\streetfire.js" SelfReg="false" Sequence="98"/>
+    <ROW File="scientificblogging.js" Component_="min.js" FileName="scient~1.js|scientificblogging.js" Attributes="0" SourcePath="..\bin\plugins\scientificblogging.js" SelfReg="false" Sequence="95"/>
+    <ROW File="shredordie.js" Component_="min.js" FileName="shredo~1.js|shredordie.js" Attributes="0" SourcePath="..\bin\plugins\shredordie.js" SelfReg="false" Sequence="96"/>
+    <ROW File="spankwire.js" Component_="min.js" FileName="spankw~1.js|spankwire.js" Attributes="0" SourcePath="..\bin\plugins\spankwire.js" SelfReg="false" Sequence="97"/>
+    <ROW File="spike.js" Component_="min.js" FileName="spike.js" Attributes="0" SourcePath="..\bin\plugins\spike.js" SelfReg="false" Sequence="98"/>
+    <ROW File="streetfire.js" Component_="min.js" FileName="street~1.js|streetfire.js" Attributes="0" SourcePath="..\bin\plugins\streetfire.js" SelfReg="false" Sequence="99"/>
     <ROW File="swedish.language" Component_="catala.language" FileName="swedis~1.lan|swedish.language" Attributes="0" SourcePath="..\bin\languages\swedish.language" SelfReg="false" Sequence="27"/>
-    <ROW File="tangle.js" Component_="min.js" FileName="tangle.js" Attributes="0" SourcePath="..\bin\plugins\tangle.js" SelfReg="false" Sequence="99"/>
-    <ROW File="tnaflix.js" Component_="min.js" FileName="tnaflix.js" Attributes="0" SourcePath="..\bin\plugins\tnaflix.js" SelfReg="false" Sequence="100"/>
-    <ROW File="tsn.js" Component_="min.js" FileName="tsn.js" Attributes="0" SourcePath="..\bin\plugins\tsn.js" SelfReg="false" Sequence="101"/>
-    <ROW File="tv2.js" Component_="min.js" FileName="tv2.js" Attributes="0" SourcePath="..\bin\plugins\tv2.js" SelfReg="false" Sequence="102"/>
+    <ROW File="tangle.js" Component_="min.js" FileName="tangle.js" Attributes="0" SourcePath="..\bin\plugins\tangle.js" SelfReg="false" Sequence="100"/>
+    <ROW File="tnaflix.js" Component_="min.js" FileName="tnaflix.js" Attributes="0" SourcePath="..\bin\plugins\tnaflix.js" SelfReg="false" Sequence="101"/>
+    <ROW File="tsn.js" Component_="min.js" FileName="tsn.js" Attributes="0" SourcePath="..\bin\plugins\tsn.js" SelfReg="false" Sequence="102"/>
+    <ROW File="tv2.js" Component_="min.js" FileName="tv2.js" Attributes="0" SourcePath="..\bin\plugins\tv2.js" SelfReg="false" Sequence="103"/>
     <ROW File="video.js" Component_="min.js" FileName="123video.js" Attributes="0" SourcePath="..\bin\plugins\123video.js" SelfReg="false" Sequence="46"/>
-    <ROW File="videoca.js" Component_="min.js" FileName="videoca.js" Attributes="0" SourcePath="..\bin\plugins\videoca.js" SelfReg="false" Sequence="103"/>
-    <ROW File="videologuol.js" Component_="min.js" FileName="videol~1.js|videologuol.js" Attributes="0" SourcePath="..\bin\plugins\videologuol.js" SelfReg="false" Sequence="104"/>
-    <ROW File="vimeo.js" Component_="min.js" FileName="vimeo.js" Attributes="0" SourcePath="..\bin\plugins\vimeo.js" SelfReg="false" Sequence="105"/>
-    <ROW File="wat.js" Component_="min.js" FileName="wat.js" Attributes="0" SourcePath="..\bin\plugins\wat.js" SelfReg="false" Sequence="106"/>
+    <ROW File="videoca.js" Component_="min.js" FileName="videoca.js" Attributes="0" SourcePath="..\bin\plugins\videoca.js" SelfReg="false" Sequence="104"/>
+    <ROW File="videologuol.js" Component_="min.js" FileName="videol~1.js|videologuol.js" Attributes="0" SourcePath="..\bin\plugins\videologuol.js" SelfReg="false" Sequence="105"/>
+    <ROW File="vimeo.js" Component_="min.js" FileName="vimeo.js" Attributes="0" SourcePath="..\bin\plugins\vimeo.js" SelfReg="false" Sequence="106"/>
+    <ROW File="wat.js" Component_="min.js" FileName="wat.js" Attributes="0" SourcePath="..\bin\plugins\wat.js" SelfReg="false" Sequence="107"/>
     <ROW File="xUpdater.exe" Component_="xUpdater.exe" FileName="xUpdater.exe" Attributes="0" SourcePath="..\bin\bin\xUpdater.exe" SelfReg="false" Sequence="3"/>
     <ROW File="xVST_br.qm" Component_="catala.language" FileName="xVST_br.qm" Attributes="0" SourcePath="..\bin\languages\xVST_br.qm" SelfReg="false" Sequence="28"/>
     <ROW File="xVST_ca.qm" Component_="catala.language" FileName="xVST_ca.qm" Attributes="0" SourcePath="..\bin\languages\xVST_ca.qm" SelfReg="false" Sequence="29"/>
@@ -155,18 +156,18 @@
     <ROW File="xVST_ro.qm" Component_="catala.language" FileName="xVST_ro.qm" Attributes="0" SourcePath="..\bin\languages\xVST_ro.qm" SelfReg="false" Sequence="43"/>
     <ROW File="xVST_sv.qm" Component_="catala.language" FileName="xVST_sv.qm" Attributes="0" SourcePath="..\bin\languages\xVST_sv.qm" SelfReg="false" Sequence="44"/>
     <ROW File="xVideoServiceThief.exe" Component_="xVideoServiceThief.exe" FileName="xVideo~1.exe|xVideoServiceThief.exe" Attributes="0" SourcePath="..\bin\xVideoServiceThief.exe" SelfReg="false" Sequence="4"/>
-    <ROW File="xtube.js" Component_="min.js" FileName="xtube.js" Attributes="0" SourcePath="..\bin\plugins\xtube.js" SelfReg="false" Sequence="107"/>
-    <ROW File="xvideos.js" Component_="min.js" FileName="xvideos.js" Attributes="0" SourcePath="..\bin\plugins\xvideos.js" SelfReg="false" Sequence="108"/>
-    <ROW File="yahoovideo.js" Component_="min.js" FileName="yahoov~1.js|yahoovideo.js" Attributes="0" SourcePath="..\bin\plugins\yahoovideo.js" SelfReg="false" Sequence="109"/>
-    <ROW File="yikers.js" Component_="min.js" FileName="yikers.js" Attributes="0" SourcePath="..\bin\plugins\yikers.js" SelfReg="false" Sequence="110"/>
-    <ROW File="youporn.js" Component_="min.js" FileName="youporn.js" Attributes="0" SourcePath="..\bin\plugins\youporn.js" SelfReg="false" Sequence="111"/>
-    <ROW File="yourfilehost.js" Component_="min.js" FileName="yourfi~1.js|yourfilehost.js" Attributes="0" SourcePath="..\bin\plugins\yourfilehost.js" SelfReg="false" Sequence="112"/>
-    <ROW File="youtube.js" Component_="min.js" FileName="youtube.js" Attributes="0" SourcePath="..\bin\plugins\youtube.js" SelfReg="false" Sequence="113"/>
-    <ROW File="youtubeislam.js" Component_="min.js" FileName="youtub~1.js|youtubeislam.js" Attributes="0" SourcePath="..\bin\plugins\youtubeislam.js" SelfReg="false" Sequence="114"/>
-    <ROW File="yuvutu.js" Component_="min.js" FileName="yuvutu.js" Attributes="0" SourcePath="..\bin\plugins\yuvutu.js" SelfReg="false" Sequence="115"/>
-    <ROW File="zappinternet.js" Component_="min.js" FileName="zappin~1.js|zappinternet.js" Attributes="0" SourcePath="..\bin\plugins\zappinternet.js" SelfReg="false" Sequence="116"/>
-    <ROW File="zedge.js" Component_="min.js" FileName="zedge.js" Attributes="0" SourcePath="..\bin\plugins\zedge.js" SelfReg="false" Sequence="117"/>
-    <ROW File="zuuble.js" Component_="min.js" FileName="zuuble.js" Attributes="0" SourcePath="..\bin\plugins\zuuble.js" SelfReg="false" Sequence="118"/>
+    <ROW File="xtube.js" Component_="min.js" FileName="xtube.js" Attributes="0" SourcePath="..\bin\plugins\xtube.js" SelfReg="false" Sequence="108"/>
+    <ROW File="xvideos.js" Component_="min.js" FileName="xvideos.js" Attributes="0" SourcePath="..\bin\plugins\xvideos.js" SelfReg="false" Sequence="109"/>
+    <ROW File="yahoovideo.js" Component_="min.js" FileName="yahoov~1.js|yahoovideo.js" Attributes="0" SourcePath="..\bin\plugins\yahoovideo.js" SelfReg="false" Sequence="110"/>
+    <ROW File="yikers.js" Component_="min.js" FileName="yikers.js" Attributes="0" SourcePath="..\bin\plugins\yikers.js" SelfReg="false" Sequence="111"/>
+    <ROW File="youporn.js" Component_="min.js" FileName="youporn.js" Attributes="0" SourcePath="..\bin\plugins\youporn.js" SelfReg="false" Sequence="112"/>
+    <ROW File="yourfilehost.js" Component_="min.js" FileName="yourfi~1.js|yourfilehost.js" Attributes="0" SourcePath="..\bin\plugins\yourfilehost.js" SelfReg="false" Sequence="113"/>
+    <ROW File="youtube.js" Component_="min.js" FileName="youtube.js" Attributes="0" SourcePath="..\bin\plugins\youtube.js" SelfReg="false" Sequence="114"/>
+    <ROW File="youtubeislam.js" Component_="min.js" FileName="youtub~1.js|youtubeislam.js" Attributes="0" SourcePath="..\bin\plugins\youtubeislam.js" SelfReg="false" Sequence="115"/>
+    <ROW File="yuvutu.js" Component_="min.js" FileName="yuvutu.js" Attributes="0" SourcePath="..\bin\plugins\yuvutu.js" SelfReg="false" Sequence="116"/>
+    <ROW File="zappinternet.js" Component_="min.js" FileName="zappin~1.js|zappinternet.js" Attributes="0" SourcePath="..\bin\plugins\zappinternet.js" SelfReg="false" Sequence="117"/>
+    <ROW File="zedge.js" Component_="min.js" FileName="zedge.js" Attributes="0" SourcePath="..\bin\plugins\zedge.js" SelfReg="false" Sequence="118"/>
+    <ROW File="zuuble.js" Component_="min.js" FileName="zuuble.js" Attributes="0" SourcePath="..\bin\plugins\zuuble.js" SelfReg="false" Sequence="119"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4"/>
@@ -177,15 +178,17 @@
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
-    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_FRAGS&gt;FolderDlg.aip"/>
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
     <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
     <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
-    <ROW Fragment="UI.aip" Path="&lt;AI_FRAGS&gt;UI.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
-    <ROW Name="default_banner.bmp" SourcePath="&lt;AI_RES&gt;default-banner.bmp"/>
-    <ROW Name="default_dialog.bmp" SourcePath="&lt;AI_RES&gt;default-dialog.bmp"/>
+    <ROW Name="default_banner.bmp" SourcePath="&lt;AI_THEMES&gt;classic\resources\default-banner.bmp"/>
+    <ROW Name="default_dialog.bmp" SourcePath="&lt;AI_THEMES&gt;classic\resources\default-dialog.bmp"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
     <ATTRIBUTE name="FixedSizeBitmaps" value="0"/>
@@ -229,6 +232,10 @@
     <ROW Shortcut="Uninstall" Directory_="SHORTCUTDIR" Name="Uninst~1|Uninstall" Component_="SHORTCUTDIR" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFolder_msiexec.exe" IconIndex="0" ShowCmd="1"/>
     <ROW Shortcut="xVideoServiceThief" Directory_="DesktopFolder" Name="xVST" Component_="xVideoServiceThief.exe" Target="[#xVideoServiceThief.exe]" Description="Run the xVideoServiceThief and download videos" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
     <ROW Shortcut="xVideoServiceThief_1" Directory_="SHORTCUTDIR" Name="xVideo~2|xVideoServiceThief" Component_="xVideoServiceThief.exe" Target="[#xVideoServiceThief.exe]" Description="Run the xVideoServiceThief and download videos" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ROW ThemeName="classic" ThemeManifestFilePath="&lt;AI_THEMES&gt;classic\classic.ini"/>
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
     <ROW UpgradeCode="[|UpgradeCode]" VersionMax="[|ProductVersion]" Attributes="1025" ActionProperty="OLDPRODUCTS"/>
