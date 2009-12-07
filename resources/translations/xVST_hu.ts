@@ -136,23 +136,23 @@
     </message>
     <message>
         <source>mark as custom download</source>
-        <translation type="unfinished"></translation>
+        <translation>Megjelölés egyéni letöltésként</translation>
     </message>
     <message>
         <source>User custom video download</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyéni felhasználói videó letöltés</translation>
     </message>
     <message>
         <source>Already added</source>
-        <translation type="unfinished"></translation>
+        <translation>Már hozzáadva</translation>
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Már hozzáadtad ezt a videót. Ellenőrizd a letöltési listát.</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -277,50 +277,50 @@
     </message>
     <message>
         <source>Thank you for your report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Köszönet a jelentésedért.</translation>
     </message>
 </context>
 <context>
     <name>ChangelogImpl</name>
     <message>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Változásnapló</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation type="unfinished">Verzió:</translation>
+        <translation>Verzió:</translation>
     </message>
     <message>
         <source>Ok button</source>
-        <translation type="unfinished">Ok gomb</translation>
+        <translation>Ok gomb</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Close the Changelog dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>A változásnapló ablakának bezárása</translation>
     </message>
     <message>
         <source>Close the Changelot dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>A változásnapló ablakának bezárása</translation>
     </message>
     <message>
         <source>List of the complete xVST changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>A teljes xVST változásnapló lista</translation>
     </message>
     <message>
         <source>xVST Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>xVST változásnapló</translation>
     </message>
     <message>
         <source>List of program versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Programverziók listája</translation>
     </message>
     <message>
         <source>Versions combobox</source>
-        <translation type="unfinished"></translation>
+        <translation>Verziók combobox</translation>
     </message>
 </context>
 <context>
@@ -497,47 +497,47 @@
     <name>CustomDownloadTitleImpl</name>
     <message>
         <source>Custom download title</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyéni letöltési cím</translation>
     </message>
     <message>
         <source>&lt;b&gt;Enter the text which will be used as title of this download.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Add meg a címet, amit a letöltéshez szeretnél használni.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Video title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Videó címe:</translation>
     </message>
     <message>
         <source>Confirm and close the window</source>
-        <translation type="unfinished"></translation>
+        <translation>Jóváhagyás és az ablak bezárása</translation>
     </message>
     <message>
         <source>Ok button</source>
-        <translation type="unfinished">Ok gomb</translation>
+        <translation>Ok gomb</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Discard and close window</source>
-        <translation type="unfinished"></translation>
+        <translation>Elvetés és bezárás</translation>
     </message>
     <message>
         <source>Cancel button</source>
-        <translation type="unfinished">Mégse gomb</translation>
+        <translation>Mégse gomb</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Mégse</translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <source>Field where you enter the video title</source>
-        <translation type="unfinished"></translation>
+        <translation>Mező, ahol a videó címet kell megadni</translation>
     </message>
     <message>
         <source>Title edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Címke szerkesztése</translation>
     </message>
 </context>
 <context>
@@ -568,11 +568,11 @@
     </message>
     <message>
         <source>Close this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Az ablak bezárása</translation>
     </message>
     <message>
         <source>Close button</source>
-        <translation type="unfinished">Bezárás gomb</translation>
+        <translation>Bezárás gomb</translation>
     </message>
 </context>
 <context>
@@ -673,15 +673,15 @@
     </message>
     <message>
         <source>Already added</source>
-        <translation type="unfinished"></translation>
+        <translation>Már hozzá van adva</translation>
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Már hozzáadtad ezt a videófájlt. Ellenőrizd a letöltési listát.</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -811,11 +811,11 @@ betűméret:12px;
     </message>
     <message>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Változásnapló</translation>
     </message>
     <message>
         <source>List of services</source>
-        <translation type="unfinished"></translation>
+        <translation>Szolgáltatások listája</translation>
     </message>
 </context>
 <context>
@@ -834,22 +834,22 @@ betűméret:12px;
     </message>
     <message>
         <source>Adult sites are blocked...</source>
-        <translation type="unfinished"></translation>
+        <translation>A felnött oldalak blokkolva vannak...</translation>
     </message>
 </context>
 <context>
     <name>LoadingImpl</name>
     <message>
         <source>Loading</source>
-        <translation type="unfinished"></translation>
+        <translation>Betöltés</translation>
     </message>
     <message>
         <source>Loading plugins... please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Beépülők betöltése... kis türelmet...</translation>
     </message>
     <message>
         <source>Plugins loaded</source>
-        <translation type="unfinished"></translation>
+        <translation>Pluginok betöltve</translation>
     </message>
 </context>
 <context>
@@ -1096,63 +1096,63 @@ betűméret:12px;
     </message>
     <message>
         <source>Schedule option is &lt;b&gt;enabled&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezési opciók &lt;b&gt;engedélyezve&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Search videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videók keresése</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <source>Ctrl+U</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+U</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>Alt+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+S</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+T</translation>
     </message>
     <message>
         <source>Ctrl+Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Up</translation>
     </message>
     <message>
         <source>Ctrl+Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Down</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+F</translation>
     </message>
 </context>
 <context>
@@ -1267,27 +1267,27 @@ betűméret:12px;
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fájl</translation>
     </message>
     <message>
         <source>Controllers</source>
-        <translation type="unfinished"></translation>
+        <translation>Vezérlők</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Eszközök</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Súgó</translation>
     </message>
     <message>
         <source>Already added</source>
-        <translation type="unfinished"></translation>
+        <translation>Már hozzá van adva</translation>
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Már hozzáadtad ezt a videót. Ellenőrizd a letöltési listát.</translation>
     </message>
 </context>
 <context>
@@ -1948,79 +1948,79 @@ betűméret:12px;
     </message>
     <message>
         <source>Schedule Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezési beállítások</translation>
     </message>
     <message>
         <source>Enable or disable automatic downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus letöltés engedélyezése vagy tiltása</translation>
     </message>
     <message>
         <source>Download videos automatically checkbox</source>
-        <translation type="unfinished">Videók automatikus letöltése jelölőnégyzet</translation>
+        <translation>Videók automatikus letöltése jelölőnégyzet</translation>
     </message>
     <message>
         <source>Download videos automatically</source>
-        <translation type="unfinished">Videók automatikus letöltése</translation>
+        <translation>Videók automatikus letöltése</translation>
     </message>
     <message>
         <source>Enable or disable user shcedules</source>
-        <translation type="unfinished"></translation>
+        <translation>Felhasználói ütemezések engedélyezése vagy tiltása</translation>
     </message>
     <message>
         <source>Schedules checkbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezések jelölőnégyzet</translation>
     </message>
     <message>
         <source>Customize my schedule download</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezett letöltések testreszabása</translation>
     </message>
     <message>
         <source>List of user schedules</source>
-        <translation type="unfinished"></translation>
+        <translation>Felhasználó ütemezési lista</translation>
     </message>
     <message>
         <source>Shcedules list</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezési lista</translation>
     </message>
     <message>
         <source>Add new schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Új ütemezés hozzáadása</translation>
     </message>
     <message>
         <source>Adds a new schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Új ütemezési konfiguráció hozzáadása</translation>
     </message>
     <message>
         <source>New schedule button</source>
-        <translation type="unfinished"></translation>
+        <translation>Új ütemezés gomb</translation>
     </message>
     <message>
         <source>Edit selected schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztott ütemezés szerkesztése</translation>
     </message>
     <message>
         <source>Edit selected shedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztott ütemezés szerkesztése</translation>
     </message>
     <message>
         <source>Edit the selected schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztott ütemezési konfiguráció szerkesztése</translation>
     </message>
     <message>
         <source>Remove selected schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztott ütemezés eltávolítása</translation>
     </message>
     <message>
         <source>Remove the selected schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztott ütemezési konfiguráció eltávolítása</translation>
     </message>
     <message>
         <source>Use the system configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Rendszer konfiguráció használata</translation>
     </message>
     <message>
         <source>Save and restore the current session</source>
-        <translation type="unfinished"></translation>
+        <translation>Mentés és a jelenlegi menet helyreállítása</translation>
     </message>
 </context>
 <context>
@@ -2131,406 +2131,406 @@ betűméret:12px;
     </message>
     <message>
         <source> Enabled </source>
-        <translation type="unfinished"></translation>
+        <translation>Engedélyezve</translation>
     </message>
     <message>
         <source> Start time </source>
-        <translation type="unfinished"></translation>
+        <translation>Indítási idő</translation>
     </message>
     <message>
         <source> End time </source>
-        <translation type="unfinished"></translation>
+        <translation>Befejezési idő</translation>
     </message>
     <message>
         <source>Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Megjegyzések</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezés</translation>
     </message>
     <message>
         <source>Remove schedule item</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezési elem eltávolítása</translation>
     </message>
     <message>
         <source>Wish you remove the selected schedule item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Szeretnéd törölni a kiválasztott ütemezési elemet?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Add meg a védelmi jelszót a felnőtt oldalak feloldásához.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Unlocking password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Feloldási jelszó:</translation>
     </message>
     <message>
         <source>Invalid UPS! password</source>
-        <translation type="unfinished"></translation>
+        <translation>Érvénytelen jelszó!</translation>
     </message>
     <message>
         <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Érvénytelen jelszó lett megadva. A felnőtt tartalom továbbra is blokkolva marad.</translation>
     </message>
 </context>
 <context>
     <name>ScheduleItemEditImpl</name>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indítási idő:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Befejezési idő:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Megjegyzés:</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktív</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Mégse</translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <source>The start time cannot exceed the end time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az indítási idő nem haladhatja meg a befejezési időt.</translation>
     </message>
     <message>
         <source>The start time and end time cannot be equals.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az indítási és a befejezési idő nem lehet azonos.</translation>
     </message>
     <message>
         <source>Schedule edition</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezési kiadás</translation>
     </message>
     <message>
         <source>Invalid schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Érvénytelen ütemezési konfiguráció</translation>
     </message>
     <message>
         <source>Set the start time</source>
-        <translation type="unfinished"></translation>
+        <translation>Indítási idő beállítása</translation>
     </message>
     <message>
         <source>Start time edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Indítási idő szerkesztése</translation>
     </message>
     <message>
         <source>Set the end time</source>
-        <translation type="unfinished"></translation>
+        <translation>Befejezési idő beállítása</translation>
     </message>
     <message>
         <source>End time edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Befejezési idő szerkesztése</translation>
     </message>
     <message>
         <source>Set a information comment (this field is optional)</source>
-        <translation type="unfinished"></translation>
+        <translation>Megjegyzés megadása (nem kötelező) </translation>
     </message>
     <message>
         <source>Comment edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Megjegyzés szerkesztése</translation>
     </message>
     <message>
         <source>Enable or disable this schedule configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ütemezési konfiguráció engedélyezése vagy tiltása</translation>
     </message>
     <message>
         <source>Active checkbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktív jelölőnégyzet</translation>
     </message>
     <message>
         <source>Accept and close this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Elfogadás és az ablak bezárása</translation>
     </message>
     <message>
         <source>Ok button</source>
-        <translation type="unfinished">Ok gomb</translation>
+        <translation>Ok gomb</translation>
     </message>
     <message>
         <source>Cancel and close this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Mégse és az ablak bezárása</translation>
     </message>
     <message>
         <source>Cancel button</source>
-        <translation type="unfinished">Mégse gomb</translation>
+        <translation>Mégse gomb</translation>
     </message>
 </context>
 <context>
     <name>SearchVideosCustomizeImpl</name>
     <message>
         <source>Custom search</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyéni keresés</translation>
     </message>
     <message>
         <source>Select where you want to search:</source>
-        <translation type="unfinished"></translation>
+        <translation>Válaszd ki hol szeretnél keresni:</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Mégse</translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Műveletek</translation>
     </message>
     <message>
         <source>Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>Mind kijelöli</translation>
     </message>
     <message>
         <source>Uncheck all</source>
-        <translation type="unfinished"></translation>
+        <translation>Kijelölés megszüntetése</translation>
     </message>
     <message>
         <source>Invert selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Kijelölés megfordítása</translation>
     </message>
 </context>
 <context>
     <name>SearchVideosImpl</name>
     <message>
         <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresés &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (%2 lap)... kis türelmet...</translation>
     </message>
     <message>
         <source>Custom search</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyéni keresés</translation>
     </message>
     <message>
         <source>Video Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Videó keresés</translation>
     </message>
     <message>
         <source>Key word to search:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kulcsszó a kereséshez:</translation>
     </message>
     <message>
         <source>Search in:</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresés:</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Keres</translation>
     </message>
     <message>
         <source>Results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eredmények:</translation>
     </message>
     <message>
         <source>&lt;&lt;</source>
-        <translation type="unfinished">&lt;&lt;</translation>
+        <translation>&lt;&lt;</translation>
     </message>
     <message>
         <source>Page </source>
-        <translation type="unfinished"></translation>
+        <translation>Lap</translation>
     </message>
     <message>
         <source>&gt;&gt;</source>
-        <translation type="unfinished">&gt;&gt;</translation>
+        <translation>&gt;&gt;</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Bezárás</translation>
+        <translation>Bezárás</translation>
     </message>
     <message>
         <source>Field where your enter the key words to search</source>
-        <translation type="unfinished"></translation>
+        <translation>Mező, ahol a keresési kulcsszót kell megadnod</translation>
     </message>
     <message>
         <source>Key words edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Kulcsszavak szerkesztése</translation>
     </message>
     <message>
         <source>List of services with search capabilities</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresőképességekkel rendelkező szolgáltatások listája</translation>
     </message>
     <message>
         <source>Search services list</source>
-        <translation type="unfinished"></translation>
+        <translation>Szolgáltatások lista keresése</translation>
     </message>
     <message>
         <source>Start new search</source>
-        <translation type="unfinished"></translation>
+        <translation>Új keresés indítása</translation>
     </message>
     <message>
         <source>Search button</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresés gomb</translation>
     </message>
     <message>
         <source>Search on previus page</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresés az előző lapon</translation>
     </message>
     <message>
         <source>Previus page button</source>
-        <translation type="unfinished"></translation>
+        <translation>Előző lap gomb</translation>
     </message>
     <message>
         <source>Current search page</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelenlegi keresési lap</translation>
     </message>
     <message>
         <source>Current search page edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelenlegi keresési lap szerkesztése</translation>
     </message>
     <message>
         <source>Search on next page</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresés a következő lapon</translation>
     </message>
     <message>
         <source>Next page button</source>
-        <translation type="unfinished"></translation>
+        <translation>Következő lap gomb</translation>
     </message>
     <message>
         <source>Close this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ablak bezárása</translation>
     </message>
     <message>
         <source>Close button</source>
-        <translation type="unfinished">Bezárás gomb</translation>
+        <translation>Bezárás gomb</translation>
     </message>
     <message>
         <source>Please, select one or more services.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kérlek, válassz ki egy vagy több szolgáltatást.</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>All standard services</source>
-        <translation type="unfinished"></translation>
+        <translation>Összes standard szolgáltatás</translation>
     </message>
     <message>
         <source>All adult services</source>
-        <translation type="unfinished"></translation>
+        <translation>Összes felnőtt szolgáltatás</translation>
     </message>
     <message>
         <source>All services</source>
-        <translation type="unfinished"></translation>
+        <translation>Összes szolgáltatás</translation>
     </message>
 </context>
 <context>
     <name>SearchVideosItemImpl</name>
     <message>
         <source>Play &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lejátszás &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Rating:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Értékelés:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>Download not avaiable...</source>
-        <translation type="unfinished"></translation>
+        <translation>A letöltés nem elérhető...</translation>
     </message>
     <message>
         <source>Missing plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>A beépülő hiányzik</translation>
     </message>
     <message>
         <source>&lt;p&gt;Is not possible to download this video.&lt;/p&gt;&lt;p&gt;The xVST didn&apos;t find any plugin capable to get the video information.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;A videó letöltése nem lehetséges.&lt;/p&gt;&lt;p&gt;A xVST nem találja a megfelelő beépülőt a videó információ megszerzéséhez.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Already added</source>
-        <translation type="unfinished"></translation>
+        <translation>Már hozzá van adva</translation>
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a videó már hozzá lett adva. Ellenőrizd a letöltési listát.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Rating:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Értékelés:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Play video into your webbrowser</source>
-        <translation type="unfinished"></translation>
+        <translation>Videó lejátszása a webböngészőben</translation>
     </message>
     <message>
         <source>Video preview image</source>
-        <translation type="unfinished"></translation>
+        <translation>Videó előnézeti kép</translation>
     </message>
     <message>
         <source>Play video</source>
-        <translation type="unfinished">Videó lejátszása</translation>
+        <translation>Videó lejátszása</translation>
     </message>
     <message>
         <source>Play video button</source>
-        <translation type="unfinished"></translation>
+        <translation>Videó lejátszás gomb</translation>
     </message>
     <message>
         <source>Download video</source>
-        <translation type="unfinished"></translation>
+        <translation>Videó letöltése</translation>
     </message>
     <message>
         <source>Download video button</source>
-        <translation type="unfinished"></translation>
+        <translation>Videó letöltése gomb</translation>
     </message>
 </context>
 <context>
     <name>UPSPasswordImpl</name>
     <message>
         <source>&lt;b&gt;Enter a security password to prevent unlock adult sites without your permission.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Adj meg egy védelmi jelszót, annak megakadályozására, hogy az engedélyed nélkül felnőtt tartamú lapok legyenek megnyitva.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Locking password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zárolási jelszó:</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Mégse</translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <source>UPS! Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppá! Jelszó</translation>
     </message>
     <message>
         <source>Field where you enter the password</source>
-        <translation type="unfinished"></translation>
+        <translation>Mező, ahol a jelszót kell megadnod</translation>
     </message>
     <message>
         <source>Password edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó szerkesztése</translation>
     </message>
     <message>
         <source>Confirm and close the window</source>
-        <translation type="unfinished"></translation>
+        <translation>Jóváhagyás és az ablak bezárása</translation>
     </message>
     <message>
         <source>Ok button</source>
-        <translation type="unfinished">Ok gomb</translation>
+        <translation>Ok gomb</translation>
     </message>
     <message>
         <source>Discard and close window</source>
-        <translation type="unfinished"></translation>
+        <translation>Elvetés és az ablak bezárása</translation>
     </message>
     <message>
         <source>Cancel button</source>
-        <translation type="unfinished">Mégse gomb</translation>
+        <translation>Mégse gomb</translation>
     </message>
 </context>
 <context>
@@ -2722,7 +2722,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Adobe Flash streaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Adobe Flash</translation>
     </message>
 </context>
 <context>
@@ -2829,42 +2829,42 @@ betűméret:12px;
     </message>
     <message>
         <source>Updating info...</source>
-        <translation type="unfinished"></translation>
+        <translation>Frissítési információ...</translation>
     </message>
     <message>
         <source>flvstreamer is missing (impossible download from RTMP server)</source>
-        <translation type="unfinished"></translation>
+        <translation>a flvstreame hiányzik (nem lehet letölteni az RTMP szerverről)</translation>
     </message>
     <message>
         <source>Unable to open the destination file</source>
-        <translation type="unfinished"></translation>
+        <translation>A cé lfájl nem nyitható meg</translation>
     </message>
     <message>
         <source>Failed to connect with RTMP server</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem lehet csatlakozni az RTMP szerverhez</translation>
     </message>
     <message>
         <source>Unable to resume the FLV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Az FLV fájl nem folytatható</translation>
     </message>
     <message>
         <source>Download incomplete (due to download errors)</source>
-        <translation type="unfinished"></translation>
+        <translation>A letöltés befejezetlen (letöltési hibák miatt)</translation>
     </message>
     <message>
         <source>Failed on initialize the pthread_create</source>
-        <translation type="unfinished"></translation>
+        <translation>A pthread_create nem inicializálható</translation>
     </message>
     <message>
         <source>File to resume not found</source>
-        <translation type="unfinished"></translation>
+        <translation>A fájl a folytatáshoz nem található</translation>
     </message>
 </context>
 <context>
     <name>WelcomeDonate</name>
     <message>
         <source>Welcome to xVideoServiceThief</source>
-        <translation></translation>
+        <translation>Üdvözöl az xVideoServiceThief</translation>
     </message>
     <message>
         <source>&lt;h3&gt;&lt;b&gt;Please donate!&lt;/b&gt;&lt;/h3&gt;</source>
@@ -2875,9 +2875,9 @@ betűméret:12px;
 &lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
 &lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
 &lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Ez a szoftver teljesen ingyenes, de adományokkal segítheted munkánkat, ha megkedvelted ezt az eszközt vagy ha azt kereskedelmi környezetben használod.&lt;/p&gt;\n
-&lt;p&gt;Köszönjük! Mi ezt a gesztust nagyra értékeljük!&lt;/p&gt;\n
-&lt;p&gt;Miért is kellene adományozni? Az adományok segítik az xVideoServiceThiefet fejlesztését és/vagy javítását illetve rendezik az IT számláinkat.&lt;/p&gt;\n
+        <translation>&lt;p&gt;Ez a szoftver teljesen ingyenes, de adományokkal segítheted munkánkat, ha megkedvelted ezt az eszközt vagy ha azt kereskedelmi környezetben használod.&lt;/p&gt;
+&lt;p&gt;Köszönjük! Mi ezt a gesztust nagyra értékeljük!&lt;/p&gt;
+&lt;p&gt;Miért is kellene adományozni? Az adományok segítik az xVideoServiceThiefet fejlesztését és/vagy javítását illetve rendezik az IT számláinkat.&lt;/p&gt;
 &lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt; Ha az alkalmazás letöltéséért fizetnél, az már csalásnak minősülne!&lt;/font&gt;&lt;/p&gt;</translation>
     </message>
     <message>
