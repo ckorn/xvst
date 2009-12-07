@@ -8,6 +8,7 @@
 	- YouPorn (added search functions, thanks to Matze Ba)
 	- MyVideo (added search functions, thanks to Matze Ba)
 	- ClipFish (added search functions, thanks to Matze Ba)
+	- YouTube
 	- 5min
 	- Break
 	- Caught-on-video
@@ -21,8 +22,17 @@
 
 - Revised Hungarian translation
 
+- Fixed bug (Error: Failed downloads were reported as "Completed" instead of as "Error")
+
 Plugins SDK:
 ------------
+
+- Added 5 new helper functions:
+	- String trimString(String str)
+	- String simplifyString(String str)
+	- String programVersion()
+	- String programVersionShort()
+	- String programVersionNumber()
 
 - Fixed bug (Error: The default value of strLastIndexOf was incorrect)
 
