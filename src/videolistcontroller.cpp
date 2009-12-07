@@ -691,7 +691,7 @@ void VideoListController::actionFinished(VideoItem *videoItem)
 {
 	if (videoItem != NULL)
 	{
-		if (!videoItem->isCanceled() && !videoItem->isPaused())
+		if (!videoItem->isCanceled() && !videoItem->isPaused() && !videoItem->hasErrors())
 			if	(sender() == videoConverter ||
 			    (sender() == videoDownload && !programOptions->getConvertVideos()) ||
 			    (sender() == videoDownload && programOptions->getConvertVideos() && !videoConverter->ffmpegInstalled()) ||
