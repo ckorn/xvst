@@ -85,6 +85,10 @@ class VideoInformationPlugin : public QObject
 		/* Plugins executer */
 		static QScriptValue func_isPluginInstalled(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_executePlugin(QScriptContext *context, QScriptEngine *engine);
+		/* Plugins core information */
+		static QScriptValue func_programVersion(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_programVersionShort(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_programVersionNumber(QScriptContext *context, QScriptEngine *engine);
 	public:
 		/*! Class constructor */
 		VideoInformationPlugin(VideoInformation *videoInformation, QString videoServicePath);

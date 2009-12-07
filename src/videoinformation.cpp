@@ -688,6 +688,21 @@ QScriptValue VideoInformationPlugin::func_executePlugin(QScriptContext *context,
 		return QScriptValue();
 }
 
+QScriptValue VideoInformationPlugin::func_programVersion(QScriptContext *, QScriptEngine *engine)
+{
+	return engine->newVariant(QVariant(PROGRAM_VERSION));
+}
+
+QScriptValue VideoInformationPlugin::func_programVersionShort(QScriptContext *, QScriptEngine *engine)
+{
+	return engine->newVariant(QVariant(PROGRAM_VERSION_SHORT));
+}
+
+QScriptValue VideoInformationPlugin::func_programVersionNumber(QScriptContext *, QScriptEngine *engine)
+{
+	return engine->newVariant(QVariant(PROGRAM_VERSION_NUMBER));
+}
+
 VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 {
 	VideoDefinition result;
@@ -710,6 +725,18 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	// regist executePlugin(id,url) function
 	QScriptValue _executePlugin = engine->newFunction(func_executePlugin);
 	engine->globalObject().setProperty("executePlugin", _executePlugin);
+
+	// regist programVersion() function
+	QScriptValue _programVersion = engine->newFunction(func_programVersion);
+	engine->globalObject().setProperty("programVersion", _programVersion);
+
+	// regist programVersionShort() function
+	QScriptValue _programVersionShort = engine->newFunction(func_programVersionShort);
+	engine->globalObject().setProperty("programVersionShort", _programVersionShort);
+
+	// regist programVersionNumber() function
+	QScriptValue _programVersionNumber = engine->newFunction(func_programVersionNumber);
+	engine->globalObject().setProperty("programVersionNumber", _programVersionNumber);
 
 	// create and regist the script tools class
 	ToolsScriptClass *toolsClass = new ToolsScriptClass(engine);
