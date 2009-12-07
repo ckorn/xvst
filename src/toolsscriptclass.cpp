@@ -81,6 +81,14 @@ ToolsScriptClass::ToolsScriptClass(QScriptEngine *engine)
 	QScriptValue _splitString = engine->newFunction(func_splitString);
 	engine->globalObject().setProperty("splitString", _splitString);
 
+	// regist trimString(str) function
+	QScriptValue _trimString = engine->newFunction(func_trimString);
+	engine->globalObject().setProperty("trimString", _trimString);
+
+	// regist simplifyString(str) function
+	QScriptValue _simplifyString = engine->newFunction(func_simplifyString);
+	engine->globalObject().setProperty("simplifyString", _simplifyString);
+
 	// regist getMd4(str) function
 	QScriptValue _getMd4 = engine->newFunction(func_getMd4);
 	engine->globalObject().setProperty("getMd4", _getMd4);
@@ -306,6 +314,30 @@ QScriptValue ToolsScriptClass::func_splitString(QScriptContext *context, QScript
 			sensitive = context->argument(3).toBool() ? Qt::CaseSensitive : Qt::CaseInsensitive;
 		// return array with string elements
 		return qScriptValueFromSequence(engine, str.split(separator, behavior, sensitive));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_trimString(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 1)
+	{
+		QString str = context->argument(0).toString();
+		// return final string
+		return engine->newVariant(QVariant(str.trimmed()));
+	}
+	else // invalid arguments count
+		return QScriptValue();
+}
+
+QScriptValue ToolsScriptClass::func_simplifyString(QScriptContext *context, QScriptEngine *engine)
+{
+	if (context->argumentCount() == 1)
+	{
+		QString str = context->argument(0).toString();
+		// return final string
+		return engine->newVariant(QVariant(str.simplified()));
 	}
 	else // invalid arguments count
 		return QScriptValue();
