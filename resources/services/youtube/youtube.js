@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.5";
+	this.version = "2.0.7";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -67,7 +67,8 @@ function getVideoInformation(url)
 	if (vidRes == HD_VIDEO_RES) // for HD videos the extension is mp4
 		result.extension = ".mp4";
 	// get the video title
-	result.title = copyBetween(html, 'title="', '"');
+	result.title = copyBetween(html, "<title>", "</title>");
+	result.title = normalizeSpaces(result.title);
 	// build the video url
 	if (vidRes != "") // videoRes (fmt) specified
 		result.URL = strFormat(URL_GET_FLV_FMT, getUrlHost(youTubeURL), vidID, vidHash, vidRes);
@@ -76,6 +77,21 @@ function getVideoInformation(url)
 	// check if this video need a login
 	result.needLogin = result.title == "Broadcast Yourself.";
 	// return the video information
+	return result;
+}
+
+/* 
+	This function "normalizeSpaces(str)" will be deprecated on next xVST version
+	and replaced with the new "simplifyString(str)" function (add in xVST 2.3.1)
+*/
+function normalizeSpaces(str)
+{
+	var result = "";
+	var parts = splitString(str, " ", false);
+	// join again each part
+	for (var n = 1; n < parts.length; n++)
+		result += parts[n] + " ";
+	// return the normalized string
 	return result;
 }
 
