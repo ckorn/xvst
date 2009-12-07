@@ -109,6 +109,10 @@
 		<video url="http://freecaster.tv/1000006/1007689/danny-macaskill-april-2009" caption="MTB - Danny MacAskill April 2009" size="45938165" />
 	</test>
 	<test>
+		<plugin file="gameanyone.js" title="Game Anyone?"/>
+		<video url="http://www.gameanyone.com/video/168110" caption="Part 1" size="91456083" />
+	</test>
+	<test>
 		<plugin file="gamespot.js" title="GameSpot" />
 		<video url="http://www.gamespot.com/xbox360/driving/mxvsatvreflex/video/6209703?hd=1&amp;tag=topslot;watchlink;1" caption="MX vs. ATV Reflex Interview" size="29434335" />
 	</test>	
