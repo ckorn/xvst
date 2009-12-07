@@ -45,6 +45,8 @@ class ToolsScriptClass : public QObject
 		static QScriptValue func_strLastIndexOf(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_strFormat(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_splitString(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_trimString(QScriptContext *context, QScriptEngine *engine);
+		static QScriptValue func_simplifyString(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_getMd4(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_getMd5(QScriptContext *context, QScriptEngine *engine);
 		static QScriptValue func_getSha1(QScriptContext *context, QScriptEngine *engine);
