@@ -1,15 +1,24 @@
 2.3.2:
 ------
 
+- Compiled with Qt 4.6
+
 - Updated program copyright to 2010
 
 - Changed plug-ins:
 	- ClipFish
 
-Windows (Static version):
--------------------------
+Windows:
+--------
 
-- Compiled with Qt 4.6 due to problems with Windows Vista and Windows 7
+- Solved problem with downloads on Windows Vista and Windows 7 (fixed upgrading to Qt 4.6)
+
+MacOSX:
+-------
+
+- Added official Intel 64-bits support
+
+- Improved support on MacOSX Snow Leopard (32 and 64 bits)
 
 2.3.1:
 ------
