@@ -26,9 +26,9 @@
 #ifndef __PROGRAMVERSION_H__
 #define __PROGRAMVERSION_H__
 
-static const QString PROGRAM_VERSION		= "2.3.1"; 	//!< Current program version
-static const QString PROGRAM_VERSION_SHORT	= "2.3.1";	//!< Current program version (short version)
-static const int	 PROGRAM_VERSION_NUMBER	= 231;		//!< Current program version (numeric version)
+static const QString PROGRAM_VERSION		= "2.3.2"; 	//!< Current program version
+static const QString PROGRAM_VERSION_SHORT	= "2.3.2";	//!< Current program version (short version)
+static const int	 PROGRAM_VERSION_NUMBER	= 232;		//!< Current program version (numeric version)
 
 #ifdef Q_OS_WIN32
 static const QString CURRENT_OS = "MSWINDOWS";	//!< Microsoft windows version

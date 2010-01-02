@@ -1,3 +1,13 @@
+2.3.2:
+------
+
+- Updated program copyright to 2010
+
+Windows (Static version):
+-------------------------
+
+- Compiled with Qt 4.6 due to problems with Windows Vista and Windows 7
+
 2.3.1:
 ------
 
