@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.0";
+	this.version = "2.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.clipfish.de/";
@@ -63,6 +63,7 @@ function searchVideos(keyWord, pageIndex)
 	const HTML_SEARCH_START = '<ul class="cf-video-list cf-list-linear">'; //"<!-- GENERIC BOX BEGIN -->";
 	const HTML_SEARCH_FINISH = '<!-- GENERIC BOX END -->';
 	const HTML_SEARCH_SEPARATOR = '<li id="cf-video-item_';
+	const HTML_ACCESS_DENIED = "http://bilder.clipfish.de/v2/access_denied.jpg";
 	// replace all spaces for "+"
 	keyWord = strReplace(keyWord, " ", "+");
 	// init search results object
@@ -70,6 +71,9 @@ function searchVideos(keyWord, pageIndex)
 	// init http object
 	var http = new Http();
 	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex));
+	// access denied?
+	if (strIndexOf(htmlResults, HTML_ACCESS_DENIED) != -1)
+		return searchResults;
 	// get the search summary
 	var tmp = copyBetween(html, '>Deine Suche nach', 'Treffer ergeben.');
 	var summary = "Deine Suche nach " + cleanwhitespace(cleartags(tmp,1)) + ' Treffer ergeben.';
@@ -78,9 +82,8 @@ function searchVideos(keyWord, pageIndex)
 	searchResults.setSummary(summary);
 	// get results html block
 	var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
-	if (strIndexOf(htmlResults,HTML_SEARCH_SEPARATOR) != -1) {
+	if (strIndexOf(htmlResults,HTML_SEARCH_SEPARATOR) != -1) 
 		htmlResults = strRemove(htmlResults, 0, strIndexOf(htmlResults,HTML_SEARCH_SEPARATOR));
-	}
 	// if we found some results then...
 	if (htmlResults != "")
 	{
