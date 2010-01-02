@@ -3,6 +3,9 @@
 
 - Updated program copyright to 2010
 
+- Changed plug-ins:
+	- ClipFish
+
 Windows (Static version):
 -------------------------
 
