@@ -225,7 +225,7 @@ void SearchVideosImpl::fillSearchServices()
 	// add them to combobox
 	for (int n = 0; n < searchEngines.count(); n++)
 		if (!VideoInformation::instance()->getBlockAdultContent() ||
-			 VideoInformation::instance()->getBlockAdultContent() && !searchEngines.at(n)->hasAdultContent())
+                    (VideoInformation::instance()->getBlockAdultContent() && !searchEngines.at(n)->hasAdultContent()))
 		{
 			cmbSearchIn->addItem(*(searchEngines.at(n)->getIcon()),
 								 searchEngines.at(n)->getCaption(),
