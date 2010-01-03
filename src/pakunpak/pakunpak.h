@@ -28,11 +28,12 @@
 #ifndef __PAKUNPAK_H__
 #define __PAKUNPAK_H__
 
-#ifdef __linux__
-#include <string.h>
-#else
-#include <string>
+#ifdef __GNUG__ //defined(__linux__) || defined(__GNUG__) && defined(_WIN32) // linux and mingw
+    #include <string.h>
+#else // macosx and vc++
+    #include <string>
 #endif
+
 #include <vector>
 #include <fstream>
 
