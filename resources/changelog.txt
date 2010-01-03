@@ -13,12 +13,12 @@ Windows:
 
 - Solved problem with downloads on Windows Vista and Windows 7 (fixed upgrading to Qt 4.6)
 
-MacOSX:
+Mac OS X:
 -------
 
 - Added official Intel 64-bits support
 
-- Improved support on MacOSX Snow Leopard (32 and 64 bits)
+- Improved support on Mac OS X Snow Leopard (32 and 64 bits)
 
 2.3.1:
 ------
@@ -171,7 +171,7 @@ Linux:
 	- Check for updates (control + U)
 	- Program options (control + O)
 	- Search videos (control + F)
-	- Program information (control + I or "cmd + ," in MacOSX)
+	- Program information (control + I or "cmd + ," in Mac OS X)
 	- Move video up (control + up)
 	- Move video down (control + down)
 	- Open downloads directory (control + T)
@@ -233,17 +233,17 @@ Plug-ins SDK:
 - Added 1 new helper function:
 	- Array splitString(String str, String separator, [bool splitBehavior], [bool caseSensitive])
 
-MacOSX:
+Mac OS X:
 -------
 
 - Added "File", "Controllers", "Tools" and "Help" menu items
 - Added "About xVideoServiceThief" in Application menu
 - Added "Preferences..." in Application menu
 
-- Changed Add Video dialog to MacOSX Sheet style for better MacOSX look&feel
-- Changed Languages Manager dialog to MacOSX Sheet style for better MacOSX look&feel
-- Changed Credits dialog to MacOSX Sheet style for better MacOSX look&feel
-- Changed alternating row color to grey for better MacOSX look&feel
+- Changed Add Video dialog to Mac OS X Sheet style for better Mac OS X look&feel
+- Changed Languages Manager dialog to Mac OS X Sheet style for better Mac OS X look&feel
+- Changed Credits dialog to Mac OS X Sheet style for better Mac OS X look&feel
+- Changed alternating row color to grey for better Mac OS X look&feel
 - Changed historic.plist and session.plist location to "/{user}/Library/Application Support/xVideoServiceThief/"
 - Changed image plug-ins cache dir to "/{user}/Library/Caches/xVideoServiceThief/plugins-cache"
 
@@ -374,12 +374,12 @@ Windows Vista:
 - Added detection of Windows Vista for advertise about "administrator permission"
 - Added administrator permission before execute xUpdater
 
-MacOSX:
+Mac OS X:
 --------
 
 - Added ffmpeg internal detection
 - Resized all windows for better user experience
-- Configuration file for MacOSX is now: /Users/{User}/Preferences
+- Configuration file for Mac OS X is now: /Users/{User}/Preferences
 - All configuration files are now PLIST's
 
 
@@ -585,7 +585,7 @@ Linux:
 
 - Changed executable name to "xvst"
 
-MacOSX:
+Mac OS X:
 ---------
 
 - Improved all dialogs
