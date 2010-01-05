@@ -23,18 +23,12 @@
 *
 */
 
-#include "searchvideossearchblockimpl.h"
+#include "searchvideosnoresultsimpl.h"
 
-#include "../videoinformation.h"
-
-SearchVideosSearchBlockImpl::SearchVideosSearchBlockImpl(QWidget *parent, VideoInformationPlugin *plugin, QString summary)
+SearchVideosNoResultsImpl::SearchVideosNoResultsImpl(QWidget *parent, QString keyWords)
 	: QWidget(parent)
 {
-    setupUi(this);
-	//
-	this->plugin = plugin;
-	//
-	imgService->setPixmap(*(plugin->getIcon()));
-	lblTitle->setText(QString("<b>%1</b>").arg(plugin->getCaption()));
-	lblSummary->setText(summary);
+	setupUi(this);
+	// update the message
+	lblNoResults->setText(lblNoResults->text().arg(keyWords));
 }

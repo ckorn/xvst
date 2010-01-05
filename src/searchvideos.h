@@ -192,6 +192,8 @@ Q_OBJECT
 		void searchVideos(QString keyWords, int page, QStringList pluginsIds);
 		/*! Get the search summary */
 		QString getSearchSummary();
+		/*! Get the key words used for search */
+		QString getKeyWords();
 		/*! Clean search images previews */
 		static void removePreviews();
 	private slots:

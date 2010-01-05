@@ -73,6 +73,11 @@ QString SearchVideos::getSearchSummary()
 	return searchResults->getSummary();
 }
 
+QString SearchVideos::getKeyWords()
+{
+	return internalKeyWords;
+}
+
 void SearchVideos::removePreviews()
 {
 	QStringList previews;
@@ -148,6 +153,14 @@ void SearchVideos::run()
 			searchResults->setSummary(results.getSummary());
 			// add new search block
 			emit addNewSearchBlock(plugin);
+			// has results?
+			if (searchResults->getSearchResultCount() == 0)
+			{
+				// emit add no results
+				emit searchResultAdded(NULL);
+				// next search...
+				continue;
+			}
 			// show results
 			for (int n = lastCount; n < searchResults->getSearchResultCount(); n++)
 			{

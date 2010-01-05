@@ -26,6 +26,7 @@
 #include "searchvideosimpl.h"
 
 #include "searchvideositemimpl.h"
+#include "searchvideosnoresultsimpl.h"
 #include "searchvideossearchblockimpl.h"
 #include "searchvideoscustomizeimpl.h"
 
@@ -163,18 +164,15 @@ void SearchVideosImpl::searchFinished()
 
 void SearchVideosImpl::searchResultAdded(SearchResultItem *searchResultItem)
 {
-	// add a new widget before the strech item (top alignment)
-	//layoutSearchItems->insertWidget(layoutSearchItems->count() - 1, new SearchVideosItemImpl(this, searchResultItem, loadingMovie));
-	layoutSearchItems->addWidget(new SearchVideosItemImpl(this, searchResultItem, loadingMovie));
+	if (searchResultItem != NULL) // add a new widget before the strech item (top alignment)
+		layoutSearchItems->addWidget(new SearchVideosItemImpl(this, searchResultItem, loadingMovie));
+	else // add a new widget displaying the message: "no results found..."
+		layoutSearchItems->addWidget(new SearchVideosNoResultsImpl(this, searchVideos->getKeyWords()));
 }
 
 void SearchVideosImpl::startedDownloadPreview(SearchResultItem* /*searchItem*/)
 {
-/*
-	SearchVideosItemImpl *impl = getSearchVideosItemImplBySearchItem(searchItem);
-	if (impl != NULL)
-		impl->setAsLoading();
-*/
+	// Nothing to do...
 }
 
 void SearchVideosImpl::finishedDownloadPreview(SearchResultItem *searchItem, bool /*error*/)

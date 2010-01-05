@@ -23,18 +23,16 @@
 *
 */
 
-#include "searchvideossearchblockimpl.h"
+#ifndef SEARCHVIDEOSNORESULTSIMPL_H
+#define SEARCHVIDEOSNORESULTSIMPL_H
 
-#include "../videoinformation.h"
+#include "ui_searchvideosnoresultsimpl.h"
 
-SearchVideosSearchBlockImpl::SearchVideosSearchBlockImpl(QWidget *parent, VideoInformationPlugin *plugin, QString summary)
-	: QWidget(parent)
+class SearchVideosNoResultsImpl : public QWidget, private Ui::SearchVideosNoResultsImpl
 {
-    setupUi(this);
-	//
-	this->plugin = plugin;
-	//
-	imgService->setPixmap(*(plugin->getIcon()));
-	lblTitle->setText(QString("<b>%1</b>").arg(plugin->getCaption()));
-	lblSummary->setText(summary);
-}
+Q_OBJECT
+	public:
+		SearchVideosNoResultsImpl(QWidget *parent, QString keyWords);
+};
+
+#endif // SEARCHVIDEOSNORESULTSIMPL_H
