@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.2";
+	this.version = "2.0.3";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://video.google.com/";
@@ -100,7 +100,7 @@ function parseResultItem(searchResults, html)
 	var videoUrl, imageUrl, title, description, duration, rating;
 	// get info from html block
 	videoUrl = copyBetween(html, "srcurl=", ">");
-	imageUrl = copyBetween(html, "img class=thumbnail-img src=", ">");
+	imageUrl = copyBetween(copyBetween(html, "img class=thumbnail-img", "</a>"), "src=", ">");
 	title = copyBetween(html, "<div class=rl-title>", "</div>");
 	title = copyBetween(title, "target=_top>", "</a>");
 	description = copyBetween(html, "<div class=rl-snippet>", "</div>");
