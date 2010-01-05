@@ -1,3 +1,11 @@
+2.3.3:
+------
+
+Mac OS X:
+---------
+
+- Added GROWL support (if GROWL is not supported the old information popup is displayed)
+
 2.3.2:
 ------
 
@@ -14,7 +22,7 @@ Windows:
 - Solved problem with downloads on Windows Vista and Windows 7 (fixed upgrading to Qt 4.6)
 
 Mac OS X:
--------
+---------
 
 - Added official Intel 64-bits support
 
