@@ -157,7 +157,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// configure the TrayIcon
 	createTrayIcon();
 	// init the completed popup
-	completedPopup = new CompletedPopupImpl(this);
+	completedPopup = new CompletedPopupImpl(trayIcon, this);
 	// start the drag & drop window
 	dragDropForm = new DragDropImpl(programOptions, videoList, this);
 	// connect buttons (header)

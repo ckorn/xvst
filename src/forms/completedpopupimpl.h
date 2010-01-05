@@ -36,12 +36,13 @@ class CompletedPopupImpl : public QWidget, public Ui::CompletedPopup
 {
 Q_OBJECT
 	private:
+		QSystemTrayIcon *trayIconRef;
 		QTimer *displayTimer;
 		QString videoFile;
 		DisplayState displayState;
 		double alpha;
 	public:
-		CompletedPopupImpl( QWidget * parent = 0, Qt::WFlags f = 0 );
+		CompletedPopupImpl(QSystemTrayIcon *trayIconRef, QWidget * parent = 0, Qt::WFlags f = 0);
 		~CompletedPopupImpl();
 		void displayPopup(const QIcon &, const QString, const QString);
 	private slots:

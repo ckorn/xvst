@@ -27,7 +27,7 @@
 
 #include "../tools.h"
 
-CompletedPopupImpl::CompletedPopupImpl( QWidget * parent, Qt::WFlags f)
+CompletedPopupImpl::CompletedPopupImpl(QSystemTrayIcon *trayIconRef, QWidget * parent, Qt::WFlags f)
 		: QWidget(parent, f)
 {
 	setupUi(this);
@@ -39,8 +39,11 @@ CompletedPopupImpl::CompletedPopupImpl( QWidget * parent, Qt::WFlags f)
 	// connect buttons
 	connect(spbClose, SIGNAL(clicked()), this, SLOT(closeClicked()));
 	connect(spbPlayVideo, SIGNAL(clicked()), this, SLOT(playVideoClicked()));
+	connect(trayIconRef, SIGNAL(messageClicked()), this, SLOT(playVideoClicked()));
 	// init state
 	displayState = dsInactive;
+	// get a reference to the tray icon
+	this->trayIconRef = trayIconRef;
 }
 
 CompletedPopupImpl::~CompletedPopupImpl()
@@ -83,6 +86,15 @@ void CompletedPopupImpl::displayTimerOnTimer()
 
 void CompletedPopupImpl::displayPopup(const QIcon &serviceIcon, const QString videoTitle, const QString videoFile)
 {
+#ifdef Q_WS_MAC
+	// check if growl is installed
+	if (QSystemTrayIcon::supportsMessages())
+	{
+		trayIconRef->showMessage(tr("Download completed"), videoTitle, QSystemTrayIcon::Information, 5000);
+		// don't display the standard message
+		return;
+	}
+#endif
 	// set window info
 	imgVideoService->hide();
 	lblVideoTitle->hide();
