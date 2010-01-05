@@ -284,12 +284,12 @@ void SearchResultsPreviewCatcher::downloadError(int /*error*/)
 	// emit download finished with errors
 	emit finishedDownloadPreview(previews->takeFirst(), true);
 	// download next preview
-	QTimer::singleShot(50, this, SLOT(downloadNextPreview()));
+	downloadNextPreview();
 }
 
 void SearchResultsPreviewCatcher::downloadNextPreview()
 {
-	// has previews to download?
+	// has previews to download or an image to download?
 	if (!previews->isEmpty())
 	{
 		emit startedDownloadPreview(previews->first());
