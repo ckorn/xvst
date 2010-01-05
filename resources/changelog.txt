@@ -1,6 +1,12 @@
 2.3.3:
 ------
 
+- Added "No results found" message for searchs with no results
+- Improved video previews in search functions
+
+- Changed plug-ins:
+	- Google Videos (updated search functions)
+
 Mac OS X:
 ---------
 
