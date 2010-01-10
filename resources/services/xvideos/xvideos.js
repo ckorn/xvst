@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.xvideos.com/";
@@ -44,10 +44,9 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(url);
 	// get video title
 	result.title = copyBetween(html, "<title>", "</title>");
-	result.title = strReplace(result.title, "XVIDEOS.COM  -", "");
-	result.title = strReplace(result.title, "- XVIDEOS", "");
+	result.title = strReplace(result.title, "- XVIDEOS.COM", "");
 	// get video flv
-	result.URL = copyBetween(html, "flv_url=", "&");
+	result.URL = cleanUrl(copyBetween(html, "flv_url=", "&"));
 	// return the video information
 	return result;
 }
