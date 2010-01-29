@@ -744,6 +744,9 @@ void MainFormImpl::videoAdded(VideoItem *videoItem)
 	item->setSizeHint(0, QSize(18,18));
 
 	videoUpdated(videoItem);
+
+	// save the current session...
+	sessionManager->saveSession(videoList);
 }
 
 void MainFormImpl::videoDeleted(VideoItem *videoItem)
