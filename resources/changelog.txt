@@ -2,6 +2,8 @@
 ------
 
 - Added "No results found" message for searchs with no results
+- Added the time remaining for videos with "no-size" (RTMP protocol)
+- Improved time remaining calculation (RTMP and HTTP protocols)
 - Improved video previews in search functions
 
 - Added one new plug-in:

@@ -244,6 +244,7 @@ Http::~Http()
 	if (pauseOnDestroyF) pause(); else cancel();
 
 	delete customHeaders;
+	delete timeRemainingAvg;
 	delete downloadSpeedAvg;
 	delete cookies;
 	delete http;
@@ -282,6 +283,9 @@ void Http::initClass(bool useInternalTimer)
 	cookies = new CookieController;
 	// download speed avg calculator
 	downloadSpeedAvg = new ArrayAvg(100);
+	timeRemainingAvg = new ArrayAvg(100);
+	// use the percentage for time remaining
+	usePercentageForTimeRemaining = true;
 	// init internal timer
 	internalTimer = 0;
 	this->useInternalTimer = useInternalTimer;
@@ -834,6 +838,11 @@ void Http::setGlobalUserAgent(QString value)
 	HTTP_GLOBAL_USER_AGENT = value;
 }
 
+void Http::setUsePercentageForTimeRemaining(bool value)
+{
+	usePercentageForTimeRemaining = value;
+}
+
 void Http::dataReadProgress(int done, int total)
 {
 	if (!startedDownload) return;
@@ -846,6 +855,9 @@ void Http::dataReadProgress(int done, int total)
 
 	totalDownload = realTotalSize != 0 ? realTotalSize : total;
 	currDownload = total != 0 ? realStartSize + done : 0;
+
+	if (totalDownload != 0)
+		currentPercentage = static_cast<float>(currDownload) / static_cast<float>(totalDownload) * 100.0;
 
 	emit downloadEvent(currDownload, totalDownload);
 
@@ -1016,9 +1028,19 @@ void Http::timerEvent(QTimerEvent *event)
 	{
 		// download speed
 		downloadSpeed = static_cast<int>(downloadSpeedAvg->add(currDownload - prevDownload));
-		// time remaining
-		if (downloadSpeed != 0)
-			timeRemaining = (totalDownload - currDownload) / downloadSpeed;
+
+		// calcule the time remaining using the percentage
+		if (usePercentageForTimeRemaining)
+		{
+			float timeRem = (100.0 - currentPercentage)/timeRemainingAvg->add(currentPercentage - lastPercentage);
+			timeRemaining = static_cast<int>(timeRem);
+			lastPercentage = currentPercentage;
+		}
+		else if (downloadSpeed != 0) // calcule the time remaining using the dowload speed
+		{
+			float timeRem = timeRemainingAvg->add(totalDownload - currDownload) / downloadSpeedAvg->avg();
+			timeRemaining = static_cast<int>(timeRem);
+		}
 		// reset data
 		prevDownload = currDownload;
 	}

@@ -135,6 +135,7 @@ Q_OBJECT
 	private:
 		QHttp *http;				//!< http protocol
 		ArrayAvg *downloadSpeedAvg;	//!< download speed avg calculator
+		ArrayAvg *timeRemainingAvg;	//!< time remaining avg calculator
 		CookieController *cookies;	//!< cookies manager (controller)
 		int internalTimer;			//!< internal timer id
 		bool useInternalTimer;		//!< flag for know if is being used an internal timer
@@ -172,6 +173,9 @@ Q_OBJECT
 		QStringList *customHeaders;	//!< list with custom header parameters
 		bool skipExistentFiles;		//!< Skip files which are already present (downloaded)
 		QString userAgent;			//!< "user agent" used for this http instance
+		float currentPercentage;	//!< Stores the current percentage
+		float lastPercentage;		//!< Stores the latest percentage
+		bool usePercentageForTimeRemaining;	//!< Flag for know how to calcule the time remaining
 		/*! Init Http class */
 		void initClass(bool useInternalTimer = true);
 		/*! Init the internal http data */
@@ -252,6 +256,8 @@ Q_OBJECT
 		int getLastStopReason();
 		/*! Set the user agent for this http instance (this override the global user agent) */
 		void setUserAgent(QString value);
+		/*! Set how to calculate the time remaining */
+		void setUsePercentageForTimeRemaining(bool value);
 		/*! Set the global (default) HTTP user agent */
 		static void setGlobalUserAgent(QString value);
 	private slots:

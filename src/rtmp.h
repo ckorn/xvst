@@ -39,9 +39,10 @@ class RTMP : public QObject
 {
 Q_OBJECT
 	private:
-		QProcess *flvstreamerProcess;	//!< flvstreamer process
-		QString flvstreamerPath;		//!< base dir where flvstreamer is located (ie: /users/xesk/.xvst/)
+		QProcess *flvstreamerProcess;	//!< Flvstreamer process
+		QString flvstreamerPath;		//!< Base dir where flvstreamer is located (ie: /users/xesk/.xvst/)
 		ArrayAvg *downloadSpeedAvg;		//!< Download speed avg calculator
+		ArrayAvg *timeRemainingAvg;		//!< Time remaining avg calculator
 		QFileInfo destinationFile;		//!< Destination file information
 		EnumRTMP::StopReason stopReason;	//!< Flag for know if the user aborted
 		bool resuming;				//!< Flag for know if is being resumed
@@ -53,6 +54,9 @@ Q_OBJECT
 		int timeRemaining;			//!< Time remaining in seconds
 		bool pauseOnDestroyF;		//!< Should pause the download instead of cancel it?
 		int errorCode;				//!< Last error code detected
+		bool usingPercentage;		//!< Flag for know if we are fetching the % instead of size
+		float currentPercentage;	//!< Stores the current percentage
+		float lastPercentage;		//!< Stores the latest percentage
 		/*! Parse the current output text */
 		void parseOutput(QString output);
 		/*! Single timer shot */

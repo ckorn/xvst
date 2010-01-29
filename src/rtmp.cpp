@@ -16,6 +16,7 @@ RTMP::RTMP(QString flvstreamerPath, QString workingDir)
 	this->flvstreamerPath = flvstreamerPath + "/" + FLVSTREAMER_PATH;
 	// create speed avarage
 	downloadSpeedAvg = new ArrayAvg(100);
+	timeRemainingAvg = new ArrayAvg(100);
 	// create a new qprocess
 	flvstreamerProcess = new QProcess();
 	// connect signals
@@ -31,6 +32,7 @@ RTMP::~RTMP()
 {
 	if (pauseOnDestroyF) pause(); else cancel();
 
+	delete timeRemainingAvg;
 	delete downloadSpeedAvg;
 	delete flvstreamerProcess;
 }
@@ -45,6 +47,9 @@ void RTMP::init()
 	lastDownloadedSize = 0;
 	downloadSpeed = 0;
 	timeRemaining = 0;
+	usingPercentage = false;
+	currentPercentage = 0.0;
+	lastPercentage = 0.0;
 }
 
 bool RTMP::isFlvstreamerInstalled()
@@ -95,8 +100,6 @@ int RTMP::download(const QString URL, QString destination, QString fileName, boo
 
 	// set as downloading
 	resuming = false;
-
-	qDebug() << flvstreamerPath << QStringList() << "-r" << URL << "-o" << fileName;
 
 	// start download
 	flvstreamerProcess->start(flvstreamerPath, QStringList() << "-r" << URL << "-o" << fileName);
@@ -254,9 +257,18 @@ void RTMP::parseOutput(QString output)
 				currentDownloadedSize = tokens.at(1).trimmed().toInt(NULL, 10);
 				// if fileSize is avaialbe, use the downloaded data as %
 				if (fileSize != 0)
+				{
+					usingPercentage = false;
+					// send the download event
 					emit downloadEvent(currentDownloadedSize, fileSize);
+				}
 				else if (tokens.count() == 4) // use the % instead of downloaded data
+				{
+					usingPercentage = true;
+					currentPercentage = tokens.at(3).trimmed().toFloat()/1000 * 100;
+					// send the download event
 					emit downloadEvent(tokens.at(3).trimmed().toInt(NULL, 10), 1000);
+				}
 			}
 		}
 	}
@@ -279,9 +291,20 @@ void RTMP::timerEvent()
 {
 	// calcule download speed
 	downloadSpeed = static_cast<int>(downloadSpeedAvg->add(currentDownloadedSize - lastDownloadedSize));
+
 	// time remaining
-	if (downloadSpeed != 0)
-		timeRemaining = (fileSize - currentDownloadedSize) / downloadSpeed;
+	if (downloadSpeed != 0 && !usingPercentage) // using dowload speed
+	{
+		float timeRem = timeRemainingAvg->add(fileSize - currentDownloadedSize) / downloadSpeedAvg->avg();
+		timeRemaining = static_cast<int>(timeRem);
+	}
+	else if (usingPercentage) // using downloaded percentage
+	{
+		float timeRem = (100 - currentPercentage)/timeRemainingAvg->add(currentPercentage - lastPercentage);
+		timeRemaining = static_cast<int>(timeRem);
+		lastPercentage = currentPercentage;
+	}
+
 	// update counters
 	lastDownloadedSize = currentDownloadedSize;
 	// next timer shot
