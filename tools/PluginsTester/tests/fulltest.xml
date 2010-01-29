@@ -237,6 +237,10 @@
 		<video url="http://webcast.tv2.hu/dynamic/index.php?m=embed2&amp;video_id=401445&amp;p=1&amp;nocache=1&amp;ap=0" caption="Váczi Gergő Sándor Orsival párbajozott" size="1555598" />
 	</test>
 	<test>
+		<plugin file="tv3.js" title="TV3 a la Carta" />
+		<video url="http://www.tv3.cat/videos/2627259/Mickeal-el-pescador" caption="Mickeal, el pescador" size="0" />
+	</test>
+	<test>
 		<plugin file="tnaflix.js" title="T'n A flix" />
 		<video url="http://www.tnaflix.com/view_video.php?viewkey=93dc84bef4f6b1d4799f" caption="brooke h-brooke squirts" size="74635990" />
 	</test>
