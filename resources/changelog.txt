@@ -4,6 +4,9 @@
 - Added "No results found" message for searchs with no results
 - Improved video previews in search functions
 
+- Added one new plug-in:
+	- TV3 a la Carta
+
 - Changed plug-ins:
 	- Google Videos (updated search functions)
 
