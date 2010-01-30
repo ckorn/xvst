@@ -12,6 +12,13 @@
 
 - Changed plug-ins:
 	- Google Videos (updated search functions)
+	- Break
+	- Yikers
+	- XTube
+	- Wat.tv
+	- T'n A flix
+	- Yuvutu
+	- StreetFire
 
 Mac OS X:
 ---------

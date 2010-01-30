@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.yuvutu.com/";
@@ -37,6 +37,9 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
+	
+	http://www.yuvutu.com/modules.php?name=Video&op=view&video_id=324519&proceed=yes
+	
 	const URL_GET_HTML = "http://yuvutu.com/modules.php?name=Video&op=view&video_id=%1&name=Video&proceed=yes";
 	// video information
 	var result = new VideoDefinition();
@@ -50,7 +53,7 @@ function getVideoInformation(url)
 	result.title = copyBetween(html, "class=\"videoTitle\"", "<td");
 	result.title = copyBetween(result.title, "</span>", "</td>");
 	// get the flv url
-	result.URL = copyBetween(html, "&file=", "&");
+	result.URL = copyBetween(html, 'file=', '&'); //"&file=", "&");
 	// return the video information
 	return result;
 }

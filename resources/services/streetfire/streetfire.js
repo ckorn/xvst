@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://videos.streetfire.net/";
@@ -49,8 +49,7 @@ function getVideoInformation(url)
 	// set video title
 	result.title = title;
 	// get the video subdomain (we assume which the video subdomain is the same as preview subdomain)
-	var previewUrl = copyBetween(html, "[img]", "[/img]");
-	var subDomain = getToken(getUrlHost(previewUrl), ".", 0);
+	var subDomain = copyBetween(html, '<link rel="image_src" href="http://', '.');
 	// get the video hash
 	var videoHash = copyBetween(html, 'vidiac.swf?video=', '"');
 	// get video sub-dir

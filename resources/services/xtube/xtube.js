@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.xtube.com/";
@@ -45,8 +45,7 @@ function getVideoInformation(url)
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// get video title
-	result.title = copyBetween(html, "<div class=\"titleBl1\"", "</span>");
-	result.title = copyBetween(result.title, "<font color=#000>", "</font>");
+	result.title = copyBetween(html, "<tr align=left><td width=580><h2>", "</h2>");
 	// get subdomain
 	var subDomain = copyBetween(url, "http://", ".");
 	var swfUrl = copyBetween(html, "swfURL\", \"", "\"");

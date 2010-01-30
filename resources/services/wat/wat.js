@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.wat.tv/";
@@ -47,7 +47,7 @@ function getVideoInformation(url)
 	// get video title
 	result.title = copyBetween(html, "<h2 class=\"titre\">", "</h2>");
 	// get video id
-	var vidId = copyBetween(html, "http://wat.tv/video/", "\"");
+	var vidId = copyBetween(html, 'id="media" value="', '"');
 	// download video info
 	var content = http.downloadWebpage(strFormat(GET_URL_ICONTENT, vidId));
 	// get video url

@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.kontraband.com/";
@@ -44,7 +44,7 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(url);
 	// get video information
 	result.title = copyBetween(html, "'kb_engagement_title','", "'");
-	result.URL = copyBetween(html, "&file=", "&");
+	result.URL = copyBetween(html, "'file','", "'");
 	// return the video information
 	return result;
 }

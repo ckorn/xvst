@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.2";
+	this.version = "1.0.3";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.tnaflix.com/";
@@ -47,7 +47,9 @@ function getVideoInformation(url)
 	// get video information
 	result.title = copyBetween(html, '<h2 class="playIcon">', "</h2>");
 	// get xml url
-	var xmlUrl = URL_XML + strReplace(copyBetween(html, "'config', '", "'"), "%26", "&");
+	var xmlUrl = copyBetween(html, "'config', '", "'");
+	xmlUrl = strReplace(xmlUrl, "%3F", "?");
+	xmlUrl = strReplace(xmlUrl, "%26", "&");
 	// download xml
 	var xml = http.downloadWebpage(xmlUrl);
 	// get flv url

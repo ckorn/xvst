@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.yikers.com/";
@@ -37,7 +37,7 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_XML = "http://www.yikers.com/playvideo.php?cid=%1&startit=1&f=flash8&?";
+	const URL_FLV = "http://media.yikers.com/flv/flash8/yikers_%1.flv";
 	// init result
 	var result = new VideoDefinition();
 	// download webpage
@@ -45,14 +45,10 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(url);
 	// get video title
 	result.title = copyBetween(html, "<title>", "</title>");
-	// get the cid var
-	var cid = copyBetween(html, "'/flash/play_flash_xml.php?cid=", "'");
-	// clear XML url
-	var xmlURL = cleanUrl(strFormat(URL_GET_XML, cid));
-	// download the xml file
-	var xml = http.downloadWebpage(xmlURL);
-	// get the FLV url
-	result.URL = copyBetween(xml, "video_id=", "&");
+	// get video id
+	var vidoId = copyBetween(url, ".com/video_", ".");
+	// get the video url
+	result.URL = strFormat(URL_FLV, vidoId);
 	// clear and get the final url
 	result.URL = cleanUrl(result.URL);
 	// return the video information
