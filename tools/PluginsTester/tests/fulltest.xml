@@ -33,7 +33,7 @@
 		<video url="http://blip.tv/file/1854766?utm_source=featured_ep&amp;utm_medium=featured_ep" caption="Ep. 3 - A Boy Named Lewis" size="41995433" />
 	</test>
 	<test>
-		<plugin file="boingboing.js" title="BoingBoing" />
+		<plugin file="boingboing.js" title="BoingBoing (out-of-date)" />
 		<video url="http://tv.boingboing.net/2008/12/30/boing-boing-tv-best-1.html" caption="Boing Boing tv Best of 2008: TCHOcolate Magical Mystery Tour Trilogy" size="60413671" />
 	</test>
 	<test>
@@ -222,7 +222,7 @@
 	</test>
 	<test>
 		<plugin file="tangle.js" title="Tangle" />
-		<video url="http://www.tangle.com/view_video.php?viewkey=c5f88145973ff00d3752" caption="The Annoying Groundhog" size="0" />
+		<video url="http://www.tangle.com/view_video.php?viewkey=c5f88145973ff00d3752" caption="The Annoying Groundhog" size="1486508" />
 	</test>
 	<test>
 		<plugin file="tsn.js" title="TSN" />
@@ -262,11 +262,11 @@
 	</test>	
 	<test>
 		<plugin file="wat.js" title="Wat.tv" />
-		<video url="http://www.wat.tv/video/sportistsbreakdunkers-1h2zb_1h2y4_.html" caption="Sportists-BreakDunkers" size="4704298" />
+		<video url="http://www.wat.tv/video/breakdunkers-1h2zb_1h1iq_.html" caption="BreakDunkers" size="4704298" />
 	</test>
 	<test>
 		<plugin file="xtube.js" title="Xtube" />
-		<video url="http://video2.xtube.com/watch.php?v_user_id=subwoman&amp;idx=97&amp;v=v6Vto0hR___&amp;cl=cJNEACx7___&amp;from=amateur_preview&amp;ver=3&amp;ccaa=1&amp;qid=&amp;qidx=&amp;qnum=&amp;preview_flag=" caption="Cumshot Nr.26" size="410061" />
+		<video url="http://video2.xtube.com/watch_video.php?v_user_id=heratik&amp;idx=5&amp;v=V86bc-S237-&amp;cl=vRzo8-S237-&amp;from=&amp;ver=3&amp;ccaa=1&amp;qid=&amp;qidx=&amp;qnum=&amp;preview_flag=" caption="Danielle" size="7849869" />
 	</test>
 	<test>
 		<plugin file="xvideos.js" title="XVideos" />
@@ -290,7 +290,7 @@
 	</test>	
 	<test>
 		<plugin file="youtube.js" title="Youtube"/>
-		<video url="http://www.youtube.com/watch?v=EoqJzjlwIPc" caption="BFN: las lenguas y su aprendizaje" size="14663571" />
+		<video url="http://www.youtube.com/watch?v=EoqJzjlwIPc" caption="BFN: las lenguas y su aprendizaje" size="14663845" />
 	</test>
 	<test>
 		<plugin file="youtubeislam.js" title="YouTubeIslam"/>
@@ -306,7 +306,7 @@
 	</test>
 	<test>
 		<plugin file="zedge.js" title="Zedge"/>
-		<video url="http://www.zedge.net/videos/155002/hot-girl-funny-video/" caption="Hot Girl Funny" size="1581173" />
+		<video url="http://www.zedge.net/videos/155002/hot-girl-funny-video/" caption="Hot Girl Funny" size="1582174" />
 	</test>
 	<test>
 		<plugin file="zuuble.js" title="Zuuble"/>
