@@ -3,6 +3,7 @@
 
 - Added "No results found" message for searchs with no results
 - Added the time remaining for videos with "no-size" (RTMP protocol)
+
 - Improved time remaining calculation (RTMP and HTTP protocols)
 - Improved video previews in search functions
 - Improved session, when a new video is added the session is saved
