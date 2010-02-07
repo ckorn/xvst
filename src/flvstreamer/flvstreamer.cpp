@@ -497,9 +497,9 @@ int main(int argc, char **argv)
  	LogPrintf("FLVStreamer %s\n", RTMPDUMP_VERSION);
 	LogPrintf("(c) 2009 Andrej Stepanchuk, The Flvstreamer Team, license: GPL\n");
 	LogPrintf("--------------------------------------------------------------\n");
-	LogPrintf("This is a modified version of FLVStream made by:\n");
+	LogPrintf("This is a modified version of FLVStreamer made by:\n");
 	LogPrintf("   Xesc & Technology (c) 2009, license: GPL\n");
-	LogPrintf("as part of xVideoServiceThief (c) 2007-2009, licence: GPL\n");
+	LogPrintf("as part of xVideoServiceThief (c) 2007-2010, licence: GPL\n");
 	LogPrintf("--------------------------------------------------------------\n");
 	
 	int opt;
