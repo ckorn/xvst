@@ -244,7 +244,7 @@ void RTMP::parseOutput(QString output)
 			else if (tokens.at(0).trimmed() == "S:")
 				lastDownloadedSize = tokens.at(1).trimmed().toInt(NULL, 10);
 			// get error and send error signal
-			else if (tokens.at(0).trimmed() == "E:" && stopReason == EnumRTMP::NO_STOPPED)
+			else if ((tokens.at(0).trimmed() == "E:" || tokens.at(0).trimmed() == "ERROR:") && stopReason == EnumRTMP::NO_STOPPED)
 			{
 				stopReason = EnumRTMP::DOWNLOAD_ERROR;
 				// send error signal
