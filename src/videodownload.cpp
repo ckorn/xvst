@@ -313,6 +313,12 @@ void VideoDownload::downloadVideo(VideoItem *videoItem)
 		downloads->append(new DownloadItem_HTTP(this, videoItem));
 	else if (isRtmpURL(videoItem->getVideoInformation().URL))
 		downloads->append(new DownloadItem_RTMP(this, videoItem));
+	else // invalid URL
+	{
+		videoItem->setAsError();
+		emit videoItemUpdated(videoItem);
+		return;
+	}
 	// get the new item added
 	DownloadItem *downloadItem = downloads->last();
 	// connect signals of this new child
@@ -353,6 +359,12 @@ void VideoDownload::resumeDownload(VideoItem *videoItem)
 		downloads->append(new DownloadItem_HTTP(this, videoItem));
 	else if (isRtmpURL(videoItem->getVideoInformation().URL))
 		downloads->append(new DownloadItem_RTMP(this, videoItem));
+	else // invalid URL
+	{
+		videoItem->setAsError();
+		emit videoItemUpdated(videoItem);
+		return;
+	}
 	// get the new item added
 	DownloadItem *downloadItem = downloads->last();
 	// connect signals of this new child

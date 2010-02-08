@@ -137,7 +137,7 @@ void VideoListController::timerEvent(QTimerEvent* /*event*/)
 	VideoItem *videoItem = getFirstWithPreState();
 
 	// if we found an item with a pre-state, then it has a high priority (no one can start before it)
-	if (videoItem != NULL)
+	if (videoItem != NULL && !videoItem->hasErrors())
 	{
 		// the item don't need to update the url
 		if (!videoItem->needUpdateUrl())
@@ -152,7 +152,7 @@ void VideoListController::timerEvent(QTimerEvent* /*event*/)
 		if (programOptions->getDownloadAutomatically() && schedule->canStart() && videoDownload->canStartDownload())
 		{
 			videoItem = getFirstReady();
-			if (videoItem != NULL)
+			if (videoItem != NULL && !videoItem->hasErrors())
 			{
 				if (videoItem->isResuming()) resumeDownload(videoItem);
 				else startDownload(videoItem);

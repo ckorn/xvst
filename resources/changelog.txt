@@ -1,3 +1,10 @@
+2.3.4:
+------
+
+- Improved error detections with RTMP protocol
+
+- Fixed bug (Error: If an URL was not valid the program ended with an error)
+
 2.3.3:
 ------
 
