@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.2";
+	this.version = "2.0.3";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009 (thanks to Matze Ba)";
 	this.website = "http://www.youporn.com/";
@@ -39,6 +39,8 @@ function getVideoInformation(url)
 {
 	// video information
 	var result = new VideoDefinition();
+	// fix possible unneeded url information (i.e: /?from=categ_us)
+	if (strIndexOf(url, "/?") > 0) url = getToken(url, "/?", 0);
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url + "/?user_choice=Enter");

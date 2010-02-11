@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://vids.myspace.com/";
@@ -50,7 +50,7 @@ function getVideoInformation(url)
 	// download xml
 	var xml = http.downloadWebpage(strFormat(URL_GET_XML, videoId));
 	// get flv url
-	result.URL = copyBetween(xml, "content url=\"", "\"");
+	result.URL = copyBetween(xml, 'RTMPE url="', '"');
 	result.URL = cleanUrl(result.URL);
 	// return the video information
 	return result;
