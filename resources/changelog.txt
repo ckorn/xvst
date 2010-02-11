@@ -5,6 +5,9 @@
 
 - Fixed bug (Error: If an URL was not valid the program ended with an error)
 
+- Changed plug-ins:
+	- YouPorn
+
 2.3.3:
 ------
 
