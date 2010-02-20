@@ -24,3 +24,8 @@ A compiler directrive (STATIC_BUILD) must be defined if you want to get a "valid
 		> qmake -set build_mode frameworks_build
 		> qmake
 		> make
+
+If you are using Windows, you can use the automated scripts for compile the xVST.
+
+	> compile-tools/compile-vc++.bat	(static + VC++2008)
+	> compile-tools/compile-mingw.bat	(dynamic + mingw)
