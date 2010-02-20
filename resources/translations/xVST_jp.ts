@@ -156,6 +156,10 @@
         <translation>ダウンロードしたすべてのビデオをログに記録(日付 + タイトル + URL)</translation>
     </message>
     <message>
+        <source>Save and restore the current session</source>
+        <translation>現在のセッションを次回も保持</translation>
+    </message>
+    <message>
         <source>Clear the current downloads log</source>
         <translation>現在のダウンロードログをクリア</translation>
     </message>
@@ -310,10 +314,6 @@
     <message>
         <source>Language</source>
         <translation>言語</translation>
-    </message>
-    <message>
-        <source>Save and restore the curren session</source>
-        <translation>現在のセッションを保存して復元する</translation>
     </message>
     <message>
         <source>Updates Configuration</source>
@@ -1392,6 +1392,14 @@
         <translation>ダウンロードを中止</translation>
     </message>
     <message>
+        <source>Already added</source>
+        <translation>既に追加済</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>このビデオは既に追加されています、リストを確認してください.</translation>
+    </message>
+    <message>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>ビデオダウンロード中にエラーが発生:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
@@ -1818,6 +1826,37 @@
     </message>
 </context>
 <context>
+    <name>AddVideoImpl</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation>既に追加済</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>このビデオは既に追加されています、リストを確認してください。</translation>
+    </message>
+    <message>
+        <source>User custom video download</source>
+        <translation>カスタムダウンロード</translation>
+    </message>
+    <message>
+        <source> - Adult content is not allowed</source>
+        <translation> - アダルトサイトを拒否</translation>
+    </message>
+    <message>
+        <source>mark as custom download</source>
+        <translation>カスタムダウンロードとしてマーク</translation>
+    </message>
+    <message>
+        <source> - Blocked site</source>
+        <translation> - ブロックされたサイト</translation>
+    </message>
+</context>
+<context>
     <name>BugReportImpl</name>
     <message>
         <source>Ok</source>
@@ -1966,6 +2005,33 @@
     <message>
         <source>Cancel button</source>
         <translation>中止ボタン</translation>
+    </message>
+</context>
+<context>
+    <name>DragDropImpl</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation>既に追加済</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>このビデオは既に追加されています、リストを確認してください。</translation>
+    </message>
+    <message>
+        <source>User custom video download</source>
+        <translation>カスタムダウンロード</translation>
+    </message>
+    <message>
+        <source> - Adult content is not allowed</source>
+        <translation> - アダルトサイトを拒否</translation>
+    </message>
+    <message>
+        <source> - Blocked site</source>
+        <translation> - ブロックされたサイト</translation>
     </message>
 </context>
 <context>
@@ -2575,10 +2641,7 @@ xVideoServiceThief also provide you the ability to convert each video in most po
 font-family:Arial, Helvetica, sans-serif;
 font-size:12px;
 }</source>
-        <translation>QTextBrowser{
-font-family:Arial, Helvetica, sans-serif;
-font-size:12px;
-}</translation>
+        <translation>QTextBrowser{font-family:Meiryo, Helvetica, sans-serif;font-size:12px;}</translation>
     </message>
     <message>
         <source>Support button</source>
@@ -2608,9 +2671,7 @@ font-size:12px;
         <source>QFrame{
 background: white;
 } </source>
-        <translation>QFrame{
-background: white;
-} </translation>
+        <translation>QFrame{background: white;} </translation>
     </message>
     <message>
         <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
@@ -2702,7 +2763,7 @@ background: white;
     </message>
     <message>
         <source>MP4 Format (*.mp4)</source>
-        <translation>Mp4 形式 (*.mp4)</translation>
+        <translation>MP4 形式 (*.mp4)</translation>
     </message>
     <message>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
@@ -2853,40 +2914,6 @@ background: white;
     <message>
         <source>Current: &lt;b&gt;%1%&lt;/b&gt;</source>
         <translation>現在の値: &lt;b&gt;%1%&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>DragDropImpl</name>
-    <message>
-        <source>Alpha blend value</source>
-        <translation>不透明度</translation>
-    </message>
-    <message>
-        <source> - Adult content is not allowed</source>
-        <translation> - アダルトコンテンツを許可しない</translation>
-    </message>
-    <message>
-        <source> - Blocked site</source>
-        <translation> - ブロックされたサイト</translation>
-    </message>
-</context>
-<context>
-    <name>AddVideoImpl</name>
-    <message>
-        <source>User custom video download</source>
-        <translation>ユーザカスタムビデオダウンロード</translation>
-    </message>
-    <message>
-        <source> - Adult content is not allowed</source>
-        <translation> - アダルトコンテンツを許可しない</translation>
-    </message>
-    <message>
-        <source>mark as custom download</source>
-        <translation>カスタムダウンロードとしてマーク</translation>
-    </message>
-    <message>
-        <source> - Blocked site</source>
-        <translation> - ブロックされたサイト</translation>
     </message>
 </context>
 </TS>
