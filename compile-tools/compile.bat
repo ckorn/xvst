@@ -11,8 +11,10 @@ if "%1" == "mingw" (
 )
 
 :config-missing
-echo No configuration (VC++ or MinGW) specified
+echo ------------------------------------------------------------------
+echo FATAL ERROR: No configuration (VC++ or MinGW) has been specified
 echo Example: "compile-tools/compile.bat" vc++ clean
+echo ------------------------------------------------------------------
 goto :END
 
 :pre-clean
@@ -22,9 +24,8 @@ if "%2" == "no-clean" goto :do-qmake
 RMDIR build /s /q
 %MAKE% clean 
 DEL Makefile
-DEL Makefile.Release
-DEL Makefile.Debug
-DEL object_script.xVideoServiceThief.Release
+DEL Makefile.*
+DEL object_script.xVideoServiceThief.*
 
 :do-qmake
 goto :do-qmake-%1%
@@ -43,7 +44,7 @@ goto :compile
 "%MAKE%"
 
 :upx
-"%UPX%" "bin\xVideoServiceThief.exe" -9
+"%UPXApp%" "bin\xVideoServiceThief.exe" -9
 
 :Install languages
 %QtDir%\bin\lrelease.exe xVideoServiceThief.pro
