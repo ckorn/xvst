@@ -221,6 +221,10 @@
 		<video url="http://videos.streetfire.net/video/2008-Malibu-exhaust_705560.htm" caption="2008 Malibu exhaust" size="4206605" />
 	</test>
 	<test>
+		<plugin file="szinhaz.js" title="Szinhaz.tv" />
+		<video url="http://szinhaz.tv/page/danse_macabre" caption="Danse Macabre" size="39702493" />
+	</test>
+	<test>
 		<plugin file="tangle.js" title="Tangle" />
 		<video url="http://www.tangle.com/view_video.php?viewkey=c5f88145973ff00d3752" caption="The Annoying Groundhog" size="1486508" />
 	</test>
