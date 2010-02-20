@@ -1,5 +1,8 @@
 @echo off
 
+:init
+cd %CD%/..
+
 :qt-config
 if "%1" == "vc++" (
   call compile-tools\qt-vc++.bat
