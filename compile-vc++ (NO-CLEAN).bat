@@ -1,0 +1,1 @@
+call compile-tools/compile.bat vc++ no-clean
