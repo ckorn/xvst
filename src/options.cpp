@@ -272,7 +272,10 @@ void ProgramOptions::setDefault()
 	downloadDir = QString(_homeDirectory + DEFAULT_DOWNLOADS);
 	// modification made by "AzalSup"
 #else
-	downloadDir = QString(appDir.absolutePath() + DEFAULT_DOWNLOADS);
+	if (isWindowsVista()) // windows vista and 7
+		downloadDir = QString(QDir::homePath() + "/Videos/xVST");
+	else // windows XP
+		downloadDir = QString(appDir.absolutePath() + DEFAULT_DOWNLOADS);
 #endif
 #endif
 	convertVideos = true;
