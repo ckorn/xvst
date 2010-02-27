@@ -4,6 +4,14 @@
 - Added one new plugin:
 	- Szinhaz.tv
 
+Windows Vista/7:
+----------------
+
+- Changed the downloads default directory to: "C:/Users/{user}/Videos/xVST"
+
+- Fixed bug (Error: The default downloads directory was read-only)
+
+
 2.3.4:
 ------
 
