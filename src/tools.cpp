@@ -242,8 +242,8 @@ bool isWindowsVista()
 	ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
 	GetVersionEx(&osvi);
-	// return if we are running the windows vista OS
-	return((osvi.dwMajorVersion >= 6) && (osvi.dwMinorVersion == 0));
+	// return if we are running the windows vista/7 or higher OS
+	return (osvi.dwMajorVersion >= 6);// && (osvi.dwMinorVersion == 0));
 #else
 	return false;
 #endif
