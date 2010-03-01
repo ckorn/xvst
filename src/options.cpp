@@ -830,6 +830,16 @@ bool ProgramOptions::getDisplayWelcomeMessage()
 	return displayWelcomeMessage;
 }
 
+void ProgramOptions::setDisplayDownloadsMigrator(bool value)
+{
+	displayDownloadsMigrator = value;
+}
+
+bool ProgramOptions::getDisplayDownloadsMigrator()
+{
+	return displayDownloadsMigrator;
+}
+
 void ProgramOptions::setScheduleEnabled(bool value)
 {
 	scheduleEnabled = value;

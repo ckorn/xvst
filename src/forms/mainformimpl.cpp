@@ -35,6 +35,7 @@
 #include "checkupdatesimpl.h"
 #include "bugreportimpl.h"
 #include "searchvideosimpl.h"
+#include "winvistadownloadsmsgimpl.h"
 
 #include "../tools.h"
 #include "../options.h"
@@ -253,6 +254,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button_main.png\" /></a>");
 	// display welcome donate
 	displayWelcomeMessage();
+	// display windows downloads directory migrator
+	displayWinVistaDownloads();
 	// updater timer
 	QTimer::singleShot(250, this, SLOT(checkForUpdates()));
 	// fix MacOSX bug with alternating color rows and size when the list is empty
@@ -1044,6 +1047,22 @@ void MainFormImpl::displayWelcomeMessage()
 		// continue displaying this message?
 		programOptions->setDisplayWelcomeMessage(!welcome.getDisplayAgain());
 	}
+}
+
+void MainFormImpl::displayWinVistaDownloads()
+{
+#ifdef Q_WS_WIN
+	// only is needed on windows vista and we want check it
+	if (isWindowsVista() && programOptions->getDisplayDownloadsMigrator())
+	{
+		//LoadingImpl::instance()->closeLoading(); // VALIDAR QUE PASSA SI NO ES TANCA ABANS...
+		// display migrator window
+		WinVistaDownloadsMsgImpl downloadsMsg(this);
+		downloadsMsg.exec();
+		// continue displaying this message?
+		programOptions->setDisplayDownloadsMigrator(!downloadsMsg.getDisplayAgain());
+	}
+#endif
 }
 
 // stay on top control

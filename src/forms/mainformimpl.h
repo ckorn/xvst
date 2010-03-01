@@ -84,6 +84,8 @@ Q_OBJECT
 		void checkUpdates(bool forceCheckUpdates);
 		// welcome message
 		void displayWelcomeMessage();
+		// windows vista downloads directory migration
+		void displayWinVistaDownloads();
 		// drop functions
 		void dragEnterEvent(QDragEnterEvent *event);
 		void dropEvent(QDropEvent *event);
