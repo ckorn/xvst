@@ -176,6 +176,7 @@ void ProgramOptions::load()
 #endif
 
 	displayWelcomeMessage = settings.value("configuration/displayWelcomeMessage", displayWelcomeMessage).toBool();
+	displayDownloadsMigrator = settings.value("configuration/displayDownloadsMigrator", displayDownloadsMigrator).toBool();
 
 	scheduleEnabled = settings.value("configuration/scheduleEnabled", scheduleEnabled).toBool();
 
@@ -253,6 +254,7 @@ void ProgramOptions::save()
 	settings.setValue("useInternalFFmpeg", useInternalFFmpeg);
 
 	settings.setValue("displayWelcomeMessage", displayWelcomeMessage);
+	settings.setValue("displayDownloadsMigrator", displayDownloadsMigrator);
 
 	settings.setValue("scheduleEnabled", scheduleEnabled);
 
