@@ -113,6 +113,11 @@ QString uniqueFileName(const QString fileName)
 	return tmp;
 }
 
+QString changeFileName(const QString file, const QString newName)
+{
+	return QFileInfo(file).absolutePath() + "/" + newName + "." + QFileInfo(file).completeSuffix();
+}
+
 QString changeFileExt(const QString file, const QString ext)
 {
 	return QFileInfo(file).absolutePath() + "/" + QFileInfo(file).baseName() + ext;
@@ -394,7 +399,10 @@ QString htmlCharToHtmlCode(QString html)
 			case 62:
 				return getToken(HTML_Char_Conversion_Table[3], "=", 1);
 			default:
-				return getToken(HTML_Char_Conversion_Table[99 - (255 - index)], "=", 1);
+				if (index <= 255)
+					return getToken(HTML_Char_Conversion_Table[99 - (255 - index)], "=", 1);
+				else // unknwon code
+					return "";
 		}
 	else // error
 		return "";

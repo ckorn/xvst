@@ -46,6 +46,9 @@
 	/*! Generates a UniqueFilename, makes sure the file does not exist before returning a result */
 	QString uniqueFileName(const QString file);
 
+	/*! Change the current file name (conserving the original extension) */
+	QString changeFileName(const QString file, const QString newName);
+
 	/*! Change the current file ext for the new extension */
 	QString changeFileExt(const QString file, const QString ext);
 
