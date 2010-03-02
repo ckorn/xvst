@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.7";
+	this.version = "2.0.8";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -156,8 +156,7 @@ function parseResultItem(searchResults, html)
 	// get video description
 	description = copyBetween(html, 'class="video-description">', '</div>');
 	// get video duration
-	tmp = copyBetween(html, '<div class="video-time"', '</div>');
-	duration = convertToSeconds(copyBetween(tmp, '">', '</span'));
+	duration = convertToSeconds(copyBetween(html, '<span class="hovercard-duration">', "<"));
 	// get rating
 	tmp = copyBetween(html, '<button class="master-sprite ratingVS', '>');
 	rating = copyBetween(tmp, 'title="', '"');
