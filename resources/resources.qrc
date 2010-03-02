@@ -65,6 +65,7 @@
     <qresource prefix="/winvistamsg" >
         <file>images/howto_vistaadmin.png</file>
         <file>images/windows_security.png</file>
+        <file>images/windows_downloads_migratorion.png</file>
     </qresource>
     <qresource prefix="/popup" >
         <file>images/finished_background.png</file>
