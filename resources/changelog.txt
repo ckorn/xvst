@@ -1,8 +1,13 @@
 2.3.5:
 ------
 
-- Added one new plugin:
+- Added the possibility to rename the video titles (NOTE: only possible when it is not being downloaded or converted)
+
+- Added one new plug-in:
 	- Szinhaz.tv
+
+- Changed plug-in:
+	- Youtube (updated search functions)
 
 - Improved (reduced and trimmed) the all internal images for a better performance
 
