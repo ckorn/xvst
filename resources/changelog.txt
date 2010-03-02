@@ -4,8 +4,12 @@
 - Added one new plugin:
 	- Szinhaz.tv
 
+- Improved (reduced and trimmed) the all internal images for a better performance
+
 Windows Vista/7:
 ----------------
+
+- Added detection and migration of old and read-only downloads directory to a new downloads directory
 
 - Changed the downloads default directory to: "C:/Users/{user}/Videos/xVST"
 
