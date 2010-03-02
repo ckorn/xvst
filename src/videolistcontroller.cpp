@@ -258,6 +258,54 @@ void VideoListController::deleteVideo(VideoItem *videoItem, bool removePausedFil
 	deleteVideo(videoList->indexOf(videoItem), removePausedFile);
 }
 
+void VideoListController::renameVideo(const int index, QString newName)
+{
+	if (validItemIndex(index))
+	{
+		VideoItem *videoItem = getVideoItem(index);
+
+		if (!videoItem->isRenameable() || videoItem->getDisplayLabel() == newName) return;
+
+		// prepare the new title
+		newName = htmlToStr(newName);
+
+		// update the video title
+		VideoDefinition inf = videoItem->getVideoInformation();
+		inf.title = newName;
+		videoItem->setVideoInformation(inf);
+
+		// generate the new file name if it is assigned
+		if (videoItem->getVideoFile() != "")
+		{
+			QString newVideoFile = uniqueFileName(changeFileName(videoItem->getVideoFile(), cleanFileName(newName)));
+			// if the file is paused or finished, then
+			if (QFile::exists(videoItem->getVideoFile()))
+				QFile::rename(videoItem->getVideoFile(), newVideoFile);
+			// update the videoFile
+			videoItem->setVideoFile(newVideoFile);
+		}
+
+		// generate the new file saved name
+		if (videoItem->getVideoFileSavedTo() != "")
+		{
+			QString newVideoFileSavedTo = uniqueFileName(changeFileName(videoItem->getVideoFileSavedTo(), cleanFileName(newName)));
+			// if the file is paused or finished, then
+			if (QFile::exists(videoItem->getVideoFileSavedTo()))
+				QFile::rename(videoItem->getVideoFileSavedTo(), newVideoFileSavedTo);
+			// update the videoFile
+			videoItem->setVideoFileSavedTo(newVideoFileSavedTo);
+		}
+
+		// advertise about this change
+		emit videoRenamed(videoItem);
+	}
+}
+
+void VideoListController::renameVideo(VideoItem *videoItem, QString newName)
+{
+	renameVideo(videoList->indexOf(videoItem), newName);
+}
+
 void VideoListController::clear(bool removePausedFile)
 {
 	if (videoInformation->isGettingInfo())

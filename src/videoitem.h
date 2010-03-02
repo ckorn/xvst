@@ -169,6 +169,8 @@ Q_OBJECT
 		bool isBussy();
 		/*! Get if is removable */
 		bool isRemovable();
+		/*! Get if is renameable */
+		bool isRenameable();
 		/*! Get if this item is canceled */
 		bool isCanceled();
 		/*! Get if is market as "deleted" */

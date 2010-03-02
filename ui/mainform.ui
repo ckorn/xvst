@@ -1303,6 +1303,18 @@
     <string>Ctrl+F</string>
    </property>
   </action>
+  <action name="actRenameVideo">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/buttons/images/film_edit.png</normaloff>:/buttons/images/film_edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rename video</string>
+   </property>
+   <property name="toolTip">
+    <string>Rename video</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
   <tabstop>btnAddVideo</tabstop>
@@ -1326,7 +1338,6 @@
   <tabstop>lsvDownloadList</tabstop>
  </tabstops>
  <resources>
-  <include location="../resources/resources.qrc"/>
   <include location="../resources/resources.qrc"/>
  </resources>
  <connections/>

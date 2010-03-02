@@ -86,6 +86,10 @@ Q_OBJECT
 		void deleteVideo(const int index, bool removePausedFile = false);
 		/*! Delete an existent VideoItem */
 		void deleteVideo(VideoItem *videoItem, bool removePausedFile = false);
+		/*! Rename by Index an existent VideoItem */
+		void renameVideo(const int index, QString newName);
+		/*! Rename an existent VideoItem */
+		void renameVideo(VideoItem *videoItem, QString newName);
 		/*! Clear videoList list */
 		void clear(bool removePausedFile = false);
 		/*! Get the first null item to get info */
@@ -186,6 +190,8 @@ Q_OBJECT
 		void videoAdded(VideoItem *videoItem);
 		/*! When a video is deleted, this signal is emited */
 		void videoDeleted(VideoItem *videoItem);
+		/*! When a videoItem is renamed, this signal is emited */
+		void videoRenamed(VideoItem *videoItem);
 		/*! When a videoItem is updated, this signal is emited */
 		void videoUpdated(VideoItem *videoItem);
 		/*! When a videoItem trhows an error */

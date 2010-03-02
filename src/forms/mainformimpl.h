@@ -110,6 +110,7 @@ Q_OBJECT
 		void closeAppClicked();
 		void addVideoClicked();
 		void deleteVideoClicked();
+		void renameVideoClicked();
 		void startDownloadVideoClicked();
 		void pauseResumeDownloadVideoClicked();
 		void cancelDownloadVideoClicked();
@@ -140,6 +141,7 @@ Q_OBJECT
 		// VideoListController signals
 		void videoAdded(VideoItem *videoItem);
 		void videoDeleted(VideoItem *videoItem);
+		void videoRenamed(VideoItem *videoItem);
 		void videoUpdated(VideoItem *videoItem);
 		void videoError(VideoItem *videoItem);
 		void videoMoved(int from, int to);

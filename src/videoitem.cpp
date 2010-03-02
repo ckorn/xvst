@@ -262,6 +262,11 @@ bool VideoItem::isRemovable()
 	return !isBussy();
 }
 
+bool VideoItem::isRenameable()
+{
+	return !isBussy();
+}
+
 bool VideoItem::isCanceled()
 {
 	return videoState == vsCanceled;

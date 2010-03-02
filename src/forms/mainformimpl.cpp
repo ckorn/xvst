@@ -36,6 +36,7 @@
 #include "bugreportimpl.h"
 #include "searchvideosimpl.h"
 #include "winvistadownloadsmsgimpl.h"
+#include "customdownloadtitleimpl.h"
 
 #include "../tools.h"
 #include "../options.h"
@@ -85,6 +86,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	QMenu *fileMenu = menuBar()->addMenu(tr("File"));
 	fileMenu->addAction(actAddVideo);
 	fileMenu->addAction(actDeleteVideo);
+	fileMenu->addAction(actRenameVideo);
 	fileMenu->addSeparator();
 	fileMenu->addAction(actResetState);
 	fileMenu->addSeparator();
@@ -179,7 +181,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(actCloseApp, SIGNAL(triggered()), this, SLOT(closeAppClicked())); // actCloseApp (clicked)
 	connect(actMoreOptions, SIGNAL(triggered()), this, SLOT(moreOptionsClicked())); // actMoreOptions (clicked)
 	connect(actAddVideo, SIGNAL(triggered()), this, SLOT(addVideoClicked())); // actAddVideo (clicked)
-	connect(actDeleteVideo, SIGNAL(triggered()), this, SLOT(deleteVideoClicked())); // actMoreOptions (clicked)
+	connect(actDeleteVideo, SIGNAL(triggered()), this, SLOT(deleteVideoClicked())); // actDeleteOptions (clicked)
+	connect(actRenameVideo, SIGNAL(triggered()), this, SLOT(renameVideoClicked())); // actRenameOptions (clicked)
 	connect(actStartDownload, SIGNAL(triggered()), this, SLOT(startDownloadVideoClicked())); // actStartDownload (clicked)
 	connect(actPauseResumeDownload, SIGNAL(triggered()), this, SLOT(pauseResumeDownloadVideoClicked())); // actPauseResumeDownload (clicked)
 	connect(actCancelDownload, SIGNAL(triggered()), this, SLOT(cancelDownloadVideoClicked())); // actCancelDownload (clicked)
@@ -216,6 +219,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	// VideoListController signals
 	connect(videoList, SIGNAL(videoAdded(VideoItem *)), this, SLOT(videoAdded(VideoItem *))); //onVideList added
 	connect(videoList, SIGNAL(videoDeleted(VideoItem *)), this, SLOT(videoDeleted(VideoItem *))); //onVideoList deleted
+	connect(videoList, SIGNAL(videoRenamed(VideoItem *)), this, SLOT(videoRenamed(VideoItem *))); //onVideoList renamed
 	connect(videoList, SIGNAL(videoUpdated(VideoItem *)), this, SLOT(videoUpdated(VideoItem *))); //onVideoList updated
 	connect(videoList, SIGNAL(videoError(VideoItem *)), this, SLOT(videoError(VideoItem *))); //onVideoList error
 	connect(videoList, SIGNAL(videoMoved(int, int)), this, SLOT(videoMoved(int, int))); //onVideList item moved
@@ -385,6 +389,8 @@ void MainFormImpl::createTrayIcon()
 	trayIconMenu->addSeparator();
 	trayIconMenu->addAction(actDragDrop);
 	trayIconMenu->addAction(actAddVideo);
+	trayIconMenu->addAction(actDeleteVideo);
+	trayIconMenu->addAction(actRenameVideo);
 	trayIconMenu->addAction(actSearchVideos);
 	trayIconMenu->addAction(actOpenDownloadDir);
 	trayIconMenu->addSeparator();
@@ -528,6 +534,21 @@ void MainFormImpl::addVideoClicked()
 void MainFormImpl::deleteVideoClicked()
 {
 	videoList->deleteVideo(getSelectedVideoItem(), true);
+}
+
+void MainFormImpl::renameVideoClicked()
+{
+	VideoItem *videoItem = getSelectedVideoItem();
+	// we have an items
+	if (videoItem != NULL)
+	{
+		CustomDownloadTitleImpl renameVideoForm(this, Qt::Sheet);
+		// set the current title
+		renameVideoForm.edtTitle->setText(videoItem->getDisplayLabel());
+		// display custom title window
+		if (showModalDialog(&renameVideoForm) == QDialog::Accepted)
+			videoList->renameVideo(videoItem, renameVideoForm.edtTitle->text());
+	}
 }
 
 void MainFormImpl::startDownloadVideoClicked()
@@ -757,6 +778,13 @@ void MainFormImpl::videoDeleted(VideoItem *videoItem)
 	delete getQTreeWidgetItemByVideoItem(videoItem);
 	lsvDownloadList->setCurrentItem(NULL);
 	updateVisualControls();
+}
+
+void MainFormImpl::videoRenamed(VideoItem *videoItem)
+{
+	QTreeWidgetItem *item = getQTreeWidgetItemByVideoItem(videoItem);
+	item->setText(0, videoItem->getDisplayLabel());
+	item->setToolTip(0, videoItem->getDisplayLabel());
 }
 
 void MainFormImpl::videoUpdated(VideoItem *videoItem)
@@ -1155,6 +1183,7 @@ void MainFormImpl::updateVisualControls()
 
 	// update actions
 	actDeleteVideo->setEnabled(btnDeleteVideo->isEnabled());
+	actRenameVideo->setEnabled(btnDeleteVideo->isEnabled());
 	actStartDownload->setEnabled(btnStartDownload->isEnabled());
 	actPauseResumeDownload->setEnabled(btnPauseResumeDownload->isEnabled());
 	actPauseResumeDownload->setText(btnPauseResumeDownload->text());
@@ -1232,6 +1261,7 @@ void MainFormImpl::videoListContextMenu(const QPoint & pos)
 		videoItemMenu->addSeparator();
 		videoItemMenu->addAction(actAddVideo);
 		videoItemMenu->addAction(actDeleteVideo);
+		videoItemMenu->addAction(actRenameVideo);
 		videoItemMenu->addSeparator();
 		videoItemMenu->addAction(actStartDownload);
 		videoItemMenu->addAction(actPauseResumeDownload);
