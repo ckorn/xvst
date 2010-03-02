@@ -1165,6 +1165,10 @@ background: white;
         <source>Clear completed</source>
         <translation>完了済をクリア</translation>
     </message>
+    <message>
+        <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainFormImpl</name>

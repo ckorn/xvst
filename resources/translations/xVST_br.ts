@@ -1506,178 +1506,184 @@ font-size:12px;
         <source>Ctrl+F</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../ui/mainform.ui" line="1312"/>
+        <location filename="../../ui/mainform.ui" line="1315"/>
+        <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="85"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="86"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="97"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="99"/>
         <source>Controllers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="105"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="107"/>
         <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="116"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="118"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="137"/>
         <source> Video </source>
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="137"/>
         <source> Size </source>
         <translation> Tamanho </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="137"/>
         <source> Progress </source>
         <translation> Progresso </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="137"/>
         <source> Time </source>
         <translation> Tempo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="137"/>
         <source> Speed </source>
         <translation> Velocidade </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="363"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="367"/>
         <source>Closing...</source>
         <translation>Fechando...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="364"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="368"/>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
         <translation>xVideoServiceThief está trabalhando, você tem certeza que deseja interromper este trabalho?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="365"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="584"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="369"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="605"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="365"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="585"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="369"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="606"/>
         <source>No</source>
         <translation>Não</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="391"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="397"/>
         <source>Options</source>
         <translation>Opções</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="431"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="910"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="437"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="938"/>
         <source>Updates</source>
         <translation>Atualizações</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="432"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="438"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Outro processo está em execução, por favor interrompa ou espere a finalização deste processo.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="433"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="672"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="912"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1301"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="439"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="693"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="940"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1331"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="478"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="484"/>
         <source>Select the download directory:</source>
         <translation>Selecione a pasta de downloads:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="582"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="603"/>
         <source>Cancel download</source>
         <translation>Cancelar download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="583"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="604"/>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Tem certeza que quer cancelar o download de &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="670"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="691"/>
         <source>Error message</source>
         <translation>Mensagem de erro</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="671"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="692"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Este vídeo teve o seguinte erro:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="911"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="939"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>xAplicativo de atualização não foi encontrado.&lt;br&gt;&lt;br&gt;Reinstale o xVideoServiceThief se você quer receber atualizações automaticamente do programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1094"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1122"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Contador de videos:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completo)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1098"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1126"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Baixando:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1102"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1130"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Velocidade de download:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1103"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1131"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1118"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1139"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1146"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1167"/>
         <source>Pause download</source>
         <translation>Pausar download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1137"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1165"/>
         <source>Resume download</source>
         <translation>Continuar download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1181"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1210"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Baixando: %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1189"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1218"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertendo: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1299"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1329"/>
         <source>Already added</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1300"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1330"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3672,87 +3678,87 @@ font-size:12px;
         <translation>Necessita de login...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="395"/>
+        <location filename="../../src/videoitem.cpp" line="400"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="452"/>
+        <location filename="../../src/videoitem.cpp" line="457"/>
         <source>Unable to create the destination dir</source>
         <translation>Impossivel criar o diretório de destino</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="454"/>
+        <location filename="../../src/videoitem.cpp" line="459"/>
         <source>Unable to create the destination file</source>
         <translation>Impossivel criar o arquivo de destino</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="456"/>
+        <location filename="../../src/videoitem.cpp" line="461"/>
         <source>Invalid URL</source>
         <translation>URL inválida</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="458"/>
+        <location filename="../../src/videoitem.cpp" line="463"/>
         <source>An another download is already active</source>
         <translation>Um outro download já está ativo</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="460"/>
+        <location filename="../../src/videoitem.cpp" line="465"/>
         <source>Invalid file size</source>
         <translation>Tamanho de arquivo inválido</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="462"/>
+        <location filename="../../src/videoitem.cpp" line="467"/>
         <source>The video to resume is missing</source>
         <translation>O vídeo para retomar está faltando</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="464"/>
+        <location filename="../../src/videoitem.cpp" line="469"/>
         <source>Unable resume the download</source>
         <translation>Impossível retomar o download</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="466"/>
+        <location filename="../../src/videoitem.cpp" line="471"/>
         <source>Unable append data to file</source>
         <translation>Impossivel agrupar os dados para arquivar</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="468"/>
+        <location filename="../../src/videoitem.cpp" line="473"/>
         <source>flvstreamer is missing (impossible download from RTMP server)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="470"/>
+        <location filename="../../src/videoitem.cpp" line="475"/>
         <source>Unable to open the destination file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="472"/>
+        <location filename="../../src/videoitem.cpp" line="477"/>
         <source>Failed to connect with RTMP server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="474"/>
+        <location filename="../../src/videoitem.cpp" line="479"/>
         <source>Unable to resume the FLV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="476"/>
+        <location filename="../../src/videoitem.cpp" line="481"/>
         <source>Download incomplete (due to download errors)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="478"/>
+        <location filename="../../src/videoitem.cpp" line="483"/>
         <source>Failed on initialize the pthread_create</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="480"/>
+        <location filename="../../src/videoitem.cpp" line="485"/>
         <source>File to resume not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="482"/>
+        <location filename="../../src/videoitem.cpp" line="487"/>
         <source>Connection error: Unable to download the video</source>
         <translation>Erro de conexão: Impossível fazer o download do vídeo</translation>
     </message>

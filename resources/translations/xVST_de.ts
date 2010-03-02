@@ -1161,6 +1161,10 @@ background: white;
         <source>Clear completed</source>
         <translation>Fertiggestellte Videos entfernen</translation>
     </message>
+    <message>
+        <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainFormImpl</name>

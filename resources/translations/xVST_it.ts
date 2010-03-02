@@ -1167,6 +1167,10 @@ font-size:12px;
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
+    <message>
+        <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainFormImpl</name>
