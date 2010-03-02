@@ -26,7 +26,7 @@
 #ifndef WINVISTADOWNLOADSMSGIMPL_H
 #define WINVISTADOWNLOADSMSGIMPL_H
 
-#include <QDialog>
+#include <QtGui>
 
 #include "ui_winvistadownloadsmsg.h"
 
@@ -35,7 +35,13 @@ class WinVistaDownloadsMsgImpl : public QDialog, public Ui::WinVistaDownloadsMsg
 Q_OBJECT
 	public:
 		WinVistaDownloadsMsgImpl(QWidget * parent = 0, Qt::WFlags f = 0);
+		bool isInProgramFiles();
 		bool getDisplayAgain();
+		QString getDownloadsDir();
+	public slots:
+		void directoryDownloadsClicked(bool);
+		void directoryVideosClicked(bool);
+		void selectDownloadDirClicked();
 };
 
 #endif // WINVISTADOWNLOADSMSGIMPL_H

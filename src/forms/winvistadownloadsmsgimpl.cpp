@@ -25,13 +25,52 @@
 
 #include "winvistadownloadsmsgimpl.h"
 
-WinVistaDownloadsMsgImpl::WinVistaDownloadsMsgImpl( QWidget * parent, Qt::WFlags f)
+#include "../options.h"
+
+WinVistaDownloadsMsgImpl::WinVistaDownloadsMsgImpl(QWidget * parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {
 	setupUi(this);
+	// set the deault directory
+	directoryVideosClicked(true);
+	// connect signals
+	connect(rdBtnDownloadsDir, SIGNAL(clicked(bool)), this, SLOT(directoryDownloadsClicked(bool)));
+	connect(rdBtnVideosDir, SIGNAL(clicked(bool)), this, SLOT(directoryVideosClicked(bool)));
+	connect(spbSelectDownloadDir, SIGNAL(clicked()), this, SLOT(selectDownloadDirClicked()));
+}
+
+bool WinVistaDownloadsMsgImpl::isInProgramFiles()
+{
+	QString programFiles = QString(getenv("ProgramFiles"));
+	// is program files?
+	return ProgramOptions::instance()->getDownloadDir().indexOf(programFiles, 0, Qt::CaseInsensitive) == 0;
 }
 
 bool WinVistaDownloadsMsgImpl::getDisplayAgain()
 {
 	return chbDontDisplay->isChecked();
+}
+
+QString WinVistaDownloadsMsgImpl::getDownloadsDir()
+{
+	return edtDirectory->text();
+}
+
+void WinVistaDownloadsMsgImpl::directoryDownloadsClicked(bool)
+{
+	edtDirectory->setText(QDir::toNativeSeparators(QDir::homePath() + "/Downloads/xVST"));
+}
+
+void WinVistaDownloadsMsgImpl::directoryVideosClicked(bool)
+{
+	edtDirectory->setText(QDir::toNativeSeparators(QDir::homePath() + "/Videos/xVST"));
+}
+
+void WinVistaDownloadsMsgImpl::selectDownloadDirClicked()
+{
+	QString s = QFileDialog::getExistingDirectory(this, tr("Select the download directory:"),
+	            edtDirectory->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+	// if is emtpy, cancel the proces
+	if (s.isEmpty()) return;
+	edtDirectory->setText(QDir::toNativeSeparators(s));
 }

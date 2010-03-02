@@ -1054,11 +1054,21 @@ void MainFormImpl::displayWinVistaDownloads()
 #ifdef Q_WS_WIN
 	// only is needed on windows vista and we want check it
 	if (isWindowsVista() && programOptions->getDisplayDownloadsMigrator())
-	{
-		//LoadingImpl::instance()->closeLoading(); // VALIDAR QUE PASSA SI NO ES TANCA ABANS...
-		// display migrator window
+	{		
+		// creates the migrator window
 		WinVistaDownloadsMsgImpl downloadsMsg(this);
-		downloadsMsg.exec();
+		// display the migrator window if is needed
+		if (downloadsMsg.isInProgramFiles())
+		{
+			// close the loading window
+			LoadingImpl::instance()->closeLoading();
+			// display message
+			if (downloadsMsg.exec() == QDialog::Accepted)
+			{
+				edtDownloadDir->setText(downloadsMsg.getDownloadsDir());
+				edtDownloadDirChanged();
+			}
+		}
 		// continue displaying this message?
 		programOptions->setDisplayDownloadsMigrator(!downloadsMsg.getDisplayAgain());
 	}

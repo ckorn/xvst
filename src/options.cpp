@@ -269,11 +269,10 @@ void ProgramOptions::setDefault()
 #ifdef Q_WS_MAC
 	downloadDir = QString(QDir::homePath() + DEFAULT_DOWNLOADS);
 #else
-#ifdef Q_OS_LINUX
+#ifdef Q_OS_LINUX // modification made by "AzalSup"
 	QString _homeDirectory  = getenv("HOME");
 	downloadDir = QString(_homeDirectory + DEFAULT_DOWNLOADS);
-	// modification made by "AzalSup"
-#else
+#else // windows
 	if (isWindowsVista()) // windows vista and 7
 		downloadDir = QString(QDir::homePath() + "/Videos/xVST");
 	else // windows XP
