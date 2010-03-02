@@ -3800,7 +3800,7 @@ font-size:12px;
     <message>
         <location filename="../../ui/winvistadownloadsmsg.ui" line="57"/>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and your current downloads directory  is protected with administration rights.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;To solve this problem, we recommend you to change your current downloads directory to a new safe and &quot;public&quot; directory (i.e.: &quot;Documents/Downloads&quot; or &quot;Documents/Videos&quot;).&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Atención, el xVST ha detectado que estas usando el Windows Vista/7 y su actual directorio de descargas está protegido por permisos de administrador.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Para resolver este problema, recomendamos que cambio su directorio de descargas a un nuevo directorio público y &quot;seguro&quot; (ej.: &quot;Documents/Downloads&quot; or &quot;Documents/Videos&quot;).&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Atención, el xVST ha detectado que estás usando el Windows Vista/7 y su actual directorio de descargas está protegido por permisos de administrador.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Para resolver este problema, recomendamos que cambie su directorio de descargas a un nuevo directorio público y &quot;seguro&quot; (ej.: &quot;Documents/Downloads&quot; or &quot;Documents/Videos&quot;).&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/winvistadownloadsmsg.ui" line="70"/>
