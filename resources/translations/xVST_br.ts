@@ -357,13 +357,13 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="161"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="166"/>
         <source>Thank you for your report.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="162"/>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="173"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="167"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="178"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -532,6 +532,14 @@
         <location filename="../../ui/completedpopup.ui" line="152"/>
         <source>Play the downloaded video</source>
         <translation>Execute o vídeo baixado</translation>
+    </message>
+</context>
+<context>
+    <name>CompletedPopupImpl</name>
+    <message>
+        <location filename="../../src/forms/completedpopupimpl.cpp" line="93"/>
+        <source>Download completed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1083,12 +1091,12 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="61"/>
+        <location filename="../../src/main.cpp" line="84"/>
         <source>Loading plugins... please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="../../src/main.cpp" line="100"/>
         <source>Plugins loaded</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1502,174 +1510,174 @@ font-size:12px;
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="82"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="85"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="94"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="97"/>
         <source>Controllers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="102"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="105"/>
         <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="113"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="116"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="132"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
         <source> Video </source>
         <translation> Vídeo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="132"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
         <source> Size </source>
         <translation> Tamanho </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="132"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
         <source> Progress </source>
         <translation> Progresso </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="132"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
         <source> Time </source>
         <translation> Tempo </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="132"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="135"/>
         <source> Speed </source>
         <translation> Velocidade </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="358"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="363"/>
         <source>Closing...</source>
         <translation>Fechando...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="359"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="364"/>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
         <translation>xVideoServiceThief está trabalhando, você tem certeza que deseja interromper este trabalho?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="360"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="579"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="365"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="584"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="360"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="580"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="365"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="585"/>
         <source>No</source>
         <translation>Não</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="386"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="391"/>
         <source>Options</source>
         <translation>Opções</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="426"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="889"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="431"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="910"/>
         <source>Updates</source>
         <translation>Atualizações</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="427"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="432"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Outro processo está em execução, por favor interrompa ou espere a finalização deste processo.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="428"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="667"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="891"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1243"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="433"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="672"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="912"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1301"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="473"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="478"/>
         <source>Select the download directory:</source>
         <translation>Selecione a pasta de downloads:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="577"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="582"/>
         <source>Cancel download</source>
         <translation>Cancelar download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="578"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="583"/>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Tem certeza que quer cancelar o download de &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="665"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="670"/>
         <source>Error message</source>
         <translation>Mensagem de erro</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="666"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="671"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Este vídeo teve o seguinte erro:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="890"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="911"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>xAplicativo de atualização não foi encontrado.&lt;br&gt;&lt;br&gt;Reinstale o xVideoServiceThief se você quer receber atualizações automaticamente do programa.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1036"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1094"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Contador de videos:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completo)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1040"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1098"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Baixando:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1044"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1102"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Velocidade de download:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1045"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1103"/>
         <source>/sec</source>
         <translation>/seg</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1060"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1081"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1118"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1139"/>
         <source>Pause download</source>
         <translation>Pausar download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1079"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1137"/>
         <source>Resume download</source>
         <translation>Continuar download</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1123"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1181"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Baixando: %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1131"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1189"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertendo: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1241"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1299"/>
         <source>Already added</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1242"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1300"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2948,9 +2956,9 @@ font-size:12px;
         <translation type="unfinished">Cancelar button</translation>
     </message>
     <message>
+        <location filename="../../ui/scheduleitemedit.ui" line="134"/>
         <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="46"/>
         <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="51"/>
-        <location filename="../../ui/scheduleitemedit.ui" line="134"/>
         <source>Ok</source>
         <translation type="unfinished">Ok</translation>
     </message>
@@ -3022,38 +3030,38 @@ font-size:12px;
 <context>
     <name>SearchVideosImpl</name>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="110"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="111"/>
         <source>Please, select one or more services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="111"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="112"/>
         <source>Ok</source>
         <translation type="unfinished">Ok</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="146"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="147"/>
         <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="217"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="215"/>
         <source>All standard services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="218"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="216"/>
         <source>All adult services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="220"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="218"/>
         <source>All services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="109"/>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="222"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="110"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="220"/>
         <source>Custom search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3261,6 +3269,19 @@ font-size:12px;
     <message>
         <location filename="../../ui/searchvideositem.ui" line="162"/>
         <source>Download video button</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchVideosNoResultsImpl</name>
+    <message>
+        <location filename="../../ui/searchvideosnoresultsimpl.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/searchvideosnoresultsimpl.ui" line="20"/>
+        <source>No results found with &quot;&lt;b&gt;%1&lt;/b&gt;&quot;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3776,34 +3797,158 @@ font-size:12px;
     </message>
 </context>
 <context>
+    <name>WinVistaDownloadsMsg</name>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="14"/>
+        <source>Downloads directory migration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="57"/>
+        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and your current downloads directory  is protected with administration rights.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;To solve this problem, we recommend you to change your current downloads directory to a new safe and &quot;public&quot; directory (i.e.: &quot;Documents/Downloads&quot; or &quot;Documents/Videos&quot;).&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="70"/>
+        <source>New downloads directory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="79"/>
+        <source>New downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="82"/>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="85"/>
+        <source>Downloads directory edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="104"/>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="107"/>
+        <source>Select the downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="110"/>
+        <source>Select downloads directory</source>
+        <translation type="unfinished">Selecione a pasta de downloads</translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="113"/>
+        <source>Open the Select directory dialog for select the downloads directory</source>
+        <translation type="unfinished">Abrir o diálogo de seleção de diretório para selecionar a pasta de downloads</translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="125"/>
+        <source>Other proposed directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="131"/>
+        <source>Set the &quot;Videos&quot; directory as new downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="134"/>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="137"/>
+        <source>Select videos directory button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="140"/>
+        <source>Default Windows videos directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="150"/>
+        <source>Set the &quot;Downloads&quot; directory as new downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="153"/>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="156"/>
+        <source>Select downloads directory button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="159"/>
+        <source>Default Windows downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="178"/>
+        <source>Checking this option the xVST will not advertise again about this problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="181"/>
+        <source>Don&apos;t display this message again</source>
+        <translation type="unfinished">Não exibir esta mensagem novamente</translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="207"/>
+        <source>Update the downloads directory and close this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="210"/>
+        <source>Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="226"/>
+        <source>Close this window without changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistadownloadsmsg.ui" line="229"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WinVistaDownloadsMsgImpl</name>
+    <message>
+        <location filename="../../src/forms/winvistadownloadsmsgimpl.cpp" line="71"/>
+        <source>Select the download directory:</source>
+        <translation type="unfinished">Selecione a pasta de downloads:</translation>
+    </message>
+</context>
+<context>
     <name>WindowsVistaDetected</name>
     <message>
-        <location filename="../../ui/winvistaupdatesmsg.ui" line="25"/>
+        <location filename="../../ui/winvistaupdatesmsg.ui" line="26"/>
         <source>Update center - Windows Vista detected</source>
         <translation>Centro de atualizações - Windows Vista detectado</translation>
     </message>
     <message>
-        <location filename="../../ui/winvistaupdatesmsg.ui" line="68"/>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Atenção, xVST detectou que você está usando o Windows VIsta e as atualizações automáticas podem não trabalhar corretamente.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Se você tem o &lt;b&gt;UAC&lt;/b&gt; (Controle de contas de usuário) habilitado, as atualizações automáticas, não instalarão as atualizações baixadas devido as permissoes de usuário.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;b&gt;Atenção, xVST detectou que você está usando o Windows VIsta e as atualizações automáticas podem não trabalhar corretamente.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Se você tem o &lt;b&gt;UAC&lt;/b&gt; (Controle de contas de usuário) habilitado, as atualizações automáticas, não instalarão as atualizações baixadas devido as permissoes de usuário.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/winvistaupdatesmsg.ui" line="81"/>
+        <location filename="../../ui/winvistaupdatesmsg.ui" line="69"/>
+        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/winvistaupdatesmsg.ui" line="82"/>
         <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
         <translation>Para resolver este problema, é recomendado que você esteja executando o xVST como administrador (botão direito sobre o ícone xVST -&gt; Executar como administrador) somente quando você quiser instalar novas versões usando o: Centro de Atualizações.</translation>
     </message>
     <message>
-        <location filename="../../ui/winvistaupdatesmsg.ui" line="125"/>
+        <location filename="../../ui/winvistaupdatesmsg.ui" line="126"/>
         <source>Don&apos;t display this message again</source>
         <translation>Não exibir esta mensagem novamente</translation>
     </message>
     <message>
-        <location filename="../../ui/winvistaupdatesmsg.ui" line="151"/>
+        <location filename="../../ui/winvistaupdatesmsg.ui" line="152"/>
         <source>Continue...</source>
         <translation>Continue...</translation>
     </message>
     <message>
-        <location filename="../../ui/winvistaupdatesmsg.ui" line="167"/>
+        <location filename="../../ui/winvistaupdatesmsg.ui" line="168"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>

@@ -2,6 +2,1452 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ja_JP">
 <context>
+    <name>AddVideo</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Output quality:</source>
+        <translation>出力品質:</translation>
+    </message>
+    <message>
+        <source>Convert videos</source>
+        <translation>ビデオ形式の変換</translation>
+    </message>
+    <message>
+        <source>Output format:</source>
+        <translation>出力形式:</translation>
+    </message>
+    <message>
+        <source>Audio sampling rate (Hz):</source>
+        <translation>音声サンプルレート(Hz):</translation>
+    </message>
+    <message>
+        <source>Video output format combobox</source>
+        <translation>ビデオ出力形式</translation>
+    </message>
+    <message>
+        <source>Video resolution:</source>
+        <translation>ビデオ解像度:</translation>
+    </message>
+    <message>
+        <source>Override original conversion options for this video</source>
+        <translation>このビデオの変換設定のみ別の設定を使用する</translation>
+    </message>
+    <message>
+        <source>Paste the current clipboard content (only text)</source>
+        <translation>クリップボードの内容を貼り付け(テキストのみ)</translation>
+    </message>
+    <message>
+        <source>Video frame rate (Hz)</source>
+        <translation>ビデオフレームレート(Hz)</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>中止</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Video audio sampling rate (Hz)</source>
+        <translation>映像 / 音声のサンプリングレート(Hz)</translation>
+    </message>
+    <message>
+        <source>General video output quality</source>
+        <translation>一般的なビデオ出力品質</translation>
+    </message>
+    <message>
+        <source>Enable/disable the video conversions</source>
+        <translation>ビデオ形式の変換を有効/無効</translation>
+    </message>
+    <message>
+        <source>Close without adding the URL</source>
+        <translation>URLを追加しないで閉じる</translation>
+    </message>
+    <message>
+        <source>URL of the video to downloaded</source>
+        <translation>ダウンロードするビデオのURL</translation>
+    </message>
+    <message>
+        <source>General video output quality combobox</source>
+        <translation>一般的なビデオ出力品質</translation>
+    </message>
+    <message>
+        <source>Paste URL from clipboard</source>
+        <translation>クリップボードからURLを貼り付け</translation>
+    </message>
+    <message>
+        <source>Video resolution</source>
+        <translation>ビデオ解像度</translation>
+    </message>
+    <message>
+        <source>Video URL</source>
+        <translation>ビデオURL</translation>
+    </message>
+    <message>
+        <source>Convert video to Mpeg/DivX/etc...</source>
+        <translation>ビデオを他の形式(Mpeg/DivX/etc)に変換...</translation>
+    </message>
+    <message>
+        <source>Enter the video URL to download:</source>
+        <translation>ビデオURLを入力してダウンロード:</translation>
+    </message>
+    <message>
+        <source>Video resolution combobox</source>
+        <translation>ビデオ解像度</translation>
+    </message>
+    <message>
+        <source>Video output format</source>
+        <translation>ビデオ出力形式</translation>
+    </message>
+    <message>
+        <source>Add Video URL</source>
+        <translation>ビデオURLを追加</translation>
+    </message>
+    <message>
+        <source>Video frame rate combobox</source>
+        <translation>ビデオフレームレート</translation>
+    </message>
+    <message>
+        <source>Add the current URL and close this dialog</source>
+        <translation>現在のURLを追加してダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>中止ボタン</translation>
+    </message>
+    <message>
+        <source>Video audio sampling rate combobox</source>
+        <translation>映像 / 音声のサンプリングレート(Hz)</translation>
+    </message>
+</context>
+<context>
+    <name>AddVideoImpl</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation>既に追加済</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>このビデオは既に追加されています、リストを確認してください。</translation>
+    </message>
+    <message>
+        <source>User custom video download</source>
+        <translation>カスタムダウンロード</translation>
+    </message>
+    <message>
+        <source> - Adult content is not allowed</source>
+        <translation> - アダルトサイトを拒否</translation>
+    </message>
+    <message>
+        <source>mark as custom download</source>
+        <translation>カスタムダウンロードとしてマーク</translation>
+    </message>
+    <message>
+        <source> - Blocked site</source>
+        <translation> - ブロックされたサイト</translation>
+    </message>
+</context>
+<context>
+    <name>BugReport</name>
+    <message>
+        <source>Send</source>
+        <translation>送信</translation>
+    </message>
+    <message>
+        <source>Send the &quot;Bug report&quot; and close this dialog</source>
+        <translation>この&quot;バグ報告&quot; を送信してダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>Don&apos;t display &quot;Bug Report&quot; the next time</source>
+        <translation>次回以降 &quot;バグ報告&quot; を表示しない</translation>
+    </message>
+    <message>
+        <source>Your name will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
+        <translation>このフィールドは任意入力です..あなたの入力した名前は &quot;バグ報告&quot; の本文に追記されます</translation>
+    </message>
+    <message>
+        <source>Your comments: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
+        <translation>あなたのコメント: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(任意)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>Sending your &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;... please wait...</source>
+        <translation>あなたの &quot;&lt;b&gt;バグ報告&lt;/b&gt;&quot;を送信しています... お待ちください...</translation>
+    </message>
+    <message>
+        <source>xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>xVST のバージョン: &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Close this dialog without sending the &quot;Bug report&quot;</source>
+        <translation>&quot;バグ報告&quot;を送信しないでダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>Your name: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
+        <translation>あなたの名前: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(任意)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>Your email</source>
+        <translation>あなたのE-メール</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>中止</translation>
+    </message>
+    <message>
+        <source>Bug Report</source>
+        <translation>バグ報告</translation>
+    </message>
+    <message>
+        <source>Your email will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
+        <translation>このフィールドは任意入力です..あなたの入力したE-メールアドレスは &quot;バグ報告&quot; の本文に追記されます</translation>
+    </message>
+    <message>
+        <source>Your comments</source>
+        <translation>あなたのコメント</translation>
+    </message>
+    <message>
+        <source>You can add your own comment which will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
+        <translation>このフィールドは任意入力です..あなたの入力したコメントは &quot;バグ報告&quot; の本文に追記されます</translation>
+    </message>
+    <message>
+        <source>Send button</source>
+        <translation>送信-ボタン</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
+&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
+&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
+        <translation>&lt;b&gt;ビデオのダウンロード中にエラーが発生しました.&lt;/b&gt;
+&lt;p&gt;この問題を &quot;&lt;b&gt;バグ報告&lt;/b&gt;&quot;. で送信してください. このレポートを分析することで、この問題点の解決に役立ちます..今後の修正にご協力ください&lt;/p&gt;
+&lt;p&gt;あなたのヘルプは常に大歓迎です!&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>If this option is checked, this dialog will not be displayed again (and no &quot;Bug report&quot; will be sent)</source>
+        <translation>ここにチェックすると、次回からこのダイアログを表示しません(&quot;バグ報告&quot;機能は無効になります)</translation>
+    </message>
+    <message>
+        <source>Video URL: &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>ビデオURL: &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;この &quot;&lt;b&gt;バグ報告&lt;/b&gt;&quot; は.  &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.に送信されます&lt;/p&gt;
+&lt;p&gt;あなたの入力した名前とE-メールアドレスは &quot;&lt;b&gt;バグコメント&lt;/b&gt;&quot;,に含まれます, これらのフィールドは必ず必要なものではありません.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Your name</source>
+        <translation>あなたの名前</translation>
+    </message>
+    <message>
+        <source>QFrame{background: white;} </source>
+        <translation>QFrame{background: white;} </translation>
+    </message>
+    <message>
+        <source>Error information</source>
+        <translation>エラー情報</translation>
+    </message>
+    <message>
+        <source>Do not display &quot;Bug Report&quot;</source>
+        <translation>&quot;バグ報告&quot; を表示しない</translation>
+    </message>
+    <message>
+        <source>View which information will be sent</source>
+        <translation>送信される内容を確認</translation>
+    </message>
+    <message>
+        <source>Email: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
+        <translation>E-メール: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(任意)&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>中止ボタン</translation>
+    </message>
+</context>
+<context>
+    <name>BugReportImpl</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Thank you for your report.</source>
+        <translation>レポートをありがとうございます!.</translation>
+    </message>
+</context>
+<context>
+    <name>ChangelogImpl</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>List of program versions</source>
+        <translation>プログラムのバージョン一覧</translation>
+    </message>
+    <message>
+        <source>Versions combobox</source>
+        <translation>バージョン</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Changelog</source>
+        <translation>更新履歴</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation>バージョン:</translation>
+    </message>
+    <message>
+        <source>xVST Changelog</source>
+        <translation>xVST 更新履歴</translation>
+    </message>
+    <message>
+        <source>List of the complete xVST changelog</source>
+        <translation>完全な xVST 更新履歴</translation>
+    </message>
+    <message>
+        <source>Close the Changelot dialog</source>
+        <translation>ダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>Close the Changelog dialog</source>
+        <translation>ダイアログを閉じる</translation>
+    </message>
+</context>
+<context>
+    <name>CheckUpdates</name>
+    <message>
+        <source>Connecting...</source>
+        <translation>接続中...</translation>
+    </message>
+    <message>
+        <source>Check updates...</source>
+        <translation>アップデートの確認中...</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>中止</translation>
+    </message>
+    <message>
+        <source>Cancel the checking for updates process and close this dialog</source>
+        <translation>アップデートの確認プロセスを中止してダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>中止ボタン</translation>
+    </message>
+</context>
+<context>
+    <name>CheckUpdatesWorker</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Please, download the new version of &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; from &lt;a href=&apos;%2&apos;&gt;here.&lt;/a&gt;</source>
+        <translation>新しいバージョンの &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; は  &lt;a href=&apos;%2&apos;&gt;ここから.&lt;/a&gt;ダウンロードできます</translation>
+    </message>
+    <message>
+        <source>Update Center</source>
+        <translation>アップデートセンター</translation>
+    </message>
+    <message>
+        <source>You are using the most recent version of this program.</source>
+        <translation>あなたは最新のバージョンを使用しています.</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>アップデート</translation>
+    </message>
+    <message>
+        <source>Cancelling... please wait...</source>
+        <translation>中止しています... お待ちください...</translation>
+    </message>
+    <message>
+        <source>Checking for updates...</source>
+        <translation>アップデートの確認中...</translation>
+    </message>
+</context>
+<context>
+    <name>CompletedPopup</name>
+    <message>
+        <source>?</source>
+        <translation>?</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>閉じる</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>閉じるボタン</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
+        <translation>&lt;b&gt;ダウンロード完了&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Play button</source>
+        <translation>再生</translation>
+    </message>
+    <message>
+        <source>Play the downloaded video</source>
+        <translation>ダウンロードしたビデオを再生</translation>
+    </message>
+    <message>
+        <source>Close the information dialog</source>
+        <translation>ダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>Play video</source>
+        <translation>ビデオを再生</translation>
+    </message>
+</context>
+<context>
+    <name>CompletedPopupImpl</name>
+    <message>
+        <source>Download completed</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Credits</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Credits</source>
+        <translation>クレジット</translation>
+    </message>
+    <message>
+        <source>Close the Credits dialog</source>
+        <translation>ダイアログを閉じる</translation>
+    </message>
+</context>
+<context>
+    <name>CustomAlphaBlend</name>
+    <message>
+        <source>1%</source>
+        <translation>1%</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>100%</source>
+        <translation>100%</translation>
+    </message>
+    <message>
+        <source>Current: &lt;b&gt;0.1%&lt;/b&gt;</source>
+        <translation>現在: &lt;b&gt;0.1%&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Alpha blend value slider</source>
+        <translation>不透明度スライダ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>中止</translation>
+    </message>
+    <message>
+        <source>Close this dialog without changes</source>
+        <translation>変更を破棄して閉じる</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Custom Alpha Blend</source>
+        <translation>カスタムアルファ混合</translation>
+    </message>
+    <message>
+        <source>Set the selected alpha blend value and close this dialog</source>
+        <translation>選択した不透明度にセットしてダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>Alpha blend value (%)</source>
+        <translation>不透明度 (%)</translation>
+    </message>
+    <message>
+        <source>Select the alpha blend value:</source>
+        <translation>不透明度を設定:</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>中止ボタン</translation>
+    </message>
+</context>
+<context>
+    <name>CustomAlphaBlendImpl</name>
+    <message>
+        <source>Current: &lt;b&gt;%1%&lt;/b&gt;</source>
+        <translation>現在の値: &lt;b&gt;%1%&lt;/b&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>CustomDownloadTitleImpl</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Title edit</source>
+        <translation>タイトルを編集</translation>
+    </message>
+    <message>
+        <source>Video title:</source>
+        <translation>ビデオタイトル:</translation>
+    </message>
+    <message>
+        <source>Field where you enter the video title</source>
+        <translation>ビデオタイトルを入力してください</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>中止</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Confirm and close the window</source>
+        <translation>確認してからウインドウを閉じる</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Enter the text which will be used as title of this download.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;このダウンロードのタイトルを入力してください.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Custom download title</source>
+        <translation>ダウンロードタイトルを指定</translation>
+    </message>
+    <message>
+        <source>Discard and close window</source>
+        <translation>破棄してウィンドウを閉じる</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>中止ボタン</translation>
+    </message>
+</context>
+<context>
+    <name>DownloadLog</name>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>閉じる</translation>
+    </message>
+    <message>
+        <source>Close this window</source>
+        <translation>このウィンドウを閉じる</translation>
+    </message>
+    <message>
+        <source>Download Log</source>
+        <translation>ダウンロードログ</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>閉じるボタン</translation>
+    </message>
+    <message>
+        <source>Downloads log list</source>
+        <translation>ダウンロードログ一覧</translation>
+    </message>
+    <message>
+        <source>Downloaded videos log:</source>
+        <translation>ダウンロードしたビデオのログ:</translation>
+    </message>
+    <message>
+        <source>Display the downloaded log list</source>
+        <translation>ダウンロード済ビデオ一覧を表示</translation>
+    </message>
+</context>
+<context>
+    <name>DownloadLogImpl</name>
+    <message>
+        <source>URL</source>
+        <translation>URL</translation>
+    </message>
+    <message>
+        <source>Video Title</source>
+        <translation>ビデオタイトル</translation>
+    </message>
+    <message>
+        <source>Date/Time</source>
+        <translation>日付/時間</translation>
+    </message>
+</context>
+<context>
+    <name>DragDrop</name>
+    <message>
+        <source>10%</source>
+        <translation>10%</translation>
+    </message>
+    <message>
+        <source>20%</source>
+        <translation>20%</translation>
+    </message>
+    <message>
+        <source>30%</source>
+        <translation>30%</translation>
+    </message>
+    <message>
+        <source>40%</source>
+        <translation>40%</translation>
+    </message>
+    <message>
+        <source>50%</source>
+        <translation>50%</translation>
+    </message>
+    <message>
+        <source>60%</source>
+        <translation>60%</translation>
+    </message>
+    <message>
+        <source>70%</source>
+        <translation>70%</translation>
+    </message>
+    <message>
+        <source>80%</source>
+        <translation>80%</translation>
+    </message>
+    <message>
+        <source>90%</source>
+        <translation>90%</translation>
+    </message>
+    <message>
+        <source>OFF</source>
+        <translation>OFF</translation>
+    </message>
+    <message>
+        <source>Ctrl+V</source>
+        <translation>Ctrl+V</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>カスタム</translation>
+    </message>
+    <message>
+        <source>Alpha blend value</source>
+        <translation>不透明度 </translation>
+    </message>
+    <message>
+        <source>Drag&amp;Drop</source>
+        <translation>ドラッグ &amp; ドロップ</translation>
+    </message>
+    <message>
+        <source>Display main window</source>
+        <translation>メイン画面を表示</translation>
+    </message>
+    <message>
+        <source>Paste URL from clipboard</source>
+        <translation>クリップボードからURLを貼り付け</translation>
+    </message>
+</context>
+<context>
+    <name>DragDropImpl</name>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation>既に追加済</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>このビデオは既に追加されています、リストを確認してください。</translation>
+    </message>
+    <message>
+        <source>User custom video download</source>
+        <translation type="obsolete">カスタムダウンロード</translation>
+    </message>
+    <message>
+        <source> - Adult content is not allowed</source>
+        <translation> - アダルトサイトを拒否</translation>
+    </message>
+    <message>
+        <source> - Blocked site</source>
+        <translation> - ブロックされたサイト</translation>
+    </message>
+    <message>
+        <source>Alpha blend value</source>
+        <translation type="unfinished">不透明度 </translation>
+    </message>
+</context>
+<context>
+    <name>InfoView</name>
+    <message>
+        <source>Close</source>
+        <translation>閉じる</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>閉じるボタン</translation>
+    </message>
+    <message>
+        <source>Information which will be send to SourceForge.net tracker</source>
+        <translation>SourceForge.net tracker に送信される内容</translation>
+    </message>
+    <message>
+        <source>Information View</source>
+        <translation>情報表示</translation>
+    </message>
+    <message>
+        <source>Information which will be sent</source>
+        <translation>送信される内容</translation>
+    </message>
+    <message>
+        <source>This is the information which will be send:</source>
+        <translation>これは送信される内容です:</translation>
+    </message>
+    <message>
+        <source>Close the Information view</source>
+        <translation>情報を閉じる</translation>
+    </message>
+</context>
+<context>
+    <name>Information</name>
+    <message>
+        <source>Close</source>
+        <translation>閉じる</translation>
+    </message>
+    <message>
+        <source>Program version:</source>
+        <translation>プログラムのバージョン:</translation>
+    </message>
+    <message>
+        <source>List of supported services</source>
+        <translation>対応しているサービス一覧</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>閉じるボタン</translation>
+    </message>
+    <message>
+        <source>Homepage:</source>
+        <translation>ホームページ:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation>使用言語:</translation>
+    </message>
+    <message>
+        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
+        <translation> &lt;b&gt;xVideoServiceThief&lt;/b&gt; に Paypal から寄付する!  :)</translation>
+    </message>
+    <message>
+        <source>xVideoServiceThief is a tool for downloading your favourite video clips from a lot of video websites.
+
+xVideoServiceThief also provide you the ability to convert each video in most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.</source>
+        <translation>xVideoServiceThief は、様々なインターネットの動画サービスから、あなたのお気に入りのビデオクリップをダウンロードすることができるツールです。
+
+更に xVideoServiceThief では、ダウンロードしたビデオをほとんどの一般的な動画形式に変換する機能も提供されます。 (対応する形式: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 ).</translation>
+    </message>
+    <message>
+        <source>Changelog</source>
+        <translation>更新履歴</translation>
+    </message>
+    <message>
+        <source>Close the Information dialog</source>
+        <translation>ダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;English (UK)&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Japanese (JP)&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Display the credits dialog</source>
+        <translation>クレジットを表示</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>QTextBrowser{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}</source>
+        <translation>QTextBrowser{font-family:Meiryo, Helvetica, sans-serif;font-size:12px;}</translation>
+    </message>
+    <message>
+        <source>Support button</source>
+        <translation>サポート-ボタン</translation>
+    </message>
+    <message>
+        <source>List of services</source>
+        <translation>サービス一覧</translation>
+    </message>
+    <message>
+        <source>Credits...</source>
+        <translation>クレジット...</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;xVideoServiceThief currently supports download from:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;xVideoServiceThief でダウンロード可能なサービス:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Credits button</source>
+        <translation>クレジット-ボタン</translation>
+    </message>
+    <message>
+        <source>QFrame{
+background: white;
+} </source>
+        <translation>QFrame{background: white;} </translation>
+    </message>
+    <message>
+        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
+        <translation>&lt;b&gt;xVideoServiceThief&lt;/b&gt;に寄付する!</translation>
+    </message>
+</context>
+<context>
+    <name>InformationImpl</name>
+    <message>
+        <source>&lt;p&gt;Total websites supported (plugins installed): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</source>
+        <translation>&lt;p&gt;対応するウェブサイト (プラグイン含): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Adult web sites:</source>
+        <translation>アダルトサイト:</translation>
+    </message>
+    <message>
+        <source>Music web sites:</source>
+        <translation>音楽サイト:</translation>
+    </message>
+    <message>
+        <source>Adult sites are blocked...</source>
+        <translation>アダルトサイトはブロックする...</translation>
+    </message>
+</context>
+<context>
+    <name>LoadingImpl</name>
+    <message>
+        <source>Loading</source>
+        <translation>読み込み中</translation>
+    </message>
+    <message>
+        <source>Plugins loaded</source>
+        <translation>プラグインの読み込み</translation>
+    </message>
+    <message>
+        <source>Loading plugins... please wait...</source>
+        <translation>プラグインの読み込み中... お待ちください...</translation>
+    </message>
+</context>
+<context>
+    <name>MainForm</name>
+    <message>
+        <source>F1</source>
+        <translation>F1</translation>
+    </message>
+    <message>
+        <source>Alt+S</source>
+        <translation>Alt+S</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>閉じる</translation>
+    </message>
+    <message>
+        <source>Start download button</source>
+        <translation>ダウンロード開始</translation>
+    </message>
+    <message>
+        <source>Open the Select directory dialog for select the downloads directory</source>
+        <translation>ダウンロードしたファイルの保存先を選択してください</translation>
+    </message>
+    <message>
+        <source>Cancel download button</source>
+        <translation>ダウンロードを中止</translation>
+    </message>
+    <message>
+        <source>Download list:</source>
+        <translation>ダウンロード一覧:</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation>接続中...</translation>
+    </message>
+    <message>
+        <source>Delete the selected video</source>
+        <translation>選択されたビデオを削除</translation>
+    </message>
+    <message>
+        <source>Check for updates</source>
+        <translation>アップデートを確認</translation>
+    </message>
+    <message>
+        <source>Add video button</source>
+        <translation>ビデオを追加</translation>
+    </message>
+    <message>
+        <source>Convert videos to Mpeg/DivX/etc...</source>
+        <translation>ビデオを他の形式(Mpeg/DivX/etc)に変換...</translation>
+    </message>
+    <message>
+        <source>Convert videos</source>
+        <translation>ビデオ形式の変換</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 bytes/sec</source>
+        <translation>&lt;b&gt;ダウンロード速度::&lt;/b&gt; 0,00 bytes/sec</translation>
+    </message>
+    <message>
+        <source>Program information</source>
+        <translation>プログラム情報</translation>
+    </message>
+    <message>
+        <source>Cancel download</source>
+        <translation>ダウンロードを中止</translation>
+    </message>
+    <message>
+        <source>Clear list button</source>
+        <translation>ログをクリア</translation>
+    </message>
+    <message>
+        <source>Delete video</source>
+        <translation>ビデオを削除</translation>
+    </message>
+    <message>
+        <source>Display a popup window on finish a download/conversion video</source>
+        <translation>ビデオのダウンロード/変換処理が完了するまで、進捗をポップアップ表示</translation>
+    </message>
+    <message>
+        <source>Open the downloads directory</source>
+        <translation>ダウンロード保存先を開く</translation>
+    </message>
+    <message>
+        <source>Online help</source>
+        <translation>オンラインヘルプ</translation>
+    </message>
+    <message>
+        <source>Downloads directory</source>
+        <translation>ダウンロード保存先</translation>
+    </message>
+    <message>
+        <source>Move UP</source>
+        <translation>上に移動</translation>
+    </message>
+    <message>
+        <source>Ctrl+A</source>
+        <translation>Ctrl+A</translation>
+    </message>
+    <message>
+        <source>Ctrl+D</source>
+        <translation>Ctrl+D</translation>
+    </message>
+    <message>
+        <source>Ctrl+F</source>
+        <translation>Ctrl+F</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation>Ctrl+I</translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation>Ctrl+O</translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation>Ctrl+P</translation>
+    </message>
+    <message>
+        <source>Ctrl+S</source>
+        <translation>Ctrl+S</translation>
+    </message>
+    <message>
+        <source>Ctrl+T</source>
+        <translation>Ctrl+T</translation>
+    </message>
+    <message>
+        <source>Ctrl+U</source>
+        <translation>Ctrl+U</translation>
+    </message>
+    <message>
+        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
+        <translation> &lt;b&gt;xVideoServiceThief&lt;/b&gt; に Paypal から寄付する!  :)</translation>
+    </message>
+    <message>
+        <source>More options button</source>
+        <translation>詳細設定</translation>
+    </message>
+    <message>
+        <source>Select the downloads directory</source>
+        <translation>ダウンロード保存先を選択</translation>
+    </message>
+    <message>
+        <source>Convert videos to Mpeg\DivX\etc...</source>
+        <translation>ビデオを他の形式(Mpeg/DivX/etc)に変換...</translation>
+    </message>
+    <message>
+        <source>Display the Options dialog</source>
+        <translation>オプションダイアログを表示</translation>
+    </message>
+    <message>
+        <source>Downloads directory:</source>
+        <translation>ダウンロード保存先:</translation>
+    </message>
+    <message>
+        <source>Reset state</source>
+        <translation>ステータスをリセット</translation>
+    </message>
+    <message>
+        <source>Restore xVideoServiceThief</source>
+        <translation>xVideoServiceThief を復帰</translation>
+    </message>
+    <message>
+        <source>Add video</source>
+        <translation>ビデオを追加</translation>
+    </message>
+    <message>
+        <source>Stay always on top</source>
+        <translation>常に手前に表示</translation>
+    </message>
+    <message>
+        <source>Open the Drag &amp; Drop window</source>
+        <translation>ドラッグ &amp; ドロップウィンドウを開く</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</source>
+        <translation>&lt;b&gt;ビデオ数:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;( 0 完了済 )&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>More options...</source>
+        <translation>詳細設定...</translation>
+    </message>
+    <message>
+        <source>Clear list</source>
+        <translation>一覧をクリア</translation>
+    </message>
+    <message>
+        <source>Select downloads directory</source>
+        <translation>ダウンロード保存先を選択</translation>
+    </message>
+    <message>
+        <source>Convert videos checkbox</source>
+        <translation>ビデオ形式の変換</translation>
+    </message>
+    <message>
+        <source>Ctrl+Down</source>
+        <translation>Ctrl+Down</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>Clear completed button</source>
+        <translation>完了済をクリア</translation>
+    </message>
+    <message>
+        <source>Download videos automatically checkbox</source>
+        <translation>ビデオを自動的にダウンロード</translation>
+    </message>
+    <message>
+        <source>View error message</source>
+        <translation>エラーメッセージを表示</translation>
+    </message>
+    <message>
+        <source>Ctrl+Up</source>
+        <translation>Ctrl+Up</translation>
+    </message>
+    <message>
+        <source>Support button</source>
+        <translation>サポート</translation>
+    </message>
+    <message>
+        <source>Play video</source>
+        <translation>ビデオを再生</translation>
+    </message>
+    <message>
+        <source>Open Drag &amp; Drop window</source>
+        <translation>ドラッグ &amp; ドロップウィンドウを開く</translation>
+    </message>
+    <message>
+        <source>Delete video button</source>
+        <translation>ビデオを削除</translation>
+    </message>
+    <message>
+        <source>Clear completed videos from list</source>
+        <translation>完了したビデオを一覧から除去</translation>
+    </message>
+    <message>
+        <source>Cancel the current selected video</source>
+        <translation>選択したビデオの処理を中止</translation>
+    </message>
+    <message>
+        <source>Start download</source>
+        <translation>ダウンロードを開始</translation>
+    </message>
+    <message>
+        <source>Move DOWN</source>
+        <translation>下に移動</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloading:&lt;/b&gt; 0 of 0</source>
+        <translation>&lt;b&gt;ダウンロード中:&lt;/b&gt; 0 / 0</translation>
+    </message>
+    <message>
+        <source>Add a new URL video</source>
+        <translation>新規URLを追加</translation>
+    </message>
+    <message>
+        <source>Pause Download</source>
+        <translation>ダウンロードを一時停止</translation>
+    </message>
+    <message>
+        <source>Pause download</source>
+        <translation>ダウンロードを一時停止</translation>
+    </message>
+    <message>
+        <source>Search videos</source>
+        <translation>ビデオ検索</translation>
+    </message>
+    <message>
+        <source>Download videos automatically</source>
+        <translation>ビデオを自動的にダウンロード</translation>
+    </message>
+    <message>
+        <source>Start to download the current selected video</source>
+        <translation>選択したビデオのダウンロードを開始</translation>
+    </message>
+    <message>
+        <source>Minimize to system tray</source>
+        <translation>最小化でトレイに移動</translation>
+    </message>
+    <message>
+        <source>Open downloads directory</source>
+        <translation>ダウンロード保存先を開く</translation>
+    </message>
+    <message>
+        <source>Clear downloads list</source>
+        <translation>ダウンロード一覧をクリア</translation>
+    </message>
+    <message>
+        <source>Schedule option is &lt;b&gt;enabled&lt;/b&gt;</source>
+        <translation>スケジュール設定 &lt;b&gt;有効化&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
+        <translation>&lt;b&gt;xVideoServiceThief&lt;/b&gt;に寄付する!</translation>
+    </message>
+    <message>
+        <source>Clear completed</source>
+        <translation>完了済をクリア</translation>
+    </message>
+</context>
+<context>
+    <name>MainFormImpl</name>
+    <message>
+        <source>No</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>/sec</source>
+        <translation>/sec</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>ヘルプ</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>ツール</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
+        <translation>&lt;b&gt;ダウンロード中:&lt;/b&gt; %1 / %2</translation>
+    </message>
+    <message>
+        <source> Size </source>
+        <translation> サイズ </translation>
+    </message>
+    <message>
+        <source> Time </source>
+        <translation> 時間 </translation>
+    </message>
+    <message>
+        <source>Cancel download</source>
+        <translation>ダウンロードを中止</translation>
+    </message>
+    <message>
+        <source>Already added</source>
+        <translation>既に追加済</translation>
+    </message>
+    <message>
+        <source>You already added this video. Check your downloads list.</source>
+        <translation>このビデオは既に追加されています、リストを確認してください.</translation>
+    </message>
+    <message>
+        <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>ビデオダウンロード中にエラーが発生:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;ダウンロード速度:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source> Speed </source>
+        <translation> 速度 </translation>
+    </message>
+    <message>
+        <source>- Downloading: %1 (%2, %3)</source>
+        <translation>- ダウンロード中: %1 (%2, %3)</translation>
+    </message>
+    <message>
+        <source> Video </source>
+        <translation> ビデオ </translation>
+    </message>
+    <message>
+        <source> Progress </source>
+        <translation> 進捗 </translation>
+    </message>
+    <message>
+        <source>Select the download directory:</source>
+        <translation>ダウンロード保存先を選択:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>オプション</translation>
+    </message>
+    <message>
+        <source>- Converting: %1 (%2)</source>
+        <translation>- 変換中: %1 (%2)</translation>
+    </message>
+    <message>
+        <source>Controllers</source>
+        <translation>コントローラ</translation>
+    </message>
+    <message>
+        <source>Closing...</source>
+        <translation>閉じています...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
+        <translation>&lt;b&gt;ビデオ数:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;( %2 完了済 )&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation>本当に次のダウンロードを中止しますか &lt;b&gt;%1&lt;/b&gt;?</translation>
+    </message>
+    <message>
+        <source>Resume download</source>
+        <translation>ダウンロードを再開</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>アップデート</translation>
+    </message>
+    <message>
+        <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
+        <translation>xVideoServiceThief は現在作業中です,..本当に作業を中断しますか?</translation>
+    </message>
+    <message>
+        <source>Pause download</source>
+        <translation>ダウンロードを一時停止</translation>
+    </message>
+    <message>
+        <source>Error message</source>
+        <translation>エラーメッセージ</translation>
+    </message>
+    <message>
+        <source>Another process is currently working, please stop it or wait until the end of process.</source>
+        <translation>別のプロセスが作業中です.. このプロセスが完了してから停止してください.</translation>
+    </message>
+    <message>
+        <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
+        <translation>xUpdater が見つかりません..&lt;br&gt;&lt;br&gt;プログラムの自動更新を行う場合  xVideoServiceThief を再インストールしてください.</translation>
+    </message>
+</context>
+<context>
+    <name>NewLanguages</name>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>閉じる</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>閉じるボタン</translation>
+    </message>
+    <message>
+        <source>Install selected</source>
+        <translation>選択をインストール</translation>
+    </message>
+    <message>
+        <source>Install the selected language</source>
+        <translation>選択した言語をインストール</translation>
+    </message>
+    <message>
+        <source>Languages list</source>
+        <translation>利用可能な言語</translation>
+    </message>
+    <message>
+        <source>Uninstall selected</source>
+        <translation>選択をアンインストール</translation>
+    </message>
+    <message>
+        <source>List with all installed languages</source>
+        <translation>すべてのインストール済み言語</translation>
+    </message>
+    <message>
+        <source>Available languages to install</source>
+        <translation>利用可能な言語をインストール</translation>
+    </message>
+    <message>
+        <source>Updating languages list...</source>
+        <translation>言語一覧を更新...</translation>
+    </message>
+    <message>
+        <source>Uninstall the selected language</source>
+        <translation>選択した言語をアンインストール</translation>
+    </message>
+    <message>
+        <source>Languages manager</source>
+        <translation>言語の管理</translation>
+    </message>
+    <message>
+        <source>List with all languages which you can install</source>
+        <translation>インストール可能なすべての言語</translation>
+    </message>
+    <message>
+        <source>Close the Languages manager</source>
+        <translation>言語の管理を閉じる</translation>
+    </message>
+    <message>
+        <source>Install language button</source>
+        <translation>言語をインストール</translation>
+    </message>
+    <message>
+        <source>Languages to install list</source>
+        <translation>一覧から言語をインストール</translation>
+    </message>
+    <message>
+        <source>Your installed languages</source>
+        <translation>あなたがインストールした言語</translation>
+    </message>
+    <message>
+        <source>Uninstall language button</source>
+        <translation>言語をアンインストール</translation>
+    </message>
+</context>
+<context>
+    <name>NewLanguagesImpl</name>
+    <message>
+        <source>No</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>Language uninstall error</source>
+        <translation>言語のアンインストールエラー</translation>
+    </message>
+    <message>
+        <source>Language install</source>
+        <translation>言語をインストール</translation>
+    </message>
+    <message>
+        <source>New language &lt;b&gt;%1&lt;/b&gt; installed.</source>
+        <translation>新たな言語 &lt;b&gt;%1&lt;/b&gt; がインストールされました.</translation>
+    </message>
+    <message>
+        <source>Wish you install this new language?</source>
+        <translation>本当に新たな言語をインストールしますか?</translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
+        <translation>選択された&lt;b&gt;%1&lt;/b&gt;言語をアンインストールする際、いくつかのエラーが起こりました.&lt;br&gt;&lt;br&gt;注意:&lt;/b&gt; Windows Vista で xVST as を実行している場合は、言語をアンインストールする前に管理者権限で起動してください.</translation>
+    </message>
+    <message>
+        <source>Uninstall language</source>
+        <translation>言語をアンインストール</translation>
+    </message>
+    <message>
+        <source>Installing new language...</source>
+        <translation>新たな言語をインストール中...</translation>
+    </message>
+    <message>
+        <source>Language &lt;b&gt;%1&lt;/b&gt; uninstalled.</source>
+        <translation>言語 &lt;b&gt;%1&lt;/b&gt; がアンインストールされました.</translation>
+    </message>
+    <message>
+        <source>Language install error</source>
+        <translation>言語のインストールエラー</translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try install the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before install new languages.</source>
+        <translation>選択された &lt;b&gt;%1&lt;/b&gt;言語をインストールする際、いくつかのエラーが起こりました..&lt;br&gt;&lt;br&gt;&lt;b&gt;注意:&lt;/b&gt; Windows Vista で xVST as を実行している場合は、言語をインストールする前に管理者権限で起動してください.</translation>
+    </message>
+    <message>
+        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.</source>
+        <translation>選択された&lt;b&gt;%1&lt;/b&gt;.言語のアンインストール時にいくつかのエラーが起こりました.</translation>
+    </message>
+    <message>
+        <source>Wish you uninstall the lanuage?</source>
+        <translation>本当にこの言語をアンインストールしますか?</translation>
+    </message>
+    <message>
+        <source>Language uninstall</source>
+        <translation>言語のアンインストール</translation>
+    </message>
+    <message>
+        <source>Install language</source>
+        <translation>言語をインストール</translation>
+    </message>
+</context>
+<context>
     <name>Options</name>
     <message>
         <source>-</source>
@@ -585,973 +2031,6 @@
     </message>
 </context>
 <context>
-    <name>VideoItem</name>
-    <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>/sec</source>
-        <translation>/sec</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>エラー</translation>
-    </message>
-    <message>
-        <source>Ready</source>
-        <translation>レディ</translation>
-    </message>
-    <message>
-        <source>Converting...</source>
-        <translation>変換中...</translation>
-    </message>
-    <message>
-        <source>Invalid file size</source>
-        <translation>無効なファイルサイズ</translation>
-    </message>
-    <message>
-        <source>Unable to create the destination file</source>
-        <translation>対象ファイルを作成出来ません</translation>
-    </message>
-    <message>
-        <source>Need login...</source>
-        <translation>ログインが必要...</translation>
-    </message>
-    <message>
-        <source>Unable append data to file</source>
-        <translation>データの追記が出来ません</translation>
-    </message>
-    <message>
-        <source>Invalid URL</source>
-        <translation>無効なURL</translation>
-    </message>
-    <message>
-        <source>Failed to connect with RTMP server</source>
-        <translation>RTMP サーバへの接続に失敗しました</translation>
-    </message>
-    <message>
-        <source>File to resume not found</source>
-        <translation>リジュームするファイルが見つかりません</translation>
-    </message>
-    <message>
-        <source>Resuming...</source>
-        <translation>リジュームしています...</translation>
-    </message>
-    <message>
-        <source>flvstreamer is missing (impossible download from RTMP server)</source>
-        <translation>flvstreamer を見失いました(RTMPサーバからのダウンロード不可)</translation>
-    </message>
-    <message>
-        <source>Completed</source>
-        <translation>完了</translation>
-    </message>
-    <message>
-        <source>Downloaded</source>
-        <translation>ダウンロード済</translation>
-    </message>
-    <message>
-        <source>Paused</source>
-        <translation>一時停止</translation>
-    </message>
-    <message>
-        <source>Converted</source>
-        <translation>変換済</translation>
-    </message>
-    <message>
-        <source>Getting info...</source>
-        <translation>情報を取得...</translation>
-    </message>
-    <message>
-        <source>Unable to create the destination dir</source>
-        <translation>対象ディレクトリの作成に失敗</translation>
-    </message>
-    <message>
-        <source>Download incomplete (due to download errors)</source>
-        <translation>ダウンロードは未完了です(ダウンロードエラー)</translation>
-    </message>
-    <message>
-        <source>Unable to open the destination file</source>
-        <translation>対象ファイルを開けません</translation>
-    </message>
-    <message>
-        <source>Failed on initialize the pthread_create</source>
-        <translation>pthread_creat の初期化に失敗</translation>
-    </message>
-    <message>
-        <source>An another download is already active</source>
-        <translation>別のダウンロードを実行中です</translation>
-    </message>
-    <message>
-        <source>Canceled</source>
-        <translation>中断</translation>
-    </message>
-    <message>
-        <source>Updating info...</source>
-        <translation>情報の更新...</translation>
-    </message>
-    <message>
-        <source>Blocked</source>
-        <translation>ブロック済</translation>
-    </message>
-    <message>
-        <source>Deleted</source>
-        <translation>削除済</translation>
-    </message>
-    <message>
-        <source>The video to resume is missing</source>
-        <translation>このビデオはリジュームできません</translation>
-    </message>
-    <message>
-        <source>Downloading...</source>
-        <translation>ダウンロード中...</translation>
-    </message>
-    <message>
-        <source>Unable to resume the FLV file</source>
-        <translation>FLV ファイルはリジュームできません</translation>
-    </message>
-    <message>
-        <source>Unable resume the download</source>
-        <translation>このダウンロードは再開できません</translation>
-    </message>
-    <message>
-        <source>Connection error: Unable to download the video</source>
-        <translation>接続エラー: このビデオはダウンロードできません</translation>
-    </message>
-</context>
-<context>
-    <name>DownloadLog</name>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>閉じる</translation>
-    </message>
-    <message>
-        <source>Close this window</source>
-        <translation>このウィンドウを閉じる</translation>
-    </message>
-    <message>
-        <source>Download Log</source>
-        <translation>ダウンロードログ</translation>
-    </message>
-    <message>
-        <source>Close button</source>
-        <translation>閉じるボタン</translation>
-    </message>
-    <message>
-        <source>Downloads log list</source>
-        <translation>ダウンロードログ一覧</translation>
-    </message>
-    <message>
-        <source>Downloaded videos log:</source>
-        <translation>ダウンロードしたビデオのログ:</translation>
-    </message>
-    <message>
-        <source>Display the downloaded log list</source>
-        <translation>ダウンロード済ビデオ一覧を表示</translation>
-    </message>
-</context>
-<context>
-    <name>NewLanguages</name>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>閉じる</translation>
-    </message>
-    <message>
-        <source>Close button</source>
-        <translation>閉じるボタン</translation>
-    </message>
-    <message>
-        <source>Install selected</source>
-        <translation>選択をインストール</translation>
-    </message>
-    <message>
-        <source>Install the selected language</source>
-        <translation>選択した言語をインストール</translation>
-    </message>
-    <message>
-        <source>Languages list</source>
-        <translation>利用可能な言語</translation>
-    </message>
-    <message>
-        <source>Uninstall selected</source>
-        <translation>選択をアンインストール</translation>
-    </message>
-    <message>
-        <source>List with all installed languages</source>
-        <translation>すべてのインストール済み言語</translation>
-    </message>
-    <message>
-        <source>Available languages to install</source>
-        <translation>利用可能な言語をインストール</translation>
-    </message>
-    <message>
-        <source>Updating languages list...</source>
-        <translation>言語一覧を更新...</translation>
-    </message>
-    <message>
-        <source>Uninstall the selected language</source>
-        <translation>選択した言語をアンインストール</translation>
-    </message>
-    <message>
-        <source>Languages manager</source>
-        <translation>言語の管理</translation>
-    </message>
-    <message>
-        <source>List with all languages which you can install</source>
-        <translation>インストール可能なすべての言語</translation>
-    </message>
-    <message>
-        <source>Close the Languages manager</source>
-        <translation>言語の管理を閉じる</translation>
-    </message>
-    <message>
-        <source>Install language button</source>
-        <translation>言語をインストール</translation>
-    </message>
-    <message>
-        <source>Languages to install list</source>
-        <translation>一覧から言語をインストール</translation>
-    </message>
-    <message>
-        <source>Your installed languages</source>
-        <translation>あなたがインストールした言語</translation>
-    </message>
-    <message>
-        <source>Uninstall language button</source>
-        <translation>言語をアンインストール</translation>
-    </message>
-</context>
-<context>
-    <name>CompletedPopup</name>
-    <message>
-        <source>?</source>
-        <translation>?</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>閉じる</translation>
-    </message>
-    <message>
-        <source>Close button</source>
-        <translation>閉じるボタン</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Download completed&lt;/b&gt;</source>
-        <translation>&lt;b&gt;ダウンロード完了&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Play button</source>
-        <translation>再生</translation>
-    </message>
-    <message>
-        <source>Play the downloaded video</source>
-        <translation>ダウンロードしたビデオを再生</translation>
-    </message>
-    <message>
-        <source>Close the information dialog</source>
-        <translation>ダイアログを閉じる</translation>
-    </message>
-    <message>
-        <source>Play video</source>
-        <translation>ビデオを再生</translation>
-    </message>
-</context>
-<context>
-    <name>CustomAlphaBlend</name>
-    <message>
-        <source>1%</source>
-        <translation>1%</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>100%</source>
-        <translation>100%</translation>
-    </message>
-    <message>
-        <source>Current: &lt;b&gt;0.1%&lt;/b&gt;</source>
-        <translation>現在: &lt;b&gt;0.1%&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Alpha blend value slider</source>
-        <translation>不透明度スライダ</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>中止</translation>
-    </message>
-    <message>
-        <source>Close this dialog without changes</source>
-        <translation>変更を破棄して閉じる</translation>
-    </message>
-    <message>
-        <source>Ok button</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Custom Alpha Blend</source>
-        <translation>カスタムアルファ混合</translation>
-    </message>
-    <message>
-        <source>Set the selected alpha blend value and close this dialog</source>
-        <translation>選択した不透明度にセットしてダイアログを閉じる</translation>
-    </message>
-    <message>
-        <source>Alpha blend value (%)</source>
-        <translation>不透明度 (%)</translation>
-    </message>
-    <message>
-        <source>Select the alpha blend value:</source>
-        <translation>不透明度を設定:</translation>
-    </message>
-    <message>
-        <source>Cancel button</source>
-        <translation>中止ボタン</translation>
-    </message>
-</context>
-<context>
-    <name>SearchVideosImpl</name>
-    <message>
-        <source>&lt;&lt;</source>
-        <translation>&lt;&lt;</translation>
-    </message>
-    <message>
-        <source>&gt;&gt;</source>
-        <translation>&gt;&gt;</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Key word to search:</source>
-        <translation>キーワード検索:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>閉じる</translation>
-    </message>
-    <message>
-        <source>Video Search</source>
-        <translation>ビデオ検索</translation>
-    </message>
-    <message>
-        <source>Page </source>
-        <translation>ページ</translation>
-    </message>
-    <message>
-        <source>Next page button</source>
-        <translation>次のページ-ボタン</translation>
-    </message>
-    <message>
-        <source>Close this window</source>
-        <translation>このウィンドウを閉じる</translation>
-    </message>
-    <message>
-        <source>Please, select one or more services.</source>
-        <translation>ひとつ以上のサービスを選択してください.</translation>
-    </message>
-    <message>
-        <source>Close button</source>
-        <translation>閉じるボタン</translation>
-    </message>
-    <message>
-        <source>Search on previus page</source>
-        <translation>前のページを検索</translation>
-    </message>
-    <message>
-        <source>All adult services</source>
-        <translation>すべてのアダルトサービス</translation>
-    </message>
-    <message>
-        <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
-        <translation>検索中 &quot;&lt;b&gt;%1&lt;/b&gt;&quot; ( ページ %2 )... お待ちください...</translation>
-    </message>
-    <message>
-        <source>Field where your enter the key words to search</source>
-        <translation>検索するキーワードを入力してください</translation>
-    </message>
-    <message>
-        <source>Current search page edit</source>
-        <translation>現在の検索ページを編集</translation>
-    </message>
-    <message>
-        <source>Previus page button</source>
-        <translation>前のページ-ボタン</translation>
-    </message>
-    <message>
-        <source>Current search page</source>
-        <translation>現在の検索ページ</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>検索</translation>
-    </message>
-    <message>
-        <source>Key words edit</source>
-        <translation>キーワード編集</translation>
-    </message>
-    <message>
-        <source>All services</source>
-        <translation>すべての動画サービス</translation>
-    </message>
-    <message>
-        <source>All standard services</source>
-        <translation>すべての一般的なサービス</translation>
-    </message>
-    <message>
-        <source>Search in:</source>
-        <translation>検索場所:</translation>
-    </message>
-    <message>
-        <source>List of services with search capabilities</source>
-        <translation>検索機能があるサービス一覧</translation>
-    </message>
-    <message>
-        <source>Results:</source>
-        <translation>結果:</translation>
-    </message>
-    <message>
-        <source>Custom search</source>
-        <translation>カスタム検索</translation>
-    </message>
-    <message>
-        <source>Search services list</source>
-        <translation>検索サービス一覧</translation>
-    </message>
-    <message>
-        <source>Start new search</source>
-        <translation>新規検索を開始</translation>
-    </message>
-    <message>
-        <source>Search button</source>
-        <translation>検索-ボタン</translation>
-    </message>
-    <message>
-        <source>Search on next page</source>
-        <translation>次のページを検索</translation>
-    </message>
-</context>
-<context>
-    <name>MainForm</name>
-    <message>
-        <source>F1</source>
-        <translation>F1</translation>
-    </message>
-    <message>
-        <source>Alt+S</source>
-        <translation>Alt+S</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>閉じる</translation>
-    </message>
-    <message>
-        <source>Start download button</source>
-        <translation>ダウンロード開始</translation>
-    </message>
-    <message>
-        <source>Open the Select directory dialog for select the downloads directory</source>
-        <translation>ダウンロードしたファイルの保存先を選択してください</translation>
-    </message>
-    <message>
-        <source>Cancel download button</source>
-        <translation>ダウンロードを中止</translation>
-    </message>
-    <message>
-        <source>Download list:</source>
-        <translation>ダウンロード一覧:</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation>接続中...</translation>
-    </message>
-    <message>
-        <source>Delete the selected video</source>
-        <translation>選択されたビデオを削除</translation>
-    </message>
-    <message>
-        <source>Check for updates</source>
-        <translation>アップデートを確認</translation>
-    </message>
-    <message>
-        <source>Add video button</source>
-        <translation>ビデオを追加</translation>
-    </message>
-    <message>
-        <source>Convert videos to Mpeg/DivX/etc...</source>
-        <translation>ビデオを他の形式(Mpeg/DivX/etc)に変換...</translation>
-    </message>
-    <message>
-        <source>Convert videos</source>
-        <translation>ビデオ形式の変換</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 bytes/sec</source>
-        <translation>&lt;b&gt;ダウンロード速度::&lt;/b&gt; 0,00 bytes/sec</translation>
-    </message>
-    <message>
-        <source>Program information</source>
-        <translation>プログラム情報</translation>
-    </message>
-    <message>
-        <source>Cancel download</source>
-        <translation>ダウンロードを中止</translation>
-    </message>
-    <message>
-        <source>Clear list button</source>
-        <translation>ログをクリア</translation>
-    </message>
-    <message>
-        <source>Delete video</source>
-        <translation>ビデオを削除</translation>
-    </message>
-    <message>
-        <source>Display a popup window on finish a download/conversion video</source>
-        <translation>ビデオのダウンロード/変換処理が完了するまで、進捗をポップアップ表示</translation>
-    </message>
-    <message>
-        <source>Open the downloads directory</source>
-        <translation>ダウンロード保存先を開く</translation>
-    </message>
-    <message>
-        <source>Online help</source>
-        <translation>オンラインヘルプ</translation>
-    </message>
-    <message>
-        <source>Downloads directory</source>
-        <translation>ダウンロード保存先</translation>
-    </message>
-    <message>
-        <source>Move UP</source>
-        <translation>上に移動</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
-    </message>
-    <message>
-        <source>Ctrl+D</source>
-        <translation>Ctrl+D</translation>
-    </message>
-    <message>
-        <source>Ctrl+F</source>
-        <translation>Ctrl+F</translation>
-    </message>
-    <message>
-        <source>Ctrl+I</source>
-        <translation>Ctrl+I</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
-    </message>
-    <message>
-        <source>Ctrl+T</source>
-        <translation>Ctrl+T</translation>
-    </message>
-    <message>
-        <source>Ctrl+U</source>
-        <translation>Ctrl+U</translation>
-    </message>
-    <message>
-        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
-        <translation> &lt;b&gt;xVideoServiceThief&lt;/b&gt; に Paypal から寄付する!  :)</translation>
-    </message>
-    <message>
-        <source>More options button</source>
-        <translation>詳細設定</translation>
-    </message>
-    <message>
-        <source>Select the downloads directory</source>
-        <translation>ダウンロード保存先を選択</translation>
-    </message>
-    <message>
-        <source>Convert videos to Mpeg\DivX\etc...</source>
-        <translation>ビデオを他の形式(Mpeg/DivX/etc)に変換...</translation>
-    </message>
-    <message>
-        <source>Display the Options dialog</source>
-        <translation>オプションダイアログを表示</translation>
-    </message>
-    <message>
-        <source>Downloads directory:</source>
-        <translation>ダウンロード保存先:</translation>
-    </message>
-    <message>
-        <source>Reset state</source>
-        <translation>ステータスをリセット</translation>
-    </message>
-    <message>
-        <source>Restore xVideoServiceThief</source>
-        <translation>xVideoServiceThief を復帰</translation>
-    </message>
-    <message>
-        <source>Add video</source>
-        <translation>ビデオを追加</translation>
-    </message>
-    <message>
-        <source>Stay always on top</source>
-        <translation>常に手前に表示</translation>
-    </message>
-    <message>
-        <source>Open the Drag &amp; Drop window</source>
-        <translation>ドラッグ &amp; ドロップウィンドウを開く</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Videos count:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;(0 completed)&lt;/span&gt;</source>
-        <translation>&lt;b&gt;ビデオ数:&lt;/b&gt; 0 &lt;span style=&quot;color:#666666;&quot;&gt;( 0 完了済 )&lt;/span&gt;</translation>
-    </message>
-    <message>
-        <source>More options...</source>
-        <translation>詳細設定...</translation>
-    </message>
-    <message>
-        <source>Clear list</source>
-        <translation>一覧をクリア</translation>
-    </message>
-    <message>
-        <source>Select downloads directory</source>
-        <translation>ダウンロード保存先を選択</translation>
-    </message>
-    <message>
-        <source>Convert videos checkbox</source>
-        <translation>ビデオ形式の変換</translation>
-    </message>
-    <message>
-        <source>Ctrl+Down</source>
-        <translation>Ctrl+Down</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>情報</translation>
-    </message>
-    <message>
-        <source>Clear completed button</source>
-        <translation>完了済をクリア</translation>
-    </message>
-    <message>
-        <source>Download videos automatically checkbox</source>
-        <translation>ビデオを自動的にダウンロード</translation>
-    </message>
-    <message>
-        <source>View error message</source>
-        <translation>エラーメッセージを表示</translation>
-    </message>
-    <message>
-        <source>Ctrl+Up</source>
-        <translation>Ctrl+Up</translation>
-    </message>
-    <message>
-        <source>Support button</source>
-        <translation>サポート</translation>
-    </message>
-    <message>
-        <source>Play video</source>
-        <translation>ビデオを再生</translation>
-    </message>
-    <message>
-        <source>Open Drag &amp; Drop window</source>
-        <translation>ドラッグ &amp; ドロップウィンドウを開く</translation>
-    </message>
-    <message>
-        <source>Delete video button</source>
-        <translation>ビデオを削除</translation>
-    </message>
-    <message>
-        <source>Clear completed videos from list</source>
-        <translation>完了したビデオを一覧から除去</translation>
-    </message>
-    <message>
-        <source>Cancel the current selected video</source>
-        <translation>選択したビデオの処理を中止</translation>
-    </message>
-    <message>
-        <source>Start download</source>
-        <translation>ダウンロードを開始</translation>
-    </message>
-    <message>
-        <source>Move DOWN</source>
-        <translation>下に移動</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloading:&lt;/b&gt; 0 of 0</source>
-        <translation>&lt;b&gt;ダウンロード中:&lt;/b&gt; 0 / 0</translation>
-    </message>
-    <message>
-        <source>Add a new URL video</source>
-        <translation>新規URLを追加</translation>
-    </message>
-    <message>
-        <source>Pause Download</source>
-        <translation>ダウンロードを一時停止</translation>
-    </message>
-    <message>
-        <source>Pause download</source>
-        <translation>ダウンロードを一時停止</translation>
-    </message>
-    <message>
-        <source>Search videos</source>
-        <translation>ビデオ検索</translation>
-    </message>
-    <message>
-        <source>Download videos automatically</source>
-        <translation>ビデオを自動的にダウンロード</translation>
-    </message>
-    <message>
-        <source>Start to download the current selected video</source>
-        <translation>選択したビデオのダウンロードを開始</translation>
-    </message>
-    <message>
-        <source>Minimize to system tray</source>
-        <translation>最小化でトレイに移動</translation>
-    </message>
-    <message>
-        <source>Open downloads directory</source>
-        <translation>ダウンロード保存先を開く</translation>
-    </message>
-    <message>
-        <source>Clear downloads list</source>
-        <translation>ダウンロード一覧をクリア</translation>
-    </message>
-    <message>
-        <source>Schedule option is &lt;b&gt;enabled&lt;/b&gt;</source>
-        <translation>スケジュール設定 &lt;b&gt;有効化&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
-        <translation>&lt;b&gt;xVideoServiceThief&lt;/b&gt;に寄付する!</translation>
-    </message>
-    <message>
-        <source>Clear completed</source>
-        <translation>完了済をクリア</translation>
-    </message>
-</context>
-<context>
-    <name>MainFormImpl</name>
-    <message>
-        <source>No</source>
-        <translation>いいえ</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>はい</translation>
-    </message>
-    <message>
-        <source>/sec</source>
-        <translation>/sec</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation>ファイル</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>ヘルプ</translation>
-    </message>
-    <message>
-        <source>Tools</source>
-        <translation>ツール</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;ダウンロード中:&lt;/b&gt; %1 / %2</translation>
-    </message>
-    <message>
-        <source> Size </source>
-        <translation> サイズ </translation>
-    </message>
-    <message>
-        <source> Time </source>
-        <translation> 時間 </translation>
-    </message>
-    <message>
-        <source>Cancel download</source>
-        <translation>ダウンロードを中止</translation>
-    </message>
-    <message>
-        <source>Already added</source>
-        <translation>既に追加済</translation>
-    </message>
-    <message>
-        <source>You already added this video. Check your downloads list.</source>
-        <translation>このビデオは既に追加されています、リストを確認してください.</translation>
-    </message>
-    <message>
-        <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>ビデオダウンロード中にエラーが発生:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;ダウンロード速度:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source> Speed </source>
-        <translation> 速度 </translation>
-    </message>
-    <message>
-        <source>- Downloading: %1 (%2, %3)</source>
-        <translation>- ダウンロード中: %1 (%2, %3)</translation>
-    </message>
-    <message>
-        <source> Video </source>
-        <translation> ビデオ </translation>
-    </message>
-    <message>
-        <source> Progress </source>
-        <translation> 進捗 </translation>
-    </message>
-    <message>
-        <source>Select the download directory:</source>
-        <translation>ダウンロード保存先を選択:</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>オプション</translation>
-    </message>
-    <message>
-        <source>- Converting: %1 (%2)</source>
-        <translation>- 変換中: %1 (%2)</translation>
-    </message>
-    <message>
-        <source>Controllers</source>
-        <translation>コントローラ</translation>
-    </message>
-    <message>
-        <source>Closing...</source>
-        <translation>閉じています...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
-        <translation>&lt;b&gt;ビデオ数:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;( %2 完了済 )&lt;/span&gt;</translation>
-    </message>
-    <message>
-        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>本当に次のダウンロードを中止しますか &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <source>Resume download</source>
-        <translation>ダウンロードを再開</translation>
-    </message>
-    <message>
-        <source>Updates</source>
-        <translation>アップデート</translation>
-    </message>
-    <message>
-        <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
-        <translation>xVideoServiceThief は現在作業中です,..本当に作業を中断しますか?</translation>
-    </message>
-    <message>
-        <source>Pause download</source>
-        <translation>ダウンロードを一時停止</translation>
-    </message>
-    <message>
-        <source>Error message</source>
-        <translation>エラーメッセージ</translation>
-    </message>
-    <message>
-        <source>Another process is currently working, please stop it or wait until the end of process.</source>
-        <translation>別のプロセスが作業中です.. このプロセスが完了してから停止してください.</translation>
-    </message>
-    <message>
-        <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
-        <translation>xUpdater が見つかりません..&lt;br&gt;&lt;br&gt;プログラムの自動更新を行う場合  xVideoServiceThief を再インストールしてください.</translation>
-    </message>
-</context>
-<context>
-    <name>NewLanguagesImpl</name>
-    <message>
-        <source>No</source>
-        <translation>いいえ</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>はい</translation>
-    </message>
-    <message>
-        <source>Language uninstall error</source>
-        <translation>言語のアンインストールエラー</translation>
-    </message>
-    <message>
-        <source>Language install</source>
-        <translation>言語をインストール</translation>
-    </message>
-    <message>
-        <source>New language &lt;b&gt;%1&lt;/b&gt; installed.</source>
-        <translation>新たな言語 &lt;b&gt;%1&lt;/b&gt; がインストールされました.</translation>
-    </message>
-    <message>
-        <source>Wish you install this new language?</source>
-        <translation>本当に新たな言語をインストールしますか?</translation>
-    </message>
-    <message>
-        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
-        <translation>選択された&lt;b&gt;%1&lt;/b&gt;言語をアンインストールする際、いくつかのエラーが起こりました.&lt;br&gt;&lt;br&gt;注意:&lt;/b&gt; Windows Vista で xVST as を実行している場合は、言語をアンインストールする前に管理者権限で起動してください.</translation>
-    </message>
-    <message>
-        <source>Uninstall language</source>
-        <translation>言語をアンインストール</translation>
-    </message>
-    <message>
-        <source>Installing new language...</source>
-        <translation>新たな言語をインストール中...</translation>
-    </message>
-    <message>
-        <source>Language &lt;b&gt;%1&lt;/b&gt; uninstalled.</source>
-        <translation>言語 &lt;b&gt;%1&lt;/b&gt; がアンインストールされました.</translation>
-    </message>
-    <message>
-        <source>Language install error</source>
-        <translation>言語のインストールエラー</translation>
-    </message>
-    <message>
-        <source>Some errors has ocurred on try install the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before install new languages.</source>
-        <translation>選択された &lt;b&gt;%1&lt;/b&gt;言語をインストールする際、いくつかのエラーが起こりました..&lt;br&gt;&lt;br&gt;&lt;b&gt;注意:&lt;/b&gt; Windows Vista で xVST as を実行している場合は、言語をインストールする前に管理者権限で起動してください.</translation>
-    </message>
-    <message>
-        <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.</source>
-        <translation>選択された&lt;b&gt;%1&lt;/b&gt;.言語のアンインストール時にいくつかのエラーが起こりました.</translation>
-    </message>
-    <message>
-        <source>Wish you uninstall the lanuage?</source>
-        <translation>本当にこの言語をアンインストールしますか?</translation>
-    </message>
-    <message>
-        <source>Language uninstall</source>
-        <translation>言語のアンインストール</translation>
-    </message>
-    <message>
-        <source>Install language</source>
-        <translation>言語をインストール</translation>
-    </message>
-</context>
-<context>
     <name>OptionsImpl</name>
     <message>
         <source>No</source>
@@ -1703,338 +2182,6 @@
     </message>
 </context>
 <context>
-    <name>AddVideo</name>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Output quality:</source>
-        <translation>出力品質:</translation>
-    </message>
-    <message>
-        <source>Convert videos</source>
-        <translation>ビデオ形式の変換</translation>
-    </message>
-    <message>
-        <source>Output format:</source>
-        <translation>出力形式:</translation>
-    </message>
-    <message>
-        <source>Audio sampling rate (Hz):</source>
-        <translation>音声サンプルレート(Hz):</translation>
-    </message>
-    <message>
-        <source>Video output format combobox</source>
-        <translation>ビデオ出力形式</translation>
-    </message>
-    <message>
-        <source>Video resolution:</source>
-        <translation>ビデオ解像度:</translation>
-    </message>
-    <message>
-        <source>Override original conversion options for this video</source>
-        <translation>このビデオの変換設定のみ別の設定を使用する</translation>
-    </message>
-    <message>
-        <source>Paste the current clipboard content (only text)</source>
-        <translation>クリップボードの内容を貼り付け(テキストのみ)</translation>
-    </message>
-    <message>
-        <source>Video frame rate (Hz)</source>
-        <translation>ビデオフレームレート(Hz)</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>中止</translation>
-    </message>
-    <message>
-        <source>Ok button</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Video audio sampling rate (Hz)</source>
-        <translation>映像 / 音声のサンプリングレート(Hz)</translation>
-    </message>
-    <message>
-        <source>General video output quality</source>
-        <translation>一般的なビデオ出力品質</translation>
-    </message>
-    <message>
-        <source>Enable/disable the video conversions</source>
-        <translation>ビデオ形式の変換を有効/無効</translation>
-    </message>
-    <message>
-        <source>Close without adding the URL</source>
-        <translation>URLを追加しないで閉じる</translation>
-    </message>
-    <message>
-        <source>URL of the video to downloaded</source>
-        <translation>ダウンロードするビデオのURL</translation>
-    </message>
-    <message>
-        <source>General video output quality combobox</source>
-        <translation>一般的なビデオ出力品質</translation>
-    </message>
-    <message>
-        <source>Paste URL from clipboard</source>
-        <translation>クリップボードからURLを貼り付け</translation>
-    </message>
-    <message>
-        <source>Video resolution</source>
-        <translation>ビデオ解像度</translation>
-    </message>
-    <message>
-        <source>Video URL</source>
-        <translation>ビデオURL</translation>
-    </message>
-    <message>
-        <source>Convert video to Mpeg/DivX/etc...</source>
-        <translation>ビデオを他の形式(Mpeg/DivX/etc)に変換...</translation>
-    </message>
-    <message>
-        <source>Enter the video URL to download:</source>
-        <translation>ビデオURLを入力してダウンロード:</translation>
-    </message>
-    <message>
-        <source>Video resolution combobox</source>
-        <translation>ビデオ解像度</translation>
-    </message>
-    <message>
-        <source>Video output format</source>
-        <translation>ビデオ出力形式</translation>
-    </message>
-    <message>
-        <source>Add Video URL</source>
-        <translation>ビデオURLを追加</translation>
-    </message>
-    <message>
-        <source>Video frame rate combobox</source>
-        <translation>ビデオフレームレート</translation>
-    </message>
-    <message>
-        <source>Add the current URL and close this dialog</source>
-        <translation>現在のURLを追加してダイアログを閉じる</translation>
-    </message>
-    <message>
-        <source>Cancel button</source>
-        <translation>中止ボタン</translation>
-    </message>
-    <message>
-        <source>Video audio sampling rate combobox</source>
-        <translation>映像 / 音声のサンプリングレート(Hz)</translation>
-    </message>
-</context>
-<context>
-    <name>AddVideoImpl</name>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Already added</source>
-        <translation>既に追加済</translation>
-    </message>
-    <message>
-        <source>You already added this video. Check your downloads list.</source>
-        <translation>このビデオは既に追加されています、リストを確認してください。</translation>
-    </message>
-    <message>
-        <source>User custom video download</source>
-        <translation>カスタムダウンロード</translation>
-    </message>
-    <message>
-        <source> - Adult content is not allowed</source>
-        <translation> - アダルトサイトを拒否</translation>
-    </message>
-    <message>
-        <source>mark as custom download</source>
-        <translation>カスタムダウンロードとしてマーク</translation>
-    </message>
-    <message>
-        <source> - Blocked site</source>
-        <translation> - ブロックされたサイト</translation>
-    </message>
-</context>
-<context>
-    <name>BugReportImpl</name>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Thank you for your report.</source>
-        <translation>レポートをありがとうございます!.</translation>
-    </message>
-</context>
-<context>
-    <name>ChangelogImpl</name>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>List of program versions</source>
-        <translation>プログラムのバージョン一覧</translation>
-    </message>
-    <message>
-        <source>Versions combobox</source>
-        <translation>バージョン</translation>
-    </message>
-    <message>
-        <source>Ok button</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Changelog</source>
-        <translation>更新履歴</translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation>バージョン:</translation>
-    </message>
-    <message>
-        <source>xVST Changelog</source>
-        <translation>xVST 更新履歴</translation>
-    </message>
-    <message>
-        <source>List of the complete xVST changelog</source>
-        <translation>完全な xVST 更新履歴</translation>
-    </message>
-    <message>
-        <source>Close the Changelot dialog</source>
-        <translation>ダイアログを閉じる</translation>
-    </message>
-    <message>
-        <source>Close the Changelog dialog</source>
-        <translation>ダイアログを閉じる</translation>
-    </message>
-</context>
-<context>
-    <name>CheckUpdatesWorker</name>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Please, download the new version of &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; from &lt;a href=&apos;%2&apos;&gt;here.&lt;/a&gt;</source>
-        <translation>新しいバージョンの &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; は  &lt;a href=&apos;%2&apos;&gt;ここから.&lt;/a&gt;ダウンロードできます</translation>
-    </message>
-    <message>
-        <source>Update Center</source>
-        <translation>アップデートセンター</translation>
-    </message>
-    <message>
-        <source>You are using the most recent version of this program.</source>
-        <translation>あなたは最新のバージョンを使用しています.</translation>
-    </message>
-    <message>
-        <source>Updates</source>
-        <translation>アップデート</translation>
-    </message>
-    <message>
-        <source>Cancelling... please wait...</source>
-        <translation>中止しています... お待ちください...</translation>
-    </message>
-    <message>
-        <source>Checking for updates...</source>
-        <translation>アップデートの確認中...</translation>
-    </message>
-</context>
-<context>
-    <name>Credits</name>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Ok button</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation>クレジット</translation>
-    </message>
-    <message>
-        <source>Close the Credits dialog</source>
-        <translation>ダイアログを閉じる</translation>
-    </message>
-</context>
-<context>
-    <name>CustomDownloadTitleImpl</name>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Title edit</source>
-        <translation>タイトルを編集</translation>
-    </message>
-    <message>
-        <source>Video title:</source>
-        <translation>ビデオタイトル:</translation>
-    </message>
-    <message>
-        <source>Field where you enter the video title</source>
-        <translation>ビデオタイトルを入力してください</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>中止</translation>
-    </message>
-    <message>
-        <source>Ok button</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Confirm and close the window</source>
-        <translation>確認してからウインドウを閉じる</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Enter the text which will be used as title of this download.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;このダウンロードのタイトルを入力してください.&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Custom download title</source>
-        <translation>ダウンロードタイトルを指定</translation>
-    </message>
-    <message>
-        <source>Discard and close window</source>
-        <translation>破棄してウィンドウを閉じる</translation>
-    </message>
-    <message>
-        <source>Cancel button</source>
-        <translation>中止ボタン</translation>
-    </message>
-</context>
-<context>
-    <name>DragDropImpl</name>
-    <message>
-        <source>Ok</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Already added</source>
-        <translation>既に追加済</translation>
-    </message>
-    <message>
-        <source>You already added this video. Check your downloads list.</source>
-        <translation>このビデオは既に追加されています、リストを確認してください。</translation>
-    </message>
-    <message>
-        <source>User custom video download</source>
-        <translation>カスタムダウンロード</translation>
-    </message>
-    <message>
-        <source> - Adult content is not allowed</source>
-        <translation> - アダルトサイトを拒否</translation>
-    </message>
-    <message>
-        <source> - Blocked site</source>
-        <translation> - ブロックされたサイト</translation>
-    </message>
-</context>
-<context>
     <name>ScheduleItemEditImpl</name>
     <message>
         <source>Ok</source>
@@ -2161,6 +2308,129 @@
     </message>
 </context>
 <context>
+    <name>SearchVideosImpl</name>
+    <message>
+        <source>&lt;&lt;</source>
+        <translation>&lt;&lt;</translation>
+    </message>
+    <message>
+        <source>&gt;&gt;</source>
+        <translation>&gt;&gt;</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Key word to search:</source>
+        <translation>キーワード検索:</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>閉じる</translation>
+    </message>
+    <message>
+        <source>Video Search</source>
+        <translation>ビデオ検索</translation>
+    </message>
+    <message>
+        <source>Page </source>
+        <translation>ページ</translation>
+    </message>
+    <message>
+        <source>Next page button</source>
+        <translation>次のページ-ボタン</translation>
+    </message>
+    <message>
+        <source>Close this window</source>
+        <translation>このウィンドウを閉じる</translation>
+    </message>
+    <message>
+        <source>Please, select one or more services.</source>
+        <translation>ひとつ以上のサービスを選択してください.</translation>
+    </message>
+    <message>
+        <source>Close button</source>
+        <translation>閉じるボタン</translation>
+    </message>
+    <message>
+        <source>Search on previus page</source>
+        <translation>前のページを検索</translation>
+    </message>
+    <message>
+        <source>All adult services</source>
+        <translation>すべてのアダルトサービス</translation>
+    </message>
+    <message>
+        <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
+        <translation>検索中 &quot;&lt;b&gt;%1&lt;/b&gt;&quot; ( ページ %2 )... お待ちください...</translation>
+    </message>
+    <message>
+        <source>Field where your enter the key words to search</source>
+        <translation>検索するキーワードを入力してください</translation>
+    </message>
+    <message>
+        <source>Current search page edit</source>
+        <translation>現在の検索ページを編集</translation>
+    </message>
+    <message>
+        <source>Previus page button</source>
+        <translation>前のページ-ボタン</translation>
+    </message>
+    <message>
+        <source>Current search page</source>
+        <translation>現在の検索ページ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>検索</translation>
+    </message>
+    <message>
+        <source>Key words edit</source>
+        <translation>キーワード編集</translation>
+    </message>
+    <message>
+        <source>All services</source>
+        <translation>すべての動画サービス</translation>
+    </message>
+    <message>
+        <source>All standard services</source>
+        <translation>すべての一般的なサービス</translation>
+    </message>
+    <message>
+        <source>Search in:</source>
+        <translation>検索場所:</translation>
+    </message>
+    <message>
+        <source>List of services with search capabilities</source>
+        <translation>検索機能があるサービス一覧</translation>
+    </message>
+    <message>
+        <source>Results:</source>
+        <translation>結果:</translation>
+    </message>
+    <message>
+        <source>Custom search</source>
+        <translation>カスタム検索</translation>
+    </message>
+    <message>
+        <source>Search services list</source>
+        <translation>検索サービス一覧</translation>
+    </message>
+    <message>
+        <source>Start new search</source>
+        <translation>新規検索を開始</translation>
+    </message>
+    <message>
+        <source>Search button</source>
+        <translation>検索-ボタン</translation>
+    </message>
+    <message>
+        <source>Search on next page</source>
+        <translation>次のページを検索</translation>
+    </message>
+</context>
+<context>
     <name>SearchVideosItemImpl</name>
     <message>
         <source>Ok</source>
@@ -2224,6 +2494,17 @@
     </message>
 </context>
 <context>
+    <name>SearchVideosNoResultsImpl</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No results found with &quot;&lt;b&gt;%1&lt;/b&gt;&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UPSPasswordImpl</name>
     <message>
         <source>Ok</source>
@@ -2268,6 +2549,61 @@
     <message>
         <source>Cancel button</source>
         <translation>中止ボタン</translation>
+    </message>
+</context>
+<context>
+    <name>UpdateCenter</name>
+    <message>
+        <source>List with all available updates</source>
+        <translation>利用可能なすべての更新</translation>
+    </message>
+    <message>
+        <source>Close without installing updates</source>
+        <translation>アップデートのインストールを中止して閉じる</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>中止</translation>
+    </message>
+    <message>
+        <source>Available updates:</source>
+        <translation>利用可能なアップデート:</translation>
+    </message>
+    <message>
+        <source>Install updates</source>
+        <translation>アップデートのインストール</translation>
+    </message>
+    <message>
+        <source>Update center</source>
+        <translation>アップデートセンター</translation>
+    </message>
+    <message>
+        <source>Download and install button</source>
+        <translation>ダウンロードとインストール-ボタン</translation>
+    </message>
+    <message>
+        <source>Available updates list</source>
+        <translation>利用可能な更新一覧</translation>
+    </message>
+    <message>
+        <source>0 bytes (0 bytes)</source>
+        <translation>0 bytes (0 bytes)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Update state:&lt;/b&gt; Stopped</source>
+        <translation>&lt;b&gt;更新の状況:&lt;/b&gt; 停止中</translation>
+    </message>
+    <message>
+        <source>Download and install the selected updates from the list</source>
+        <translation>一覧から選択した更新をダウンロードしてインストール</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation>中止ボタン</translation>
+    </message>
+    <message>
+        <source>Current xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>現在の xVST バージョン: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2319,396 +2655,6 @@
     <message>
         <source>&lt;b&gt;Update state:&lt;/b&gt; Downloading %1</source>
         <translation>&lt;b&gt;更新の状況:&lt;/b&gt; ダウンロード中 %1</translation>
-    </message>
-</context>
-<context>
-    <name>DragDrop</name>
-    <message>
-        <source>10%</source>
-        <translation>10%</translation>
-    </message>
-    <message>
-        <source>20%</source>
-        <translation>20%</translation>
-    </message>
-    <message>
-        <source>30%</source>
-        <translation>30%</translation>
-    </message>
-    <message>
-        <source>40%</source>
-        <translation>40%</translation>
-    </message>
-    <message>
-        <source>50%</source>
-        <translation>50%</translation>
-    </message>
-    <message>
-        <source>60%</source>
-        <translation>60%</translation>
-    </message>
-    <message>
-        <source>70%</source>
-        <translation>70%</translation>
-    </message>
-    <message>
-        <source>80%</source>
-        <translation>80%</translation>
-    </message>
-    <message>
-        <source>90%</source>
-        <translation>90%</translation>
-    </message>
-    <message>
-        <source>OFF</source>
-        <translation>OFF</translation>
-    </message>
-    <message>
-        <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation>カスタム</translation>
-    </message>
-    <message>
-        <source>Alpha blend value</source>
-        <translation>不透明度 </translation>
-    </message>
-    <message>
-        <source>Drag&amp;Drop</source>
-        <translation>ドラッグ &amp; ドロップ</translation>
-    </message>
-    <message>
-        <source>Display main window</source>
-        <translation>メイン画面を表示</translation>
-    </message>
-    <message>
-        <source>Paste URL from clipboard</source>
-        <translation>クリップボードからURLを貼り付け</translation>
-    </message>
-</context>
-<context>
-    <name>DownloadLogImpl</name>
-    <message>
-        <source>URL</source>
-        <translation>URL</translation>
-    </message>
-    <message>
-        <source>Video Title</source>
-        <translation>ビデオタイトル</translation>
-    </message>
-    <message>
-        <source>Date/Time</source>
-        <translation>日付/時間</translation>
-    </message>
-</context>
-<context>
-    <name>BugReport</name>
-    <message>
-        <source>Send</source>
-        <translation>送信</translation>
-    </message>
-    <message>
-        <source>Send the &quot;Bug report&quot; and close this dialog</source>
-        <translation>この&quot;バグ報告&quot; を送信してダイアログを閉じる</translation>
-    </message>
-    <message>
-        <source>Don&apos;t display &quot;Bug Report&quot; the next time</source>
-        <translation>次回以降 &quot;バグ報告&quot; を表示しない</translation>
-    </message>
-    <message>
-        <source>Your name will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
-        <translation>このフィールドは任意入力です..あなたの入力した名前は &quot;バグ報告&quot; の本文に追記されます</translation>
-    </message>
-    <message>
-        <source>Your comments: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
-        <translation>あなたのコメント: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(任意)&lt;/span&gt;</translation>
-    </message>
-    <message>
-        <source>Sending your &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;... please wait...</source>
-        <translation>あなたの &quot;&lt;b&gt;バグ報告&lt;/b&gt;&quot;を送信しています... お待ちください...</translation>
-    </message>
-    <message>
-        <source>xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>xVST のバージョン: &lt;b&gt;%1&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Close this dialog without sending the &quot;Bug report&quot;</source>
-        <translation>&quot;バグ報告&quot;を送信しないでダイアログを閉じる</translation>
-    </message>
-    <message>
-        <source>Your name: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
-        <translation>あなたの名前: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(任意)&lt;/span&gt;</translation>
-    </message>
-    <message>
-        <source>Your email</source>
-        <translation>あなたのE-メール</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>中止</translation>
-    </message>
-    <message>
-        <source>Bug Report</source>
-        <translation>バグ報告</translation>
-    </message>
-    <message>
-        <source>Your email will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
-        <translation>このフィールドは任意入力です..あなたの入力したE-メールアドレスは &quot;バグ報告&quot; の本文に追記されます</translation>
-    </message>
-    <message>
-        <source>Your comments</source>
-        <translation>あなたのコメント</translation>
-    </message>
-    <message>
-        <source>You can add your own comment which will be added into the &quot;Bug report&quot; body. This field is totally optional</source>
-        <translation>このフィールドは任意入力です..あなたの入力したコメントは &quot;バグ報告&quot; の本文に追記されます</translation>
-    </message>
-    <message>
-        <source>Send button</source>
-        <translation>送信-ボタン</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
-&lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
-&lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
-        <translation>&lt;b&gt;ビデオのダウンロード中にエラーが発生しました.&lt;/b&gt;
-&lt;p&gt;この問題を &quot;&lt;b&gt;バグ報告&lt;/b&gt;&quot;. で送信してください. このレポートを分析することで、この問題点の解決に役立ちます..今後の修正にご協力ください&lt;/p&gt;
-&lt;p&gt;あなたのヘルプは常に大歓迎です!&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>If this option is checked, this dialog will not be displayed again (and no &quot;Bug report&quot; will be sent)</source>
-        <translation>ここにチェックすると、次回からこのダイアログを表示しません(&quot;バグ報告&quot;機能は無効になります)</translation>
-    </message>
-    <message>
-        <source>Video URL: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>ビデオURL: &lt;b&gt;%1&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;この &quot;&lt;b&gt;バグ報告&lt;/b&gt;&quot; は.  &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.に送信されます&lt;/p&gt;
-&lt;p&gt;あなたの入力した名前とE-メールアドレスは &quot;&lt;b&gt;バグコメント&lt;/b&gt;&quot;,に含まれます, これらのフィールドは必ず必要なものではありません.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Your name</source>
-        <translation>あなたの名前</translation>
-    </message>
-    <message>
-        <source>QFrame{background: white;} </source>
-        <translation>QFrame{background: white;} </translation>
-    </message>
-    <message>
-        <source>Error information</source>
-        <translation>エラー情報</translation>
-    </message>
-    <message>
-        <source>Do not display &quot;Bug Report&quot;</source>
-        <translation>&quot;バグ報告&quot; を表示しない</translation>
-    </message>
-    <message>
-        <source>View which information will be sent</source>
-        <translation>送信される内容を確認</translation>
-    </message>
-    <message>
-        <source>Email: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(optional)&lt;/span&gt;</source>
-        <translation>E-メール: &lt;span style=&quot; font-style:italic; color:#a9a9a9;&quot;&gt;(任意)&lt;/span&gt;</translation>
-    </message>
-    <message>
-        <source>Cancel button</source>
-        <translation>中止ボタン</translation>
-    </message>
-</context>
-<context>
-    <name>WindowsVistaDetected</name>
-    <message>
-        <source>Continue...</source>
-        <translation>続行...</translation>
-    </message>
-    <message>
-        <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
-        <translation>この問題を解決するためには xVST を管理者権限で起動してください ( xVST アイコンを右クリック - &quot;管理者権限で実行&quot; を選択) また、必要な場合はアップデートセンターから最新版をダウンロードしてください.</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;注意, xVST により Windows Vista が検出されたため、自動アップデートは上手く機能しないかもしれません&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Si usted tiene el &lt;b&gt;UAC&lt;/b&gt; (User Account Control) が有効になっている場合は、自動アップデートとインストールは機能しません.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>中止</translation>
-    </message>
-    <message>
-        <source>Update center - Windows Vista detected</source>
-        <translation>アップデートセンター / Windows Vista を検出</translation>
-    </message>
-    <message>
-        <source>Don&apos;t display this message again</source>
-        <translation>次回からこのメッセージを表示しない</translation>
-    </message>
-</context>
-<context>
-    <name>InfoView</name>
-    <message>
-        <source>Close</source>
-        <translation>閉じる</translation>
-    </message>
-    <message>
-        <source>Close button</source>
-        <translation>閉じるボタン</translation>
-    </message>
-    <message>
-        <source>Information which will be send to SourceForge.net tracker</source>
-        <translation>SourceForge.net tracker に送信される内容</translation>
-    </message>
-    <message>
-        <source>Information View</source>
-        <translation>情報表示</translation>
-    </message>
-    <message>
-        <source>Information which will be sent</source>
-        <translation>送信される内容</translation>
-    </message>
-    <message>
-        <source>This is the information which will be send:</source>
-        <translation>これは送信される内容です:</translation>
-    </message>
-    <message>
-        <source>Close the Information view</source>
-        <translation>情報を閉じる</translation>
-    </message>
-</context>
-<context>
-    <name>Information</name>
-    <message>
-        <source>Close</source>
-        <translation>閉じる</translation>
-    </message>
-    <message>
-        <source>Program version:</source>
-        <translation>プログラムのバージョン:</translation>
-    </message>
-    <message>
-        <source>List of supported services</source>
-        <translation>対応しているサービス一覧</translation>
-    </message>
-    <message>
-        <source>Close button</source>
-        <translation>閉じるボタン</translation>
-    </message>
-    <message>
-        <source>Homepage:</source>
-        <translation>ホームページ:</translation>
-    </message>
-    <message>
-        <source>Language:</source>
-        <translation>使用言語:</translation>
-    </message>
-    <message>
-        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt; via Paypal! It&apos;s easy and fast! :)</source>
-        <translation> &lt;b&gt;xVideoServiceThief&lt;/b&gt; に Paypal から寄付する!  :)</translation>
-    </message>
-    <message>
-        <source>xVideoServiceThief is a tool for downloading your favourite video clips from a lot of video websites.
-
-xVideoServiceThief also provide you the ability to convert each video in most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.</source>
-        <translation>xVideoServiceThief は、様々なインターネットの動画サービスから、あなたのお気に入りのビデオクリップをダウンロードすることができるツールです。
-
-更に xVideoServiceThief では、ダウンロードしたビデオをほとんどの一般的な動画形式に変換する機能も提供されます。 (対応する形式: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 ).</translation>
-    </message>
-    <message>
-        <source>Changelog</source>
-        <translation>更新履歴</translation>
-    </message>
-    <message>
-        <source>Close the Information dialog</source>
-        <translation>ダイアログを閉じる</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;English (UK)&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Japanese (JP)&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Display the credits dialog</source>
-        <translation>クレジットを表示</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>情報</translation>
-    </message>
-    <message>
-        <source>QTextBrowser{
-font-family:Arial, Helvetica, sans-serif;
-font-size:12px;
-}</source>
-        <translation>QTextBrowser{font-family:Meiryo, Helvetica, sans-serif;font-size:12px;}</translation>
-    </message>
-    <message>
-        <source>Support button</source>
-        <translation>サポート-ボタン</translation>
-    </message>
-    <message>
-        <source>List of services</source>
-        <translation>サービス一覧</translation>
-    </message>
-    <message>
-        <source>Credits...</source>
-        <translation>クレジット...</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;http://xviservicethief.sourceforge.net/&quot;&gt;http://xviservicethief.sourceforge.net/&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;xVideoServiceThief currently supports download from:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;xVideoServiceThief でダウンロード可能なサービス:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Credits button</source>
-        <translation>クレジット-ボタン</translation>
-    </message>
-    <message>
-        <source>QFrame{
-background: white;
-} </source>
-        <translation>QFrame{background: white;} </translation>
-    </message>
-    <message>
-        <source>Make a donation to &lt;b&gt;xVideoServiceThief&lt;/b&gt;!</source>
-        <translation>&lt;b&gt;xVideoServiceThief&lt;/b&gt;に寄付する!</translation>
-    </message>
-</context>
-<context>
-    <name>WelcomeDonate</name>
-    <message>
-        <source>Close</source>
-        <translation>閉じる</translation>
-    </message>
-    <message>
-        <source>Don&apos;t display this message again</source>
-        <translation>次回からこのメッセージを表示しない</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;&lt;b&gt;Please donate!&lt;/b&gt;&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;&lt;b&gt;寄付をお願いします!&lt;/b&gt;&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;This software is totally free of charge, but you can consider to donate if you like this tool or if you use it in a commercial environment.&lt;/p&gt;
-&lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
-&lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
-&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;このソフトウェアは完全に無償で利用できますが、あなたが開発に協力したい、または商用利用等をお考えの場合、寄付することでご協力ください&lt;/p&gt;
-&lt;p&gt;ありがとうこざいます! ご協力に感謝します!&lt;/p&gt;
-&lt;p&gt;寄付は何に使われるのか? あなたから頂いた寄付は xVideoServiceThief の今後の開発の継続に利用されます.&lt;/p&gt;
-&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;ご注意ください!:&lt;/b&gt; このアプリケーションは無料でダウンロードできます! 騙されないようにご注意を!&lt;/font&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Donate!</source>
-        <translation>寄付する!</translation>
-    </message>
-    <message>
-        <source>Welcome to xVideoServiceThief</source>
-        <translation>xVideoServiceThief へようこそ</translation>
     </message>
 </context>
 <context>
@@ -2783,48 +2729,6 @@ background: white;
     </message>
 </context>
 <context>
-    <name>CheckUpdates</name>
-    <message>
-        <source>Connecting...</source>
-        <translation>接続中...</translation>
-    </message>
-    <message>
-        <source>Check updates...</source>
-        <translation>アップデートの確認中...</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>中止</translation>
-    </message>
-    <message>
-        <source>Cancel the checking for updates process and close this dialog</source>
-        <translation>アップデートの確認プロセスを中止してダイアログを閉じる</translation>
-    </message>
-    <message>
-        <source>Cancel button</source>
-        <translation>中止ボタン</translation>
-    </message>
-</context>
-<context>
-    <name>InformationImpl</name>
-    <message>
-        <source>&lt;p&gt;Total websites supported (plugins installed): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;対応するウェブサイト (プラグイン含): &lt;strong&gt;%1&lt;/strong&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Adult web sites:</source>
-        <translation>アダルトサイト:</translation>
-    </message>
-    <message>
-        <source>Music web sites:</source>
-        <translation>音楽サイト:</translation>
-    </message>
-    <message>
-        <source>Adult sites are blocked...</source>
-        <translation>アダルトサイトはブロックする...</translation>
-    </message>
-</context>
-<context>
     <name>VideoInformation</name>
     <message>
         <source>Invalid URL</source>
@@ -2840,80 +2744,296 @@ background: white;
     </message>
 </context>
 <context>
-    <name>LoadingImpl</name>
+    <name>VideoItem</name>
     <message>
-        <source>Loading</source>
-        <translation>読み込み中</translation>
+        <source>-</source>
+        <translation>-</translation>
     </message>
     <message>
-        <source>Plugins loaded</source>
-        <translation>プラグインの読み込み</translation>
+        <source>/sec</source>
+        <translation>/sec</translation>
     </message>
     <message>
-        <source>Loading plugins... please wait...</source>
-        <translation>プラグインの読み込み中... お待ちください...</translation>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Ready</source>
+        <translation>レディ</translation>
+    </message>
+    <message>
+        <source>Converting...</source>
+        <translation>変換中...</translation>
+    </message>
+    <message>
+        <source>Invalid file size</source>
+        <translation>無効なファイルサイズ</translation>
+    </message>
+    <message>
+        <source>Unable to create the destination file</source>
+        <translation>対象ファイルを作成出来ません</translation>
+    </message>
+    <message>
+        <source>Need login...</source>
+        <translation>ログインが必要...</translation>
+    </message>
+    <message>
+        <source>Unable append data to file</source>
+        <translation>データの追記が出来ません</translation>
+    </message>
+    <message>
+        <source>Invalid URL</source>
+        <translation>無効なURL</translation>
+    </message>
+    <message>
+        <source>Failed to connect with RTMP server</source>
+        <translation>RTMP サーバへの接続に失敗しました</translation>
+    </message>
+    <message>
+        <source>File to resume not found</source>
+        <translation>リジュームするファイルが見つかりません</translation>
+    </message>
+    <message>
+        <source>Resuming...</source>
+        <translation>リジュームしています...</translation>
+    </message>
+    <message>
+        <source>flvstreamer is missing (impossible download from RTMP server)</source>
+        <translation>flvstreamer を見失いました(RTMPサーバからのダウンロード不可)</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation>完了</translation>
+    </message>
+    <message>
+        <source>Downloaded</source>
+        <translation>ダウンロード済</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>一時停止</translation>
+    </message>
+    <message>
+        <source>Converted</source>
+        <translation>変換済</translation>
+    </message>
+    <message>
+        <source>Getting info...</source>
+        <translation>情報を取得...</translation>
+    </message>
+    <message>
+        <source>Unable to create the destination dir</source>
+        <translation>対象ディレクトリの作成に失敗</translation>
+    </message>
+    <message>
+        <source>Download incomplete (due to download errors)</source>
+        <translation>ダウンロードは未完了です(ダウンロードエラー)</translation>
+    </message>
+    <message>
+        <source>Unable to open the destination file</source>
+        <translation>対象ファイルを開けません</translation>
+    </message>
+    <message>
+        <source>Failed on initialize the pthread_create</source>
+        <translation>pthread_creat の初期化に失敗</translation>
+    </message>
+    <message>
+        <source>An another download is already active</source>
+        <translation>別のダウンロードを実行中です</translation>
+    </message>
+    <message>
+        <source>Canceled</source>
+        <translation>中断</translation>
+    </message>
+    <message>
+        <source>Updating info...</source>
+        <translation>情報の更新...</translation>
+    </message>
+    <message>
+        <source>Blocked</source>
+        <translation>ブロック済</translation>
+    </message>
+    <message>
+        <source>Deleted</source>
+        <translation>削除済</translation>
+    </message>
+    <message>
+        <source>The video to resume is missing</source>
+        <translation>このビデオはリジュームできません</translation>
+    </message>
+    <message>
+        <source>Downloading...</source>
+        <translation>ダウンロード中...</translation>
+    </message>
+    <message>
+        <source>Unable to resume the FLV file</source>
+        <translation>FLV ファイルはリジュームできません</translation>
+    </message>
+    <message>
+        <source>Unable resume the download</source>
+        <translation>このダウンロードは再開できません</translation>
+    </message>
+    <message>
+        <source>Connection error: Unable to download the video</source>
+        <translation>接続エラー: このビデオはダウンロードできません</translation>
     </message>
 </context>
 <context>
-    <name>UpdateCenter</name>
+    <name>WelcomeDonate</name>
     <message>
-        <source>List with all available updates</source>
-        <translation>利用可能なすべての更新</translation>
+        <source>Close</source>
+        <translation>閉じる</translation>
     </message>
     <message>
-        <source>Close without installing updates</source>
-        <translation>アップデートのインストールを中止して閉じる</translation>
+        <source>Don&apos;t display this message again</source>
+        <translation>次回からこのメッセージを表示しない</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;&lt;b&gt;Please donate!&lt;/b&gt;&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;&lt;b&gt;寄付をお願いします!&lt;/b&gt;&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;This software is totally free of charge, but you can consider to donate if you like this tool or if you use it in a commercial environment.&lt;/p&gt;
+&lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
+&lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</source>
+        <translation>&lt;p&gt;このソフトウェアは完全に無償で利用できますが、あなたが開発に協力したい、または商用利用等をお考えの場合、寄付することでご協力ください&lt;/p&gt;
+&lt;p&gt;ありがとうこざいます! ご協力に感謝します!&lt;/p&gt;
+&lt;p&gt;寄付は何に使われるのか? あなたから頂いた寄付は xVideoServiceThief の今後の開発の継続に利用されます.&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;ご注意ください!:&lt;/b&gt; このアプリケーションは無料でダウンロードできます! 騙されないようにご注意を!&lt;/font&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Donate!</source>
+        <translation>寄付する!</translation>
+    </message>
+    <message>
+        <source>Welcome to xVideoServiceThief</source>
+        <translation>xVideoServiceThief へようこそ</translation>
+    </message>
+</context>
+<context>
+    <name>WinVistaDownloadsMsg</name>
+    <message>
+        <source>Downloads directory migration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and your current downloads directory  is protected with administration rights.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;To solve this problem, we recommend you to change your current downloads directory to a new safe and &quot;public&quot; directory (i.e.: &quot;Documents/Downloads&quot; or &quot;Documents/Videos&quot;).&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New downloads directory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads directory edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the downloads directory</source>
+        <translation type="unfinished">ダウンロード保存先を選択</translation>
+    </message>
+    <message>
+        <source>Select downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the Select directory dialog for select the downloads directory</source>
+        <translation type="unfinished">ダウンロードしたファイルの保存先を選択してください</translation>
+    </message>
+    <message>
+        <source>Other proposed directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the &quot;Videos&quot; directory as new downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select videos directory button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Windows videos directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the &quot;Downloads&quot; directory as new downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select downloads directory button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Windows downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checking this option the xVST will not advertise again about this problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t display this message again</source>
+        <translation type="unfinished">次回からこのメッセージを表示しない</translation>
+    </message>
+    <message>
+        <source>Update the downloads directory and close this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close this window without changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">中止</translation>
+    </message>
+</context>
+<context>
+    <name>WinVistaDownloadsMsgImpl</name>
+    <message>
+        <source>Select the download directory:</source>
+        <translation type="unfinished">ダウンロード保存先を選択:</translation>
+    </message>
+</context>
+<context>
+    <name>WindowsVistaDetected</name>
+    <message>
+        <source>Continue...</source>
+        <translation>続行...</translation>
+    </message>
+    <message>
+        <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
+        <translation>この問題を解決するためには xVST を管理者権限で起動してください ( xVST アイコンを右クリック - &quot;管理者権限で実行&quot; を選択) また、必要な場合はアップデートセンターから最新版をダウンロードしてください.</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
+        <translation type="obsolete">&lt;p&gt;&lt;b&gt;注意, xVST により Windows Vista が検出されたため、自動アップデートは上手く機能しないかもしれません&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Si usted tiene el &lt;b&gt;UAC&lt;/b&gt; (User Account Control) が有効になっている場合は、自動アップデートとインストールは機能しません.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translation>中止</translation>
     </message>
     <message>
-        <source>Available updates:</source>
-        <translation>利用可能なアップデート:</translation>
+        <source>Update center - Windows Vista detected</source>
+        <translation>アップデートセンター / Windows Vista を検出</translation>
     </message>
     <message>
-        <source>Install updates</source>
-        <translation>アップデートのインストール</translation>
+        <source>Don&apos;t display this message again</source>
+        <translation>次回からこのメッセージを表示しない</translation>
     </message>
     <message>
-        <source>Update center</source>
-        <translation>アップデートセンター</translation>
-    </message>
-    <message>
-        <source>Download and install button</source>
-        <translation>ダウンロードとインストール-ボタン</translation>
-    </message>
-    <message>
-        <source>Available updates list</source>
-        <translation>利用可能な更新一覧</translation>
-    </message>
-    <message>
-        <source>0 bytes (0 bytes)</source>
-        <translation>0 bytes (0 bytes)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Update state:&lt;/b&gt; Stopped</source>
-        <translation>&lt;b&gt;更新の状況:&lt;/b&gt; 停止中</translation>
-    </message>
-    <message>
-        <source>Download and install the selected updates from the list</source>
-        <translation>一覧から選択した更新をダウンロードしてインストール</translation>
-    </message>
-    <message>
-        <source>Cancel button</source>
-        <translation>中止ボタン</translation>
-    </message>
-    <message>
-        <source>Current xVST version: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>現在の xVST バージョン: &lt;b&gt;%1&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>CustomAlphaBlendImpl</name>
-    <message>
-        <source>Current: &lt;b&gt;%1%&lt;/b&gt;</source>
-        <translation>現在の値: &lt;b&gt;%1%&lt;/b&gt;</translation>
+        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

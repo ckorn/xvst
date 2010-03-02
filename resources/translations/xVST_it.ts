@@ -417,6 +417,13 @@
     </message>
 </context>
 <context>
+    <name>CompletedPopupImpl</name>
+    <message>
+        <source>Download completed</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Credits</name>
     <message>
         <source>Credits</source>
@@ -2493,6 +2500,17 @@ font-size:12px;
     </message>
 </context>
 <context>
+    <name>SearchVideosNoResultsImpl</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No results found with &quot;&lt;b&gt;%1&lt;/b&gt;&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UPSPasswordImpl</name>
     <message>
         <source>UPS! Password</source>
@@ -2900,6 +2918,100 @@ font-size:12px;
     </message>
 </context>
 <context>
+    <name>WinVistaDownloadsMsg</name>
+    <message>
+        <source>Downloads directory migration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and your current downloads directory  is protected with administration rights.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;To solve this problem, we recommend you to change your current downloads directory to a new safe and &quot;public&quot; directory (i.e.: &quot;Documents/Downloads&quot; or &quot;Documents/Videos&quot;).&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New downloads directory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads directory edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the downloads directory</source>
+        <translation type="unfinished">Seleziona la cartella dei downloads</translation>
+    </message>
+    <message>
+        <source>Select downloads directory</source>
+        <translation type="unfinished">Seleziona cartella dei downloads</translation>
+    </message>
+    <message>
+        <source>Open the Select directory dialog for select the downloads directory</source>
+        <translation type="unfinished">Apre la cartella selezionata per selezionare la cartella dei downloads</translation>
+    </message>
+    <message>
+        <source>Other proposed directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the &quot;Videos&quot; directory as new downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select videos directory button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Windows videos directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the &quot;Downloads&quot; directory as new downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select downloads directory button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Windows downloads directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checking this option the xVST will not advertise again about this problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t display this message again</source>
+        <translation type="unfinished">Non mostrare più questo messaggio</translation>
+    </message>
+    <message>
+        <source>Update the downloads directory and close this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close this window without changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annulla</translation>
+    </message>
+</context>
+<context>
+    <name>WinVistaDownloadsMsgImpl</name>
+    <message>
+        <source>Select the download directory:</source>
+        <translation type="unfinished">Seleziona la cartella di download:</translation>
+    </message>
+</context>
+<context>
     <name>WindowsVistaDetected</name>
     <message>
         <source>Update center - Windows Vista detected</source>
@@ -2907,7 +3019,7 @@ font-size:12px;
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Attenzione, xVST ha rilevato che il sistema usa Windows Vista, perciò gli aggiornamenti automatici potrebbero non funzionare.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Se hai attivato l&apos;&lt;b&gt;UAC&lt;/b&gt; (User Account Control), gli aggiornamenti automatici non verranno installati senza il permesso dell&apos;utente.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;b&gt;Attenzione, xVST ha rilevato che il sistema usa Windows Vista, perciò gli aggiornamenti automatici potrebbero non funzionare.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Se hai attivato l&apos;&lt;b&gt;UAC&lt;/b&gt; (User Account Control), gli aggiornamenti automatici non verranno installati senza il permesso dell&apos;utente.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
@@ -2924,6 +3036,10 @@ font-size:12px;
     <message>
         <source>Cancel</source>
         <translation>Annulla</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
