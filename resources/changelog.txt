@@ -6,10 +6,14 @@
 - Added one new plug-in:
 	- Szinhaz.tv
 
+- Revised English translation
+- Revised Spanish translation
+- Revised Catalan translation
+
 - Changed plug-in:
 	- Youtube (updated search functions)
 
-- Improved (reduced and trimmed) the all internal images for a better performance
+- Improved (reduced and trimmed) all internal images for a better performance and reduction of applicatin size
 
 Windows Vista/7:
 ----------------
