@@ -1,6 +1,8 @@
 2.3.5:
 ------
 
+- Compiled with Qt 4.6.2
+
 - Added the possibility to rename the video titles (NOTE: only possible when it is not being downloaded or converted)
 
 - Added one new plug-in:
@@ -13,17 +15,14 @@
 - Changed plug-in:
 	- Youtube (updated search functions)
 
-- Improved (reduced and trimmed) all internal images for a better performance and reduction of applicatin size
+- Improved (reduced and trimmed) all internal images for a better performance and reduction of application size
 
 Windows Vista/7:
 ----------------
 
 - Added detection and migration of old and read-only downloads directory to a new downloads directory
 
-- Changed the downloads default directory to: "C:/Users/{user}/Videos/xVST"
-
-- Fixed bug (Error: The default downloads directory was read-only)
-
+- Changed the default downloads directory to: "C:/Users/{user}/Videos/xVST"
 
 2.3.4:
 ------
