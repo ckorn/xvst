@@ -22,7 +22,7 @@ cd `dirname "$0"`
 # remove temporal dir function
 function remove_temporal_dir {
 	if [ -d $TMP_DIR ]; then
-		echo "Removing temporal directory: $PLUGINS_PRE"
+		echo "Removing temporal directory: $TMP_DIR"
 		rm -rv $TMP_DIR
 	fi
 }
