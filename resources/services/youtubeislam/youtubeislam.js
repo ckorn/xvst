@@ -25,12 +25,12 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
-	this.website = "http://www.youtubeislam.com/";
-	this.ID = "youtubeislam.com";
-	this.caption = "YouTube Islam";
+	this.author = "Xesc & Technology 2010";
+	this.website = "http://www.tubeislam.com/";
+	this.ID = "tubeislam.com";
+	this.caption = "TubeIslam";
 	this.adultContent = false;
 	this.musicSite = false;
 }
