@@ -170,6 +170,11 @@ macx {
     OBJECTS_DIR += build/o/mac
     TARGET = xVideoServiceThief
     QMAKE_INFO_PLIST = Info.plist
+	CONFIG(release, debug|release){
+		message(Release build! Archs: 32 and 64 bits)
+		CONFIG += x86 x86_64
+	}
+	CONFIG(debug, debug|release):message(Debug build! Archs: Current architecture only) #no print
 }
 win32 { 
     RC_FILE += resources/xVST.rc
