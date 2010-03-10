@@ -1,3 +1,9 @@
+2.3.6:
+------
+
+- Changed plug-in:
+	- YouTubeIslam (renamed to TubeIslam)
+
 2.3.5:
 ------
 
