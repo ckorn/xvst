@@ -51,6 +51,7 @@ class SessionManager : public QObject
 Q_OBJECT
 	private:
 		ProgramOptions *programOptions;	//!< program options
+		bool loading;	//!< Flag for know if we are already loading
 	public:
 		/*! Class constructor */
 		SessionManager(ProgramOptions *programOptions);

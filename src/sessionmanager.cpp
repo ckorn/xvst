@@ -32,10 +32,14 @@
 SessionManager::SessionManager(ProgramOptions *programOptions)
 {
 	this->programOptions = programOptions;
+	// init others
+	loading = false;
 }
 
 void SessionManager::saveSession(VideoListController *videoListController)
 {
+	if (loading) return;
+
 	QString sessionFile = programOptions->getOptionsPath() + SESSION_FILE;
 
 	if (videoListController == NULL || !programOptions->getSaveRestoreSessions()) return;
@@ -84,6 +88,8 @@ void SessionManager::saveSession(VideoListController *videoListController)
 
 void SessionManager::loadSession(VideoListController *videoListController)
 {
+	loading = true;
+
 	QString sessionFile = programOptions->getOptionsPath() + SESSION_FILE;
 
 	if (videoListController == NULL ||
@@ -112,10 +118,14 @@ void SessionManager::loadSession(VideoListController *videoListController)
 			&& !QFile::exists(videoItem->getVideoFile())) continue;
 		videoListController->addVideo(videoItem);
 	}
+	// unlock
+	loading = false;
 }
 
 void SessionManager::addToLog(VideoItem *videoItem)
 {
+	if (loading) return;
+
 	if (videoItem == NULL || !programOptions->getSaveLogDownloadedVideos()) return;
 
 	QSettings settings(programOptions->getOptionsPath() + LOG_FILE, programOptions->getOptionsFormat());
