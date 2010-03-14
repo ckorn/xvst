@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>LoadingImpl</class>
- <widget class="QWidget" name="LoadingImpl">
+ <class>Loading</class>
+ <widget class="QWidget" name="Loading">
   <property name="geometry">
    <rect>
     <x>0</x>
