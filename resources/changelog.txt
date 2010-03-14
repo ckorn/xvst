@@ -1,8 +1,26 @@
-2.3.6:
-------
+2.4:
+----
+
+- The Http core has been fully rewritten from scratch, the result is a better performance and stability:
+	- The latest Qt4 tecnologies are used
+	- Added gzip support
+	- Added more explicative errors
+	- Imporved the time-out control
+	- Improved the proxy support
+	- Improved cookies support
+	- Reduced CPU usage
+
+- Improved the automatic updates
+- Improved the image previewer (search videos)
+
+- Added the winPenPack in credits window
 
 - Changed plug-in:
+	- YouTube
 	- YouTubeIslam (renamed to TubeIslam)
+
+- Fixed bug (Error: The session was not restored correctly)
+- Fixed bug (Error: The converted file names where truncated if a "." was present)
 
 2.3.5:
 ------
