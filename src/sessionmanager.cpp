@@ -88,12 +88,12 @@ void SessionManager::saveSession(VideoListController *videoListController)
 
 void SessionManager::loadSession(VideoListController *videoListController)
 {
-	loading = true;
-
 	QString sessionFile = programOptions->getOptionsPath() + SESSION_FILE;
 
 	if (videoListController == NULL ||
 	    !programOptions->getSaveRestoreSessions() || !QFile::exists(sessionFile)) return;
+
+	loading = true;
 
 	QSettings settings(sessionFile, programOptions->getOptionsFormat());
 
