@@ -11,11 +11,13 @@
 	- Reduced the CPU usage
 
 - Added the "What's new" functionality
+- Added the winPenPack in credits window
+- Added video items multiselection manipulation
 
 - Improved the automatic updates
 - Improved the image previewer (search videos)
 
-- Added the winPenPack in credits window
+- Changed "Move UP" and "Move DOWN" shortcut to "Alt + up" and "Alt + down"
 
 - Changed plug-in:
 	- YouTube
