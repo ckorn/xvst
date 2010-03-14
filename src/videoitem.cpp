@@ -469,6 +469,18 @@ QString VideoItem::getErrorMessage()
 		case 26: return tr("Unable resume the download");
 		//27 UNABLE_APPEND_FILE
 		case 27: return tr("Unable append data to file");
+		//28 TOO_MUCH_REDIRECTIONS
+		case 28: return tr("The maximum allowed http redirections has been reached");
+		//29 INTERNAL_NETWEORK_TIME_OUT
+		case 29: return tr("The connection to the remote server timed out");
+		//30 CONNECTION_REFUSED
+		case 30: return tr("The remote server refused the connection (the server is not accepting requests)");
+		//31 HOST_NOT_FOUND
+		case 31: return tr("The remote host name was not found (invalid hostname)");
+		// 32 CONTENT_ACCESS_DENIED
+		case 32: return tr("The access to the remote content was denied");
+		// 33 CONTENT_NOT_FOUND
+		case 33: return tr("The remote content was not found at the server ");
 		// FLVSTREAMER_MISSING
 		case 100: return tr("flvstreamer is missing (impossible download from RTMP server)");
 		// 101 FAILED_TO_OPEN_FILE
