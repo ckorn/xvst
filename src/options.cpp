@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2008 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -82,7 +82,7 @@ ProgramOptions* ProgramOptions::instance()
 			session.copy(programFiles + "/session.conf");
 		}
 		// load options
-		programOptionsInstance = new ProgramOptions(programFiles);//qApp->applicationDirPath());
+		programOptionsInstance = new ProgramOptions(programFiles);
 #endif
 	}
 	// return program instance
@@ -180,6 +180,8 @@ void ProgramOptions::load()
 
 	scheduleEnabled = settings.value("configuration/scheduleEnabled", scheduleEnabled).toBool();
 
+	latestVersionExecuted = settings.value("configuration/latestVersionExecuted", latestVersionExecuted).toString();
+
 	emit optionsLoadAfter();
 }
 
@@ -257,6 +259,8 @@ void ProgramOptions::save()
 	settings.setValue("displayDownloadsMigrator", displayDownloadsMigrator);
 
 	settings.setValue("scheduleEnabled", scheduleEnabled);
+
+	settings.setValue("latestVersionExecuted", latestVersionExecuted);
 
 	settings.endGroup();
 
@@ -859,4 +863,14 @@ void ProgramOptions::setBlockAdultContentPassword(QString value)
 QString ProgramOptions::getBlockAdultContentPassword()
 {
 	return blockAdultContentPassword;
+}
+
+void ProgramOptions::setLatestVersionExecuted(QString value)
+{
+	latestVersionExecuted = value;
+}
+
+QString ProgramOptions::getLatestVersionExecuted()
+{
+	return latestVersionExecuted;
 }

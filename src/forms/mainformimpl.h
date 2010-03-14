@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief, 
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2008 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -86,6 +86,8 @@ Q_OBJECT
 		void displayWelcomeMessage();
 		// windows vista downloads directory migration
 		void displayWinVistaDownloads();
+		// what's new message
+		void displayWhatsNewMessage();
 		// drop functions
 		void dragEnterEvent(QDragEnterEvent *event);
 		void dropEvent(QDropEvent *event);

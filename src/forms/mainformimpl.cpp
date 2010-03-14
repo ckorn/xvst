@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief, 
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2008 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -37,6 +37,7 @@
 #include "searchvideosimpl.h"
 #include "winvistadownloadsmsgimpl.h"
 #include "customdownloadtitleimpl.h"
+#include "whatsnewimpl.h"
 
 #include "../tools.h"
 #include "../options.h"
@@ -52,7 +53,7 @@
 #include <QtSingleApplication>
 
 MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
-		: QMainWindow(parent, f)
+	: QMainWindow(parent, f)
 {
 	setupUi(this);
 	// set caption
@@ -258,6 +259,8 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	imgPaypal->setText("<a href=\"http://xviservicethief.sourceforge.net/index.php?action=make_donation\"><img src=\":/buttons/images/support_button_main.png\" /></a>");
 	// display welcome donate
 	displayWelcomeMessage();
+	// display whats new window
+	displayWhatsNewMessage();
 	// display windows downloads directory migrator
 	displayWinVistaDownloads();
 	// updater timer
@@ -1101,6 +1104,21 @@ void MainFormImpl::displayWinVistaDownloads()
 		programOptions->setDisplayDownloadsMigrator(!downloadsMsg.getDisplayAgain());
 	}
 #endif
+}
+
+void MainFormImpl::displayWhatsNewMessage()
+{
+	// display the whats new window only if curr. version and latest are different
+	if (programOptions->getLatestVersionExecuted() != PROGRAM_VERSION_SHORT)
+	{
+		// close the loading window
+		LoadingImpl::instance()->closeLoading();
+		// display whats new window
+		WhatsNewImpl whatsNew(this);
+		whatsNew.exec();
+	}
+	// update the latest version with current version
+	programOptions->setLatestVersionExecuted(PROGRAM_VERSION_SHORT);
 }
 
 // stay on top control

@@ -6,6 +6,7 @@ QT = core \
     gui \
     network \
     script
+!macx: QT += webkit
 DEFINES += xVST_DEBUG_PLUGINS_OFF
 TEMPLATE = app
 DESTDIR = bin
@@ -23,7 +24,7 @@ FORMS = ui/addvideo.ui \
     ui/dragdrop.ui \
     ui/information.ui \
     ui/infoview.ui \
-    ui/loadingimpl.ui \
+    ui/loading.ui \
     ui/mainform.ui \
     ui/newlanguages.ui \
     ui/options.ui \
@@ -37,8 +38,9 @@ FORMS = ui/addvideo.ui \
     ui/searchvideoscustomize.ui \
     ui/customdownloadtitle.ui \
     ui/changelog.ui \
-    ui/searchvideosnoresultsimpl.ui \
-    ui/winvistadownloadsmsg.ui
+    ui/searchvideosnoresults.ui \
+    ui/winvistadownloadsmsg.ui \
+    ui/whatsnew.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/searchvideositemimpl.h \
     src/forms/bugreportimpl.h \
@@ -66,6 +68,7 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/changelogimpl.h \
     src/forms/searchvideosnoresultsimpl.h \
     src/forms/winvistadownloadsmsgimpl.h \
+    src/forms/whatsnewimpl.h \
     src/pakunpak/pakunpak.h \
     src/searchvideosscriptclass.h \
     src/checkupdatesworker.h \
@@ -118,6 +121,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/changelogimpl.cpp \
     src/forms/searchvideosnoresultsimpl.cpp \
     src/forms/winvistadownloadsmsgimpl.cpp \
+    src/forms/whatsnewimpl.cpp \
     src/searchvideosscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/http.cpp \
@@ -162,23 +166,26 @@ TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc
 unix { 
-    OBJECTS_DIR += build/o/unix
+    OBJECTS_DIR = build/o/unix
     TARGET = xvst
 }
 macx { 
     ICON += resources/icons/MacOSX.icns
-    OBJECTS_DIR += build/o/mac
+    OBJECTS_DIR = build/o/mac
     TARGET = xVideoServiceThief
     QMAKE_INFO_PLIST = Info.plist
-	CONFIG(release, debug|release){
-		message(Release build! Archs: 32 and 64 bits)
-		CONFIG += x86 x86_64
-	}
-	CONFIG(debug, debug|release):message(Debug build! Archs: Current architecture only) #no print
+    LIBS += -framework Cocoa -framework WebKit
+    OBJECTIVE_SOURCES += src/webkit_mac/WebKitClass.mm
+    HEADERS += src/webkit_mac/WebKitClass.h
+    CONFIG(release, debug|release) { 
+        message(Release build! Archs: 32 and 64 bits)
+        CONFIG += x86 x86_64
+    }
+    CONFIG(debug, debug|release):message(Debug build! Archs: Current architecture only)
 }
 win32 { 
     RC_FILE += resources/xVST.rc
-    OBJECTS_DIR += build/o/win32
+    OBJECTS_DIR = build/o/win32
 }
 frameworks_build { 
     DEFINES += FRAMEWORKS_BUILD
@@ -186,9 +193,7 @@ frameworks_build {
 }
 static_build { 
     DEFINES += STATIC_BUILD
-    QTPLUGIN += qico \
-        qgif \
-        qjpeg
+    QTPLUGIN += qico qgif qjpeg
     message(static_build)
 }
 include(src/qtsingleapplication/src/qtsingleapplication.pri)

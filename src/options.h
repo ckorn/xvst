@@ -90,6 +90,7 @@ Q_OBJECT
 		bool displayWelcomeMessage;		//!< Flag for know if can display the welcome message
 		bool displayDownloadsMigrator;	//!< Flag for know if can display/check the windows vista/7 downloads migrator message
 		bool scheduleEnabled;			//!< Flag for know if the shcedule option is enabled
+		QString latestVersionExecuted;	//!< Stores the latest xVST version executed
 
 		QDir appDir;		//!< Initial program path
 		QString appExecutable;	//!< Executable program path
@@ -219,6 +220,8 @@ Q_OBJECT
 		bool getScheduleEnabled();
 		void setBlockAdultContentPassword(QString value);
 		QString getBlockAdultContentPassword();
+		void setLatestVersionExecuted(QString value);
+		QString getLatestVersionExecuted();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();
