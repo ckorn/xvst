@@ -28,9 +28,9 @@
 
 #include <QtGui>
 
-#include "ui_loadingimpl.h"
+#include "ui_loading.h"
 
-class LoadingImpl : public QWidget, private Ui::LoadingImpl
+class LoadingImpl : public QWidget, private Ui::Loading
 {
     Q_OBJECT
     Q_DISABLE_COPY(LoadingImpl)

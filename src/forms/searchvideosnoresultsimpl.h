@@ -26,9 +26,9 @@
 #ifndef SEARCHVIDEOSNORESULTSIMPL_H
 #define SEARCHVIDEOSNORESULTSIMPL_H
 
-#include "ui_searchvideosnoresultsimpl.h"
+#include "ui_searchvideosnoresults.h"
 
-class SearchVideosNoResultsImpl : public QWidget, private Ui::SearchVideosNoResultsImpl
+class SearchVideosNoResultsImpl : public QWidget, private Ui::SearchVideosNoResults
 {
 Q_OBJECT
 	public:
