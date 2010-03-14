@@ -1,6 +1,6 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
 * Copyright (C) 2007 - 2008 Xesc & Technology
@@ -68,140 +68,31 @@ void ArrayAvg::reset()
 	arrayAvg.clear();
 }
 
-// Cookie class
+// Cookies class
 
-Cookie::Cookie(QString cookieInf)
+void Cookies::addCookie(QString cookieInf)
 {
-	this->cookieInf = cookieInf;
-	// parese the cookie info
-	cookieInf += ";";
-	// the first token is the cookie boddy
-	cookieBoddy = getToken(cookieInf, ";", 0);
-	// get the expiration date
-	expires = copyBetween(cookieInf, "expires=", ";");
-	// get the domain
-	domain = copyBetween(cookieInf, "domain=", ";");
-	// get the path
-	path = copyBetween(cookieInf, "path=", ";");
+	// add those new cookies (cookie) into our current cookies list
+	QList<QNetworkCookie> storedCookies = allCookies();
+	storedCookies.append(QNetworkCookie::parseCookies(cookieInf.toAscii()));
+	setAllCookies(storedCookies);
 }
 
-Cookie::Cookie(const Cookie &other): QObject()
+void Cookies::addCookies(QString cookies, const QString separator)
 {
-	// copy internal cookie data from other cookie
-	cookieInf = other.cookieInf;
-	cookieBoddy = other.cookieBoddy;
-	expires = other.expires;
-	domain = other.domain;
-	path = other.path;
+	// split cookies
+	QStringList cookiesList = cookies.split(separator);
+	// add all cookies
+	foreach (QString cookie, cookiesList)
+		addCookie(cookie);
 }
 
-QString Cookie::getCookieInf()
+QString Cookies::getCookies(const QString separator)
 {
-	return cookieInf;
-}
-
-QString Cookie::getCookieBoddy()
-{
-	return cookieBoddy;
-}
-
-QString Cookie::getExpires()
-{
-	return expires;
-}
-
-QString Cookie::getDomain()
-{
-	return domain;
-}
-
-QString Cookie::getPath()
-{
-	return path;
-}
-
-// Cookie controller class
-
-CookieController::CookieController()
-{
-	cookies = new QList<Cookie*>;
-}
-
-CookieController::CookieController(const CookieController &other): QObject()
-{
-	cookies = new QList<Cookie*>;
-	// copy all cookies from another cookie controller
-	copyCookies(other);
-}
-
-CookieController::~CookieController()
-{
-	clear();
-	delete cookies;
-}
-
-void CookieController::addCookie(QString cookie)
-{
-	cookies->append(new Cookie(cookie));
-}
-
-void CookieController::copyCookies(const CookieController &other)
-{
-	for (int n = 0; n < cookies->count(); n++)
-	{
-		Cookie *cookie = other.cookies->at(n);
-		cookies->append(new Cookie(*cookie));
-	}
-}
-
-void CookieController::clear()
-{
-	while (!cookies->isEmpty())
-		delete cookies->takeFirst();
-}
-
-QString CookieController::getCookies(QUrl URL)
-{
-	QString result = "";
-
-	// get cookies
-	for (int n = 0; n < cookies->count(); n++)
-	{
-		Cookie *cookie = cookies->at(n);
-		QString host = URL.host();
-		if (host.indexOf("www.") == 0) 
-			host = host.remove(0, 3);
-		else
-			if (host.at(host.length() - 1) != '.')
-				host = "." + host;
-
-		// is a valid cookie?
-		if (host.indexOf(cookie->getDomain()) != -1)
-		{
-			if (cookie->getPath() != "/")
-			{
-				if (cookie->getPath() == URL.path())
-					result += cookie->getCookieBoddy() + ";";
-			}
-			else
-				result += cookie->getCookieBoddy() + ";";
-		}
-	}
-	// return cookies assigned to this URL
-	return result;
-}
-
-QString CookieController::getCookies(bool complete, const QString separator)
-{
-	QString result = "";
+	QString result = QString();
 	// get all stored cookies
-	for (int n = 0; n < cookies->count(); n++)
-	{
-		if (complete) // add the original cookie
-			result += cookies->at(n)->getCookieInf() + separator;
-		else // only cookie boddy
-			result += cookies->at(n)->getCookieBoddy() + separator;
-	}
+	foreach (QNetworkCookie cookie, allCookies())
+		result += QString(cookie.toRawForm()) + separator;
 	// remove last separator
 	if (!result.isEmpty())
 		result = result.remove(result.length() - 1, 1);
@@ -209,185 +100,266 @@ QString CookieController::getCookies(bool complete, const QString separator)
 	return result;
 }
 
+void Cookies::clearCookies()
+{
+	setAllCookies(QList<QNetworkCookie>());
+}
+
 // Http class
 
-Http::Http(bool useInternalTimer)
+Http::Http()
 {
-	initClass(useInternalTimer);
+	initClass();
 }
 
 Http::Http(const Http &other): QObject()
 {
 	initClass();
-	// init internal timer
-	useInternalTimer = other.useInternalTimer;
-	// default max retries
-	maxRetries = other.maxRetries;
-	timeOut = other.timeOut;
-	// copy destination file
-	if (other.file != NULL)
-	{
-		if (file != NULL) delete file;
-		file = new QFile(other.file->fileName());
-	}
-	// cancel or pause on finish?
-	pauseOnDestroyF = other.pauseOnDestroyF;
-	// copy stored cookies
-	cookies->copyCookies(*other.cookies);
-	// copy custom header parameters
-	delete customHeaders;
-	customHeaders = new QStringList(*other.customHeaders);
+	// copy internal data from "other"
+	copyHttpObject(other);
+}
+
+Http &Http::operator=(const Http &other)
+{
+	// copy internal data from "other"
+	copyHttpObject(other);
+	// return my self updated
+	return *this;
 }
 
 Http::~Http()
 {
 	if (pauseOnDestroyF) pause(); else cancel();
-
+	clearCurrentReply();
+	closeOutputFile();
+	stopActiveTimeOutTimer();
+	stopTimeLeftTimer();
 	delete customHeaders;
 	delete timeRemainingAvg;
 	delete downloadSpeedAvg;
-	delete cookies;
 	delete http;
 }
 
-Http &Http::operator=(const Http &other)
-{
-	// init internal timer
-	useInternalTimer = other.useInternalTimer;
-	// default max retries
-	maxRetries = other.maxRetries;
-	timeOut = other.timeOut;
-	// copy destination file
-	if (other.file != NULL)
-	{
-		if (file != NULL) delete file;
-		file = new QFile(other.file->fileName());
-	}
-	// cancel or pause on finish?
-	pauseOnDestroyF = other.pauseOnDestroyF;
-	// copy stored cookies
-	cookies->copyCookies(*other.cookies);
-	// copy custom header parameters
-	delete customHeaders;
-	customHeaders = new QStringList(*other.customHeaders);
-	// return my self updated
-	return *this;
-}
-
-void Http::initClass(bool useInternalTimer)
+void Http::initClass()
 {
 	setObjectName("Http");
 	// http protocol
-	http = new QHttp(this);
-	// cookies controller
-	cookies = new CookieController;
+	http = new QNetworkAccessManager();
+	http->setCookieJar(new Cookies());
+	currentReply = NULL;
+	outputFile = NULL;
 	// download speed avg calculator
 	downloadSpeedAvg = new ArrayAvg(100);
 	timeRemainingAvg = new ArrayAvg(100);
-	// use the percentage for time remaining
-	usePercentageForTimeRemaining = true;
-	// init internal timer
-	internalTimer = 0;
-	this->useInternalTimer = useInternalTimer;
-	// default max retries
-	maxRetries = 3;//5;
-	initRetriesData();
-	setTimeOut(10);	// 10 seconds
-	maxAutoJumps = 5;
-	skipExistentFiles = false;
-	// destination file
-	file = NULL;
-	// cancel or pause on finish?
-	pauseOnDestroy(false);
 	// init custom header parameters
-	customHeaders = new QStringList;
-	// init data
-	initData();
+	customHeaders = new QStringList();
+	// default configuration
+	setUserAgent(QString());
+	setAutoJumps(true);
+	setMaxAutoJumps(5);
+	setMaxRetries(3);
+	setTimeOutOption(true);
+	setTimeOut(30);
+	setSkipExistentFiles(false);
+	setPauseOnDestroy(false);
+	setUsePercentageForTimeRemaining(true);
+	setCookiesEnabled(true);
+	// init others
+	timeOutTimerId = -1;
+	timeLeftTimerId = -1;
 	// connect signals
-	connect(http, SIGNAL(dataReadProgress(int, int)), this, SLOT(dataReadProgress(int, int)));
-	connect(http, SIGNAL(requestFinished(int, bool)), this, SLOT(requestFinished(int, bool)));
-	connect(http, SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)), this,
-			SLOT(responseHeaderReceived(const QHttpResponseHeader &)));
-	connect(http, SIGNAL(stateChanged(int)), this, SLOT(stateChanged(int)));
-	connect(&tmrTimeOut, SIGNAL(timeout()), this, SLOT(timeOutCheckout()));
+	connect(http, SIGNAL(finished(QNetworkReply*)), this, SLOT(finished(QNetworkReply*)));
 }
 
 void Http::initData()
 {
-	stopReason = EnumHTTP::NO_STOPPED;
-
-	timeRemaining = 0;
-	downloadSpeed = 0;
-
-	totalDownload = 0;
-	currDownload = 0;
-	prevDownload = 0;
-
-	realStartSize = 0;
-	realTotalSize = 0;
-
-	fileSize = 0;
-	notLength = false;
-
-	oriURL.clear();
-
-	autoJumps = 0;
-	autoJump = true;
-	resuming = false;
-	autoRestartOnFail = false;
-	restartDownload = false;
-
 	httpMethod = EnumHTTP::httpGet;
+	stopReason = EnumHTTP::NO_STOPPED;
+	resuming = false;
 	syncFlag = false;
-	data = "";
-	parameters = "";
-
-	startedDownload = false;
-
-	timeOutIntervalCehck = 0;
-}
-
-void Http::initRetriesData()
-{
+	downloadStartedFlag = false;
+	oriURL.clear();
+	autoJumps = 0;
 	retriesCount = 0;
+	clearCurrentReply();
+	stopActiveTimeOutTimer();
+	data = QString();
+	totalToDownloadSize = 0;
+	totalDownloadedSize = 0;
+	prevTotalDownloadedSize = 0;
+	initialDownloadSize = 0;
+	currentPercentage = 0.0;
+	lastPercentage = 0.0;
+	downloadSpeed = 0;
+	timeLeft = 0;
 }
 
-void Http::initTimer()
+void Http::copyHttpObject(const Http &other)
 {
-	if (useInternalTimer)
+	// copy configuration
+	setUserAgent(other.userAgent);
+	setAutoJumps(other.autoJumps);
+	setMaxAutoJumps(other.maxAutoJumps);
+	setMaxRetries(other.maxRetries);
+	setTimeOutOption(other.timeOut);
+	setTimeOut(other.timeOutSeconds/1000);
+	setSkipExistentFiles(other.skipExistentFiles);
+	setPauseOnDestroy(other.pauseOnDestroyF);
+	setUsePercentageForTimeRemaining(other.usePercentageForTimeLeft);
+	setCookiesEnabled(other.cookiesEnabled);
+	// copy destination file
+	if (other.outputFile)
 	{
-		// start internal timer
-		if (internalTimer != 0) 
-			this->killTimer(internalTimer);
+		closeOutputFile();
+		outputFile = new QFile(other.outputFile->fileName());
+	}
+	// copy stored cookies
+	clearCookies();
+	addCookies(static_cast<Cookies*>(other.http->cookieJar())->getCookies());
+	// copy custom header parameters
+	delete customHeaders;
+	customHeaders = new QStringList(*other.customHeaders);
+}
 
-		internalTimer = this->startTimer(1000);
+void Http::clearCurrentReply()
+{
+	if (currentReply)
+	{
+		// disconnect local signals
+		disconnect(currentReply, SLOT(readyRead()));
+		disconnect(currentReply, SLOT(downloadProgress(qint64, qint64)));
+		disconnect(currentReply, SLOT(metaDataChanged()));
+		// destroy the current reply
+		currentReply->deleteLater();
+		currentReply = NULL;
 	}
 }
 
-void Http::deinitTimer()
+void Http::startTimeOutTimer()
 {
-	if (useInternalTimer && internalTimer != 0)
+	// stop any active time out
+	stopActiveTimeOutTimer();
+	// start the time out timer
+	timeOutTimerId = this->startTimer(timeOutSeconds);
+}
+
+void Http::stopActiveTimeOutTimer()
+{
+	// kill the active timer
+	if (timeOutTimerId != -1) this->killTimer(timeOutTimerId);
+	// reset the timer id
+	timeOutTimerId = -1;
+}
+
+void Http::startTimeLeftTimer()
+{
+	// stop the possible active timer
+	stopTimeLeftTimer();
+	// start the time left timer
+	timeLeftTimerId = this->startTimer(1000);
+}
+
+void Http::stopTimeLeftTimer()
+{
+	// kill the active timer
+	if (timeLeftTimerId != -1) this->killTimer(timeLeftTimerId);
+	// reset the timer id
+	timeLeftTimerId = -1;
+}
+
+void Http::timerEvent(QTimerEvent *event)
+{
+	// time out timer
+	if (event->timerId() == timeOutTimerId)
 	{
-		// terminate internal timer
-		this->killTimer(internalTimer);
-		internalTimer = 0;
+		if (timeOut) abortRequest(EnumHTTP::TIME_OUT);
+		// stop this timer
+		this->killTimer(timeOutTimerId);
+		// reset timer id
+		timeOutTimerId = -1;
+	}
+	// time left timer
+	else if (event->timerId() == timeLeftTimerId)
+	{
+		// calcule download speed
+		downloadSpeed = static_cast<int>(downloadSpeedAvg->add(totalDownloadedSize - prevTotalDownloadedSize));
+		prevTotalDownloadedSize = totalDownloadedSize;
+
+		// calcule the time left using the percentage (more accurate)
+		if (usePercentageForTimeLeft)
+		{
+			float timeRemAvg = timeRemainingAvg->add(currentPercentage - lastPercentage);
+			// if the time left avarage is not 0 then
+			if (timeRemAvg != 0)
+			{
+				float timeRem = (100.0 - currentPercentage) / timeRemAvg;
+				timeLeft = static_cast<int>(timeRem);
+				lastPercentage = currentPercentage;
+			}
+		}
+		// calcule the time remaining using the dowload speed
+		else if (downloadSpeed != 0)
+		{
+			float downSpeedAvg = downloadSpeedAvg->avg();
+			// if the time left avarage is not 0 then
+			if (downSpeedAvg != 0)
+			{
+				float timeRem = timeRemainingAvg->add(totalToDownloadSize - totalToDownloadSize) / downSpeedAvg;
+				timeLeft = static_cast<int>(timeRem);
+			}
+		}
 	}
 }
 
-bool Http::isObjectMoved(int statusCode)
+void Http::abortRequest(EnumHTTP::StopReason stopReason)
 {
-	return statusCode == 301 || statusCode == 302 ||
-	       statusCode == 303 || statusCode == 307;
+	this->stopReason = stopReason;
+	// abort the current network reply
+	if (currentReply) currentReply->abort();
+}
+
+void Http::closeOutputFile()
+{
+	if (outputFile)
+	{
+		if (outputFile->isOpen()) outputFile->close();
+		delete outputFile;
+		outputFile = NULL;
+	}
+}
+
+void Http::deleteOutputFile()
+{
+	if (outputFile && outputFile->exists()) outputFile->remove();
+}
+
+void Http::sendDownloadError(int error)
+{
+	// delete the downloaded file
+	deleteOutputFile();
+	// emit the download error signal
+	emit downloadError(error);
+}
+
+void Http::timeOutDownloadError()
+{
+	// TODO - Implementar el codi de "reset" (fa falta??)
+	sendDownloadError(EnumHTTP::INTERNAL_NETWEORK_TIME_OUT);
 }
 
 void Http::jumpToURL(QUrl url)
-{	
+{
+	// start a new time out timer
+	if (timeOut) startTimeOutTimer();
+
+	// start the init time left timer
+	startTimeLeftTimer();
+
 	// check if we supperated the autojumps control
-	if (autoJumps > maxAutoJumps && autoJump)
+	if (autoJump && autoJumps > maxAutoJumps)
 	{
-		stopReason = EnumHTTP::MAX_AUTO_JUMPS_REACHED;
-		http->abort();
-		// abort process
+		abortRequest(EnumHTTP::MAX_AUTO_JUMPS_REACHED);
+		// quit process
 		return;
 	}
 
@@ -400,96 +372,64 @@ void Http::jumpToURL(QUrl url)
 		url = QUrl("http://" + oriURL.host() + tmpUrl);
 	}
 
-	// http mode
-	QHttp::ConnectionMode mode = url.scheme().toLower() == "https" ? QHttp::ConnectionModeHttps : QHttp::ConnectionModeHttp;
-	
-	// set http host
-	http->setHost(url.host(), mode, url.port() == -1 ? 0 : url.port());
-	
-	// set http user and password (only if is requiered)
-	if (!url.userName().isEmpty())
-		http->setUser(url.userName(), url.password());
+	// clear any previous reply
+	clearCurrentReply();
 
-	// set the header method: GET, POST or HEAD
-	QString headerMethod;
-	switch (httpMethod)
-	{
-		case EnumHTTP::httpGet:
-			headerMethod = "GET";
-			break;
-		case EnumHTTP::httpPost:
-			headerMethod = "POST";
-			break;
-		case EnumHTTP::httpHead:
-			headerMethod = "HEAD";
-			break;
-	}
+	// if cookies are disabled, then remove all previous cookies
+	if (!cookiesEnabled) clearCookies();
 
-	// build the request header
-	QHttpRequestHeader header(headerMethod, getPathAndQuery(url));
-
-	// set the host
-	header.setValue("Host", url.host());
+	// create the new http request
+	QNetworkRequest request(url);
 
 	// set user agent
 	if (!userAgent.isEmpty())
-		header.addValue("User-Agent", userAgent);
+		request.setRawHeader("User-Agent", userAgent.toAscii());
 	else if (!HTTP_GLOBAL_USER_AGENT.isEmpty()) // set the global user agent
-		header.addValue("User-Agent", HTTP_GLOBAL_USER_AGENT);
-
-	// prepare parameters (they will only used for "POST" method)
-	QByteArray paramsStr;
-
-	// if is a "POST" method then, add some extra info
-	if (httpMethod == EnumHTTP::httpPost)
-	{
-		// add the parametes
-		paramsStr.append(parameters);
-
-		// set the content type and length
-		header.setValue("Content-Type", "application/x-www-form-urlencoded"); // ** important **
-		header.setValue("Content-Length", QString("%1").arg(paramsStr.length()));
-	}
+		request.setRawHeader("User-Agent", HTTP_GLOBAL_USER_AGENT.toAscii());
 
 	// set connection: "keep alive"
-	header.setValue("Connection", "Keep-Alive");
+	request.setRawHeader("Connection", "Keep-Alive");
 
 	// set Accept-Ranges: "bytes" (to indicate its acceptance of range requests for a resource)
-	header.setValue("Accept-Ranges", "bytes");
+	request.setRawHeader("Accept-Ranges", "bytes");
 
-	// add cookies
-	QString cookiesToAdd = cookies->getCookies(url);
-	if (!cookiesToAdd.isEmpty())
-	{
-		header.setValue("Cookie", cookiesToAdd);
-		header.setValue("Cookie2", "$Version=1");
-	}
-
-	// if we are resuming a download...
-	if (resuming && file != NULL)
-		header.setValue("Range", QString("bytes=%1-").arg(file->size()));
-
-	// add custom header parameters
+	// add user custom header parameters
 	for (int n = 0; n < customHeaders->count(); n++)
 	{
 		QString key = getToken(customHeaders->at(n), "|", 0);
 		QString value = getToken(customHeaders->at(n), "|", 1);
-		// add it
-		header.setValue(key, value);
+		// add this new custom header
+		request.setRawHeader(key.toAscii(), value.toAscii());
 	}
 
-	// stop timer (no time out)
-	tmrTimeOut.stop();
+	// if we are resuming a download...
+	if (resuming && outputFile)
+	{
+		QString range = QString("bytes=%1-").arg(outputFile->size());
+		request.setRawHeader("Range", range.toAscii());
+	}
 
-	// send the request header
-	if (httpMethod == EnumHTTP::httpPost)
-		httpGetId = http->request(header, paramsStr, file);
-	else // get
-		httpGetId = http->request(header, NULL, file);
+	// execute the http request
+	switch (httpMethod)
+	{
+		case EnumHTTP::httpGet:
+			currentReply = http->get(request);
+			break;
+		case EnumHTTP::httpPost:
+			currentReply = http->post(request, parameters.toAscii());
+			break;
+		case EnumHTTP::httpHead:
+			currentReply = http->head(request);
+			break;
+		case EnumHTTP::httpDeleteResource:
+			currentReply = http->deleteResource(request);
+			break;
+	}
 
-	// time out controller
-	// prepare the timer for possible timeout
-	tmrTimeOut.start(timeOut);
+	// connect local signals from QNetworkReply
+	connect(currentReply, SIGNAL(readyRead()), this, SLOT(readyRead()));
+	connect(currentReply, SIGNAL(downloadProgress(qint64, qint64)), this, SLOT(downloadProgress(qint64, qint64)));
+	connect(currentReply, SIGNAL(metaDataChanged()), this, SLOT(metaDataChanged()));
 
 	// post method off
 	if (httpMethod == EnumHTTP::httpPost) httpMethod = EnumHTTP::httpGet;
@@ -505,16 +445,16 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 
 #ifdef Q_WS_WIN
 	// fix Qt4.4.0 bug in windows
-	if (destination.indexOf(":/") == -1) 
+	if (destination.indexOf(":/") == -1)
 		destination.replace(":", ":/");
 #endif
 
 	// check if is already downloading another file
-	if (isDownloading()) 
+	if (isDownloading())
 		return EnumHTTP::ALREADY_DOWNLOADING;
 
 	// check if is a valid URL
-	if (!validURL(URL.toString())) 
+	if (!validURL(URL.toString()))
 		return EnumHTTP::INVALID_URL;
 
 	// create the destination path, if it don't exists
@@ -532,17 +472,16 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 	fileName = cleanFileName(fileName);
 
 	// get an unique file name for this download
-	if (autoName) 
+	if (autoName)
 		fileName = uniqueFileName(destination + "/" + fileName);
 	else
 		fileName = destination + "/" + fileName;
 
 	// create file
-	file = new QFile(fileName);
-	if (!file->open(QIODevice::WriteOnly))
+	outputFile = new QFile(fileName);
+	if (!outputFile->open(QIODevice::WriteOnly))
 	{
-		delete file;
-		file = NULL;
+		closeOutputFile();
 		return EnumHTTP::UNABLE_CREATE_FILE;
 	}
 
@@ -553,45 +492,38 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 	if (QFile::exists(fileName) && skipExistentFiles)
 	{
 		emit downloadFinished(destFile);
-		return QHttp::NoError;
+		return QNetworkReply::NoError;
 	}
 
 	// init http variables
 	initData();
-	oriURL = URL;
-
-	// start internal timer
-	initTimer();
-
-	// +1 to retries count
-	retriesCount++;
 
 	// start the download process
+	oriURL = URL;
 	jumpToURL(URL);
 
 	// ok
-	return QHttp::NoError;
+	return QNetworkReply::NoError;
 }
 
 int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 {
 	// check if is already downloading another file
-	if (isDownloading()) 
+	if (isDownloading())
 		return EnumHTTP::ALREADY_DOWNLOADING;
 
 	// check if is a valid URL
-	if (!validURL(URL.toString())) 
+	if (!validURL(URL.toString()))
 		return EnumHTTP::INVALID_URL;
 
 	if (!QFile::exists(fileName))
 		return EnumHTTP::MISSING_RESUME_FILE;
 
 	// open the existent file in append mode
-	file = new QFile(fileName);
-	if (!file->open(QIODevice::Append))
+	outputFile = new QFile(fileName);
+	if (!outputFile->open(QIODevice::Append))
 	{
-		delete file;
-		file = NULL;
+		closeOutputFile();
 		return EnumHTTP::UNABLE_APPEND_FILE;
 	}
 
@@ -600,17 +532,14 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 
 	// init http variables
 	initData();
+
+	// configure the resuming
 	resuming = true;
-	oriURL = URL;
-	this->autoRestartOnFail = autoRestartOnFail;
-
-	// start internal timer
-	initTimer();
-
-	// +1 to retries count
-	retriesCount++;
+	initialDownloadSize = outputFile->size();
+	prevTotalDownloadedSize = initialDownloadSize;
 
 	// start the download process
+	oriURL = URL;
 	jumpToURL(URL);
 
 	// ok
@@ -619,129 +548,72 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 
 void Http::pause()
 {
-	if (isDownloading())
-	{
-		stopReason = EnumHTTP::USER_PAUSED;
-		http->abort();
-	}
+	if (isDownloading()) abortRequest(EnumHTTP::USER_PAUSED);
 }
 
 void Http::cancel()
 {
-	if (isDownloading())
+	if (isDownloading()) abortRequest(EnumHTTP::USER_CANCELLED);
+}
+
+QString Http::syncRequest(EnumHTTP::HttpMethod httpMethod, QUrl url, QString parameters, bool isUtf8)
+{
+	QString result = QString();
+	// if is not downloading and has a valid url
+	if (!isDownloading() && url.isValid())
 	{
-		stopReason = EnumHTTP::USER_CANCELLED;
-		http->abort();
+		// init http variables
+		initData();
+		// set the sync flag active
+		syncFlag = true;
+		this->httpMethod = httpMethod;
+		// set parameters
+		this->parameters = parameters;
+		// do the first jump
+		oriURL = url;
+		jumpToURL(url);
+		// wait while the webpage is being downloaded
+		while (syncFlag) qApp->processEvents();
+		// if is utf8 then convert the downloaded data to utf8 (else, return data as is)
+		result = isUtf8 ? QString::fromUtf8(data.toAscii()) : data;
 	}
+	// final result (output)
+	return result;
 }
 
 QString Http::downloadWebpage(const QUrl URL, bool isUtf8)
 {
-	QString result = "";
-
-	if (!isDownloading())
-		if (URL.isValid())
-		{
-			// init http variables
-			initData();
-			file = NULL;
-			// set the sync flag active
-			syncFlag = true;
-			httpMethod = EnumHTTP::httpGet;
-			// do the first jump
-			oriURL = URL;
-			jumpToURL(URL);
-			// wait while the webpage is being downloaded
-			while (syncFlag)
-				qApp->processEvents();
-			// if is utf8 then convert the downloaded data to utf8
-			if (isUtf8)
-				result = QString::fromUtf8(data.toAscii());
-			else
-				result = data;
-		}
-	// final result (output)
-	return result;
+	return syncRequest(EnumHTTP::httpGet, URL, QString(), isUtf8);
 }
 
 QString Http::downloadWebpagePost(const QUrl URL, QString parameters, bool isUtf8)
 {
-	QString result = "";
-
-	if (!isDownloading())
-		if (URL.isValid())
-		{
-			// init http variables
-			initData();
-			file = NULL;
-			// set the sync flag active
-			syncFlag = true;
-			httpMethod = EnumHTTP::httpPost;
-			// set parameters
-			this->parameters = parameters;
-			// do the first jump
-			oriURL = URL;
-			jumpToURL(URL);
-			// wait while the webpage is being downloaded
-			while (syncFlag)
-				qApp->processEvents();
-			// if is utf8 then convert the downloaded data to utf8
-			if (isUtf8)
-				result = QString::fromUtf8(data.toAscii());
-			else
-				result = data;
-		}
-	// final result (output)
-	return result;
+	return syncRequest(EnumHTTP::httpPost, URL, parameters, isUtf8);
 }
 
-QHttpResponseHeader Http::head(const QUrl URL)
+QString Http::head(const QUrl URL)
 {
-	QHttpResponseHeader result;
-
-	if (!isDownloading())
-		if (URL.isValid())
-		{
-			// init http variables
-			initData();
-			file = NULL;
-			// set the sync flag active
-			syncFlag = true;
-			httpMethod = EnumHTTP::httpHead;
-			// do the first jump
-			oriURL = URL;
-			jumpToURL(URL);
-			// wait while the head is being downloaded
-			while (syncFlag)
-				qApp->processEvents();
-			// return the last response
-			result = http->lastResponse();
-		}
-	return result;
+	return syncRequest(EnumHTTP::httpHead, URL, QString(), false);
 }
 
 void Http::addCookie(QString cookie)
 {
-	cookies->addCookie(cookie);
+	return static_cast<Cookies*>(http->cookieJar())->addCookie(cookie);
 }
 
 void Http::addCookies(QString cookies, const QString separator)
 {
-	// split cookies
-	QStringList cookiesList = cookies.split(separator);
-	// add all cookies
-	foreach (QString cookie, cookiesList)
-		addCookie(cookie);
+	return static_cast<Cookies*>(http->cookieJar())->addCookies(cookies, separator);
 }
 
 QString Http::getCookies(const QString separator)
-{
-	return cookies->getCookies(true, separator);
+{	
+	return static_cast<Cookies*>(http->cookieJar())->getCookies(separator);
 }
 
 void Http::clearCookies()
 {
-	cookies->clear();
+	return static_cast<Cookies*>(http->cookieJar())->clearCookies();
 }
 
 void Http::addHeaderParameter(QString key, QString value)
@@ -766,21 +638,14 @@ void Http::clearHeaderParameters()
 	customHeaders->clear();
 }
 
-void Http::pauseOnDestroy(bool pauseOnDestroyF)
-{
-	this->pauseOnDestroyF = pauseOnDestroyF;
-}
-
 bool Http::isDownloading()
 {
-	return 	http->state() != QHttp::Unconnected &&
-	        http->state() != QHttp::Connected &&
-	        http->state() != QHttp::Closing;
+	return currentReply && currentReply->isRunning();
 }
 
 int Http::getFileSize()
 {
-	return fileSize;
+	return totalToDownloadSize;
 }
 
 int Http::getDownloadSpeed()
@@ -790,7 +655,7 @@ int Http::getDownloadSpeed()
 
 int Http::getTimeRemaining()
 {
-	return timeRemaining;
+	return timeLeft;
 }
 
 QFileInfo Http::getDestiationFile()
@@ -798,34 +663,207 @@ QFileInfo Http::getDestiationFile()
 	return destFile;
 }
 
-void Http::setMaxRetries(int value)
-{
-	maxRetries = value;
-}
-
-void Http::setTimeOut(int value)
-{
-	timeOut = value * 1000;
-}
-
-void Http::setMaxAutoJumps(int value)
-{
-	maxAutoJumps = value;
-}
-
-void Http::setSkipExistentFiles(bool value)
-{
-	skipExistentFiles = value;
-}
-
 int Http::getLastError()
 {
-	return http->error();
+	if (currentReply) return currentReply->error();
+	// we assume "no error" by default
+	return QNetworkReply::NoError;
 }
 
 int Http::getLastStopReason()
 {
 	return stopReason;
+}
+
+void Http::finished(QNetworkReply *reply)
+{
+	// if this reply is not the current reply we ignore this
+	if (currentReply != reply) return;
+
+	// stop all active timers
+	stopActiveTimeOutTimer();
+	stopTimeLeftTimer();
+
+	// get the possible redirection url
+	QUrl redirectURL = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+	// check if is a valid redirection
+	if (autoJump && !redirectURL.isEmpty())
+	{
+		// clear previous downloaded data
+		if (syncFlag) data = QString(); else outputFile->reset();
+		// jump to this new url
+		jumpToURL(redirectURL);
+	}
+	else // other finishes (error, ok, etc...)
+	{
+		if (!syncFlag) // async. request
+		{
+			// check possible errors
+			switch (reply->error())
+			{
+				case QNetworkReply::NoError:
+				{
+					// if we have a size reference then check if we download all
+					if (totalToDownloadSize != 0 && outputFile->size() < totalDownloadedSize)
+					{
+						sendDownloadError(EnumHTTP::INVALID_INITIAL_FILE_SIZE);
+					}
+					else // ok, we assume which this a valid download
+					{
+						stopReason = EnumHTTP::DOWNLOAD_FINISHED;
+						// send the download finished signal
+						emit downloadFinished(destFile);
+					}
+					break;
+				}
+				// user did cancel or pause
+				case QNetworkReply::OperationCanceledError:
+				{
+					switch (stopReason)
+					{
+						case EnumHTTP::USER_CANCELLED:
+						{
+							// remove the temporal downloaded file
+							deleteOutputFile();
+							// send the canceled signal
+							emit downloadCanceled();
+							break;
+						}
+						case EnumHTTP::USER_PAUSED:
+						{
+							emit downloadPaused(destFile);
+							break;
+						}
+						case EnumHTTP::TIME_OUT:
+						{
+							timeOutDownloadError();
+							break;
+						}
+						case EnumHTTP::MAX_AUTO_JUMPS_REACHED:
+						{
+							sendDownloadError(EnumHTTP::TOO_MUCH_REDIRECTIONS);
+							break;
+						}
+						// those two options won't never happens (adding them we avoid 2 compiler warnings)
+						case EnumHTTP::NO_STOPPED:
+						case EnumHTTP::DOWNLOAD_FINISHED:
+							break;
+					}
+					break;
+				}
+				// connection reached a time out error
+				case QNetworkReply::TimeoutError:
+				{
+					timeOutDownloadError();
+					break;
+				}
+				// connection refused error
+				case QNetworkReply::ConnectionRefusedError:
+				{
+					sendDownloadError(EnumHTTP::CONNECTION_REFUSED);
+					break;
+				}
+				// host not found error
+				case QNetworkReply::HostNotFoundError:
+				{
+					sendDownloadError(EnumHTTP::HOST_NOT_FOUND);
+					break;
+				}
+				// content access denied error
+				case QNetworkReply::ContentAccessDenied:
+				{
+					sendDownloadError(EnumHTTP::CONTENT_ACCESS_DENIED);
+					break;
+				}
+				// content not found error
+				case QNetworkReply::ContentNotFoundError:
+				{
+					sendDownloadError(EnumHTTP::CONTENT_NOT_FOUND);
+					break;
+				}
+				// any other possible error
+				default:
+				{
+					sendDownloadError(EnumHTTP::UNKNOW_NETWEORK_ERROR);
+					break;
+				}
+			}
+			// destroy output file
+			closeOutputFile();
+		}
+		else // sync. request
+		{
+			// get the response headers (HEAD only)
+			if (httpMethod == EnumHTTP::httpHead)
+			{
+				data = QString();
+				// add each rawHeader into our data variable
+				foreach (QByteArray rawHeader, reply->rawHeaderList())
+					data += QString("%1: %2\n").arg(QString(rawHeader)).arg(QString(reply->rawHeader(rawHeader)));
+			}
+			else // get the downloaded data (GET and POST)
+				data = reply->error() == QNetworkReply::NoError ? data : QString();
+			// we finished...
+			syncFlag = false;
+			// emit the download finished signal
+			emit downloadFinished(QFileInfo());
+		}
+	}
+}
+
+void Http::readyRead()
+{
+	// update timeout controller
+	if (timeOut) startTimeOutTimer();
+	// write data
+	if (syncFlag) // sync. method (save to QString)
+		data += currentReply->readAll();
+	else // async. method (save to file)
+		outputFile->write(currentReply->readAll());
+}
+
+void Http::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
+{
+	// avoid fake downloads progress
+	if (!downloadStartedFlag) return;
+
+	// if we have a missing "total"... we assume which received all the data
+	if (bytesTotal == -1) bytesTotal = bytesReceived;
+
+	// update totals
+	totalToDownloadSize = totalToDownloadSize != 0 ? totalToDownloadSize : bytesTotal;
+	totalDownloadedSize = totalToDownloadSize != 0 ? initialDownloadSize + bytesReceived : 0;
+
+	// update the download percentage
+	if (totalToDownloadSize != 0)
+	{
+		currentPercentage = static_cast<float>(totalDownloadedSize) / static_cast<float>(totalToDownloadSize) * 100.0;
+		// if the current percentage is not 0 and the last yes, we reajust it (for better calculation)
+		if (currentPercentage != 0.0 && lastPercentage == 0.0) lastPercentage = currentPercentage;
+	}
+
+	// sent the download event signal
+	emit downloadEvent(totalDownloadedSize, totalToDownloadSize);
+}
+
+void Http::metaDataChanged()
+{
+	// get the file size from content-length header (if exists)
+	QVariant contentLength = currentReply->header(QNetworkRequest::ContentLengthHeader);
+	if (!contentLength.isNull()) totalToDownloadSize = contentLength.toInt();
+
+	// if we are resuming then get the total to download size
+	if (resuming && currentReply->hasRawHeader("content-range"))
+		totalToDownloadSize = getToken(currentReply->rawHeader("content-range"), "/", 1).toInt();
+
+	// no error found and no location header found
+	if (currentReply->error() == QNetworkReply::NoError && currentReply->header(QNetworkRequest::LocationHeader).isNull())
+	{
+		// send the download/resume signal
+		if (resuming) emit downloadResumed(); else emit downloadStarted();
+		// ok, real now we can say that the download started...
+		downloadStartedFlag = true;
+	}
 }
 
 void Http::setUserAgent(QString value)
@@ -838,210 +876,49 @@ void Http::setGlobalUserAgent(QString value)
 	HTTP_GLOBAL_USER_AGENT = value;
 }
 
+void Http::setAutoJumps(bool value)
+{
+	autoJump = value;
+}
+
+void Http::setMaxAutoJumps(int value)
+{
+	maxAutoJumps = value > 0 ? value : 1;
+}
+
+void Http::setTimeOutOption(bool value)
+{
+	timeOut = value;
+}
+
+void Http::setTimeOut(int value)
+{
+	value = value < 1 ? 1 : value;
+	// update the time out
+	timeOutSeconds = value * 1000;
+}
+
+void Http::setMaxRetries(int value)
+{
+	maxRetries = value > 0 ? value : 1;
+}
+
+void Http::setSkipExistentFiles(bool value)
+{
+	skipExistentFiles = value;
+}
+
+void Http::setPauseOnDestroy(bool value)
+{
+	this->pauseOnDestroyF = value;
+}
+
 void Http::setUsePercentageForTimeRemaining(bool value)
 {
-	usePercentageForTimeRemaining = value;
+	usePercentageForTimeLeft = value;
 }
 
-void Http::dataReadProgress(int done, int total)
+void Http::setCookiesEnabled(bool value)
 {
-	if (!startedDownload) return;
-
-	// if we are there, then reset the timeOut counter
-	timeOutIntervalCehck++;
-
-	if (timeOutIntervalCehck > 20)
-		tmrTimeOut.stop();
-
-	totalDownload = realTotalSize != 0 ? realTotalSize : total;
-	currDownload = total != 0 ? realStartSize + done : 0;
-
-	if (totalDownload != 0)
-		currentPercentage = static_cast<float>(currDownload) / static_cast<float>(totalDownload) * 100.0;
-
-	emit downloadEvent(currDownload, totalDownload);
-
-	// start again the timeOut timer
-	if (timeOutIntervalCehck > 20)
-	{
-		tmrTimeOut.start(timeOut);
-		timeOutIntervalCehck = 0;
-	}
-}
-
-void Http::requestFinished(int id, bool error)
-{
-	if (httpGetId != id) return;
-
-	// stop timeout timer
-	tmrTimeOut.stop();
-
-	if (file != NULL)
-	{
-		if (error)
-		{
-			bool canRemove = true;
-			// check if is an user abort (due to cancel or pause)
-			if (http->error() == QHttp::Aborted && 
-				(stopReason == EnumHTTP::USER_CANCELLED || stopReason == EnumHTTP::USER_PAUSED))
-			{
-				if (stopReason == EnumHTTP::USER_CANCELLED)
-					emit downloadCanceled();
-				else if (stopReason == EnumHTTP::USER_PAUSED)
-				{
-					canRemove = false;
-					emit downloadPaused(destFile);
-				}
-			}
-			else // others
-			{
-				// abort all (and clear pending requests)
-				http->clearPendingRequests();
-				// if is an "auto-abort" for restart the download then do not send the error signal
-				if (restartDownload || (!restartDownload && retriesCount < maxRetries) ||
-					(stopReason == EnumHTTP::TIME_OUT && retriesCount < maxRetries))
-					QTimer::singleShot(500, this, SLOT(restartDownloadSignal()));
-				else
-					// send error signal
-					emit downloadError(http->error());
-			}
-			// remove file?
-			if (canRemove) file->remove();
-		}
-		else // no error, but...
-			if (file->size() < fileSize && !notLength)
-			{
-				// remove the temporal file
-				file->remove();
-				// abort all (and clear pending requests)
-				http->clearPendingRequests();
-				// send the error signal
-				emit downloadError(EnumHTTP::INVALID_INITIAL_FILE_SIZE);
-			}
-			else
-			{
-				initRetriesData();			
-				emit downloadFinished(destFile);
-			}
-
-		// finish timer
-		deinitTimer();
-		
-		// close file
-		delete file;
-		file = NULL;
-	}
-	else // no file assigned
-	{
-		if (error)
-			data.clear();
-		else
-			data = http->readAll();
-		// disable the sync flag
-		syncFlag = false;
-	}
-}
-
-void Http::responseHeaderReceived(const QHttpResponseHeader &resp)
-{
-	// get the file size
-	if (resp.hasContentLength())
-	{
-		// remove the ";" char if exists from "Content-Length"
-		QString preSize = resp.value("content-length").remove(";");
-		// convert to int
-		fileSize = preSize.toInt(&notLength);
-		notLength = !notLength;
-	}
-	else
-		notLength = true;
-
-	// get range if we are resuming
-	if (resuming)
-	{
-		realStartSize = copyBetween(resp.value("content-range"), "bytes ", "-").toInt();
-		realTotalSize = getToken(resp.value("content-range"), "/", 1).toInt();
-
-		prevDownload = realStartSize;
-	}
-
-	// get the server cookies
-	QStringList cookiesList;
-	cookiesList << resp.allValues("set-cookie");
-
-	// add cookies
-	for (int n = 0; n < cookiesList.count(); n++)
-		cookies->addCookie(cookiesList.at(n));
-
-	// check the status code, if is "object moved" then jump to new url
-	if (isObjectMoved(resp.statusCode()) && autoJump)
-		// jump to the redirected url (and clean it... if is necessary)
-		jumpToURL(QUrl(cleanURL(resp.value("location"))));
-	else
-		// if the response is distinct to 200 and 206 or
-		// the response is 200 and we are resuming then the server do not support resuming
-		// files, so... start again the download...
-		if ((resp.statusCode() != 200 && resp.statusCode() != 206) || 
-			(resuming && resp.statusCode() == 200))
-		{
-			restartDownload = resuming && autoRestartOnFail;
-			http->abort();
-		}
-		else
-		{
-			if (file != NULL) 
-			{
-				if (!resuming) 
-					file->reset();
-				else
-					file->seek(realStartSize);
-			}
-			// send the download/resume signal
-			if (resuming)
-				emit downloadResumed();
-			else
-				emit downloadStarted();
-			// ok, real download started...
-			startedDownload = true;
-		}
-}
-
-void Http::stateChanged(int /*state*/)
-{
-	// nothing to do...
-}
-
-void Http::restartDownloadSignal()
-{
-	download(oriURL, destFile.path(), destFile.fileName(), false);
-}
-
-void Http::timeOutCheckout()
-{
-	stopReason = EnumHTTP::TIME_OUT;
-	http->abort();
-}
-
-void Http::timerEvent(QTimerEvent *event)
-{
-	if (event->timerId() == internalTimer && http->state() == QHttp::Reading)
-	{
-		// download speed
-		downloadSpeed = static_cast<int>(downloadSpeedAvg->add(currDownload - prevDownload));
-
-		// calcule the time remaining using the percentage
-		if (usePercentageForTimeRemaining)
-		{
-			float timeRem = (100.0 - currentPercentage)/timeRemainingAvg->add(currentPercentage - lastPercentage);
-			timeRemaining = static_cast<int>(timeRem);
-			lastPercentage = currentPercentage;
-		}
-		else if (downloadSpeed != 0) // calcule the time remaining using the dowload speed
-		{
-			float timeRem = timeRemainingAvg->add(totalDownload - currDownload) / downloadSpeedAvg->avg();
-			timeRemaining = static_cast<int>(timeRem);
-		}
-		// reset data
-		prevDownload = currDownload;
-	}
+	cookiesEnabled = value;
 }
