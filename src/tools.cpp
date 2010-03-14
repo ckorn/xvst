@@ -120,7 +120,7 @@ QString changeFileName(const QString file, const QString newName)
 
 QString changeFileExt(const QString file, const QString ext)
 {
-	return QFileInfo(file).absolutePath() + "/" + QFileInfo(file).baseName() + ext;
+	return QFileInfo(file).absolutePath() + "/" + QFileInfo(file).completeBaseName() + ext;
 }
 
 QString cleanFileName(const QString fileName, QString replaceFor)
