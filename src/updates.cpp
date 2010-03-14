@@ -48,18 +48,16 @@ Updates::Updates(QString appPath)
 	totalToDownload = 0;
 	// init update classes
 	updateList = new QList<Update *>;
-	http = new Http;
-	// signals
-	connect(http, SIGNAL(downloadEvent(int, int)), this, SLOT(downloadEvent(int, int)));
-	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
-	connect(http, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
+	// init http object
+	http = NULL;
 }
 
 Updates::~Updates()
 {
 	clear();
-
-	delete http;
+	// destroy the possible active http object
+	deinitHttp();
+	// remove the updates list
 	delete updateList;
 }
 
@@ -306,8 +304,12 @@ void Updates::run()
 
 		case usChecking:
 		{
+			// create the http object
+			initializeHttp();
 			// analyze the update file
 			pareseUpdateFile(http->downloadWebpage(QUrl(updateURL), true));
+			// destroy the http object
+			deinitHttp();
 
 			// cancelled?
 			if (!cancelled)
@@ -344,6 +346,8 @@ void Updates::run()
 			currentItem = getFirstUpdateToDownload();
 			int lastItem = -1;
 			getTotalSizeToDownload();
+			// create the http object
+			initializeHttp();
 			// download updates
 			while (!cancelled && updateState == usDownloading && currentItem != -1)
 			{
@@ -357,11 +361,15 @@ void Updates::run()
 						QFile::remove(fileName);
 					// start to download the current update
 					http->download(QUrl(updateList->at(currentItem)->getUrl()),
-						       QDir::tempPath(), QString(XUPDATER_DWN_FILE).arg(currentItem));
+						   QDir::tempPath(), QString(XUPDATER_DWN_FILE).arg(currentItem));
 				}
+				// process events
+				qApp->processEvents();
 				// wait 100 miliseconds (prevent 100% cpu)
-				msleep(100);
+				msleep(100);				
 			}
+			// destroy the http object
+			deinitHttp();
 			// install updates
 			if (!cancelled && updateState == usInstalling && currentItem != -1)
 				run();
@@ -522,26 +530,36 @@ QStringList Updates::buildDMGScript(int n)
 			.arg(mountPath + "/xVideoServiceThief.app/")
 			.arg(bundlePath + "/");
 	// unmount DMG image
-	result << QString("exec \"hdiutil unmount \\\"%1\\\" -force\" wait")
-			.arg(mountPath);
+	result << QString("exec \"hdiutil unmount \\\"%1\\\" -force\" wait").arg(mountPath);
 	// delete the downloaded DMG
-	result << QString("del \"%1\"")
-			.arg(DMG);
+	result << QString("del \"%1\"").arg(DMG);
 	// if isn't the last file, go to next update file
 	result << (n < getUpdatesCount() - 1 ? QString("goto install_file_%1").arg(n + 1) : "goto finish_update");
 	// return the dmg install script
 	return result;
 }
 
+void Updates::initializeHttp()
+{
+	if (http) return;
+	// register the QFileInfo metatype (needed for threaded execution)
+	qRegisterMetaType<QFileInfo>("QFileInfo");
+	// create this new http object
+	http = new Http();
+	// connect essential signals
+	connect(http, SIGNAL(downloadEvent(int, int)), this, SLOT(downloadEvent(int, int)));
+	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
+	connect(http, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
+}
+
+void Updates::deinitHttp()
+{
+	if (http) delete http;
+	http = NULL;
+}
+
 bool Updates::canUpdate(QString searchPath)
 {
-/*
-#ifdef Q_WS_MAC
-	return QFile::exists(QCoreApplication::applicationDirPath() + "/../Resources" + XUPDATER_PATH);
-#else
-	return QFile::exists(searchPath + XUPDATER_PATH);
-#endif
-*/
 	return QFile::exists(searchPath + "/.." + XUPDATER_PATH);
 }
 

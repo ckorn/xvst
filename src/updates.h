@@ -151,6 +151,10 @@ Q_OBJECT
 		QStringList buildDMGScript(int n);
 		/*! Thread executation */
 		void run();
+		/*! Initialize the Http object (if is needed) */
+		void initializeHttp();
+		/*! Deinitalize the Http object (if is needed) */
+		void deinitHttp();
 	public:
 		/*! Class constructor */
 		Updates(QString appPath);
