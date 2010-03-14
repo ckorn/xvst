@@ -50,6 +50,7 @@ SearchVideos::~SearchVideos()
 	disconnect();
 	// wait while the thread is running
 	destroying = true;
+	this->quit();
 	waitThread();
 	// destroy all
 	delete searchResults;
@@ -76,6 +77,11 @@ QString SearchVideos::getSearchSummary()
 QString SearchVideos::getKeyWords()
 {
 	return internalKeyWords;
+}
+
+void SearchVideos::downloadPreviewImages()
+{
+	imageCatcher->downloadPreviews();
 }
 
 void SearchVideos::removePreviews()
@@ -175,13 +181,12 @@ void SearchVideos::run()
 	}
 	// search finished
 	emit searchFinished();
-	// download previews
-	imageCatcher->downloadPreviews();
 }
 
 void SearchVideos::waitThread()
 {
-	while (this->isRunning()) {}
+	while (this->isRunning())
+		qApp->processEvents();
 }
 
 // SearchResultsSettings class

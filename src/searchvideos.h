@@ -194,6 +194,8 @@ Q_OBJECT
 		QString getSearchSummary();
 		/*! Get the key words used for search */
 		QString getKeyWords();
+		/*! Download the preview images */
+		void downloadPreviewImages();
 		/*! Clean search images previews */
 		static void removePreviews();
 	private slots:
