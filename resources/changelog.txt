@@ -7,8 +7,10 @@
 	- Added more explicative errors
 	- Imporved the time-out control
 	- Improved the proxy support
-	- Improved cookies support
-	- Reduced CPU usage
+	- Improved the cookies support
+	- Reduced the CPU usage
+
+- Added the "What's new" functionality
 
 - Improved the automatic updates
 - Improved the image previewer (search videos)
@@ -21,6 +23,7 @@
 
 - Fixed bug (Error: The session was not restored correctly)
 - Fixed bug (Error: The converted file names where truncated if a "." was present)
+- Fixed bug (Error: The main window was freezed when a search was interrupted)
 
 2.3.5:
 ------
