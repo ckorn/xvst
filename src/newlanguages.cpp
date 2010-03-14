@@ -37,18 +37,16 @@ NewLanguagesController::NewLanguagesController(ProgramOptions *programOptions)
 	this->programOptions = programOptions;
 	newLanguages = new QList<Update *>;
 	languageManager = new LanguageManager;
-	currentUpdate = NULL;
-	// http class
-	http = new Http();
-	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
-	connect(http, SIGNAL(downloadEvent(int,int)), this, SLOT(privateDownloadProgress(int,int)));
+	currentLanguage = NULL;
+	http = NULL;
 }
 
 NewLanguagesController::~NewLanguagesController()
 {
 	clearAllNewLanguages();
 	//
-	delete http;
+	deinitHttp();
+	//
 	delete languageManager;
 	delete newLanguages;
 }
@@ -69,7 +67,13 @@ void NewLanguagesController::fillInstalledLanguages()
 
 void NewLanguagesController::updateLanguagesToInstall()
 {
+	// initialize the http (thread safe)
+	initializeHttp();
+	// download the languages file
 	newLanguagesFile = http->downloadWebpage(QUrl(URL_LANGUAGES_FILE), false);
+	// destroy the http object
+	deinitHttp();
+	// update the languages list
 	updateNewLanguages();
 	// finished
 	emit afterCheckNewLanguages();
@@ -136,6 +140,25 @@ void NewLanguagesController::updateNewLanguages()
 	parseBlock(copyBetween(newLanguagesFile, "#COMMON{", "}"));
 }
 
+void NewLanguagesController::initializeHttp()
+{
+	if (http) return;
+	// register the QFileInfo metatype (needed for threaded execution)
+	qRegisterMetaType<QFileInfo>("QFileInfo");
+	// create this new http object
+	http = new Http();
+	// connect essential signals
+	connect(http, SIGNAL(downloadFinished(const QFileInfo)), this, SLOT(downloadFinished(const QFileInfo)));
+	connect(http, SIGNAL(downloadEvent(int,int)), this, SLOT(privateDownloadProgress(int,int)));
+	connect(http, SIGNAL(downloadError(int)), this, SLOT(downloadError(int)));
+}
+
+void NewLanguagesController::deinitHttp()
+{
+	if (http) delete http;
+	http = NULL;
+}
+
 void NewLanguagesController::initialize()
 {
 	// load local lanuages
@@ -154,7 +177,7 @@ void NewLanguagesController::uninstallLanguage(int index)
 		bool fileRemoved = QFile::remove(programOptions->getLanguagesPath() + "/" + toRemove->getFile());
 		QFile::remove(programOptions->getLanguagesPath() + "/" + toRemove->getLangFile());
 		// send signal after uninstall language
-		emit installedLanguageRemoved(toRemove, fileRemoved);// && qmRemoved);
+		emit installedLanguageRemoved(toRemove, fileRemoved);
 		// reload all languages again
 		fillInstalledLanguages();
 		// reload new languages
@@ -165,18 +188,23 @@ void NewLanguagesController::uninstallLanguage(int index)
 void NewLanguagesController::installLanguage(int index)
 {
 	emit beforeInstallNewLanguage();
-
-	currentUpdate = newLanguages->at(index);
-	http->download(QUrl(currentUpdate->getUrl()), QDir::tempPath(), QString("xVST.language"), false);
+	// init the http object
+	initializeHttp();
+	// get the language to download
+	currentLanguage = newLanguages->at(index);
+	// download the language
+	http->download(QUrl(currentLanguage->getUrl()), QDir::tempPath(), QString("xVST.language"), false);
 }
 
 bool NewLanguagesController::isInstalling() const
 {
-	return currentUpdate != NULL;
+	return currentLanguage != NULL;
 }
 
 void NewLanguagesController::downloadFinished(const QFileInfo destFile)
 {
+	// if no "destFile" is assigned, we can ignore this signal
+	if (destFile.absoluteFilePath().isEmpty()) return;
 	// create languages directory
 	QDir languagesDir;
 	languagesDir.mkpath(programOptions->getLanguagesPath());
@@ -198,9 +226,9 @@ void NewLanguagesController::downloadFinished(const QFileInfo destFile)
 	// remove temporal fil
 	QFile::remove(destFile.filePath());
 	// finish event
-	emit afterInstallNewLanguage(currentUpdate, error);
+	emit afterInstallNewLanguage(currentLanguage, error);
 	// reset flags
-	currentUpdate = NULL;
+	currentLanguage = NULL;
 	// reload all info
 	fillInstalledLanguages();
 	updateNewLanguages();
@@ -209,9 +237,9 @@ void NewLanguagesController::downloadFinished(const QFileInfo destFile)
 void NewLanguagesController::downloadError(int /*error*/)
 {
 	// finish event
-	emit afterInstallNewLanguage(currentUpdate, true);
+	emit afterInstallNewLanguage(currentLanguage, true);
 	// reset flags
-	currentUpdate = NULL;
+	currentLanguage = NULL;
 	// reload all info
 	fillInstalledLanguages();
 	updateNewLanguages();
