@@ -766,7 +766,7 @@ void Http::finished(QNetworkReply *reply)
 				// host not found error
 				case QNetworkReply::HostNotFoundError:
 				{
-					sendDownloadError(EnumHTTP::HOST_NOT_FOUND);
+					sendDownloadError(EnumHTTP::HOST_NOT_FOUND_ERROR);
 					break;
 				}
 				// content access denied error
