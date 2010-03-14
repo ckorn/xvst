@@ -160,6 +160,8 @@ void SearchVideosImpl::searchFinished()
 	updateButons(false);
 	// display results
 	stackedResults->setCurrentIndex(1);
+	// start to download the preview images
+	searchVideos->downloadPreviewImages();
 }
 
 void SearchVideosImpl::searchResultAdded(SearchResultItem *searchResultItem)
