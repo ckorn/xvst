@@ -62,7 +62,7 @@ Q_OBJECT
 		VideoListController *videoList;
 		// lsvDownloadList functions
 		QTreeWidgetItem* getQTreeWidgetItemByVideoItem(VideoItem *videoItem);
-		VideoItem *getSelectedVideoItem();
+		QList<VideoItem *> getSelectedVideoItems();
 		VideoItem *getVideoItemByQTreeWidgetItem(QTreeWidgetItem* treeItem);
 		// visual controls update
 		void updateVisualControls();
@@ -138,7 +138,7 @@ Q_OBJECT
 		void optionsDidSomething();
 		// lsvDownloadList signals
 		void videoItemDoubleClicked(QTreeWidgetItem *item, int column);
-		void videoItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous);
+		void videoItemSelectionChanged();
 		void videoListContextMenu(const QPoint & pos);
 		// VideoListController signals
 		void videoAdded(VideoItem *videoItem);

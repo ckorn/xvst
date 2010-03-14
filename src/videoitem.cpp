@@ -217,6 +217,11 @@ bool VideoItem::isGettedURL()
 	return videoState == vsGettedURL;
 }
 
+bool VideoItem::isDownloadable()
+{
+	return isReady() || isCanceled();
+}
+
 bool VideoItem::isDownloading()
 {
 	return videoState == vsDownloading;
@@ -277,9 +282,19 @@ bool VideoItem::isDeleted()
 	return videoState == vsDeleted;
 }
 
+bool VideoItem::isPauseable()
+{
+	return	isDownloading() || isResuming() || isReady();
+}
+
 bool VideoItem::isPaused()
 {
 	return videoState == vsPaused;
+}
+
+bool VideoItem::isResetable()
+{
+	return isCanceled() || isBlocked() || hasErrors();
 }
 
 bool VideoItem::isAnyKindOfPaused()

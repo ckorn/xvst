@@ -151,6 +151,8 @@ Q_OBJECT
 		bool isGettingURL();
 		/*! Get if has the video URL */
 		bool isGettedURL();
+		/*! Get if this item can be downloaded */
+		bool isDownloadable();
 		/*! Get if is Downloading */
 		bool isDownloading();
 		/*! Get if has been Downloaded */
@@ -175,8 +177,12 @@ Q_OBJECT
 		bool isCanceled();
 		/*! Get if is market as "deleted" */
 		bool isDeleted();
+		/*! Get if is pausable */
+		bool isPauseable();
 		/*! Get if is paused */
 		bool isPaused();
+		/*! Get if is resetable */
+		bool isResetable();
 		/*! Get if is any kind of paused (paused or readyPaused) */
 		bool isAnyKindOfPaused();
 		/*! Get if is being resumed */

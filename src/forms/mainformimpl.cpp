@@ -226,7 +226,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	connect(videoList, SIGNAL(videoMoved(int, int)), this, SLOT(videoMoved(int, int))); //onVideList item moved
 	// lsvDownloadList
 	connect(lsvDownloadList, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), this, SLOT(videoItemDoubleClicked(QTreeWidgetItem *, int)));
-	connect(lsvDownloadList, SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)), this, SLOT(videoItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)));
+	connect(lsvDownloadList, SIGNAL(itemSelectionChanged()), this, SLOT(videoItemSelectionChanged()));
 	connect(lsvDownloadList, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(videoListContextMenu(const QPoint &)));
 	// options
 	connect(programOptions, SIGNAL(optionsLoadBefore()), this, SLOT(optionsDidSomething()));
@@ -536,11 +536,29 @@ void MainFormImpl::addVideoClicked()
 
 void MainFormImpl::deleteVideoClicked()
 {
-	videoList->deleteVideo(getSelectedVideoItem(), true);
+	// delete all selected items
+	foreach (VideoItem *videoItem, getSelectedVideoItems())
+	{
+		if (videoItem->isRemovable())
+			videoList->deleteVideo(videoItem, true);
+		else // unselect this item
+			getQTreeWidgetItemByVideoItem(videoItem)->setSelected(false);
+	}
 }
 
 void MainFormImpl::renameVideoClicked()
 {
+	// rename all selected items
+	foreach (VideoItem *videoItem, getSelectedVideoItems())
+	{
+		CustomDownloadTitleImpl renameVideoForm(this, Qt::Sheet);
+		// set the current title
+		renameVideoForm.edtTitle->setText(videoItem->getDisplayLabel());
+		// display custom title window
+		if (showModalDialog(&renameVideoForm) == QDialog::Accepted)
+			videoList->renameVideo(videoItem, renameVideoForm.edtTitle->text());
+	}
+	/*
 	VideoItem *videoItem = getSelectedVideoItem();
 	// we have an items
 	if (videoItem != NULL)
@@ -552,66 +570,68 @@ void MainFormImpl::renameVideoClicked()
 		if (showModalDialog(&renameVideoForm) == QDialog::Accepted)
 			videoList->renameVideo(videoItem, renameVideoForm.edtTitle->text());
 	}
+	*/
 }
 
 void MainFormImpl::startDownloadVideoClicked()
 {
-	VideoItem *videoItem;
-
-	if (lsvDownloadList->currentItem() != NULL)
-		if (!getSelectedVideoItem()->isDownloaded())
-			videoItem = getSelectedVideoItem();
-		else
-			videoItem = videoList->getFirstReady();
-	else
-		videoItem = videoList->getFirstReady();
-	// we have a video to download?
-	if (videoItem != NULL)
-	{
-		videoList->startDownload(videoItem);
-		updateVisualControls();
-	}
+	// download all selected items
+	foreach (VideoItem *videoItem, getSelectedVideoItems())
+		if (videoItem->isDownloadable())
+			videoList->startDownload(videoItem);
+		else // deselect the item
+			getQTreeWidgetItemByVideoItem(videoItem)->setSelected(false);
+	// update visual controls
+	updateVisualControls();
 }
 
 void MainFormImpl::pauseResumeDownloadVideoClicked()
 {
-	VideoItem *videoItem = NULL;
-
-	if (lsvDownloadList->currentItem() != NULL)
-		if (!getSelectedVideoItem()->isDownloaded())
-			videoItem = getSelectedVideoItem();
-	// we have a video to resume or pause?
-	if (videoItem != NULL)
+	// download all selected items
+	foreach (VideoItem *videoItem, getSelectedVideoItems())
 	{
 		// is ready, and we want pause it before start download
 		if (videoItem->isDownloading() || videoItem->isResuming() || videoItem->isReady())
 			videoList->pauseDownload(videoItem);
 		else if (videoItem->isAnyKindOfPaused())
 			videoList->resumeDownload(videoItem);
-		updateVisualControls();
+		else // deselect this item
+			getQTreeWidgetItemByVideoItem(videoItem)->setSelected(false);
 	}
+	// update visual controls
+	updateVisualControls();
 }
 
 void MainFormImpl::cancelDownloadVideoClicked()
 {
-	VideoItem *videoItem = NULL;
-
-	if (lsvDownloadList->currentItem() != NULL)
-		if (getSelectedVideoItem()->isDownloading())
-			videoItem = getSelectedVideoItem();
-
-	// we have a video to cancel?
-	if (videoItem != NULL)
-		if (QMessageBox::question(this,
-								  tr("Cancel download"),
-								  tr("Wish you Cancel the download of <b>%1</b>?").arg(videoItem->getDisplayLabel()),
-								  tr("Yes"),
-								  tr("No"),
-								  QString(), 0, 1) == 0)
+	// remove all the items which are not possible to cancel
+	foreach (VideoItem *videoItem, getSelectedVideoItems())
+		if (!videoItem->isDownloading())
+			getQTreeWidgetItemByVideoItem(videoItem)->setSelected(false);
+	// get the items to cancel
+	QList<VideoItem *> videoItems = getSelectedVideoItems();
+	// display cancel confirmation
+	if (!videoItems.isEmpty())
+	{
+		if (videoItems.count() == 1) // only one item
 		{
-			videoList->cancelDownload(videoItem);
-			btnCancelDownload->setEnabled(false);
+			if (QMessageBox::question(this, tr("Cancel download"),
+									  tr("Wish you cancel the download of <b>%1</b>?").arg(videoItems.first()->getDisplayLabel()),
+									  tr("Yes"), tr("No"), QString(), 0, 1) != 0) return;
 		}
+		else // more than 1 item
+		{
+			if (QMessageBox::question(this, tr("Cancel downloads"),
+									  tr("Wish you cancel the <b>%1</b> selected downloads?").arg(videoItems.count()),
+									  tr("Yes"), tr("No"), QString(), 0, 1) != 0) return;
+		}
+		// cancel all selected items
+		foreach (VideoItem *videoItem, videoItems)
+			if (videoItem->isDownloading())
+				videoList->cancelDownload(videoItem);
+		// update visual controls
+		updateVisualControls();
+	}
 }
 
 void MainFormImpl::moreOptionsClicked()
@@ -651,26 +671,38 @@ void MainFormImpl::clearCompletedClicked()
 
 void MainFormImpl::resetStateClicked()
 {
-	getSelectedVideoItem()->setAsNULL();
+	QList<VideoItem *> videoItems = getSelectedVideoItems();
+	// reset all items
+	foreach (VideoItem *videoItem, videoItems)
+		if (videoItem->isResetable()) // reset item
+			videoItem->setAsNULL();
+		else // deselect item
+			getQTreeWidgetItemByVideoItem(videoItem)->setSelected(false);
 }
 
 void MainFormImpl::moveItemUpClicked()
 {
-	videoList->moveUP(getSelectedVideoItem());
+	QList<VideoItem *> videoItems = getSelectedVideoItems();
+	// only one item can be moved
+	if (videoItems.count() == 1)
+		videoList->moveUP(videoItems.first());
 }
 
 void MainFormImpl::moveItemDownClicked()
 {
-	videoList->moveDOWN(getSelectedVideoItem());
+	QList<VideoItem *> videoItems = getSelectedVideoItems();
+	// only one item can be moved
+	if (videoItems.count() == 1)
+		videoList->moveDOWN(videoItems.first());
 }
 
 void MainFormImpl::playVideoClicked()
 {
-	VideoItem *videoItem = getSelectedVideoItem();
-
-	if (videoItem->isCompleted())
-		if (QFile::exists(videoItem->getVideoFileSavedTo()))
-			openDirectory(getSelectedVideoItem()->getVideoFileSavedTo());
+	QList<VideoItem *> videoItems = getSelectedVideoItems();
+	// only one item can be played
+	if (videoItems.count() == 1)
+		if (videoItems.first()->isCompleted() && QFile::exists(videoItems.first()->getVideoFileSavedTo()))
+			openDirectory(videoItems.first()->getVideoFileSavedTo());
 }
 
 void MainFormImpl::stayOnTopClicked()
@@ -687,12 +719,12 @@ void MainFormImpl::minimizeToSystemTrayClicked()
 
 void MainFormImpl::viewErrorMessageClicked()
 {
-	VideoItem *videoItem = getSelectedVideoItem();
-
-	if (videoItem != NULL)
+	QList<VideoItem *> videoItems = getSelectedVideoItems();
+	// only one item error can be displayed
+	if (videoItems.count() == 1)
 		QMessageBox::information(this,
 								tr("Error message"),
-								tr("This video has the following error:<br><br><b>%1</b>").arg(videoItem->getErrorMessage()),
+								tr("This video has the following error:<br><br><b>%1</b>").arg(videoItems.first()->getErrorMessage()),
 								tr("Ok"));
 }
 
@@ -1002,12 +1034,14 @@ QTreeWidgetItem* MainFormImpl::getQTreeWidgetItemByVideoItem(VideoItem *videoIte
 	return NULL;
 }
 
-VideoItem* MainFormImpl::getSelectedVideoItem()
+QList<VideoItem *> MainFormImpl::getSelectedVideoItems()
 {
-	if (lsvDownloadList->currentItem() != NULL)
-		return videoList->getVideoItemFromQVAriant(lsvDownloadList->currentItem()->data(0, Qt::UserRole));
-	else
-		return NULL;
+	QList<VideoItem *> results;
+	// get all video items
+	foreach (QTreeWidgetItem *treeItem, lsvDownloadList->selectedItems())
+		results.append(getVideoItemByQTreeWidgetItem(treeItem));
+	// return the list of videos
+	return results;
 }
 
 VideoItem* MainFormImpl::getVideoItemByQTreeWidgetItem(QTreeWidgetItem* treeItem)
@@ -1152,16 +1186,19 @@ void MainFormImpl::updateListInformation()
 // visual controls
 void MainFormImpl::updateVisualControls()
 {
-	VideoItem *videoItem = getSelectedVideoItem();
+	QList<VideoItem *> videoItems = getSelectedVideoItems();
 
-	if (videoItem == NULL)
+	if (videoItems.isEmpty()) // no items selected
 	{
 		btnDeleteVideo->setEnabled(false);
 		btnStartDownload->setEnabled(false);
 		btnPauseResumeDownload->setEnabled(false);
 		btnCancelDownload->setEnabled(false);
 
+		btnDeleteVideo->setText(tr("Delete video"));
+		btnStartDownload->setText(tr("Start download"));
 		btnPauseResumeDownload->setText(tr("Pause download"));
+		btnCancelDownload->setText(tr("Cancel download"));
 
 		actPlayVideo->setEnabled(false);
 		actPlayVideo->setVisible(true);
@@ -1171,29 +1208,71 @@ void MainFormImpl::updateVisualControls()
 		actMoveUP->setEnabled(false);
 		actMoveDOWN->setEnabled(false);
 	}
-	else // item selected
+	else if (videoItems.count() == 1) // one video item selected
 	{
+		VideoItem *videoItem = videoItems.first();
+
 		btnDeleteVideo->setEnabled(videoItem->isRemovable());
-		btnStartDownload->setEnabled(videoList->canStartDownload() && (videoItem->isReady() || videoItem->isCanceled()));
-		btnPauseResumeDownload->setEnabled(videoItem->isDownloading() || videoItem->isAnyKindOfPaused() ||
-										   videoItem->isResuming() || videoItem->isReady());
+		btnStartDownload->setEnabled(videoList->canStartDownload() && videoItem->isDownloadable());
+		btnPauseResumeDownload->setEnabled(videoItem->isPauseable() || videoItem->isAnyKindOfPaused());
 		btnCancelDownload->setEnabled(videoItem->isDownloading());
-		
-		if (videoItem->isAnyKindOfPaused())
-			btnPauseResumeDownload->setText(tr("Resume download"));
-		else 
-			btnPauseResumeDownload->setText(tr("Pause download"));
+
+		btnDeleteVideo->setText(tr("Delete video"));
+		btnStartDownload->setText(tr("Start download"));
+		btnPauseResumeDownload->setText(videoItem->isAnyKindOfPaused() ? tr("Resume download") : tr("Pause download"));
+		btnCancelDownload->setText(tr("Cancel download"));
+		actRenameVideo->setText(tr("Rename video"));
+		actResetState->setText(tr("Reset state"));
 
 		actPlayVideo->setEnabled(videoItem->isCompleted());
 		actPlayVideo->setVisible(!videoItem->hasErrors());
 		actViewErrorMessage->setVisible(videoItem->hasErrors());
-		actResetState->setEnabled(videoItem->isCanceled() ||
-		                          videoItem->isBlocked() ||
-		                          videoItem->hasErrors());
+		actResetState->setEnabled(videoItem->isResetable());
 
 		// update move up/down actions
 		actMoveUP->setEnabled(videoList->getVideoItem(0) != videoItem);
 		actMoveDOWN->setEnabled(videoList->getVideoItem(videoList->getVideoItemCount() - 1) != videoItem);
+	}
+	else // two or more items selected
+	{
+		bool canDelete = false;
+		bool canStart = false;
+		bool canPause = false;
+		bool canResume = false;
+		bool canCancel = false;
+		bool canReset = false;
+		// check each video item and update the control flags
+		foreach (VideoItem *videoItem, videoItems)
+		{
+			if (videoItem->isRemovable()) canDelete = true;
+			if (videoItem->isDownloadable()) canStart = true;
+			if (videoItem->isPauseable()) canPause = true;
+			if (videoItem->isAnyKindOfPaused()) canResume = true;
+			if (videoItem->isDownloading()) canCancel = true;
+			if (videoItem->isResetable()) canReset = true;
+		}
+
+		btnDeleteVideo->setEnabled(canDelete);
+		btnStartDownload->setEnabled(canStart);
+		btnPauseResumeDownload->setEnabled((canPause && !canResume) || (!canPause && canResume));
+		btnCancelDownload->setEnabled(canCancel);
+
+		btnDeleteVideo->setText(tr("Delete videos"));
+		btnStartDownload->setText(tr("Start downloads"));
+		bool pauseText = (canPause && !canResume) || (canPause == canResume);
+		btnPauseResumeDownload->setText(pauseText ? tr("Pause downloads") : tr("Resume downloads"));
+		btnCancelDownload->setText(tr("Cancel downloads"));
+		actRenameVideo->setText(tr("Rename videos"));
+		actResetState->setText(tr("Reset states"));
+
+		actPlayVideo->setEnabled(false);
+		actPlayVideo->setVisible(true);
+		actViewErrorMessage->setVisible(false);
+		actResetState->setEnabled(canReset);
+
+		// update move up/down actions
+		actMoveUP->setEnabled(false);//(videoList->getVideoItem(0) != videoItem);
+		actMoveDOWN->setEnabled(false);//(videoList->getVideoItem(videoList->getVideoItemCount() - 1) != videoItem);
 	}
 
 	btnClearList->setEnabled(!videoList->isWorking() && videoList->getVideoItemCount(true) > 0);
@@ -1201,11 +1280,14 @@ void MainFormImpl::updateVisualControls()
 
 	// update actions
 	actDeleteVideo->setEnabled(btnDeleteVideo->isEnabled());
+	actDeleteVideo->setText(btnDeleteVideo->text());
 	actRenameVideo->setEnabled(btnDeleteVideo->isEnabled());
 	actStartDownload->setEnabled(btnStartDownload->isEnabled());
+	actStartDownload->setText(btnStartDownload->text());
 	actPauseResumeDownload->setEnabled(btnPauseResumeDownload->isEnabled());
 	actPauseResumeDownload->setText(btnPauseResumeDownload->text());
 	actCancelDownload->setEnabled(btnCancelDownload->isEnabled());
+	actCancelDownload->setText(btnCancelDownload->text());
 	actClearList->setEnabled(btnClearList->isEnabled());
 	actClearCompleted->setEnabled(btnClearCompleted->isEnabled());
 
@@ -1247,10 +1329,9 @@ void MainFormImpl::videoItemDoubleClicked(QTreeWidgetItem *, int)
 	playVideoClicked();
 }
 
-void MainFormImpl::videoItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *)
+void MainFormImpl::videoItemSelectionChanged()
 {
-	if (current != NULL)
-		updateVisualControls();
+	updateVisualControls();
 }
 
 void MainFormImpl::videoListContextMenu(const QPoint & pos)
