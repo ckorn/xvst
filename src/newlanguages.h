@@ -46,7 +46,7 @@ Q_OBJECT
 		QList<Update *> *newLanguages;		//!< List with all aviable languages to install
 		QString newLanguagesFile;			//!< Update file used to fill the updates array
 		Http *http;							//!< Http instance
-		Update *currentUpdate;				//!< Current update (new language) which we are installing
+		Update *currentLanguage;				//!< Current update (new language) which we are installing
 		/*! Thread executation */
 		void run();
 		/*! Fill installed languages list */
@@ -59,6 +59,10 @@ Q_OBJECT
 		void clearAllNewLanguages();
 		/*! Update new languages */
 		void updateNewLanguages();
+		/*! Initialize the Http object (if is needed) */
+		void initializeHttp();
+		/*! Deinitalize the Http object (if is needed) */
+		void deinitHttp();
 	public:
 		/*! Class construction */
 		NewLanguagesController(ProgramOptions *programOptions);
