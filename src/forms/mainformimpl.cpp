@@ -1200,7 +1200,7 @@ void MainFormImpl::updateVisualControls()
 		VideoItem *videoItem = videoItems.first();
 
 		btnDeleteVideo->setEnabled(videoItem->isRemovable());
-		btnStartDownload->setEnabled(videoList->canStartDownload() && videoItem->isDownloadable());
+		btnStartDownload->setEnabled(videoItem->isDownloadable());
 		btnPauseResumeDownload->setEnabled(videoItem->isPauseable() || videoItem->isAnyKindOfPaused());
 		btnCancelDownload->setEnabled(videoItem->isDownloading());
 

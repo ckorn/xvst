@@ -150,17 +150,9 @@ QString VideoItem::getVideoStateAsString()
 		case vsNULL:
 			return tr("-");
 		case vsGettingURL:
-			switch (videoPreState)
-			{
-				case vpsNothing:
-					return tr("Getting info...");
-				case vpsPreDownloading:
-				case vpsPreResuming:
-				case vpsPreResumingReadyPaused:
-					return tr("Updating info...");
-			}
+			return videoPreState == vpsNothing ? tr("Getting info...") : tr("Updating info...");
 		case vsGettedURL:
-			return tr("Ready");
+			return videoPreState == vpsNothing ? tr("Ready") : tr("Queued...");
 		case vsDownloading:
 			return tr("Downloading...");
 		case vsDownloaded:
@@ -696,6 +688,7 @@ void VideoItem::setAsPaused(QObject *who)
 {
 	if (isLocked() && who != locker) return;
 	videoState = vsPaused;
+	videoPreState = vpsNothing;
 }
 
 void VideoItem::setAsResuming(QObject *who)
@@ -725,6 +718,11 @@ void VideoItem::setAsNeedLogin(QObject *who)
 void VideoItem::setAsNothingPreState()
 {
 	videoPreState = vpsNothing;
+}
+
+void VideoItem::setCustomPreState(VideoPreState preState)
+{
+	videoPreState = preState;
 }
 
 void VideoItem::setAsCustomDownload()

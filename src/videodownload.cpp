@@ -307,7 +307,15 @@ void VideoDownload::stopAllDownloads(bool doCancel)
 
 void VideoDownload::downloadVideo(VideoItem *videoItem)
 {
-	if (videoItem == NULL || !canStartDownload()) return;
+	if (videoItem == NULL) return; // || !canStartDownload()) return;
+
+	// if cannot start then set this item as "preDownloading"
+	if (!canStartDownload())
+	{
+		videoItem->setCustomPreState(vpsPreDownloading);
+		emit videoItemUpdated(videoItem);
+		return;
+	}
 	// check if is an HTTP or RTMP download and add it inot downloads queue
 	if (isHttpURL(videoItem->getVideoInformation().URL))
 		downloads->append(new DownloadItem_HTTP(this, videoItem));

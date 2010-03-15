@@ -305,6 +305,8 @@ Q_OBJECT
 		void setAsNeedLogin(QObject *who = NULL);
 		/*! Set as no pre-state */
 		void setAsNothingPreState();
+		/*! Set a custom pre-state */
+		void setCustomPreState(VideoPreState preState = vpsNothing);
 		/*! Set as Custom download */
 		void setAsCustomDownload();
 		/*! Set as Need update URL */

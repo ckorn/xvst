@@ -148,8 +148,13 @@ void VideoListController::timerEvent(QTimerEvent* /*event*/)
 	}
 	else // no special items were found
 	{
+		// get the first item with "resuming" state
+		videoItem = getFirstByState(vsResuming);
+		// if we found an item resuming... we start it (if shedule and download list let us)
+		if (videoItem != NULL && schedule->canStart() && videoDownload->canStartDownload())
+			resumeDownload(videoItem);
 		// get the first ready item, to auto-start the download
-		if (programOptions->getDownloadAutomatically() && schedule->canStart() && videoDownload->canStartDownload())
+		else if (programOptions->getDownloadAutomatically() && schedule->canStart() && videoDownload->canStartDownload())
 		{
 			videoItem = getFirstReady();
 			if (videoItem != NULL && !videoItem->hasErrors())
