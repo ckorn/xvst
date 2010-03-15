@@ -557,8 +557,6 @@ void MainFormImpl::renameVideoClicked()
 		// display custom title window
 		if (showModalDialog(&renameVideoForm) == QDialog::Accepted)
 			videoList->renameVideo(videoItem, renameVideoForm.edtTitle->text());
-		// unselect the modified caption
-		getQTreeWidgetItemByVideoItem(videoItem)->setSelected(false);
 	}
 }
 
