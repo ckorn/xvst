@@ -3813,7 +3813,7 @@ font-size:12px;
     <message>
         <location filename="../../src/videoitem.cpp" line="490"/>
         <source>The connection to the remote server timed out</source>
-        <translation>Se ha agotado el tiempo de espera con el servidor remoton</translation>
+        <translation>Se ha agotado el tiempo de espera con el servidor remoto</translation>
     </message>
     <message>
         <location filename="../../src/videoitem.cpp" line="492"/>
