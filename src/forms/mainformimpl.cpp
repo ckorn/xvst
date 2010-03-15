@@ -557,20 +557,9 @@ void MainFormImpl::renameVideoClicked()
 		// display custom title window
 		if (showModalDialog(&renameVideoForm) == QDialog::Accepted)
 			videoList->renameVideo(videoItem, renameVideoForm.edtTitle->text());
+		// unselect the modified caption
+		getQTreeWidgetItemByVideoItem(videoItem)->setSelected(false);
 	}
-	/*
-	VideoItem *videoItem = getSelectedVideoItem();
-	// we have an items
-	if (videoItem != NULL)
-	{
-		CustomDownloadTitleImpl renameVideoForm(this, Qt::Sheet);
-		// set the current title
-		renameVideoForm.edtTitle->setText(videoItem->getDisplayLabel());
-		// display custom title window
-		if (showModalDialog(&renameVideoForm) == QDialog::Accepted)
-			videoList->renameVideo(videoItem, renameVideoForm.edtTitle->text());
-	}
-	*/
 }
 
 void MainFormImpl::startDownloadVideoClicked()
