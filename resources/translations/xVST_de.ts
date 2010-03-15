@@ -845,10 +845,17 @@ background: white;
     </message>
 </context>
 <context>
+    <name>Loading</name>
+    <message>
+        <source>Loading</source>
+        <translation type="unfinished">Lade ...</translation>
+    </message>
+</context>
+<context>
     <name>LoadingImpl</name>
     <message>
         <source>Loading</source>
-        <translation>Lade ...</translation>
+        <translation type="obsolete">Lade ...</translation>
     </message>
     <message>
         <source>Plugins loaded</source>
@@ -1055,7 +1062,7 @@ background: white;
     </message>
     <message>
         <source>Ctrl+Down</source>
-        <translation>strg+runter</translation>
+        <translation type="obsolete">strg+runter</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1075,7 +1082,7 @@ background: white;
     </message>
     <message>
         <source>Ctrl+Up</source>
-        <translation>strg+hoch</translation>
+        <translation type="obsolete">strg+hoch</translation>
     </message>
     <message>
         <source>Support button</source>
@@ -1163,6 +1170,14 @@ background: white;
     </message>
     <message>
         <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Down</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1262,7 +1277,7 @@ background: white;
     </message>
     <message>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Möchtest du den Download &lt;b&gt;%1&lt;/b&gt; abbrechen?</translation>
+        <translation type="obsolete">Möchtest du den Download &lt;b&gt;%1&lt;/b&gt; abbrechen?</translation>
     </message>
     <message>
         <source>Resume download</source>
@@ -1299,6 +1314,58 @@ background: white;
     <message>
         <source>You already added this video. Check your downloads list.</source>
         <translation type="unfinished">Du hast dieses Video bereits einfügt. Überprüfe ob es schon heruntergeladen wurde.</translation>
+    </message>
+    <message>
+        <source>Wish you cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete video</source>
+        <translation type="unfinished">Video löschen</translation>
+    </message>
+    <message>
+        <source>Start download</source>
+        <translation type="unfinished">Download starten</translation>
+    </message>
+    <message>
+        <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset state</source>
+        <translation type="unfinished">Status zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Delete videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resume downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset states</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2498,7 +2565,7 @@ background: white;
     </message>
 </context>
 <context>
-    <name>SearchVideosNoResultsImpl</name>
+    <name>SearchVideosNoResults</name>
     <message>
         <source>Form</source>
         <translation type="unfinished"></translation>
@@ -2881,6 +2948,30 @@ background: white;
         <source>Connection error: Unable to download the video</source>
         <translation>Verbindungsfehler: Konnte das Video nicht herunterladen</translation>
     </message>
+    <message>
+        <source>The maximum allowed http redirections has been reached</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The connection to the remote server timed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote server refused the connection (the server is not accepting requests)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote host name was not found (invalid hostname)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The access to the remote content was denied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote content was not found at the server </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WelcomeDonate</name>
@@ -2913,6 +3004,17 @@ background: white;
     <message>
         <source>Welcome to xVideoServiceThief</source>
         <translation>Willkommen bei xVideoServiceThief</translation>
+    </message>
+</context>
+<context>
+    <name>WhatsNew</name>
+    <message>
+        <source>What&apos;s new....</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Schließen</translation>
     </message>
 </context>
 <context>

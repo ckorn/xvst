@@ -848,10 +848,17 @@ font-size:12px;
     </message>
 </context>
 <context>
+    <name>Loading</name>
+    <message>
+        <source>Loading</source>
+        <translation type="unfinished">Wczytywanie</translation>
+    </message>
+</context>
+<context>
     <name>LoadingImpl</name>
     <message>
         <source>Loading</source>
-        <translation>Wczytywanie</translation>
+        <translation type="obsolete">Wczytywanie</translation>
     </message>
     <message>
         <source>Loading plugins... please wait...</source>
@@ -1145,14 +1152,6 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ctrl+Up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+Down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Ctrl+P</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1166,6 +1165,14 @@ font-size:12px;
     </message>
     <message>
         <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Down</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1260,10 +1267,6 @@ font-size:12px;
         <translation>Anuluj ściąganie</translation>
     </message>
     <message>
-        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error message</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1302,6 +1305,58 @@ font-size:12px;
     <message>
         <source>You already added this video. Check your downloads list.</source>
         <translation type="unfinished">Dodałeś już ten film. Sprawdź listę.</translation>
+    </message>
+    <message>
+        <source>Wish you cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete video</source>
+        <translation type="unfinished">Usuń plik wideo</translation>
+    </message>
+    <message>
+        <source>Start download</source>
+        <translation type="unfinished">Zacznij ściąganie</translation>
+    </message>
+    <message>
+        <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset state</source>
+        <translation type="unfinished">Resetuj status</translation>
+    </message>
+    <message>
+        <source>Delete videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resume downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset states</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2501,7 +2556,7 @@ font-size:12px;
     </message>
 </context>
 <context>
-    <name>SearchVideosNoResultsImpl</name>
+    <name>SearchVideosNoResults</name>
     <message>
         <source>Form</source>
         <translation type="unfinished"></translation>
@@ -2884,6 +2939,30 @@ font-size:12px;
         <source>File to resume not found</source>
         <translation>Nie znalazłem pliku do wznowienia</translation>
     </message>
+    <message>
+        <source>The maximum allowed http redirections has been reached</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The connection to the remote server timed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote server refused the connection (the server is not accepting requests)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote host name was not found (invalid hostname)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The access to the remote content was denied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote content was not found at the server </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WelcomeDonate</name>
@@ -2908,6 +2987,17 @@ font-size:12px;
     </message>
     <message>
         <source>Donate!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zamknij</translation>
+    </message>
+</context>
+<context>
+    <name>WhatsNew</name>
+    <message>
+        <source>What&apos;s new....</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

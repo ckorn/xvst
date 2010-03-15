@@ -845,10 +845,17 @@ betűméret:12px;
     </message>
 </context>
 <context>
+    <name>Loading</name>
+    <message>
+        <source>Loading</source>
+        <translation type="unfinished">Betöltés</translation>
+    </message>
+</context>
+<context>
     <name>LoadingImpl</name>
     <message>
         <source>Loading</source>
-        <translation>Betöltés</translation>
+        <translation type="obsolete">Betöltés</translation>
     </message>
     <message>
         <source>Loading plugins... please wait...</source>
@@ -1143,11 +1150,11 @@ betűméret:12px;
     </message>
     <message>
         <source>Ctrl+Up</source>
-        <translation>Ctrl+Up</translation>
+        <translation type="obsolete">Ctrl+Up</translation>
     </message>
     <message>
         <source>Ctrl+Down</source>
-        <translation>Ctrl+Down</translation>
+        <translation type="obsolete">Ctrl+Down</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -1163,6 +1170,14 @@ betűméret:12px;
     </message>
     <message>
         <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Down</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1230,7 +1245,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Megszakítod a(z) &lt;b&gt;%1&lt;/b&gt; letöltését?</translation>
+        <translation type="obsolete">Megszakítod a(z) &lt;b&gt;%1&lt;/b&gt; letöltését?</translation>
     </message>
     <message>
         <source>Error message</source>
@@ -1299,6 +1314,58 @@ betűméret:12px;
     <message>
         <source>You already added this video. Check your downloads list.</source>
         <translation>Már hozzáadtad ezt a videót. Ellenőrizd a letöltési listát.</translation>
+    </message>
+    <message>
+        <source>Wish you cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete video</source>
+        <translation type="unfinished">Videó törlése</translation>
+    </message>
+    <message>
+        <source>Start download</source>
+        <translation type="unfinished">Letöltés indítása</translation>
+    </message>
+    <message>
+        <source>Rename video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset state</source>
+        <translation type="unfinished">Állapot visszaállítás</translation>
+    </message>
+    <message>
+        <source>Delete videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resume downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset states</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2498,7 +2565,7 @@ betűméret:12px;
     </message>
 </context>
 <context>
-    <name>SearchVideosNoResultsImpl</name>
+    <name>SearchVideosNoResults</name>
     <message>
         <source>Form</source>
         <translation type="unfinished"></translation>
@@ -2881,6 +2948,30 @@ betűméret:12px;
         <source>File to resume not found</source>
         <translation>A fájl a folytatáshoz nem található</translation>
     </message>
+    <message>
+        <source>The maximum allowed http redirections has been reached</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The connection to the remote server timed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote server refused the connection (the server is not accepting requests)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote host name was not found (invalid hostname)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The access to the remote content was denied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote content was not found at the server </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WelcomeDonate</name>
@@ -2913,6 +3004,17 @@ betűméret:12px;
     <message>
         <source>Close</source>
         <translation>Bezárás</translation>
+    </message>
+</context>
+<context>
+    <name>WhatsNew</name>
+    <message>
+        <source>What&apos;s new....</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Bezárás</translation>
     </message>
 </context>
 <context>
