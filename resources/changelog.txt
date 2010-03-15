@@ -13,19 +13,24 @@
 - Added the "What's new" functionality
 - Added the winPenPack in credits window
 - Added video items multiselection manipulation
+- Added possibility to queue downloads
 
 - Improved the automatic updates
 - Improved the image previewer (search videos)
 
-- Changed "Move UP" and "Move DOWN" shortcut to "Alt + up" and "Alt + down"
+- Revised English translation
+- Revised Spanish translation
+- Revised Catalan translation
 
+- Changed "Move UP" and "Move DOWN" shortcut to "Alt + up" and "Alt + down"
 - Changed plug-in:
 	- YouTube
 	- YouTubeIslam (renamed to TubeIslam)
 
 - Fixed bug (Error: The session was not restored correctly)
 - Fixed bug (Error: The converted file names where truncated if a "." was present)
-- Fixed bug (Error: The main window was freezed when a search was interrupted)
+- Fixed bug (Error: The main window was freezed when an active search was interrupted)
+- Fixed bug (Error: The resuming downloads were never started in some rare situations)
 
 2.3.5:
 ------
