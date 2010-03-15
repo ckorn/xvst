@@ -27,6 +27,8 @@
 
 #include "../programversion.h"
 
+#include <time.h>
+
 #ifdef Q_WS_MACX
 #include "../webkit_mac/WebKitClass.h"
 #endif
