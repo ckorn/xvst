@@ -1610,7 +1610,7 @@ font-size:12px;
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="625"/>
         <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
-        <translation>¿Desea cancelar las &lt;b&gt;%1&lt;/b&gt;descargas?</translation>
+        <translation type="unfinished">¿Desea cancelar las &lt;b&gt;%1&lt;/b&gt; descargas?</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="974"/>
