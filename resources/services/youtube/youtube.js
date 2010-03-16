@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.8";
+	this.version = "2.0.9";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -74,6 +74,8 @@ function getVideoInformation(url)
 		result.URL = strFormat(URL_GET_FLV_FMT, getUrlHost(youTubeURL), vidID, vidHash, vidRes);
 	else // NO videoRes (fmt) specified
 		result.URL = strFormat(URL_GET_FLV, getUrlHost(youTubeURL), vidID, vidHash);
+	// convert the %3D to "="
+	result.URL = strReplace(result.URL, "%3D", "=");
 	// check if this video need a login
 	result.needLogin = result.title == "Broadcast Yourself.";
 	// return the video information
