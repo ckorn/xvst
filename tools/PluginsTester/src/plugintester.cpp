@@ -112,12 +112,12 @@ void PluginTester::run()
 		Http *http = new Http();
 		if (!vd.cookies.isEmpty()) http->addCookies(vd.cookies);
 		if (!vd.headers.isEmpty()) http->addHeaderParameters(vd.headers);
-		QHttpResponseHeader urlInf = http->head(QUrl(vd.URL));
+		int contentLength = copyBetween(http->head(QUrl(vd.URL)), "Content-Length: ", "\n").toInt();
 		delete http;
 		// update test info
 		test->setCaption(vd.title);
 		test->setFlvUrl(vd.URL);
-		test->setSize(urlInf.contentLength());
+		test->setSize(contentLength);
 		// increase failed tests
 		if (!test->isTestOk()) failed++;
 		// destroy plugin
