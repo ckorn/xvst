@@ -47,8 +47,8 @@ Q_OBJECT
 		QString downloadWebpagePostEx(const QString URL, QString parameters, bool url_tolerantMode, bool isUtf8 = true);
 		QString downloadWebpageHeaders(const QString URL, QString separator = "\n");
 		void addCookie(QString cookie);
-		void addCookies(QString cookies, QString separator);
-		QString getCookies(QString separator);
+		void addCookies(QString cookies, QString separator = "|");
+		QString getCookies(QString separator = "|");
 		void clearCookies();
 		void addHeaderParameter(QString key, QString value);
 		void clearHeaderParameters();
