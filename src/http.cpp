@@ -530,7 +530,7 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 	jumpToURL(URL);
 
 	// ok
-	return QNetworkReply::NoError;
+	return EnumHTTP::NO_ERROR;
 }
 
 int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
@@ -562,6 +562,7 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 
 	// configure the resuming
 	resuming = true;
+	this->autoRestartOnFail = autoRestartOnFail;
 	initialDownloadSize = outputFile->size();
 	prevTotalDownloadedSize = initialDownloadSize;
 
@@ -570,7 +571,7 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 	jumpToURL(URL);
 
 	// ok
-	return QHttp::NoError;
+	return EnumHTTP::NO_ERROR;
 }
 
 void Http::pause()
@@ -692,9 +693,6 @@ QFileInfo Http::getDestiationFile()
 
 int Http::getLastError()
 {
-	//if (currentReply) return currentReply->error();
-	// we assume "no error" by default
-	//return QNetworkReply::NoError;
 	return lastErrorCode;
 }
 
