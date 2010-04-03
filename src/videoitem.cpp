@@ -249,6 +249,11 @@ bool VideoItem::hasErrors()
 	return videoState == vsError;
 }
 
+bool VideoItem::hasAnImportantError()
+{
+	return  (errorCode == 22) || (errorCode >= 28 && errorCode <= 33) || (errorCode == 102);
+}
+
 bool VideoItem::isBussy()
 {
 	return isGettingURL() || isDownloading() || isConverting();

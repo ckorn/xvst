@@ -167,6 +167,8 @@ Q_OBJECT
 		bool isBlocked();
 		/*! Get if has Errors */
 		bool hasErrors();
+		/*! Get if is an "important" error */
+		bool hasAnImportantError();
 		/*! Get if this item is Bussy */
 		bool isBussy();
 		/*! Get if is removable */
