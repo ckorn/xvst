@@ -151,6 +151,8 @@ void Http::initClass()
 	// download speed avg calculator
 	downloadSpeedAvg = new ArrayAvg(100);
 	timeRemainingAvg = new ArrayAvg(100);
+	// init retries
+	resetRetries();
 	// init custom header parameters
 	customHeaders = new QStringList();
 	// default configuration
@@ -164,6 +166,7 @@ void Http::initClass()
 	setPauseOnDestroy(false);
 	setUsePercentageForTimeRemaining(true);
 	setCookiesEnabled(true);
+	setDeleteFileOnError(true);
 	// init others
 	timeOutTimerId = -1;
 	timeLeftTimerId = -1;
@@ -178,9 +181,9 @@ void Http::initData()
 	resuming = false;
 	syncFlag = false;
 	downloadStartedFlag = false;
+	autoRestartOnFail = false;
 	oriURL.clear();
 	autoJumps = 0;
-	retriesCount = 0;
 	clearCurrentReply();
 	stopActiveTimeOutTimer();
 	data = QString();
@@ -312,6 +315,13 @@ void Http::timerEvent(QTimerEvent *event)
 	}
 }
 
+void Http::restartDownloadSignal()
+{
+	download(oriURL, destFile.path(), destFile.fileName(), false);
+	// increase retries
+	retriesCount++;
+}
+
 void Http::abortRequest(EnumHTTP::StopReason stopReason)
 {
 	this->stopReason = stopReason;
@@ -331,7 +341,8 @@ void Http::closeOutputFile()
 
 void Http::deleteOutputFile()
 {
-	if (outputFile && outputFile->exists()) outputFile->remove();
+	if (deleteFileOnError && outputFile && outputFile->exists())
+		outputFile->remove();
 }
 
 void Http::sendDownloadError(int error)
@@ -345,8 +356,11 @@ void Http::sendDownloadError(int error)
 
 void Http::timeOutDownloadError()
 {
-	// TODO - Implementar el codi de "reset" (fa falta??)
-	sendDownloadError(EnumHTTP::INTERNAL_NETWEORK_TIME_OUT);
+	// can give it a second try?
+	if (canRestartFailedDownload())
+		restartFailedDownload();
+	else // no more tries... so send the time out error
+		sendDownloadError(EnumHTTP::INTERNAL_NETWEORK_TIME_OUT);
 }
 
 EnumHTTP::Error Http::networkReplyToEnumHTTP(QNetworkReply::NetworkError error)
@@ -374,6 +388,22 @@ EnumHTTP::Error Http::networkReplyToEnumHTTP(QNetworkReply::NetworkError error)
 			return EnumHTTP::UNKNOW_NETWEORK_ERROR;
 	}
 }
+
+void Http::resetRetries()
+{
+	retriesCount = 1;
+}
+
+bool Http::canRestartFailedDownload()
+{
+	return retriesCount < maxRetries;
+}
+
+void Http::restartFailedDownload()
+{
+	QTimer::singleShot(250, this, SLOT(restartDownloadSignal()));
+}
+
 void Http::jumpToURL(QUrl url)
 {
 	// start a new time out timer
@@ -729,6 +759,8 @@ void Http::finished(QNetworkReply *reply)
 			{
 				case QNetworkReply::NoError:
 				{
+					// reset retries count
+					resetRetries();
 					// if we have a size reference then check if we download all
 					if (totalToDownloadSize != 0 && outputFile->size() < totalDownloadedSize)
 					{
@@ -770,10 +802,18 @@ void Http::finished(QNetworkReply *reply)
 							sendDownloadError(EnumHTTP::TOO_MUCH_REDIRECTIONS);
 							break;
 						}
-						// those two options won't never happens (adding them we avoid 2 compiler warnings)
-						case EnumHTTP::NO_STOPPED:
-						case EnumHTTP::DOWNLOAD_FINISHED:
+						case EnumHTTP::AUTO_RESTART:
+						{
+							restartFailedDownload();
 							break;
+						}
+						case EnumHTTP::CANNOT_RESUME:
+						{
+							sendDownloadError(EnumHTTP::UNABLE_RESUME_DOWNLOAD);
+							break;
+						}
+						// ignore others
+						default: break;
 					}
 					break;
 				}
@@ -786,7 +826,11 @@ void Http::finished(QNetworkReply *reply)
 				// other errors
 				default:
 				{
-					sendDownloadError(networkReplyToEnumHTTP(reply->error()));
+					// check if we can give it an another try...
+					if (canRestartFailedDownload())
+						restartFailedDownload();
+					else // no more tries... so finish with an error
+						sendDownloadError(networkReplyToEnumHTTP(reply->error()));
 					break;
 				}
 			}
@@ -852,16 +896,27 @@ void Http::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 
 void Http::metaDataChanged()
 {
+	// if we are redirecting... then ignore any "meta data change" for this time
+	if (!currentReply->attribute(QNetworkRequest::RedirectionTargetAttribute).isNull())
+		return;
+
 	// get the file size from content-length header (if exists)
 	QVariant contentLength = currentReply->header(QNetworkRequest::ContentLengthHeader);
 	if (!contentLength.isNull()) totalToDownloadSize = contentLength.toInt();
 
 	// if we are resuming then get the total to download size
-	if (resuming && currentReply->hasRawHeader("content-range"))
-		totalToDownloadSize = getToken(currentReply->rawHeader("content-range"), "/", 1).toInt();
+	if (resuming)
+	{
+		if (currentReply->hasRawHeader("content-range"))
+			totalToDownloadSize = getToken(currentReply->rawHeader("content-range"), "/", 1).toInt();
+		else if (autoRestartOnFail) // auto-restart download
+			abortRequest(EnumHTTP::AUTO_RESTART);
+		else // no auto-restart
+			abortRequest(EnumHTTP::CANNOT_RESUME);
+	}
 
 	// no error found and no location header found
-	if (currentReply->error() == QNetworkReply::NoError && currentReply->header(QNetworkRequest::LocationHeader).isNull())
+	if (currentReply->error() == QNetworkReply::NoError)
 	{
 		// send the download/resume signal
 		if (resuming) emit downloadResumed(); else emit downloadStarted();
@@ -925,4 +980,9 @@ void Http::setUsePercentageForTimeRemaining(bool value)
 void Http::setCookiesEnabled(bool value)
 {
 	cookiesEnabled = value;
+}
+
+void Http::setDeleteFileOnError(bool value)
+{
+	deleteFileOnError = value;
 }

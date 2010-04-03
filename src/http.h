@@ -58,7 +58,9 @@ namespace EnumHTTP
 		USER_CANCELLED,				//102
 		USER_PAUSED,				//103
 		TIME_OUT,					//104
-		MAX_AUTO_JUMPS_REACHED		//105
+		MAX_AUTO_JUMPS_REACHED,		//105
+		AUTO_RESTART,				//106
+		CANNOT_RESUME				//107
 	};
 
 	enum HttpMethod
@@ -123,6 +125,7 @@ Q_OBJECT
 		bool pauseOnDestroyF;		//!< Should pause the download instead of cancel it?
 
 		bool resuming;				//!< Flag for know if we are resuming a download
+
 		bool autoRestartOnFail;		//!< Restart the download on fail?
 
 		QString userAgent;			//!< "user agent" used for this http instance
@@ -165,7 +168,8 @@ Q_OBJECT
 
 		bool downloadStartedFlag;	//!< Flag for know if the real download started
 
-		int lastErrorCode;		//!< Stores the last error code
+		bool deleteFileOnError;		//!< Flag for know if the partial downloaded data is removed on fail
+		int lastErrorCode;			//!< Stores the last error code
 
 		/*! Init Http class */
 		void initClass();
@@ -201,6 +205,12 @@ Q_OBJECT
 		void timeOutDownloadError();
 		/*! Convert a ReplyError to EnumHTTP::Error */
 		EnumHTTP::Error networkReplyToEnumHTTP(QNetworkReply::NetworkError error);
+		/*! Reset retries counter */
+		void resetRetries();
+		/*! Check if can restart the current failed download */
+		bool canRestartFailedDownload();
+		/*! Restart a failded download */
+		void restartFailedDownload();
 	public:
 		/*! Class constructor  */
 		Http();
@@ -274,6 +284,8 @@ Q_OBJECT
 		void setUsePercentageForTimeRemaining(bool value);
 		/*! Set if cookies are enabled or not */
 		void setCookiesEnabled(bool value);
+		/*! Set if the partial downloaded data should be removed on fail */
+		void setDeleteFileOnError(bool value);
 	private slots:
 		/*! Http netweork request finished */
 		void finished(QNetworkReply *reply);
@@ -283,6 +295,8 @@ Q_OBJECT
 		void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 		/*! Http network metadata changed */
 		void metaDataChanged();
+		/*! Restart the current download (on resume fail or auto-retry) */
+		void restartDownloadSignal();
 	signals:
 		/*! When a download started */
 		void downloadStarted();
