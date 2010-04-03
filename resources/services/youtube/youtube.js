@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.0.9";
+	this.version = "2.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -38,8 +38,6 @@ function RegistVideoService()
 function getVideoInformation(url)
 {
 	const URL_YOUTBE = "http://www.youtube.com/watch?v=%1";
-	const URL_GET_FLV = "http://%1/get_video?video_id=%2&t=%3";
-	const URL_GET_FLV_FMT = "http://%1/get_video?video_id=%2&t=%3&fmt=%4";
 	const HD_VIDEO_RES = "22";
 	// init result
 	var result = new VideoDefinition();
@@ -55,36 +53,38 @@ function getVideoInformation(url)
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(youTubeURL);
-	// get the video ID and the video HASH
-	var vidID =  getUrlParam(youTubeURL, "v");
-	var vidHash = copyBetween(html, '"t": "', '"');
-	// get the video resolution
-	var vidRes = copyBetween(html, '"fmt_map":', '",') + '"';
-	vidRes = copyBetween(vidRes, '"', '"');
-	vidRes = strReplace(vidRes, "%2F", "/");
-	if (vidRes != "") vidRes = getToken(vidRes, "/", 0);
-	// check if is a HD_VIDEO_RES
-	if (vidRes == HD_VIDEO_RES) // for HD videos the extension is mp4
-		result.extension = ".mp4";
+	
+	print(http.getLastError());
+	
 	// get the video title
 	result.title = copyBetween(html, "<title>", "</title>");
 	result.title = normalizeSpaces(result.title);
-	// build the video url
-	if (vidRes != "") // videoRes (fmt) specified
-		result.URL = strFormat(URL_GET_FLV_FMT, getUrlHost(youTubeURL), vidID, vidHash, vidRes);
-	else // NO videoRes (fmt) specified
-		result.URL = strFormat(URL_GET_FLV, getUrlHost(youTubeURL), vidID, vidHash);
-	// convert the %3D to "="
-	result.URL = strReplace(result.URL, "%3D", "=");
 	// check if this video need a login
 	result.needLogin = result.title == "Broadcast Yourself.";
+	// if we can continue (no loggin needed)
+	if (result.needLogin) return result;
+	// get the video info block
+	var dirtyUrl = copyBetween(html, "fmt_stream_map=", "34%7Chttp");
+	// we have an empty "dirtyUrl"?? if yes then we give it a second try
+	if (dirtyUrl == "") dirtyUrl = copyBetween(html, "fmt_url_map=", "&") + "&";
+	// get the video resolution
+	var vidRes = getToken(dirtyUrl, "%7C", 0);
+	// check if is a HD_VIDEO_RES (for HD videos the extension is mp4)
+	if (vidRes == HD_VIDEO_RES) result.extension = ".mp4";
+	// get the video url
+	result.URL = getToken(dirtyUrl, "%7C", 1);
+	// convert the hex codes to ascii
+	result.URL = cleanUrl(result.URL);
+	// remove the last "," and replace it with an "&" (if is needed)
+	if (strLastIndexOf(result.URL, "&") != result.URL.toString().length - 1)
+		result.URL = strRemove(result.URL, strLastIndexOf(result.URL, ","), result.URL.toString().length) + "&";		
 	// return the video information
 	return result;
 }
 
 /* 
 	This function "normalizeSpaces(str)" will be deprecated on next xVST version
-	and replaced with the new "simplifyString(str)" function (add in xVST 2.3.1)
+	and replaced with the new "simplifyString(str)" function (added in xVST 2.3.1)
 */
 function normalizeSpaces(str)
 {
@@ -94,7 +94,7 @@ function normalizeSpaces(str)
 	for (var n = 1; n < parts.length; n++)
 		result += parts[n] + " ";
 	// return the normalized string
-	return result;
+	return trimString(result);
 }
 
 function searchVideos(keyWord, pageIndex)
