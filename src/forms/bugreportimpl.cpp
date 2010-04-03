@@ -128,6 +128,7 @@ void BugReportImpl::sendReportClicked()
 	// fill text
 	QStringList info;
 	info 	<< "Video Information:\n"
+			<< "Error Code: " + QString("%1").arg(videoItem->getErrorCode()) + "\n"
 			<< "Video URL: " + videoItem->getURL() + "\n"
 			<< "xVST Version: " + PROGRAM_VERSION + " (" + CURRENT_OS + ")" + "\n"
 			<< "Plugin Version: " + getPluginInformation(videoItem->getURL()) + "\n"
