@@ -323,6 +323,7 @@ void VideoDownload::downloadVideo(VideoItem *videoItem)
 		downloads->append(new DownloadItem_RTMP(this, videoItem));
 	else // invalid URL
 	{
+		videoItem->setErrorCode(EnumHTTP::INVALID_URL);
 		videoItem->setAsError();
 		emit videoItemUpdated(videoItem);
 		return;
