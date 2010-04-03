@@ -33,6 +33,7 @@ namespace EnumHTTP
 {
 	enum Error
 	{
+		NO_ERROR = 0,				//0
 		UNABLE_CREATE_DIR = 20,		//20
 		UNABLE_CREATE_FILE,			//21
 		INVALID_URL,				//22
@@ -164,6 +165,8 @@ Q_OBJECT
 
 		bool downloadStartedFlag;	//!< Flag for know if the real download started
 
+		int lastErrorCode;		//!< Stores the last error code
+
 		/*! Init Http class */
 		void initClass();
 		/*! Init data */
@@ -196,6 +199,8 @@ Q_OBJECT
 		void sendDownloadError(int error);
 		/*! Check if can continue or not with the time out error */
 		void timeOutDownloadError();
+		/*! Convert a ReplyError to EnumHTTP::Error */
+		EnumHTTP::Error networkReplyToEnumHTTP(QNetworkReply::NetworkError error);
 	public:
 		/*! Class constructor  */
 		Http();

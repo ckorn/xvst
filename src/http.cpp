@@ -192,6 +192,7 @@ void Http::initData()
 	lastPercentage = 0.0;
 	downloadSpeed = 0;
 	timeLeft = 0;
+	lastErrorCode = 0;
 }
 
 void Http::copyHttpObject(const Http &other)
@@ -335,6 +336,7 @@ void Http::deleteOutputFile()
 
 void Http::sendDownloadError(int error)
 {
+	lastErrorCode = error;
 	// delete the downloaded file
 	deleteOutputFile();
 	// emit the download error signal
@@ -347,6 +349,31 @@ void Http::timeOutDownloadError()
 	sendDownloadError(EnumHTTP::INTERNAL_NETWEORK_TIME_OUT);
 }
 
+EnumHTTP::Error Http::networkReplyToEnumHTTP(QNetworkReply::NetworkError error)
+{
+	switch (error)
+	{
+		case QNetworkReply::NoError:
+			return EnumHTTP::NO_ERROR;
+		case QNetworkReply::TimeoutError:
+			return EnumHTTP::INTERNAL_NETWEORK_TIME_OUT;
+		// connection refused error
+		case QNetworkReply::ConnectionRefusedError:
+			return EnumHTTP::CONNECTION_REFUSED;
+		// host not found error
+		case QNetworkReply::HostNotFoundError:
+			return EnumHTTP::HOST_NOT_FOUND_ERROR;
+		// content access denied error
+		case QNetworkReply::ContentAccessDenied:
+			return EnumHTTP::CONTENT_ACCESS_DENIED;
+		// content not found error
+		case QNetworkReply::ContentNotFoundError:
+			return EnumHTTP::CONTENT_NOT_FOUND;
+		// other errors
+		default:
+			return EnumHTTP::UNKNOW_NETWEORK_ERROR;
+	}
+}
 void Http::jumpToURL(QUrl url)
 {
 	// start a new time out timer
@@ -665,9 +692,10 @@ QFileInfo Http::getDestiationFile()
 
 int Http::getLastError()
 {
-	if (currentReply) return currentReply->error();
+	//if (currentReply) return currentReply->error();
 	// we assume "no error" by default
-	return QNetworkReply::NoError;
+	//return QNetworkReply::NoError;
+	return lastErrorCode;
 }
 
 int Http::getLastStopReason()
@@ -757,34 +785,10 @@ void Http::finished(QNetworkReply *reply)
 					timeOutDownloadError();
 					break;
 				}
-				// connection refused error
-				case QNetworkReply::ConnectionRefusedError:
-				{
-					sendDownloadError(EnumHTTP::CONNECTION_REFUSED);
-					break;
-				}
-				// host not found error
-				case QNetworkReply::HostNotFoundError:
-				{
-					sendDownloadError(EnumHTTP::HOST_NOT_FOUND_ERROR);
-					break;
-				}
-				// content access denied error
-				case QNetworkReply::ContentAccessDenied:
-				{
-					sendDownloadError(EnumHTTP::CONTENT_ACCESS_DENIED);
-					break;
-				}
-				// content not found error
-				case QNetworkReply::ContentNotFoundError:
-				{
-					sendDownloadError(EnumHTTP::CONTENT_NOT_FOUND);
-					break;
-				}
-				// any other possible error
+				// other errors
 				default:
 				{
-					sendDownloadError(EnumHTTP::UNKNOW_NETWEORK_ERROR);
+					sendDownloadError(networkReplyToEnumHTTP(reply->error()));
 					break;
 				}
 			}
@@ -793,6 +797,8 @@ void Http::finished(QNetworkReply *reply)
 		}
 		else // sync. request
 		{
+			// get the latest error
+			lastErrorCode = networkReplyToEnumHTTP(reply->error());
 			// get the response headers (HEAD only)
 			if (httpMethod == EnumHTTP::httpHead)
 			{
