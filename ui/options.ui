@@ -1589,18 +1589,24 @@
        <item row="0" column="1" rowspan="2">
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
           <widget class="QGroupBox" name="groupBox_3">
            <property name="title">
             <string>Http configuration</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_6">
-            <item row="0" column="0">
-             <widget class="QCheckBox" name="chbDeleteFileOnError">
-              <property name="text">
-               <string>Delete the downloaded file on download error</string>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0">
              <layout class="QHBoxLayout" name="horizontalLayout_5">
               <item>
@@ -1679,15 +1685,14 @@
               </item>
              </layout>
             </item>
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="chbDeleteFileOnError">
+              <property name="text">
+               <string>Delete the downloaded file on download error</string>
+              </property>
+             </widget>
+            </item>
            </layout>
-           <zorder>chbDeleteFileOnError</zorder>
-           <zorder>chbTimeOut</zorder>
-           <zorder>spinBoxTimeOut</zorder>
-           <zorder>horizontalSpacer_3</zorder>
-           <zorder>label</zorder>
-           <zorder>cmbTimeRemaining</zorder>
-           <zorder>horizontalSpacer_4</zorder>
-           <zorder>label</zorder>
           </widget>
          </item>
          <item>
@@ -1890,10 +1895,13 @@
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
               <property name="sizeHint" stdset="0">
                <size>
                 <width>20</width>
-                <height>40</height>
+                <height>5</height>
                </size>
               </property>
              </spacer>
@@ -1925,6 +1933,19 @@
           <size>
            <width>60</width>
            <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
           </size>
          </property>
         </spacer>
