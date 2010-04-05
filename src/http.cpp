@@ -368,7 +368,7 @@ EnumHTTP::Error Http::networkReplyToEnumHTTP(QNetworkReply::NetworkError error)
 	switch (error)
 	{
 		case QNetworkReply::NoError:
-			return EnumHTTP::NO_ERROR;
+			return EnumHTTP::NO_HTTP_ERROR;
 		case QNetworkReply::TimeoutError:
 			return EnumHTTP::INTERNAL_NETWEORK_TIME_OUT;
 		// connection refused error
@@ -560,7 +560,7 @@ int Http::download(const QUrl URL, QString destination, QString fileName, bool a
 	jumpToURL(URL);
 
 	// ok
-	return EnumHTTP::NO_ERROR;
+	return EnumHTTP::NO_HTTP_ERROR;
 }
 
 int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
@@ -601,7 +601,7 @@ int Http::resume(const QUrl URL, QString fileName, bool autoRestartOnFail)
 	jumpToURL(URL);
 
 	// ok
-	return EnumHTTP::NO_ERROR;
+	return EnumHTTP::NO_HTTP_ERROR;
 }
 
 void Http::pause()

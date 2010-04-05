@@ -33,7 +33,7 @@ namespace EnumHTTP
 {
 	enum Error
 	{
-		NO_ERROR = 0,				//0
+		NO_HTTP_ERROR = 0,				//0
 		UNABLE_CREATE_DIR = 20,		//20
 		UNABLE_CREATE_FILE,			//21
 		INVALID_URL,				//22
