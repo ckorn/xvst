@@ -36,14 +36,21 @@ WebViewNative::WebViewNative(QWidget *parent) : QMacCocoaViewContainer(0, parent
 	// creates a WebView (WebKit native object)
 	WebView *webView = [[WebView alloc] init];
 	setCocoaView(webView);
+	// set default size
+	setSizeHint(QSize(556, 320));
 	// release objects
 	[webView release];
 	[pool release];
 }
 
+void WebViewNative::setSizeHint(QSize size)
+{
+	webViewSize = size;
+}
+
 QSize WebViewNative::sizeHint() const
 {
-	return QSize(556, 320);
+	return webViewSize;
 }
 
 void WebViewNative::openURL(QString url)
@@ -74,6 +81,11 @@ WebViewWidget::~WebViewWidget()
 	delete webView;
 	// release pool
 	[pool release];
+}
+
+void WebViewWidget::setSizeHint(QSize size)
+{
+	webView->setSizeHint(size);
 }
 
 QSize WebViewWidget::sizeHint() const

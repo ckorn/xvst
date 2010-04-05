@@ -40,6 +40,7 @@ WhatsNewImpl::WhatsNewImpl(QWidget *parent, Qt::WFlags f)
 	// create the native Cocoa WebView object (Mac OS X only)
 #ifdef Q_WS_MACX
 	webView = new WebViewWidget(this);
+	webView->setSizeHint(QSize(656,370));
 #else // uses the Qt WebKit wrap
 	webView = new QWebView(this);
 #endif

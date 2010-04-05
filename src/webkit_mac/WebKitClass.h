@@ -33,9 +33,13 @@
 class WebViewNative : public QMacCocoaViewContainer
 {
 Q_OBJECT
+	private:
+		QSize webViewSize;
 	public:
 		/*! WebView cocoa object constructor */
 		WebViewNative(QWidget *parent = 0);
+		/*! Set the WebView size */
+		void setSizeHint(QSize size);
 		/*! Return the default WebView size */
 		QSize sizeHint() const;
 		/*! Open an specific url */
@@ -52,6 +56,8 @@ Q_OBJECT
 		WebViewWidget(QWidget *parent = 0);
 		/*! WebView Qt widget destructor */
 		~WebViewWidget();
+		/*! Set the WebView size */
+		void setSizeHint(QSize size);
 		/*! Return the default WebView size */
 		QSize sizeHint() const;
 		/*! Open an specific url */
