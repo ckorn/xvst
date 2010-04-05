@@ -16,6 +16,7 @@
 - Added possibility to queue downloads
 - Added the "Error code" in bug-report sent information
 - Added Network configuration options
+- Added Russian translation (thanks to h31)
 
 - Improved the automatic updates
 - Improved the image previewer (search videos)
