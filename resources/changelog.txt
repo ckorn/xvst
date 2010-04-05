@@ -15,6 +15,7 @@
 - Added video items multiselection manipulation
 - Added possibility to queue downloads
 - Added the "Error code" in bug-report sent information
+- Added Network configuration options
 
 - Improved the automatic updates
 - Improved the image previewer (search videos)
@@ -38,7 +39,12 @@
 Plugins SDK:
 ------------
 
+- Added 2 new methods to Http class:
+	- void setCookiesEnabled(bool value)
+	- void setTimeOutOption(bool value)
+
 - Fixed bug (Error: The default separator value of http::getCookies was not assigned)
+- Fixed bug (Error: The default separator value of http::addCookies was not assigned)
 
 2.3.5:
 ------
