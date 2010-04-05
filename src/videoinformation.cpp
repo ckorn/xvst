@@ -493,7 +493,7 @@ void VideoInformationPluginIconsCatcher::downloadNextFavicon()
 		// download
 		int httpError = http->download(plugins->first()->getFaviconUrl(), cahcePath, fileInfo.baseName(), false);
 		// has errors?
-		if (httpError != 0)	downloadError(httpError);
+		if (httpError != EnumHTTP::NO_HTTP_ERROR) downloadError(httpError);
 	}
 }
 

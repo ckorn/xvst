@@ -40,6 +40,7 @@ namespace EnumRTMP
 {
 	enum Error
 	{
+		NO_RTMP_ERROR = 0,			//0
 		FLVSTREAMER_MISSING = 100,	//100
 		FAILED_TO_OPEN_FILE,		//101
 		FAILED_TO_CONNECT,			//102

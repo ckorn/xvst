@@ -145,7 +145,7 @@ void DownloadItem_HTTP::startDownload()
 	// start download
 	int er = http->download(QUrl(videoItem->getVideoInformation().URL),
 		parent->getDownloadDir(), videoItem->getVideoFile());
-	if (er != 0) downloadError(er);
+	if (er != EnumHTTP::NO_HTTP_ERROR) downloadError(er);
 }
 
 void DownloadItem_HTTP::pauseDownload()
@@ -160,7 +160,7 @@ void DownloadItem_HTTP::resumeDownload()
 	videoItem->setAsDownloading(this);
 	// resume download
 	int er = http->resume(QUrl(videoItem->getVideoInformation().URL), videoItem->getVideoFile());
-	if (er != 0) downloadError(er);
+	if (er != EnumHTTP::NO_HTTP_ERROR) downloadError(er);
 }
 
 void DownloadItem_HTTP::cancelDownload()
@@ -220,7 +220,7 @@ void DownloadItem_RTMP::startDownload()
 	// start download
 	int er = rtmp->download(videoItem->getVideoInformation().URL,
 		parent->getDownloadDir(), videoItem->getVideoFile());
-	if (er != 0) downloadError(er);
+	if (er != EnumRTMP::NO_RTMP_ERROR) downloadError(er);
 }
 
 void DownloadItem_RTMP::pauseDownload()
@@ -235,7 +235,7 @@ void DownloadItem_RTMP::resumeDownload()
 	videoItem->setAsDownloading(this);
 	// resume download
 	int er = rtmp->resume(videoItem->getVideoInformation().URL, videoItem->getVideoFile());
-	if (er != 0) downloadError(er);
+	if (er != EnumRTMP::NO_RTMP_ERROR) downloadError(er);
 }
 
 void DownloadItem_RTMP::cancelDownload()

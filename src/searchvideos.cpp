@@ -313,7 +313,7 @@ void SearchResultsPreviewCatcher::downloadNextPreview()
 		emit startedDownloadPreview(previews->first());
 		int httpResult = http->download(QUrl(previews->first()->getImageUrl()), QDir::tempPath(), previews->first()->getPreviewFileName(), false);
 		// error?
-		if (httpResult != 0)
+		if (httpResult != EnumHTTP::NO_HTTP_ERROR)
 			downloadError(httpResult);
 	}
 }

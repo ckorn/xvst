@@ -130,7 +130,7 @@ int RTMP::download(const QString URL, QString destination, QString fileName, boo
 	flvstreamerProcess->start(flvstreamerPath, QStringList() << "-r" << URL << "-o" << fileName);
 
 	// ok
-	return 0;
+	return EnumRTMP::NO_RTMP_ERROR;
 }
 
 int RTMP::resume(const QString URL, QString fileName)
@@ -155,7 +155,7 @@ int RTMP::resume(const QString URL, QString fileName)
 	flvstreamerProcess->start(flvstreamerPath, QStringList() << "-r" << URL << "-e" << "-o" << fileName);
 
 	// ok
-	return 0;
+	return EnumRTMP::NO_RTMP_ERROR;
 }
 
 void RTMP::pause()

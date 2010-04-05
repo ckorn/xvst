@@ -463,7 +463,7 @@ QString VideoItem::getErrorMessage()
 {
 	switch (errorCode)
 	{
-		//0 NO_ERROR
+		//0 NO_HTTP_ERROR
 		case 0: return "";
 		//20 UNABLE_CREATE_DIR
 		case 20: return tr("Unable to create the destination dir");
