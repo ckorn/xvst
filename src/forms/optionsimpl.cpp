@@ -201,7 +201,7 @@ void OptionsImpl::createMenu()
 
 	// proxy
 	newItem = new QTreeWidgetItem(trvMenu);
-	newItem->setText(0, tr("Proxy"));
+	newItem->setText(0, tr("Internet configuration"));
 	newItem->setIcon(0, QIcon(":/options/images/proxy.png"));
 
 	// Errors
@@ -230,12 +230,17 @@ void OptionsImpl::fillInitialData()
 	// set items to update every
 	itemsToAdd.clear();
 	itemsToAdd	<< tr("Day") << tr("2 Days") << tr("3 Days") << tr("4 Days")
-	<< tr("5 Days") << tr("6 Days") << tr("Week");
+				<< tr("5 Days") << tr("6 Days") << tr("Week");
 	cmbUpdateEvery->addItems(itemsToAdd);
 
+	// time remaining calculation items
+	itemsToAdd.clear();
+	itemsToAdd << tr("Using the download percentage") << tr("Using the download speed");
+	cmbTimeRemaining->addItems(itemsToAdd);
+	
 	// set proxy type items
 	itemsToAdd.clear();
-	itemsToAdd	<< tr("Http Proxy") << tr("Socks5 Proxy");
+	itemsToAdd << tr("Http Proxy") << tr("Socks5 Proxy");
 	cmbProxyType->addItems(itemsToAdd);
 }
 
@@ -361,6 +366,11 @@ void OptionsImpl::setInitialOptionsValues()
 	chbDownloadVideosAuto->setChecked(programOptions->getDownloadAutomatically());
 	chbScheduleEnabled->setChecked(programOptions->getScheduleEnabled());
 	chbDownloadVideosAutoClicked(chbDownloadVideosAuto->isChecked());
+
+	chbDeleteFileOnError->setChecked(programOptions->getDeleteFailedDownloads());
+	chbTimeOut->setChecked(programOptions->getEnableTimeOut());
+	spinBoxTimeOut->setValue(programOptions->getTimeOut());
+	spinBoxMaxRetries->setValue(programOptions->getMaxRetries());
 }
 
 void OptionsImpl::setOptionsValues()
@@ -419,6 +429,11 @@ void OptionsImpl::setOptionsValues()
 	programOptions->setDownloadAutomatically(chbDownloadVideosAuto->isChecked());
 	programOptions->setScheduleEnabled(chbScheduleEnabled->isChecked());
 	schedule->save();
+
+	programOptions->setDeleteFailedDownloads(chbDeleteFileOnError->isChecked());
+	programOptions->setEnableTimeOut(chbTimeOut->isChecked());
+	programOptions->setTimeOut(spinBoxTimeOut->value());
+	programOptions->setMaxRetries(spinBoxMaxRetries->value());
 }
 
 void OptionsImpl::dragEnterEvent(QDragEnterEvent* /*event*/)

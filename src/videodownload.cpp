@@ -110,6 +110,8 @@ DownloadItem_HTTP::DownloadItem_HTTP(VideoDownload *parent, VideoItem *videoItem
 	this->videoItem->setAsNothingPreState();
 	// create the http object
 	http = new Http();
+	// configure the http object
+	updateConfiguration();
 	// connect signals
 	connect(http, SIGNAL(downloadStarted()), this, SLOT(downloadStarted()));
 	connect(http, SIGNAL(downloadPaused(const QFileInfo)), this, SLOT(downloadPaused(const QFileInfo)));
@@ -166,6 +168,14 @@ void DownloadItem_HTTP::resumeDownload()
 void DownloadItem_HTTP::cancelDownload()
 {
 	http->cancel();
+}
+
+void DownloadItem_HTTP::updateConfiguration()
+{
+	http->setDeleteFileOnError(ProgramOptions::instance()->getDeleteFailedDownloads());
+	http->setTimeOutOption(ProgramOptions::instance()->getEnableTimeOut());
+	http->setTimeOut(ProgramOptions::instance()->getTimeOut());
+	http->setUsePercentageForTimeRemaining(ProgramOptions::instance()->getTimeRemainingCalculation() == 0);
 }
 
 int DownloadItem_HTTP::getDownloadSpeed()
@@ -433,6 +443,13 @@ void VideoDownload::setMaxActiveDownloads(int maxActiveDownloads)
 	maxActiveDownloads = maxActiveDownloads < 1 ? 1 : maxActiveDownloads;
 
 	this->maxActiveDownloads = maxActiveDownloads;
+}
+
+void VideoDownload::updateHttpConfiguration()
+{
+	for (int n = 0; n < downloads->size(); n++)
+		if (downloads->at(n)->objectName() == "DownloadItem_HTTP")
+			static_cast<DownloadItem_HTTP *>(downloads->at(n))->updateConfiguration();
 }
 
 void VideoDownload::videoItemUpdated_child(VideoItem *videoItem)

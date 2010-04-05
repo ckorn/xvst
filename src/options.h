@@ -91,7 +91,11 @@ Q_OBJECT
 		bool displayDownloadsMigrator;	//!< Flag for know if can display/check the windows vista/7 downloads migrator message
 		bool scheduleEnabled;			//!< Flag for know if the shcedule option is enabled
 		QString latestVersionExecuted;	//!< Stores the latest xVST version executed
-
+		bool deleteFailedDownloads;		//!< Flag for know if should delete the downloaded file after download error
+		bool enableTimeOut;				//!< Flag for know if the time out-option is enabled or disabled
+		int timeOut;					//!< Time-out value
+		int maxRetries;					//!< Max. retries value
+		int timeRemainingCalculation;	//!< Time remaining algorithm calculation
 		QDir appDir;		//!< Initial program path
 		QString appExecutable;	//!< Executable program path
 		QString optionsFile;	//!< Options file name (path + name)
@@ -222,6 +226,16 @@ Q_OBJECT
 		QString getBlockAdultContentPassword();
 		void setLatestVersionExecuted(QString value);
 		QString getLatestVersionExecuted();
+		void setDeleteFailedDownloads(bool value);
+		bool getDeleteFailedDownloads();
+		void setEnableTimeOut(bool value);
+		bool getEnableTimeOut();
+		void setTimeOut(int value);
+		int getTimeOut();
+		void setMaxRetries(int value);
+		int getMaxRetries();
+		void setTimeRemainingCalculation(int value);
+		int getTimeRemainingCalculation();
 	signals:
 		/*! Options will load the configuration */
 		void optionsLoadBefore();

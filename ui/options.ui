@@ -81,7 +81,7 @@
    <item row="0" column="1">
     <widget class="QStackedWidget" name="pgOptions">
      <property name="currentIndex">
-      <number>2</number>
+      <number>6</number>
      </property>
      <widget class="QWidget" name="pgBasic">
       <layout class="QGridLayout">
@@ -1585,263 +1585,346 @@
       </layout>
      </widget>
      <widget class="QWidget" name="pgProxy">
-      <layout class="QGridLayout">
-       <item row="0" column="1">
-        <spacer>
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="4" column="0">
-        <spacer>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>31</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="4" column="1" colspan="2">
-        <widget class="QGroupBox" name="gpbProxy">
-         <property name="minimumSize">
-          <size>
-           <width>340</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="whatsThis">
-          <string>Enable/disable proxy support</string>
-         </property>
-         <property name="accessibleName">
-          <string>Enable/disable proxy support</string>
-         </property>
-         <property name="accessibleDescription">
-          <string>Enable/disable proxy support</string>
-         </property>
-         <property name="title">
-          <string>Use proxy server</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout">
-          <item row="0" column="0" colspan="2">
-           <widget class="QLabel" name="lblUserName">
-            <property name="text">
-             <string>User name:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QLabel" name="lblPassword">
-            <property name="text">
-             <string>Password:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QLineEdit" name="edtUserName">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="whatsThis">
-             <string>User name of your proxy configuration</string>
-            </property>
-            <property name="accessibleName">
-             <string>Proxy user name</string>
-            </property>
-            <property name="accessibleDescription">
-             <string>User name of your proxy configuration</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2" colspan="2">
-           <widget class="QLineEdit" name="edtPassword">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="whatsThis">
-             <string>Password of your proxy configuration</string>
-            </property>
-            <property name="accessibleName">
-             <string>Proxy password</string>
-            </property>
-            <property name="accessibleDescription">
-             <string>Password of your proxy configuration</string>
-            </property>
-            <property name="echoMode">
-             <enum>QLineEdit::Password</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0" colspan="2">
-           <widget class="QLabel" name="lblAdress">
-            <property name="text">
-             <string>Adress:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="3" rowspan="2">
-           <layout class="QVBoxLayout">
-            <item>
-             <widget class="QLabel" name="lblPort">
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="1" rowspan="2">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="title">
+            <string>Http configuration</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="chbDeleteFileOnError">
               <property name="text">
-               <string>Port:</string>
+               <string>Delete the downloaded file on download error</string>
               </property>
              </widget>
             </item>
-            <item>
-             <widget class="QSpinBox" name="spinBoxPort">
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QCheckBox" name="chbTimeOut">
+                <property name="text">
+                 <string>Time-out:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinBoxTimeOut">
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>100</number>
+                </property>
+                <property name="value">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>sec.</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Expanding</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>Max. retries:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinBoxMaxRetries">
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>10</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Time remaining calculation:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="cmbTimeRemaining"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+           <zorder>chbDeleteFileOnError</zorder>
+           <zorder>chbTimeOut</zorder>
+           <zorder>spinBoxTimeOut</zorder>
+           <zorder>horizontalSpacer_3</zorder>
+           <zorder>label</zorder>
+           <zorder>cmbTimeRemaining</zorder>
+           <zorder>horizontalSpacer_4</zorder>
+           <zorder>label</zorder>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Proxy configuration</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="chbProxySystemConfig">
+              <property name="text">
+               <string>Use the system configuration</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QGroupBox" name="gpbProxy">
               <property name="minimumSize">
                <size>
-                <width>0</width>
-                <height>21</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>50</width>
-                <height>16777215</height>
+                <width>340</width>
+                <height>0</height>
                </size>
               </property>
               <property name="whatsThis">
-               <string>Port of your proxy configuration</string>
+               <string>Enable/disable proxy support</string>
               </property>
               <property name="accessibleName">
-               <string>Proxy port</string>
+               <string>Enable/disable proxy support</string>
               </property>
               <property name="accessibleDescription">
-               <string>Port of your proxy configuration</string>
+               <string>Enable/disable proxy support</string>
               </property>
-              <property name="minimum">
-               <number>1</number>
+              <property name="title">
+               <string>Use proxy server</string>
               </property>
-              <property name="maximum">
-               <number>9999</number>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
-              <property name="value">
-               <number>1</number>
+              <property name="checked">
+               <bool>true</bool>
               </property>
+              <layout class="QGridLayout" name="_2">
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="lblUserName">
+                 <property name="text">
+                  <string>User name:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="lblPassword">
+                 <property name="text">
+                  <string>Password:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QLineEdit" name="edtUserName">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
+                 <property name="whatsThis">
+                  <string>User name of your proxy configuration</string>
+                 </property>
+                 <property name="accessibleName">
+                  <string>Proxy user name</string>
+                 </property>
+                 <property name="accessibleDescription">
+                  <string>User name of your proxy configuration</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2" colspan="2">
+                <widget class="QLineEdit" name="edtPassword">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
+                 <property name="whatsThis">
+                  <string>Password of your proxy configuration</string>
+                 </property>
+                 <property name="accessibleName">
+                  <string>Proxy password</string>
+                 </property>
+                 <property name="accessibleDescription">
+                  <string>Password of your proxy configuration</string>
+                 </property>
+                 <property name="echoMode">
+                  <enum>QLineEdit::Password</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QLabel" name="lblAdress">
+                 <property name="text">
+                  <string>Adress:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3" rowspan="2">
+                <layout class="QVBoxLayout" name="_3">
+                 <item>
+                  <widget class="QLabel" name="lblPort">
+                   <property name="text">
+                    <string>Port:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBoxPort">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>21</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="whatsThis">
+                    <string>Port of your proxy configuration</string>
+                   </property>
+                   <property name="accessibleName">
+                    <string>Proxy port</string>
+                   </property>
+                   <property name="accessibleDescription">
+                    <string>Port of your proxy configuration</string>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>9999</number>
+                   </property>
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="3" column="0" colspan="3">
+                <widget class="QLineEdit" name="edtAdress">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
+                 <property name="whatsThis">
+                  <string>Adress of your proxy configuration</string>
+                 </property>
+                 <property name="accessibleName">
+                  <string>Proxy adress</string>
+                 </property>
+                 <property name="accessibleDescription">
+                  <string>Adress of your proxy configuration</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lblProxyType">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Proxy type:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QComboBox" name="cmbProxyType">
+                 <property name="whatsThis">
+                  <string>Type of your proxy configuration</string>
+                 </property>
+                 <property name="accessibleName">
+                  <string>Proxy type</string>
+                 </property>
+                 <property name="accessibleDescription">
+                  <string>Type of your proxy configuration</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
+            <item row="1" column="0">
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
            </layout>
-          </item>
-          <item row="3" column="0" colspan="3">
-           <widget class="QLineEdit" name="edtAdress">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="whatsThis">
-             <string>Adress of your proxy configuration</string>
-            </property>
-            <property name="accessibleName">
-             <string>Proxy adress</string>
-            </property>
-            <property name="accessibleDescription">
-             <string>Adress of your proxy configuration</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="lblProxyType">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Proxy type:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QComboBox" name="cmbProxyType">
-            <property name="whatsThis">
-             <string>Type of your proxy configuration</string>
-            </property>
-            <property name="accessibleName">
-             <string>Proxy type</string>
-            </property>
-            <property name="accessibleDescription">
-             <string>Type of your proxy configuration</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
+          </widget>
+         </item>
+        </layout>
        </item>
-       <item row="4" column="4">
-        <spacer>
+       <item row="0" column="2">
+        <spacer name="horizontalSpacer_6">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
+           <width>59</width>
            <height>20</height>
           </size>
          </property>
         </spacer>
        </item>
-       <item row="6" column="2">
-        <spacer>
+       <item row="1" column="0">
+        <spacer name="horizontalSpacer_5">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="1" colspan="2">
-        <widget class="QCheckBox" name="chbProxySystemConfig">
-         <property name="text">
-          <string>Use the system configuration</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1" colspan="2">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>8</height>
+           <width>60</width>
+           <height>20</height>
           </size>
          </property>
         </spacer>
@@ -2067,12 +2150,6 @@
   <tabstop>spbRemoveAll</tabstop>
   <tabstop>spbAddAll</tabstop>
   <tabstop>spbAdd</tabstop>
-  <tabstop>gpbProxy</tabstop>
-  <tabstop>edtUserName</tabstop>
-  <tabstop>edtPassword</tabstop>
-  <tabstop>edtAdress</tabstop>
-  <tabstop>spinBoxPort</tabstop>
-  <tabstop>cmbProxyType</tabstop>
   <tabstop>gpbDisplayErrorReport</tabstop>
   <tabstop>chbRememberView</tabstop>
   <tabstop>btnOk</tabstop>

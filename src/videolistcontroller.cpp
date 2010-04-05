@@ -647,6 +647,7 @@ void VideoListController::updateOptions()
 	// video download
 	videoDownload->setDownloadDir(programOptions->getDownloadDir());
 	videoDownload->setMaxActiveDownloads(programOptions->getMaxActiveDownloads());
+	videoDownload->updateHttpConfiguration();
 	
 	// converter
 	videoConverter->setFFmpegApp(programOptions->getFfmpegLibLocation());

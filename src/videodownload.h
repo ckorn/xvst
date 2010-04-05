@@ -111,6 +111,8 @@ class DownloadItem_HTTP : public DownloadItem
 		void resumeDownload();
 		/*! Cancel the download */
 		void cancelDownload();
+		/*! Update the http configuration */
+		void updateConfiguration();
 };
 
 /*! Single download via RTMP */
@@ -181,6 +183,8 @@ Q_OBJECT
 		int getMaxActiveDownloads();
 		/*! Set how many downloads can run simultaneous */
 		void setMaxActiveDownloads(int maxActiveDownloads);
+		/*! Update configurations */
+		void updateHttpConfiguration();
 	private slots:
 		/*! Video item has been modified */
 		void videoItemUpdated_child(VideoItem *videoItem);

@@ -182,6 +182,12 @@ void ProgramOptions::load()
 
 	latestVersionExecuted = settings.value("configuration/latestVersionExecuted", latestVersionExecuted).toString();
 
+	deleteFailedDownloads = settings.value("configuration/deleteFailedDownloads", deleteFailedDownloads).toBool();
+	enableTimeOut = settings.value("configuration/enableTimeOut", enableTimeOut).toBool();
+	timeOut = settings.value("configuration/timeOut", timeOut).toInt();
+	maxRetries = settings.value("configuration/maxRetries", maxRetries).toInt();
+	timeRemainingCalculation = settings.value("configuration/timeRemainingCalculation", timeRemainingCalculation).toInt();
+
 	emit optionsLoadAfter();
 }
 
@@ -261,6 +267,12 @@ void ProgramOptions::save()
 	settings.setValue("scheduleEnabled", scheduleEnabled);
 
 	settings.setValue("latestVersionExecuted", latestVersionExecuted);
+
+	settings.setValue("deleteFailedDownloads", deleteFailedDownloads);
+	settings.setValue("enableTimeOut", enableTimeOut);
+	settings.setValue("timeOut", timeOut);
+	settings.setValue("maxRetries", maxRetries);
+	settings.setValue("timeRemainingCalculation", timeRemainingCalculation);
 
 	settings.endGroup();
 
@@ -356,6 +368,12 @@ void ProgramOptions::setDefault()
 	displayWelcomeMessage = true;
 
 	scheduleEnabled = false;
+
+	deleteFailedDownloads = true;
+	enableTimeOut = true;
+	timeOut = 30;
+	maxRetries = 3;
+	timeRemainingCalculation = 0; // 0 = percentage; 1 = download speed
 }
 
 void ProgramOptions::setCanSendUpdateSignal(bool canSendUpdateSignal)
@@ -873,4 +891,54 @@ void ProgramOptions::setLatestVersionExecuted(QString value)
 QString ProgramOptions::getLatestVersionExecuted()
 {
 	return latestVersionExecuted;
+}
+
+void ProgramOptions::setDeleteFailedDownloads(bool value)
+{
+	deleteFailedDownloads = value;
+}
+
+bool ProgramOptions::getDeleteFailedDownloads()
+{
+	return deleteFailedDownloads;
+}
+
+void ProgramOptions::setEnableTimeOut(bool value)
+{
+	enableTimeOut = value;
+}
+
+bool ProgramOptions::getEnableTimeOut()
+{
+	return enableTimeOut;
+}
+
+void ProgramOptions::setTimeOut(int value)
+{
+	timeOut = value;
+}
+
+int ProgramOptions::getTimeOut()
+{
+	return timeOut;
+}
+
+void ProgramOptions::setMaxRetries(int value)
+{
+	maxRetries = value;
+}
+
+int ProgramOptions::getMaxRetries()
+{
+	return maxRetries;
+}
+
+void ProgramOptions::setTimeRemainingCalculation(int value)
+{
+	timeRemainingCalculation = value;
+}
+
+int ProgramOptions::getTimeRemainingCalculation()
+{
+	return timeRemainingCalculation;
 }
