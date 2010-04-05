@@ -50,9 +50,11 @@ Q_OBJECT
 		void addCookies(QString cookies, QString separator = "|");
 		QString getCookies(QString separator = "|");
 		void clearCookies();
+		void setCookiesEnabled(bool value);
 		void addHeaderParameter(QString key, QString value);
 		void clearHeaderParameters();
 		void setMaxRetries(int value);
+		void setTimeOutOption(bool value);
 		void setTimeOut(int value);
 		void setMaxAutoJumps(int value);
 		void setUserAgent(QString value);

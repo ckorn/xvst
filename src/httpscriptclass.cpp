@@ -92,6 +92,11 @@ void HttpScriptPrototype::clearCookies()
 	thisHttp()->clearCookies();
 }
 
+void HttpScriptPrototype::setCookiesEnabled(bool value)
+{
+	thisHttp()->setCookiesEnabled(value);
+}
+
 void HttpScriptPrototype::addHeaderParameter(QString key, QString value)
 {
 	thisHttp()->addHeaderParameter(key, value);
@@ -105,6 +110,11 @@ void HttpScriptPrototype::clearHeaderParameters()
 void HttpScriptPrototype::setMaxRetries(int value)
 {
 	thisHttp()->setMaxRetries(value);
+}
+
+void HttpScriptPrototype::setTimeOutOption(bool value)
+{
+	thisHttp()->setTimeOutOption(value);
 }
 
 void HttpScriptPrototype::setTimeOut(int value)
