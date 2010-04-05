@@ -2086,6 +2086,34 @@ font-size:12px;
         <source>Save and restore the current session</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Http configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete the downloaded file on download error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time-out:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sec.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max. retries:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time remaining calculation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -2135,7 +2163,7 @@ font-size:12px;
     </message>
     <message>
         <source>Proxy</source>
-        <translation>Proxy</translation>
+        <translation type="obsolete">Proxy</translation>
     </message>
     <message>
         <source>Session</source>
@@ -2235,6 +2263,18 @@ font-size:12px;
     </message>
     <message>
         <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Internet configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using the download percentage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using the download speed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2956,6 +2996,10 @@ font-size:12px;
     </message>
     <message>
         <source>The remote content was not found at the server </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Queued...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

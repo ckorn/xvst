@@ -2096,6 +2096,34 @@ background: white;
         <source>Display popup checkbox</source>
         <translation>ポップアップを表示</translation>
     </message>
+    <message>
+        <source>Http configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete the downloaded file on download error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time-out:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sec.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max. retries:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time remaining calculation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -2129,7 +2157,7 @@ background: white;
     </message>
     <message>
         <source>Proxy</source>
-        <translation>プロキシ</translation>
+        <translation type="obsolete">プロキシ</translation>
     </message>
     <message>
         <source>In order to apply the new selected language, the program must be restarted.</source>
@@ -2246,6 +2274,18 @@ background: white;
     <message>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>別のプロセスが作業中です.. このプロセスが完了してから停止してください.</translation>
+    </message>
+    <message>
+        <source>Internet configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using the download percentage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using the download speed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2977,6 +3017,10 @@ background: white;
     </message>
     <message>
         <source>The remote content was not found at the server </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Queued...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -2100,6 +2100,34 @@ background: white;
         <source>Save and restore the current session</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Http configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete the downloaded file on download error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time-out:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sec.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max. retries:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time remaining calculation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
@@ -2133,7 +2161,7 @@ background: white;
     </message>
     <message>
         <source>Proxy</source>
-        <translation>Proxy</translation>
+        <translation type="obsolete">Proxy</translation>
     </message>
     <message>
         <source>In order to apply the new selected language, the program must be restarted.</source>
@@ -2250,6 +2278,18 @@ background: white;
     <message>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Ein anderer Prozess sperrt momentan den Vorgang, beende diesen Prozess oder warte</translation>
+    </message>
+    <message>
+        <source>Internet configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using the download percentage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using the download speed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2970,6 +3010,10 @@ background: white;
     </message>
     <message>
         <source>The remote content was not found at the server </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Queued...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

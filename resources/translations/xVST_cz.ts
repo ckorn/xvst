@@ -356,13 +356,13 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="167"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="168"/>
         <source>Thank you for your report.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="168"/>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="179"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="169"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="180"/>
         <source>Ok</source>
         <translation>Budiž</translation>
     </message>
@@ -1574,112 +1574,112 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="372"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="620"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="626"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="607"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="613"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="372"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="620"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="626"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="607"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="613"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="440"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="973"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="959"/>
         <source>Updates</source>
         <translation>Aktualizace</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="619"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="606"/>
         <source>Wish you cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="624"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1264"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="611"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1250"/>
         <source>Cancel downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="625"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="612"/>
         <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="974"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="960"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>Aplikace xUpdater nebyla nalezena.&lt;br&gt;&lt;br&gt;Pokud chcete automaticky aktualizovat tento program, znovu nainstalujte xVideoServiceThief.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1198"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1220"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1184"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1206"/>
         <source>Delete video</source>
         <translation type="unfinished">Smazat video</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1199"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1221"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1185"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1207"/>
         <source>Start download</source>
         <translation type="unfinished">Začít stahovat</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1224"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1210"/>
         <source>Rename video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1225"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1211"/>
         <source>Reset state</source>
         <translation type="unfinished">Reset</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1260"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1246"/>
         <source>Delete videos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1261"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1247"/>
         <source>Start downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1263"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1249"/>
         <source>Pause downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1263"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1249"/>
         <source>Resume downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1265"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1251"/>
         <source>Rename videos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1266"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1252"/>
         <source>Reset states</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1428"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1414"/>
         <source>Already added</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1429"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1415"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="442"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="728"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="975"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1430"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="715"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="961"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1416"/>
         <source>Ok</source>
         <translation>Budiž</translation>
     </message>
@@ -1689,32 +1689,32 @@ font-size:12px;
         <translation>Přávě probíhá jiný proces. Ukončete jej nebo počkejte na jeno dokončení.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1310"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1296"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1318"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1304"/>
         <source>- Converting: %1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1174"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1160"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1178"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1164"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1182"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1168"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1183"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1169"/>
         <source>/sec</source>
         <translation type="unfinished">/sec</translation>
     </message>
@@ -1724,30 +1724,30 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="618"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1201"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1223"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="605"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1187"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1209"/>
         <source>Cancel download</source>
         <translation type="unfinished">Zrušit stahování</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="726"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="713"/>
         <source>Error message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="727"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="714"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1200"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1222"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1186"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1208"/>
         <source>Pause download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1222"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1208"/>
         <source>Resume download</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2123,32 +2123,32 @@ font-size:12px;
         <translation>&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1655"/>
+        <location filename="../../ui/options.ui" line="1743"/>
         <source>Password:</source>
         <translation>Heslo:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1703"/>
+        <location filename="../../ui/options.ui" line="1791"/>
         <source>Adress:</source>
         <translation>Adresa:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1712"/>
+        <location filename="../../ui/options.ui" line="1800"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2004"/>
+        <location filename="../../ui/options.ui" line="2087"/>
         <source>Ok</source>
         <translation>Budiž</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2029"/>
+        <location filename="../../ui/options.ui" line="2112"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1780"/>
+        <location filename="../../ui/options.ui" line="1868"/>
         <source>Proxy type:</source>
         <translation>Typ proxy serveru:</translation>
     </message>
@@ -2202,17 +2202,17 @@ font-size:12px;
         <translation>Vyberte, jaké servery budou povolený a jaké zakázány:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1636"/>
+        <location filename="../../ui/options.ui" line="1724"/>
         <source>Use proxy server</source>
         <translation>Použít proxy server</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1648"/>
+        <location filename="../../ui/options.ui" line="1736"/>
         <source>User name:</source>
         <translation>Uživatelské jméno:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1966"/>
+        <location filename="../../ui/options.ui" line="2049"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation>Pamatovat si poslední zobrazenou stránku s nastavením (jen pro toto sezení)</translation>
     </message>
@@ -2227,12 +2227,12 @@ font-size:12px;
         <translation>Zkontrolovat aktualizace při startu programu</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1897"/>
+        <location filename="../../ui/options.ui" line="1980"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Zobrazovat &quot;Hlášení o chybě&quot; při chybě</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1906"/>
+        <location filename="../../ui/options.ui" line="1989"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Když dojde k chybě, můžete pomoci jí opravit posláním &quot;&lt;b&gt;Chybového hlášení&lt;/b&gt;&quot; pomocí &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.nettracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&quot;&lt;b&gt;Chybové hlášení&lt;/b&gt;&quot; je uloženo pouze na &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net trackeru&lt;/a&gt; a je k dispozici komukoli. Žádné další údaje nejsou ukládány.</translation>
     </message>
@@ -2626,113 +2626,148 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1627"/>
-        <location filename="../../ui/options.ui" line="1630"/>
-        <location filename="../../ui/options.ui" line="1633"/>
+        <location filename="../../ui/options.ui" line="1594"/>
+        <source>Http configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1600"/>
+        <source>Delete the downloaded file on download error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1609"/>
+        <source>Time-out:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1629"/>
+        <source>sec.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1652"/>
+        <source>Max. retries:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1673"/>
+        <source>Time remaining calculation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1696"/>
+        <source>Proxy configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1715"/>
+        <location filename="../../ui/options.ui" line="1718"/>
+        <location filename="../../ui/options.ui" line="1721"/>
         <source>Enable/disable proxy support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1668"/>
-        <location filename="../../ui/options.ui" line="1674"/>
+        <location filename="../../ui/options.ui" line="1756"/>
+        <location filename="../../ui/options.ui" line="1762"/>
         <source>User name of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1671"/>
+        <location filename="../../ui/options.ui" line="1759"/>
         <source>Proxy user name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1687"/>
-        <location filename="../../ui/options.ui" line="1693"/>
+        <location filename="../../ui/options.ui" line="1775"/>
+        <location filename="../../ui/options.ui" line="1781"/>
         <source>Password of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1690"/>
+        <location filename="../../ui/options.ui" line="1778"/>
         <source>Proxy password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1731"/>
-        <location filename="../../ui/options.ui" line="1737"/>
+        <location filename="../../ui/options.ui" line="1819"/>
+        <location filename="../../ui/options.ui" line="1825"/>
         <source>Port of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1734"/>
+        <location filename="../../ui/options.ui" line="1822"/>
         <source>Proxy port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1761"/>
-        <location filename="../../ui/options.ui" line="1767"/>
+        <location filename="../../ui/options.ui" line="1849"/>
+        <location filename="../../ui/options.ui" line="1855"/>
         <source>Adress of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1764"/>
+        <location filename="../../ui/options.ui" line="1852"/>
         <source>Proxy adress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1787"/>
-        <location filename="../../ui/options.ui" line="1793"/>
+        <location filename="../../ui/options.ui" line="1875"/>
+        <location filename="../../ui/options.ui" line="1881"/>
         <source>Type of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1790"/>
+        <location filename="../../ui/options.ui" line="1878"/>
         <source>Proxy type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1829"/>
+        <location filename="../../ui/options.ui" line="1702"/>
         <source>Use the system configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1888"/>
-        <location filename="../../ui/options.ui" line="1894"/>
+        <location filename="../../ui/options.ui" line="1971"/>
+        <location filename="../../ui/options.ui" line="1977"/>
         <source>Enable/disable the &quot;Bug report&quot; window on video Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1891"/>
+        <location filename="../../ui/options.ui" line="1974"/>
         <source>Bug report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1960"/>
+        <location filename="../../ui/options.ui" line="2043"/>
         <source>Remember last viewed options page checkbox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1995"/>
-        <location filename="../../ui/options.ui" line="2001"/>
+        <location filename="../../ui/options.ui" line="2078"/>
+        <location filename="../../ui/options.ui" line="2084"/>
         <source>Save and close the current configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1998"/>
+        <location filename="../../ui/options.ui" line="2081"/>
         <source>Save and close button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2020"/>
-        <location filename="../../ui/options.ui" line="2026"/>
+        <location filename="../../ui/options.ui" line="2103"/>
+        <location filename="../../ui/options.ui" line="2109"/>
         <source>Close without saving changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2023"/>
+        <location filename="../../ui/options.ui" line="2106"/>
         <source>Cancel and close button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1957"/>
-        <location filename="../../ui/options.ui" line="1963"/>
+        <location filename="../../ui/options.ui" line="2040"/>
+        <location filename="../../ui/options.ui" line="2046"/>
         <source>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2756,7 +2791,7 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="189"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="700"/>
         <source>Updates</source>
         <translation>Aktualizace</translation>
     </message>
@@ -2771,9 +2806,8 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="204"/>
         <source>Proxy</source>
-        <translation>Proxy</translation>
+        <translation type="obsolete">Proxy</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="232"/>
@@ -2812,53 +2846,63 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="238"/>
+        <source>Using the download percentage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="238"/>
+        <source>Using the download speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="243"/>
         <source>Http Proxy</source>
         <translation>Http Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="238"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="243"/>
         <source>Socks5 Proxy</source>
         <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="540"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="555"/>
         <source>Remove schedule item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="541"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="556"/>
         <source>Wish you remove the selected schedule item?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="571"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="586"/>
         <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="572"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="587"/>
         <source>Unlocking password:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="581"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="596"/>
         <source>Invalid UPS! password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="582"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="597"/>
         <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="786"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="801"/>
         <source>Clear Log</source>
         <translation>Vyčistit log</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="436"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="542"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="788"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="451"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="557"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="803"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
@@ -2883,46 +2927,51 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="436"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="543"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="789"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="204"/>
+        <source>Internet configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/optionsimpl.cpp" line="451"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="558"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="804"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="668"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="683"/>
         <source>Language Setup</source>
         <translation>Jazyková nastavení</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="669"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="684"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Změna jazyka se projeví až při dalším startu programu.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="583"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="670"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="687"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="598"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="702"/>
         <source>Ok</source>
         <translation>Budiž</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="744"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="759"/>
         <source>Select the download directory:</source>
         <translation>Vyberte složku pro stažená videa:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="754"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="769"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Vyberte knihovnu ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="787"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="802"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation>Opravdu chcete zmazat log stahování a konverzí?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="686"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="701"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Právě se provádí jiný úkol. Můžete ho přerušit nebo počkat až se dokončí.</translation>
     </message>
@@ -3666,193 +3715,198 @@ font-size:12px;
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="156"/>
+        <location filename="../../src/videoitem.cpp" line="153"/>
         <source>Getting info...</source>
         <translation>Stahování Informací...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="160"/>
+        <location filename="../../src/videoitem.cpp" line="153"/>
         <source>Updating info...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="163"/>
+        <location filename="../../src/videoitem.cpp" line="155"/>
         <source>Ready</source>
         <translation>Připraven</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="165"/>
+        <location filename="../../src/videoitem.cpp" line="157"/>
         <source>Downloading...</source>
         <translation>Stahování...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="167"/>
+        <location filename="../../src/videoitem.cpp" line="159"/>
         <source>Downloaded</source>
         <translation>Staženo</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="169"/>
+        <location filename="../../src/videoitem.cpp" line="161"/>
         <source>Converting...</source>
         <translation>Konvertování...</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="171"/>
+        <location filename="../../src/videoitem.cpp" line="163"/>
         <source>Converted</source>
         <translation>Převedeno</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="173"/>
+        <location filename="../../src/videoitem.cpp" line="165"/>
         <source>Completed</source>
         <translation>Dokončeno</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="175"/>
+        <location filename="../../src/videoitem.cpp" line="167"/>
         <source>Canceled</source>
         <translation>Zrušeno</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="177"/>
+        <location filename="../../src/videoitem.cpp" line="169"/>
         <source>Blocked</source>
         <translation>Blokováno</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="179"/>
+        <location filename="../../src/videoitem.cpp" line="171"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="181"/>
+        <location filename="../../src/videoitem.cpp" line="173"/>
         <source>Deleted</source>
         <translation>Odstraněno</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="415"/>
+        <location filename="../../src/videoitem.cpp" line="412"/>
         <source>/sec</source>
         <translation>/sec</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="183"/>
-        <location filename="../../src/videoitem.cpp" line="189"/>
+        <location filename="../../src/videoitem.cpp" line="175"/>
+        <location filename="../../src/videoitem.cpp" line="181"/>
         <source>Paused</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="185"/>
+        <location filename="../../src/videoitem.cpp" line="155"/>
+        <source>Queued...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/videoitem.cpp" line="177"/>
         <source>Resuming...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="187"/>
+        <location filename="../../src/videoitem.cpp" line="179"/>
         <source>Need login...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="472"/>
+        <location filename="../../src/videoitem.cpp" line="469"/>
         <source>Unable to create the destination dir</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="474"/>
+        <location filename="../../src/videoitem.cpp" line="471"/>
         <source>Unable to create the destination file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="476"/>
+        <location filename="../../src/videoitem.cpp" line="473"/>
         <source>Invalid URL</source>
         <translation type="unfinished">Špatné URL</translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="478"/>
+        <location filename="../../src/videoitem.cpp" line="475"/>
         <source>An another download is already active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="480"/>
+        <location filename="../../src/videoitem.cpp" line="477"/>
         <source>Invalid file size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="482"/>
+        <location filename="../../src/videoitem.cpp" line="479"/>
         <source>The video to resume is missing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="484"/>
+        <location filename="../../src/videoitem.cpp" line="481"/>
         <source>Unable resume the download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="486"/>
+        <location filename="../../src/videoitem.cpp" line="483"/>
         <source>Unable append data to file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="488"/>
+        <location filename="../../src/videoitem.cpp" line="485"/>
         <source>The maximum allowed http redirections has been reached</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="490"/>
+        <location filename="../../src/videoitem.cpp" line="487"/>
         <source>The connection to the remote server timed out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="492"/>
+        <location filename="../../src/videoitem.cpp" line="489"/>
         <source>The remote server refused the connection (the server is not accepting requests)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="494"/>
+        <location filename="../../src/videoitem.cpp" line="491"/>
         <source>The remote host name was not found (invalid hostname)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="496"/>
+        <location filename="../../src/videoitem.cpp" line="493"/>
         <source>The access to the remote content was denied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="498"/>
+        <location filename="../../src/videoitem.cpp" line="495"/>
         <source>The remote content was not found at the server </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="500"/>
+        <location filename="../../src/videoitem.cpp" line="497"/>
         <source>flvstreamer is missing (impossible download from RTMP server)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="502"/>
+        <location filename="../../src/videoitem.cpp" line="499"/>
         <source>Unable to open the destination file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="504"/>
+        <location filename="../../src/videoitem.cpp" line="501"/>
         <source>Failed to connect with RTMP server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="506"/>
+        <location filename="../../src/videoitem.cpp" line="503"/>
         <source>Unable to resume the FLV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="508"/>
+        <location filename="../../src/videoitem.cpp" line="505"/>
         <source>Download incomplete (due to download errors)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="510"/>
+        <location filename="../../src/videoitem.cpp" line="507"/>
         <source>Failed on initialize the pthread_create</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="512"/>
+        <location filename="../../src/videoitem.cpp" line="509"/>
         <source>File to resume not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/videoitem.cpp" line="514"/>
+        <location filename="../../src/videoitem.cpp" line="511"/>
         <source>Connection error: Unable to download the video</source>
         <translation type="unfinished"></translation>
     </message>
