@@ -355,13 +355,13 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="168"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="169"/>
         <source>Thank you for your report.</source>
         <translation>Gràcies per el teu report.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="169"/>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="180"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="170"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="181"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -543,23 +543,23 @@
 <context>
     <name>Credits</name>
     <message>
-        <location filename="../../ui/credits.ui" line="17"/>
+        <location filename="../../ui/credits.ui" line="29"/>
         <source>Credits</source>
         <translation>Crèdits</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="197"/>
+        <location filename="../../ui/credits.ui" line="209"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="188"/>
-        <location filename="../../ui/credits.ui" line="194"/>
+        <location filename="../../ui/credits.ui" line="200"/>
+        <location filename="../../ui/credits.ui" line="206"/>
         <source>Close the Credits dialog</source>
         <translation>Tanca la finestra dels Crèdits</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="191"/>
+        <location filename="../../ui/credits.ui" line="203"/>
         <source>Ok button</source>
         <translation>Botó d&apos;acord</translation>
     </message>
@@ -2002,7 +2002,7 @@ font-size:12px;
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1791"/>
+        <location filename="../../ui/options.ui" line="1796"/>
         <source>Adress:</source>
         <translation>Adreça:</translation>
     </message>
@@ -2027,7 +2027,7 @@ font-size:12px;
         <translation>Bloquejats:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2112"/>
+        <location filename="../../ui/options.ui" line="2133"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
@@ -2083,7 +2083,7 @@ font-size:12px;
         <translation>Configuració del idioma </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2087"/>
+        <location filename="../../ui/options.ui" line="2108"/>
         <source>Ok</source>
         <translation>D&apos;acord</translation>
     </message>
@@ -2103,17 +2103,17 @@ font-size:12px;
         <translation>Qualitat de sortida:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1743"/>
+        <location filename="../../ui/options.ui" line="1748"/>
         <source>Password:</source>
         <translation>Contrasenya:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1800"/>
+        <location filename="../../ui/options.ui" line="1805"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1868"/>
+        <location filename="../../ui/options.ui" line="1873"/>
         <source>Proxy type:</source>
         <translation>Tipus de Proxy:</translation>
     </message>
@@ -2204,17 +2204,17 @@ font-size:12px;
         <translation>Selecciona quins llocs Web estan permesos i quins han d&apos;estar bloquejats:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1724"/>
+        <location filename="../../ui/options.ui" line="1729"/>
         <source>Use proxy server</source>
         <translation>Usa un servidor proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1736"/>
+        <location filename="../../ui/options.ui" line="1741"/>
         <source>User name:</source>
         <translation>Nom d&apos;usuari:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2049"/>
+        <location filename="../../ui/options.ui" line="2070"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation>Recorda l&apos;ultima pàgina visitada de les opcions (només vàlid per aquesta sessió)</translation>
     </message>
@@ -2229,12 +2229,12 @@ font-size:12px;
         <translation>Cerca noves versions al iniciar el programa</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1980"/>
+        <location filename="../../ui/options.ui" line="2001"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Mostra la finestra de &quot;L&apos;Informe d&apos;errors&quot; al fallar una descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1989"/>
+        <location filename="../../ui/options.ui" line="2010"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation>Quan un vídeo produeix un error, pots ajudar a solucionar el problema enviant-nos un&quot;&lt;b&gt;Informe d&apos;errors&lt;/b&gt;&quot; via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;L&apos;&quot;&lt;b&gt;Informe d&apos;errors&lt;/b&gt;&quot; serà desat només al &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; i serà visible per a tothom, no es desarà informació extra a cap Base de Dades externa.</translation>
     </message>
@@ -2633,148 +2633,148 @@ font-size:12px;
         <translation>Elimina la configuració d&apos;horari seleccionat</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1594"/>
+        <location filename="../../ui/options.ui" line="1607"/>
         <source>Http configuration</source>
         <translation>Configuració http</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1600"/>
+        <location filename="../../ui/options.ui" line="1691"/>
         <source>Delete the downloaded file on download error</source>
         <translation>El·limina el fitxer descarregat al fallar la descàrrega</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1609"/>
+        <location filename="../../ui/options.ui" line="1615"/>
         <source>Time-out:</source>
         <translation>Temps d&apos;espera:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1629"/>
+        <location filename="../../ui/options.ui" line="1635"/>
         <source>sec.</source>
         <translation>seg.</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1652"/>
+        <location filename="../../ui/options.ui" line="1658"/>
         <source>Max. retries:</source>
         <translation>Intents màxims:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1673"/>
+        <location filename="../../ui/options.ui" line="1679"/>
         <source>Time remaining calculation:</source>
         <translation>Càlcul del temps restant:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1696"/>
+        <location filename="../../ui/options.ui" line="1701"/>
         <source>Proxy configuration</source>
         <translation>Configuració del Proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1715"/>
-        <location filename="../../ui/options.ui" line="1718"/>
-        <location filename="../../ui/options.ui" line="1721"/>
+        <location filename="../../ui/options.ui" line="1720"/>
+        <location filename="../../ui/options.ui" line="1723"/>
+        <location filename="../../ui/options.ui" line="1726"/>
         <source>Enable/disable proxy support</source>
         <translation>Activa/desactiva el proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1756"/>
-        <location filename="../../ui/options.ui" line="1762"/>
+        <location filename="../../ui/options.ui" line="1761"/>
+        <location filename="../../ui/options.ui" line="1767"/>
         <source>User name of your proxy configuration</source>
         <translation>Nom d&apos;usuari del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1759"/>
+        <location filename="../../ui/options.ui" line="1764"/>
         <source>Proxy user name</source>
         <translation>Nom d&apos;usuari del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1775"/>
-        <location filename="../../ui/options.ui" line="1781"/>
+        <location filename="../../ui/options.ui" line="1780"/>
+        <location filename="../../ui/options.ui" line="1786"/>
         <source>Password of your proxy configuration</source>
         <translation>Contrasenya del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1778"/>
+        <location filename="../../ui/options.ui" line="1783"/>
         <source>Proxy password</source>
         <translation>Contrasenya del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1819"/>
-        <location filename="../../ui/options.ui" line="1825"/>
+        <location filename="../../ui/options.ui" line="1824"/>
+        <location filename="../../ui/options.ui" line="1830"/>
         <source>Port of your proxy configuration</source>
         <translation>Port del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1822"/>
+        <location filename="../../ui/options.ui" line="1827"/>
         <source>Proxy port</source>
         <translation>Port del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1849"/>
-        <location filename="../../ui/options.ui" line="1855"/>
+        <location filename="../../ui/options.ui" line="1854"/>
+        <location filename="../../ui/options.ui" line="1860"/>
         <source>Adress of your proxy configuration</source>
         <translation>Adreça del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1852"/>
+        <location filename="../../ui/options.ui" line="1857"/>
         <source>Proxy adress</source>
         <translation>Adreça del proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1875"/>
-        <location filename="../../ui/options.ui" line="1881"/>
+        <location filename="../../ui/options.ui" line="1880"/>
+        <location filename="../../ui/options.ui" line="1886"/>
         <source>Type of your proxy configuration</source>
         <translation>Tipus de proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1878"/>
+        <location filename="../../ui/options.ui" line="1883"/>
         <source>Proxy type</source>
         <translation>Tipus de proxy</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1702"/>
+        <location filename="../../ui/options.ui" line="1707"/>
         <source>Use the system configuration</source>
         <translation>Usa la configuració del sistema</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1971"/>
-        <location filename="../../ui/options.ui" line="1977"/>
+        <location filename="../../ui/options.ui" line="1992"/>
+        <location filename="../../ui/options.ui" line="1998"/>
         <source>Enable/disable the &quot;Bug report&quot; window on video Error</source>
         <translation>Activa/desactiva els &quot;Informes d&apos;error&quot; al fallar un vídeo</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1974"/>
+        <location filename="../../ui/options.ui" line="1995"/>
         <source>Bug report</source>
         <translation>Informe d&apos;error</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2043"/>
+        <location filename="../../ui/options.ui" line="2064"/>
         <source>Remember last viewed options page checkbox</source>
         <translation>Recorda la última pàgina visitada</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2078"/>
-        <location filename="../../ui/options.ui" line="2084"/>
+        <location filename="../../ui/options.ui" line="2099"/>
+        <location filename="../../ui/options.ui" line="2105"/>
         <source>Save and close the current configuration</source>
         <translation>Desa la configuració actual i tanca la finestra</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2081"/>
+        <location filename="../../ui/options.ui" line="2102"/>
         <source>Save and close button</source>
         <translation>Botó de desa i tanca</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2103"/>
-        <location filename="../../ui/options.ui" line="2109"/>
+        <location filename="../../ui/options.ui" line="2124"/>
+        <location filename="../../ui/options.ui" line="2130"/>
         <source>Close without saving changes</source>
         <translation>Tanca sense desar els canvis</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2106"/>
+        <location filename="../../ui/options.ui" line="2127"/>
         <source>Cancel and close button</source>
         <translation>Botó de cancel·lar i tancar</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2040"/>
-        <location filename="../../ui/options.ui" line="2046"/>
+        <location filename="../../ui/options.ui" line="2061"/>
+        <location filename="../../ui/options.ui" line="2067"/>
         <source>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</source>
         <translation>Si aquesta opció està seleccionada, al obrir una altre vegada la finestra d&apos;&quot;Opcions&quot;, la última pàgina visitada (Bàsic, Idiomes, etc...) es mostrarà una altra vegada (només en aquesta sessió)</translation>
     </message>

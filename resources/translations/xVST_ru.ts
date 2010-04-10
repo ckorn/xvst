@@ -354,13 +354,13 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="168"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="169"/>
         <source>Thank you for your report.</source>
         <translation>Спасибо за сообщение об ошибке.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="169"/>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="180"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="170"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="181"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -542,23 +542,23 @@
 <context>
     <name>Credits</name>
     <message>
-        <location filename="../../ui/credits.ui" line="17"/>
+        <location filename="../../ui/credits.ui" line="29"/>
         <source>Credits</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="188"/>
-        <location filename="../../ui/credits.ui" line="194"/>
+        <location filename="../../ui/credits.ui" line="200"/>
+        <location filename="../../ui/credits.ui" line="206"/>
         <source>Close the Credits dialog</source>
         <translation>Закрыть диалог</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="191"/>
+        <location filename="../../ui/credits.ui" line="203"/>
         <source>Ok button</source>
         <translation>Кнопка Ok</translation>
     </message>
     <message>
-        <location filename="../../ui/credits.ui" line="197"/>
+        <location filename="../../ui/credits.ui" line="209"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -2563,203 +2563,203 @@ font-size:12px;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1594"/>
+        <location filename="../../ui/options.ui" line="1607"/>
         <source>Http configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1600"/>
+        <location filename="../../ui/options.ui" line="1691"/>
         <source>Delete the downloaded file on download error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1609"/>
+        <location filename="../../ui/options.ui" line="1615"/>
         <source>Time-out:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1629"/>
+        <location filename="../../ui/options.ui" line="1635"/>
         <source>sec.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1652"/>
+        <location filename="../../ui/options.ui" line="1658"/>
         <source>Max. retries:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1673"/>
+        <location filename="../../ui/options.ui" line="1679"/>
         <source>Time remaining calculation:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1696"/>
+        <location filename="../../ui/options.ui" line="1701"/>
         <source>Proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1715"/>
-        <location filename="../../ui/options.ui" line="1718"/>
-        <location filename="../../ui/options.ui" line="1721"/>
+        <location filename="../../ui/options.ui" line="1720"/>
+        <location filename="../../ui/options.ui" line="1723"/>
+        <location filename="../../ui/options.ui" line="1726"/>
         <source>Enable/disable proxy support</source>
         <translation>Включить/отключить поддержку прокси</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1724"/>
+        <location filename="../../ui/options.ui" line="1729"/>
         <source>Use proxy server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1736"/>
+        <location filename="../../ui/options.ui" line="1741"/>
         <source>User name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1743"/>
+        <location filename="../../ui/options.ui" line="1748"/>
         <source>Password:</source>
         <translation>Пароль:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1756"/>
-        <location filename="../../ui/options.ui" line="1762"/>
+        <location filename="../../ui/options.ui" line="1761"/>
+        <location filename="../../ui/options.ui" line="1767"/>
         <source>User name of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1759"/>
+        <location filename="../../ui/options.ui" line="1764"/>
         <source>Proxy user name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1775"/>
-        <location filename="../../ui/options.ui" line="1781"/>
+        <location filename="../../ui/options.ui" line="1780"/>
+        <location filename="../../ui/options.ui" line="1786"/>
         <source>Password of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1778"/>
+        <location filename="../../ui/options.ui" line="1783"/>
         <source>Proxy password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1791"/>
+        <location filename="../../ui/options.ui" line="1796"/>
         <source>Adress:</source>
         <translation>Адрес:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1800"/>
+        <location filename="../../ui/options.ui" line="1805"/>
         <source>Port:</source>
         <translation>Порт:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1819"/>
-        <location filename="../../ui/options.ui" line="1825"/>
+        <location filename="../../ui/options.ui" line="1824"/>
+        <location filename="../../ui/options.ui" line="1830"/>
         <source>Port of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1822"/>
+        <location filename="../../ui/options.ui" line="1827"/>
         <source>Proxy port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1849"/>
-        <location filename="../../ui/options.ui" line="1855"/>
+        <location filename="../../ui/options.ui" line="1854"/>
+        <location filename="../../ui/options.ui" line="1860"/>
         <source>Adress of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1852"/>
+        <location filename="../../ui/options.ui" line="1857"/>
         <source>Proxy adress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1868"/>
+        <location filename="../../ui/options.ui" line="1873"/>
         <source>Proxy type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1875"/>
-        <location filename="../../ui/options.ui" line="1881"/>
+        <location filename="../../ui/options.ui" line="1880"/>
+        <location filename="../../ui/options.ui" line="1886"/>
         <source>Type of your proxy configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1878"/>
+        <location filename="../../ui/options.ui" line="1883"/>
         <source>Proxy type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1702"/>
+        <location filename="../../ui/options.ui" line="1707"/>
         <source>Use the system configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1971"/>
-        <location filename="../../ui/options.ui" line="1977"/>
+        <location filename="../../ui/options.ui" line="1992"/>
+        <location filename="../../ui/options.ui" line="1998"/>
         <source>Enable/disable the &quot;Bug report&quot; window on video Error</source>
         <translation>Включить/отключить отображение окна для сообщения об ошибке авторам при возникновении ошибок</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1974"/>
+        <location filename="../../ui/options.ui" line="1995"/>
         <source>Bug report</source>
         <translation>Сообщить об ошибке</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1980"/>
+        <location filename="../../ui/options.ui" line="2001"/>
         <source>Display &quot;Bug Report&quot; window on Video error</source>
         <translation>Отображать окно для сообщения об ошибке авторам при возникновении ошибок</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1989"/>
+        <location filename="../../ui/options.ui" line="2010"/>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2040"/>
-        <location filename="../../ui/options.ui" line="2046"/>
+        <location filename="../../ui/options.ui" line="2061"/>
+        <location filename="../../ui/options.ui" line="2067"/>
         <source>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2043"/>
+        <location filename="../../ui/options.ui" line="2064"/>
         <source>Remember last viewed options page checkbox</source>
         <translation>Запоминать последнюю просмотренную страницу настроек (только для этой сессии)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2049"/>
+        <location filename="../../ui/options.ui" line="2070"/>
         <source>Remember last viewed options page (only for this session)</source>
         <translation>Запоминать последнюю просмотренную страницу настроек (только для этой сессии)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2078"/>
-        <location filename="../../ui/options.ui" line="2084"/>
+        <location filename="../../ui/options.ui" line="2099"/>
+        <location filename="../../ui/options.ui" line="2105"/>
         <source>Save and close the current configuration</source>
         <translation>Сохранить и закрыть текущие настройки</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2081"/>
+        <location filename="../../ui/options.ui" line="2102"/>
         <source>Save and close button</source>
         <translation>Сохранить и закрыть</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2087"/>
+        <location filename="../../ui/options.ui" line="2108"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2103"/>
-        <location filename="../../ui/options.ui" line="2109"/>
+        <location filename="../../ui/options.ui" line="2124"/>
+        <location filename="../../ui/options.ui" line="2130"/>
         <source>Close without saving changes</source>
         <translation>Закрыть без сохранения изменений</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2106"/>
+        <location filename="../../ui/options.ui" line="2127"/>
         <source>Cancel and close button</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="2112"/>
+        <location filename="../../ui/options.ui" line="2133"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>

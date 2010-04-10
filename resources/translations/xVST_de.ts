@@ -144,15 +144,15 @@
     </message>
     <message>
         <source>Already added</source>
-        <translation type="unfinished">Video ist bereits in der Downloadliste</translation>
+        <translation>Video ist bereits in der Downloadliste</translation>
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation type="unfinished">Du hast dieses Video bereits einfügt. Überprüfe ob es schon heruntergeladen wurde.</translation>
+        <translation>Du hast dieses Video bereits einfügt. Überprüfe ob es schon heruntergeladen wurde.</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -241,7 +241,7 @@
         <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Dieser &quot;&lt;b&gt;Fehlerbericht&lt;/b&gt; wird an &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt; gesendet.&lt;/p&gt;
-&lt;p&gt;Dein Name und deine Email-Adresse werden in den &quot;&lt;b&gt;Fehlerkommentar&lt;/b&gt;&quot; eingefügt und sind vollkommen freiwillig.</translation>
+&lt;p&gt;Dein Name und deine Email-Adresse werden in den &quot;&lt;b&gt;Fehlerkommentar&lt;/b&gt;&quot; eingefügt und sind vollkommen freiwillig.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Your name</source>
@@ -357,7 +357,7 @@
     </message>
     <message>
         <source>Please, download the new version of &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; from &lt;a href=&apos;%2&apos;&gt;here.&lt;/a&gt;</source>
-        <translation>Bitte lade die neueste Version von &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; von &lt;a href=&apos;%2&apos;&gt;hier&lt;/a&gt;herunter.</translation>
+        <translation>Bitte lade die neueste Version von &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; von &lt;a href=&apos;%2&apos;&gt;hier&lt;/a&gt; herunter.</translation>
     </message>
     <message>
         <source>Update Center</source>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>You are using the most recent version of this program.</source>
-        <translation>Du benutzt die neueste Programmversion</translation>
+        <translation>Du benutzt die neueste Programmversion.</translation>
     </message>
     <message>
         <source>Updates</source>
@@ -419,7 +419,7 @@
     <name>CompletedPopupImpl</name>
     <message>
         <source>Download completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Download abgeschlossen</translation>
     </message>
 </context>
 <context>
@@ -515,7 +515,7 @@
     </message>
     <message>
         <source>Video title:</source>
-        <translation>Videotitel</translation>
+        <translation>Videotitel:</translation>
     </message>
     <message>
         <source>Field where you enter the video title</source>
@@ -578,7 +578,7 @@
     </message>
     <message>
         <source>Downloaded videos log:</source>
-        <translation>Log der heruntergeladenen Videos</translation>
+        <translation>Log der heruntergeladenen Videos:</translation>
     </message>
     <message>
         <source>Display the downloaded log list</source>
@@ -683,15 +683,15 @@
     </message>
     <message>
         <source>Already added</source>
-        <translation type="unfinished">Video ist bereits in der Downloadliste</translation>
+        <translation>Video ist bereits in der Downloadliste</translation>
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation type="unfinished">Du hast dieses Video bereits einfügt. Überprüfe ob es schon heruntergeladen wurde.</translation>
+        <translation>Du hast dieses Video bereits einfügt. Überprüfe ob es schon heruntergeladen wurde.</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -718,7 +718,7 @@
     </message>
     <message>
         <source>This is the information which will be send:</source>
-        <translation>Diese Informationen werden versandt</translation>
+        <translation>Folgende Informationen werden versandt:</translation>
     </message>
     <message>
         <source>Close the Information view</source>
@@ -733,7 +733,7 @@
     </message>
     <message>
         <source>Program version:</source>
-        <translation>Programmversion</translation>
+        <translation>Programmversion:</translation>
     </message>
     <message>
         <source>List of supported services</source>
@@ -808,7 +808,7 @@ font-size:12px;
     </message>
     <message>
         <source>&lt;b&gt;xVideoServiceThief currently supports download from:&lt;/b&gt;</source>
-        <translation>xVideoServiceThief unterstützt momentan Downloads von:</translation>
+        <translation>&lt;b&gt;xVideoServiceThief unterstützt momentan Downloads von:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Credits button</source>
@@ -833,7 +833,7 @@ background: white;
     </message>
     <message>
         <source>Adult web sites:</source>
-        <translation>&quot;Erwachsenenseiten&quot;</translation>
+        <translation>Setien für Erwachsene:</translation>
     </message>
     <message>
         <source>Music web sites:</source>
@@ -848,7 +848,7 @@ background: white;
     <name>Loading</name>
     <message>
         <source>Loading</source>
-        <translation type="unfinished">Lade ...</translation>
+        <translation>Lade ...</translation>
     </message>
 </context>
 <context>
@@ -894,7 +894,7 @@ background: white;
     </message>
     <message>
         <source>Download list:</source>
-        <translation>Downloadliste</translation>
+        <translation>Downloadliste:</translation>
     </message>
     <message>
         <source>Connecting...</source>
@@ -922,7 +922,7 @@ background: white;
     </message>
     <message>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; 0,00 bytes/sec</source>
-        <translation>&lt;b&gt;Downloadgeschwindigkeit:&lt;/b&gt;0,00 bytes/sec</translation>
+        <translation>&lt;b&gt;Downloadspeed:&lt;/b&gt;0,00 bytes/sec</translation>
     </message>
     <message>
         <source>Program information</source>
@@ -1170,15 +1170,15 @@ background: white;
     </message>
     <message>
         <source>Rename video</source>
-        <translation type="unfinished"></translation>
+        <translation>Video umbenennen</translation>
     </message>
     <message>
         <source>Alt+Up</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Alt+Down</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1213,7 +1213,7 @@ background: white;
     </message>
     <message>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Lade:&lt;/b&gt;%1 von %2 &lt;b&gt;herunter&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Lade: &lt;/b&gt;%1 von %2 &lt;b&gt;herunter&lt;/b&gt;</translation>
     </message>
     <message>
         <source> Size </source>
@@ -1233,11 +1233,11 @@ background: white;
     </message>
     <message>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Downloadgeschwindigkeit:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Downloadspeed:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source> Speed </source>
-        <translation>Geschwindigkeit</translation>
+        <translation>Speed</translation>
     </message>
     <message>
         <source>- Downloading: %1 (%2, %3)</source>
@@ -1309,63 +1309,63 @@ background: white;
     </message>
     <message>
         <source>Already added</source>
-        <translation type="unfinished">Video ist bereits in der Downloadliste</translation>
+        <translation>Bereits hinzugefügt</translation>
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation type="unfinished">Du hast dieses Video bereits einfügt. Überprüfe ob es schon heruntergeladen wurde.</translation>
+        <translation>Du hast dieses Video bereits einfügt. Überprüfe ob es schon heruntergeladen wurde.</translation>
     </message>
     <message>
         <source>Wish you cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchtest du den Download von &lt;b&gt;%1&lt;/b&gt; abbrechen?</translation>
     </message>
     <message>
         <source>Cancel downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Download abbrechen</translation>
     </message>
     <message>
         <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchtest du die &lt;b&gt;%1&lt;/b&gt; ausgewählten Downloads abbrechen?</translation>
     </message>
     <message>
         <source>Delete video</source>
-        <translation type="unfinished">Video löschen</translation>
+        <translation>Video löschen</translation>
     </message>
     <message>
         <source>Start download</source>
-        <translation type="unfinished">Download starten</translation>
+        <translation>Download starten</translation>
     </message>
     <message>
         <source>Rename video</source>
-        <translation type="unfinished"></translation>
+        <translation>Video umbenennen</translation>
     </message>
     <message>
         <source>Reset state</source>
-        <translation type="unfinished">Status zurücksetzen</translation>
+        <translation>Status zurücksetzen</translation>
     </message>
     <message>
         <source>Delete videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Video löschen</translation>
     </message>
     <message>
         <source>Start downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads starten</translation>
     </message>
     <message>
         <source>Pause downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads unterbrechen</translation>
     </message>
     <message>
         <source>Resume downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads fortsetzen</translation>
     </message>
     <message>
         <source>Rename videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videos umbenennen</translation>
     </message>
     <message>
         <source>Reset states</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadstatus zurücksetzen</translation>
     </message>
 </context>
 <context>
@@ -2098,35 +2098,35 @@ background: white;
     </message>
     <message>
         <source>Save and restore the current session</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichere und stelle die aktuelle Session wieder her</translation>
     </message>
     <message>
         <source>Http configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Http-Konfiguration</translation>
     </message>
     <message>
         <source>Delete the downloaded file on download error</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche die heruntergeladene Datei aufgrund von Downloadfehlern</translation>
     </message>
     <message>
         <source>Time-out:</source>
-        <translation type="unfinished"></translation>
+        <translation>Timeout:</translation>
     </message>
     <message>
         <source>sec.</source>
-        <translation type="unfinished"></translation>
+        <translation>sek.</translation>
     </message>
     <message>
         <source>Max. retries:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max. Versuche:</translation>
     </message>
     <message>
         <source>Time remaining calculation:</source>
-        <translation type="unfinished"></translation>
+        <translation>(Vorberechnete) verbleibende Zeit:</translation>
     </message>
     <message>
         <source>Proxy configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy-Konfiguration</translation>
     </message>
 </context>
 <context>
@@ -2277,11 +2277,11 @@ background: white;
     </message>
     <message>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
-        <translation>Ein anderer Prozess sperrt momentan den Vorgang, beende diesen Prozess oder warte</translation>
+        <translation>Ein anderer Prozess sperrt momentan den Vorgang, beende diesen Prozess oder warte.</translation>
     </message>
     <message>
         <source>Internet configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Interneteinstellungen</translation>
     </message>
     <message>
         <source>Using the download percentage</source>
@@ -2608,11 +2608,11 @@ background: white;
     <name>SearchVideosNoResults</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>No results found with &quot;&lt;b&gt;%1&lt;/b&gt;&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Ergebnisse mit &quot;&lt;b&gt;%1&lt;/b&gt;&quot; gefunden</translation>
     </message>
 </context>
 <context>
@@ -2990,31 +2990,32 @@ background: white;
     </message>
     <message>
         <source>The maximum allowed http redirections has been reached</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Maybe &quot;Umleitung&quot; is not the correct translation ... I need to see the context.</translatorcomment>
+        <translation>Das Maximum der möglichen http Umleitungen wurde erreicht.</translation>
     </message>
     <message>
         <source>The connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Verbindung zum Remoteserver wurde durch Timeout abgebrochen</translation>
     </message>
     <message>
         <source>The remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Remoteserver hat die Verbindung abgelehnt</translation>
     </message>
     <message>
         <source>The remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Remotehost konnte nicht gefunden werden (ungültiger Name)</translation>
     </message>
     <message>
         <source>The access to the remote content was denied</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Zugang zum Daten auf dem Remoteserver wurde verweigert</translation>
     </message>
     <message>
         <source>The remote content was not found at the server </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Remotedaten wurden nicht auf dem Server gefunden</translation>
     </message>
     <message>
         <source>Queued...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingereiht ...</translation>
     </message>
 </context>
 <context>
@@ -3054,105 +3055,105 @@ background: white;
     <name>WhatsNew</name>
     <message>
         <source>What&apos;s new....</source>
-        <translation type="unfinished"></translation>
+        <translation>Neues ...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Schließen</translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
     <name>WinVistaDownloadsMsg</name>
     <message>
         <source>Downloads directory migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadverzeichnis mirgieren</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and your current downloads directory  is protected with administration rights.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;To solve this problem, we recommend you to change your current downloads directory to a new safe and &quot;public&quot; directory (i.e.: &quot;Documents/Downloads&quot; or &quot;Documents/Videos&quot;).&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Vorsicht, xVST scheint Windows Vista oder Windows 7 zu laufen und dein aktuelles Downloadverzeichnis ist mit Administrationsrechten geschützt.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Um dieses Problem zu lösen, empfehlen wir das Downloadverzeichnis auf ein neues sicheres und &quot;öffentliches&quot; Verzeichnis zu verschieben (z.B.: &quot;Dokumente/Downloads&quot; oder &quot;Dokumente/Videos&quot;)&lt;/p&gt;</translation>
     </message>
     <message>
         <source>New downloads directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Neues Downloadverzeichnis:</translation>
     </message>
     <message>
         <source>New downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Neues Downloadverzeichnis</translation>
     </message>
     <message>
         <source>Downloads directory edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadverzeichnis anpassen</translation>
     </message>
     <message>
         <source>Select the downloads directory</source>
-        <translation type="unfinished">Wähle das Downloadverzeichnis aus</translation>
+        <translation>Wähle das Downloadverzeichnis aus</translation>
     </message>
     <message>
         <source>Select downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadverzeichnis auswählen</translation>
     </message>
     <message>
         <source>Open the Select directory dialog for select the downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne den &quot;Verzeichnis auswählen&quot;-Dialog um ein neues Verzeichnis auszuwählen</translation>
     </message>
     <message>
         <source>Other proposed directories</source>
-        <translation type="unfinished"></translation>
+        <translation>Andere empfohlene Verzeichnisse</translation>
     </message>
     <message>
         <source>Set the &quot;Videos&quot; directory as new downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Setze das &quot;Videos&quot;-Verzeichnis als neues Downloadverzeichnis</translation>
     </message>
     <message>
         <source>Select videos directory button</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle Videosverzeichnis-Button</translation>
     </message>
     <message>
         <source>Default Windows videos directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard Videoverzeichnis von Windows</translation>
     </message>
     <message>
         <source>Set the &quot;Downloads&quot; directory as new downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Setze das &quot;Downloads&quot;-Verzeichnis als neues Downloadverzeichnis</translation>
     </message>
     <message>
         <source>Select downloads directory button</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle Downloadverzeichnis-Button</translation>
     </message>
     <message>
         <source>Default Windows downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard Downloadverzeichnis von Windows</translation>
     </message>
     <message>
         <source>Checking this option the xVST will not advertise again about this problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Option auswählen damit xVST nicht mehr auf dieses Problem hinweist</translation>
     </message>
     <message>
         <source>Don&apos;t display this message again</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Nachricht nicht wieder anzeigen</translation>
     </message>
     <message>
         <source>Update the downloads directory and close this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisiere das Downloadverzeichnis und schließe dieses Fenster</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisieren</translation>
     </message>
     <message>
         <source>Close this window without changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließe dieses Fenster ohne Änderungen</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
     <name>WinVistaDownloadsMsgImpl</name>
     <message>
         <source>Select the download directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Downloadverzeichnis auswählen:</translation>
     </message>
 </context>
 <context>
@@ -3183,7 +3184,7 @@ background: white;
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Achtung, xVST läuft scheinbar auf Windows Vista/7. Die automatischen Updates könnten nicht richtig funktionieren.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Sollten sie die &lt;b&gt;UAC&lt;/b&gt;(User Account Control) aktiviert haben, können automatische Updates aufgrund von fehlenden Benutzerrechten nicht installiert werden.&lt;/p&gt;</translation>
     </message>
 </context>
 </TS>
