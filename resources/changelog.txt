@@ -3,6 +3,7 @@
 
 - Updated japanese translation
 - Updated german translation
+- Updated italian translation
 
 2.4:
 ----
