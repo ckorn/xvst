@@ -22,6 +22,11 @@ FORMS += ui/mainwindow.ui
 macx {
 	QMAKE_INFO_PLIST = resources/Info.plist
 	ICON += resources/icons/MacOSX.icns
+	CONFIG(release, debug|release) {
+		message(Release build! Archs: 32 and 64 bits)
+		CONFIG += x86 x86_64
+	}
+	CONFIG(debug, debug|release):message(Debug build! Archs: Current architecture only)
 }
 win32 {
 	RC_FILE += resources/DebugPlugins.rc
