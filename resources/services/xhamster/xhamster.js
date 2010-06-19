@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
-	this.minVersion = "1.0.0a";
-	this.author = "Karim Naufal";
+	this.version = "1.0.1";
+	this.minVersion = "2.0.0a";
+	this.author = "Supelex Technologies";
 	this.website = "http://www.xhamster.com/";
 	this.ID = "xhamster.com";
 	this.caption = "Xhamster";
