@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.1";
+	this.version = "2.1.3";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -42,7 +42,9 @@ function getVideoInformation(url)
 	// init result
 	var result = new VideoDefinition();
 	// default URL
-	var youTubeURL = url;
+	var youTubeURL = strReplace(url, "watch#!", "watch?");
+	// replace "popup" watch for standard watch
+	youTubeURL = strReplace(youTubeURL, "watch_popup?", "watch?");
 	// check if is an embeded video, and get the "real url" of youtube
 	if (youTubeURL.toString().indexOf(".youtube.com/v/") != -1)
 	{
@@ -53,9 +55,6 @@ function getVideoInformation(url)
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(youTubeURL);
-	
-	print(http.getLastError());
-	
 	// get the video title
 	result.title = copyBetween(html, "<title>", "</title>");
 	result.title = normalizeSpaces(result.title);
@@ -102,7 +101,7 @@ function searchVideos(keyWord, pageIndex)
 	const URL_SEARCH = "http://www.youtube.com/results?search_query=%1&page=%2&hl=%3";
 	const HTML_SEARCH_START = "<!-- start search results -->";
 	const HTML_SEARCH_FINISH = "<!-- end search results -->";
-	const HTML_SEARCH_SEPARATOR = '<div class="video-entry yt-uix-hovercard">';
+	const HTML_SEARCH_SEPARATOR = '<div class="video-entry">';
 	// replace all spaces for "+"
 	keyWord = strReplace(keyWord, " ", "+");
 	// init search results object
@@ -158,7 +157,7 @@ function parseResultItem(searchResults, html)
 	// get video description
 	description = copyBetween(html, 'class="video-description">', '</div>');
 	// get video duration
-	duration = convertToSeconds(copyBetween(html, '<span class="hovercard-duration">', "<"));
+	duration = convertToSeconds(copyBetween(html, '<span class="video-time"><span>', '</span>'));
 	// get rating
 	tmp = copyBetween(html, '<button class="master-sprite ratingVS', '>');
 	rating = copyBetween(tmp, 'title="', '"');
