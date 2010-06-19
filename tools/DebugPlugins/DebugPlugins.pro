@@ -1,3 +1,7 @@
+CONFIG += qt \
+    warn_on \
+    debug_and_release \
+    $$[build_mode]
 QT += network \
     script \
     scripttools
@@ -22,6 +26,14 @@ macx {
 win32 {
 	RC_FILE += resources/DebugPlugins.rc
 }
-
+frameworks_build { 
+    DEFINES += FRAMEWORKS_BUILD
+    message(frameworks_build)
+}
+static_build { 
+    DEFINES += STATIC_BUILD
+    QTPLUGIN += qico qgif qjpeg
+    message(static_build)
+}
 # include the common xVST classes
 include(../Common/xvst-classes.pri)
