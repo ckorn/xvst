@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.1.3";
+	this.version = "2.1.4";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -75,7 +75,7 @@ function getVideoInformation(url)
 	// convert the hex codes to ascii
 	result.URL = cleanUrl(result.URL);
 	// remove the last "," and replace it with an "&" (if is needed)
-	if (strLastIndexOf(result.URL, "&") != result.URL.toString().length - 1)
+	if (strLastIndexOf(result.URL, "&") < strLastIndexOf(result.URL, ","))
 		result.URL = strRemove(result.URL, strLastIndexOf(result.URL, ","), result.URL.toString().length) + "&";		
 	// return the video information
 	return result;
@@ -157,7 +157,7 @@ function parseResultItem(searchResults, html)
 	// get video description
 	description = copyBetween(html, 'class="video-description">', '</div>');
 	// get video duration
-	duration = convertToSeconds(copyBetween(html, '<span class="video-time"><span>', '</span>'));
+	duration = convertToSeconds(copyBetween(html, '<span class="video-time">', '</span>'));
 	// get rating
 	tmp = copyBetween(html, '<button class="master-sprite ratingVS', '>');
 	rating = copyBetween(tmp, 'title="', '"');
