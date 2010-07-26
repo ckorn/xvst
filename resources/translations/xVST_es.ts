@@ -3648,7 +3648,7 @@ font-size:12px;
     <message>
         <location filename="../../src/videoconvert.cpp" line="419"/>
         <source>Apple iPod (*.mp4)</source>
-        <translation>Apple iPot (*.mp4)</translation>
+        <translation type="unfinished">Apple iPod (*.mp4)</translation>
     </message>
     <message>
         <location filename="../../src/videoconvert.cpp" line="419"/>
