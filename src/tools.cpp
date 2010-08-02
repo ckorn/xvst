@@ -65,16 +65,15 @@ QString copyBetween(QString str, QString from, QString to)
 	QString result = "";
 	int start = str.indexOf(from, 0);
 	int end;
-	
+	// if first token exists
 	if (start != -1)
 	{
 		start += from.length();
-		end = str.indexOf(to, start + 1);
-		
-		if (end != -1)
-			result = copy(str, start, end);
+		end = str.indexOf(to, start);
+		// if second token exists
+		if (end != -1) result = copy(str, start, end);
 	}
-
+	// return the between text
 	return result;
 }
 
