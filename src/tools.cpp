@@ -351,8 +351,10 @@ bool validURL(QString URL, bool acceptRTMP)
 		return QUrl(URL).isValid();
 	// if rtmp urls are accepted and have the "rtmp://"
 	else if (acceptRTMP && isRtmpURL(URL))
-	{
-		URL = URL.replace("rtmp://", "http://");
+	{	
+		if (URL.indexOf("rtmp://") == 0) URL = URL.replace("rtmp://", "http://");
+		else if (URL.indexOf("rtmpe://") == 0) URL = URL.replace("rtmpe://", "http://");
+		// validate this "new one"
 		return QUrl(URL).isValid();
 	}
 	else // invalid url
@@ -366,7 +368,7 @@ bool isHttpURL(QString URL)
 
 bool isRtmpURL(QString URL)
 {
-	return URL.indexOf("rtmp://") == 0;
+	return URL.indexOf("rtmp://") == 0 || URL.indexOf("rtmpe://") == 0;
 }
 
 QString getPathAndQuery(QUrl URL)
