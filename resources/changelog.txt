@@ -1,9 +1,33 @@
 2.4.1:
 ------
 
+- Added support for "RTMPE" Flash protocol
+
 - Updated japanese translation
 - Updated german translation
 - Updated italian translation
+
+- Added one new plugin:
+	- XHamster (thanks to Supelex Technologies)
+
+- Changed plug-in:
+	- Aniboom
+	- Atom
+	- Break
+	- Caught on Tape (before known as Caught on Video)
+	- Cinemavip
+	- DailyMotion
+	- Disclose
+	- Shred or Die
+	- Streetfire
+	- Keezmovies
+	- XHamster
+	- XTube
+
+Plug-ins SDK:
+-------------
+
+- Fixed bug (Error: The empty selections were not detected by "copyBetween" function)
 
 2.4:
 ----
