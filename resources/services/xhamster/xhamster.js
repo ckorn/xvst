@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
-	this.author = "Supelex Technologies";
+	this.author = "Supelex Technologies (mantained by Xesc & Technology 2010)";
 	this.website = "http://www.xhamster.com/";
 	this.ID = "xhamster.com";
 	this.caption = "Xhamster";
@@ -37,13 +37,9 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	// http://88.208.24.133/flv2/1276861797:vja1tohWpIY/190185_Ciglik_Cigliga_Orgazm.flv
-	
-	const FLV_URL = "%1flv2/%2";
-	
+	const FLV_URL = "%1/flv2/%2";	
 	// video information
 	var result = new VideoDefinition();
-	// get the html
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);

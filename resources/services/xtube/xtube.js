@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.2";
+	this.version = "1.0.3";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.xtube.com/";
 	this.ID = "xtube.com";
 	this.caption = "XTube";
@@ -37,7 +37,7 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_POST_XML = "http://%1.xtube.com/find_video.php";
+	const URL_POST_XML = "http://video2.xtube.com/find_video.php";	
 	const URL_POST_XML_PARAMS = "user_id=%1&clip_id=%2&video_id=%3";
 	// video information
 	var result = new VideoDefinition();
@@ -45,16 +45,14 @@ function getVideoInformation(url)
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// get video title
-	result.title = copyBetween(html, "<tr align=left><td width=580><h2>", "</h2>");
+	result.title = copyBetween(html, '<div class="font_b_12px">', '</div>');
 	// get subdomain
-	var subDomain = copyBetween(url, "http://", ".");
-	var swfUrl = copyBetween(html, "swfURL\", \"", "\"");
-	var user_id = copyBetween(html, "user_id\", \"", "\"");
-	var clip_id = copyBetween(html, "clip_id\", \"", "\"");
-	var video_id = copyBetween(html, "video_id\", \"", "\"");
-	// get xml
-	var xml = http.downloadWebpagePost(strFormat(URL_POST_XML, subDomain),
-									   strFormat(URL_POST_XML_PARAMS, user_id, clip_id, video_id));
+	var swfUrl   = copyBetween(html, 'so_s.addVariable("swfURL", "', '"');
+	var user_id  = copyBetween(html, 'so_s.addVariable("user_id", "', '"');
+	var video_id = copyBetween(html, 'so_s.addVariable("video_id", "', '"');
+	var clip_id = programVersionNumber() > 240 ? copyBetween(html, 'so_s.addVariable("clip_id", "', '"') : ""; // prevent a xVST (< 2.4.1) bug	
+	// get xml	
+	var xml = http.downloadWebpagePost(URL_POST_XML, strFormat(URL_POST_XML_PARAMS, user_id, clip_id, video_id));
 	// get video url
 	result.URL = copyBetween(xml, "&filename=", "&");
 	result.URL = swfUrl + result.URL;

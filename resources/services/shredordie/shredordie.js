@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.shredordie.com/";
 	this.ID = "shredordie.com";
 	this.caption = "Shred or Die";
@@ -37,19 +37,16 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_FLV = "http://videos0.ordienetworks.com/videos/%1/sd.flv";
 	// init result
 	var result = new VideoDefinition();
-	// get videoId
-	var videoId = copyBetween(url, "/videos/", "/");
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// get video title
-	result.title = copyBetween(html, "<h1 class='player_page_h1'>", "</h1>");
-	result.title = copyBetween(result.title, ">", "</a>");
+	result.title = copyBetween(html, "<title>", "</title>");
+	result.title = strReplace(result.title, "- Shred or Die", "");
 	// get video url
-	result.URL = strFormat(URL_FLV, videoId);
+	result.URL = copyBetween(html, "file=", "&");
 	// return the video information
 	return result;
 }

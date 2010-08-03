@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-this.version = "1.0.1";
+this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.aniboom.com/";
 	this.ID = "aniboom.com";
 	this.caption = "Aniboom";
@@ -37,18 +37,20 @@ this.version = "1.0.1";
 
 function getVideoInformation(url)
 {
-	const URL_GET_FLV = "http://media.aniboom.com/http/%1.flv";
+	const URL_GET_FLV = "http://www.aniboom.com/animations/player/handlers/animationDetails.aspx?mode=&movieid=%1";
 	// init result
 	var result = new VideoDefinition();
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
-	// get the video ID
-	var vidID = copyBetween(html, "movieID=", "&");
 	// get the video title
 	result.title = copyBetween(html, "<meta name=\"title\" content=\"", "\" />");
-	// build the video url
-	result.URL = strFormat(URL_GET_FLV, vidID);
+	// video URL
+	var videoId = copyBetween(html, 'animationId=', '"');
+	// download the file with the real url
+	var info = http.downloadWebpage(strFormat(URL_GET_FLV, videoId));
+	// get the video url
+	result.URL = cleanUrl(copyBetween(info, "flv=", "&"));
 	// return the video information
 	return result;
 }

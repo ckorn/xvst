@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.2";
+	this.version = "1.0.3";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.keezmovies.com/";
 	this.ID = "keezmovies.com";
 	this.caption = "KeezMovies";
@@ -46,7 +46,7 @@ function getVideoInformation(url)
 	result.title = copyBetween(html, "<title>", "</title>");
 	result.title = strReplace(result.title, "- KeezMovies.com", "");
 	// get the xml url
-	var xmlUrl = copyBetween(html, '"options","', '"');
+	var xmlUrl = copyBetween(html, '"options=', '"');
 	// download xml
 	var xml = http.downloadWebpage(xmlUrl);
 	// get flv url
