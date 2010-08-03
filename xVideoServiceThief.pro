@@ -7,7 +7,7 @@ QT = core \
     network \
     script
 !macx: QT += webkit
-DEFINES += xVST_DEBUG_PLUGINS_OFF
+CONFIG += plugins_debug_off
 TEMPLATE = app
 DESTDIR = bin
 UI_DIR = build/ui
@@ -181,20 +181,29 @@ macx {
     CONFIG(release, debug|release) { 
         message(Release build! Archs: 32 and 64 bits)
         CONFIG += x86 x86_64
-    }
-    CONFIG(debug, debug|release):message(Debug build! Archs: Current architecture only)
+	}
+	CONFIG(debug, debug|release):message(Debug build! Archs: Current architecture only)
 }
 win32 { 
-    RC_FILE += resources/xVST.rc
-    OBJECTS_DIR = build/o/win32
+	RC_FILE += resources/xVST.rc
+	OBJECTS_DIR = build/o/win32
 }
 frameworks_build { 
-    DEFINES += FRAMEWORKS_BUILD
-    message(frameworks_build)
+	DEFINES += FRAMEWORKS_BUILD
+	message(Building with Framewroks)
 }
 static_build { 
-    DEFINES += STATIC_BUILD
-    QTPLUGIN += qico qgif qjpeg
-    message(static_build)
+	DEFINES += STATIC_BUILD
+	QTPLUGIN += qico qgif qjpeg
+	message(Building Static version)
+}
+plugins_debug_on {
+	DEFINES += xVST_DEBUG_PLUGINS_ON
+	QT += scripttools
+	message(Plugins debugger is ON)
+}
+else {
+	DEFINES += xVST_DEBUG_PLUGINS_OFF
+	message(Plugins debugger is OFF)
 }
 include(src/qtsingleapplication/src/qtsingleapplication.pri)
