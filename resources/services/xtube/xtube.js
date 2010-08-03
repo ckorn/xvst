@@ -25,8 +25,8 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.3";
-	this.minVersion = "2.0.0a";
+	this.version = "1.0.4";
+	this.minVersion = "2.3.1";
 	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.xtube.com/";
 	this.ID = "xtube.com";

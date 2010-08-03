@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,11 +25,11 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://videos.cinemavip.com/";
-	this.ID = "videos.cinemavip.com";
+	this.ID = "cinemavip.com";
 	this.caption = "CinemaVIP";
 	this.adultContent = false;
 	this.musicSite = false;
@@ -37,20 +37,18 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_FLV = "http://films.cinemavip.com/contenidos/cinemavip/%1";
+	const URL_GET_XML = "%1/player_config.xml";
 	// video information
 	var result = new VideoDefinition();
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// Get the video title
-	result.title = copyBetween(html, "<title>", "-");
+	result.title = copyBetween(html, "<title>", "&lt;");
 	// get the flv pre-path
-	var videPath = copyBetween(html, "file=", "&");
-	// get the video flv
-	result.URL = strFormat(URL_GET_FLV, videPath);
-	// clear and get the final url
-	result.URL = cleanUrl(result.URL);
+	var xml = http.downloadWebpage(strFormat(URL_GET_XML, url));
+	// get the flv url
+	result.URL = cleanUrl(copyBetween(xml, "<file>", "</file>"));
 	// return the video information
 	return result;
 }

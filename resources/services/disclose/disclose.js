@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://disclose.tv/";
 	this.ID = "disclose.tv";
 	this.caption = "Disclose.tv";
@@ -42,13 +42,17 @@ function getVideoInformation(url)
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
-	// get xml url
-	var xmlUrl = copyBetween(html, "\"config\", \"", "\"");
+	// get the video title
+	result.title = copyBetween(html, "<title>", "</title>");
+	// get the video id
+	var jsonUrl = copyBetween(html, "value='config=", "'");
 	// download xml
-	var xml = http.downloadWebpage(xmlUrl);
-	// get the video information
-	result.title = copyBetween(xml, "<TEXT Name=\"Header\" Value=\"", "\"");
-	result.URL = copyBetween(xml, "<PLAYER_SETTINGS Name=\"FLVPath\" Value=\"", "\"");
+	var json = http.downloadWebpage(jsonUrl);
+	// get the video url block
+	var playList = copyBetween(json, "{'playlist':[", "]");
+	var playListFLVUrl = getToken(playList, "}", 1);
+	// get the video url
+	result.URL = copyBetween(playListFLVUrl, "'url':'", "'");
 	// return the video information
 	return result;
 }

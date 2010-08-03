@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.1";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.clip4e.com/";
 	this.ID = "clip4e.com";
 	this.caption = "Clip4e";
@@ -39,6 +39,7 @@ function getVideoInformation(url)
 {
 	const URL_GET_XML = "http://clip4e.com/getflv.php?id=%1";
 	const URL_CONFIRM = "http://clip4e.com/%1";
+	const URL_GET_FLV = "%1?file=%1&start=0";
 	// init result
 	var result = new VideoDefinition();
 	// download webpage
@@ -60,6 +61,8 @@ function getVideoInformation(url)
 	// get flv url
 	result.URL = cleanUrl(copyBetween(xml, "<url>", "</url>"));
 	// return the video information
+	result.URL = strFormat(URL_GET_FLV, result.URL);
+	// build the final url
 	return result;
 }
 

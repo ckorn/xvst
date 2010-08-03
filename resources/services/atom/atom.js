@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-this.version = "1.0.0";
-	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+this.version = "1.0.1";
+	this.minVersion = "2.3.1";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.atom.com/";
 	this.ID = "atom.com";
 	this.caption = "Atom";
@@ -37,28 +37,37 @@ this.version = "1.0.0";
 
 function getVideoInformation(url)
 {
-	const URL_GET_FEED = "http://www.atom.com/atom/feed/syndicated/?uri=%1";
+	const URL_GET_FEED = "http://www.atom.com/atom/feed/rss/?uri=%1";
 	// init result
 	var result = new VideoDefinition();
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
 	// get the uri
-	var uri = copyBetween(html, ",uri: '", "'");
+	var uri = copyBetween(html, "contentUri: '", "'");
 	// download feed
 	var feed = http.downloadWebpage(strFormat(URL_GET_FEED, uri));
-	
-	print(feed);
-	
 	// get video title
 	result.title = copyBetween(feed, "<title>", "</title>");
 	// get flv xml url
-	var xmlUrl = strReplace(copyBetween(feed, 'url="', '"'), "&amp;", "&");
+	var mediaContent = copyBetween(feed, "<media:content", "/>");
+	var xmlUrl = strReplace(copyBetween(mediaContent, 'url="', '"'), "&amp;", "&");
 	// download flv xml
 	var xml = http.downloadWebpage(xmlUrl);
-	// get flv url
-	result.URL = copyBetween(xml, 'bitrate="700"', '</src>');
-	result.URL = copyBetween(result.URL, "CDATA[", "]]");
+	var item = "";
+	// get flv url (get the max bitrate avaiable)
+	if (xml.toString().indexOf('bitrate="1000"') != -1)
+		item = copyBetween(xml, 'bitrate="1000"', '</src>');
+	else if (xml.toString().indexOf('bitrate="700"') != -1)
+		item = copyBetween(xml, 'bitrate="700"', '</src>');
+	else if (xml.toString().indexOf('bitrate="500"') != -1)
+		item = copyBetween(xml, 'bitrate="500"', '</src>');
+	else // we assume which is 300 or only one bitrate avaialbe
+		item = copyBetween(xml, '<src>', '</src>');
+	// get the video URL
+	result.URL = copyBetween(item, "CDATA[", "]]");
+	// RTMPE is not supported by versions of xVST previous to 2.4.1
+	if (programVersionNumber() < 241) result.URL = strReplace(result.URL, "rtmpe://", "rtmp://");
 	// return the video information
 	return result;
 }

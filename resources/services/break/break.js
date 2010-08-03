@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2009 Xesc & Technology
+* Copyright (C) 2007 - 2010 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.2";
+	this.version = "1.0.3";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.break.com/";
 	this.ID = "break.com";
 	this.caption = "Break";
@@ -37,7 +37,7 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_GET_FLV = "%1%2/%3.flv";
+	const URL_GET_FLV = "%1.flv?%2";
 	// video information
 	var result = new VideoDefinition();
 	// download webpage
@@ -48,10 +48,10 @@ function getVideoInformation(url)
 	// get video pre-url
 	var preUrl = copyBetween(html, 'var videoPath = "', '"');
 	// get variable values
-	var sGlobalContentFilePath = copyBetween(html, "sGlobalContentFilePath='", "'");
 	var sGlobalFileName = copyBetween(html, "sGlobalFileName='", "'");
+	var sGlobalToken = copyBetween(html, "sGlobalToken='", "'");
 	// clear and get the final url
-	result.URL = cleanUrl(strFormat(URL_GET_FLV, preUrl, sGlobalContentFilePath, sGlobalFileName));
+	result.URL = cleanUrl(strFormat(URL_GET_FLV, sGlobalFileName, sGlobalToken));
 	// return the video information
 	return result;
 }
