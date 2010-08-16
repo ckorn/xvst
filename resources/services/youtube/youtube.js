@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.1.4";
+	this.version = "2.1.5";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.youtube.com/";
@@ -110,7 +110,7 @@ function searchVideos(keyWord, pageIndex)
 	var http = new Http();
 	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex, searchResults.getUserLanguage()));
 	// get the search summary
-	var summary = copyBetween(html, '<span  class="search-query">', '</div>');
+	var summary = copyBetween(html, '<div id="search-num-results" class="name">', '</div>');
 	searchResults.setSummary(cleanSummary(summary));
 	// get results html block
 	var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
