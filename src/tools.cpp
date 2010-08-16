@@ -522,7 +522,7 @@ int showModalDialog(QDialog *form)
 {
 #ifdef Q_WS_MACX
 	// display this form as a Sheet
-	form->show();
+	form->open();
 	// wait while addVideoForm is visible
 	while (form->isVisible())
 		qApp->processEvents(QEventLoop::WaitForMoreEvents);
@@ -557,4 +557,3 @@ QString multiLineToSingleLine(QString text)
 	// return the normalized text
 	return result;
 }
-

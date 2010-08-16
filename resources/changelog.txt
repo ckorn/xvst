@@ -30,6 +30,13 @@ Plug-ins SDK:
 
 - Fixed bug (Error: The empty selections were not detected by "copyBetween" function)
 
+Mac OS X:
+---------
+
+- Compiled with Qt 4.6.3
+
+- Fixed bug (Error: Modal sheets were not responding to mouse events correctly)
+
 2.4:
 ----
 
