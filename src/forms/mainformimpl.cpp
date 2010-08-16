@@ -646,9 +646,15 @@ void MainFormImpl::moreOptionsClicked()
 
 void MainFormImpl::clearListClicked()
 {
-	videoList->clear(true);
-
-	updateVisualControls();
+	if (QMessageBox::question(this,
+							  tr("Clear list"),
+							  tr("Are you sure to clear the downloads list?"),
+							  tr("Yes"), tr("No"), QString(), 0, 1) == 0)
+	{
+		videoList->clear(true);
+		// update controls
+		updateVisualControls();
+	}
 }
 
 void MainFormImpl::clearCompletedClicked()
