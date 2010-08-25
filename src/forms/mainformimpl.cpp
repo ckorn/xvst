@@ -1055,6 +1055,7 @@ void MainFormImpl::updateVisualOptions()
 	actConvertVideos->setEnabled(QFile::exists(programOptions->getFfmpegLibLocation()));
 	actConvertVideos->setChecked(actConvertVideos->isEnabled() ? programOptions->getConvertVideos() : false);
 	actDisplayPopup->setChecked(programOptions->getDisplayPopup());
+
 	// other action options
 	actStayOnTop->setChecked(programOptions->getStayOnTop());
 	actMinimizeToSystemTray->setChecked(programOptions->getMinimizeToSystemTray());
