@@ -151,12 +151,11 @@ void DragDropImpl::dragEnterEvent(QDragEnterEvent *event)
 
 void DragDropImpl::dropEvent(QDropEvent *event)
 {
-	// get the url
-	QString url = event->mimeData()->text();
-	if (getTokenCount(url, "\n") > 0)
-		url = getToken(url, "\n", 0);
-	// add url
-	addVideo(url);
+	// get urls
+	QStringList urls = event->mimeData()->text().trimmed().split("\n", QString::SkipEmptyParts);
+	// add each detected url
+	foreach (QString url, urls) addVideo(url);
+	// ok
 	event->acceptProposedAction();
 }
 
@@ -204,7 +203,9 @@ void DragDropImpl::addVideo(QString URL)
 
 void DragDropImpl::pasteURLfromClipboardClicked()
 {
-	addVideo(QApplication::clipboard()->text());
+	QStringList urls = QApplication::clipboard()->text().trimmed().split("\n", QString::SkipEmptyParts);
+	// add each detected url
+	foreach (QString url, urls) addVideo(url);
 }
 
 void DragDropImpl::displayMainWindowClicked()
