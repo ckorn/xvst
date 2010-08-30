@@ -4,6 +4,8 @@
 - Added support for "RTMPE" Flash protocol
 - Added a confirmation dialog before cleaning the downloads list
 - Added a confirmation dialog before deleting a download
+- Added possibility to paste from clipboard more than one url at same time (separated in lines)
+- Added possibility to drop more than one url at same time (separated in lines)
 
 - Updated japanese translation
 - Updated german translation

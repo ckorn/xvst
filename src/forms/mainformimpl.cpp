@@ -955,7 +955,9 @@ void MainFormImpl::videoMoved(int from, int to)
 // shortcut signals
 void MainFormImpl::pasteURLfromClipboardClicked()
 {
-	addVideo(QApplication::clipboard()->text().trimmed());
+	QStringList urls = QApplication::clipboard()->text().trimmed().split("\n", QString::SkipEmptyParts);
+	// add each detected url
+	foreach (QString url, urls) addVideo(url);
 }
 
 // updates
@@ -1426,11 +1428,10 @@ void MainFormImpl::dragEnterEvent(QDragEnterEvent *event)
 
 void MainFormImpl::dropEvent(QDropEvent *event)
 {
-	// get the url
-	QString url = event->mimeData()->text();
-	if (getTokenCount(url, "\n") > 0) url = getToken(url, "\n", 0);
-	// emit drop event with url
-	if (videoList != NULL && canAddThisVideo(url)) addVideo(url); //videoList->addVideo(url);
+	// get urls
+	QStringList urls = event->mimeData()->text().trimmed().split("\n", QString::SkipEmptyParts);
+	// add each detected url
+	foreach (QString url, urls) addVideo(url);
 	// ok
 	event->acceptProposedAction();
 }
