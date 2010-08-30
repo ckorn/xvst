@@ -734,7 +734,7 @@ void MainFormImpl::searchVideosClicked()
 void MainFormImpl::downloadAutomaticallyStateChanged(int state)
 {
 	programOptions->setCanSendUpdateSignal(false);
-	programOptions->setDownloadAutomatically(state == Qt::Checked);// ? true : false);
+	programOptions->setDownloadAutomatically(state == Qt::Checked);
 	programOptions->setCanSendUpdateSignal(true);
 	// update schedule image
 	imgSchedule->setVisible(programOptions->getDownloadAutomatically() && programOptions->getScheduleEnabled());
@@ -748,7 +748,7 @@ void MainFormImpl::edtDownloadDirChanged()
 void MainFormImpl::convertVideosStateChanged(int state)
 {
 	programOptions->setCanSendUpdateSignal(false);
-	programOptions->setConvertVideos(state == Qt::Checked);// ? true : false);
+	programOptions->setConvertVideos(state == Qt::Checked);
 	programOptions->setCanSendUpdateSignal(true);
 }
 
