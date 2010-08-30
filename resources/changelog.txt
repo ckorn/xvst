@@ -3,6 +3,7 @@
 
 - Added support for "RTMPE" Flash protocol
 - Added a confirmation dialog before cleaning the downloads list
+- Added a confirmation dialog before deleting a download
 
 - Updated japanese translation
 - Updated german translation

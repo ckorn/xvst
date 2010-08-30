@@ -536,6 +536,28 @@ void MainFormImpl::addVideoClicked()
 
 void MainFormImpl::deleteVideoClicked()
 {
+	// remove all the items which are not possible to delete
+	foreach (VideoItem *videoItem, getSelectedVideoItems())
+		if (!videoItem->isRemovable())
+			getQTreeWidgetItemByVideoItem(videoItem)->setSelected(false);
+
+	// get the items to delete
+	QList<VideoItem *> videoItems = getSelectedVideoItems();
+
+	// ask before delete the video(s)
+	if (videoItems.count() == 1) // only one item
+	{
+		if (QMessageBox::question(this, tr("Delete download"),
+								  tr("Wish you delete the download of <b>%1</b>?").arg(videoItems.first()->getDisplayLabel()),
+								  tr("Yes"), tr("No"), QString(), 0, 1) != 0) return;
+	}
+	else // more than 1 item
+	{
+		if (QMessageBox::question(this, tr("Delete downloads"),
+								  tr("Wish you delete the <b>%1</b> selected downloads?").arg(videoItems.count()),
+								  tr("Yes"), tr("No"), QString(), 0, 1) != 0) return;
+	}
+
 	// delete all selected items
 	foreach (VideoItem *videoItem, getSelectedVideoItems())
 	{
