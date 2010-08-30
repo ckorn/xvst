@@ -25,6 +25,8 @@
 	- XHamster
 	- XTube
 
+- Improved the internal management of the download lists
+
 - Fixed bug (Error: Custom video conversion was ignored if conversion videos option was disabled)
 
 Plug-ins SDK:

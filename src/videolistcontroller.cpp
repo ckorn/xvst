@@ -95,9 +95,9 @@ bool VideoListController::validItemIndex(const int index)
 
 VideoItem* VideoListController::getFirstByState(VideoState videoState)
 {
-	for (int n = 0; n < getVideoItemCount(); n++)
-		if (getVideoItem(n)->getVideoState() == videoState)
-			return getVideoItem(n);
+	foreach (VideoItem *videoItem, *videoList)
+		if (videoItem->getVideoState() == videoState)
+			return videoItem;
 	// no items are ready to be downloaded
 	return NULL;
 }
@@ -351,9 +351,9 @@ VideoItem* VideoListController::getFirstError(bool ignoreReported)
 		return getFirstByState(vsError);
 	else
 	{
-		for (int n = 0; n < getVideoItemCount(); n++)
-			if (getVideoItem(n)->getVideoState() == vsError && !getVideoItem(n)->isReported())
-				return getVideoItem(n);
+		foreach (VideoItem *videoItem, *videoList)
+			if (videoItem->getVideoState() == vsError && !videoItem->isReported())
+				return videoItem;
 		// no items are ready to be downloaded
 		return NULL;
 	}
@@ -380,18 +380,18 @@ VideoItem* VideoListController::getFirstConverted()
 
 VideoItem* VideoListController::getFirstWhichNeedUpdateUrl()
 {
-	for (int n = 0; n < getVideoItemCount(); n++)
-		if (getVideoItem(n)->needUpdateUrl())
-			return getVideoItem(n);
+	foreach (VideoItem *videoItem, *videoList)
+		if (videoItem->needUpdateUrl())
+			return videoItem;
 	// no items found
 	return NULL;
 }
 
 VideoItem* VideoListController::getFirstWithPreState()
 {
-	for (int n = 0; n < getVideoItemCount(); n++)
-		if (!getVideoItem(n)->isPreStateNothing())
-			return getVideoItem(n);
+	foreach (VideoItem *videoItem, *videoList)
+		if (!videoItem->isPreStateNothing())
+			return videoItem;
 	// no items found
 	return NULL;
 }
@@ -440,8 +440,8 @@ int VideoListController::getCompletedItemsCount()
 {
 	int count = 0;
 
-	for (int n = 0; n < videoList->count(); n++)
-		if (videoList->at(n)->isCompleted())
+	foreach (VideoItem *videoItem, *videoList)
+		if (videoItem->isCompleted())
 			count++;
 
 	return count;
@@ -457,9 +457,9 @@ VideoItem* VideoListController::getVideoItem(const int index)
 
 VideoItem* VideoListController::getVideoItemByID(const int ID)
 {
-	for (int n = 0; n < getVideoItemCount(); n++)
-		if (getVideoItem(n)->getID() == ID)
-			return getVideoItem(n);
+	foreach (VideoItem *videoItem, *videoList)
+		if (videoItem->getID() == ID)
+			return videoItem;
 	// no items found with this ID
 	return NULL;
 }
@@ -486,8 +486,8 @@ int VideoListController::getVideoItemCount(bool ignoreDeleted)
 	{
 		int count = 0;
 		
-		for (int n = 0; n < videoList->count(); n++)
-			if (!videoList->at(n)->isDeleted())
+		foreach (VideoItem *videoItem, *videoList)
+			if (!videoItem->isDeleted())
 				count++;
 				
 		return count;
@@ -501,8 +501,8 @@ int VideoListController::getActiveDownloadsCount()
 {
 	int total = 0;
 
-	for (int n = 0; n < videoList->count(); n++)
-		if (videoList->at(n)->isDownloading())
+	foreach (VideoItem *videoItem, *videoList)
+		if (videoItem->isDownloading())
 			total++;
 
 	return total;
@@ -512,10 +512,10 @@ int VideoListController::getDownloableVideosCount(bool includeDownloadingVideos)
 {
 	int total = 0;
 
-	for (int n = 0; n < videoList->count(); n++)
-		if (videoList->at(n)->isReady())
+	foreach (VideoItem *videoItem, *videoList)
+		if (videoItem->isReady())
 			total++;
-		else if (includeDownloadingVideos && videoList->at(n)->isDownloading())
+		else if (includeDownloadingVideos && videoItem->isDownloading())
 			total++;
 
 	return total;
@@ -525,9 +525,9 @@ int VideoListController::getTotalDownloadSpeed()
 {
 	int totalDownloadSpeed = 0;
 
-	for (int n = 0; n < videoList->count(); n++)
-		if (videoList->at(n)->isDownloading())
-			totalDownloadSpeed += videoList->at(n)->getDownloadSpeed();
+	foreach (VideoItem *videoItem, *videoList)
+		if (videoItem->isDownloading())
+			totalDownloadSpeed += videoItem->getDownloadSpeed();
 
 	return totalDownloadSpeed;
 }
@@ -555,8 +555,8 @@ bool VideoListController::canStartDownload()
 bool VideoListController::isAlreadyAdded(const QString URL)
 {
 	// find a video with this URL
-	for (int n = 0; n < videoList->count(); n++)
-		if (URL == videoList->at(n)->getURL())
+	foreach (VideoItem *videoItem, *videoList)
+		if (URL == videoItem->getURL())
 			return true;
 	// not added
 	return false;
