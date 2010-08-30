@@ -956,6 +956,8 @@ void MainFormImpl::videoMoved(int from, int to)
 void MainFormImpl::pasteURLfromClipboardClicked()
 {
 	QStringList urls = QApplication::clipboard()->text().trimmed().split("\n", QString::SkipEmptyParts);
+	// remove duplicated urls
+	urls.removeDuplicates();
 	// add each detected url
 	foreach (QString url, urls) addVideo(url);
 }
@@ -1430,6 +1432,8 @@ void MainFormImpl::dropEvent(QDropEvent *event)
 {
 	// get urls
 	QStringList urls = event->mimeData()->text().trimmed().split("\n", QString::SkipEmptyParts);
+	// remove duplicated urls
+	urls.removeDuplicates();
 	// add each detected url
 	foreach (QString url, urls) addVideo(url);
 	// ok
