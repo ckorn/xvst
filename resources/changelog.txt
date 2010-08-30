@@ -25,6 +25,8 @@
 	- XHamster
 	- XTube
 
+- Fixed bug (Error: Custom video conversion was ignored if conversion videos option was disabled)
+
 Plug-ins SDK:
 -------------
 

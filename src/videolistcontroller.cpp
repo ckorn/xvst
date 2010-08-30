@@ -166,8 +166,13 @@ void VideoListController::timerEvent(QTimerEvent* /*event*/)
 	}
 
 	// get the first downloaded item, to start the conversion
-	if (programOptions->getConvertVideos() && videoConverter->canStartConversion())
-		startConversion(getFirstDownloaded());
+	if (videoConverter->canStartConversion())
+	{
+		if (programOptions->getConvertVideos())
+			startConversion(getFirstDownloaded());
+		else // video conversion is disabled, but maybe a custom download is ready to convert
+			startConversion(getFirstDownloadedWithOverridedConversion());
+	}
 }
 
 void VideoListController::start()
@@ -357,6 +362,15 @@ VideoItem* VideoListController::getFirstError(bool ignoreReported)
 VideoItem* VideoListController::getFirstDownloaded()
 {
 	return getFirstByState(vsDownloaded);
+}
+
+VideoItem* VideoListController::getFirstDownloadedWithOverridedConversion()
+{
+	foreach (VideoItem *videoItem, *videoList)
+		if (videoItem->isCustomDownload() && videoItem->hasOverridedConversion())
+			return videoItem;
+	// no items are ready to be downloaded
+	return NULL;
 }
 
 VideoItem* VideoListController::getFirstConverted()

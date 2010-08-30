@@ -100,6 +100,8 @@ Q_OBJECT
 		VideoItem* getFirstError(bool ignoreReported = true);
 		/*! Get the first downloaded to be converted */
 		VideoItem* getFirstDownloaded();
+		/*! Get the first downloaded to be converted with an overrided conversion */
+		VideoItem* getFirstDownloadedWithOverridedConversion();
 		/*! Get the first item converted */
 		VideoItem* getFirstConverted();
 		/*! Get the first item which need to update the url */
