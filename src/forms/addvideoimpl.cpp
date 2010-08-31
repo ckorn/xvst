@@ -261,7 +261,7 @@ void AddVideoImpl::spbPasteURLClicked()
 
 void AddVideoImpl::spbSelectFileClicked()
 {
-#ifndef Q_WS_MACX
+#ifdef Q_WS_MACX
 	QFileDialog fileDialog(this, Qt::Sheet);
 	// configure file dialog
 	fileDialog.setFileMode(QFileDialog::ExistingFile);
