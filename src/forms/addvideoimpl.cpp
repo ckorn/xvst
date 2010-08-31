@@ -261,12 +261,18 @@ void AddVideoImpl::spbPasteURLClicked()
 
 void AddVideoImpl::spbSelectFileClicked()
 {
+#ifndef Q_WS_MACX
 	QFileDialog fileDialog(this, Qt::Sheet);
 	// configure file dialog
 	fileDialog.setFileMode(QFileDialog::ExistingFile);
 	// open select file dialog
 	if (showModalDialog(&fileDialog) == QDialog::Accepted)
 		edtURL->setText(fileDialog.selectedFiles().first());
+#else
+	QString filePath = QFileDialog::getOpenFileName(this, tr("Select URL's file"));
+	// if user did "accept"
+	if (!filePath.isEmpty()) edtURL->setText(filePath);
+#endif
 }
 
 void AddVideoImpl::chbOverrideConversionClicked()
