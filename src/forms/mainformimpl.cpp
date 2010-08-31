@@ -518,15 +518,16 @@ void MainFormImpl::addVideoClicked()
 		if (addVideoForm.isCustomDownload())
 			// user want override the current conversion config
 			if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())
-				videoList->addVideo(addVideoForm.edtURL->text(), addVideoForm.getCustomDownloadTitle(), addVideoForm.getOverridedConversionConfig());
+				videoList->addVideo(addVideoForm.getSelectedURLs().first(), addVideoForm.getCustomDownloadTitle(), addVideoForm.getOverridedConversionConfig());
 			else // user DON'T want override the current conversion config
-				videoList->addVideo(addVideoForm.edtURL->text(), addVideoForm.getCustomDownloadTitle());
+				videoList->addVideo(addVideoForm.getSelectedURLs().first(), addVideoForm.getCustomDownloadTitle());
 		else // standard add (not custom download)
-			// user want override the current conversion config
-			if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())
-				videoList->addVideo(addVideoForm.edtURL->text(), addVideoForm.getOverridedConversionConfig());
-			else // user DON'T want override the current conversion config
-				videoList->addVideo(addVideoForm.edtURL->text());
+			foreach (QString url, addVideoForm.getSelectedURLs())
+				// user want override the current conversion config
+				if (addVideoForm.chbOverrideConversion->isChecked() && chbConvertVideos->isEnabled())
+					videoList->addVideo(url, addVideoForm.getOverridedConversionConfig());
+				else // user DON'T want override the current conversion config
+					videoList->addVideo(url);
 	}
 
 	actAddVideo->setEnabled(true);

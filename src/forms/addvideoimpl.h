@@ -42,17 +42,25 @@ Q_OBJECT
 		ProgramOptions *programOptions;
 		bool isCustomDownloadFlag;
 		QString customDownloadTitle;
+		QString linkTemplate;
 		void fillConversionOptions();
+		QStringList originalUrls;
+		QStringList selectedUrls;
+		void loadUrlsFromFile(QString file);
+		void updateSelectedUrlsText();
+		void updateEdtUrlColor(bool ok);
 	public:
 		AddVideoImpl(ProgramOptions *programOptions, VideoInformation *videoInformation,
 					 QWidget * parent = 0, Qt::WFlags f = 0 );
 		OverridedVideoConversionConfig getOverridedConversionConfig();
 		bool isCustomDownload();
 		QString getCustomDownloadTitle();
+		QStringList getSelectedURLs();
 	private slots:
 		void btnOkClicked();
 		void edtURLChanged(const QString &text);
 		void spbPasteURLClicked();
+		void spbSelectFileClicked();
 		void chbOverrideConversionClicked();
 		void linkActivated(const QString &link);
 };

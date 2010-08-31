@@ -26,6 +26,7 @@
 #include "addvideoimpl.h"
 
 #include "customdownloadtitleimpl.h"
+#include "multiurlsimpl.h"
 
 #include "../tools.h"
 #include "../options.h"
@@ -50,21 +51,22 @@ AddVideoImpl::AddVideoImpl(ProgramOptions *programOptions, VideoInformation *vid
 	chbOverrideConversion->setVisible(QFile::exists(programOptions->getFfmpegLibLocation()));
 	resize(width(), 50);
 	// set custom download text and font size
-	lblCustomDownload->setText(QString(lblCustomDownload->text()).arg(tr("mark as custom download")));
+	linkTemplate = lblCustomLink->text();
 #ifndef Q_WS_WIN32
-	QFont customDownloadFont = lblCustomDownload->font();
+	QFont customDownloadFont = lblCustomLink->font();
 	customDownloadFont.setPointSize(customDownloadFont.pointSize() - 2);
-	lblCustomDownload->setFont(customDownloadFont);
+	lblCustomLink->setFont(customDownloadFont);
 #endif
-	lblCustomDownload->hide();
+	lblCustomLink->hide();
 	// prepare conversion options
 	fillConversionOptions();
 	// connect ok button
 	connect(btnOk, SIGNAL(clicked()), this, SLOT(btnOkClicked())); //btn Ok (clicked)
 	connect(edtURL, SIGNAL(textChanged(const QString &)), this, SLOT(edtURLChanged(const QString &))); //edtURL changed
 	connect(spbPasteURL, SIGNAL(clicked()), this, SLOT(spbPasteURLClicked()));
+	connect(spbSelectFile, SIGNAL(clicked()), this, SLOT(spbSelectFileClicked()));
 	connect(chbOverrideConversion, SIGNAL(clicked()), this, SLOT(chbOverrideConversionClicked()));
-	connect(lblCustomDownload, SIGNAL(linkActivated(QString)), this, SLOT(linkActivated(QString)));
+	connect(lblCustomLink, SIGNAL(linkActivated(QString)), this, SLOT(linkActivated(QString)));
 }
 
 void AddVideoImpl::fillConversionOptions()
@@ -105,9 +107,81 @@ bool AddVideoImpl::isCustomDownload()
 	return isCustomDownloadFlag;
 }
 
+void AddVideoImpl::loadUrlsFromFile(QString file)
+{
+	QFile urlsFile(file);
+	if (urlsFile.open(QFile::ReadOnly))
+	{
+		selectedUrls.clear();
+		// open the file with those possible urls
+		QTextStream urlsStream(&urlsFile);
+		while (!urlsStream.atEnd())
+			selectedUrls.append(urlsStream.readLine());
+		// close file
+		urlsFile.close();
+		// remove duplicated lines
+		selectedUrls.removeDuplicates();
+		// check if are valid URLs (invalid urls will be deleted)
+		for (int n = selectedUrls.count() - 1; n >= 0; n--)
+		{
+			QString url = selectedUrls.at(n);
+			// init url parsing
+			if (!validURL(url) || !videoInformation->isValidHost(url) || videoInformation->isBlockedHost(url))
+				selectedUrls.removeAt(n);
+		}
+		// get a copy with original loaded urls
+		originalUrls = selectedUrls;
+		// ok
+		if (!selectedUrls.isEmpty()) // valid urls detected
+		{
+			updateEdtUrlColor(true);
+			// display config urls link
+			lblCustomLink->setText(QString(linkTemplate).arg("select_urls").arg(tr("select urls to download")));
+			lblCustomLink->setVisible(true);
+			// enable ok button
+			btnOk->setEnabled(true);
+		}
+		else // no valid urls detected
+		{
+			updateEdtUrlColor(false);
+			// hide config urls link
+			lblCustomLink->setVisible(false);
+			// disable ok button
+			btnOk->setEnabled(false);
+		}
+		// update informative text
+		updateSelectedUrlsText();
+		// update icon
+		imgService->setPixmap(QPixmap(":/buttons/images/urls_file.png"));
+		// any change cancels the "custom download" flag
+		isCustomDownloadFlag = false;
+	}
+}
+
+void AddVideoImpl::updateSelectedUrlsText()
+{
+	if (originalUrls.isEmpty())
+	{
+		lblVideoService->setText(tr("No valid URLs detected in this file"));
+	}
+	else // update loaded urls
+	{
+		QString text = tr("%1 valid URLs detected in this file").arg(originalUrls.count());
+		// check if is a partial selection
+		text += originalUrls.count() != selectedUrls.count() ? tr(" (%1 selected)").arg(selectedUrls.count()) : "";
+		// update text
+		lblVideoService->setText(text);
+	}
+}
+
 QString AddVideoImpl::getCustomDownloadTitle()
 {
 	return customDownloadTitle;
+}
+
+QStringList AddVideoImpl::getSelectedURLs()
+{
+	return selectedUrls;
 }
 
 void AddVideoImpl::btnOkClicked()
@@ -121,9 +195,29 @@ void AddVideoImpl::btnOkClicked()
 		done(QDialog::Accepted);
 }
 
+void AddVideoImpl::updateEdtUrlColor(bool ok)
+{
+	// set color
+	QColor valid(qApp->palette().brush(QPalette::Base).color());
+	QColor invalid(255, 170, 127);
+
+	QPalette p = edtURL->palette();
+	p.setColor(QPalette::Base, ok ? valid : invalid);
+	edtURL->setPalette(p);
+}
+
 void AddVideoImpl::edtURLChanged(const QString &text)
 {
-	bool ok = videoInformation->isValidHost(text) && validURL(text);
+	// check if is a real file from our hard-disk (may be a file with urls)
+	if (QFile::exists(text))
+	{
+		loadUrlsFromFile(text);
+		// don't continue parsing the text... is a special case...
+		return;
+	}
+
+	// init url parsing
+	bool ok = validURL(text) && videoInformation->isValidHost(text);
 	QString blockMsg = "";
 	QString isCustomVideo = "";
 
@@ -141,15 +235,11 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 	btnOk->setEnabled(ok);
 	
 	// set custom download visibility
-	lblCustomDownload->setVisible(!videoInformation->isValidHost(text) && validURL(text, true));
+	lblCustomLink->setText(QString(linkTemplate).arg("custom_url").arg(tr("mark as custom download")));
+	lblCustomLink->setVisible(!videoInformation->isValidHost(text) && validURL(text, true));
 
-	// set color
-	QColor valid(qApp->palette().brush(QPalette::Base).color());
-	QColor invalid(255, 170, 127);
-
-	QPalette p = edtURL->palette();
-	p.setColor(QPalette::Base, ok ? valid : invalid);
-	edtURL->setPalette(p);
+	// update edit color
+	updateEdtUrlColor(ok);
 	
 	// set host info
 	lblVideoService->setText(videoInformation->getHostCaption(text) + blockMsg + isCustomVideo);
@@ -157,11 +247,26 @@ void AddVideoImpl::edtURLChanged(const QString &text)
 
 	// any change cancels the "custom download" flag
 	isCustomDownloadFlag = false;
+
+	// remove any possible url loaded from a file
+	selectedUrls.clear();
+	// add url (unique )
+	selectedUrls.append(text);
 }
 
 void AddVideoImpl::spbPasteURLClicked()
 {
 	edtURL->setText(QApplication::clipboard()->text().trimmed());
+}
+
+void AddVideoImpl::spbSelectFileClicked()
+{
+	QFileDialog fileDialog(this, Qt::Sheet);
+	// configure file dialog
+	fileDialog.setFileMode(QFileDialog::ExistingFile);
+	// open select file dialog
+	if (showModalDialog(&fileDialog) == QDialog::Accepted)
+		edtURL->setText(fileDialog.selectedFiles().first());
 }
 
 void AddVideoImpl::chbOverrideConversionClicked()
@@ -181,25 +286,40 @@ void AddVideoImpl::chbOverrideConversionClicked()
 	gpbVideoConversion->setEnabled(chbOverrideConversion->isChecked());
 }
 
-void AddVideoImpl::linkActivated(const QString &)
+void AddVideoImpl::linkActivated(const QString &href)
 {
-	// display the custom title dialog
-	CustomDownloadTitleImpl customTitleDialog(this, Qt::Sheet);
-	if (showModalDialog(&customTitleDialog) == QDialog::Accepted)
+	if (href == "custom_url") // set as custom url
 	{
-		customDownloadTitle = customTitleDialog.edtTitle->text();
-		isCustomDownloadFlag = true;
-		// change service image
-		lblVideoService->setText(tr("User custom video download"));
-		imgService->setPixmap(QPixmap(":/services/images/services/custom_video.png"));
-		// remove red colors
-		QPalette p = edtURL->palette();
-		p.setColor(QPalette::Base, qApp->palette().brush(QPalette::Base).color());
-		edtURL->setPalette(p);
-		// enable ok button
-		btnOk->setEnabled(true);
-		// hide custom link
-		lblCustomDownload->hide();
+		// display the custom title dialog
+		CustomDownloadTitleImpl customTitleDialog(this, Qt::Sheet);
+		if (showModalDialog(&customTitleDialog) == QDialog::Accepted)
+		{
+			customDownloadTitle = customTitleDialog.edtTitle->text();
+			isCustomDownloadFlag = true;
+			// change service image
+			lblVideoService->setText(tr("User custom video download"));
+			imgService->setPixmap(QPixmap(":/services/images/services/custom_video.png"));
+			// remove red colors
+			updateEdtUrlColor(true);
+			// enable ok button
+			btnOk->setEnabled(true);
+			// hide custom link
+			lblCustomLink->hide();
+		}
+	}
+	else if (href == "select_urls") // selecting urls
+	{
+		MultiURLsImpl multiURLs(videoInformation, selectedUrls, originalUrls, this, Qt::Sheet);
+		if (showModalDialog(&multiURLs) == QDialog::Accepted)
+		{
+			// get the checked urls
+			selectedUrls.clear();
+			selectedUrls.append(multiURLs.getSelectedURLs());
+			// update informative text
+			updateSelectedUrlsText();
+			// disable the ok button if no urls selected
+			btnOk->setEnabled(!selectedUrls.isEmpty());
+		}
 	}
 }
 //

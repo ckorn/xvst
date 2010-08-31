@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>584</width>
+    <width>587</width>
     <height>281</height>
    </rect>
   </property>
@@ -26,7 +26,7 @@
    <string>Add Video URL</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources/resources.qrc">
     <normaloff>:/buttons/images/film_add.png</normaloff>:/buttons/images/film_add.png</iconset>
   </property>
   <property name="sizeGripEnabled">
@@ -42,6 +42,9 @@
    </item>
    <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>4</number>
+     </property>
      <item>
       <widget class="QLineEdit" name="edtURL">
        <property name="enabled">
@@ -65,6 +68,29 @@
       </widget>
      </item>
      <item>
+      <widget class="QToolButton" name="spbSelectFile">
+       <property name="toolTip">
+        <string>Select url's file</string>
+       </property>
+       <property name="whatsThis">
+        <string>Select file with URLS</string>
+       </property>
+       <property name="accessibleName">
+        <string>Select url's file</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Select file with URLS</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resources/resources.qrc">
+         <normaloff>:/buttons/images/select_file.png</normaloff>:/buttons/images/select_file.png</iconset>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QToolButton" name="spbPasteURL">
        <property name="toolTip">
         <string>Paste URL from clipboard</string>
@@ -82,7 +108,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resources/resources.qrc">
          <normaloff>:/buttons/images/paste_plain.png</normaloff>:/buttons/images/paste_plain.png</iconset>
        </property>
        <property name="autoRaise">
@@ -124,10 +150,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblCustomDownload">
+      <widget class="QLabel" name="lblCustomLink">
        <property name="text">
-        <string notr="true">&lt;html&gt;&lt;head&gt;&lt;style type=&quot;text/css&quot;&gt;a {text-decoration:none}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;(&lt;a href=&quot;custom&quot;&gt;%1&lt;/a&gt;)&lt;/body&gt;&lt;/html&gt;
-</string>
+        <string notr="true">&lt;html&gt;&lt;head&gt;&lt;style type=&quot;text/css&quot;&gt;a {text-decoration:none}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;(&lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt;)&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -219,6 +244,13 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QCheckBox" name="chbOverrideConversion">
+     <property name="text">
+      <string>Override original conversion options for this video</string>
+     </property>
+    </widget>
    </item>
    <item row="4" column="0">
     <widget class="QGroupBox" name="gpbVideoConversion">
@@ -350,13 +382,6 @@
      </layout>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QCheckBox" name="chbOverrideConversion">
-     <property name="text">
-      <string>Override original conversion options for this video</string>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <tabstops>
@@ -365,7 +390,9 @@
   <tabstop>btnOk</tabstop>
   <tabstop>btnCancel</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>btnCancel</sender>

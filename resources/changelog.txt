@@ -4,6 +4,7 @@
 - Added support for "RTMPE" Flash protocol
 - Added a confirmation dialog before cleaning the downloads list
 - Added a confirmation dialog before deleting a download
+- Added possibility to add urls from files (separated in lines)
 - Added possibility to paste from clipboard more than one url at same time (separated in lines)
 - Added possibility to drop more than one url at same time (separated in lines)
 
@@ -28,9 +29,9 @@
 	- XHamster
 	- XTube
 
-- Improved the internal management of the download lists
+- Improved the internal management of downloads
 
-- Fixed bug (Error: Custom video conversion was ignored if conversion videos option was disabled)
+- Fixed bug (Error: Custom video conversion was ignored if the options "Convert downloaded videos" was disabled)
 
 Plug-ins SDK:
 -------------
