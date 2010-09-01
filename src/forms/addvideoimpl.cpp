@@ -136,7 +136,7 @@ void AddVideoImpl::loadUrlsFromFile(QString file)
 		{
 			updateEdtUrlColor(true);
 			// display config urls link
-			lblCustomLink->setText(QString(linkTemplate).arg("select_urls").arg(tr("select urls to download")));
+			lblCustomLink->setText(QString(linkTemplate).arg("select_urls").arg(tr("select URLs to download")));
 			lblCustomLink->setVisible(true);
 			// enable ok button
 			btnOk->setEnabled(true);

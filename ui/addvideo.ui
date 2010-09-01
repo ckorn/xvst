@@ -73,13 +73,13 @@
         <string>Select url's file</string>
        </property>
        <property name="whatsThis">
-        <string>Select file with URLS</string>
+        <string>Select file with URLs</string>
        </property>
        <property name="accessibleName">
         <string>Select url's file</string>
        </property>
        <property name="accessibleDescription">
-        <string>Select file with URLS</string>
+        <string>Select file with URLs</string>
        </property>
        <property name="icon">
         <iconset resource="../resources/resources.qrc">
