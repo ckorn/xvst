@@ -14,6 +14,7 @@
 
 - Added one new plugin:
 	- XHamster (thanks to Supelex Technologies)
+	- UStream
 
 - Changed plug-in:
 	- Aniboom
