@@ -123,6 +123,14 @@
         <source>Override original conversion options for this video</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select url&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file with URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddVideoImpl</name>
@@ -153,6 +161,26 @@
     <message>
         <source>Ok</source>
         <translation type="unfinished">확인</translation>
+    </message>
+    <message>
+        <source>No valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> (%1 selected)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select URL&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>select URLs to download</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1258,10 +1286,6 @@ font-size:12px;
         <translation>다운로드 취소</translation>
     </message>
     <message>
-        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">&lt;b&gt;%1&lt;/b&gt;의 다운로드를 취소하길 원하십니까?</translation>
-    </message>
-    <message>
         <source>Error message</source>
         <translation>에러 메세지</translation>
     </message>
@@ -1352,6 +1376,65 @@ font-size:12px;
     <message>
         <source>Reset states</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear list</source>
+        <translation type="unfinished">리스트 삭제</translation>
+    </message>
+    <message>
+        <source>Are you sure to clear the downloads list?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MultiURLs</name>
+    <message>
+        <source>Multiple URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which URLs you want add:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the current URL and close this dialog</source>
+        <translation type="unfinished">현재의 URL을 추가하고 이 창을 닫기</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">확인 버튼</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">확인</translation>
+    </message>
+    <message>
+        <source>Close without adding the URL</source>
+        <translation type="unfinished">URL을 추가하지 않은채 닫기</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished">취소 버튼</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">취소</translation>
     </message>
 </context>
 <context>
@@ -1673,10 +1756,6 @@ font-size:12px;
     <message>
         <source>Use this language</source>
         <translation>이 언어를 사용</translation>
-    </message>
-    <message>
-        <source>Save and restore the curren session</source>
-        <translation type="obsolete">현재 세션을 복구 후 저장</translation>
     </message>
     <message>
         <source>Check for new versions every:</source>
@@ -2160,10 +2239,6 @@ font-size:12px;
     <message>
         <source>No</source>
         <translation>아니오</translation>
-    </message>
-    <message>
-        <source>Proxy</source>
-        <translation type="obsolete">Proxy</translation>
     </message>
     <message>
         <source>Session</source>

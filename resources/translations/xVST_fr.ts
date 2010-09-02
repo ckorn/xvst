@@ -14,154 +14,166 @@
         <translation>Entrer l&apos;URL de la vidéo à télécharger :</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="57"/>
-        <location filename="../../ui/addvideo.ui" line="63"/>
+        <location filename="../../ui/addvideo.ui" line="60"/>
+        <location filename="../../ui/addvideo.ui" line="66"/>
         <source>URL of the video to downloaded</source>
         <translation>URL de la vidéo à télécharger</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="60"/>
+        <location filename="../../ui/addvideo.ui" line="63"/>
         <source>Video URL</source>
         <translation>URL de la vidéo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="70"/>
+        <location filename="../../ui/addvideo.ui" line="73"/>
+        <location filename="../../ui/addvideo.ui" line="79"/>
+        <source>Select url&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../ui/addvideo.ui" line="76"/>
+        <location filename="../../ui/addvideo.ui" line="82"/>
+        <source>Select file with URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addvideo.ui" line="96"/>
+        <location filename="../../ui/addvideo.ui" line="102"/>
         <source>Paste URL from clipboard</source>
         <translation>Coller l&apos;URL depuis le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="73"/>
-        <location filename="../../ui/addvideo.ui" line="79"/>
+        <location filename="../../ui/addvideo.ui" line="99"/>
+        <location filename="../../ui/addvideo.ui" line="105"/>
         <source>Paste the current clipboard content (only text)</source>
         <translation>Coller le contenu du presse-papiers (texte seulement)</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="171"/>
-        <location filename="../../ui/addvideo.ui" line="177"/>
+        <location filename="../../ui/addvideo.ui" line="196"/>
+        <location filename="../../ui/addvideo.ui" line="202"/>
         <source>Add the current URL and close this dialog</source>
         <translation>Ajouter l&apos;URL courante et fermer cette fenêtre</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="174"/>
+        <location filename="../../ui/addvideo.ui" line="199"/>
         <source>Ok button</source>
         <translation>Bouton OK</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="180"/>
+        <location filename="../../ui/addvideo.ui" line="205"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="208"/>
-        <location filename="../../ui/addvideo.ui" line="214"/>
+        <location filename="../../ui/addvideo.ui" line="233"/>
+        <location filename="../../ui/addvideo.ui" line="239"/>
         <source>Close without adding the URL</source>
         <translation>Fermer sans ajouter l&apos;URL</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="211"/>
+        <location filename="../../ui/addvideo.ui" line="236"/>
         <source>Cancel button</source>
         <translation>Bouton Annuler</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="217"/>
+        <location filename="../../ui/addvideo.ui" line="242"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="229"/>
-        <location filename="../../ui/addvideo.ui" line="235"/>
+        <location filename="../../ui/addvideo.ui" line="261"/>
+        <location filename="../../ui/addvideo.ui" line="267"/>
         <source>Enable/disable the video conversions</source>
         <translation type="unfinished">Activer/Désactiver la conversion vidéo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="232"/>
+        <location filename="../../ui/addvideo.ui" line="264"/>
         <source>Convert videos</source>
         <translation type="unfinished">Convertir les vidéos</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="238"/>
+        <location filename="../../ui/addvideo.ui" line="270"/>
         <source>Convert video to Mpeg/DivX/etc...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="253"/>
+        <location filename="../../ui/addvideo.ui" line="285"/>
         <source>Output format:</source>
         <translation type="unfinished">Format de sortie :</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="260"/>
-        <location filename="../../ui/addvideo.ui" line="266"/>
+        <location filename="../../ui/addvideo.ui" line="292"/>
+        <location filename="../../ui/addvideo.ui" line="298"/>
         <source>Video output format</source>
         <translation type="unfinished">Format de sortie vidéo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="263"/>
+        <location filename="../../ui/addvideo.ui" line="295"/>
         <source>Video output format combobox</source>
         <translation type="unfinished">Sélection Format de sortie vidéo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="273"/>
+        <location filename="../../ui/addvideo.ui" line="305"/>
         <source>Video resolution:</source>
         <translation type="unfinished">Résolution vidéo :</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="280"/>
-        <location filename="../../ui/addvideo.ui" line="286"/>
+        <location filename="../../ui/addvideo.ui" line="312"/>
+        <location filename="../../ui/addvideo.ui" line="318"/>
         <source>Video resolution</source>
         <translation type="unfinished">Résolution vidéo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="283"/>
+        <location filename="../../ui/addvideo.ui" line="315"/>
         <source>Video resolution combobox</source>
         <translation type="unfinished">Sélection Résolution vidéo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="293"/>
+        <location filename="../../ui/addvideo.ui" line="325"/>
         <source>Audio sampling rate (Hz):</source>
         <translation type="unfinished">Taux d&apos;échantillonnage audio (Hz) :</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="300"/>
-        <location filename="../../ui/addvideo.ui" line="306"/>
+        <location filename="../../ui/addvideo.ui" line="332"/>
+        <location filename="../../ui/addvideo.ui" line="338"/>
         <source>Video audio sampling rate (Hz)</source>
         <translation type="unfinished">Taux d&apos;échantillonnage audio (Hz)</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="303"/>
+        <location filename="../../ui/addvideo.ui" line="335"/>
         <source>Video audio sampling rate combobox</source>
         <translation type="unfinished">Sélection Taux d&apos;échantillonnage audio</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="313"/>
-        <location filename="../../ui/addvideo.ui" line="320"/>
-        <location filename="../../ui/addvideo.ui" line="326"/>
+        <location filename="../../ui/addvideo.ui" line="345"/>
+        <location filename="../../ui/addvideo.ui" line="352"/>
+        <location filename="../../ui/addvideo.ui" line="358"/>
         <source>Video frame rate (Hz)</source>
         <translation type="unfinished">Taux d&apos;images vidéo (Hz)</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="323"/>
+        <location filename="../../ui/addvideo.ui" line="355"/>
         <source>Video frame rate combobox</source>
         <translation type="unfinished">Sélection Taux d&apos;images vidéo</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="333"/>
+        <location filename="../../ui/addvideo.ui" line="365"/>
         <source>Output quality:</source>
         <translation type="unfinished">Qualité de sortie :</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="340"/>
-        <location filename="../../ui/addvideo.ui" line="346"/>
+        <location filename="../../ui/addvideo.ui" line="372"/>
+        <location filename="../../ui/addvideo.ui" line="378"/>
         <source>General video output quality</source>
         <translation type="unfinished">Qualité de sortie vidéo générale</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="343"/>
+        <location filename="../../ui/addvideo.ui" line="375"/>
         <source>General video output quality combobox</source>
         <translation type="unfinished">Sélection Qualité de sortie vidéo générale</translation>
     </message>
     <message>
-        <location filename="../../ui/addvideo.ui" line="356"/>
+        <location filename="../../ui/addvideo.ui" line="251"/>
         <source>Override original conversion options for this video</source>
         <translation type="unfinished"></translation>
     </message>
@@ -169,37 +181,62 @@
 <context>
     <name>AddVideoImpl</name>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="53"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="238"/>
         <source>mark as custom download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="117"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="191"/>
         <source>Already added</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="118"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="139"/>
+        <source>select URLs to download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="165"/>
+        <source>No valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="169"/>
+        <source>%1 valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="171"/>
+        <source> (%1 selected)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="192"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="119"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="193"/>
         <source>Ok</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="136"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="230"/>
         <source> - Blocked site</source>
         <translation>- Site bloqué</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="138"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="232"/>
         <source> - Adult content is not allowed</source>
         <translation>- Contenu adulte non autorisé</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="193"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="272"/>
+        <source>Select URL&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="306"/>
         <source>User custom video download</source>
         <translation type="unfinished"></translation>
     </message>
@@ -860,27 +897,27 @@
         <translation>Valeur du mélange alpha</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="180"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="181"/>
         <source>Already added</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="181"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="182"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="182"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="183"/>
         <source>Ok</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="194"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="195"/>
         <source> - Blocked site</source>
         <translation> - Site bloqué</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="196"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="197"/>
         <source> - Adult content is not allowed</source>
         <translation>- Contenu adulte non autorisé</translation>
     </message>
@@ -1575,15 +1612,21 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="372"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="607"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="613"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="553"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="559"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="630"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="636"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="675"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="372"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="607"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="613"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="553"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="559"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="630"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="636"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="675"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
@@ -1594,7 +1637,7 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="440"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="959"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="992"/>
         <source>Updates</source>
         <translation>Mises à jour</translation>
     </message>
@@ -1605,9 +1648,9 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/mainformimpl.cpp" line="442"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="715"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="961"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1416"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="744"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="994"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1451"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
@@ -1617,149 +1660,220 @@ font-size:12px;
         <translation>Choisir le répertoire de téléchargement :</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="605"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1187"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1209"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="551"/>
+        <source>Delete download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="552"/>
+        <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="557"/>
+        <source>Delete downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="558"/>
+        <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="628"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1221"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1243"/>
         <source>Cancel download</source>
         <translation>Annuler le téléchargement</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="606"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="629"/>
         <source>Wish you cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="611"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1250"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="634"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1284"/>
         <source>Cancel downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="612"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="635"/>
         <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Voulez-vous annuler le téléchargement de &lt;b&gt;%1&lt;/b&gt; ?</translation>
+        <location filename="../../src/forms/mainformimpl.cpp" line="673"/>
+        <source>Clear list</source>
+        <translation type="unfinished">Vider la liste</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="713"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="674"/>
+        <source>Are you sure to clear the downloads list?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/mainformimpl.cpp" line="742"/>
         <source>Error message</source>
         <translation>Message d&apos;erreur</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="714"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="743"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Cette vidéo a l&apos;erreur suivante : &lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="960"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="993"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>L&apos;application xUpdater est manquante.&lt;br&gt;&lt;br&gt;Réinstallez xVideoServiceThief si vous voulez mettre à jour le programme automatiquement.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1160"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1194"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Compteur vidéo :&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 complet)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1164"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1198"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Téléchargement :&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1168"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1202"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Vitesse de téléchargement :&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1169"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1203"/>
         <source>/sec</source>
         <translation>/sec</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1184"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1206"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1218"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1240"/>
         <source>Delete video</source>
         <translation type="unfinished">Supprimer la vidéo</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1185"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1207"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1219"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1241"/>
         <source>Start download</source>
         <translation type="unfinished">Commencer le téléchargement</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1186"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1208"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1220"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1242"/>
         <source>Pause download</source>
         <translation>Téléchargement en pause</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1208"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1242"/>
         <source>Resume download</source>
         <translation>Résumé du téléchargement</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1210"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1244"/>
         <source>Rename video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1211"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1245"/>
         <source>Reset state</source>
         <translation type="unfinished">Remettre l&apos;état à zéro</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1246"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1280"/>
         <source>Delete videos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1247"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1281"/>
         <source>Start downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1249"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1283"/>
         <source>Pause downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1249"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1283"/>
         <source>Resume downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1251"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1285"/>
         <source>Rename videos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1252"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1286"/>
         <source>Reset states</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1296"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1330"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Téléchargement : %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1304"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1338"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convertion : %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1414"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1449"/>
         <source>Already added</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1415"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1450"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MultiURLs</name>
+    <message>
+        <location filename="../../ui/multiurls.ui" line="14"/>
+        <source>Multiple URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/multiurls.ui" line="20"/>
+        <source>Select which URLs you want add:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/multiurls.ui" line="67"/>
+        <location filename="../../ui/multiurls.ui" line="73"/>
+        <source>Add the current URL and close this dialog</source>
+        <translation type="unfinished">Ajouter l&apos;URL courante et fermer cette fenêtre</translation>
+    </message>
+    <message>
+        <location filename="../../ui/multiurls.ui" line="70"/>
+        <source>Ok button</source>
+        <translation type="unfinished">Bouton OK</translation>
+    </message>
+    <message>
+        <location filename="../../ui/multiurls.ui" line="76"/>
+        <source>Ok</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <location filename="../../ui/multiurls.ui" line="104"/>
+        <location filename="../../ui/multiurls.ui" line="110"/>
+        <source>Close without adding the URL</source>
+        <translation type="unfinished">Fermer sans ajouter l&apos;URL</translation>
+    </message>
+    <message>
+        <location filename="../../ui/multiurls.ui" line="107"/>
+        <source>Cancel button</source>
+        <translation type="unfinished">Bouton Annuler</translation>
+    </message>
+    <message>
+        <location filename="../../ui/multiurls.ui" line="113"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuler</translation>
     </message>
 </context>
 <context>
@@ -2281,10 +2395,6 @@ font-size:12px;
         <location filename="../../ui/options.ui" line="662"/>
         <source>Save and restore current session checkbox</source>
         <translation>Sélection Sauvegarder et restaurer la session courante</translation>
-    </message>
-    <message>
-        <source>Save and restore the curren session</source>
-        <translation type="obsolete">Sauvegarder et restaurer la session courante</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="668"/>
@@ -2814,10 +2924,6 @@ font-size:12px;
         <location filename="../../src/forms/optionsimpl.cpp" line="199"/>
         <source>Schedule</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy</source>
-        <translation type="obsolete">Proxy</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="209"/>

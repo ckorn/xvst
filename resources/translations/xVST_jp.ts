@@ -123,6 +123,14 @@
         <source>Video audio sampling rate combobox</source>
         <translation>映像 / 音声のサンプリングレート(Hz)</translation>
     </message>
+    <message>
+        <source>Select url&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file with URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddVideoImpl</name>
@@ -153,6 +161,26 @@
     <message>
         <source> - Blocked site</source>
         <translation> - ブロックされたサイト</translation>
+    </message>
+    <message>
+        <source>No valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> (%1 selected)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select URL&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>select URLs to download</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1350,6 +1378,65 @@ background: white;
     <message>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>xUpdater が見つかりません..&lt;br&gt;&lt;br&gt;プログラムの自動更新を行う場合  xVideoServiceThief を再インストールしてください.</translation>
+    </message>
+    <message>
+        <source>Delete download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear list</source>
+        <translation type="unfinished">一覧をクリア</translation>
+    </message>
+    <message>
+        <source>Are you sure to clear the downloads list?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MultiURLs</name>
+    <message>
+        <source>Multiple URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which URLs you want add:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the current URL and close this dialog</source>
+        <translation type="unfinished">現在のURLを追加してダイアログを閉じる</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <source>Close without adding the URL</source>
+        <translation type="unfinished">URLを追加しないで閉じる</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished">中止ボタン</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">中止</translation>
     </message>
 </context>
 <context>

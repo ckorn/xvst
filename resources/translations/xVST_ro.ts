@@ -123,6 +123,14 @@
         <source>Override original conversion options for this video</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select url&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file with URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddVideoImpl</name>
@@ -152,6 +160,26 @@
     </message>
     <message>
         <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> (%1 selected)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select URL&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>select URLs to download</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1229,10 +1257,6 @@ font-size:12px;
         <translation type="unfinished">Oprire descărcare</translation>
     </message>
     <message>
-        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Vrei să oprşti descărcarea a &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
         <source>Error message</source>
         <translation>Mesaj eroare</translation>
     </message>
@@ -1350,6 +1374,65 @@ font-size:12px;
     </message>
     <message>
         <source>Reset states</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear list</source>
+        <translation type="unfinished">Golire listă</translation>
+    </message>
+    <message>
+        <source>Are you sure to clear the downloads list?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MultiURLs</name>
+    <message>
+        <source>Multiple URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which URLs you want add:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the current URL and close this dialog</source>
+        <translation type="unfinished">Adaugă actuala URL şi închide acest dialog</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close without adding the URL</source>
+        <translation type="unfinished">Închide fără a aduga URL</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1728,10 +1811,6 @@ font-size:12px;
     <message>
         <source>Save and restore current session checkbox</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save and restore the curren session</source>
-        <translation type="obsolete">Salvare şi restaurare sesiune curentă</translation>
     </message>
     <message>
         <source>If this option is checked, the completed videos will not be restored in next session</source>

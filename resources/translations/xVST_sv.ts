@@ -123,6 +123,14 @@
         <source>Override original conversion options for this video</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select url&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file with URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddVideoImpl</name>
@@ -153,6 +161,26 @@
     <message>
         <source>Ok</source>
         <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>No valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> (%1 selected)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select URL&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>select URLs to download</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1231,10 +1259,6 @@ font-size:12px;
         <translation>Avbryt hämtning</translation>
     </message>
     <message>
-        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Vill du avbryta hämtningen av &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
         <source>Error message</source>
         <translation>Felmeddelande</translation>
     </message>
@@ -1353,6 +1377,65 @@ font-size:12px;
     <message>
         <source>Reset states</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear list</source>
+        <translation type="unfinished">Töm lista</translation>
+    </message>
+    <message>
+        <source>Are you sure to clear the downloads list?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MultiURLs</name>
+    <message>
+        <source>Multiple URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which URLs you want add:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the current URL and close this dialog</source>
+        <translation type="unfinished">Lägg till aktuell URL och stäng denna dialogruta</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">Ok-knapp</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Close without adding the URL</source>
+        <translation type="unfinished">Stäng utan att lägga till URL:en</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished">Avbryt-knapp</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Avbryt</translation>
     </message>
 </context>
 <context>
@@ -2133,10 +2216,6 @@ font-size:12px;
     <message>
         <source>Ups!</source>
         <translation>Oops!</translation>
-    </message>
-    <message>
-        <source>Proxy</source>
-        <translation type="obsolete">Proxyserver</translation>
     </message>
     <message>
         <source>Tracker</source>

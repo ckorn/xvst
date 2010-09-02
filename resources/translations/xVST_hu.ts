@@ -123,6 +123,14 @@
         <source>Override original conversion options for this video</source>
         <translation>A videó eredeti konvertálási beállításainak felülbírálása</translation>
     </message>
+    <message>
+        <source>Select url&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file with URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddVideoImpl</name>
@@ -153,6 +161,26 @@
     <message>
         <source>Ok</source>
         <translation>Ok</translation>
+    </message>
+    <message>
+        <source>No valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 valid URLs detected in this file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> (%1 selected)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select URL&apos;s file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>select URLs to download</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -854,10 +882,6 @@ betűméret:12px;
 <context>
     <name>LoadingImpl</name>
     <message>
-        <source>Loading</source>
-        <translation type="obsolete">Betöltés</translation>
-    </message>
-    <message>
         <source>Loading plugins... please wait...</source>
         <translation>Beépülők betöltése... kis türelmet...</translation>
     </message>
@@ -1149,14 +1173,6 @@ betűméret:12px;
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <source>Ctrl+Up</source>
-        <translation type="obsolete">Ctrl+Up</translation>
-    </message>
-    <message>
-        <source>Ctrl+Down</source>
-        <translation type="obsolete">Ctrl+Down</translation>
-    </message>
-    <message>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
@@ -1242,10 +1258,6 @@ betűméret:12px;
     <message>
         <source>Cancel download</source>
         <translation>Letöltés megszakítása</translation>
-    </message>
-    <message>
-        <source>Wish you Cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Megszakítod a(z) &lt;b&gt;%1&lt;/b&gt; letöltését?</translation>
     </message>
     <message>
         <source>Error message</source>
@@ -1366,6 +1378,65 @@ betűméret:12px;
     <message>
         <source>Reset states</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear list</source>
+        <translation type="unfinished">Lista ürítése</translation>
+    </message>
+    <message>
+        <source>Are you sure to clear the downloads list?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MultiURLs</name>
+    <message>
+        <source>Multiple URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which URLs you want add:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the current URL and close this dialog</source>
+        <translation type="unfinished">A jelenlegi URL hozzáadása és ez az ablak bezárása</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">Ok gomb</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <source>Close without adding the URL</source>
+        <translation type="unfinished">Bezárás az URL hozzáadása nélkül</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished">Mégse gomb</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Mégse</translation>
     </message>
 </context>
 <context>
@@ -1743,10 +1814,6 @@ betűméret:12px;
     <message>
         <source>Save and restore current session checkbox</source>
         <translation>Jelenlegi munkaegység mentése és visszaállítása jelölőnégyzet</translation>
-    </message>
-    <message>
-        <source>Save and restore the curren session</source>
-        <translation type="obsolete">A jelenlegi munkaegység mentése és visszaállítása</translation>
     </message>
     <message>
         <source>If this option is checked, the completed videos will not be restored in next session</source>
@@ -2150,10 +2217,6 @@ betűméret:12px;
     <message>
         <source>Ups!</source>
         <translation>Felügyelet!</translation>
-    </message>
-    <message>
-        <source>Proxy</source>
-        <translation type="obsolete">Proxy</translation>
     </message>
     <message>
         <source>Tracker</source>
@@ -3160,10 +3223,6 @@ betűméret:12px;
     <message>
         <source>Update center - Windows Vista detected</source>
         <translation>Frissítési központ - Windows Vista észlelve</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;&lt;b&gt;Figyelem, az xVST Windows Vista rendszert észlelt és az automatikus frissítések nem működnek megfelelően.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Ha az &lt;b&gt;UAC&lt;/b&gt; (Felhasználói fiók felügyelet) engedélyezve van, az automatikus frissítés nem fogja telepíteni a letöltött frissítéseket a felhasználói jogosultságok miatt.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
