@@ -8,6 +8,8 @@
 - Added possibility to paste from clipboard more than one url at same time (separated in lines)
 - Added possibility to drop more than one url at same time (separated in lines)
 
+- Updated catalan translation
+- Updated spanish translation
 - Updated japanese translation
 - Updated german translation
 - Updated italian translation
@@ -30,6 +32,7 @@
 	- XHamster
 	- XTube
 
+- Improved all plug-in's icons (reduced icon file size)
 - Improved the internal management of downloads
 
 - Fixed bug (Error: Custom video conversion was ignored if the options "Convert downloaded videos" was disabled)
