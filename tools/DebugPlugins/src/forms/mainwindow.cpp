@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
 	ui->edtPluginPathSearchVideos->setText(settings.getVideoSearchPlugin());
 	ui->edtTestingKeyWords->setText(settings.getVideoSearchKeyWords());
 	ui->edtImagePath->setText(settings.getPluginIcon());
+	ui->edtPluginBasePath->setText(settings.getPluginIconsPath());
+	ui->chbRecursiveGeneration->setChecked(settings.getRecursiveGeneration());
 }
 
 MainWindow::~MainWindow()
@@ -29,6 +31,8 @@ MainWindow::~MainWindow()
 	settings.setVideoSearchPlugin(ui->edtPluginPathSearchVideos->text());
 	settings.setVideoSearchKeyWords(ui->edtTestingKeyWords->text());
 	settings.setPluginIcon(ui->edtImagePath->text());
+	settings.setPluginIconsPath(ui->edtPluginBasePath->text());
+	settings.setRecursiveGeneration(ui->chbRecursiveGeneration->isChecked());
 	settings.save();
 	//
 	delete ui;
@@ -141,11 +145,9 @@ void MainWindow::testPluginSearchVideos(bool debug)
 
 }
 
-void MainWindow::generateBinaryArray()
+QString MainWindow::generateBinaryArray(QString iconPath)
 {
-	ui->outputIconHex->clear();
-
-	QFile file(ui->edtImagePath->text());
+	QFile file(iconPath);
 	if (file.exists())
 	{
 		// convert each byte to hex representation
@@ -165,8 +167,60 @@ void MainWindow::generateBinaryArray()
 		arrayData.resize(arrayData.size() - 1);
 		// generate function and array
 		arrayData = QString("function getVideoServiceIcon()\n{\n\treturn new Array(\n%1);\n}").arg(arrayData);
-		// print generated function
-		ui->outputIconHex->appendPlainText(arrayData);
+		// return generated function
+		return arrayData;
+	}
+	return QString();
+}
+
+void MainWindow::generateIconForDir(QString dir)
+{
+	QFileInfoList files = QDir(dir).entryInfoList(QStringList() << "*.png" << "*.js", QDir::Files);	
+	// get items count (only can be 2)
+	if (files.count() == 2 && files.at(0).suffix() != files.at(1).suffix())
+	{
+		QString fullCode = QString();
+		QString pngFileName = files.at(0).suffix() == "png" ? files.at(0).fileName() : files.at(1).fileName();
+		QString jsFileName = files.at(0).suffix() == "js" ? files.at(0).fileName() : files.at(1).fileName();
+		// open js file
+		QFile pluginFile(dir + "/" + jsFileName);
+		if (pluginFile.exists() && pluginFile.open(QIODevice::ReadOnly))
+		{
+			QTextStream pluginCode(&pluginFile);
+			// get all code
+			fullCode = pluginCode.readAll();
+			QString originalFunctionIcon = copyBetween(fullCode, "function getVideoServiceIcon()", "}");
+			QString newFunctionIcon = generateBinaryArray(dir + "/" + pngFileName);
+			// exists? If no.. then add it
+			if (originalFunctionIcon.isEmpty())
+			{
+				fullCode += "\n" + newFunctionIcon;
+				// print output
+				ui->outputIconHex->appendHtml(QString("Plugin <b>%1</b>: Icon added").arg(jsFileName));
+			}
+			else // replace function
+			{
+				QString newFunctionCode = copyBetween(newFunctionIcon, "function getVideoServiceIcon()", "}");
+				// get array
+				fullCode = fullCode.replace(originalFunctionIcon, newFunctionCode);
+				// print output
+				ui->outputIconHex->appendHtml(QString("Plugin <b>%1</b>: Icon updated").arg(jsFileName));
+			}
+		}
+		// close original pluginFile
+		pluginFile.close();
+		// create the updated plugin (if has code to update)
+		if (!fullCode.isEmpty())
+		{
+			QFile newPluginFile(dir + "/" + jsFileName);
+			if (newPluginFile.open(QFile::WriteOnly | QFile::Truncate))
+				QTextStream(&newPluginFile) << fullCode;
+			newPluginFile.close();
+		}
+	}
+	else // print output
+	{
+		ui->outputIconHex->appendHtml(QString("Directory <b>%1</b> skiped...\n").arg(dir));
 	}
 }
 
@@ -192,7 +246,10 @@ void MainWindow::on_btnDebugSearchVideos_clicked()
 
 void MainWindow::on_btnGenerateIcon_clicked()
 {
-	generateBinaryArray();
+	// clear previous hex
+	ui->outputIconHex->clear();
+	// print generated function
+	ui->outputIconHex->appendPlainText(generateBinaryArray(ui->edtImagePath->text()));
 }
 
 void MainWindow::on_toolBtnPluginVideoInformation_clicked()
@@ -220,4 +277,29 @@ void MainWindow::on_toolBtnPluginIcon_clicked()
 	// set file name
 	if (!imageFile.isEmpty())
 		ui->edtImagePath->setText(imageFile);
+}
+
+void MainWindow::on_btnAutoGenerateIcons_clicked()
+{
+	ui->outputIconHex->clear();
+	// is recursive checked?
+	if (ui->chbRecursiveGeneration->isChecked())
+	{
+		// get each element
+		foreach (QFileInfo fileInfo, QDir(ui->edtPluginBasePath->text()).entryInfoList())
+			if (fileInfo.isDir() && fileInfo.fileName() != "." && fileInfo.fileName() != "..")
+				generateIconForDir(fileInfo.filePath());
+	}
+	else // simple generation (no recursive)
+	{
+		generateIconForDir(ui->edtPluginBasePath->text());
+	}
+}
+
+void MainWindow::on_toolBtnPluginIconPath_clicked()
+{
+	QString pluginPath = QFileDialog::getExistingDirectory(this, "Select Plugin path", ui->edtPluginBasePath->text());
+	// set file name
+	if (!pluginPath.isEmpty())
+		ui->edtPluginBasePath->setText(pluginPath);
 }

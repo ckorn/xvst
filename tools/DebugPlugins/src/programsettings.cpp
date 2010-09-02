@@ -34,6 +34,8 @@ void ProgramSettings::save()
 	settings.setValue("videoSearchPlugin", videoSearchPlugin);
 	settings.setValue("videoSearchKeyWords", videoSearchKeyWords);
 	settings.setValue("pluginIcon", pluginIcon);
+	settings.setValue("pluginIconsPath", pluginIconsPath);
+	settings.setValue("recursiveGeneration", recursiveGeneration);
 	// save settings
 	settings.endGroup();
 }
@@ -52,6 +54,8 @@ void ProgramSettings::load()
 	videoSearchPlugin = settings.value("settings/videoSearchPlugin", videoSearchPlugin).toString();
 	videoSearchKeyWords = settings.value("settings/videoSearchKeyWords", videoSearchKeyWords).toString();
 	pluginIcon = settings.value("settings/pluginIcon", pluginIcon).toString();
+	pluginIconsPath = settings.value("settings/pluginIconsPath", pluginIconsPath).toString();
+	recursiveGeneration = settings.value("settings/recursiveGeneration", recursiveGeneration).toBool();
 }
 
 QString ProgramSettings::getVideoInformationPlugin()
@@ -103,3 +107,24 @@ void ProgramSettings::setPluginIcon(QString value)
 {
 	pluginIcon = value;
 }
+
+QString ProgramSettings::getPluginIconsPath()
+{
+	return pluginIconsPath;
+}
+
+void ProgramSettings::setPluginIconsPath(QString value)
+{
+	pluginIconsPath = value;
+}
+
+bool ProgramSettings::getRecursiveGeneration()
+{
+	return recursiveGeneration;
+}
+
+void ProgramSettings::setRecursiveGeneration(bool value)
+{
+	recursiveGeneration = value;
+}
+

@@ -18,6 +18,8 @@ class ProgramSettings : public QObject
 		QString videoSearchPlugin;
 		QString videoSearchKeyWords;
 		QString pluginIcon;
+		QString pluginIconsPath;
+		bool recursiveGeneration;
 	public:
 		ProgramSettings();
 		void save();
@@ -32,6 +34,10 @@ class ProgramSettings : public QObject
 		void setVideoSearchKeyWords(QString value);
 		QString getPluginIcon();
 		void setPluginIcon(QString value);
+		QString getPluginIconsPath();
+		void setPluginIconsPath(QString value);
+		bool getRecursiveGeneration();
+		void setRecursiveGeneration(bool value);
 	};
 
 #endif // PROGRAMSETTINGS_H

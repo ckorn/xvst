@@ -15,11 +15,14 @@ Q_OBJECT
 		Ui::MainWindow *ui;
 		void testPluginVideoInformation(bool debug);
 		void testPluginSearchVideos(bool debug);
-		void generateBinaryArray();
+		QString generateBinaryArray(QString iconPath);
+		void generateIconForDir(QString dir);
 	public:
 		MainWindow(QWidget *parent = 0);
 		~MainWindow();
 	private slots:
+		void on_toolBtnPluginIconPath_clicked();
+		void on_btnAutoGenerateIcons_clicked();
 		void on_toolBtnPluginIcon_clicked();
 		void on_toolBtnPluginSearchVideos_clicked();
 		void on_toolBtnPluginVideoInformation_clicked();
