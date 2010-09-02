@@ -14,7 +14,7 @@
 - Updated german translation
 - Updated italian translation
 
-- Added one new plugin:
+- Added two new plugins:
 	- XHamster (thanks to Supelex Technologies)
 	- UStream
 
@@ -31,6 +31,7 @@
 	- Keezmovies
 	- XHamster
 	- XTube
+	- JizzHut
 
 - Improved all plug-in's icons (reduced icon file size)
 - Improved the internal management of downloads
