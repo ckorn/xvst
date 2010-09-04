@@ -439,7 +439,7 @@ bool ProgramOptions::getIfInternalFFmpegIsInstalled()
 
 QString ProgramOptions::getInternalFFmpegPath()
 {
-	return appDir.absolutePath() + "/../Resources/tools/ffmpeg";
+	return QDir::cleanPath(appDir.absolutePath() + "/../Resources/tools/ffmpeg");
 }
 #endif
 
