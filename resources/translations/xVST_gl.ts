@@ -2910,6 +2910,10 @@ Outro proceso está traballando agora, páreo ou agarde ate a fin do proceso.</t
         <source>The Same quality as the original Video</source>
         <translation type="unfinished">A mesma calidade que o orixinal</translation>
     </message>
+    <message>
+        <source>MP4 HD Format (*.mp4)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VideoInformation</name>

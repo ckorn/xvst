@@ -2901,6 +2901,10 @@ background: white;
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
         <translation>最低品質 (映像ビットレート: 384kbps; 音声ビットレート: 64kbps)</translation>
     </message>
+    <message>
+        <source>MP4 HD Format (*.mp4)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VideoInformation</name>

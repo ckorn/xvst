@@ -2899,6 +2899,10 @@ font-size:12px;
         <source>The Same quality as the original Video</source>
         <translation type="unfinished">원본 영상과 동일한 품질</translation>
     </message>
+    <message>
+        <source>MP4 HD Format (*.mp4)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VideoInformation</name>

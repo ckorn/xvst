@@ -2907,6 +2907,10 @@ font-size:12px;
         <source>The Same quality as the original Video</source>
         <translation>La stessa del video originale</translation>
     </message>
+    <message>
+        <source>MP4 HD Format (*.mp4)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VideoInformation</name>
