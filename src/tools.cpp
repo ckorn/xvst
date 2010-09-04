@@ -533,6 +533,12 @@ int showModalDialog(QDialog *form)
 #endif
 }
 
+bool isRunningOn64bits()
+{
+	// 32bits = 4 ; 64bits = 8
+	return sizeof(int*) == 8;
+}
+
 QString multiLineToSingleLine(QString text)
 {
 	// remove start and end spaces

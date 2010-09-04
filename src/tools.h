@@ -114,6 +114,9 @@
 	/*! Open dialog and wait until his end (usefull on mac and Qt::Sheet property) */
 	int showModalDialog(QDialog *form);
 
+	/*! Returns if this application is running on a 64bits envirotment */
+	bool isRunningOn64bits();
+
 	/*! Convert a multi line string into a single line string (trimmed)  */
 	QString multiLineToSingleLine(QString text);
 
