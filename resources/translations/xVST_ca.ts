@@ -3711,89 +3711,94 @@ font-size:12px;
 <context>
     <name>VideoConverter</name>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="417"/>
+        <location filename="../../src/videoconvert.cpp" line="431"/>
         <source>AVI Format (*.avi)</source>
-        <translation>AVI Format (*.avi)</translation>
+        <translation>Format AVI (*.avi)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="417"/>
+        <location filename="../../src/videoconvert.cpp" line="431"/>
         <source>WMV Format ( *.wmv)</source>
-        <translation>WMV Format ( *.wmv)</translation>
+        <translation>Format WMV ( *.wmv)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="418"/>
+        <location filename="../../src/videoconvert.cpp" line="432"/>
         <source>MPEG1 Format ( *.mpg)</source>
-        <translation>MPEG1 Format ( *.mpg)</translation>
+        <translation>Format MPEG1 ( *.mpg)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="418"/>
+        <location filename="../../src/videoconvert.cpp" line="432"/>
         <source>MPEG2 Format ( *.mpg)</source>
-        <translation>MPEG2 Format ( *.mpg)</translation>
+        <translation>Format MPEG2 ( *.mpg)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="419"/>
+        <location filename="../../src/videoconvert.cpp" line="433"/>
         <source>MP4 Format (*.mp4)</source>
-        <translation>MP4 Format (*.mp4)</translation>
+        <translation>Format MP4 (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="419"/>
+        <location filename="../../src/videoconvert.cpp" line="433"/>
         <source>Apple iPod (*.mp4)</source>
         <translation>Apple iPod (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="419"/>
+        <location filename="../../src/videoconvert.cpp" line="433"/>
         <source>Sony PSP (*.mp4)</source>
         <translation>Sony PSP (*.mp4)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="420"/>
+        <location filename="../../src/videoconvert.cpp" line="433"/>
+        <source>MP4 HD Format (*.mp4)</source>
+        <translation>Format MP4 HD (*.mp4)</translation>
+    </message>
+    <message>
+        <location filename="../../src/videoconvert.cpp" line="434"/>
         <source>3GP Format (*.3gp)</source>
-        <translation>3GP Format (*.3gp)</translation>
+        <translation>Format 3GP (*.3gp)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="420"/>
+        <location filename="../../src/videoconvert.cpp" line="434"/>
         <source>MP3 Format (*.mp3)</source>
-        <translation>MP3 Format (*.mp3)</translation>
+        <translation>Format MP3 (*.mp3)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="429"/>
-        <location filename="../../src/videoconvert.cpp" line="442"/>
-        <location filename="../../src/videoconvert.cpp" line="451"/>
+        <location filename="../../src/videoconvert.cpp" line="443"/>
+        <location filename="../../src/videoconvert.cpp" line="456"/>
+        <location filename="../../src/videoconvert.cpp" line="465"/>
         <source>Original</source>
         <translation>Original</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="460"/>
+        <location filename="../../src/videoconvert.cpp" line="474"/>
         <source>Lower quality (Video bitrate: 384kbps; Audio bitrate: 64kbps)</source>
         <translation>Molt baixa qualitat (Vídeo bitrate: 384kbps; Audio bitrate: 64kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="461"/>
+        <location filename="../../src/videoconvert.cpp" line="475"/>
         <source>Low quality (Video bitrate: 512kbps; Audio bitrate: 80kbps)</source>
         <translation>Baixa qualitat (Vídeo bitrate: 512kbps; Audio bitrate: 80kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="462"/>
+        <location filename="../../src/videoconvert.cpp" line="476"/>
         <source>Normal quality (Video bitrate: 640kbps; Audio bitrate: 96kbps)</source>
         <translation>Qualitat normal (Vídeo bitrate: 640kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="463"/>
+        <location filename="../../src/videoconvert.cpp" line="477"/>
         <source>Medium quality (Video bitrate: 800kbps; Audio bitrate: 96kbps)</source>
         <translation>Qualitat mitjana (Vídeo bitrate: 800kbps; Audio bitrate: 96kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="464"/>
+        <location filename="../../src/videoconvert.cpp" line="478"/>
         <source>Good quality (Video bitrate: 1000kbps; Audio bitrate: 128kbps)</source>
         <translation>Qualitat bona (Vídeo bitrate: 1000kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="465"/>
+        <location filename="../../src/videoconvert.cpp" line="479"/>
         <source>Superb quality (Video bitrate: 1200kbps; Audio bitrate: 128kbps)</source>
         <translation>Qualitat brutal (Vídeo bitrate: 1200kbps; Audio bitrate: 128kbps)</translation>
     </message>
     <message>
-        <location filename="../../src/videoconvert.cpp" line="466"/>
+        <location filename="../../src/videoconvert.cpp" line="480"/>
         <source>The Same quality as the original Video</source>
         <translation>Mantenir la qualitat del vídeo original</translation>
     </message>
