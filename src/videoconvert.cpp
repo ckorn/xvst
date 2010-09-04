@@ -59,7 +59,6 @@ QStringList VideoConverter::getCommandLine()
 {
 	QStringList parameters;
 	QString extension;
-	QFileInfo videoFile;
 
 	parameters << "-i" << validPath(videoItem->getVideoFile());
 
@@ -81,19 +80,34 @@ QStringList VideoConverter::getCommandLine()
 			extension = ".mpeg";
 			break;
 		case ofMP4:
-			parameters << "-acodec" << "libfaac" << "-vcodec" << "mpeg4";
+		case ofMP4_hd:
+		{
+			QString vpre = convConfToUse.outputFormat == ofMP4 ? "default" : "hq";
+			// configure h264 codec
+#ifndef Q_OS_LINUX
+	#ifdef Q_OS_WIN32
+			bool use_x264 = true;
+	#else
+			bool use_x264 = isRunningOn64bits();
+	#endif
+			if (use_x264)
+				parameters	<< "-vcodec" << "libx264"
+							<< "-fpre" << QFileInfo(ffmpegApp).absolutePath() + "/ffmpeg-presets/libx264-" + vpre + ".ffpreset";
+			else // no x264 support
+				parameters << "-f" << "mp4" << "-vcodec" << "mpeg4";
+	#else
+			parameters << "-vcodec" << "libx264" << "-vpre" << vpre;
+#endif
 			extension = ".mp4";
 			break;
+		}
 		case ofAppleiPod:
-//			parameters	<< "-acodec" << "libfaac" << "-ab" << "128kb" << "-vcodec" << "mpeg4" << "-b" << "1200kb"
-//						<< "-mbd" << "2" << /*"-flags" << "+4mv+trell" << "-aic" << "2" <<*/ "-cmp" << "2" << "-subcmp" << "2"
-//						<< "-s" << "320x240" /*<< "-title" << videoItem->getVideoInformation().title*/;
 			parameters	<< "-acodec" << "libfaac" << "-ab" << "128kb" << "-vcodec" << "mpeg4" << "-b" << "1200kb"
 						<< "-mbd" << "2" << "-cmp" << "2" << "-subcmp" << "2" << "-s" << "320x240";
 			extension = ".mp4";
 			break;
 		case ofSonyPSP:
-			parameters << "-acodec" << "libfaac" << "-ab" << "128kb" <<  "-vcodec" << "mpeg4" << "-b" << "1200kb" //<< "-ar" <<  "24000"
+			parameters << "-acodec" << "libfaac" << "-ab" << "128kb" <<  "-vcodec" << "mpeg4" << "-b" << "1200kb"
 					   << "-mbd" << "2" << "-flags" << "+4mv" << "-trellis" << "2" << "-cmp" << "2" << "-subcmp" << "2"
 					   << "-r" << "30000/1001" << "-f" << "psp";
 			extension = ".mp4";
@@ -219,7 +233,7 @@ QStringList VideoConverter::getCommandLine()
 		}
 	}
 
-	videoItem->setVideoFileSavedTo(uniqueFileName(changeFileExt(videoItem->getVideoFile(), extension))/*.absoluteFilePath()*/, this);
+	videoItem->setVideoFileSavedTo(uniqueFileName(changeFileExt(videoItem->getVideoFile(), extension)), this);
 
 	parameters << "-y" << validPath(videoItem->getVideoFileSavedTo());
 
@@ -416,7 +430,7 @@ QStringList VideoConverter::getOutputFormatAsStrings()
 	// set items to outputFormat
 	itemsToAdd	<< tr("AVI Format (*.avi)") << tr("WMV Format ( *.wmv)")
 	<< tr("MPEG1 Format ( *.mpg)") << tr("MPEG2 Format ( *.mpg)")
-	<< tr("MP4 Format (*.mp4)") << tr("Apple iPod (*.mp4)") << tr("Sony PSP (*.mp4)")
+	<< tr("MP4 Format (*.mp4)") << tr("MP4 HD Format (*.mp4)") << tr("Apple iPod (*.mp4)") << tr("Sony PSP (*.mp4)")
 	<< tr("3GP Format (*.3gp)") << tr("MP3 Format (*.mp3)");
 	// return values
 	return itemsToAdd;
