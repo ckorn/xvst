@@ -32,7 +32,7 @@
 
 class VideoInformation;
 
-class MultiURLsImpl : public QDialog, public Ui::MultiURLs
+class MultiURLsImpl : public QDialog, private Ui::MultiURLs
 {
 Q_OBJECT
 	private:
