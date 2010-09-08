@@ -10,7 +10,9 @@ SOURCES += \
     ../../src/videoinformation.cpp \
     ../../src/options.cpp \
     ../../src/videoitem.cpp \
-    ../../src/languages.cpp
+	../../src/languages.cpp \
+	../../src/serviceskeychain.cpp \
+	../../src/forms/loginpromptimpl.cpp
 
 HEADERS += \
 	xvst-classes.h \
@@ -23,4 +25,9 @@ HEADERS += \
     ../../src/videoinformation.h \
     ../../src/options.h \
     ../../src/videoitem.h \
-	../../src/languages.h
+	../../src/languages.h \
+	../../src/serviceskeychain.h \
+	../../src/forms/loginpromptimpl.h
+
+FORMS += \
+	../../ui/loginprompt.ui

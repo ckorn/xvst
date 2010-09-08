@@ -36,6 +36,8 @@ MainWindow::~MainWindow()
 	settings.save();
 	//
 	delete ui;
+	// cleanup video information
+	delete VideoInformation::instance();
 }
 
 void MainWindow::testPluginVideoInformation(bool debug)
