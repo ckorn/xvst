@@ -41,7 +41,8 @@ FORMS = ui/addvideo.ui \
     ui/searchvideosnoresults.ui \
     ui/winvistadownloadsmsg.ui \
     ui/whatsnew.ui \
-    ui/multiurls.ui
+	ui/multiurls.ui \
+	ui/loginprompt.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/searchvideositemimpl.h \
     src/forms/bugreportimpl.h \
@@ -71,6 +72,7 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/winvistadownloadsmsgimpl.h \
     src/forms/whatsnewimpl.h \
 	src/forms/multiurlsimpl.h \
+	src/forms/loginpromptimpl.h \
     src/pakunpak/pakunpak.h \
     src/searchvideosscriptclass.h \
     src/checkupdatesworker.h \
@@ -95,7 +97,8 @@ HEADERS = src/forms/addvideoimpl.h \
     src/videoitem.h \
     src/videolistcontroller.h \
     src/xprogressbar.h \
-	src/rtmp.h
+	src/rtmp.h \
+    src/serviceskeychain.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/searchvideositemimpl.cpp \
     src/forms/bugreportimpl.cpp \
@@ -125,6 +128,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/winvistadownloadsmsgimpl.cpp \
     src/forms/whatsnewimpl.cpp \
 	src/forms/multiurlsimpl.cpp \
+	src/forms/loginpromptimpl.cpp \
     src/searchvideosscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/http.cpp \
@@ -148,7 +152,8 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/videoitem.cpp \
     src/videolistcontroller.cpp \
     src/xprogressbar.cpp \
-	src/rtmp.cpp
+	src/rtmp.cpp \
+    src/serviceskeychain.cpp
 TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/xVST_ca.ts \
     resources/translations/xVST_cz.ts \

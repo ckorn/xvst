@@ -64,6 +64,7 @@
         <file>images/services/invalid.png</file>
         <file>images/services/link_error.png</file>
         <file>images/services/custom_video.png</file>
+        <file>images/service_login.png</file>
     </qresource>
     <qresource prefix="/winvistamsg">
         <file>images/howto_vistaadmin.png</file>

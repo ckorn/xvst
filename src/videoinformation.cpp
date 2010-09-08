@@ -30,12 +30,14 @@
 #include "videoitem.h"
 #include "searchvideos.h"
 #include "searchvideosscriptclass.h"
+#include "serviceskeychain.h"
 #include "httpscriptclass.h"
 #include "toolsscriptclass.h"
 #include "programversion.h"
 #include "options.h"
 
 Q_DECLARE_METATYPE(VideoDefinition)
+Q_DECLARE_METATYPE(ServiceLoginInformation)
 Q_DECLARE_METATYPE(SearchResults)
 Q_DECLARE_METATYPE(SearchResults*)
 
@@ -65,6 +67,8 @@ VideoInformation::VideoInformation(QString pluginsDir)
 	// create plugins catcher
 	faviconsCatcher = new VideoInformationPluginIconsCatcher(this);
 	faviconsCatcher->downloadFavicons();
+	// init logins session
+	servicesKeychain = new ServicesKeyChain();
 }
 
 VideoInformation::~VideoInformation()
@@ -75,10 +79,10 @@ VideoInformation::~VideoInformation()
 	if (isRunning()) quit();
 	// abort plugins image catcher
 	delete faviconsCatcher;
-	// remove loaded plugins
-	clearPlugins();
 	// destroy plugins container
 	delete plugins;
+	// destroy logins session
+	delete servicesKeychain;
 }
 
 bool VideoInformation::validItemIndex(const int index)
@@ -344,6 +348,11 @@ void VideoInformation::cancel()
 	videoItem = NULL;
 }
 
+ServiceLoginInformation VideoInformation::serviceLoginInfo(VideoInformationPlugin *videoInformationPlugin, bool lastLoginFailed)
+{
+	return servicesKeychain->serviceLoginInfo(videoInformationPlugin, lastLoginFailed);
+}
+
 bool VideoInformation::getBlockAdultContent()
 {
 	return blockAdultContent;
@@ -386,22 +395,22 @@ QPixmap VideoInformation::getHostImage(QString URL, bool checkURL)
 	// if is a valid URL
 	if (valid)
 	{
-		QPixmap resultat;
+		QPixmap result;
 		// find a plugin which can resolve this url
 		VideoInformationPlugin *plugin = getPluginByHost(QUrl(URL));
 		// check if we found a plugin which can give us the service icon
 		if (plugin != NULL)
 		{
 			QPixmap *p = plugin->getIcon();
-			resultat = *p;
+			result = *p;
 		}
 		else // is an invalid service
-			resultat = QPixmap(QString(path).arg("invalid"));
+			result = QPixmap(QString(path).arg("invalid"));
 		// if this plugin hasn't an image loaded, then set an standard icon
-		if (resultat.isNull())
-			resultat = QPixmap(QString(path).arg("no_icon"));
+		if (result.isNull())
+			result = QPixmap(QString(path).arg("no_icon"));
 		// return the final image
-		return resultat;
+		return result;
 	}
 	else // return link error image
 		return QPixmap(QString(path).arg("link_error"));
@@ -409,7 +418,7 @@ QPixmap VideoInformation::getHostImage(QString URL, bool checkURL)
 
 QString VideoInformation::getHostCaption(QString URL)
 {
-	if (validURL(URL)) //QUrl(URL).isValid())
+	if (validURL(URL))
 	{
 		VideoInformationPlugin *plugin = getPluginByHost(QUrl(URL));
 		return plugin != NULL ? plugin->getCaption() : tr("Unsupported video service");
@@ -451,7 +460,23 @@ bool VideoInformation::isBlockedHost(QString URL)
 
 VideoInformation* VideoInformation::instance()
 {
+	// create a new instance if not exists
+	if (!lastVideoInformationInstance) new VideoInformation();
+	// return the video information instance
 	return lastVideoInformationInstance;
+}
+
+// ScriptEngineExt class
+
+ScriptEngineExt::ScriptEngineExt(VideoInformationPlugin *videoInformationPlugin)
+	: QScriptEngine()
+{
+	this->videoInformationPlugin = videoInformationPlugin;
+}
+
+VideoInformationPlugin* ScriptEngineExt::getVideoInformationPlugin()
+{
+	return videoInformationPlugin;
 }
 
 // VideoInformationPluginIconsCatcher class
@@ -536,7 +561,7 @@ VideoInformationPlugin::VideoInformationPlugin(VideoInformation *videoInformatio
 	QFile scriptFile(videoServicePath);
 	if (scriptFile.exists())
 	{
-		engine = new QScriptEngine();
+		engine = new ScriptEngineExt(this);
 		// load code
 		scriptFile.open(QIODevice::ReadOnly);
 		scriptCode = scriptFile.readAll();
@@ -649,6 +674,25 @@ void VideoInformationPlugin::fromScriptValue_VideoDefinition(const QScriptValue 
 	vd.userAgent = obj.property("userAgent").toString();
 }
 
+QScriptValue VideoInformationPlugin::create_ServiceLoginInformation(QScriptContext *, QScriptEngine *engine)
+{
+	return engine->toScriptValue(ServiceLoginInformation());
+}
+
+QScriptValue VideoInformationPlugin::toScriptValue_ServiceLoginInformation(QScriptEngine *engine, const ServiceLoginInformation &sli)
+{
+	QScriptValue obj = engine->newObject();
+	obj.setProperty("userName", QScriptValue(engine, sli.userName));
+	obj.setProperty("password", QScriptValue(engine, sli.password));
+	return obj;
+}
+
+void VideoInformationPlugin::fromScriptValue_ServiceLoginInformation(const QScriptValue &obj, ServiceLoginInformation &sli)
+{
+	sli.userName = obj.property("userName").toString();
+	sli.password = obj.property("password").toString();
+}
+
 QScriptValue VideoInformationPlugin::func_isPluginInstalled(QScriptContext *context, QScriptEngine *engine)
 {
 	if (context->argumentCount() == 1)
@@ -703,6 +747,17 @@ QScriptValue VideoInformationPlugin::func_programVersionNumber(QScriptContext *,
 	return engine->newVariant(QVariant(PROGRAM_VERSION_NUMBER));
 }
 
+QScriptValue VideoInformationPlugin::func_loginPrompt(QScriptContext *context, QScriptEngine *engine)
+{
+	ScriptEngineExt *engineExt = static_cast<ScriptEngineExt *>(engine);
+	// init params
+	bool lastLoginFailed = false;
+	// get parameters
+	if (context->argumentCount() == 1) lastLoginFailed = context->argument(0).toBool();
+	// get login information
+	return engine->toScriptValue(VideoInformation::instance()->serviceLoginInfo(engineExt->getVideoInformationPlugin(), lastLoginFailed));
+}
+
 VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 {
 	VideoDefinition result;
@@ -711,12 +766,17 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	if (!isLoaded()) return result;
 
 	// plugin script engine
-	engine = new QScriptEngine();
+	engine = new ScriptEngineExt(this);
 
 	// create and regist VideoDefinition
 	qScriptRegisterMetaType(engine, toScriptValue_VideoDefinition, fromScriptValue_VideoDefinition);
 	QScriptValue ctor_VidDef = engine->newFunction(create_VideoDefinition);
 	engine->globalObject().setProperty("VideoDefinition", ctor_VidDef);
+
+	// create and regist ServiceLoginInformation
+	qScriptRegisterMetaType(engine, toScriptValue_ServiceLoginInformation, fromScriptValue_ServiceLoginInformation);
+	QScriptValue ctor_SerLogInf = engine->newFunction(create_ServiceLoginInformation);
+	engine->globalObject().setProperty("ServiceLoginInformation", ctor_SerLogInf);
 
 	// regist isPluginInstalled(id) function
 	QScriptValue _isPluginInstalled = engine->newFunction(func_isPluginInstalled);
@@ -737,6 +797,10 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	// regist programVersionNumber() function
 	QScriptValue _programVersionNumber = engine->newFunction(func_programVersionNumber);
 	engine->globalObject().setProperty("programVersionNumber", _programVersionNumber);
+
+	// regist loginPrompt() function
+	QScriptValue _loginPrompt = engine->newFunction(func_loginPrompt);
+	engine->globalObject().setProperty("loginPrompt", _loginPrompt);
 
 	// create and regist the script tools class
 	ToolsScriptClass *toolsClass = new ToolsScriptClass(engine);
@@ -795,7 +859,7 @@ SearchResults VideoInformationPlugin::searchVideos(const QString keyWords, const
 	if (!isLoaded() || !isSearchEngineAvailable()) return result;
 
 	// plugin script engine
-	engine = new QScriptEngine();
+	engine = new QScriptEngine(this);
 
 	// create and regist the script tools class
 	ToolsScriptClass *toolsClass = new ToolsScriptClass(engine);
