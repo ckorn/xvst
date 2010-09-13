@@ -98,7 +98,7 @@ HEADERS = src/forms/addvideoimpl.h \
     src/videolistcontroller.h \
     src/xprogressbar.h \
 	src/rtmp.h \
-    src/serviceskeychain.h
+	src/serviceskeychain.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/searchvideositemimpl.cpp \
     src/forms/bugreportimpl.cpp \
@@ -183,9 +183,13 @@ macx {
     OBJECTS_DIR = build/o/mac
     TARGET = xVideoServiceThief
     QMAKE_INFO_PLIST = Info.plist
-    LIBS += -framework Cocoa -framework WebKit
-    OBJECTIVE_SOURCES += src/webkit_mac/WebKitClass.mm
-    HEADERS += src/webkit_mac/WebKitClass.h
+	LIBS += -framework Cocoa -framework WebKit
+	OBJECTIVE_SOURCES += \
+		src/webkit_mac/WebKitClass.mm \
+		src/mac_only/mac_tools.mm
+	HEADERS += \
+		src/webkit_mac/WebKitClass.h \
+		src/mac_only/mac_tools.h
     CONFIG(release, debug|release) { 
         message(Release build! Archs: 32 and 64 bits)
         CONFIG += x86 x86_64
