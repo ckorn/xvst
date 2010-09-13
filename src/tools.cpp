@@ -282,9 +282,13 @@ int compareVersions(QString version1, QString version2)
 		return 0;
 	else
 	{
-		// replace comas for dots
-		QString s1 = QString(version1).replace(",", ".");
-		QString s2 = QString(version2).replace(",", ".");
+		QString s1 = version1;
+		QString s2 = version2;
+		// replace comas and "_" for dots
+		s1 = s1.replace(",", ".");
+		s1 = s1.replace("_", ".");
+		s2 = s2.replace(",", ".");
+		s2 = s2.replace("_", ".");
 		// get the version with more "fields" (x.x.x.x)
 		int num1 = getTokenCount(s1, ".");
 		int num2 = getTokenCount(s1, ".");
