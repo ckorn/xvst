@@ -125,11 +125,11 @@
     </message>
     <message>
         <source>Select url&apos;s file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona indirizzo del file</translation>
     </message>
     <message>
         <source>Select file with URLs</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il file con l&apos;indirizzo</translation>
     </message>
 </context>
 <context>
@@ -164,23 +164,23 @@
     </message>
     <message>
         <source>No valid URLs detected in this file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessun indirizzo valido rilevato per questo file</translation>
     </message>
     <message>
         <source>%1 valid URLs detected in this file</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 indirizzo/i valido/i rilevato/i per questo file</translation>
     </message>
     <message>
         <source> (%1 selected)</source>
-        <translation type="unfinished"></translation>
+        <translation> (%1 selezionato/i)</translation>
     </message>
     <message>
         <source>Select URL&apos;s file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona l&apos;indirizzo del file</translation>
     </message>
     <message>
         <source>select URLs to download</source>
-        <translation type="unfinished"></translation>
+        <translation>seleziona l&apos;indirizzo del download</translation>
     </message>
 </context>
 <context>
@@ -1387,62 +1387,62 @@ font-size:12px;
     </message>
     <message>
         <source>Delete download</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina download</translation>
     </message>
     <message>
         <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi eliminare il download di &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Delete downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina downloads</translation>
     </message>
     <message>
         <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi cancellare i &lt;b&gt;%1&lt;/b&gt; downloads selezionati?</translation>
     </message>
     <message>
         <source>Clear list</source>
-        <translation type="unfinished">Svuota elenco</translation>
+        <translation>Svuota elenco</translation>
     </message>
     <message>
         <source>Are you sure to clear the downloads list?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sicuro di voler cancellare l&apos;elenco dei downloads?</translation>
     </message>
 </context>
 <context>
     <name>MultiURLs</name>
     <message>
         <source>Multiple URLs</source>
-        <translation type="unfinished"></translation>
+        <translation>Indirizzi multipli</translation>
     </message>
     <message>
         <source>Select which URLs you want add:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona l&apos;indirizzo da aggiungere:</translation>
     </message>
     <message>
         <source>Add the current URL and close this dialog</source>
-        <translation type="unfinished">Aggiungi l&apos;attuale indirizzo e chiudi questa finestra</translation>
+        <translation>Aggiungi l&apos;attuale indirizzo e chiudi questa finestra</translation>
     </message>
     <message>
         <source>Ok button</source>
-        <translation type="unfinished">Pulsante OK</translation>
+        <translation>Pulsante OK</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Close without adding the URL</source>
-        <translation type="unfinished">Chiudi senza aggiungere l&apos;indirizzo</translation>
+        <translation>Chiudi senza aggiungere l&apos;indirizzo</translation>
     </message>
     <message>
         <source>Cancel button</source>
-        <translation type="unfinished">Pulsante Annulla</translation>
+        <translation>Pulsante Annulla</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>
@@ -2909,7 +2909,7 @@ font-size:12px;
     </message>
     <message>
         <source>MP4 HD Format (*.mp4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato MP4 HD (*.mp4)</translation>
     </message>
 </context>
 <context>
