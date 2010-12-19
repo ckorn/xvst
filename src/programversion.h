@@ -26,6 +26,8 @@
 #ifndef __PROGRAMVERSION_H__
 #define __PROGRAMVERSION_H__
 
+#include <QString>
+
 static const QString PROGRAM_VERSION		= "2.4.2"; 	//!< Current program version
 static const QString PROGRAM_VERSION_SHORT	= "2.4.2";	//!< Current program version (short version)
 static const int	 PROGRAM_VERSION_NUMBER	= 242;		//!< Current program version (numeric version)
