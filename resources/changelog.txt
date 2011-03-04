@@ -1,3 +1,30 @@
+2.4.2:
+------
+
+- Compiled with Qt 4.7.2
+
+- Added bulgarian translation (thanks to Vasil Stoev)
+- Added finnish translation (thanks to Tuomas Lähteenmäki)
+
+- Improved the program version comparation algorithm
+
+- Changed plug-ins:
+	- YouTube
+	- Google Videos
+
+Mac OS X:
+---------
+
+- Improved dialogs (replaced with native Cocoa dialogs)
+
+2.4.1.1:
+--------
+
+Mac OS X:
+---------
+
+- Fixed bug (Error: ffmpeg memory fail on Mac OS X on 32 bits)
+
 2.4.1:
 ------
 
