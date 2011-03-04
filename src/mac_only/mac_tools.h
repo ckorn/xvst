@@ -26,11 +26,15 @@
 #ifndef MAC_TOOLS_H
 #define MAC_TOOLS_H
 
+class QString;
+
 /*! Get if we are running Mac OS X 10.5.x or 10.6.x */
 int getCurrentMacOSXVersion();
 /*! Get if we are running Leopard (10.5.x) */
 bool isRunningLeopard();
 /*! Get if we are running Snow Leopard (10.6.x) */
 bool isRunningSnowLeopard();
+/*! Display a native Mac OS X native dialog */
+int alert(int icon, QString messageText, QString informativeText, QString defaultButton, QString alternateButton, QString otherButton);
 
 #endif //MAC_TOOLS_H

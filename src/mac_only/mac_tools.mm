@@ -26,6 +26,7 @@
 #include "mac_tools.h"
 
 #import <Cocoa/Cocoa.h>
+#import <QtGui>
 
 int getCurrentMacOSXVersion()
 {
@@ -44,4 +45,39 @@ bool isRunningLeopard()
 bool isRunningSnowLeopard()
 {
 	return getCurrentMacOSXVersion() >= 0x1060;
+}
+
+CFStringRef qstringToCFStringRef(const QString &string)
+{
+	return CFStringCreateWithCharacters(0, reinterpret_cast<const UniChar *>(string.unicode()), string.length());
+}
+
+NSString *qstringToNSString(const QString &qstr)
+{
+	return [reinterpret_cast<const NSString *>(qstringToCFStringRef(qstr)) autorelease];
+}
+
+int alert(int icon, QString messageText, QString informativeText, QString defaultButton, QString alternateButton, QString otherButton)
+{
+	// create native alert
+	NSAlert *alert = [NSAlert alertWithMessageText:qstringToNSString(messageText)
+									  defaultButton:qstringToNSString(defaultButton)
+								   alternateButton:qstringToNSString(alternateButton)
+									   otherButton:qstringToNSString(otherButton)
+						 informativeTextWithFormat:qstringToNSString(informativeText)];
+	// configure alert style
+	switch (icon)
+	{
+		case QMessageBox::Warning		: [alert setAlertStyle:NSWarningAlertStyle]; break;
+		case QMessageBox::Information	: [alert setAlertStyle:NSInformationalAlertStyle]; break;
+		case QMessageBox::Critical		: [alert setAlertStyle:NSCriticalAlertStyle]; break;
+	}
+	// display alert
+	NSInteger userSelection = [alert runModal];
+	// convert result to Qt style
+	if (otherButton != NULL && !otherButton.isEmpty()) userSelection = 2 - userSelection;
+	else if (alternateButton != NULL && !alternateButton.isEmpty()) userSelection = 1 - userSelection;
+	else userSelection = 0;
+	// return user selection
+	return userSelection;
 }
