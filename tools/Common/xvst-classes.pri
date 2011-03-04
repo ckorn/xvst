@@ -31,3 +31,12 @@ HEADERS += \
 
 FORMS += \
 	../../ui/loginprompt.ui
+
+macx {
+	LIBS += -framework Cocoa -framework WebKit
+	OBJECTIVE_SOURCES += \
+		../../src/mac_only/mac_tools.mm
+	HEADERS += \
+		../../src/mac_only/mac_tools.h
+}
+
