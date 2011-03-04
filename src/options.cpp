@@ -29,6 +29,10 @@
 #include "languages.h"
 #include "tools.h"
 
+#ifdef Q_WS_MAC
+#include "mac_only/mac_tools.h"
+#endif
+
 static ProgramOptions *programOptionsInstance = NULL;
 
 ProgramOptions::ProgramOptions(QString optionsPath)
@@ -439,7 +443,7 @@ bool ProgramOptions::getIfInternalFFmpegIsInstalled()
 
 QString ProgramOptions::getInternalFFmpegPath()
 {
-	return QDir::cleanPath(appDir.absolutePath() + "/../Resources/tools/ffmpeg");
+	return QDir::cleanPath(appDir.absolutePath() + "/../Resources/tools/ffmpeg" + (isRunningSnowLeopard() ? "_universal" : "_x86"));
 }
 #endif
 
