@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>777</width>
-    <height>458</height>
+    <width>781</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -425,7 +425,7 @@
          <property name="title">
           <string>Language Configuration </string>
          </property>
-         <layout class="QGridLayout" name="gridLayout">
+         <layout class="QGridLayout" name="gridLayout_1">
           <item row="0" column="0">
            <widget class="QLabel" name="lblSelectLanguage">
             <property name="text">
@@ -617,7 +617,7 @@
      <widget class="QWidget" name="pgSession">
       <layout class="QGridLayout">
        <item row="0" column="1">
-        <spacer>
+        <spacer name="spacer_3">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -630,7 +630,7 @@
         </spacer>
        </item>
        <item row="1" column="0">
-        <spacer>
+        <spacer name="spacer_4">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -652,7 +652,7 @@
            <number>12</number>
           </property>
           <item row="0" column="0">
-           <layout class="QVBoxLayout">
+           <layout class="QVBoxLayout" name="boxLayout_5">
             <item>
              <widget class="QCheckBox" name="chbSaveRestore">
               <property name="whatsThis">
@@ -670,9 +670,9 @@
              </widget>
             </item>
             <item>
-             <layout class="QHBoxLayout">
+             <layout class="QHBoxLayout" name="boxLayout_6">
               <item>
-               <spacer>
+               <spacer name="spacer_6">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
                 </property>
@@ -706,7 +706,7 @@
              </layout>
             </item>
             <item>
-             <spacer>
+             <spacer name="spacer_7">
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -738,9 +738,9 @@
              </widget>
             </item>
             <item>
-             <layout class="QHBoxLayout">
+             <layout class="QHBoxLayout" name="boxLayout_7">
               <item>
-               <spacer>
+               <spacer name="spacer_8">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
                 </property>
@@ -807,7 +807,7 @@
         </widget>
        </item>
        <item row="1" column="3">
-        <spacer>
+        <spacer name="spacer_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -820,7 +820,7 @@
         </spacer>
        </item>
        <item row="2" column="2">
-        <spacer>
+        <spacer name="spacer_5">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -837,7 +837,7 @@
      <widget class="QWidget" name="pgUpdates">
       <layout class="QGridLayout">
        <item row="0" column="1">
-        <spacer>
+        <spacer name="spacer_12">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -850,7 +850,7 @@
         </spacer>
        </item>
        <item row="1" column="0">
-        <spacer>
+        <spacer name="spacer_11">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -888,7 +888,7 @@
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
-           <layout class="QHBoxLayout">
+           <layout class="QHBoxLayout" name="boxLayout_8">
             <item>
              <widget class="QLabel" name="lblUpdateEvery">
               <property name="text">
@@ -912,7 +912,7 @@
            </layout>
           </item>
           <item row="2" column="0">
-           <spacer>
+           <spacer name="spacer_14">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -966,7 +966,7 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <spacer>
+           <spacer name="spacer_13">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -982,7 +982,7 @@
         </widget>
        </item>
        <item row="2" column="2">
-        <spacer>
+        <spacer name="spacer_9">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -995,7 +995,7 @@
         </spacer>
        </item>
        <item row="3" column="1">
-        <spacer>
+        <spacer name="spacer_10">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -1061,9 +1061,9 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <layout class="QVBoxLayout">
+           <layout class="QVBoxLayout" name="boxLayout_9">
             <item>
-             <spacer>
+             <spacer name="spacer_16">
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -1140,7 +1140,7 @@
              </widget>
             </item>
             <item>
-             <spacer>
+             <spacer name="spacer_15">
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -1798,7 +1798,7 @@
                 </widget>
                </item>
                <item row="2" column="3" rowspan="2">
-                <layout class="QVBoxLayout" name="_3">
+                <layout class="QVBoxLayout" name="boxLayout_3">
                  <item>
                   <widget class="QLabel" name="lblPort">
                    <property name="text">
@@ -1911,7 +1911,7 @@
          </item>
         </layout>
        </item>
-       <item row="0" column="2">
+       <item row="0" column="2" rowspan="2">
         <spacer name="horizontalSpacer_6">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -1924,7 +1924,7 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="0">
+       <item row="0" column="0" rowspan="2">
         <spacer name="horizontalSpacer_5">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -1955,7 +1955,7 @@
      <widget class="QWidget" name="page">
       <layout class="QGridLayout">
        <item row="0" column="1">
-        <spacer>
+        <spacer name="spacer_20">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -1968,7 +1968,7 @@
         </spacer>
        </item>
        <item row="1" column="0">
-        <spacer>
+        <spacer name="spacer_18">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -2021,7 +2021,7 @@
         </widget>
        </item>
        <item row="1" column="2">
-        <spacer>
+        <spacer name="spacer_17">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -2034,7 +2034,7 @@
         </spacer>
        </item>
        <item row="2" column="1">
-        <spacer>
+        <spacer name="spacer_19">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -2051,7 +2051,7 @@
     </widget>
    </item>
    <item row="1" column="0" colspan="2">
-    <layout class="QHBoxLayout">
+    <layout class="QHBoxLayout" name="boxLayout_4">
      <item>
       <widget class="QCheckBox" name="chbRememberView">
        <property name="toolTip">
@@ -2075,7 +2075,7 @@
       </widget>
      </item>
      <item>
-      <spacer>
+      <spacer name="spacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
