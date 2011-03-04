@@ -120,10 +120,7 @@ void CheckUpdatesWorker::updatesChecked(bool hasUpdates)
 		waitThread();
 		// display no updates message (only if is an user request)
 		if (isUser)
-			QMessageBox::information(parentForm,
-									 tr("Updates"),
-									 tr("You are using the most recent version of this program."),
-									 tr("Ok"));
+			native_alert(parentForm, QMessageBox::Information, tr("Updates"), tr("You are using the most recent version of this program."),	tr("Ok"));
 		// set as closed by button
 		closedByButton = true;
 		// close
@@ -136,12 +133,8 @@ void CheckUpdatesWorker::updateMessage(QString version, QString url)
 	// wait thread end
 	waitThread();
 	// display special updates message
-	QMessageBox::information(parentForm,
-							tr("Update Center"),
-							tr("Please, download the new version of <b>xVideoServiceThief (%1)</b> from <a href='%2'>here.</a>")
-							.arg(version).arg(url), //message,
-							tr("Ok"),
-							QString(), 0, 1);
+	native_alert(parentForm, QMessageBox::Information, tr("Update Center"),
+				 tr("Please, download the new version of <b>xVideoServiceThief (%1)</b> from <a href='%2'>here.</a>").arg(version).arg(url), tr("Ok"));
 	// set as closed by button
 	closedByButton = true;
 	// close
