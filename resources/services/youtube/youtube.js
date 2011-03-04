@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2010 Xesc & Technology
+* Copyright (C) 2007 - 2011 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "2.1.5";
+	this.version = "2.1.10";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2009";
+	this.author = "Xesc & Technology 2011";
 	this.website = "http://www.youtube.com/";
 	this.ID = "youtube.com";
 	this.caption = "YouTube";
@@ -58,6 +58,8 @@ function getVideoInformation(url)
 	// get the video title
 	result.title = copyBetween(html, "<title>", "</title>");
 	result.title = normalizeSpaces(result.title);
+	result.title = strReplace(result.title, "\n", "");
+	result.title = strReplace(result.title, "YouTube - ", "");
 	// check if this video need a login
 	result.needLogin = result.title == "Broadcast Yourself.";
 	// if we can continue (no loggin needed)
@@ -99,9 +101,11 @@ function normalizeSpaces(str)
 function searchVideos(keyWord, pageIndex)
 {
 	const URL_SEARCH = "http://www.youtube.com/results?search_query=%1&page=%2&hl=%3";
-	const HTML_SEARCH_START = "<!-- start search results -->";
-	const HTML_SEARCH_FINISH = "<!-- end search results -->";
-	const HTML_SEARCH_SEPARATOR = '<div class="video-entry">';
+	const HTML_SEARCH_START = '<div id="search-results">';
+	const HTML_SEARCH_FINISH = '<div class="search-related">';
+	const HTML_SEARCH_SEPARATOR = '<div class="result-item *sr ">';
+	const HTML_SEARCH_SUMMARY_START = '<p class="num-results">';
+	const HTML_SEARCH_SUMMARY_END = '</p>';
 	// replace all spaces for "+"
 	keyWord = strReplace(keyWord, " ", "+");
 	// init search results object
@@ -110,7 +114,7 @@ function searchVideos(keyWord, pageIndex)
 	var http = new Http();
 	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex, searchResults.getUserLanguage()));
 	// get the search summary
-	var summary = copyBetween(html, '<div id="search-num-results" class="name">', '</div>');
+	var summary = copyBetween(html, HTML_SEARCH_SUMMARY_START, HTML_SEARCH_SUMMARY_END);
 	searchResults.setSummary(cleanSummary(summary));
 	// get results html block
 	var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
@@ -148,14 +152,18 @@ function parseResultItem(searchResults, html)
 	var tmp, videoUrl, imageUrl, title, description, duration, rating;
 	// get video url
 	videoUrl = VIDEO_URL + copyBetween(html, 'href="', '"');
-	// get title and image url
+	// get image url
 	tmp = copyBetween(html, '<img', '>') ;
-	title = copyBetween(tmp, 'title="', '"');
 	imageUrl = copyBetween(tmp, 'src="', '"');
 	if (strIndexOf(imageUrl, "default.jpg") == -1) // if is not a "default.jpg"...
 		imageUrl = copyBetween(tmp, 'thumb="', '"');
+	imageUrl = "http:" + imageUrl;
+	// get video title
+	title = copyBetween(html, '<h3 id="video-long-title-', '</a>');
+	title = copyBetween(title, 'title="', '"');
 	// get video description
-	description = copyBetween(html, 'class="video-description">', '</div>');
+	description = copyBetween(html, '<p id="video-description-', '</p>');
+	description = copyBetween(description + '|', '>', '|');
 	// get video duration
 	duration = convertToSeconds(copyBetween(html, '<span class="video-time">', '</span>'));
 	// get rating
