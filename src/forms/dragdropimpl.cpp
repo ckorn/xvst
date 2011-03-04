@@ -177,10 +177,8 @@ void DragDropImpl::addVideo(QString URL)
 	// check if we already added this video
 	if (videoList->isAlreadyAdded(URL))
 	{
-		QMessageBox::information(this,
-								tr("Already added"),
-								tr("You already added this video. Check your downloads list."),
-								tr("Ok"));
+		native_alert(this, QMessageBox::Information, tr("Already added"),
+					 tr("You already added this video. Check your downloads list."), tr("Ok"));
 		// abort current process
 		return;
 	}

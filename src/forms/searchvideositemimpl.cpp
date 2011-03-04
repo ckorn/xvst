@@ -125,16 +125,13 @@ void SearchVideosItemImpl::linkActivated(const QString &link)
 		if (canBeDownloaded)
 			VideoListController::instance()->addVideo(link);
 		else // ops, its not possible add this video
-			QMessageBox::information(this,
-									tr("Missing plugin"),
-									tr("<p>Is not possible to download this video.</p><p>The xVST didn't find any plugin capable to get the video information.</p>"),
-									tr("Ok"));
+			native_alert(this, QMessageBox::Information, tr("Missing plugin"),
+						 tr("<p>Is not possible to download this video.</p><p>The xVST didn't find any plugin capable to get the video information.</p>"),
+						 tr("Ok"));
 	}
 	else // already added
-		QMessageBox::information(this,
-								tr("Already added"),
-								tr("You already added this video. Check your downloads list."),
-								tr("Ok"));
+		native_alert(this, QMessageBox::Information, tr("Already added"),
+					 tr("You already added this video. Check your downloads list."), tr("Ok"));
 }
 
 QString SearchVideosItemImpl::toStars(double rating)

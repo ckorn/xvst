@@ -366,10 +366,8 @@ void MainFormImpl::closeEvent(QCloseEvent *event)
 {
 	if (videoList->isWorking())
 	{
-		if (QMessageBox::question(this,
-								  tr("Closing..."),
-		                          tr("xVideoServiceThief is working, do you wish Pause the current work?"),
-		                          tr("Yes"), tr("No"), QString(), 0, 1) == 0)
+		if (native_alert(this, QMessageBox::Question, tr("Closing..."), tr("xVideoServiceThief is working, do you wish Pause the current work?"),
+			tr("Yes"), tr("No")) == 0)
 		{
 			videoList->stop();
 			videoList->pauseAllDownloads();
@@ -436,10 +434,8 @@ void MainFormImpl::updatesClicked()
 {
 	if (videoList->isWorking())
 	{
-		QMessageBox::information(this,
-								 tr("Updates"),
-								 tr("Another process is currently working, please stop it or wait until the end of process."),
-								 tr("Ok"));
+		native_alert(this, QMessageBox::Information, tr("Updates"),
+					 tr("Another process is currently working, please stop it or wait until the end of process."), tr("Ok"));
 		return;
 	}
 
@@ -548,15 +544,13 @@ void MainFormImpl::deleteVideoClicked()
 	// ask before delete the video(s)
 	if (videoItems.count() == 1) // only one item
 	{
-		if (QMessageBox::question(this, tr("Delete download"),
-								  tr("Wish you delete the download of <b>%1</b>?").arg(videoItems.first()->getDisplayLabel()),
-								  tr("Yes"), tr("No"), QString(), 0, 1) != 0) return;
+		if (native_alert(this, QMessageBox::Question, tr("Delete download"), tr("Wish you delete the download of <b>%1</b>?").arg(videoItems.first()->getDisplayLabel()),
+			tr("Yes"), tr("No")) != 0) return;
 	}
 	else // more than 1 item
 	{
-		if (QMessageBox::question(this, tr("Delete downloads"),
-								  tr("Wish you delete the <b>%1</b> selected downloads?").arg(videoItems.count()),
-								  tr("Yes"), tr("No"), QString(), 0, 1) != 0) return;
+		if (native_alert(this, QMessageBox::Question, tr("Delete downloads"), tr("Wish you delete the <b>%1</b> selected downloads?").arg(videoItems.count()),
+			tr("Yes"), tr("No")) != 0) return;
 	}
 
 	// delete all selected items
@@ -625,15 +619,13 @@ void MainFormImpl::cancelDownloadVideoClicked()
 	{
 		if (videoItems.count() == 1) // only one item
 		{
-			if (QMessageBox::question(this, tr("Cancel download"),
-									  tr("Wish you cancel the download of <b>%1</b>?").arg(videoItems.first()->getDisplayLabel()),
-									  tr("Yes"), tr("No"), QString(), 0, 1) != 0) return;
+			if (native_alert(this, QMessageBox::Question, tr("Cancel download"), tr("Wish you cancel the download of <b>%1</b>?").arg(videoItems.first()->getDisplayLabel()),
+				tr("Yes"), tr("No")) != 0) return;
 		}
 		else // more than 1 item
 		{
-			if (QMessageBox::question(this, tr("Cancel downloads"),
-									  tr("Wish you cancel the <b>%1</b> selected downloads?").arg(videoItems.count()),
-									  tr("Yes"), tr("No"), QString(), 0, 1) != 0) return;
+			if (native_alert(this, QMessageBox::Question, tr("Cancel downloads"), tr("Wish you cancel the <b>%1</b> selected downloads?").arg(videoItems.count()),
+				tr("Yes"), tr("No")) != 0) return;
 		}
 		// cancel all selected items
 		foreach (VideoItem *videoItem, videoItems)
@@ -669,10 +661,7 @@ void MainFormImpl::moreOptionsClicked()
 
 void MainFormImpl::clearListClicked()
 {
-	if (QMessageBox::question(this,
-							  tr("Clear list"),
-							  tr("Are you sure to clear the downloads list?"),
-							  tr("Yes"), tr("No"), QString(), 0, 1) == 0)
+	if (native_alert(this, QMessageBox::Question, tr("Clear list"), tr("Are you sure to clear the downloads list?"), tr("Yes"), tr("No")) == 0)
 	{
 		videoList->clear(true);
 		// update controls
@@ -738,10 +727,9 @@ void MainFormImpl::viewErrorMessageClicked()
 	QList<VideoItem *> videoItems = getSelectedVideoItems();
 	// only one item error can be displayed
 	if (videoItems.count() == 1)
-		QMessageBox::information(this,
-								tr("Error message"),
-								tr("This video has the following error:<br><br><b>%1</b>").arg(videoItems.first()->getErrorMessage()),
-								tr("Ok"));
+		native_alert(this, QMessageBox::Information, tr("Error message"),
+					 tr("This video has the following error:<br><br><b>%1</b>").arg(videoItems.first()->getErrorMessage()),
+					 tr("Ok"));
 }
 
 void MainFormImpl::searchVideosClicked()
@@ -988,10 +976,9 @@ void MainFormImpl::checkForUpdates()
 			spbUpdates->setEnabled(false);
 			// running the app for 1st time? then display this warning message
 			if (programOptions->getFirstTime())
-				QMessageBox::information(this,
-										 tr("Updates"),
-										 tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
-										 tr("Ok"));
+				native_alert(this, QMessageBox::Information, tr("Updates"),
+							 tr("xUpdater application is missing.<br><br>Reinstall xVideoServiceThief if you want update automatically the program."),
+							 tr("Ok"));
 			// start the download list
 			videoList->start();
 			// ok, no more first time
@@ -1445,10 +1432,7 @@ bool MainFormImpl::canAddThisVideo(QString URL)
 {
 	if (videoList->isAlreadyAdded(URL))
 	{
-		QMessageBox::information(this,
-								tr("Already added"),
-								tr("You already added this video. Check your downloads list."),
-								tr("Ok"));
+		native_alert(this, QMessageBox::Information, tr("Already added"), tr("You already added this video. Check your downloads list."), tr("Ok"));
 		// can't add this video
 		return false;
 	}

@@ -165,10 +165,7 @@ void BugReportImpl::trackerReportSent(QString result)
 	
 	if (result.isEmpty())
 	{
-		QMessageBox::information(this,
-								 "SourceForge.net Tracker",
-								 tr("Thank you for your report."),
-								 tr("Ok"));
+		native_alert(this, QMessageBox::Information, "SourceForge.net Tracker", tr("Thank you for your report."), tr("Ok"));
 	}
 	else // display the web message
 	{
@@ -176,10 +173,8 @@ void BugReportImpl::trackerReportSent(QString result)
 		QString msg2 = copyBetween(result, "<p>", "<br>").trimmed();
 		QString msg3 = copyBetween(result, "<a href='", "'>").trimmed();
 		//
-		QMessageBox::information(this,
-								 QString("SourceForge.net Tracker: %1").arg(msg1),
-								 QString("%1 <a href=\"%2\">%2</a>").arg(msg2).arg(msg3),
-								 tr("Ok"));
+		native_alert(this, QMessageBox::Information, QString("SourceForge.net Tracker: %1").arg(msg1),
+					 QString("%1 <a href=\"%2\">%2</a>").arg(msg2).arg(msg3), tr("Ok"));
 	}
 	done(QDialog::Accepted);
 }

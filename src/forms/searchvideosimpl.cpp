@@ -106,10 +106,7 @@ void SearchVideosImpl::btnSearchClicked()
 	{
 		if (customServices.isEmpty())
 		{
-			QMessageBox::information(this,
-									tr("Custom search"),
-									tr("Please, select one or more services."),
-									tr("Ok"));
+			native_alert(this, QMessageBox::Information, tr("Custom search"), tr("Please, select one or more services."), 	tr("Ok"));
 			// display custom search services
 			cmbSearchInActivated(cmbSearchIn->currentIndex());
 			// abort process

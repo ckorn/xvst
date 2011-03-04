@@ -80,23 +80,13 @@ void NewLanguagesImpl::lsvToInstallItemSelectionChanged()
 
 void NewLanguagesImpl::btnUninstallClicked()
 {
-	if (QMessageBox::question(this,
-							  tr("Uninstall language"),
-							  tr("Wish you uninstall the lanuage?"),
-							  tr("Yes"),
-							  tr("No"),
-							  QString(), 0, 1) == 0)
+	if (native_alert(this, QMessageBox::Question, tr("Uninstall language"), tr("Wish you uninstall the lanuage?"), tr("Yes"), tr("No")) == 0)
 		newLanguages->uninstallLanguage(lsvInstalled->currentIndex().row());
 }
 
 void NewLanguagesImpl::btnInstallClicked()
 {
-	if (QMessageBox::question(this,
-							  tr("Install language"),
-							  tr("Wish you install this new language?"),
-							  tr("Yes"),
-							  tr("No"),
-							  QString(), 0, 1) == 0)
+	if (native_alert(this, QMessageBox::Question, tr("Install language"), tr("Wish you install this new language?"), tr("Yes"), tr("No")) == 0)
 		newLanguages->installLanguage(lsvToInstall->currentIndex().row());
 }
 
@@ -122,20 +112,20 @@ void NewLanguagesImpl::installedLanguageRemoved(Language *language, bool removed
 {
 	if (!removed)
 		if (isWindowsVista())
-			QMessageBox::critical(this,
-								 tr("Language uninstall error"),
-								 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.<br><br><b>Note:</b> On Windows Vista you should execute the xVST as administrator before uninstall languages.").arg(language->getId()),
-								 tr("Ok"));
+			native_alert(this, QMessageBox::Critical,
+						 tr("Language uninstall error"),
+						 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.<br><br><b>Note:</b> On Windows Vista you should execute the xVST as administrator before uninstall languages.").arg(language->getId()),
+						 tr("Ok"));
 		else
-			QMessageBox::critical(this,
-								 tr("Language uninstall error"),
-								 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.").arg(language->getId()),
-								 tr("Ok"));
+			native_alert(this, QMessageBox::Critical,
+						 tr("Language uninstall error"),
+						 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.").arg(language->getId()),
+						 tr("Ok"));
 	else
-		QMessageBox::information(this,
-								 tr("Language uninstall"),
-								 tr("Language <b>%1</b> uninstalled.").arg(language->getId()),
-								 tr("Ok"));
+		native_alert(this, QMessageBox::Information,
+					 tr("Language uninstall"),
+					 tr("Language <b>%1</b> uninstalled.").arg(language->getId()),
+					 tr("Ok"));
 	// disable unnstall button
 	btnUninstall->setEnabled(false);
 }
@@ -170,20 +160,20 @@ void NewLanguagesImpl::afterInstallNewLanguage(Update *update, bool error)
 {
 	if (error)
 		if (isWindowsVista())
-			QMessageBox::critical(this,
-								 tr("Language install error"),
-								 tr("Some errors has ocurred on try install the selected <b>%1</b> language.<br><br><b>Note:</b> On Windows Vista you should execute the xVST as administrator before install new languages.").arg(update->getCaption()),
-								 tr("Ok"));
+			native_alert(this, QMessageBox::Critical,
+						 tr("Language install error"),
+						 tr("Some errors has ocurred on try install the selected <b>%1</b> language.<br><br><b>Note:</b> On Windows Vista you should execute the xVST as administrator before install new languages.").arg(update->getCaption()),
+						 tr("Ok"));
 		else
-			QMessageBox::critical(this,
-								 tr("Language install error"),
-								 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.").arg(update->getCaption()),
-								 tr("Ok"));
+			native_alert(this, QMessageBox::Critical,
+						 tr("Language install error"),
+						 tr("Some errors has ocurred on try uninstall the selected <b>%1</b> language.").arg(update->getCaption()),
+						 tr("Ok"));
 	else // no error
-		QMessageBox::information(this,
-								 tr("Language install"),
-								 tr("New language <b>%1</b> installed.").arg(update->getCaption()),
-								 tr("Ok"));
+		native_alert(this, QMessageBox::Information,
+					 tr("Language install"),
+					 tr("New language <b>%1</b> installed.").arg(update->getCaption()),
+					 tr("Ok"));
 	lblAction->hide();
 	pgbAction->hide();
 }

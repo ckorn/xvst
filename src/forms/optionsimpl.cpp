@@ -551,12 +551,7 @@ void OptionsImpl::spbEditSchedulePressed()
 
 void OptionsImpl::spbRemoveSchedulePressed()
 {
-	if (QMessageBox::question(this,
-							  tr("Remove schedule item"),
-							  tr("Wish you remove the selected schedule item?"),
-							  tr("Yes"),
-							  tr("No"),
-							  QString(), 0, 1) == 0)
+	if (native_alert(this, QMessageBox::Question, tr("Remove schedule item"), tr("Wish you remove the selected schedule item?"), tr("Yes"), tr("No")) == 0)
 	{
 		schedule->removeSchedule(lsvSchedules->currentIndex().row());
 		delete lsvSchedules->currentItem();
@@ -592,10 +587,8 @@ void OptionsImpl::chbDisableAdultSupportClicked(bool checked)
 			// compare passwords
 			if (password_MD5 != programOptions->getBlockAdultContentPassword())
 			{
-				QMessageBox::critical(this,
-									  tr("Invalid UPS! password"),
-									  tr("You entered an invalid UPS! password and the adults contents will continue locked."),
-									  tr("Ok"));
+				native_alert(this, QMessageBox::Critical, tr("Invalid UPS! password"),
+							 tr("You entered an invalid UPS! password and the adults contents will continue locked."), tr("Ok"));
 				// check again this option...
 				chbDisableAdultSupport->setChecked(true);
 			} // password is ok
@@ -679,11 +672,8 @@ void OptionsImpl::btnUseThisClicked()
 		item->setFont(0, oriFont);
 	}
 	// disply update message
-	QMessageBox::information(this,
-							 tr("Language Setup"),
-							 tr("In order to apply the new selected language, the program must be restarted."),
-							 tr("Ok"),
-							 QString(), 0, 1);
+	native_alert(this, QMessageBox::Information, tr("Language Setup"),
+				 tr("In order to apply the new selected language, the program must be restarted."), tr("Ok"));
 }
 
 void OptionsImpl::langItemDoubleClicked(QTreeWidgetItem* /*item*/, int /*column*/)
@@ -696,10 +686,9 @@ void OptionsImpl::btnCheckNowClicked()
 {
 	if (videoList->isWorking())
 	{
-		QMessageBox::information(this,
-								 tr("Updates"),
-								 tr("Another process is currently working, please stop it or wait until the end of process."),
-								 tr("Ok"));
+		native_alert(this, QMessageBox::Information, tr("Updates"),
+					 tr("Another process is currently working, please stop it or wait until the end of process."),
+					 tr("Ok"));
 		return;
 	}
 
@@ -797,12 +786,7 @@ void OptionsImpl::btnViewLogClicked()
 
 void OptionsImpl::btnClearLogClicked()
 {
-	if (QMessageBox::question(this,
-							  tr("Clear Log"),
-							  tr("Are you sure to clear the downloads/conversions historic file?"),
-							  tr("Yes"),
-							  tr("No"),
-							  QString(), 0, 1) == 0)
+	if (native_alert(this, QMessageBox::Question, tr("Clear Log"), tr("Are you sure to clear the downloads/conversions historic file?"), tr("Yes"), tr("No")) == 0)
 		sessionManager->clearLog();
 }
 

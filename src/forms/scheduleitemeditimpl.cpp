@@ -25,6 +25,8 @@
 
 #include "scheduleitemeditimpl.h"
 
+#include "../tools.h"
+
 ScheduleItemEditImpl::ScheduleItemEditImpl(QWidget *parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {
@@ -40,15 +42,15 @@ ScheduleItemEditImpl::ScheduleItemEditImpl(QWidget *parent, Qt::WFlags f)
 void ScheduleItemEditImpl::btnOkClicked()
 {
 	if (timerStart->time() > timerEnd->time())
-		QMessageBox::information(this,
-								tr("Invalid schedule configuration"),
-								tr("The start time cannot exceed the end time."),
-								tr("Ok"));
+		native_alert(this, QMessageBox::Warning,
+					 tr("Invalid schedule configuration"),
+					 tr("The start time cannot exceed the end time."),
+					 tr("Ok"));
 	else if (timerStart->time() == timerEnd->time())
-		QMessageBox::information(this,
-								tr("Invalid schedule configuration"),
-								tr("The start time and end time cannot be equals."),
-								tr("Ok"));
-	else
+		native_alert(this, QMessageBox::Warning,
+					 tr("Invalid schedule configuration"),
+					 tr("The start time and end time cannot be equals."),
+					 tr("Ok"));
+	else // ok
 		accept();
 }

@@ -187,10 +187,8 @@ QStringList AddVideoImpl::getSelectedURLs()
 void AddVideoImpl::btnOkClicked()
 {
 	if (VideoListController::instance()->isAlreadyAdded(edtURL->text()))
-		QMessageBox::information(this,
-								tr("Already added"),
-								tr("You already added this video. Check your downloads list."),
-								tr("Ok"));
+		native_alert(this, QMessageBox::Information, tr("Already added"),
+					 tr("You already added this video. Check your downloads list."), tr("Ok"));
 	else // all ok
 		done(QDialog::Accepted);
 }

@@ -184,10 +184,8 @@ void UpdateCenterImpl::readyToInstallUpdates()
 
 void UpdateCenterImpl::failedToInstallUpdates()
 {
-	QMessageBox::critical(this,
-						 tr("Updates center error"),
-						 tr("Some errors has ocurred on try download the new update(s)."),
-						 tr("Ok"));
+	native_alert(this, QMessageBox::Critical, tr("Updates center error"),
+				 tr("Some errors has ocurred on try download the new update(s)."), tr("Ok"));
 	// enable clancel button
 	btnCancel->setEnabled(true);
 	btnCancel->setDefault(true);
