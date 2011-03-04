@@ -120,6 +120,13 @@
 	/*! Convert a multi line string into a single line string (trimmed)  */
 	QString multiLineToSingleLine(QString text);
 
+	/*! Display a native dialog */
+	int native_alert(QWidget *parent, QMessageBox::Icon icon, QString messageText, QString informativeText, QString defaultButton,
+					 QString alternateButton = QString(), QString otherButton = QString());
+
+	/*! Strip html tokens from QString */
+	QString stripHtml(QString html);
+
 	/*! Convert a Decimal HTML Char into the respective HTML Code */
 	QString htmlCharToHtmlCode(QString html);
 	

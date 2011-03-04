@@ -29,6 +29,10 @@
 	#include <windows.h>
 #endif
 
+#ifdef Q_WS_MACX
+	#include "mac_only/mac_tools.h"
+#endif
+
 QString copy(QString str, int start, int end)
 {
 	end = end > str.length() ? str.length() : end;
@@ -387,6 +391,11 @@ QString getPathAndQuery(QUrl URL)
 	return QUrl(URL.path()).toEncoded() + params;
 }
 
+QString stripHtml(QString html)
+{
+	return QTextEdit(html).toPlainText();
+}
+
 QString htmlCharToHtmlCode(QString html)
 {
 	bool ok;
@@ -567,3 +576,27 @@ QString multiLineToSingleLine(QString text)
 	// return the normalized text
 	return result;
 }
+
+#ifdef Q_WS_MACX
+int native_alert(QWidget *, QMessageBox::Icon icon, QString messageText, QString informativeText, QString defaultButton,
+				 QString alternateButton, QString otherButton)
+{
+	return alert(icon, stripHtml(messageText), stripHtml(informativeText), defaultButton, alternateButton, otherButton);
+}
+#else
+int native_alert(QWidget *parent, QMessageBox::Icon icon, QString messageText, QString informativeText, QString defaultButton,
+				 QString alternateButton, QString otherButton)
+{
+	switch (icon)
+	{
+		case QMessageBox::Warning:
+			return QMessageBox::warning(parent, messageText, informativeText, defaultButton, alternateButton, otherButton, 0, 1);
+		case QMessageBox::Critical:
+			return QMessageBox::critical(parent, messageText, informativeText, defaultButton, alternateButton, otherButton, 0, 1);
+		case QMessageBox::Question:
+			return QMessageBox::question(parent, messageText, informativeText, defaultButton, alternateButton, otherButton, 0, 1);
+		case QMessageBox::Information: default:
+			return QMessageBox::information(parent, messageText, informativeText, defaultButton, alternateButton, otherButton, 0, 1);
+	}
+}
+#endif
