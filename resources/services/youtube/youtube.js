@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "2.1.10";
+	this.version = "3.0.1";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2011";
 	this.website = "http://www.youtube.com/";
@@ -55,32 +55,101 @@ function getVideoInformation(url)
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(youTubeURL);
+	// get cookies
+	result.cookies = http.getCookies("|");
 	// get the video title
 	result.title = copyBetween(html, "<title>", "</title>");
 	result.title = normalizeSpaces(result.title);
 	result.title = strReplace(result.title, "\n", "");
-	result.title = strReplace(result.title, "YouTube - ", "");
+	result.title = strReplace(result.title, " - YouTube", "");
 	// check if this video need a login
-	result.needLogin = result.title == "Broadcast Yourself.";
+	result.needLogin = strIndexOf(html, "signing_in") != -1;
 	// if we can continue (no loggin needed)
 	if (result.needLogin) return result;
-	// get the video info block
-	var dirtyUrl = copyBetween(html, "fmt_stream_map=", "34%7Chttp");
-	// we have an empty "dirtyUrl"?? if yes then we give it a second try
-	if (dirtyUrl == "") dirtyUrl = copyBetween(html, "fmt_url_map=", "&") + "&";
-	// get the video resolution
-	var vidRes = getToken(dirtyUrl, "%7C", 0);
-	// check if is a HD_VIDEO_RES (for HD videos the extension is mp4)
-	if (vidRes == HD_VIDEO_RES) result.extension = ".mp4";
-	// get the video url
-	result.URL = getToken(dirtyUrl, "%7C", 1);
-	// convert the hex codes to ascii
-	result.URL = cleanUrl(result.URL);
-	// remove the last "," and replace it with an "&" (if is needed)
-	if (strLastIndexOf(result.URL, "&") < strLastIndexOf(result.URL, ","))
-		result.URL = strRemove(result.URL, strLastIndexOf(result.URL, ","), result.URL.toString().length) + "&";		
+	// get the video URL and extension
+	var videoInfo = getVideoUrlAndExtension(html);
+	result.URL = videoInfo.url;
+	result.extension = videoInfo.extension;
 	// return the video information
 	return result;
+}
+
+function getVideoUrlAndExtension(html)
+{
+	// init result
+	var result = { url:null, extension:null };
+	// get the flashVars value
+	var flashVars = "?" + copyBetween(html, 'flashvars="', '"');
+	// convert each "&amp;" into "&"
+	flashVars = strReplace(flashVars, "&amp;", "&");
+	// get an array with all fmt_stream_map values
+	var fmt_stream_map_arr = splitString(getUrlParam(flashVars, "url_encoded_fmt_stream_map"), "url%3D", false);
+	// default selected video quality
+	var selectedFormat = -1;
+	// detect the better quality
+	for (var n = 0; n < fmt_stream_map_arr.length && selectedFormat == -1; n++)
+	{
+		fmt_stream_map_arr[n] = "?url=" + cleanUrl(fmt_stream_map_arr[n]).toString();
+		// remove the last "," (if exists)
+		if (strLastIndexOf(fmt_stream_map_arr[n], ",") == fmt_stream_map_arr[n].toString().length - 1)
+			fmt_stream_map_arr[n] = strRemove(fmt_stream_map_arr[n], fmt_stream_map_arr[n].toString().length - 1, 1);
+		// check video type
+		var vtype = getToken(getUrlParam(fmt_stream_map_arr[n], "type"), ";", 0);
+		// is known format?
+		if (vtype == "video/x-flv" || vtype == "video/mp4")
+		{
+			selectedFormat = n;
+			// configure video extension
+			result.extension = extensionFromVideoType(vtype);
+		}
+	}
+	// no format selected?
+	if (selectedFormat == -1) selectedFormat = 0;
+	// get the host url
+	var urlHost = getToken(fmt_stream_map_arr[selectedFormat], "?", 1);
+	urlHost = strReplace(urlHost, "url=", "");
+	// leave only the parameters
+	fmt_stream_map_arr[selectedFormat] = getToken(fmt_stream_map_arr[selectedFormat], "?", 2);
+	// get url parts
+	var urlParts = splitString(fmt_stream_map_arr[selectedFormat], "&", false);
+	// set the url host
+	result.url = urlHost + "?";
+	// build the initial url
+	for (var n = 0; n < urlParts.length; n++)
+	{
+		var pname = getToken(urlParts[n], "=", 0).toString();
+		var pvalue = getToken(urlParts[n], "=", 1).toString();
+		var duplicatedPname = strIndexOf(result.url, pname + "=") != -1;
+		// is an excluded param?		
+		if (!duplicatedPname && pname != "fexp" && pname != "quality" && pname != "fallback_host" && pname != "type") 
+			result.url += pname + "=" + pvalue + "&";
+	}
+	// remove the last &
+	if (strLastIndexOf(result.url, "&") == result.url.length - 1)
+		urlInitial = strRemove(result.url, result.url.length - 1, 1);
+	// get extra (optional) params
+	var ptchn = getUrlParam(flashVars, "ptchn");
+	if (ptchn != "") result.url += "ptchn=" + ptchn + "&";
+	var ptk = getUrlParam(flashVars, "ptk");
+	if (ptk != "") result.url += "ptk=" + ptk;
+	// configure the video extension (if is not yet configured)
+	if (!result.extension)
+	{
+		var vtype = getToken(getUrlParam(fmt_stream_map_arr[selectedFormat], "type"), ";", 0);
+		// configure video extension
+		result.extension = extensionFromVideoType(vtype);
+	}
+	// return 
+	return result;
+}
+
+function extensionFromVideoType(vtype)
+{
+	if (vtype == "video/x-flv") return ".flv";
+	if (vtype == "video/mp4") return ".mp4";
+	if (vtype == "video/webm") return ".webm";
+	// default extension
+	return ".flv";
 }
 
 /* 
@@ -102,7 +171,7 @@ function searchVideos(keyWord, pageIndex)
 {
 	const URL_SEARCH = "http://www.youtube.com/results?search_query=%1&page=%2&hl=%3";
 	const HTML_SEARCH_START = '<div id="search-results">';
-	const HTML_SEARCH_FINISH = '<div class="search-related">';
+	const HTML_SEARCH_FINISH = '<span id="search-pva-content">';
 	const HTML_SEARCH_SEPARATOR = '<div class="result-item *sr ">';
 	const HTML_SEARCH_SUMMARY_START = '<p class="num-results">';
 	const HTML_SEARCH_SUMMARY_END = '</p>';
@@ -159,8 +228,7 @@ function parseResultItem(searchResults, html)
 		imageUrl = copyBetween(tmp, 'thumb="', '"');
 	imageUrl = "http:" + imageUrl;
 	// get video title
-	title = copyBetween(html, '<h3 id="video-long-title-', '</a>');
-	title = copyBetween(title, 'title="', '"');
+	title = copyBetween(html, 'dir="ltr" title="', '"');
 	// get video description
 	description = copyBetween(html, '<p id="video-description-', '</p>');
 	description = copyBetween(description + '|', '>', '|');
