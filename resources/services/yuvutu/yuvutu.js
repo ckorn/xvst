@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2009";
 	this.website = "http://www.yuvutu.com/";
@@ -50,8 +50,7 @@ function getVideoInformation(url)
 	var http = new Http();
 	var html = http.downloadWebpage(strFormat(URL_GET_HTML, videoId));
 	// get video title
-	result.title = copyBetween(html, "class=\"videoTitle\"", "<td");
-	result.title = copyBetween(result.title, "</span>", "</td>");
+	result.title = copyBetween(html, "<title>", " - ");
 	// get the flv url
 	result.URL = copyBetween(html, 'file=', '&'); //"&file=", "&");
 	// return the video information

@@ -36,12 +36,15 @@ function RegistVideoService()
 }
 
 function getVideoInformation(url)
-{
+{	
 	const URL_GET_FLV = "http://ustream.vo.llnwd.net/pd5/%1.flv";
 	// video information
 	var result = new VideoDefinition();
 	// download webpage
 	var http = new Http();
+	
+	var post = http.downloadWebpagePost("http://216.52.240.138/gateway.php", getGatewayPostParams(url));
+	
 	var html = http.downloadWebpage(url);
 	// get video title
 	result.title = copyBetween(html, '<h2 id="VideoTitle">', '</h2>');
@@ -62,6 +65,36 @@ function getVideoInformation(url)
 	}
 	// return the video information
 	return result;
+}
+
+function getGatewayPostParams(url)
+{
+	// create special chars alias
+	var NUL = String.fromCharCode(0);
+	var SOH = String.fromCharCode(1);
+	var STX = String.fromCharCode(2);
+	var ETX = String.fromCharCode(3);
+	var EOT = String.fromCharCode(4);
+	var BEL = String.fromCharCode(7);
+	var BS  = String.fromCharCode(8);
+	var SI  = String.fromCharCode(15);
+	var CAN = String.fromCharCode(24);
+
+	var C2  = String.fromCharCode(194);
+	
+	// video id
+	var videoId = "9276623";
+	
+	// post data stream
+	var postData = NUL + NUL + NUL + NUL + NUL + SOH + NUL + SI + "Viewer.getVideo" + NUL + STX;	
+	postData    += "/" + "1" + NUL + NUL + NUL + C2 + NUL + NUL + NUL + SOH + ETX + NUL + BS + "autoplay";
+	postData    += SOH + SOH + NUL + EOT + "rpin" + STX + NUL + CAN + "rpin.0.09268754328445232";
+	postData    += NUL + BEL + "pageUrl" + STX + NUL + "&" + url + NUL + BEL + "videoId" + STX + NUL + BEL + videoId;
+	postData    += NUL + BEL + "brandId" + STX + NUL + SOH + "1" + NUL + NUL;
+
+	print(postData.length);
+
+	return postData;
 }
 
 function getVideoServiceIcon()

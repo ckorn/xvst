@@ -38,7 +38,6 @@ function RegistVideoService()
 function getVideoInformation(url)
 {
 	const URL_YOUTBE = "http://www.youtube.com/watch?v=%1";
-	const HD_VIDEO_RES = "22";
 	// init result
 	var result = new VideoDefinition();
 	// default URL
