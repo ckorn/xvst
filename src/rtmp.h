@@ -29,9 +29,9 @@
 #include <QtCore>
 
 #ifdef Q_OS_WIN32
-static const QString FLVSTREAMER_PATH = "flvstreamer.exe";	//!< flvstreamer app (Win32)
+static const QString FLVSTREAMER_PATH = "rtmpdump.exe";	//!< RTMPDump app (Win32)
 #else
-static const QString FLVSTREAMER_PATH = "flvstreamer";		//!< flvstreamer app (*unix)
+static const QString FLVSTREAMER_PATH = "rtmpdump";		//!< RTMPDump app (*unix)
 #endif
 
 class ArrayAvg;
@@ -56,7 +56,7 @@ namespace EnumRTMP
 		DOWNLOAD_FINISHED,			//201
 		USER_CANCELLED,				//202
 		USER_PAUSED,				//203
-		DOWNLOAD_ERROR,				//204
+		DOWNLOAD_ERROR				//204
 	};
 }
 
