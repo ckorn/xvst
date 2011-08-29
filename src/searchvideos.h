@@ -88,7 +88,7 @@ Q_OBJECT
 	public:
 		/*! Class constructor */
 		SearchResults();
-		/*! copy class constructor */
+		/*! Copy class constructor */
 		SearchResults(const SearchResults&);
 		/*! Class destructor */
 		~SearchResults();
