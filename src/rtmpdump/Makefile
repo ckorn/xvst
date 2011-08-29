@@ -52,7 +52,7 @@ EXT_darwin=
 EXT_mingw=.exe
 EXT=$(EXT_$(SYS))
 
-PROGS=rtmpdump rtmpgw rtmpsrv rtmpsuck
+PROGS=rtmpdump
 
 all:	$(LIBRTMP) $(PROGS)
 
@@ -61,13 +61,12 @@ $(PROGS): $(LIBRTMP)
 install:	$(PROGS)
 	-mkdir -p $(BINDIR) $(SBINDIR) $(MANDIR)/man1 $(MANDIR)/man8
 	cp rtmpdump$(EXT) $(BINDIR)
-	cp rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT) $(SBINDIR)
 	cp rtmpdump.1 $(MANDIR)/man1
 	cp rtmpgw.8 $(MANDIR)/man8
 	@cd librtmp; $(MAKE) install
 
 clean:
-	rm -f *.o rtmpdump$(EXT) rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT)
+	rm -f *.o rtmpdump$(EXT)
 	@cd librtmp; $(MAKE) clean
 
 FORCE:
@@ -87,8 +86,5 @@ rtmpsuck: rtmpsuck.o thread.o
 rtmpgw: rtmpgw.o thread.o
 	$(CC) $(LDFLAGS) -o $@$(EXT) $@.o thread.o $(SLIBS)
 
-rtmpgw.o: rtmpgw.c $(INCRTMP) Makefile
 rtmpdump.o: rtmpdump.c $(INCRTMP) Makefile
-rtmpsrv.o: rtmpsrv.c $(INCRTMP) Makefile
-rtmpsuck.o: rtmpsuck.c $(INCRTMP) Makefile
 thread.o: thread.c thread.h
