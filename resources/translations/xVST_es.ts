@@ -181,12 +181,12 @@
 <context>
     <name>AddVideoImpl</name>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="238"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="236"/>
         <source>mark as custom download</source>
         <translation>marcar como personalizado</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="191"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="190"/>
         <source>Already added</source>
         <translation>Repetido</translation>
     </message>
@@ -211,32 +211,32 @@
         <translation> (%1 seleccionadas)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="192"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="191"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation>Ya ha añadido este vídeo. Compruebe su lista de descargas.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="193"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="191"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="230"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="228"/>
         <source> - Blocked site</source>
         <translation> - Sitio bloqueado</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="232"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="230"/>
         <source> - Adult content is not allowed</source>
         <translation> - Contenido para adultos no permitido</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="272"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="270"/>
         <source>Select URL&apos;s file</source>
         <translation>Seleccionar el fichero con las URLs</translation>
     </message>
     <message>
-        <location filename="../../src/forms/addvideoimpl.cpp" line="306"/>
+        <location filename="../../src/forms/addvideoimpl.cpp" line="304"/>
         <source>User custom video download</source>
         <translation>Descarga personalizada</translation>
     </message>
@@ -393,13 +393,13 @@
 <context>
     <name>BugReportImpl</name>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="169"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="168"/>
         <source>Thank you for your report.</source>
         <translation>Gracias por su report.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="170"/>
-        <location filename="../../src/forms/bugreportimpl.cpp" line="181"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="168"/>
+        <location filename="../../src/forms/bugreportimpl.cpp" line="177"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
@@ -491,38 +491,38 @@
 <context>
     <name>CheckUpdatesWorker</name>
     <message>
-        <location filename="../../src/checkupdatesworker.cpp" line="124"/>
+        <location filename="../../src/checkupdatesworker.cpp" line="123"/>
         <source>Updates</source>
         <translation>Actualizaciones</translation>
     </message>
     <message>
-        <location filename="../../src/checkupdatesworker.cpp" line="125"/>
+        <location filename="../../src/checkupdatesworker.cpp" line="123"/>
         <source>You are using the most recent version of this program.</source>
         <translation>Usted está usando la versión más reciente del programa.</translation>
     </message>
     <message>
-        <location filename="../../src/checkupdatesworker.cpp" line="126"/>
-        <location filename="../../src/checkupdatesworker.cpp" line="143"/>
+        <location filename="../../src/checkupdatesworker.cpp" line="123"/>
+        <location filename="../../src/checkupdatesworker.cpp" line="137"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/checkupdatesworker.cpp" line="140"/>
+        <location filename="../../src/checkupdatesworker.cpp" line="136"/>
         <source>Update Center</source>
         <translation>Centro de actualizaciones</translation>
     </message>
     <message>
-        <location filename="../../src/checkupdatesworker.cpp" line="141"/>
+        <location filename="../../src/checkupdatesworker.cpp" line="137"/>
         <source>Please, download the new version of &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; from &lt;a href=&apos;%2&apos;&gt;here.&lt;/a&gt;</source>
         <translation>Por favor, baje la nueva versión del &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; desde &lt;a href=&apos;%2&apos;&gt;aquí.&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/checkupdatesworker.cpp" line="159"/>
+        <location filename="../../src/checkupdatesworker.cpp" line="152"/>
         <source>Cancelling... please wait...</source>
         <translation>Cancelando... por favor espere...</translation>
     </message>
     <message>
-        <location filename="../../src/checkupdatesworker.cpp" line="170"/>
+        <location filename="../../src/checkupdatesworker.cpp" line="163"/>
         <source>Checking for updates...</source>
         <translation>Comprobando actualizaciones...</translation>
     </message>
@@ -891,27 +891,27 @@
 <context>
     <name>DragDropImpl</name>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="181"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="180"/>
         <source>Already added</source>
         <translation>Repetido</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="182"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="181"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation>Ya ha añadido este vídeo. Compruebe su lista de descargas.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="183"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="181"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="195"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="193"/>
         <source> - Blocked site</source>
         <translation> - Sitio bloqueado</translation>
     </message>
     <message>
-        <location filename="../../src/forms/dragdropimpl.cpp" line="197"/>
+        <location filename="../../src/forms/dragdropimpl.cpp" line="195"/>
         <source> - Adult content is not allowed</source>
         <translation> - Contenido para adultos no permitido</translation>
     </message>
@@ -1133,6 +1133,79 @@ font-size:12px;
         <location filename="../../src/main.cpp" line="100"/>
         <source>Plugins loaded</source>
         <translation>Plugins cargados</translation>
+    </message>
+</context>
+<context>
+    <name>LoginPrompt</name>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="54"/>
+        <source>User name:</source>
+        <translation type="unfinished">Nombre de usuario:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="64"/>
+        <source>Password:</source>
+        <translation type="unfinished">Contraseña:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="78"/>
+        <source>Stay signed in (only during this session)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="99"/>
+        <source>Remember my password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="128"/>
+        <location filename="../../ui/loginprompt.ui" line="134"/>
+        <source>Confirm and close the window</source>
+        <translation type="unfinished">Acepta y cierra la ventana</translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="131"/>
+        <source>Ok button</source>
+        <translation type="unfinished">Botón de aceptar</translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="137"/>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="153"/>
+        <location filename="../../ui/loginprompt.ui" line="159"/>
+        <source>Discard and close window</source>
+        <translation type="unfinished">Botón de cancelar y cerrar</translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="156"/>
+        <source>Cancel button</source>
+        <translation type="unfinished">Botón de cancelar</translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginprompt.ui" line="162"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>LoginPromptImpl</name>
+    <message>
+        <location filename="../../src/forms/loginpromptimpl.cpp" line="42"/>
+        <source>Login failed, please enter your valid %1 user account information:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/forms/loginpromptimpl.cpp" line="47"/>
+        <source>Please, enter your %1 user account information:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1550,12 +1623,12 @@ font-size:12px;
 <context>
     <name>MainFormImpl</name>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="400"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="398"/>
         <source>Options</source>
         <translation>Opciones</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="487"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="483"/>
         <source>Select the download directory:</source>
         <translation>Seleccione el directorio de las descargas:</translation>
     </message>
@@ -1605,224 +1678,263 @@ font-size:12px;
         <translation> Velocidad </translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="370"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="369"/>
         <source>Closing...</source>
         <translation>Cerrando...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="372"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="370"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="548"/>
         <location filename="../../src/forms/mainformimpl.cpp" line="553"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="559"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="630"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="636"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="675"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="623"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="628"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="664"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="372"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="370"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="548"/>
         <location filename="../../src/forms/mainformimpl.cpp" line="553"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="559"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="630"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="636"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="675"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="623"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="628"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="664"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="440"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="992"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="437"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="979"/>
         <source>Updates</source>
         <translation>Actualizaciones</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="551"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="547"/>
         <source>Delete download</source>
         <translation>Eliminar descarga</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="552"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="547"/>
         <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>¿Desea eliminar la descarga de &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="557"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="552"/>
         <source>Delete downloads</source>
         <translation>Eliminar descargas</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="558"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="552"/>
         <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
         <translation>¿Desea eliminar las &lt;b&gt;%1&lt;/b&gt; descargas?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="629"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="622"/>
         <source>Wish you cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>¿Desea cancelar la descarga de &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="634"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1284"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="627"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1271"/>
         <source>Cancel downloads</source>
         <translation>Cancelar descargas</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="635"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="627"/>
         <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
         <translation>¿Desea cancelar las &lt;b&gt;%1&lt;/b&gt; descargas?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="673"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="664"/>
         <source>Clear list</source>
         <translation>Limpiar Lista</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="674"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="664"/>
         <source>Are you sure to clear the downloads list?</source>
         <translation>¿Está seguro de querer vaciar la lista de descargas?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="993"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="980"/>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
         <translation>No se ha encontrado la aplicación xUpdater.&lt;br&gt;&lt;br&gt;Reinstale xVideoServiceThief si usted quiere la función de actualizaciones automáticas.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1218"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1240"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1205"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1227"/>
         <source>Delete video</source>
         <translation>Eliminar vídeo</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1219"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1241"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1206"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1228"/>
         <source>Start download</source>
         <translation>Iniciar descarga</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1244"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1231"/>
         <source>Rename video</source>
         <translation>Renombrar vídeo</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1245"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1232"/>
         <source>Reset state</source>
         <translation>Marcar como nuevo</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1280"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1267"/>
         <source>Delete videos</source>
         <translation>Eliminar vídeos</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1281"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1268"/>
         <source>Start downloads</source>
         <translation>Iniciar descargas</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1283"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1270"/>
         <source>Pause downloads</source>
         <translation>Pausar descargas</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1283"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1270"/>
         <source>Resume downloads</source>
         <translation>Reanudar descargas</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1285"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1272"/>
         <source>Rename videos</source>
         <translation>Renombrar vídeos</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1286"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1273"/>
         <source>Reset states</source>
         <translation>Marcar como nuevos</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1449"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1435"/>
         <source>Already added</source>
         <translation>Repetido</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1450"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1435"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation>Ya ha añadido este vídeo. Compruebe su lista de descargas.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="442"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="744"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="994"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1451"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="438"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="732"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="981"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1435"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="441"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="438"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Otro proceso esta actualmente trabajando, por favor párelo o espere a su finalización.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1330"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1317"/>
         <source>- Downloading: %1 (%2, %3)</source>
         <translation>- Descargando: %1 (%2, %3)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1338"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1325"/>
         <source>- Converting: %1 (%2)</source>
         <translation>- Convirtiendo: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1194"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1181"/>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
         <translation>&lt;b&gt;Total vídeos:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completados)&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1198"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1185"/>
         <source>&lt;b&gt;Downloading:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Bajando:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1202"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1189"/>
         <source>&lt;b&gt;Download speed:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Velocidad descarga:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1203"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1190"/>
         <source>/sec</source>
         <translation>/sec</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="371"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="369"/>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
         <translation>xVideoServiceThief está trabajando, ¿desea Pausar todas las descargas?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="628"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1221"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1243"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="622"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1208"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1230"/>
         <source>Cancel download</source>
         <translation>Cancelar descarga</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="742"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="730"/>
         <source>Error message</source>
         <translation>Mensaje de error</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="743"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="731"/>
         <source>This video has the following error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>El vídeo tiene el siguiente error:&lt;br&gt;&lt;br&gt;&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1220"/>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1242"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1207"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1229"/>
         <source>Pause download</source>
         <translation>Pausar descarga</translation>
     </message>
     <message>
-        <location filename="../../src/forms/mainformimpl.cpp" line="1242"/>
+        <location filename="../../src/forms/mainformimpl.cpp" line="1229"/>
         <source>Resume download</source>
         <translation>Reanudar descarga</translation>
+    </message>
+</context>
+<context>
+    <name>MultiMediasDetectedImpl</name>
+    <message>
+        <location filename="../../ui/multimediasdetected.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/multimediasdetected.ui" line="20"/>
+        <source>Multiple download files are avaiable:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/multimediasdetected.ui" line="28"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/multimediasdetected.ui" line="33"/>
+        <source>URL</source>
+        <translation type="unfinished">URL</translation>
+    </message>
+    <message>
+        <location filename="../../ui/multimediasdetected.ui" line="60"/>
+        <location filename="../../ui/multimediasdetected.ui" line="66"/>
+        <source>Add urls and close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/multimediasdetected.ui" line="63"/>
+        <source>Add urls and close button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/multimediasdetected.ui" line="69"/>
+        <source>Ok</source>
+        <translation type="unfinished">Aceptar</translation>
     </message>
 </context>
 <context>
@@ -1972,97 +2084,97 @@ font-size:12px;
 <context>
     <name>NewLanguagesImpl</name>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="84"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="83"/>
         <source>Uninstall language</source>
         <translation>Desinstalar idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="85"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="83"/>
         <source>Wish you uninstall the lanuage?</source>
         <translation>¿Desea desinstalar el idioma?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="86"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="97"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="83"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="89"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="87"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="98"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="83"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="89"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="95"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="89"/>
         <source>Install language</source>
         <translation>Instalar idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="126"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="131"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="116"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="121"/>
         <source>Language uninstall error</source>
         <translation>Error desinstalador idiomas</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="96"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="89"/>
         <source>Wish you install this new language?</source>
         <translation>¿Desea instalar este idioma?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="127"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="117"/>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
         <translation>Se han producido algunos errores al desinstalar el idioma &lt;b&gt;%1&lt;/b&gt; seleccionado.&lt;br&gt;&lt;br&gt;Nota:&lt;/b&gt; En Windows Vista usted debería ejecutar el xVST como administrador antes de desinstalar los idiomas.</translation>
     </message>
     <message>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="118"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="123"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="128"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="133"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="138"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="166"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="171"/>
         <location filename="../../src/forms/newlanguagesimpl.cpp" line="176"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="181"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="186"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="132"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="180"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="122"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="170"/>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.</source>
         <translation>Se han producido algunos errores an desinstalar el idioma seleccionado &lt;b&gt;%1&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="136"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="126"/>
         <source>Language uninstall</source>
         <translation>Desinstalar idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="137"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="127"/>
         <source>Language &lt;b&gt;%1&lt;/b&gt; uninstalled.</source>
         <translation>El idioma &lt;b&gt;%1&lt;/b&gt; desinstalado.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="159"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="149"/>
         <source>Installing new language...</source>
         <translation>Instalando el nuevo idioma...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="174"/>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="179"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="164"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="169"/>
         <source>Language install error</source>
         <translation>Error de instalación</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="175"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="165"/>
         <source>Some errors has ocurred on try install the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before install new languages.</source>
         <translation>Se han producido algunos errores al instalar el idioma &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; En Windows Vista usted debería ejecutar el xVST como administrador antes de instalar los nuevos idiomas.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="184"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="174"/>
         <source>Language install</source>
         <translation>Instalar idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/newlanguagesimpl.cpp" line="185"/>
+        <location filename="../../src/forms/newlanguagesimpl.cpp" line="175"/>
         <source>New language &lt;b&gt;%1&lt;/b&gt; installed.</source>
         <translation>El nuevo idioma &lt;b&gt;%1&lt;/b&gt; se ha instalado.</translation>
     </message>
@@ -2905,7 +3017,7 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="189"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="700"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="689"/>
         <source>Updates</source>
         <translation>Actualizaciones</translation>
     </message>
@@ -2975,44 +3087,44 @@ font-size:12px;
         <translation>Socks5 Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="555"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="554"/>
         <source>Remove schedule item</source>
         <translation>Eliminar horario</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="556"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="554"/>
         <source>Wish you remove the selected schedule item?</source>
         <translation>¿Desa usted eliminar el hoario seleccionado?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="586"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="581"/>
         <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Entre la contraseña para desbloquear los sitios para adultos.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="587"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="582"/>
         <source>Unlocking password:</source>
         <translation>Contraseña para desbloquear:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="596"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="590"/>
         <source>Invalid UPS! password</source>
         <translation>Contraseña ¡UPS! invalida</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="597"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="591"/>
         <source>You entered an invalid UPS! password and the adults contents will continue locked.</source>
         <translation>Usted ha introducido una contraseña invalida y los sitios para adultos seguirán bloqueados.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="801"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="789"/>
         <source>Clear Log</source>
         <translation>Limpiar Historial</translation>
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="451"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="557"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="803"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="554"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="789"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
@@ -3043,45 +3155,45 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../src/forms/optionsimpl.cpp" line="451"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="558"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="804"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="554"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="789"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="683"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="675"/>
         <source>Language Setup</source>
         <translation>Instalación del Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="684"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="676"/>
         <source>In order to apply the new selected language, the program must be restarted.</source>
         <translation>Para poder aplicar el idioma seleccionado, el programa necesita ser reiniciado.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="598"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="685"/>
-        <location filename="../../src/forms/optionsimpl.cpp" line="702"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="591"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="676"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="691"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="759"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="748"/>
         <source>Select the download directory:</source>
         <translation>Seleccione el directorio de las descargas:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="769"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="758"/>
         <source>Select the ffmpeg lib:</source>
         <translation>Seleccione donde encontrar la lib ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="802"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="789"/>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
         <translation>¿Está seguro de querer borrar el historial: descargas/conversiones?</translation>
     </message>
     <message>
-        <location filename="../../src/forms/optionsimpl.cpp" line="701"/>
+        <location filename="../../src/forms/optionsimpl.cpp" line="690"/>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
         <translation>Otro proceso esta actualmente trabajando, por favor párelo o espere a su finalización.</translation>
     </message>
@@ -3186,8 +3298,8 @@ font-size:12px;
     </message>
     <message>
         <location filename="../../ui/scheduleitemedit.ui" line="134"/>
-        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="46"/>
-        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="51"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="48"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="53"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
@@ -3197,18 +3309,18 @@ font-size:12px;
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="44"/>
-        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="49"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="46"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="51"/>
         <source>Invalid schedule configuration</source>
         <translation>Configuración errónea</translation>
     </message>
     <message>
-        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="45"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="47"/>
         <source>The start time cannot exceed the end time.</source>
         <translation>La hora de inicio no puede superar la hora de finalización.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="50"/>
+        <location filename="../../src/forms/scheduleitemeditimpl.cpp" line="52"/>
         <source>The start time and end time cannot be equals.</source>
         <translation>La hora de inicio y la hora de finalización no pueden ser iguales.</translation>
     </message>
@@ -3259,38 +3371,38 @@ font-size:12px;
 <context>
     <name>SearchVideosImpl</name>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="111"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="109"/>
         <source>Please, select one or more services.</source>
         <translation>Porfavor, seleccione uno o más servicios de búsqueda.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="112"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="109"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="147"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="144"/>
         <source>Searching &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (page %2)... please wait...</source>
         <translation>Buscando &quot;&lt;b&gt;%1&lt;/b&gt;&quot; (página %2)... por favor espere...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="217"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="214"/>
         <source>All standard services</source>
         <translation>Todos los servicios estándar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="218"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="215"/>
         <source>All adult services</source>
         <translation>Todos los servicios para adultos</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="220"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="217"/>
         <source>All services</source>
         <translation>Todos los servicios</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="110"/>
-        <location filename="../../src/forms/searchvideosimpl.cpp" line="222"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="109"/>
+        <location filename="../../src/forms/searchvideosimpl.cpp" line="219"/>
         <source>Custom search</source>
         <translation>Búsqueda personalizada</translation>
     </message>
@@ -3435,28 +3547,28 @@ font-size:12px;
         <translation>Descarga no disponible...</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="129"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="128"/>
         <source>Missing plugin</source>
         <translation>Plugin no disponible</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="130"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="129"/>
         <source>&lt;p&gt;Is not possible to download this video.&lt;/p&gt;&lt;p&gt;The xVST didn&apos;t find any plugin capable to get the video information.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Imposible bajar este vídeo.&lt;/p&gt;&lt;p&gt;El xVST no ha podido encontrar ningún plugin capaz de obtener la información del vídeo.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="131"/>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="137"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="130"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="134"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="135"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="133"/>
         <source>Already added</source>
         <translation>Repetido</translation>
     </message>
     <message>
-        <location filename="../../src/forms/searchvideositemimpl.cpp" line="136"/>
+        <location filename="../../src/forms/searchvideositemimpl.cpp" line="134"/>
         <source>You already added this video. Check your downloads list.</source>
         <translation>Ya ha añadido este vídeo. Compruebe su lista de descargas.</translation>
     </message>
@@ -3679,22 +3791,22 @@ font-size:12px;
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="188"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="187"/>
         <source>Updates center error</source>
         <translation>Centro de actualizaciones error</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="189"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="188"/>
         <source>Some errors has ocurred on try download the new update(s).</source>
         <translation>Se han producido un error al bajar alguna de las nuevas actualizaciones.</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="190"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="188"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/forms/updatecenterimpl.cpp" line="194"/>
+        <location filename="../../src/forms/updatecenterimpl.cpp" line="192"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
@@ -3807,17 +3919,17 @@ font-size:12px;
 <context>
     <name>VideoInformation</name>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="415"/>
+        <location filename="../../src/videoinformation.cpp" line="426"/>
         <source>Unsupported video service</source>
         <translation>Servicio no soportado</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="418"/>
+        <location filename="../../src/videoinformation.cpp" line="429"/>
         <source>Adobe Flash streaming</source>
         <translation>Adobe Flash streaming</translation>
     </message>
     <message>
-        <location filename="../../src/videoinformation.cpp" line="420"/>
+        <location filename="../../src/videoinformation.cpp" line="431"/>
         <source>Invalid URL</source>
         <translation>URL Errónea</translation>
     </message>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="hu_HU">
+<TS version="2.0" language="hu">
 <context>
     <name>AddVideo</name>
     <message>
@@ -125,22 +125,22 @@
     </message>
     <message>
         <source>Select url&apos;s file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fájl url kiválasztása</translation>
     </message>
     <message>
         <source>Select file with URLs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fájl kiválasztása URL címekkel</translation>
     </message>
 </context>
 <context>
     <name>AddVideoImpl</name>
     <message>
         <source> - Blocked site</source>
-        <translation>Blokkolt oldal</translation>
+        <translation> - Blokkolt oldal</translation>
     </message>
     <message>
         <source> - Adult content is not allowed</source>
-        <translation>A felnőtt tartalom nem engedélyezett</translation>
+        <translation> - A felnőtt tartalom nem engedélyezett</translation>
     </message>
     <message>
         <source>mark as custom download</source>
@@ -156,7 +156,7 @@
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation>Már hozzáadtad ezt a videót. Ellenőrizd a letöltési listát.</translation>
+        <translation>Már hozzá lett adva ez a videó. Ellenőrizze a letöltési listát.</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -164,23 +164,23 @@
     </message>
     <message>
         <source>No valid URLs detected in this file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nem észlelhető érvényes URL-cím a fájlban</translation>
     </message>
     <message>
         <source>%1 valid URLs detected in this file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 érvényes URL-cím észlelhető a fájlban</translation>
     </message>
     <message>
         <source> (%1 selected)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> (%1 kiválasztva)</translation>
     </message>
     <message>
         <source>Select URL&apos;s file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fájl url kiválasztása</translation>
     </message>
     <message>
         <source>select URLs to download</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Url-ek kiválasztása a letöltéshez</translation>
     </message>
 </context>
 <context>
@@ -197,12 +197,12 @@
         <source>&lt;b&gt;Ops! An error occurred while trying to download the video.&lt;/b&gt;
 &lt;p&gt;You can help to fix this problem sending us an &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot;. This Report will be used to analyze the error and if is necessary fix it and improve the next version of xVST.&lt;/p&gt;
 &lt;p&gt;Your help is allways welcomed!&lt;/p&gt;</source>
-        <translation>&lt;b&gt;Hoppá! Hiba történt, a videó letöltése közben.&lt;/b&gt;&lt;p&gt;Segíthetsz nekünk a hiba megoldásában, ha elküldöd &quot;&lt;b&gt;Hibajelentést&lt;/b&gt;-t&quot;. A jelentés felhasználásával, elemezzük a hibát és ha szükséges, javítjuk azt a xVST következő verziójában.&lt;/p&gt;&lt;p&gt;A segítséged, mindig szivesen fogadjuk!&lt;/p&gt;&lt;b&gt;Hoppá! Hiba történt, a videó letöltése közben.&lt;/b&gt;&lt;p&gt;Segíthetsz nekünk a hiba megoldásában, ha elküldöd &quot;&lt;b&gt;Hibajelentést&lt;/b&gt;-t&quot;. A jelentés felhasználásával, elemezzük a hibát és ha szükséges, javítjuk azt a xVST következő verziójában.&lt;/p&gt;&lt;p&gt;A segítséged, mindig szivesen fogadjuk!&lt;/p&gt;</translation>
+        <translation>&lt;b&gt;Hoppá! Hiba történt, a videó letöltése közben.&lt;/b&gt;&lt;p&gt;Segíthet nekünk a hiba megoldásában, ha elküldi a &quot;&lt;b&gt;Hibajelentést&lt;/b&gt;-t&quot;. A jelentés felhasználásával, elemezzük a hibát és ha szükséges, javítjuk azt a xVST következő verziójában.&lt;/p&gt;&lt;p&gt;A segítséget mindig szivesen fogadjuk!&lt;/p&gt;&lt;b&gt;Hoppá! Hiba történt, a videó letöltése közben.&lt;/b&gt;&lt;p&gt;Segíthet nekünk a hiba megoldásában, ha elküldi a &quot;&lt;b&gt;Hibajelentést&lt;/b&gt;-t&quot;. A jelentés felhasználásával, elemezzük a hibát és ha szükséges, javítjuk azt a xVST következő verziójában.&lt;/p&gt;&lt;p&gt;A segítséget mindig szivesen fogadjuk!&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;The &quot;&lt;b&gt;Bug report&lt;/b&gt;&quot; will be sent to &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Your name and email will be included into the &quot;&lt;b&gt;Bug comment&lt;/b&gt;&quot;, however is totally optional and unecessary.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;A &quot;&lt;b&gt;Hibajelentés&lt;/b&gt;&quot; el lesz küldve ide: &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A neved és email címed, tartalmazni fogja a &quot;&lt;b&gt;Hiba leírás&lt;/b&gt;&quot;, ez teljesen szabadon választható és nem kötelező.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;A &quot;&lt;b&gt;Hibajelentés&lt;/b&gt;&quot; el lesz küldve ide: &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;xVST SourceForge tracker&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A nevét és email címét, tartalmazni fogja a &quot;&lt;b&gt;Hiba leírás&lt;/b&gt;&quot;, ez teljesen szabadon választható és nem kötelező.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Error information</source>
@@ -262,7 +262,7 @@
     </message>
     <message>
         <source>If this option is checked, this dialog will not be displayed again (and no &quot;Bug report&quot; will be sent)</source>
-        <translation>Ha az opciót aktiválod, ez az ablak nem fog újra megjelenni (és nem lesz hibajelentés küldve)</translation>
+        <translation>Ha az opciót aktiválja, ez az ablak nem fog újra megjelenni (és nem lesz hibajelentés küldve)</translation>
     </message>
     <message>
         <source>Do not display &quot;Bug Report&quot;</source>
@@ -305,7 +305,7 @@
     </message>
     <message>
         <source>Thank you for your report.</source>
-        <translation>Köszönet a jelentésedért.</translation>
+        <translation>Köszönet a jelentésért.</translation>
     </message>
 </context>
 <context>
@@ -348,7 +348,7 @@
     </message>
     <message>
         <source>Versions combobox</source>
-        <translation>Verziók combobox</translation>
+        <translation>Verziók legördülő lista</translation>
     </message>
 </context>
 <context>
@@ -382,7 +382,7 @@
     </message>
     <message>
         <source>You are using the most recent version of this program.</source>
-        <translation>Jelenleg a program legfrissebb verzióját használod.</translation>
+        <translation>Jelenleg a program legfrissebb verzióját használja.</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -402,7 +402,7 @@
     </message>
     <message>
         <source>Please, download the new version of &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt; from &lt;a href=&apos;%2&apos;&gt;here.&lt;/a&gt;</source>
-        <translation>Kérlek, töltsd le a &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt;új verzióját innen:&lt;a href=&apos;%2&apos;&gt;.</translation>
+        <translation>Kérjük, töltse le a &lt;b&gt;xVideoServiceThief (%1)&lt;/b&gt;új verzióját innen:&lt;a href=&apos;%2&apos;&gt;.</translation>
     </message>
 </context>
 <context>
@@ -444,7 +444,7 @@
     <name>CompletedPopupImpl</name>
     <message>
         <source>Download completed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A letöltés befejeződött</translation>
     </message>
 </context>
 <context>
@@ -536,7 +536,7 @@
     </message>
     <message>
         <source>&lt;b&gt;Enter the text which will be used as title of this download.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Add meg a címet, amit a letöltéshez szeretnél használni.&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Adja meg a szöveget, amit a letöltés címeként szeretne használni.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Video title:</source>
@@ -712,7 +712,7 @@
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation>Már hozzáadtad ezt a videófájlt. Ellenőrizd a letöltési listát.</translation>
+        <translation>Már hozzáadta ezt a videófájlt. Ellenőrizze a letöltési listát.</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -764,7 +764,7 @@ background: white;
     </message>
     <message>
         <source>Program version:</source>
-        <translation>Program verzió:</translation>
+        <translation>Programverzió:</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -772,7 +772,7 @@ background: white;
     </message>
     <message>
         <source>&lt;b&gt;English (UK)&lt;/b&gt;</source>
-        <translation>&lt;b&gt;English (UK)&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Hungarian (HU)&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Homepage:</source>
@@ -786,9 +786,9 @@ background: white;
         <source>xVideoServiceThief is a tool for downloading your favourite video clips from a lot of video websites.
 
 xVideoServiceThief also provide you the ability to convert each video in most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.</source>
-        <translation>Az xVideoServiceThief, kedvenc videó klippjeid letöltési eszköze, melynek segítségével, több videó weboldalról is le tudsz tölteni videó állományokat.
+        <translation>Az xVideoServiceThief az Ön kedvenc videó klippjeinek letöltési eszköze, melynek segítségével, több videó weboldalról is letölthet videóállományokat.
 
-Az xVideoServiceThief, továbbá lehetőséget nyújt a legnépszerűbb formátumok közti, videó konverzióra: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 fájl formátumok.</translation>
+Az xVideoServiceThief, továbbá lehetőséget nyújt a legnépszerűbb formátumok közti videó konverzióra: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 fájl formátumok.</translation>
     </message>
     <message>
         <source>&lt;b&gt;xVideoServiceThief currently supports download from:&lt;/b&gt;</source>
@@ -888,6 +888,64 @@ betűméret:12px;
     <message>
         <source>Plugins loaded</source>
         <translation>Pluginok betöltve</translation>
+    </message>
+</context>
+<context>
+    <name>LoginPrompt</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User name:</source>
+        <translation type="unfinished">Felhasználónév:</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Jelszó:</translation>
+    </message>
+    <message>
+        <source>Stay signed in (only during this session)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember my password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm and close the window</source>
+        <translation type="unfinished">Jóváhagyás és az ablak bezárása</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">Ok gomb</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard and close window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished">Mégse gomb</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Mégse</translation>
+    </message>
+</context>
+<context>
+    <name>LoginPromptImpl</name>
+    <message>
+        <source>Login failed, please enter your valid %1 user account information:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, enter your %1 user account information:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1186,15 +1244,15 @@ betűméret:12px;
     </message>
     <message>
         <source>Rename video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Videó átnevezése</translation>
     </message>
     <message>
         <source>Alt+Up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alt+Up</translation>
     </message>
     <message>
         <source>Alt+Down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alt+Down</translation>
     </message>
 </context>
 <context>
@@ -1217,7 +1275,7 @@ betűméret:12px;
     </message>
     <message>
         <source> Speed </source>
-        <translation>Sebesség</translation>
+        <translation> Sebesség </translation>
     </message>
     <message>
         <source>Closing...</source>
@@ -1225,7 +1283,7 @@ betűméret:12px;
     </message>
     <message>
         <source>xVideoServiceThief is working, do you wish Pause the current work?</source>
-        <translation>Az xVideoServiceThief jelenleg dolgozik. Szünetelteted a jelenlegi folyamatot?</translation>
+        <translation>Az xVideoServiceThief jelenleg dolgozik. Szünetelteti a jelenlegi folyamatot?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -1245,7 +1303,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
-        <translation>Egy másik folyamat, jelenleg működik, kérlek, állítsd le vagy várd meg míg befejeződik.</translation>
+        <translation>Egy másik folyamat, jelenleg működik, kérjük, állítsa le vagy várja meg míg befejeződik.</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -1269,7 +1327,7 @@ betűméret:12px;
     </message>
     <message>
         <source>xUpdater application is missing.&lt;br&gt;&lt;br&gt;Reinstall xVideoServiceThief if you want update automatically the program.</source>
-        <translation>Az xUpdater alkalmazás hiányzik.&lt;br&gt;&lt;br&gt;Telepítsd újra az xVideoServiceThief programot, ha azt szeretnéd, hogy automatikusan frissítsen a program.</translation>
+        <translation>Az xUpdater alkalmazás hiányzik.&lt;br&gt;&lt;br&gt;Telepítse újra az xVideoServiceThief programot, ha azt szeretné, hogy automatikusan frissítsen a program.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Videos count:&lt;/b&gt; %1 &lt;span style=&quot;color:#666666;&quot;&gt;(%2 completed)&lt;/span&gt;</source>
@@ -1325,19 +1383,19 @@ betűméret:12px;
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation>Már hozzáadtad ezt a videót. Ellenőrizd a letöltési listát.</translation>
+        <translation>Már hozzáadta ezt a videót. Ellenőrizze a letöltési listát.</translation>
     </message>
     <message>
         <source>Wish you cancel the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Meg szeretné szakítani a(z) &lt;b&gt;%1&lt;/b&gt; letöltését?</translation>
     </message>
     <message>
         <source>Cancel downloads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltések megszakítása</translation>
     </message>
     <message>
         <source>Wish you cancel the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Meg szeretné szakítani a(z) &lt;b&gt;%1&lt;/b&gt; kiválasztott letöltést?</translation>
     </message>
     <message>
         <source>Delete video</source>
@@ -1349,7 +1407,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Rename video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Videó átnevezése</translation>
     </message>
     <message>
         <source>Reset state</source>
@@ -1357,43 +1415,43 @@ betűméret:12px;
     </message>
     <message>
         <source>Delete videos</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Videók törlése</translation>
     </message>
     <message>
         <source>Start downloads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltések indítása</translation>
     </message>
     <message>
         <source>Pause downloads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltések szüneteltetése</translation>
     </message>
     <message>
         <source>Resume downloads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltések folytatása</translation>
     </message>
     <message>
         <source>Rename videos</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Videók átnevezése</translation>
     </message>
     <message>
         <source>Reset states</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Állapot visszaállítása</translation>
     </message>
     <message>
         <source>Delete download</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltés törlése</translation>
     </message>
     <message>
         <source>Wish you delete the download of &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szeretné törölni a(z) &lt;b&gt;%1&lt;/b&gt; letöltését?</translation>
     </message>
     <message>
         <source>Delete downloads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltések törlése</translation>
     </message>
     <message>
         <source>Wish you delete the &lt;b&gt;%1&lt;/b&gt; selected downloads?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szeretné törölni a(z) &lt;b&gt;%1&lt;/b&gt; kiválasztott letöltést?</translation>
     </message>
     <message>
         <source>Clear list</source>
@@ -1401,18 +1459,49 @@ betűméret:12px;
     </message>
     <message>
         <source>Are you sure to clear the downloads list?</source>
+        <translation type="unfinished">Biztos benne, hogy üríti a letöltési listát?</translation>
+    </message>
+</context>
+<context>
+    <name>MultiMediasDetectedImpl</name>
+    <message>
+        <source>Dialog</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multiple download files are avaiable:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">URL</translation>
+    </message>
+    <message>
+        <source>Add urls and close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add urls and close button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
     </message>
 </context>
 <context>
     <name>MultiURLs</name>
     <message>
         <source>Multiple URLs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Több URL</translation>
     </message>
     <message>
         <source>Select which URLs you want add:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Válassza ki, melyik URL-eket szeretné hozzáadni:</translation>
     </message>
     <message>
         <source>Add the current URL and close this dialog</source>
@@ -1522,7 +1611,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Wish you uninstall the lanuage?</source>
-        <translation>Eltávolítod a nyelvet?</translation>
+        <translation>Eltávolítja a nyelvet?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -1566,7 +1655,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Some errors has ocurred on try install the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before install new languages.</source>
-        <translation>Néhány hiba történt a kiválasztott &lt;b&gt;%1&lt;/b&gt; nyelv telepítésekor.&lt;br&gt;&lt;br&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt;A Windows Vista rendszeren rendszergazdaként kell futtatnod a xVST programot, mielött telepítenéd a nyelveket.</translation>
+        <translation>Néhány hiba történt a kiválasztott &lt;b&gt;%1&lt;/b&gt; nyelv telepítésekor.&lt;br&gt;&lt;br&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt;A Windows Vista rendszeren rendszergazdaként kell futtatnia a xVST programot, mielött telepítené a nyelveket.</translation>
     </message>
     <message>
         <source>Language install</source>
@@ -1578,11 +1667,11 @@ betűméret:12px;
     </message>
     <message>
         <source>Wish you install this new language?</source>
-        <translation>Telepíted az új nyelvet?</translation>
+        <translation>Telepíti az új nyelvet?</translation>
     </message>
     <message>
         <source>Some errors has ocurred on try uninstall the selected &lt;b&gt;%1&lt;/b&gt; language.&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; On Windows Vista you should execute the xVST as administrator before uninstall languages.</source>
-        <translation>Néhány hiba történt a kiválasztott &lt;b&gt;%1&lt;/b&gt; nyelv eltávolításakor.&lt;br&gt;&lt;br&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt;A Windows Vista rendszeren rendszergazdaként kell futtatnod a xVST programot, mielött telepítenéd a nyelveket.</translation>
+        <translation>Néhány hiba történt a kiválasztott &lt;b&gt;%1&lt;/b&gt; nyelv eltávolításakor.&lt;br&gt;&lt;br&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt;A Windows Vista rendszeren rendszergazdaként kell futtatnia a xVST programot, mielött telepítené a nyelveket.</translation>
     </message>
 </context>
 <context>
@@ -1761,7 +1850,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Select a language file from the list:</source>
-        <translation>Válassz a listán lévő nyelvek közül:</translation>
+        <translation>Válasszon a listán lévő nyelvek közül:</translation>
     </message>
     <message>
         <source>Language information</source>
@@ -1929,7 +2018,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Select which websites are allowed and which websites must be blocked:</source>
-        <translation>Válaszd ki az engedélyezett illetve blokkolni kívánt weboldalakat:</translation>
+        <translation>Válassza ki az engedélyezett illetve blokkolni kívánt weboldalakat:</translation>
     </message>
     <message>
         <source>Allowed websites:</source>
@@ -2045,7 +2134,7 @@ betűméret:12px;
     </message>
     <message>
         <source>When a video throws an error, you can help to fix the error sending a &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; to us via &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net tracker system&lt;/a&gt;.&lt;br&gt;&lt;br&gt;The &quot;&lt;b&gt;Bug Report&lt;/b&gt;&quot; is stored only in the &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net tracker&lt;/a&gt; and is visible for everyone, and no extra data is saved to any external DataBase.</source>
-        <translation>Videó hibánál, segíthetsz nekünk a hiba javításában, ha küldesz egy &quot;&lt;b&gt;Hibajelentés&lt;/b&gt;&quot;-t a &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net hibajelentési rendszeren&lt;/a&gt; keresztül.&lt;br&gt;&lt;br&gt;A &quot;&lt;b&gt;Hibajelentés&lt;/b&gt;&quot;, csak a &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net hibajelentés&lt;/a&gt; csoportban lesz tárolva és mindenki számára láthatóvá válik, viszont extra adat nem lesz mentve, semmilyen külső adatbázisba.</translation>
+        <translation>Videó hibánál, segíthet nekünk a hiba javításában, ha elküldi a &quot;&lt;b&gt;Hibajelentés&lt;/b&gt;&quot;-t a &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&amp;atid=1037803&quot;&gt;SourceForge.net hibajelentési rendszeren&lt;/a&gt; keresztül.&lt;br&gt;&lt;br&gt;A &quot;&lt;b&gt;Hibajelentés&lt;/b&gt;&quot;, csak a &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=205061&quot;&gt;SF.net hibajelentés&lt;/a&gt; csoportban lesz tárolva és mindenki számára láthatóvá válik, viszont extra adat nem lesz mentve, semmilyen külső adatbázisba.</translation>
     </message>
     <message>
         <source>If this option is checked, on open again the &quot;Options&quot; dialog, the last page viewed (Basic, Language, etc...) is displayed again (only for this session)</source>
@@ -2169,31 +2258,31 @@ betűméret:12px;
     </message>
     <message>
         <source>Http configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Http beállítás</translation>
     </message>
     <message>
         <source>Delete the downloaded file on download error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A letöltött fájl törlése letöltési hibánál</translation>
     </message>
     <message>
         <source>Time-out:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Időtúllépés:</translation>
     </message>
     <message>
         <source>sec.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">mp</translation>
     </message>
     <message>
         <source>Max. retries:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Max. próbálkozások:</translation>
     </message>
     <message>
         <source>Time remaining calculation:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hátralévő idő kiszámítása:</translation>
     </message>
     <message>
         <source>Proxy configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Proxy beállítás</translation>
     </message>
 </context>
 <context>
@@ -2264,7 +2353,7 @@ betűméret:12px;
     </message>
     <message>
         <source>In order to apply the new selected language, the program must be restarted.</source>
-        <translation>Az új nyelv alkalmazásához, újra kell indítanod a programot.</translation>
+        <translation>Az új nyelv alkalmazásához, újra kell indítania a programot.</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -2272,7 +2361,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Another process is currently working, please stop it or wait until the end of process.</source>
-        <translation>Más folyamatok jelenleg futnak, kérlek, állítsd le őket vagy várd meg, mig a folyamat befejeződik.</translation>
+        <translation>Más folyamatok jelenleg futnak, kérjük, állítsa le őket vagy várja meg, mig a folyamat befejeződik.</translation>
     </message>
     <message>
         <source>Select the download directory:</source>
@@ -2288,7 +2377,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Are you sure to clear the downloads/conversions historic file?</source>
-        <translation>Biztos, hogy törlöd a letöltési/konvertálási előzmény fájlt?</translation>
+        <translation>Biztos, hogy törli a letöltési/konvertálási előzmény fájlt?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2324,11 +2413,11 @@ betűméret:12px;
     </message>
     <message>
         <source>Wish you remove the selected schedule item?</source>
-        <translation>Szeretnéd törölni a kiválasztott ütemezési elemet?</translation>
+        <translation>Szeretné törölni a kiválasztott ütemezési elemet?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Enter the security password to unlock adult sites.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Add meg a védelmi jelszót a felnőtt oldalak feloldásához.&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Adja meg a védelmi jelszót a felnőtt oldalak feloldásához.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Unlocking password:</source>
@@ -2344,15 +2433,15 @@ betűméret:12px;
     </message>
     <message>
         <source>Internet configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Internet beállítás</translation>
     </message>
     <message>
         <source>Using the download percentage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltési százalék használata</translation>
     </message>
     <message>
         <source>Using the download speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltési sebesség használata</translation>
     </message>
 </context>
 <context>
@@ -2454,7 +2543,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Select where you want to search:</source>
-        <translation>Válaszd ki hol szeretnél keresni:</translation>
+        <translation>Válassza ki hol szeretne keresni:</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -2529,7 +2618,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Field where your enter the key words to search</source>
-        <translation>Mező, ahol a keresési kulcsszót kell megadnod</translation>
+        <translation>Mező, ahol a keresési kulcsszót kell megadnia</translation>
     </message>
     <message>
         <source>Key words edit</source>
@@ -2585,7 +2674,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Please, select one or more services.</source>
-        <translation>Kérlek, válassz ki egy vagy több szolgáltatást.</translation>
+        <translation>Kérjük, válasszon ki egy vagy több szolgáltatást.</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -2636,7 +2725,7 @@ betűméret:12px;
     </message>
     <message>
         <source>You already added this video. Check your downloads list.</source>
-        <translation>Ez a videó már hozzá lett adva. Ellenőrizd a letöltési listát.</translation>
+        <translation>Ez a videó már hozzá lett adva. Ellenőrizze a letöltési listát.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Rating:&lt;/b&gt;</source>
@@ -2671,18 +2760,18 @@ betűméret:12px;
     <name>SearchVideosNoResults</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Űrlap</translation>
     </message>
     <message>
         <source>No results found with &quot;&lt;b&gt;%1&lt;/b&gt;&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nincs találat: &quot;&lt;b&gt;%1&lt;/b&gt;&quot;</translation>
     </message>
 </context>
 <context>
     <name>UPSPasswordImpl</name>
     <message>
         <source>&lt;b&gt;Enter a security password to prevent unlock adult sites without your permission.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Adj meg egy védelmi jelszót, annak megakadályozására, hogy az engedélyed nélkül felnőtt tartamú lapok legyenek megnyitva.&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Adjon meg egy védelmi jelszót, annak megakadályozására, hogy az Ön engedélye nélkül felnőtt tartamú lapok legyenek megnyitva.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Locking password:</source>
@@ -2702,7 +2791,7 @@ betűméret:12px;
     </message>
     <message>
         <source>Field where you enter the password</source>
-        <translation>Mező, ahol a jelszót kell megadnod</translation>
+        <translation>Mező, ahol a jelszót kell megadnia</translation>
     </message>
     <message>
         <source>Password edit</source>
@@ -2903,7 +2992,7 @@ betűméret:12px;
     </message>
     <message>
         <source>MP4 HD Format (*.mp4)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">MP4 HD formátum (*.mp4)</translation>
     </message>
 </context>
 <context>
@@ -3057,52 +3146,52 @@ betűméret:12px;
     </message>
     <message>
         <source>The maximum allowed http redirections has been reached</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elérte a maximálisan engedélyezett http-átirányítást</translation>
     </message>
     <message>
         <source>The connection to the remote server timed out</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A csatlakozás a távoli kiszolgálóhoz időtúllépés miatt megszakadt</translation>
     </message>
     <message>
         <source>The remote server refused the connection (the server is not accepting requests)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A távoli kiszolgáló megtagadta a kapcsolatot (a szerver nem fogadja a kérelmeket)</translation>
     </message>
     <message>
         <source>The remote host name was not found (invalid hostname)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A távoli gép neve nem található (érvénytelen állomásnév)</translation>
     </message>
     <message>
         <source>The access to the remote content was denied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A távoli tartalomhoz való hozzáférés megtagadva</translation>
     </message>
     <message>
         <source>The remote content was not found at the server </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A távoli tartalom nem található a szerveren</translation>
     </message>
     <message>
         <source>Queued...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sorban áll...</translation>
     </message>
 </context>
 <context>
     <name>WelcomeDonate</name>
     <message>
         <source>Welcome to xVideoServiceThief</source>
-        <translation>Üdvözöl az xVideoServiceThief</translation>
+        <translation>Üdvözli az xVideoServiceThief</translation>
     </message>
     <message>
         <source>&lt;h3&gt;&lt;b&gt;Please donate!&lt;/b&gt;&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;&lt;b&gt;Kérlek, segítsd munkánkat pénzadományokkal!&lt;/b&gt;&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;&lt;b&gt;Kérjük, segítse munkánkat pénzadományokkal!&lt;/b&gt;&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;This software is totally free of charge, but you can consider to donate if you like this tool or if you use it in a commercial environment.&lt;/p&gt;
 &lt;p&gt;Thanks! We will appreciate it very much!&lt;/p&gt;
 &lt;p&gt;Why I should donate? Your donations will help to improve xVideoServiceThief and to pay our IT bills.&lt;/p&gt;
 &lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If you paid for download this application , then you has been scamed!&lt;/font&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Ez a szoftver teljesen ingyenes, de adományokkal segítheted munkánkat, ha megkedvelted ezt az eszközt vagy ha azt kereskedelmi környezetben használod.&lt;/p&gt;
+        <translation>&lt;p&gt;Ez a szoftver teljesen ingyenes, de adományokkal segítheti munkánkat, ha megkedvelte ezt az eszközt vagy ha azt kereskedelmi környezetben használja.&lt;/p&gt;
 &lt;p&gt;Köszönjük! Mi ezt a gesztust nagyra értékeljük!&lt;/p&gt;
-&lt;p&gt;Miért is kellene adományozni? Az adományok segítik az xVideoServiceThiefet fejlesztését és/vagy javítását illetve rendezik az IT számláinkat.&lt;/p&gt;
-&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt; Ha az alkalmazás letöltéséért fizetnél, az már csalásnak minősülne!&lt;/font&gt;&lt;/p&gt;</translation>
+&lt;p&gt;Miért kell adományozni? Az adományok segítik az xVideoServiceThiefet fejlesztését és/vagy javítását illetve rendezik az IT számláinkat.&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Megjegyzés:&lt;/b&gt; Ha az alkalmazás letöltéséért fizetne, az már csalásnak minősülne!&lt;/font&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Don&apos;t display this message again</source>
@@ -3121,7 +3210,7 @@ betűméret:12px;
     <name>WhatsNew</name>
     <message>
         <source>What&apos;s new....</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Újdonságok...</translation>
     </message>
     <message>
         <source>Close</source>
@@ -3132,27 +3221,27 @@ betűméret:12px;
     <name>WinVistaDownloadsMsg</name>
     <message>
         <source>Downloads directory migration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltési könyvtár áttelepítése</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and your current downloads directory  is protected with administration rights.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;To solve this problem, we recommend you to change your current downloads directory to a new safe and &quot;public&quot; directory (i.e.: &quot;Documents/Downloads&quot; or &quot;Documents/Videos&quot;).&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;&lt;b&gt;Figyelem, az xVST észlelte, hogy Windows Vista/7 fut a számítógépen és a jelenlegi letöltési könyvtár rendszergazdai jogokkal van védve.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;A probléma feloldásához, javasoljuk, hogy váltson át a jelenlegi letöltési könyvtárról egy új biztonságos és publikus könyvtárra (pl.: &quot;Dokumentumok / Letöltések&quot; vagy &quot;Dokumentumok / Videók&quot;).&lt;/p&gt;</translation>
     </message>
     <message>
         <source>New downloads directory:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Új letöltések könyvtár:</translation>
     </message>
     <message>
         <source>New downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Új letöltések könyvtár</translation>
     </message>
     <message>
         <source>Downloads directory edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltések könyvtár szerkesztése</translation>
     </message>
     <message>
         <source>Select the downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltési könyvtár kiválasztása</translation>
     </message>
     <message>
         <source>Select downloads directory</source>
@@ -3160,39 +3249,39 @@ betűméret:12px;
     </message>
     <message>
         <source>Open the Select directory dialog for select the downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A Könyvtár kiválasztása párbeszédablak megnyitása a letöltés könyvtár kiválasztásához</translation>
     </message>
     <message>
         <source>Other proposed directories</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egyéb javasolt könyvtárak</translation>
     </message>
     <message>
         <source>Set the &quot;Videos&quot; directory as new downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A &quot;Videók&quot; könyvtár beállítása új letöltési könyvtárként</translation>
     </message>
     <message>
         <source>Select videos directory button</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Videó könyvtár gomb kiválasztása</translation>
     </message>
     <message>
         <source>Default Windows videos directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alapértelmezett Windows videók könyvtár</translation>
     </message>
     <message>
         <source>Set the &quot;Downloads&quot; directory as new downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A &quot;Letöltések&quot; könyvtár beállítása új letöltési könyvtárként</translation>
     </message>
     <message>
         <source>Select downloads directory button</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Letöltési könyvtár gomb kiválasztása</translation>
     </message>
     <message>
         <source>Default Windows downloads directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alapértelmezett Windows letöltési könyvtár</translation>
     </message>
     <message>
         <source>Checking this option the xVST will not advertise again about this problem</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az opció kijelölésével az xVST nem fogja értesíteni többé erről a problémáról</translation>
     </message>
     <message>
         <source>Don&apos;t display this message again</source>
@@ -3200,15 +3289,15 @@ betűméret:12px;
     </message>
     <message>
         <source>Update the downloads directory and close this window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A letöltések könyvtár frissítése és az ablak bezárása</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Frissítés</translation>
     </message>
     <message>
         <source>Close this window without changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zárja be ezt az ablakot módosítások nélkül</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -3230,7 +3319,7 @@ betűméret:12px;
     </message>
     <message>
         <source>To solve this problem, we recommend you to run the xVST as administrator (right click over xVST icon -&gt; Run as Administrator) only when you want install new versions using the Update center.</source>
-        <translation>A probléma megoldásához, javasoljuk, hogy futtasd az xVST-t rendszergazdaként (jobb kattintás az xVST ikonra -&gt; Futtatás rendszergazdaként), csak akkor, ha a Frissítési központ használatával szeretnéd telepíteni az új verziókat.</translation>
+        <translation>A probléma megoldásához, javasoljuk, hogy futtassa az xVST-t rendszergazdaként (jobb kattintás az xVST ikonra -&gt; Futtatás rendszergazdaként), csak akkor, ha a Frissítési központ használatával szeretné telepíteni az új verziókat.</translation>
     </message>
     <message>
         <source>Don&apos;t display this message again</source>
@@ -3246,7 +3335,7 @@ betűméret:12px;
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Attention, xVST detected you are running Windows Vista/7 and automatic updates may not work properly.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;If you have the &lt;b&gt;UAC&lt;/b&gt; (User Account Control) enabled, the automatic updates won&apos;t install the downloaded updates due to user permissions.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;&lt;b&gt;Figyelem, az xVST észlelte, hogy Windows Vista/7 fut a számítógépen és az automatikus frissítések nem működnek helyesen.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Ha az &lt;b&gt;UAC&lt;/b&gt; (Felhasználói fiókok felügyelete) engedélyezve van, az automatikus frissítés nem fogja telepíteni a letöltött frissítéseket a felhasználói jogosultságok miatt.&lt;/p&gt;</translation>
     </message>
 </context>
 </TS>

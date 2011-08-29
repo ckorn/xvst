@@ -897,6 +897,64 @@ font-size:12px;
     </message>
 </context>
 <context>
+    <name>LoginPrompt</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User name:</source>
+        <translation type="unfinished">Nome utente:</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Password:</translation>
+    </message>
+    <message>
+        <source>Stay signed in (only during this session)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember my password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm and close the window</source>
+        <translation type="unfinished">Conferma e chiudi finestra</translation>
+    </message>
+    <message>
+        <source>Ok button</source>
+        <translation type="unfinished">Pulsante OK</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard and close window</source>
+        <translation type="unfinished">Scarta e chiudi finestra</translation>
+    </message>
+    <message>
+        <source>Cancel button</source>
+        <translation type="unfinished">Pulsante Annulla</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annulla</translation>
+    </message>
+</context>
+<context>
+    <name>LoginPromptImpl</name>
+    <message>
+        <source>Login failed, please enter your valid %1 user account information:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, enter your %1 user account information:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainForm</name>
     <message>
         <source>Connecting...</source>
@@ -1408,6 +1466,37 @@ font-size:12px;
     <message>
         <source>Are you sure to clear the downloads list?</source>
         <translation>Sicuro di voler cancellare l&apos;elenco dei downloads?</translation>
+    </message>
+</context>
+<context>
+    <name>MultiMediasDetectedImpl</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multiple download files are avaiable:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">Indirizzo</translation>
+    </message>
+    <message>
+        <source>Add urls and close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add urls and close button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished">OK</translation>
     </message>
 </context>
 <context>
