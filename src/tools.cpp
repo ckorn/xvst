@@ -1,9 +1,9 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2010 Xesc & Technology
+* Copyright (C) 2007 - 2011 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@
 QString copy(QString str, int start, int end)
 {
 	end = end > str.length() ? str.length() : end;
-	
+
 	if (end > start)
 	{
 		str.remove(end, str.length() - end);
@@ -106,10 +106,10 @@ QString uniqueFileName(const QString fileName)
 	while (QFileInfo(tmp).exists())
 	{
 		tmp = QString("%1/%2(%3).%4")
-		      .arg(QFileInfo(fileName).absolutePath())
-		      .arg(QFileInfo(fileName).baseName())
-		      .arg(n)
-		      .arg(QFileInfo(fileName).completeSuffix());
+			  .arg(QFileInfo(fileName).absolutePath())
+			  .arg(QFileInfo(fileName).baseName())
+			  .arg(n)
+			  .arg(QFileInfo(fileName).completeSuffix());
 		// next
 		n++;
 	}
@@ -175,9 +175,9 @@ QString secondsToHMS(const int seconds, const bool compact, const bool allowNega
 
 	if (!compact)
 		return QString("%1h %2m %3s")
-		       .arg(sec/3600)	//h
-		       .arg(sec/60%60)	//m
-		       .arg(sec%60);	//s
+			   .arg(sec/3600)	//h
+			   .arg(sec/60%60)	//m
+			   .arg(sec%60);	//s
 	else
 	{
 		QString result("");
@@ -260,7 +260,7 @@ bool isWindowsVista()
 int subVersionToInt(QString subVersion)
 {
 	subVersion = subVersion.toLower();
-	
+
 	if (subVersion == "alpha" || subVersion == "a")
 		return 1;
 	else if (subVersion == "beta" || subVersion == "b")
@@ -359,9 +359,14 @@ bool validURL(QString URL, bool acceptRTMP)
 		return QUrl(URL).isValid();
 	// if rtmp urls are accepted and have the "rtmp://"
 	else if (acceptRTMP && isRtmpURL(URL))
-	{	
+	{
 		if (URL.indexOf("rtmp://") == 0) URL = URL.replace("rtmp://", "http://");
 		else if (URL.indexOf("rtmpe://") == 0) URL = URL.replace("rtmpe://", "http://");
+		else if (URL.indexOf("rtmpt://") == 0) URL = URL.replace("rtmpt://", "http://");
+		else if (URL.indexOf("rtmps://") == 0) URL = URL.replace("rtmps://", "http://");
+		else if (URL.indexOf("rtmpte://") == 0) URL = URL.replace("rtmpte://", "http://");
+		else if (URL.indexOf("rtmpts://") == 0) URL = URL.replace("rtmpts://", "http://");
+		else if (URL.indexOf("rtmfp://") == 0) URL = URL.replace("rtmfp://", "http://");
 		// validate this "new one"
 		return QUrl(URL).isValid();
 	}
@@ -376,7 +381,10 @@ bool isHttpURL(QString URL)
 
 bool isRtmpURL(QString URL)
 {
-	return URL.indexOf("rtmp://") == 0 || URL.indexOf("rtmpe://") == 0;
+	return	URL.indexOf("rtmp://") == 0 || URL.indexOf("rtmpe://") == 0 ||
+			URL.indexOf("rtmpt://") == 0 || URL.indexOf("rtmps://") == 0 ||
+			URL.indexOf("rtmpte://") == 0 || URL.indexOf("rtmpte://") == 0 ||
+			URL.indexOf("rtmfp://") == 0;
 }
 
 QString getPathAndQuery(QUrl URL)
@@ -436,9 +444,9 @@ QString charToHtml(QChar asciiChar, bool htmlCodes)
 	if (asciiChar.isNull()) return "";
 
 	if	(asciiChar == ' ' || asciiChar == '!' || asciiChar == '=' ||
-	    (asciiChar >= '#' && asciiChar <= '%') ||
-	    (asciiChar >= '\'' && asciiChar <= ';') ||
-	    (asciiChar >= '?' && asciiChar <= '~'))
+		(asciiChar >= '#' && asciiChar <= '%') ||
+		(asciiChar >= '\'' && asciiChar <= ';') ||
+		(asciiChar >= '?' && asciiChar <= '~'))
 		return asciiChar;
 	else // is a "rare" char (nonstandard)
 	{
