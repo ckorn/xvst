@@ -503,13 +503,13 @@ Download(RTMP *rtmp,                                                            
             //               bResume ? "Resuming" : "Starting",
             //               (double)size / 1024.0, (double)rtmp->m_read.timestamp / 1000.0,
             //               *percent);
-            RTMP_LogPrintf("S: %d %.1f\n", size, *percent);
+            RTMP_LogPrintf("\rS: %d %.1f\n", size, *percent);
          }
       }
       else
       {
          //RTMP_LogPrintf("%s download at: %.3f kB\n", bResume ? "Resuming" : "Starting", (double)size / 1024.0);
-         RTMP_LogPrintf("S: %d\n", size);
+         RTMP_LogPrintf("\rS: %d\n", size);
       }
    }
 
@@ -581,7 +581,7 @@ Download(RTMP *rtmp,                                                            
                if (abs(now - lastUpdate) > 200)
                {
                   //RTMP_LogStatus("\r%.3f kB / %.2f sec (%.1f%%)", (double)size / 1024.0, (double)(rtmp->m_read.timestamp) / 1000.0, *percent);
-                  RTMP_LogPrintf("D: %d %.2f %d", size, (double)(rtmp->m_read.timestamp)/1000.0, (int)(*percent*10));
+                  RTMP_LogPrintf("\rD: %d %.2f %d", size, (double)(rtmp->m_read.timestamp)/1000.0, (int)(*percent*10));
                   lastUpdate = now;
                }
             }
@@ -598,7 +598,7 @@ Download(RTMP *rtmp,                                                            
                else
                {
                   //RTMP_LogStatus("\r%.3f kB / %.2f sec", (double)size / 1024.0, (double)(rtmp->m_read.timestamp) / 1000.0);
-                  RTMP_LogPrintf("D: %d %.2f", size, (double)(rtmp->m_read.timestamp)/1000.0);
+                  RTMP_LogPrintf("\rD: %d %.2f", size, (double)(rtmp->m_read.timestamp)/1000.0);
                }
                lastUpdate = now;
             }
@@ -625,12 +625,12 @@ Download(RTMP *rtmp,                                                            
          *percent = ((double)rtmp->m_read.timestamp) / (duration * 1000.0) * 100.0;
          *percent = ((double)(int)(*percent * 10.0)) / 10.0;
          //RTMP_LogStatus("\r%.3f kB / %.2f sec (%.1f%%)", (double)size / 1024.0, (double)(rtmp->m_read.timestamp) / 1000.0, *percent);
-         RTMP_LogPrintf("D: %d %.2f %d", size, (double)(rtmp->m_read.timestamp)/1000.0, (int)(*percent*10));
+         RTMP_LogPrintf("\rD: %d %.2f %d", size, (double)(rtmp->m_read.timestamp)/1000.0, (int)(*percent*10));
       }
       else
       {
          //RTMP_LogStatus("\r%.3f kB / %.2f sec", (double)size / 1024.0, (double)(rtmp->m_read.timestamp) / 1000.0);
-         RTMP_LogPrintf("D: %d %.2f", size, (double)(rtmp->m_read.timestamp)/1000.0);
+         RTMP_LogPrintf("\rD: %d %.2f", size, (double)(rtmp->m_read.timestamp)/1000.0);
       }
    }
 
@@ -784,13 +784,15 @@ int main(int argc, char **argv)
       index++;
    }
 
-   RTMP_LogPrintf("RTMPDump %s (modified)\n", RTMPDUMP_VERSION);
-   RTMP_LogPrintf("(c) 2010 Andrej Stepanchuk, Howard Chu, The Flvstreamer Team; license: GPL\n");
-   RTMP_LogPrintf("--------------------------------------------------------------------------\n");
+   RTMP_LogPrintf("----------------------------------------------------------------------------\n");
+   RTMP_LogPrintf(" RTMPDump %s (modified)\n", RTMPDUMP_VERSION);
+   RTMP_LogPrintf("----------------------------------------------------------------------------\n");
+   RTMP_LogPrintf(" (c) 2010 Andrej Stepanchuk, Howard Chu, The Flvstreamer Team; license: GPL\n");
+   RTMP_LogPrintf("----------------------------------------------------------------------------\n");
    RTMP_LogPrintf("         This is a modified version of RTMPDump made by:\n");
    RTMP_LogPrintf("              Xesc & Technology (c) 2011, license: GPL\n");
    RTMP_LogPrintf("        as part of xVideoServiceThief (c) 2007-2011, licence: GPL\n");
-   RTMP_LogPrintf("--------------------------------------------------------------------------\n");
+   RTMP_LogPrintf("----------------------------------------------------------------------------\n");
 
    if (!InitSockets())
    {
