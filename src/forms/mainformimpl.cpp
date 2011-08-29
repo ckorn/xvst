@@ -1,9 +1,9 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2010 Xesc & Technology
+* Copyright (C) 2007 - 2011 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -157,7 +157,7 @@ MainFormImpl::MainFormImpl(QWidget * parent, Qt::WFlags f)
 	headerItem->setTextAlignment(1, Qt::AlignRight   | Qt::AlignVCenter);
 	headerItem->setTextAlignment(2, Qt::AlignHCenter | Qt::AlignVCenter);
 	headerItem->setTextAlignment(3, Qt::AlignHCenter | Qt::AlignVCenter);
-	headerItem->setTextAlignment(4, Qt::AlignHCenter | Qt::AlignVCenter);	
+	headerItem->setTextAlignment(4, Qt::AlignHCenter | Qt::AlignVCenter);
 	// configure the TrayIcon
 	createTrayIcon();
 	// init the completed popup
@@ -310,7 +310,7 @@ MainFormImpl::~MainFormImpl()
 
 	// delete main objects
 	delete videoList;
-	
+
 	// delete tray icon
 	delete trayIconMenu;
 	delete trayIcon;
@@ -352,15 +352,15 @@ void MainFormImpl::centerWindow()
 
 void MainFormImpl::changeEvent(QEvent *event)
 {
-    if (event->type() == QEvent::WindowStateChange) 
+	if (event->type() == QEvent::WindowStateChange)
 		if (isMinimized() && programOptions->getMinimizeToSystemTray())
-        {
-            QTimer::singleShot(0, this, SLOT(hide()));
-            event->ignore();
-            return;
-        }
-    QMainWindow::changeEvent(event);
-} 
+		{
+			QTimer::singleShot(0, this, SLOT(hide()));
+			event->ignore();
+			return;
+		}
+	QMainWindow::changeEvent(event);
+}
 
 void MainFormImpl::closeEvent(QCloseEvent *event)
 {
@@ -441,12 +441,12 @@ void MainFormImpl::updatesClicked()
 
 	spbUpdates->setEnabled(false);
 	actUpdates->setEnabled(false);
-	
+
 	if (!isVisible()) restoreAppClicked();
-	
+
 	CheckUpdatesImpl checkUpdatesForm(programOptions, this, Qt::Sheet);
 	checkUpdatesForm.exec();
-	
+
 	spbUpdates->setEnabled(true);
 	actUpdates->setEnabled(true);
 }
@@ -481,7 +481,7 @@ void MainFormImpl::restoreAppClicked()
 void MainFormImpl::selectDownloadDirClicked()
 {
 	QString s = QFileDialog::getExistingDirectory(this, tr("Select the download directory:"),
-	            edtDownloadDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+				edtDownloadDir->text(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	// if is emtpy, cancel the proces
 	if (s.isEmpty()) return;
 	edtDownloadDir->setText(QDir::toNativeSeparators(s));
@@ -643,7 +643,7 @@ void MainFormImpl::moreOptionsClicked()
 	optionsForm_active = true;
 	actMoreOptions->setEnabled(false);
 	btnMoreOptions->setEnabled(false);
-	
+
 	if (!isVisible()) restoreAppClicked();
 
 	OptionsImpl optionsForm(programOptions, sessionManager, videoList, lastOptionsPage, this);
@@ -860,8 +860,8 @@ void MainFormImpl::videoUpdated(VideoItem *videoItem)
 		// display popup
 		if (programOptions->getDisplayPopup())
 			completedPopup->displayPopup(item->icon(0),
-			                             videoItem->getVideoInformation().title,
-			                             videoItem->getVideoFileSavedTo());
+										 videoItem->getVideoInformation().title,
+										 videoItem->getVideoFileSavedTo());
 	}
 
 	// update the visual controls
@@ -873,7 +873,7 @@ void MainFormImpl::videoError(VideoItem *videoItem)
 	if (videoItem == NULL) return;
 	if (videoItem->isReported() || !videoItem->hasErrors()) return;
 
-	// mark as reported				
+	// mark as reported
 	videoItem->setAsReported();
 
 	// error form
@@ -884,12 +884,12 @@ void MainFormImpl::videoError(VideoItem *videoItem)
 		{
 			// display the main form if it is not visible
 			if (!isVisible()) restoreAppClicked();
-			
+
 			// update tray icon
 			QString trayIconStr = ":/icons/images/film_error.png";
 			trayIcon->setIcon(QIcon(trayIconStr));
 			lastTrayIconStr = trayIconStr;
-		
+
 			// display error report form
 			BugReportImpl errorReport(programOptions);
 			errorReport.fillErrorInfo(videoItem, videoList->getVideoInformation());
@@ -1092,7 +1092,7 @@ void MainFormImpl::checkUpdates(bool forceCheckUpdates)
 	{
 		spbUpdates->setEnabled(false);
 		actUpdates->setEnabled(false);
-		
+
 		lblCheckForUpdatesLabel->show();
 		pbrCheckingForUpdates->show();
 		spbCancelCheckForUpdates->show();
@@ -1126,7 +1126,7 @@ void MainFormImpl::displayWinVistaDownloads()
 #ifdef Q_WS_WIN
 	// only is needed on windows vista and we want check it
 	if (isWindowsVista() && programOptions->getDisplayDownloadsMigrator())
-	{		
+	{
 		// creates the migrator window
 		WinVistaDownloadsMsgImpl downloadsMsg(this);
 		// display the migrator window if is needed
@@ -1349,9 +1349,9 @@ void MainFormImpl::videoListContextMenu(const QPoint & pos)
 	if (item != NULL && videoItem != NULL)
 	{
 		QMenu *videoItemMenu = new QMenu(this);
-		
+
 		// the default video is the "View error message" cuz has an error
-		if (videoItem->hasErrors()) 
+		if (videoItem->hasErrors())
 		{
 			videoItemMenu->addAction(actViewErrorMessage);
 			// set defaut
@@ -1359,7 +1359,7 @@ void MainFormImpl::videoListContextMenu(const QPoint & pos)
 		}
 		else // the default action is the "PLAY video"
 		{
-			videoItemMenu->addAction(actPlayVideo);	
+			videoItemMenu->addAction(actPlayVideo);
 			// set defaut
 			videoItemMenu->setDefaultAction(actPlayVideo);
 		}
