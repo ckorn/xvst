@@ -1,16 +1,35 @@
 2.4.2:
 ------
 
-- Compiled with Qt 4.7.2
+- Compiled with Qt 4.7.3
 
 - Added bulgarian translation (thanks to Vasil Stoev)
 - Added finnish translation (thanks to Tuomas Lähteenmäki)
+
+- Added two new plugins:
+	- MySpace
+	- ExtremeTube (thanks to crapmaster)
+	- Real GF Porn (thanks to crapmaster)
+	- Macho Video (thanks to crapmaster)
+	- Totally nsfw (thanks to crapmaster)
+	- Totally Crap (thanks to crapmaster)
+	- Totally Up Yours (thanks to crapmaster)
+	- My girlfriend vids (thanks to crapmaster)
+	- Home made voyeur (thanks to crapmaster)
+	- WTF People (thanks to crapmaster)
+	- Stolen XXX Videos (thanks to crapmaster)
+	- Newsfilter (thanks to crapmaster)
+	- m90 (thanks to crapmaster)
+	- GirlfriendVids (thanks to crapmaster)
+	- PornTube (thanks to crapmaster)
 
 - Improved the program version comparation algorithm
 
 - Changed plug-ins:
 	- YouTube
 	- Google Videos
+	- TV3 a la Carta
+	- Yuvutu (thanks to crapmaster)
 
 Mac OS X:
 ---------
