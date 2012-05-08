@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.0";
+	this.version = "1.0.4";
 	this.minVersion = "2.0.0a";
 	this.author = "crapmaster & Xesc & Technology 2011";
 	this.website = "http://www.extremetube.com/";
@@ -39,18 +39,121 @@ function getVideoInformation(url)
 {
 	// video information
 	var result = new VideoDefinition();
+
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(url);
+
 	// get video title
-	result.title = copyBetween(html, "<title>", "</title>");
-	result.title = strReplace(result.title, "- ExtremeTube.com", "");
+	result.title = copyBetween(html, '<h1 class="title-video-box float-left" title="', '">');
+
 	// get the xml url
-	var xmlUrl = copyBetween(html, "flashvars.video_url = '", "';");
-	// get url
-	result.URL=cleanUrl(xmlUrl);
+	var xmlUrl = copyBetween(html, '"FlashVars" value="options=', '"/>');
+	var xml = http.downloadWebpage(xmlUrl);
+
+	// load url
+	var videoUrl = copyBetween(xml, "<flv_url>", "</flv_url>");
+	result.URL=cleanUrl(videoUrl);
+
 	// return the video information
 	return result;
+}
+
+function searchVideos(keyWord, pageIndex) {
+	const URL_SEARCH            = "http://www.extremetube.com/videos?search=%1&page=%2";
+	const HTML_SEARCH_START     = '<ul class="video-tag-list">';
+	const HTML_SEARCH_FINISH    = '</ul>';
+	const HTML_SEARCH_SEPARATOR = "</li>";
+
+	// replace all spaces for "+"
+	keyWord = strReplace(keyWord, " ", "+");
+
+	// init search results object
+	var searchResults = new SearchResults();
+
+	// init http object
+	var http = new Http();
+	var html = http.downloadWebpage(strFormat(URL_SEARCH, keyWord, pageIndex));
+
+
+	var noResIx = strIndexOf(html, "No results");
+	if (noResIx == -1) {
+
+		// get the search summary
+		var summary = copyBetween(html, '<div class="result-container">', '<div class="myuploads-wrapper-content">'); 
+		summary = copyBetween(summary, '<h2>', '</h2>');
+		summary = cleanSummary(summary);
+		searchResults.setSummary(summary);
+
+		// get results html block
+		var htmlResults = copyBetween(html, HTML_SEARCH_START, HTML_SEARCH_FINISH);
+
+		// if we found some results then...
+		if (htmlResults != "") {
+			var blocks = splitString(htmlResults, HTML_SEARCH_SEPARATOR);
+			for (n = 0; n < blocks.length-1; n++)
+				parseResultItem(searchResults, blocks[n]);
+		}
+	}
+
+	// return search results
+	return searchResults;
+}
+
+function cleanSummary(summary) {
+	// remove all "\n"
+	summary = strReplace(summary, "\n", "");
+
+	// remove unused tags
+	summary = strReplace(summary, "</span>", '');
+	summary = strReplace(summary, "<span>", '');
+	summary = strReplace(summary, "<em>", '');
+	summary = strReplace(summary, "</em>", '');
+
+	// remove &quot;
+	summary = strReplace(summary, "&quot;", "");
+
+	// return cleanned summary
+	return summary;
+}
+
+function parseResultItem(searchResults, html) {
+	// vars
+	var tmp, videoUrl, imageUrl, title, description, duration, rating;
+
+	// get video url
+	videoUrl = copyBetween(html, 'href="', '"');
+
+	// get title and image url
+	tmp= copyBetween(html, '<img class="thumb-list-img"', '/>');
+	title = copyBetween(tmp, 'title="', '"');
+	imageUrl = copyBetween(tmp, 'src="', '"');
+
+	// get video description
+	description = "";
+
+	// get video duration
+	tmp = copyBetween(html, '<div class="time-video absolute">', '</div>');	
+	duration = convertToSeconds(tmp); 
+
+	// get rating
+	rating = copyBetween(html, '<div class="absolute rate-val thumb-up-col">', '%</div>')/10;
+
+	// add to results list
+	searchResults.addSearchResult(videoUrl, imageUrl, title, description, duration, rating);
+}
+
+function convertToSeconds(text) {
+	// how many ":" exists?
+	var count = getTokenCount(text, ":");
+
+	// get mins and seconds
+	var h = new Number(h = count == 3 ? getToken(tmp2, ":", 0) * 3600 : 0);
+	var m = new Number(getToken(text, ":", count - 2) * 60);
+	var s = new Number(getToken(text, ":", count - 1));
+
+	// convert h:m:s to seconds
+	return h + m + s;
 }
 
 function getVideoServiceIcon()

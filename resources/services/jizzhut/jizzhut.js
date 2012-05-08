@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.1";
+	this.version = "1.0.2";
 	this.minVersion = "2.0.0a";
 	this.author = "Xesc & Technology 2010";
 	this.website = "http://www.jizzhut.com/";
@@ -46,7 +46,7 @@ function getVideoInformation(url)
 	var html = http.downloadWebpage(url);
 	// get video information
 	result.title = copyBetween(html, "<title>", "</title");
-	result.URL = copyBetween(html, 'so.addVariable("file","', '"');
+	result.URL = copyBetween(html, 'encodeURIComponent("', '"');
 	// return the video information
 	return result;
 }

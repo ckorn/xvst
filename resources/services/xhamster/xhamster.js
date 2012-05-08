@@ -25,7 +25,7 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.2";
+	this.version = "1.0.3";
 	this.minVersion = "2.0.0a";
 	this.author = "Supelex Technologies (mantained by Xesc & Technology 2010)";
 	this.website = "http://www.xhamster.com/";
@@ -37,7 +37,7 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const FLV_URL = "%1/flv2/%2";	
+	const FLV_URL = "%1/key=%2";	
 	// video information
 	var result = new VideoDefinition();
 	// download webpage
@@ -46,9 +46,10 @@ function getVideoInformation(url)
 	// get video title
 	result.title = copyBetween(html, "<title>", "</title>");
 	// get the flv url
-	var srv = copyBetween(html, '\'srv\': \'', '\',');
-	var file = copyBetween(html, '\'file\': \'', '\',');
-	result.URL = strFormat(FLV_URL, srv, file);
+	var srv = /'srv'\s*:\s*'(.*?)'/
+	var file = /'file'\s*:\s*'(.*?)'/
+	// build final URL
+	result.URL = strFormat(FLV_URL, srv.exec(html)[1], file.exec(html)[1]);
 	// return the video information
 	return result;
 }

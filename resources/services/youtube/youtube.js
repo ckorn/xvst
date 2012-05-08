@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2011 Xesc & Technology
+* Copyright (C) 2007 - 2012 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "3.0.1";
+	this.version = "3.0.6";
 	this.minVersion = "2.0.0a";
-	this.author = "Xesc & Technology 2011";
+	this.author = "Xesc & Technology 2012";
 	this.website = "http://www.youtube.com/";
 	this.ID = "youtube.com";
 	this.caption = "YouTube";
@@ -51,6 +51,12 @@ function getVideoInformation(url)
 		embededID = strRemove(embededID, 0, embededID.lastIndexOf("/v/") + 3);
 		youTubeURL = strFormat(URL_YOUTBE, embededID);
 	}
+	// cehck if is an embeded video (v2)
+	else if (youTubeURL.toString().indexOf("/embed/") != -1) 
+	{
+		var embededID = copyBetween(youTubeURL + "?", "/embed/", "?");
+		youTubeURL = strFormat(URL_YOUTBE, embededID);
+	}
 	// download webpage
 	var http = new Http();
 	var html = http.downloadWebpage(youTubeURL);
@@ -62,7 +68,7 @@ function getVideoInformation(url)
 	result.title = strReplace(result.title, "\n", "");
 	result.title = strReplace(result.title, " - YouTube", "");
 	// check if this video need a login
-	result.needLogin = strIndexOf(html, "signing_in") != -1;
+	result.needLogin = strIndexOf(html, 'id="verify-details"') != -1;
 	// if we can continue (no loggin needed)
 	if (result.needLogin) return result;
 	// get the video URL and extension
@@ -78,9 +84,9 @@ function getVideoUrlAndExtension(html)
 	// init result
 	var result = { url:null, extension:null };
 	// get the flashVars value
-	var flashVars = "?" + copyBetween(html, 'flashvars="', '"');
+	var flashVars = "?" + copyBetween(html, 'flashvars=\\"', '\\"');
 	// convert each "&amp;" into "&"
-	flashVars = strReplace(flashVars, "&amp;", "&");
+	flashVars = strReplace(flashVars, "\\u0026amp;", "&");
 	// get an array with all fmt_stream_map values
 	var fmt_stream_map_arr = splitString(getUrlParam(flashVars, "url_encoded_fmt_stream_map"), "url%3D", false);
 	// default selected video quality
@@ -170,8 +176,8 @@ function searchVideos(keyWord, pageIndex)
 {
 	const URL_SEARCH = "http://www.youtube.com/results?search_query=%1&page=%2&hl=%3";
 	const HTML_SEARCH_START = '<div id="search-results">';
-	const HTML_SEARCH_FINISH = '<span id="search-pva-content">';
-	const HTML_SEARCH_SEPARATOR = '<div class="result-item *sr ">';
+	const HTML_SEARCH_FINISH = '<div id="search-pva-content">';
+	const HTML_SEARCH_SEPARATOR = '<div class="thumb-container">';
 	const HTML_SEARCH_SUMMARY_START = '<p class="num-results">';
 	const HTML_SEARCH_SUMMARY_END = '</p>';
 	// replace all spaces for "+"

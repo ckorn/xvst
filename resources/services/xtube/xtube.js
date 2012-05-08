@@ -25,9 +25,9 @@
 
 function RegistVideoService()
 {
-	this.version = "1.0.4";
+	this.version = "1.0.5";
 	this.minVersion = "2.3.1";
-	this.author = "Xesc & Technology 2010";
+	this.author = "Xesc & Technology 2012";
 	this.website = "http://www.xtube.com/";
 	this.ID = "xtube.com";
 	this.caption = "XTube";
@@ -37,7 +37,7 @@ function RegistVideoService()
 
 function getVideoInformation(url)
 {
-	const URL_POST_XML = "http://video2.xtube.com/find_video.php";	
+	const URL_POST_XML = "http://www.xtube.com/find_video.php";	
 	const URL_POST_XML_PARAMS = "user_id=%1&clip_id=%2&video_id=%3";
 	// video information
 	var result = new VideoDefinition();
@@ -47,15 +47,16 @@ function getVideoInformation(url)
 	// get video title
 	result.title = copyBetween(html, '<div class="font_b_12px">', '</div>');
 	// get subdomain
-	var swfUrl   = copyBetween(html, 'so_s.addVariable("swfURL", "', '"');
 	var user_id  = copyBetween(html, 'so_s.addVariable("user_id", "', '"');
 	var video_id = copyBetween(html, 'so_s.addVariable("video_id", "', '"');
 	var clip_id = programVersionNumber() > 240 ? copyBetween(html, 'so_s.addVariable("clip_id", "', '"') : ""; // prevent a xVST (< 2.4.1) bug	
 	// get xml	
 	var xml = http.downloadWebpagePost(URL_POST_XML, strFormat(URL_POST_XML_PARAMS, user_id, clip_id, video_id));
+	var hash = copyBetween(xml+"&", "hash%3D", "&");
 	// get video url
-	result.URL = copyBetween(xml, "&filename=", "&");
-	result.URL = swfUrl + result.URL;
+	result.URL = cleanUrl(copyBetween(xml, "filename=", "%25"))+"%&hash="+hash;
+	// get cookies
+	result.cookies = http.getCookies("|");
 	// return the video information
 	return result;
 }
