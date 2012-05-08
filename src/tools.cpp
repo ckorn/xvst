@@ -376,7 +376,7 @@ bool validURL(QString URL, bool acceptRTMP)
 
 bool isHttpURL(QString URL)
 {
-	return URL.indexOf("http://") == 0;
+    return URL.indexOf("http://") == 0 || URL.indexOf("https://") == 0;
 }
 
 bool isRtmpURL(QString URL)
