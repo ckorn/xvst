@@ -1,9 +1,9 @@
 /*
 *
-* This file is part of xVideoServiceThief, 
+* This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2010 Xesc & Technology
+* Copyright (C) 2007 - 2012 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -31,6 +31,8 @@
 #include "searchvideos.h"
 #include "searchvideosscriptclass.h"
 #include "serviceskeychain.h"
+#include "multimediascontainer.h"
+#include "multimediascontainerscriptclass.h"
 #include "httpscriptclass.h"
 #include "toolsscriptclass.h"
 #include "programversion.h"
@@ -808,6 +810,9 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	// create and regist the Http class
 	HttpScriptClass *httpClass = new HttpScriptClass(engine);
 
+	// create and regist the Multi
+	MultiMediasContainerScriptClass *multiMediasClass = new MultiMediasContainerScriptClass(engine);
+
 	// configure debugger
 #ifdef xVST_DEBUG_PLUGINS_ON
 	QScriptEngineDebugger debugger;
@@ -844,6 +849,7 @@ VideoDefinition VideoInformationPlugin::getVideoInformation(const QString URL)
 	// destroy auxiliar classes
 	delete toolsClass;
 	delete httpClass;
+	delete multiMediasClass;
 	// detach global engine
 	delete engine;
 	engine = NULL;

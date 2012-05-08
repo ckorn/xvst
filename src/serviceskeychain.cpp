@@ -3,7 +3,7 @@
 * This file is part of xVideoServiceThief,
 * an open-source cross-platform Video service download
 *
-* Copyright (C) 2007 - 2010 Xesc & Technology
+* Copyright (C) 2007 - 2012 Xesc & Technology
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -98,7 +98,7 @@ ServiceLoginInformation ServicesKeyChain::serviceLoginInfo(VideoInformationPlugi
 	else // ask user about his login info
 	{
 		LoginPromptImpl loginPrompt(videoInformationPlugin, keychainItem ? keychainItem->getLoginInfo() : ServiceLoginInformation(),
-									lastLoginFailed, qApp->activeWindow(), Qt::Sheet);
+									 lastLoginFailed, qApp->activeWindow(), Qt::Sheet);
 		// display login prompt
 		if (showModalDialog(&loginPrompt) == QDialog::Accepted)
 		{
