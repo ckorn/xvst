@@ -585,16 +585,15 @@ QString multiLineToSingleLine(QString text)
 	return result;
 }
 
-#ifdef Q_WS_MACX
-int native_alert(QWidget *, QMessageBox::Icon icon, QString messageText, QString informativeText, QString defaultButton,
-				 QString alternateButton, QString otherButton)
-{
-	return alert(icon, stripHtml(messageText), stripHtml(informativeText), defaultButton, alternateButton, otherButton);
-}
-#else
 int native_alert(QWidget *parent, QMessageBox::Icon icon, QString messageText, QString informativeText, QString defaultButton,
 				 QString alternateButton, QString otherButton)
 {
+/*
+// native cocoa dialogs has been disabled due some Qt troubles
+#ifdef Q_WS_MACX
+	return alert(icon, stripHtml(messageText), stripHtml(informativeText), defaultButton, alternateButton, otherButton);
+#else
+*/
 	switch (icon)
 	{
 		case QMessageBox::Warning:
@@ -606,5 +605,5 @@ int native_alert(QWidget *parent, QMessageBox::Icon icon, QString messageText, Q
 		case QMessageBox::Information: default:
 			return QMessageBox::information(parent, messageText, informativeText, defaultButton, alternateButton, otherButton, 0, 1);
 	}
+//#endif
 }
-#endif

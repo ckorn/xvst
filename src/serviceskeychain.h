@@ -87,7 +87,10 @@ Q_OBJECT
 		/*! Class destructor */
 		~ServicesKeyChain();
 		/*! Request for service login information */
-		ServiceLoginInformation serviceLoginInfo(VideoInformationPlugin *videoInformationPlugin, bool lastLoginFailed);
+//		void serviceLoginInfo(VideoInformationPlugin *videoInformationPlugin, bool lastLoginFailed, ServiceLoginInformation &result);
+	public slots:
+		/*! Request for service login information */
+		void serviceLoginInfo(VideoInformationPlugin *videoInformationPlugin, bool lastLoginFailed, ServiceLoginInformation &result);
 };
 
 #endif // SERVICESKEYCHAIN_H

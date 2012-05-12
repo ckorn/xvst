@@ -87,6 +87,40 @@ ServicesKeyChainItem* ServicesKeyChain::serviceKeyChainItemByServiceID(QString s
 	return NULL;
 }
 
+void ServicesKeyChain::serviceLoginInfo(VideoInformationPlugin *videoInformationPlugin, bool lastLoginFailed, ServiceLoginInformation &result)
+{
+	ServicesKeyChainItem *keychainItem = serviceKeyChainItemByServiceID(videoInformationPlugin->getID());
+	// is in our session?
+	if (keychainItem && !lastLoginFailed)
+	{
+		result = keychainItem->getLoginInfo();
+		return;
+	}
+	else // ask user about his login info
+	{
+		LoginPromptImpl loginPrompt(videoInformationPlugin, keychainItem ? keychainItem->getLoginInfo() : ServiceLoginInformation(),
+									lastLoginFailed, qApp->activeWindow(), Qt::Sheet);
+		// display login prompt
+		if (showModalDialog(&loginPrompt) == QDialog::Accepted)
+		{
+			keychainItem = new ServicesKeyChainItem(videoInformationPlugin->getID(), loginPrompt.getServiceLoginInfo(), loginPrompt.getRememberPassword());
+			// add it into our current session?
+			if (keychainItem->isSerializable() || loginPrompt.getStayLoggedInSession())
+			{
+				serviceLoginSession->append(keychainItem);
+				// save our session
+				saveKeychainItems();
+			}
+			// return login info
+			result = ServiceLoginInformation();
+			return;
+		}
+	}
+	// no login info found
+	result = ServiceLoginInformation();
+}
+
+/*
 ServiceLoginInformation ServicesKeyChain::serviceLoginInfo(VideoInformationPlugin *videoInformationPlugin, bool lastLoginFailed)
 {
 	ServicesKeyChainItem *keychainItem = serviceKeyChainItemByServiceID(videoInformationPlugin->getID());
@@ -119,3 +153,12 @@ ServiceLoginInformation ServicesKeyChain::serviceLoginInfo(VideoInformationPlugi
 	// no login info found
 	return ServiceLoginInformation();
 }
+*/
+
+/*
+void ServicesKeyChain::serviceLoginInfoThreadSafe(VideoInformationPlugin *videoInformationPlugin, bool lastLoginFailed, ServiceLoginInformation &loginInfo)
+{
+	QMetaObject::invokeMethod(this, SLOT(serviceLoginInfo(VideoInformationPlugin *, bool)),
+							  Q_ARG(VideoInformationPlugin, videoInformationPlugin), Q_ARG(bool, lastLoginFailed));
+}
+*/

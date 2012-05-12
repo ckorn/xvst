@@ -352,7 +352,16 @@ void VideoInformation::cancel()
 
 ServiceLoginInformation VideoInformation::serviceLoginInfo(VideoInformationPlugin *videoInformationPlugin, bool lastLoginFailed)
 {
-	return servicesKeychain->serviceLoginInfo(videoInformationPlugin, lastLoginFailed);
+	ServiceLoginInformation result;
+
+	QMetaObject::invokeMethod(servicesKeychain, SLOT(serviceLoginInfo(VideoInformationPlugin *, lastLoginFailed, ServiceLoginInformation &)),
+							  Q_ARG(VideoInformationPlugin, videoInformationPlugin),
+							  Q_ARG(bool, lastLoginFailed),
+							  Q_ARG(ServiceLoginInformation, result));
+
+	//servicesKeychain->serviceLoginInfo(videoInformationPlugin, lastLoginFailed, result);
+
+	return result;//servicesKeychain->serviceLoginInfo(videoInformationPlugin, lastLoginFailed);
 }
 
 bool VideoInformation::getBlockAdultContent()

@@ -42,7 +42,8 @@ FORMS = ui/addvideo.ui \
     ui/winvistadownloadsmsg.ui \
     ui/whatsnew.ui \
 	ui/multiurls.ui \
-	ui/loginprompt.ui
+	ui/loginprompt.ui \
+	ui/multimediasdetected.ui
 HEADERS = src/forms/addvideoimpl.h \
     src/forms/searchvideositemimpl.h \
     src/forms/bugreportimpl.h \
@@ -73,6 +74,7 @@ HEADERS = src/forms/addvideoimpl.h \
     src/forms/whatsnewimpl.h \
 	src/forms/multiurlsimpl.h \
 	src/forms/loginpromptimpl.h \
+	src/forms/multimediasdetectedimpl.h \
     src/pakunpak/pakunpak.h \
     src/searchvideosscriptclass.h \
     src/checkupdatesworker.h \
@@ -98,7 +100,9 @@ HEADERS = src/forms/addvideoimpl.h \
     src/videolistcontroller.h \
     src/xprogressbar.h \
 	src/rtmp.h \
-	src/serviceskeychain.h
+	src/serviceskeychain.h \
+    src/multimediascontainer.h \
+    src/multimediascontainerscriptclass.h
 SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/searchvideositemimpl.cpp \
     src/forms/bugreportimpl.cpp \
@@ -129,6 +133,7 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/forms/whatsnewimpl.cpp \
 	src/forms/multiurlsimpl.cpp \
 	src/forms/loginpromptimpl.cpp \
+	src/forms/multimediasdetectedimpl.cpp \
     src/searchvideosscriptclass.cpp \
     src/checkupdatesworker.cpp \
     src/http.cpp \
@@ -153,7 +158,9 @@ SOURCES = src/forms/addvideoimpl.cpp \
     src/videolistcontroller.cpp \
     src/xprogressbar.cpp \
 	src/rtmp.cpp \
-    src/serviceskeychain.cpp
+	src/serviceskeychain.cpp \
+    src/multimediascontainer.cpp \
+    src/multimediascontainerscriptclass.cpp
 TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/xVST_ca.ts \
     resources/translations/xVST_cz.ts \
@@ -172,6 +179,7 @@ TRANSLATIONS = resources/translations/xVST_br.ts \
     resources/translations/xVST_du.ts \
     resources/translations/xVST_jp.ts \
 	resources/translations/xVST_ru.ts \
+    resources/translations/xVST_tr.ts \
     resources/translations/template_for_new_translations.ts
 RESOURCES = resources/resources.qrc
 unix { 
@@ -193,8 +201,8 @@ macx {
     CONFIG(release, debug|release) { 
         message(Release build! Archs: 32 and 64 bits)
         CONFIG += x86 x86_64
-	}
-	CONFIG(debug, debug|release):message(Debug build! Archs: Current architecture only)
+    }
+    CONFIG(debug, debug|release):message(Debug build! Archs: Current architecture only)
 }
 win32 { 
 	RC_FILE += resources/xVST.rc

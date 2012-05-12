@@ -1,12 +1,16 @@
-2.4.2:
+2.5:
 ------
 
-- Compiled with Qt 4.7.3
+- Improved the RTMP support (new core based on RTMPDump 2.4 http://rtmpdump.mplayerhq.hu/).
+	- Improved download stability! Yes! You did read it right!
+	- Supported protocols: rtmp, rtmpe, rtmpt, rtmps, rtmpte, rtmpte, rtmfp
+	- SSL support using the PolarSSL library (http://polarssl.org/)
+	- Added live streaming support!
 
-- Added bulgarian translation (thanks to Vasil Stoev)
 - Added finnish translation (thanks to Tuomas Lähteenmäki)
-
-- Added two new plugins:
+- Added bulgarian translation (thanks to Vasil Stoev)
+- Added the HTTPS protocol as valid
+- Added 15 new plugins:
 	- MySpace
 	- ExtremeTube (thanks to crapmaster)
 	- Real GF Porn (thanks to crapmaster)
@@ -23,18 +27,23 @@
 	- GirlfriendVids (thanks to crapmaster)
 	- PornTube (thanks to crapmaster)
 
-- Improved the program version comparation algorithm
-
 - Changed plug-ins:
 	- YouTube
 	- Google Videos
 	- TV3 a la Carta
 	- Yuvutu (thanks to crapmaster)
+	- Xhamster
+	- Jizzhut
+	- XTube
+	- Youporn
+	- Clipfish
+
+- Improved the program version comparation algorithm
 
 Mac OS X:
 ---------
 
-- Improved dialogs (replaced with native Cocoa dialogs)
+- Compiled with Qt 4.7.3
 
 2.4.1.1:
 --------
